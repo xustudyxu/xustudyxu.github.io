@@ -488,7 +488,7 @@ print(computer2,computer2.cpu,computer2.disk)   #<__main__.Computer object at 0x
 
 ![1635698467213](./images/12/09.png)
 
-![1635698566841](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1635698566841.png)
+![1635698566841](./images/12/10.png)
 
 ```python
 #深拷贝

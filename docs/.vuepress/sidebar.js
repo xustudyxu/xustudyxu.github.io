@@ -6,6 +6,8 @@ module.exports = {
      '/studynotes/Python/':require('../studynotes/Python/sidebar'),
      '/studynotes/Linux/':require('../studynotes/Linux/sidebar'),
      '/studynotes/dataCleaning/':require('../studynotes/dataCleaning/sidebar'),
-	'/baodian/zero': require('../baodian/zero/sidebar'),//第二个模块下面的侧边栏
-	'/baodian/high': require('../baodian/high/sidebar'),
+     '/studynotes/Maven/':require('../studynotes/Maven/sidebar'),
+     '/studynotes/Spring5/':require('../studynotes/Spring5/sidebar'),
+     '/baodian/zero': require('../baodian/zero/sidebar'),//第二个模块下面的侧边栏
+     '/baodian/high': require('../baodian/high/sidebar'),
 }	

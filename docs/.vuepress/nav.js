@@ -8,16 +8,23 @@ module.exports = [
           { text: 'JavaSE', link: '/studynotes/Java/one/' }
         ]
       }, {
-        text: 'Java框架',
+        text: '主流框架',
         items: [
-          { text: 'Spring5', link: '/studynotes/Spring5/one/' }
+          { text: 'Spring5', link: '/studynotes/Spring5/one/' },
+          { text: 'SpringMVC', link: '/studynotes/SpringMVC/one/' },
+          { text: 'Mybatis', link: '/studynotes/Mybatis/one/' }
         ]
       }, {
-        text: 'Java工具',
+        text: '项目管理',
         items: [
           { text: 'Maven', link: '/studynotes/Maven/one/' }
         ]
-      }
+      }, {
+        text: '数据库',
+        items: [
+          { text: 'MySQL', link: '/studynotes/MySQL/one/' }
+        ]
+      },
     ]
   }, {
     text: '大数据',
@@ -81,12 +88,6 @@ module.exports = [
           { text: '掘金', link: 'https://juejin.im/' },
           { text: 'CSDN', link: 'https://blog.csdn.net/' }
         ]
-      }, {
-        text: '微信号frxcat',
-        items: [
-          { text: '百度', link: 'https://www.baidu.com/' },
-        ]
-
       }
     ]
   }
