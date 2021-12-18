@@ -1,8 +1,8 @@
-# 第13章 常用类
+# 常用类
 
-## 13.1 包装类
+## 包装类
 
-### 13.1.1 包装类的分类 
+### 包装类的分类 
 
 + 针对八种基本数据类型相应的引用类型-包装类
 + 有了类的特点，就可以调用类中的方法
@@ -10,7 +10,7 @@
 
 ![1627615138860](./images/CYlei/01.png)
 
-### 13.1.2 包装类和基本数据的转换
+### 包装类和基本数据的转换
 
 演示包装类和基本数据类型的相互转换,这里以int和Integer演示。
 1. <font color=#0099ff size=4 face="黑体">jdk5之前的手动装箱和拆箱方式，装箱:基本类型->包装类型,反之，拆箱</font>
@@ -18,7 +18,7 @@
 3. <font color=#0099ff size=4 face="黑体">自动装箱底层调用的是valueOf方法，比如Integer.valueOf</font>
 4. 其它包装类的用法类似,不一一举例
 
-### 13.1.3 案列演示
+### 案列演示
 
 + 代码演示:
 
@@ -47,7 +47,7 @@ public class Integer01 {
 
 ```
 
-### 13.1.4 课堂测试题
+### 课堂测试题
 
 ![1627615724353](./images/CYlei/02.png)
 
@@ -73,7 +73,7 @@ public class WrapperExercise01 {
 
 ```
 
-### 13.1.5  包装类型和 String 类型的相互转换
+### 包装类型和 String 类型的相互转换
 
 + 代码演示：
 
@@ -101,7 +101,7 @@ public class WrapperVSString {
 
 ```
 
-### 13.1.6 Integer 类和 Character 类的常用方法
+### Integer 类和 Character 类的常用方法
 
 + 代码演示：
 
@@ -129,7 +129,7 @@ public class WrapperMethod {
 
 ```
 
-### 13.1.7 Integer经典题
+### Integer经典题
 
 + 代码演示：
 
@@ -163,7 +163,7 @@ public class WrapperExercise02 {
 
 ```
 
-### 13.1.8 Integer经典题总结
+### Integer经典题总结
 
 + 代码演示：
 
@@ -199,9 +199,9 @@ public class WrapperExercise03 {
 
 ```
 
-## 13.2 String类
+## String类
 
-### 13.2.1 String 类的理解和创建对象
+### String 类的理解和创建对象
 
 ![1627616062016](./images/CYlei/03.png)
 
@@ -231,16 +231,16 @@ public class String01 {
 
 ```
 
-### 13.2.2 创建 String 对象的两种方式 
+### 创建 String 对象的两种方式 
 
 + <font color=#0099ff size=4 face="黑体">方式一：直接赋值 String s="abc";</font>
 + <font color=#0099ff size=4 face="黑体">方式二：调用构造器 String s=new String("abc");</font>
 
-### 13.2.3 两种创建 String 对象的区别
+### 两种创建 String 对象的区别
 
 ![1627616351546](./images/CYlei/04.png)
 
-### 13.2.4 课堂测试题
+### 课堂测试题
 
 + 代码演示：
 
@@ -263,13 +263,13 @@ public class StringExercise03 {
 
 ```
 
-## 13.3 字符串的特性
+## 字符串的特性
 
-### 13.3.1 说明
+### 说明
 
 ![1627617553396](./images/CYlei/05.png)
 
-### 13.3.2 经典题
+### 经典题
 
 ![1627617612107](./images/CYlei/06.png)
 
@@ -310,13 +310,13 @@ public class StringExercise08 {
 
 ![1627617763213](./images/CYlei/07.png)
 
-## 13.4 String 类的常见方法
+## String 类的常见方法
 
-### 13.4.1 说明
+### 说明
 
 ![1627617892328](./images/CYlei/08.png)
 
-### 13.4.2 String 类的常见方法一览
+### String 类的常见方法一览
 
 ![1627617969084](./images/CYlei/09.png)
 
@@ -404,9 +404,9 @@ public class StringMethod02 {
 
 ```
 
-## 13.5 StringBuffer 类 
+## StringBuffer 类 
 
-### 13.5.1 基本介绍
+### 基本介绍
 
 ![1627618154022](./images/CYlei/11.png)
 
@@ -430,12 +430,12 @@ public class StringBuffer01 {
 
 ```
 
-### 13.5.2 String VS StringBuffer 
+### String VS StringBuffer 
 
 1. <font color=#0099ff size=4 face="黑体">String保存的是字符串常量,里面的值不能更改，每次String类的更新实际上就是更改地址，效率较低</font>//private final char value[];
 2. <font color=#0099ff size=4 face="黑体">StringBuffer保存的是字符串变量，里面的值可以更改，每次StringBuffer的更新实际上可以更新内容，不用每次更新地址，效率较高</font>//char[] value;//这个放在堆.
 
-### 13.5.3 String 和 StringBuffer 相互转换
+### String 和 StringBuffer 相互转换
 
 + 代码演示：
 
@@ -467,7 +467,7 @@ public class StringAndStringBuffer {
 
 ```
 
-### 13.5.4 StringBuffer 类常见方法
+### StringBuffer 类常见方法
 
 + 代码演示：
 
@@ -498,7 +498,7 @@ public class StringBufferMethod {
 
 ```
 
-### 13.5.5  StringBuffer 类课堂测试题
+### StringBuffer 类课堂测试题
 
 + 代码演示：
 
@@ -522,7 +522,7 @@ public class StringBufferExercise01 {
 
 ```
 
-### 13.5.6 StringBuffer 类课后练习 2
+### StringBuffer 类课后练习 2
 
 + 代码演示：
 
@@ -556,9 +556,9 @@ public class StringBufferExercise02 {
 
 ```
 
-## 13.6 StringBuilder 类
+## StringBuilder 类
 
-### 13.6.1 基本介绍
+### 基本介绍
 
 1. <font color=#0099ff size=4 face="黑体">一个可变的字符序列。此类提供一个与StringBuffer兼容的API，但不保证同步(StringBuilder 不是线程安全)。该类被设计用作 StringBuffer的一个简易替换，用在字符串缓冲区被单个线程使用的时候。如果可能，建议优先采用该类因为在大多数实现中，它比 StringBuffer要快</font>[后面测]
 2. <font color=#0099ff size=4 face="黑体">在 StringBuilder上的主要操作是append和insert方法，可重载这些方法，以接受任意类型的数据。</font>
@@ -583,15 +583,15 @@ public class StringBuilder01 {
 
 ```
 
-### 13.6.2 StringBuilder 常用方法
+### StringBuilder 常用方法
 
 ![1627618886218](./images/CYlei/12.png)
 
-### 13.6.3 String、StringBuffer和StringBuilder 的比较
+### String、StringBuffer和StringBuilder 的比较
 
 ![1627618956285](./images/CYlei/14.png)
 
-### 13.6.4 String、StringBuffer 和 StringBuilder 的效率测试
+### String、StringBuffer 和 StringBuilder 的效率测试
 
 + 代码演示：
 
@@ -631,24 +631,24 @@ public class StringBuilderVSStringBufferVSString {
 
 ```
 
-### 13.6.5 String、StringBuffer 和 StringBuilder 的选择
+### String、StringBuffer 和 StringBuilder 的选择
 
 1. <font color=#0099ff size=4 face="黑体">如果字符串存在大量的修改操作，一般使用 StringBuffer 或StringBuilder</font>
 2. <font color=#0099ff size=4 face="黑体">如果字符串存在大量的修改操作,并在单线程的情况,使用 StringBuilder</font>
 3. <font color=#0099ff size=4 face="黑体">如果字符串存在大量的修改操作，并在多线程的情况,使用 StringBuffer</font>
 4. <font color=#0099ff size=4 face="黑体">如果我们字符串很少修改，被多个对象引用,使用String,比如配置信息等</font>
 
-## 13.7 Math 类
+## Math 类
 
-## 13.7.1 基本介绍
+## 基本介绍
 
 Math 类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。
 
-### 13.7.2 方法一览(均为静态方法)
+### 方法一览(均为静态方法)
 
 ![1627619220450](./images/CYlei/15.png)
 
-### 13.7.3 Math 类常见方法应用案例
+### Math 类常见方法应用案例
 
 + 代码演示:
 
@@ -689,9 +689,9 @@ public class MathMethod {
 
 ```
 
-## 13.8 Arrays 类
+## Arrays 类
 
-### 13.8.1 Arrays 类常见方法应用案例
+### Arrays 类常见方法应用案例
 
 ![1627619333525](./images/CYlei/16.png)
 
@@ -890,9 +890,9 @@ public class ArrayMethod02 {
 
 ```
 
-## 13.9 System 类 
+## System 类 
 
-### 13.9.1 System 类常见方法和案例 
+### System 类常见方法和案例 
 
 ![1627619633027](./images/CYlei/18.png)
 
@@ -937,14 +937,14 @@ public class System_ {
 
 ```
 
-## 13.10 BigInteger 和 BigDecimal 类
+## BigInteger 和 BigDecimal 类
 
-### 13.10.1 BigInteger 和 BigDecimal 介绍
+### BigInteger 和 BigDecimal 介绍
 
 + **BigInteger适合保存比较大的整型**
 + **BigDecimal适合保存精度更高的浮点型(小数)**
 
-### 13.10.2 BigInteger 和 BigDecimal 常见方法
+### BigInteger 和 BigDecimal 常见方法
 
 + 代码演示：
 
@@ -1015,9 +1015,9 @@ public class BigDecimal_ {
 
 ```
 
-## 13.11 日期类
+## 日期类
 
-### 13.11.1 第一代日期类
+### 第一代日期类
 
 ![1627620206705](./images/CYlei/19.png)
 
@@ -1062,7 +1062,7 @@ public class Date01 {
 
 ```
 
-### 13.11.2 第二代日期类
+### 第二代日期类
 
 ![1627620322771](./images/CYlei/20.png)
 
@@ -1103,7 +1103,7 @@ public class Calendar_ {
 
 ```
 
-### 13.11.3 第三代日期类
+### 第三代日期类
 
 ![1627620386622](./images/CYlei/21.png)
 
@@ -1146,7 +1146,7 @@ public class LocalDate_ {
 
 ```
 
-### 13.11.5 Instant 时间戳
+### Instant 时间戳
 
 ![1627620583385](./images/CYlei/22.png)
 
@@ -1172,7 +1172,7 @@ public class Instant_ {
 
 ```
 
-### 13.11.6 第三代日期类更多方法
+### 第三代日期类更多方法
 
 + LocalDateTime类
 + MonthDay类：检查重复事件
@@ -1181,7 +1181,7 @@ public class Instant_ {
 + 使用plus方法测试查看一年前和一年后的日期
 + 使用时，查看API即可
 
-## 13.12本章作业
+## 本章作业
 
 ```java
 package com.study.homework;

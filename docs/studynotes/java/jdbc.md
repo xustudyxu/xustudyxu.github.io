@@ -1,8 +1,8 @@
-# 第20章 JDBC 和数据库连接池
+# JDBC 和数据库连接池
 
-## 20.1 JDBC概述
+## JDBC概述
 
-### 20.1 基本介绍
+### 基本介绍
 
 1. <font color=#DC4040 size=4 face="黑体">JDBC为访问不同的数据库提供了统一的接口，为使用者屏蔽了细节问题。</font>
 2. <font color=#DC4040 size=4 face="黑体">Java程序员使用JDBC,可以连接任何提供了JDBC驱动程序的数据库系统，从而完成对数据库的各种操作。</font>
@@ -10,7 +10,7 @@
 
 ![1629957337420](./images/jdbc/01.png)
 
-### 20.1.2 模拟 JDBC
+### 模拟 JDBC
 
 ```java
 package com.jdbc.myjdbc;
@@ -120,24 +120,24 @@ public class TestJDBC {
 
 ```
 
-### 20.1.3 JDBC 带来的好处
+### JDBC 带来的好处
 
 ![1629965356169](./images/jdbc/02.png)
 
-### 20.1.4 JDBC API
+### JDBC API
 
 ![1629965766932](./images/jdbc/03.png)
 
-## 20.2 JDBC 快速入门
+## JDBC 快速入门
 
-### 20.2.1 JDBC 程序编写步骤
+### JDBC 程序编写步骤
 
 1. <font color=#DC4040 size=4 face="黑体">注册驱动-加载Driver 类</font>
 2. <font color=#DC4040 size=4 face="黑体">获取连接-得到Connection</font>
 3. <font color=#DC4040 size=4 face="黑体">执行增删改查-发送SQL给mysql执行</font>
 4. <font color=#DC4040 size=4 face="黑体">释放资源-关闭相关连接</font>
 
-### 20.2.2 jdbc第一个程序
+### jdbc第一个程序
 
 ```java
 package com.jdbc;
@@ -202,9 +202,9 @@ public class Jdbc01 {
 
 ```
 
-## 20.3 获取数据库连接5种方式
+## 获取数据库连接5种方式
 
-### 20.3.1 方式一
+### 方式一
 
 //获取Driver实现类对象
 **Driver driver = new com.mysql.jdbc.Driver();**
@@ -215,19 +215,19 @@ public class Jdbc01 {
 **Connection conn = driver.connect(url, info);**
 **System.out.println(conn);**
 
-### 20.3.2 方式二
+### 方式二
 
 ![1629985245102](./images/jdbc/04.png)
 
-### 20.3.3 方式三
+### 方式三
 
 ![1629985272469](./images/jdbc/05.png)
 
-### 20.3.4 方式四
+### 方式四
 
 ![1629985297239](./images/jdbc/06.png)
 
-### 20.3.5 方式五
+### 方式五
 
 ![1629985336714](./images/jdbc/07.png)
 
@@ -358,7 +358,7 @@ public class jdbcConn {
 
 ```
 
-### 20.3.6 课堂练习
+### 课堂练习
 
 > 1.创建news表
 > 2.使用jdbc添加5条数据
@@ -416,9 +416,9 @@ public class Homework01 {
 
 ```
 
-## 20.4 结果集
+## 结果集
 
-### 20.4.1 基本介绍
+### 基本介绍
 
 1. <font color=#DC4040 size=4 face="黑体">表示数据库结果集的数据表，通常通过执行查询数据库的语句生成</font>
 2. <font color=#DC4040 size=4 face="黑体">ResultSet对象保持一个光标指向其当前的数据行。最初，光标位于第一行之前</font>
@@ -426,7 +426,7 @@ public class Homework01 {
 
 ![1629993640998](./images/jdbc/08.png)
 
-### 20.4.2 应用实例
+### 应用实例
 
 ```java
 package com.resultset_;
@@ -498,9 +498,9 @@ public class ResultSet_ {
 
 ```
 
-## 20.5 Statement
+## Statement
 
-### 20.5.1 基本介绍
+### 基本介绍
 
 ![1629993732139](./images/jdbc/09.png)
 
@@ -527,7 +527,7 @@ SELECT *
 			
 ```
 
-### 20.5.2 应用案例
+### 应用案例
 
 ```java
 package com.statement;
@@ -588,19 +588,19 @@ public class Statement_ {
 }
 ```
 
-## 20.6 PreparedStatement
+## PreparedStatement
 
-### 20.6.1 基本介绍
+### 基本介绍
 
 ![1630031620241](./images/jdbc/10.png)
 
-### 20.6.2 预处理好处
+### 预处理好处
 
 1. **不再使用+拼接sql语句，减少语法错误**
 2. **有效的解决了sql注入问题!**
 3. **大大减少了编译次数，效率较高**
 
-### 20.6.3 应用案列
+### 应用案列
 
 ```java
 package com.preparestatement_;
@@ -673,19 +673,19 @@ public class PrepareStatement_ {
 
 ```
 
-## 20.7 JDBC的相关API小结
+## JDBC的相关API小结
 
 ![1630043557536](./images/jdbc/11.png)
 
 ![1630043568749](./images/jdbc/12.png)
 
-## 20.8 封装JDBCUtils
+## 封装JDBCUtils
 
-### 20.8.1 说明
+### 说明
 
 **在jdbc 操作中，获取连接和释放资源是经常使用到,可以将其封装JDBC连接的工真类JDBCUtils**
 
-### 20.8.2 实际使用工具类JDBCUtils
+### 实际使用工具类JDBCUtils
 
 ```java
 package com.utils;
@@ -864,9 +864,9 @@ public class JDBCUtils_Use {
 
 ```
 
-## 20.9 事务
+## 事务
 
-### 20.9.1 基本介绍
+### 基本介绍
 
 1. <font color=#DC4040 size=4 face="黑体">JDBC程序中当一个Connection对象创建时，默认情况下是自动提交事务:每次执行一个SQL语句时，如果执行成功，就会向数据库自动提交，而不能回滚。</font>
 2. <font color=#DC4040 size=4 face="黑体">JDBC程序中为了让多个SQL语句作为一个整体执行,需要使用事务</font>
@@ -874,7 +874,7 @@ public class JDBCUtils_Use {
 4. <font color=#DC4040 size=4 face="黑体">在所有的SQL语句都成功执行后，调用Connection 的commit(;方法提交事务</font>
 5. <font color=#DC4040 size=4 face="黑体">在其中某个操作失败或出现异常时，调用 Connection的rollback();方法回滚事务</font>
 
-### 20.9.2 应用案列
+### 应用案列
 
 ```sql
 
@@ -974,13 +974,13 @@ public class Transaction_ {
 
 ```
 
-## 20.10 批处理
+## 批处理
 
-### 20.10.1 基本介绍
+### 基本介绍
 
 ![1630060820920](./images/jdbc/13.png)
 
-### 20.10.2 应用实例
+### 应用实例
 
 ```sql
 CREATE TABLE admin2(
@@ -1086,9 +1086,9 @@ public class Batch_ {
 
 ```
 
-## 20.11 数据库连接池
+## 数据库连接池
 
-### 20.11.1 5k 次连接数据库问题
+### 5k 次连接数据库问题
 
 ```java
 package com.datasource;
@@ -1126,17 +1126,17 @@ public class ConQuestion {
 
 ```
 
-### 20.11.2 传统方法Connection问题分析
+### 传统方法Connection问题分析
 
 ![1630077670470](./images/jdbc/14.png)
 
-### 20.11.3 数据库连接池种类
+### 数据库连接池种类
 
 ![1630077757943](./images/jdbc/15.png)
 
 ![1630078427364](./images/jdbc/16.png)
 
-### 20.11.4 C3P0应用实例
+### C3P0应用实例
 
 ```java
 package com.datasource;
@@ -1221,7 +1221,7 @@ public class C3P0_ {
 
 ```
 
-### 20.11.5 Druid(德鲁伊)应用实例
+### Druid(德鲁伊)应用实例
 
 ```java
 package com.datasource;
@@ -1269,7 +1269,7 @@ public class Druid_ {
 
 ```
 
-### 20.11.6 将 JDBCUtils 工具类改成 Druid(德鲁伊)实现
+### 将 JDBCUtils 工具类改成 Druid(德鲁伊)实现
 
 通过德鲁伊连接池获取连接对象
 
@@ -1330,16 +1330,16 @@ public class JDBCUtilsByDruid_USE {
 
 ```
 
-## 20.12 Apache-DBUtils
+## Apache-DBUtils
 
-### 20.12.1 先分析一个问题
+### 先分析一个问题
 
 1. 关闭connection后，resultSet结果集无法使用
 2. resultSet 不利于数据的管理
 
 ![1630137274591](./images/jdbc/17.png)
 
-### 20.12.2 用学过的知识解决
+### 用学过的知识解决
 
 ```java
 
@@ -1400,7 +1400,7 @@ public class JDBCUtilsByDruid_USE {
 
 ```
 
-### 20.12.3 基本介绍
+### 基本介绍
 
 1. <font color=#DC4040 size=4 face="黑体">commons-dbutils 是 Apache组织提供的一个开源JDBCT具类库，它是对JDBC的封装,使用dbutils能极大简化jdbc编码的工作量。</font>
 + DbUtils类
@@ -1416,7 +1416,7 @@ public class JDBCUtilsByDruid_USE {
 + **MapHandler:将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值.**
 + **MapListHandler:将结果集中的每一行数据都封装到一个Map里，然后再存放到List**
 
-### 20.12.4 应用案列
+### 应用案列
 
 
 ```java
@@ -1579,13 +1579,13 @@ public class DBUtils_USE {
 
 ```
 
-### 20.12.5 表和JavaBean的类型映射关系
+### 表和JavaBean的类型映射关系
 
 ![1630229306939](./images/jdbc/18.png)
 
-## 20.13 DAO和增删改查通用方法-BasicDAO
+## DAO和增删改查通用方法-BasicDAO
 
-### 20.13.1 先分析一个问题
+### 先分析一个问题
 
 **apache-dbutils+ Druid 简化了JDBC开发，但还有不足:**
 
@@ -1598,13 +1598,13 @@ public class DBUtils_USE {
 
 ![1630232422624](./images/jdbc/20.png)
 
-### 20.13.2 基本说明
+### 基本说明
 
 1. DAO: data access object数据访问对象
 2. 这样的通用类，称为 BasicDao，是专门和数据库交互的，即完成对数据库(表)的crud操作。
 3. 在BaiscDao的基础上，实现一张表对应一个Dao，更好的完成功能，比如 Customer表-Customer.java类(javabean)-CustomerDao.java
 
-### 20.13.3 BasicDAO应用案列
+### BasicDAO应用案列
 
 ```java
 package com.dao_.domain;
@@ -1938,7 +1938,7 @@ public class TestDAO {
 
 ```
 
-### 20.13.4 课后练习
+### 课后练习
 
 开发GoodsDao和Goods(商品号，名称，价格),完成对goods表的crud
 

@@ -1,8 +1,8 @@
-# 第19章 反射
+# 反射
 
-## 19.1 一个需求引出反射
+## 一个需求引出反射
 
-### 19.1.1 请看下面的问题
+### 请看下面的问题
 
 ![1628737217023](./images/Reflection/01.png)
 
@@ -67,17 +67,17 @@ public class ReflectionQuestion {
 
 ```
 
-## 19.2 反射机制
+## 反射机制
 
-### 19.2.1 Java Reflection
+### Java Reflection
 
 ![1628738706616](./images/Reflection/02.png)
 
-### 19.2.2 Java 反射机制原理示意图!!!
+### Java 反射机制原理示意图!!!
 
 ![1628738845275](./images/Reflection/03.png)
 
-### 19.2.3 Java 反射机制可以完成
+### Java 反射机制可以完成
 
 1. <font color=#0099ff size=4 face="黑体">在运行时判断任意一个对象所属的类</font>
 2. <font color=#0099ff size=4 face="黑体">在运行时构造任意一个类的对象</font>
@@ -85,7 +85,7 @@ public class ReflectionQuestion {
 4. <font color=#0099ff size=4 face="黑体">在运行时调用任意一个对象的成员变量和方法</font>
 5. <font color=#0099ff size=4 face="黑体">生成动态代理</font>
 
-### 19.2.4 反射相关的主要类
+### 反射相关的主要类
 
 1. <font color=#0099ff size=4 face="黑体">java.lang.Class:代表一个类，Class对象表示某个类加载后在堆中的对象</font>
 2. <font color=#0099ff size=4 face="黑体">java.lang.reflect.Method:代表类的方法, Method对象表示某个类的方法</font>
@@ -151,7 +151,7 @@ public class Reflection01  {
 }
 ```
 
-### 19.2.5 反射优点和缺点
+### 反射优点和缺点
 
 + <font color=#0099ff size=4 face="黑体">优点:可以动态的创建和使用对象(也是框架底层核心),使用灵活,没有反射机制,框架技术就失去底层支撑。</font>
 + <font color=#0099ff size=4 face="黑体">缺点:使用反射基本是解释执行,对执行速度有影响.</font>
@@ -230,9 +230,9 @@ public class Reflection02 {
 
 ```
 
-## 19.3 Class类
+## Class类
 
-### 19.3.1 基本介绍
+### 基本介绍
 
 ![1628864464104](./images/Reflection/04.png)
 
@@ -283,11 +283,11 @@ public class Class01 {
 
 ```
 
-### 19.3.2 Class类的常用方法
+### Class类的常用方法
 
 ![1628864590557](./images/Reflection/05.png)
 
-### 19.3.3 应用实例
+### 应用实例
 
 + 代码演示：
 
@@ -340,7 +340,7 @@ public class Class02 {
 
 ```
 
-## 19.4 获取Class对象
+## 获取Class对象
 
 ![1628907042040](./images/Reflection/06.png)
 
@@ -405,9 +405,9 @@ public class GetClass_ {
 }
 ```
 
-## 19.5 那些类型有Class对象
+## 那些类型有Class对象
 
-### 19.5.1 如下类型有 Class 对象
+### 如下类型有 Class 对象
 
 1. <font color=#0099ff size=4 face="黑体">外部类,成员内部类,静态内部类，局部内部类，匿名内部类</font>
 2. <font color=#0099ff size=4 face="黑体">interface:接口</font>
@@ -416,7 +416,7 @@ public class GetClass_ {
 5. <font color=#0099ff size=4 face="黑体">annotation:注解基本数据类型</font>
 6. <font color=#0099ff size=4 face="黑体">void</font>
 
-### 19.5.2 应用实例
+### 应用实例
 
 + 代码演示:
 
@@ -460,16 +460,16 @@ public class AllTypeClass {
 
 ```
 
-## 19.6 类加载
+## 类加载
 
-### 19.6.1 基本说明
+### 基本说明
 
 **反射机制是java实现动态语言的关键，也就是通过反射实现类动态加载。**
 
 1. <font color=#0099ff size=4 face="黑体">静态加载:编译时加载相关的类，如果没有则报错,依赖性太强</font>
 2. <font color=#0099ff size=4 face="黑体">动态加载:运行时加载需要的类，如果运行时不用该类，即使不存在该类，则不报错，降低了依赖性</font>
 
-### 19.6.2 类加载时机
+### 类加载时机
 
 1. <font color=#0099ff size=4 face="黑体">当创建对象时(new )//静态加载</font>
 2. <font color=#0099ff size=4 face="黑体">当子类加载时，父类也加载//静态加载</font>
@@ -478,23 +478,23 @@ public class AllTypeClass {
 
 Class.forName("com.test.Cat");
 
-### 19.6.3 类加载过程图
+### 类加载过程图
 
 ![1628933349045](./images/Reflection/07.png)
 
-### 19.6.4 类加载各阶段完成任务
+### 类加载各阶段完成任务
 
 ![1628933948808](./images/Reflection/08.png)
 
-### 19.6.5 加载阶段
+### 加载阶段
 
 ![1628933983399](./images/Reflection/09.png)
 
-### 19.6.6 连接阶段-验证
+### 连接阶段-验证
 
 ![1628935309699](./images/Reflection/10.png)
 
-### 19.6.7 连接阶段-准备
+### 连接阶段-准备
 
 <font color=#0099ff size=4 face="黑体">JVM 会在该阶段对静态变量，分配内存并默认初始化(对应数据类型的默认初始值，如0、OL、null、false等)。这些变量所使用的内存都将在方法区中进行分配</font>
 
@@ -528,11 +528,11 @@ class A {
 
 ```
 
-### 19.6.8 连结阶段-解析
+### 连结阶段-解析
 
 **虚拟机将常量池内的符号引用替换为直接引用的过程**
 
-### 19.6.9 Initialization（初始化)
+### Initialization（初始化)
 
 ![1628940125547](./images/Reflection/11.png)
 
@@ -593,21 +593,21 @@ class B{
 
 ```
 
-## 19.7 通过反射获取类的结构信息
+## 通过反射获取类的结构信息
 
-### 19.7.1 第一组: java.lang.Class 类
+### 第一组: java.lang.Class 类
 
 ![1628940234149](./images/Reflection/12.png)
 
-### 19.7.2 第二组：java.lang.reflect.Field 类
+### 第二组：java.lang.reflect.Field 类
 
 ![1628942458112](./images/Reflection/13.png)
 
-### 19.7.3 第三组: java.lang.reflect.Method 类
+### 第三组: java.lang.reflect.Method 类
 
 ![1628942513039](./images/Reflection/14.png)
 
-### 19.7.4 第四组: java.lang.reflect.Constructor 类 
+### 第四组: java.lang.reflect.Constructor 类 
 
 ![1628942544802](./images/Reflection/15.png)
 
@@ -767,7 +767,7 @@ class Person extends A implements IA,IB{
 }
 ```
 
-## 19.8 通过反射创建对象
+## 通过反射创建对象
 
 1. <font color=#DC4040 size=4 face="黑体">方式一:调用类中的public修饰的无参构造器</font>
 2. <font color=#DC4040 size=4 face="黑体">方式二:调用类中的指定构造器</font>
@@ -779,7 +779,7 @@ class Person extends A implements IA,IB{
    + <font color=#DC4040 size=4 face="黑体">setAccessible:暴破</font>
    + <font color=#DC4040 size=4 face="黑体">(Object...obj):调用构造器</font>
 
-### 19.8.1 案例演示
+### 案例演示
 
 > 测试 1：通过反射创建某类的对象，要求该类中必须有 public 的无参构造 
 
@@ -858,9 +858,9 @@ class User{//User类
 }
 ```
 
-## 19.9 通过反射访问类中的成员
+## 通过反射访问类中的成员
 
-### 19.9.1 访问属性
+### 访问属性
 
 ![1628946583945](./images/Reflection/16.png)
 
@@ -919,7 +919,7 @@ class Student{//类
 }
 ```
 
-### 19.9.2 访问方法
+### 访问方法
 
 ![1628946647507](./images/Reflection/17.png)
 
@@ -990,7 +990,7 @@ class Boss {
 }
 ```
 
-## 19.10 本章作业
+## 本章作业
 
 ![1628948811440](./images/Reflection/18.png)
 

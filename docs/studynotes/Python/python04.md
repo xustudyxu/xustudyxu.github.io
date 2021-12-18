@@ -211,7 +211,7 @@ num_b=int(input('请输入第二个整数:'))
 else:
     print(num_a,'小于',num_b)'''
 print('需要使用条件表达式:')
-print(  str(inum_a)+'大于等于'+str(num_b) if num_a>=num_b else str(num_a)+'小于'+str(num_b) )
+print(  str(num_a)+'大于等于'+str(num_b) if num_a>=num_b else str(num_a)+'小于'+str(num_b) )
 ```
 
 ## 4.4 pass 语句

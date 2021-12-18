@@ -1,6 +1,6 @@
-# 第11章 枚举和注解
+# 枚举和注解
 
-## 11.1 先看一个需求
+## 先看一个需求
 
 ```java
 package com.study.study13enum_;
@@ -45,25 +45,25 @@ class Season{
 }
 ```
 
-## 11.2 分析问题
+## 分析问题
 
-### 11.2.1 创建 Season 对象有如下特点
+### 创建 Season 对象有如下特点
 
 1. 季节的值是有限的几个值(spring, summer, autumn, winter)
 2. 只读，不需要修改。
 
-## 11.3 解决方案-枚举
+## 解决方案-枚举
 
 1. <font color=#FF1493 size=4>枚举对应英文(enumeration, 简写 enum)</font>
 2. <font color=#FF1493 size=4>枚举是一组常量的集合。</font>
 3. <font color=#FF1493 size=4>可以这里理解：枚举属于一种特殊的类，里面只包含一组有限的特定的对象。</font>
 
-## 11.4 枚举的二种实现方式
+## 枚举的二种实现方式
 
 1. <font color=#FF1493 size=4>自定义类实现枚举</font>
 2. <font color=#FF1493 size=4>使用 enum 关键字实现枚举 </font>
 
-## 11.5 自定义类实现枚举-应用案例
+## 自定义类实现枚举-应用案例
 
 1. <font color=#FF1493 size=4>不需要提供setXxx方法,因为枚举对象值通常为只读.</font>
 2. <font color=#FF1493 size=4>对枚举对象/属性使用 final + static共同修饰,实现底层优化.</font>
@@ -122,18 +122,18 @@ class Season1 {
 }
 ```
 
-## 11.6 自定义类实现枚举-小结
+## 自定义类实现枚举-小结
 
-### 11.6.1 小结：进行自定义类实现枚举，有如下特点：
+### 小结：进行自定义类实现枚举，有如下特点：
 
 1. <font color=#FF1493 size=4>构造器私有化 </font>
 2. <font color=#FF1493 size=4>本类内部创建一组对象[四个 春夏秋冬]</font>
 3. <font color=#FF1493 size=4>对外暴露对象（通过为对象添加 public final static 修饰符）</font>
 4. <font color=#FF1493 size=4>可以提供 get 方法，但是不要提供 set</font>
 
-## 11.7 enum 关键字实现枚举-快速入门 
+## enum 关键字实现枚举-快速入门 
 
-### 11.7.1 说明
+### 说明
 
 ```java
 package com.study.study13enum_;
@@ -191,7 +191,7 @@ enum Season2{
 }
 ```
 
-### 11.7.2  enum 关键字实现枚举注意事项
+### enum 关键字实现枚举注意事项
 
 1. <font color=#FF1493 size=4>当我们使用 enum 关键字开发一个枚举类时，默认会继承 Enum 类, 而且是一个 final 类</font>
 2. <font color=#FF1493 size=4>传统的 public static final Season2 SPRING = new Season2("春天", "温暖"); 简化成 SPRING("春天", "温暖")， 这里必 须知道，它调用的是哪个构造器</font>
@@ -199,7 +199,7 @@ enum Season2{
 4. <font color=#FF1493 size=4>当有多个枚举对象时，使用,间隔，最后有一个分号结尾</font>
 5. <font color=#FF1493 size=4>枚举对象必须放在枚举类的行首.</font>
 
-## 11.8 enum 常用方法应用实例 
+## enum 常用方法应用实例 
 
 1. **toString:Enum 类已经重写过了，返回的是当前对象名,子类可以重写该方法，用于返回对象的属性信息**
 2. **name：返回当前对象名（常量名），子类中不能重写**
@@ -296,7 +296,7 @@ enum Week{
 }
 ```
 
-## 11.9 enum 实现接口
+## enum 实现接口
 
 1. <font color=#FF1493 size=4>使用 enum 关键字后，就不能再继承其它类了，因为 enum 会隐式继承 Enum，而 Java 是单继承机制。</font>
 2. <font color=#FF1493 size=4>枚举类和普通类一样，可以实现接口，如下形式。 enum 类名 implements 接口 1，接口 2{}</font>
@@ -327,13 +327,13 @@ interface IPlaying{
 }
 ```
 
-## 11.10 注解的理解
+## 注解的理解
 
 1. <font color=#FF1493 size=4>注解(Annotation)也被称为元数据(Metadata)，用于修饰解释 包、类、方法、属性、构造器、局部变量等数据信息。</font>
 2. <font color=#FF1493 size=4>和注释一样，注解不影响程序逻辑，但注解可以被编译或运行，相当于嵌入在代码中的补充信息。</font>
 3. <font color=#FF1493 size=4>在 JavaSE 中，注解的使用目的比较简单，例如标记过时的功能，忽略警告等。在 JavaEE 中注解占据了更重要的角 色，例如用来配置应用程序的任何切面，代替 java EE 旧版中所遗留的繁冗代码和 XML 配置等。</font> 
 
-## 11.11 基本的 Annotation 介绍 
+## 基本的 Annotation 介绍 
 
 使用 Annotation 时要在其前面增加 @ 符号, 并把该 Annotation 当成一个修饰符使用。用于修饰它支持的程序元 
 
@@ -345,9 +345,9 @@ interface IPlaying{
 2. @Deprecated: 用于表示某个程序元素(类, 方法等)已过时
 3. @SuppressWarnings: 抑制编译器警告
 
-## 11.12 基本的 Annotation 应用案例
+## 基本的 Annotation 应用案例
 
-### 11.12.1 @Override 注解的案例
+### @Override 注解的案例
 
 ![1629009241789](./images/11/01.png)
 
@@ -388,7 +388,7 @@ class Son extends Father{
 
 ![1629009305220](./images/11/02.png)
 
-### 11.12.2 @Deprecated 注解的案例
+### @Deprecated 注解的案例
 
 + 代码演示：
 
@@ -429,7 +429,7 @@ class A{
 
 ```
 
-### 11.12.3 @SuppressWarnings 注解的案例
+### @SuppressWarnings 注解的案例
 
 + 代码演示：
 
@@ -471,13 +471,13 @@ public class SuppressWarnings_ {
 
 ![1629009432965](./images/11/03.png)
 
-## 11.13 JDK 的元 Annotation
+## JDK 的元 Annotation
 
-### 11.13.1 元注解的基本介绍
+### 元注解的基本介绍
 
 JDK 的元 Annotation 用于修饰其他 Annotation
 
-### 11.13.2 元注解的种类
+### 元注解的种类
 
 1. Retention //指定注解的作用范围，三种 SOURCE,CLASS,RUNTIME 
 2. Target // 指定注解可以在哪些地方使用 

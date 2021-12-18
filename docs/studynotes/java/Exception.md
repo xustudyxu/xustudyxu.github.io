@@ -1,6 +1,6 @@
-# 第12章 异常-Exception
+# 异常-Exception
 
-## 12.1 看个实际的问题和一段代码
+## 看个实际的问题和一段代码
 
 运行下面的代码，看看有什么问题-> 引出异常和异常处理机制
 
@@ -13,7 +13,7 @@ public static void main(String[] args) {
     System.out.println("程序继续执行...");
 ```
 
-## 12.2 解决方案-异常捕获
+## 解决方案-异常捕获
 
 <font color=#0099ff size=4 face="黑体">对异常进行捕获，保证程序可以继续运行.</font>
 
@@ -43,7 +43,7 @@ public class Exception01 {
 
 ```
 
-## 12.3 异常介绍
+## 异常介绍
 
 **Java语言中，将程序执行中发生的不正常情况称为“异常”。**(开发过程中的语法错误和逻辑错误不是异常)
 
@@ -54,22 +54,22 @@ public class Exception01 {
    + <font color=#0099ff size=4 face="黑体">运行时异常[程序运行时，发生的异常]</font>
    + <font color=#0099ff size=4 face="黑体">编译时异常[编程时,编译器检查出的异常]。</font>
 
-## 12.4 异常体系图一览
+## 异常体系图一览
 
-### 12.4.1 异常体系图
+### 异常体系图
 
 ![1627631007253](./images/Exception/01.png)
 
-### 12.4.2 异常体系图的小结
+### 异常体系图的小结
 
 1. <font color=#0099ff size=4 face="黑体">异常分为两大类，运行时异常和编译时异常.</font>
 2. <font color=#0099ff size=4 face="黑体">运行时异常，编译器检查不出来。一般是指编程时的逻辑错误，是程序员应该避免其出现的异常。java.lang.RuntimeException类及它的子类都是运行时异常</font>
 3. <font color=#0099ff size=4 face="黑体">对于运行时异常，可以不作处理，因为这类异常很普遍，若全处理可能会对程序的可读性和运行效率产生影响</font>
 4. <font color=#0099ff size=4 face="黑体">编译时异常，是编译器要求必须处置的异常。</font>
 
-## 12.5 常见的运行时异常
+## 常见的运行时异常
 
-### 12.5.1 常见的运行时异常包括
+### 常见的运行时异常包括
 
 + **NullPointerException 空指针异常**
 + **ArithmeticException 数学运算异常**
@@ -77,7 +77,7 @@ public class Exception01 {
 + **ClassCastException 类型转换异常**
 + **NumberFormatException 数字格式不正确异常**
 
-### 12.5.2 常见的运行时异常举例
+### 常见的运行时异常举例
 
 ```java
 package com.study.study15exception_.try_.Exception_;
@@ -135,13 +135,13 @@ public class NumberFormatException_ {
 
 ```
 
-## 12.6 编译异常
+## 编译异常
 
-### 12.6.1 介绍
+### 介绍
 
 **编译异常是指在编译期间，就必须处理的异常，否则代码不能通过编译.**
 
-### 12.6.2 常见的编译异常
+### 常见的编译异常
 
 + **SQLException/操作数据库时，查询表可能发生异常**
 + **IOException//操作文件时，发生的异常**
@@ -150,7 +150,7 @@ public class NumberFormatException_ {
 + **EOFException//操作文件，到文件未尾,发生异常**
 + **lllegalArguementException//参数异常**
 
-### 12.6.3 案列说明
+### 案列说明
 
 + 代码演示：
 
@@ -179,13 +179,13 @@ public class Exception02 {
 
 ```
 
-## 12.8 异常处理
+## 异常处理
 
-### 12.8.1 基本介绍
+### 基本介绍
 
 **异常处理就是当异常发生时，对异常处理的方式。**
 
-### 12.8.2 异常处理的方式
+### 异常处理的方式
 
 1. **try-catch-finally**
 
@@ -195,19 +195,19 @@ public class Exception02 {
 
 + <font color=#0099ff size=4 face="黑体">将发生的异常抛出，交给调用者(方法)来处理，最顶级的处理者就是JVM</font>
 
-### 12.8.3 示意图
+### 示意图
 
 ![1627632697263](./images/Exception/02.png)
 
 ![1627632710475](./images/Exception/03.png)
 
-## 12.9 try-catch 异常处理
+## try-catch 异常处理
 
-### 12.9.1 try-catch 方式处理异常说明 
+### try-catch 方式处理异常说明 
 
 ![1627632756686](./images/Exception/04.png)
 
-### 12.9.2 try-catch 方式处理异常-快速入门
+### try-catch 方式处理异常-快速入门
 
 + 代码演示：
 
@@ -242,7 +242,7 @@ public class Exception01 {
 
 ```
 
-### 12.9.3 try-catch 方式处理异常-注意事项
+### try-catch 方式处理异常-注意事项
 
 ![1627632908699](./images/Exception/05.png)
 
@@ -272,7 +272,7 @@ public class TryCatchDetail01 {
 
 ```
 
-### 12.9.4 异常处理课堂练习
+### 异常处理课堂练习
 
 ```java
 package com.study.study15exception_.try_;
@@ -376,12 +376,12 @@ public class TryCatchExercise03 {
 }
 ```
 
-### 12.9.5 try-catch-finally 执行顺序小结
+### try-catch-finally 执行顺序小结
 
 1. <font color=#0099ff size=4 face="黑体">如果没有出现异常，则执行try块中所有语句，不执行catch块中语句，如果有finally，最后还需要执行finally里面的语句</font>
 2. <font color=#0099ff size=4 face="黑体">如果出现异常，则try块中异常发生后，try块剩下的语句不再执行。将执行catch块中的语句，如果有finally,最后还需要执行finally里面的语句!</font>
 
-### 12.9.6 课后练习题
+### 课后练习题
 
 ```java
 package com.study.study15exception_.try_;
@@ -418,14 +418,14 @@ public class TryCatchExercise04 {
 
 ```
 
-## 12.10 throws 异常处理
+## throws 异常处理
 
-### 12.10.1 基本介绍
+### 基本介绍
 
 1. <font color=#0099ff size=4 face="黑体">如果一个方法(中的语句执行时)可能生成某种异常，但是并不能确定如何处理这种异常，则此方法应显示地声明抛出异常,表明该方法将不对这些异常进行处理,而由该方法的调用者负责处理。</font>
 2. <font color=#0099ff size=4 face="黑体">在方法声明中用throws语句可以声明抛出异常的列表，throws后面的异常类型可以是方法中产生的异常类型,也可以是它的父类。</font>
 
-### 12.10.2 快速入门案例
+### 快速入门案例
 
 + 代码演示:
 
@@ -453,7 +453,7 @@ public class Throws01 {
 
 ```
 
-### 12.10.3 注意事项和使用细节
+### 注意事项和使用细节
 
 ![1627633409022](./images/Exception/06.png)
 
@@ -521,13 +521,13 @@ class Son extends Father{
 }
 ```
 
-## 12.11 自定义异常
+## 自定义异常
 
-### 12.11.1 基本概念
+### 基本概念
 
 **当程序中出现了某些“错误”，但该错误信息并没有在Throwable子类中描述处理，这个时候可以自己设计异常类,用于描述该错误信息。**
 
-### 12.11.2 自定义异常的步骤
+### 自定义异常的步骤
 
 ![1627633622128](./images/Exception/07.png)
 
@@ -557,16 +557,16 @@ class AgeException extends RuntimeException{
 }
 ```
 
-## 12.12 throw 和 throws 的区别
+## throw 和 throws 的区别
 
-### 12.12.1 一览表
+### 一览表
 
 |        | 意义                     | 位置       | 后面跟的东西 |
 | :----- | ------------------------ | ---------- | ------------ |
 | throws | 异常处理的一种方式       | 方法声明处 | 异常类型     |
 | throw  | 手动生成异常对象的关键字 | 方法体中   | 异常对象     |
 
-### 12.12.2 测试题
+### 测试题
 
 + 代码演示：
 
@@ -605,7 +605,7 @@ class ReturnExceptionDemo{
 }
 ```
 
-## 12.13 本章作业
+## 本章作业
 
 ```java
 package com.study.study15exception_.homework;

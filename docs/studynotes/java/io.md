@@ -1,18 +1,18 @@
-# 第17章 IO流
+# IO流
 
-## 17.1 文件
+## 文件
 
-### 17.1.1 什么是文件
+### 什么是文件
 
 ![1626448932600](./images/io/01.png)
 
-### 17.1.2 文件流
+### 文件流
 
 ![1626449508852](./images/io/02.png)
 
-## 17.2 常用的文件操作
+## 常用的文件操作
 
-### 17.2.1 创建文件对象相关构造器和方法
+### 创建文件对象相关构造器和方法
 
 ![1626498050974](./images/io/03.png)
 
@@ -79,11 +79,11 @@ public class FileCreate {
 
 ```
 
-### 17.2.2 获取文件的相关信息
+### 获取文件的相关信息
 
 ![1626521483774](./images/io/04.png)
 
-### 17.2.3 应用案例演示 FileInformation.java
+### 应用案例演示 FileInformation.java
 
 + 代码演示:
 
@@ -117,11 +117,11 @@ public class FileInformation {
 
 ```
 
-### 17.2.4 目录的操作和文件删除
+### 目录的操作和文件删除
 
 ![1626531143726](./images/io/05.png)
 
-### 17.2.5 应用案例演式
+### 应用案例演式
 
 1. 判断e:\\\news1.txt是否存在，如果存在就删除
 2. 判断 D:\\\demo02是否存在，存在就删除,否则提示不存在
@@ -200,9 +200,9 @@ public class Directory {
 
 ```
 
-## 17.3 IO 流原理及流的分类
+## IO 流原理及流的分类
 
-### 17.3.1 Java IO 流原理
+### Java IO 流原理
 
 1. **I/O是Input/Output的缩写，I/O技术是非常实用的技术，用于处理数据传输。如读/写文件，网络通讯等。**
 2. **Java程序中，对于数据的输入/输出操作以”流(stream)”的方式进行。**
@@ -210,13 +210,13 @@ public class Directory {
 4. **输入input:读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。**
 5. **输出output:将程序(内存)数据输出到磁盘、光盘等存储设备中。**
 
-### 17.3.2 流的分类
+### 流的分类
 
 ![1626611641648](./images/io/06.png)
 
-## 17.4 IO 流体系图-常用的类
+## IO 流体系图-常用的类
 
-### 17.4.1 FileInputStream 介绍
+### FileInputStream 介绍
 
 1 . IO流体系图
 
@@ -227,7 +227,7 @@ public class Directory {
 ![1627202398567](./images/io/08.png)
 
 
-### 17.4.2 FileInputStream 应用实例
+### FileInputStream 应用实例
 
 + 代码演示
 
@@ -319,11 +319,11 @@ public class FileInputStream_ {
 
 ```
 
-### 17.4.3 FileOutputStream 介绍
+### FileOutputStream 介绍
 
 ![1627202456885](./images/io/09.png)
 
-### 17.4.4 FileOutputStream 应用实例
+### FileOutputStream 应用实例
 
 + 代码实现:
 
@@ -385,7 +385,7 @@ public class FileOutputStream_ {
 
 ```
 
-### 17.4.5 FileOutputStream 应用实例2
+### FileOutputStream 应用实例2
 
 + 代码演示:
 
@@ -446,11 +446,11 @@ public class FileCopy {
 
 ```
 
-### 17.4.6 FileReader 和 FileWriter 介绍
+### FileReader 和 FileWriter 介绍
 
 ![1627204149372](./images/io/10.png)
 
-### 17.4.7 FileReader 和 FileWriter 应用案例：
+### FileReader 和 FileWriter 应用案例：
 
 + 代码实现：
 
@@ -603,17 +603,17 @@ public class FileWriter_ {
 
 ```
 
-## 17.5 节点流和处理流
+## 节点流和处理流
 
-### 17.5.1 基本介绍
+### 基本介绍
 
 ![1627208988651](./images/io/11.png)
 
-### 17.5.2 节点流和处理流一览图
+### 节点流和处理流一览图
 
 ![1627209018104](./images/io/12.png)
 
-### 17.5.3 节点流和处理流的区别和联系
+### 节点流和处理流的区别和联系
 
 1. **节点流是底层流/低级流,直接跟数据源相接**。
 2. **处理流(包装流)包装节点流，既可以消除不同节点流的实现差异，也可以提供更方
@@ -621,13 +621,13 @@ public class FileWriter_ {
 3. **处理流(也叫包装流)对节点流进行包装，使用了修饰器设计模式，不会直接与数据
    源相连[模拟修饰器设计模式=》小伙伴就会非常清楚.]**
 
-### 17.5.4 处理流的功能主要体现在以下两个方面:
+### 处理流的功能主要体现在以下两个方面:
 
 1. **性能的提高:主要以增加缓冲的方式来提高输入输出的效率。**
 2. **操作的便捷:处理流可能提供了一系列便捷的方法来一次输入输出大批量的数据,使
    用更加灵活方便。**
 
-### 17.5.5 处理流-BufferedReader 和 BufferedWriter
+### 处理流-BufferedReader 和 BufferedWriter
 
 + BufferedReader 和 BufferedWriter属于字符流，是按照字符来读取数据的
 + 关闭时处理流,只需要关闭外层流即可[后面看源码]
@@ -770,11 +770,11 @@ public class BufferedCopy_ {
 }
 ```
 
-### 17.5.6 处理流-BufferedInputStream 和 BufferedOutputStream
+### 处理流-BufferedInputStream 和 BufferedOutputStream
 
 ![1627351629104](./images/io/13.png)
 
-### 17.5.7 介绍 BufferedOutputStream
+### 介绍 BufferedOutputStream
 
 ![1627351662349](./images/io/14.png)
 
@@ -835,7 +835,7 @@ public class BufferedCopy02 {
 
 ```
 
-### 17.5.8 对象流-ObjectInputStream 和 ObjectOutputStream 
+### 对象流-ObjectInputStream 和 ObjectOutputStream 
 
 >看一个需求
 >
@@ -852,7 +852,7 @@ public class BufferedCopy02 {
 
 ![1627367911763](./images/io/15.png)
 
-### 17.5.9 对象流介绍
+### 对象流介绍
 
 + 功能：**提供了对基本类型或对象类型的序列化和反序列化的方法 **
 + **ObjectOutputStream 提供 序列化功能** 
@@ -1026,11 +1026,11 @@ public class ObjectOutStream_ {
 
 ![1627371985522](./images/io/18.png)
 
-### 17.5.10 标准输入输出流
+### 标准输入输出流
 
 ![1627372018926](./images/io/19.png)
 
-### 17.5.11 转换流-InputStreamReader 和 OutputStreamWriter
+### 转换流-InputStreamReader 和 OutputStreamWriter
 
 ![1627372076554](./images/io/20.png)
 
@@ -1109,7 +1109,7 @@ public class OutputStreamWriter_ {
 
 ```
 
-## 17.6 打印流-PrintStream 和 PrintWriter 
+## 打印流-PrintStream 和 PrintWriter 
 
 ![1627377276214](./images/io/21.png)
 
@@ -1186,9 +1186,9 @@ public class PrintWriter_ {
 
 ```
 
-## 17.7 Properties 类
+## Properties 类
 
-### 17.7.1 看一个需求
+### 看一个需求
 
 > 如下一个配置文件 mysql.p'roperties
 >
@@ -1242,11 +1242,11 @@ public class Properties01 {
 
 ```
 
-### 17.7.2 基本介绍
+### 基本介绍
 
 ![1627380172001](./images/io/23.png)
 
-### 17.7.3 应用案例
+### 应用案例
 
 1. 使用Properties类完成对mysql.properties的读取,看老师代码演示
 2. 使用Properties类添加key-val 到新文件mysql2.properties中

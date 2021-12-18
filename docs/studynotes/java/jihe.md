@@ -1,10 +1,10 @@
-# 第14章 集合
+# 集合
 
-## 14.1 集合的理解和好处
+## 集合的理解和好处
 
 + 前面我们保存多个数据使用的是数组，那么数组有不足的地方，我们分析一下
 
-### 14.1.1 数组
+### 数组
 
 1. 长度开始时必须指定，而且一旦指定，不能更改
 2. 保存的必须为同一类型的元素
@@ -17,13 +17,13 @@
    + pers2[pers2.length-1]=new Person();
    + //添加新的对象
 
-### 14.1.2 集合
+### 集合
 
 1. 可以**动态保存**任意多个对象，使用比较方便!
 2. 提供了一系列方便的操作对象的方法:add、remove. set、get等
 3. 使用集合添加,删除新元素的示意代码-简洁了
 
-## 14.2 集合的框架体系
+## 集合的框架体系
 
 + Java 的集合类很多，主要分为两大类，如图
 
@@ -60,9 +60,9 @@ public class Collection_ {
 
 ```
 
-## 14.3 Collection 接口和常用方法
+## Collection 接口和常用方法
 
-### 14.3.1 Collection 接口实现类的特点
+### Collection 接口实现类的特点
 
 + public interface Collection\<E\> extends Iterable\<E\>
 
@@ -130,7 +130,7 @@ public class CollectionMethod {
 
 ```
 
-### 14.3.2 Collection 接口遍历元素方式 1-使用 Iterator(迭代器)
+### Collection 接口遍历元素方式 1-使用 Iterator(迭代器)
 
 1. **lterator对象称为迭代器，主要用于遍历 Collection集合中的元素。**
 2. **所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了lterator接口的对象,即可以返回一个迭代器。**
@@ -234,7 +234,7 @@ class Book{
 }
 ```
 
-### 14.3.3 Collection 接口遍历对象方式 2-for 循环增强
+### Collection 接口遍历对象方式 2-for 循环增强
 
 ![1626614841288](./images/jihe/09.png)
 
@@ -333,7 +333,7 @@ class Book{
 }
 ```
 
-### 14.3.4 课堂练习
+### 课堂练习
 
 1. 创建3个Dog {name, age}对象，放入到 ArrayList中，赋给List 引用用迭代器和增强for循环两种方式来遍历
 2. 重写Dog的toString方法，输出name和age
@@ -401,9 +401,9 @@ class Dog{
 }
 ```
 
-## 14.4 List 接口和常用方法
+## List 接口和常用方法
 
-### 14.4.1 List 接口基本介绍
+### List 接口基本介绍
 
 ![1626615042973](./images/jihe/11.png)
 
@@ -435,7 +435,7 @@ public class List_ {
 
 ```
 
-### 14.4.2  List 接口的常用方法
+### List 接口的常用方法
 
 + 代码演示：
 
@@ -494,7 +494,7 @@ public class ListMethod {
 
 ```
 
-### 14.4.3 List 接口课堂练习
+### List 接口课堂练习
 
 添加10个以上的元素(比如String "hello" )，在2号位插入一个元素"韩顺平教育"，获得第5个元素，删除第6个元素，修改第7个元素，在使用迭代器遍历集合，要求:使用List的实现类ArrayList完成。
 
@@ -544,7 +544,7 @@ public class ListExercise {
 
 ```
 
-### 14.4.4 List 的三种遍历方式[ArrayList,LinkedList,Vector]
+### List 的三种遍历方式[ArrayList,LinkedList,Vector]
 
 1. **方式一:使用iterator
    lterator iter = col.iterator();
@@ -601,7 +601,7 @@ public class ListFor {
 
 ```
 
-### 14.4.5 实现类的课堂练习
+### 实现类的课堂练习
 
 ListExercise02.java 5min
 使用List的实现类添加三本图书，并遍历，打印如下效果
@@ -709,9 +709,9 @@ class Book{
 }
 ```
 
-## 14.5 ArrayList 底层结构和源码分析
+## ArrayList 底层结构和源码分析
 
-### 14.5.1 ArrayList 的注意事项
+### ArrayList 的注意事项
 
 1. **permits all elements, including null , ArrayList可以加入null,并且多个**
 2. **ArrayList是由数组来实现数据存储的[后面老师解读源码]**
@@ -748,7 +748,7 @@ public class ArrayListDetail {
 
 ```
 
-### 14.5.2 ArrayList 的底层操作机制源码分析(重点，难点.)
+### ArrayList 的底层操作机制源码分析(重点，难点.)
 
 + 代码演示:
 
@@ -835,9 +835,9 @@ public class ArrayListSource {
 
 ```
 
-## 14.6 Vector 底层结构和源码剖析
+## Vector 底层结构和源码剖析
 
-### 14.6.1 Vector 的基本介绍
+### Vector 的基本介绍
 
 ![1626615955909](./images/jihe/16.png)
 
@@ -905,22 +905,22 @@ public class Vector_ {
 
 ```
 
-### 14.6.2 Vector 和 ArrayList 的比较
+### Vector 和 ArrayList 的比较
 
 |           |     底层结构     |  版本  | 线程安全(同步)效率 | 扩容倍数                                                     |
 | :-------: | :--------------: | :----: | :----------------: | ------------------------------------------------------------ |
 | ArrayList |     可变数组     | jdk1.2 |   不安全，效率高   | 如果有参构造器1.5倍 。  \|   如果是无参：1.第一次10   2.从第二次开始按1.5倍。 |
 |  Vector   | 可变数组Object[] | jdk1.0 |   安全，效率不高   | 如果是无参，默认10，满后就按2倍扩容。\|   如果指定大小，则每次直接按2倍扩容。 |
 
-## 14.7 LinkedList 底层结构
+## LinkedList 底层结构
 
-### 14.7.1 LinkedList 的全面说明
+### LinkedList 的全面说明
 
 1. **LinkedList底层实现了双向链表和双端队列特点 **
 2. **可以添加任意元素(元素可以重复),包括null**
 3. **线程不安全,没有实现同步**
 
-### 14.7.2 LinkedList 的底层操作机制
+### LinkedList 的底层操作机制
 
 1. **LinkedList底层维护了一个双向链表.**
 2. **LinkedList中维护了两个属性first和last分别指向首节点和尾节点****
@@ -1006,7 +1006,7 @@ class Node{
 }
 ```
 
-### 14.7.3 LinkedList 的增删改查案例
+### LinkedList 的增删改查案例
 
 + 代码演示:
 
@@ -1110,9 +1110,9 @@ public class LinkedListCRUD {
 
 ```
 
-## 14.8 ArrayList 和 LinkedList 比较
+## ArrayList 和 LinkedList 比较
 
-### 14.8.1 ArrayList 和 LinkedList 的比较
+### ArrayList 和 LinkedList 的比较
 
 |            | 底层结构 |     增删的效率     | 改查的效率 |
 | :--------: | -------- | :----------------: | :--------: |
@@ -1125,17 +1125,17 @@ public class LinkedListCRUD {
 3. **一般来说，在程序中，80%-90%都是查询，因此大部分情况下会选择ArrayList**
 4. **在一个项目中，根据业务灵活选择，也可能这样，一个模块使用的是ArrayList,另外一个模块是LinkedList,也就是说，要根据业务来进行选择**
 
-## 14.9 Set 接口和常用方法
+## Set 接口和常用方法
 
-### 14.9.1 Set 接口基本介绍
+### Set 接口基本介绍
 
 ![1626617170572](./images/jihe/19.png)
 
-### 14.9.2 Set 接口的常用方法
+### Set 接口的常用方法
 
 和 List 接口一样, Set 接口也是 Collection 的子接口，因此，常用方法和 Collection 接口一样.
 
-### 14.9.3 Set 接口的遍历方式
+### Set 接口的遍历方式
 
 + 同Collection的遍历方式一样，因为Set接口是Collection接口的子接口。
 
@@ -1143,7 +1143,7 @@ public class LinkedListCRUD {
 2. 增强for
 3. 不能使用索引的方式来获取.
 
-### 14.9.4 Set 接口的常用方法举例
+### Set 接口的常用方法举例
 
 + 代码演示:
 
@@ -1202,9 +1202,9 @@ public class SetMethod {
 
 ```
 
-## 14.10 Set 接口实现类-HashSet
+## Set 接口实现类-HashSet
 
-### 14.10.1 HashSet 的全面说明
+### HashSet 的全面说明
 
 1. **HastSet实现了Set接口**
 2. **HashSet实际上是HashMap**
@@ -1239,7 +1239,7 @@ public class Hashset_ {
 
 ```
 
-### 14.10.2 HashSet 案例说明
+### HashSet 案例说明
 
 看2个案列 虽然困难，但是很有意思
 
@@ -1304,7 +1304,7 @@ class Dog{//定义了Dog类
 }
 ```
 
-### 14.10.3 HashSet 底层机制说明
+### HashSet 底层机制说明
 
 1. **分析HashSet底层是HashMap, HashMap底层是(数组+链表+红黑树)**
 2. **HashSetStructure.java 为了让大家真正理解，老韩模拟简单的数组+链表结构**
@@ -1435,7 +1435,7 @@ public class HashsetSource {
  */
 ```
 
-### 14.10.4 HashSet 课堂练习 1
+### HashSet 课堂练习 1
 
 定义一个Employee类，该类包含:private成员属性name,age要求:
 
@@ -1515,7 +1515,7 @@ class Employee{
 }
 ```
 
-### 14.10.5 HashSet 课后练习 2
+### HashSet 课后练习 2
 
 定义一个Employee类，该类包含：private成员属性name，salbirthday(MyDate类型),其中birthday为Mydate类型(属性包括:year,month,day),
    + 要求：
@@ -1663,9 +1663,9 @@ class MyDate{
 }
 ```
 
-## 14.11 Set 接口实现类-LinkedHashSet
+## Set 接口实现类-LinkedHashSet
 
-### 14.11.1 LinkedHashSet 的全面说明
+### LinkedHashSet 的全面说明
 
 1. **LinkedHashSet是 HashSet的子类**
 2. **LinkedHashSet底层是一个 LinkedHashMap，底层维护了一个数组+双向链表**
@@ -1729,7 +1729,7 @@ class Customer{
 }
 ```
 
-### 14.11.2 LinkedHashSet 课后练习题 
+### LinkedHashSet 课后练习题 
 
 Car类(属性:name,price)，如果name和price一样,则认为是相同元素，就不能添加。
 
@@ -1817,7 +1817,7 @@ class Car{
 }
 ```
 
-### 14.11.3 TreeSet底层机制及源码剖析
+### TreeSet底层机制及源码剖析
 
 + 代码演示：
 
@@ -1890,9 +1890,9 @@ public class TreeSet_ {
 
 ```
 
-## 14.12 Map 接口和常用方法
+## Map 接口和常用方法
 
-### 14.12.1 Map 接口实现类的特点 
+### Map 接口实现类的特点 
 
 1. **Map与Collection并列存在，用于保存具有映射关系的数据：Key-Value（双列元素)**
 2. **Map 中的 key 和 value 可以是任何引用数据类型，会封装到HashMap和$Node对象中**
@@ -1950,7 +1950,7 @@ public class Map_ {
 
 ![1626618495177](./images/jihe/28.png)
 
-### 14.12.2 Map 接口常用方法
+### Map 接口常用方法
 
 - 代码演示:
 
@@ -2014,7 +2014,7 @@ class Book0{
 }
 ```
 
-### 14.12.3 Map 接口遍历方法
+### Map 接口遍历方法
 
 1. **containsKey:查找键是否存在**
 2. **keySet:获取所有的键**
@@ -2106,7 +2106,7 @@ public class MapFor_ {
 
 ```
 
-### 14.12.4 Map 接口课堂练习
+### Map 接口课堂练习
 
 1. 使用HashMap添加3个员工对象，要求
 2. 键:员工id
@@ -2222,9 +2222,9 @@ class Emp{
 }
 ```
 
-## 14.13Map 接口实现类-HashMap
+## Map 接口实现类-HashMap
 
-### 14.13.1 HashMap 小结
+### HashMap 小结
 
 1. **Map接口的常用实现类:HashMap、Hashtable和Properties。**
 2. **HashMap是 Map 接口使用频率最高的实现类。**
@@ -2235,11 +2235,11 @@ class Emp{
 7. **HashMap没有实现同步，因此是线程不安全的,方法没有做同步互斥的操作，没有
    synchronized**
 
-### 14.13.2 HashMap 底层机制及源码剖析图
+### HashMap 底层机制及源码剖析图
 
 ![1626619482447](./images/jihe/32.png)
 
-### 14.13.3 HashMap 底层机制及源码剖析
+### HashMap 底层机制及源码剖析
 
 - 代码演示:
 
@@ -2361,9 +2361,9 @@ public class HashMapSource01 {
 
 ```
 
-## 14.14 Map 接口实现类-Hashtable
+## Map 接口实现类-Hashtable
 
-### 14.14.1 HashTable 的基本介绍)
+### HashTable 的基本介绍)
 
 1. 存放的元素是键值对：即k-v
 2. hashtable的键和值都不能为null，否则会抛出NullPointerException
@@ -2425,20 +2425,20 @@ public class HashTableExercise {
 
 ```
 
-### 14.14.2 Hashtable 和 HashMap 对比
+### Hashtable 和 HashMap 对比
 
 |           | 版本 | 线程安全(同步) | 效率 | 运行null键null值 |
 | :-------: | :--- | -------------- | :--- | :--------------- |
 |  HashMap  | 1.2  | 不安全         | 高   | 可以             |
 | Hashtable | 1.0  | 安全           |      | 不可以           |
 
-## 14.15 Map 接口实现类-Properties
+## Map 接口实现类-Properties
 
-### 14.15.1 基本介绍
+### 基本介绍
 
 ![1626620068385](./images/jihe/34.png)
 
-### 14.15.2 基本使用
+### 基本使用
 
 - 代码演示:
 
@@ -2486,18 +2486,18 @@ public class Properties_ {
 
 ```
 
-## 14.16总结-开发中如何选择集合实现类(记住)
+## 总结-开发中如何选择集合实现类(记住)
 
 ![1626620155686](./images/jihe/35.png)
 
-## 14.17 Collections 工具类
+## Collections 工具类
 
-### 14.17.1 Collections 工具类介绍
+### Collections 工具类介绍
 
 1. **Collections是一个操作 Set、List和 Map等集合的工具类**
 2. **Collections中提供了一系列静态的方法对集合元素进行排序、查询和修改等操作**
 
-### 14.17.2 排序操作：（均为 static 方法)
+### 排序操作：（均为 static 方法)
 
 ![1626620262312](./images/jihe/36.png)
 
@@ -2603,7 +2603,7 @@ public class Collections_ {
 }
 ```
 
-## 14.18 TreeMap底层机制及源码剖析
+## TreeMap底层机制及源码剖析
 
 - 代码实现：
 
@@ -2680,7 +2680,7 @@ public class TreeMap_ {
 
 ```
 
-## 14.19 本章作业
+## 本章作业
 
 ![1626620766139](./images/jihe/38.png)
 
