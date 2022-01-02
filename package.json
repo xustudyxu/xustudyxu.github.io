@@ -5,14 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  ,
+  "dev":"vuepress dev docs", "build":"vuepress build docs",
+    "deploy":"bash deploy.sh" },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mermaid": "^8.11.4"
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
+    "mermaid": "^8.11.4",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
-    "@vuepress/plugin-medium-zoom": "^1.8.2"
+    "@vuepress/plugin-medium-zoom": "^1.9.5",
+    "vuepress": "^1.9.5"
   }
 }

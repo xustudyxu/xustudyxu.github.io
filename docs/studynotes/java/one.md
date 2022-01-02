@@ -2,8 +2,14 @@ study java together:blue_heart:
 
 喜欢学习，喜欢记笔记:dog:
 
-<table><tr><td bgcolor=#FF6347>努力才会看到更好的自己以及才会遇到更好的人</td></tr></table>  
-作者观看的是B站韩顺平老师的Java ， 韩顺平老师是我的启蒙老师，感谢老师的课程和分享!
+<table><tr><td bgcolor=#FF6347>不积跬步,无以至千里.不积小流,无以成江海   --荀子</td></tr></table>  
++ JavaSE知识体系
 
-https://www.bilibili.com/video/BV1fh411y7R8?from=search&seid=1831060912083761326
+![An image](./images/11/04.png)
+
++ 使用github登录评论
+
+> 感谢b战韩顺平老师的课程与分享!
+
+<Vssue title="Vssue Demo1"/>
 

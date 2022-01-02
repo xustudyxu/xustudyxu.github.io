@@ -15,3 +15,7 @@ features:
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
++ 使用github或Vssue登录可评论
+
+<Vssue title="Vssue Demo10"/>
+
