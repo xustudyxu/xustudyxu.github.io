@@ -4,7 +4,6 @@ module.exports = [
     collapsable: true,
     children:[
     '/studynotes/java/oop',
-
       ]
   },{
     title:'Java 枚举和注解',

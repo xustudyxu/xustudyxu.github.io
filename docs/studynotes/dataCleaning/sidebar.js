@@ -13,6 +13,13 @@ module.exports = [
     '/studynotes/dataCleaning/01',
 
       ]
-  },
+  },{
+    title:'Pandas库',
+    collapsable: true,
+    children:[
+    '/studynotes/dataCleaning/02',
+
+      ]
+  }
   
 ]

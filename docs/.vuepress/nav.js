@@ -8,6 +8,13 @@ module.exports = [
           { text: 'JavaSE', link: '/studynotes/Java/one/' }
         ]
       }, {
+        text: 'JavaWeb',
+        items: [
+          { text: 'Servlet', link: '/studynotes/Servlet/one/' }
+
+        ]
+      },
+      {
         text: '主流框架',
         items: [
           { text: 'Spring5', link: '/studynotes/Spring5/one/' },

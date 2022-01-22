@@ -27,6 +27,20 @@ module.exports = [
     '/studynotes/Spring5/JdbcTemplate',
 
       ]
+  },{
+    title:'Spring5 事务',
+    collapsable: true,
+    children:[
+    '/studynotes/Spring5/affair',
+
+      ]
+  },{
+    title:'Spring5 新功能',
+    collapsable: true,
+    children:[
+    '/studynotes/Spring5/Spring5新功能',
+
+      ]
   }
   
 ]

@@ -48,7 +48,7 @@
 4. <font color=#0099ff size=3 face="黑体">在连接中可进行大数据量的传输</font>
 5. <font color=#0099ff size=3 face="黑体">传输完毕,需释放已建立的连接</font>,**效率低**
 
-![](/images/wl/01.gif)
+![](./images/wl/01.gif)
 
 + **UDP协议：用户数据协议**
 

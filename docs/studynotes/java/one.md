@@ -7,8 +7,6 @@ study java together:blue_heart:
 
 ![An image](./images/11/04.png)
 
-+ 使用github登录评论
-
 > 感谢b战韩顺平老师的课程与分享!
 
 <Vssue title="Vssue Demo1"/>

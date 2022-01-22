@@ -790,17 +790,17 @@ public class ArrayListSource {
                   grow(minCapacity);（2)如果elementData大小不够，就调用grow()去扩容
           }
 
-          //5.private void grow(int minCapacity) {                          //（1）真的扩容
-          //        // overflow-conscious code                              //（2）使用扩容机制确定要扩容到多大
-          //        int oldCapacity = elementData.length;                   //（3）第一次newCapacity=10
-          //        int newCapacity = oldCapacity + (oldCapacity >> 1);     //（4）第二次及其以后，按照1.5倍扩容
-          //        if (newCapacity - minCapacity < 0)                      //（5）扩容使用的是Arrays.copyOf() 会保留原有的数据
-          //            newCapacity = minCapacity;
-          //        if (newCapacity - MAX_ARRAY_SIZE > 0)
-          //            newCapacity = hugeCapacity(minCapacity);
-          //        // minCapacity is usually close to size, so this is a win:
-          //        elementData = Arrays.copyOf(elementData, newCapacity);
-          //    }
+        //5.private void grow(int minCapacity) {                          //（1）真的扩容
+        //        // overflow-conscious code                              //（2）使用扩容机制确定要扩容到多大
+        //        int oldCapacity = elementData.length;                   //（3）第一次newCapacity=10
+        //        int newCapacity = oldCapacity + (oldCapacity >> 1);     //（4）第二次及其以后，按照1.5倍扩容
+        //        if (newCapacity - minCapacity < 0)                      //（5）扩容使用的是Arrays.copyOf() 会保留原有的数据
+        //            newCapacity = minCapacity;
+        //        if (newCapacity - MAX_ARRAY_SIZE > 0)
+        //            newCapacity = hugeCapacity(minCapacity);
+        //        // minCapacity is usually close to size, so this is a win:
+        //        elementData = Arrays.copyOf(elementData, newCapacity);
+        //    }
 
 
          */
@@ -878,26 +878,26 @@ public class Vector_ {
                elementData[elementCount++] = e;
                return true;
     }
-         2.2//确定是否需要扩容条件：minCapacity-elementDate.length>0
-         private void ensureCapacityHelper(int minCapacity) {
-        // overflow-conscious code
-        if (minCapacity - elementData.length > 0)
-            grow(minCapacity);
-    }
-       2.3 //如果 需要的数组大小不够用，就扩容，扩容后的算法
-        private void grow(int minCapacity) {
-        // overflow-conscious code
-        int oldCapacity = elementData.length;
-        int newCapacity = oldCapacity + ((capacityIncrement > 0) ?
-                                         capacityIncrement : oldCapacity);
-          //就是扩容两倍
-        if (newCapacity - minCapacity < 0)
-            newCapacity = minCapacity;
-        if (newCapacity - MAX_ARRAY_SIZE > 0)
-            newCapacity = hugeCapacity(minCapacity);
-        elementData = Arrays.copyOf(elementData, newCapacity);
-    }
-          */
+          2.2//确定是否需要扩容条件：minCapacity-elementDate.length>0
+          private void ensureCapacityHelper(int minCapacity) {
+         // overflow-conscious code
+         if (minCapacity - elementData.length > 0)
+             grow(minCapacity);
+     }
+           2.3 //如果 需要的数组大小不够用，就扩容，扩容后的算法
+            private void grow(int minCapacity) {
+            // overflow-conscious code
+            int oldCapacity = elementData.length;
+            int newCapacity = oldCapacity + ((capacityIncrement > 0) ?
+                                             capacityIncrement : oldCapacity);
+              //就是扩容两倍
+            if (newCapacity - minCapacity < 0)
+                newCapacity = minCapacity;
+            if (newCapacity - MAX_ARRAY_SIZE > 0)
+                newCapacity = hugeCapacity(minCapacity);
+            elementData = Arrays.copyOf(elementData, newCapacity);
+        }
+              */
 
 
     }
@@ -1258,7 +1258,7 @@ public class Hashset01 {
         //1.在执行add方法后，会返回一个boolean值
         //2.如果添加成功，返回true，否则返回false
         //3.可以通过remove指定删除某个对象
-       System.out.println(set.add("john"));//T
+        System.out.println(set.add("john"));//T
         System.out.println(set.add("lucy"));//T
         System.out.println(set.add("john"));//F
         System.out.println(set.add("jack"));//T
@@ -1345,19 +1345,26 @@ public class HashsetSource {
          public boolean add(E e) {
             return map.put(e, PRESENT)==null; //PRESENT=new Object();
           }
+          
+          
         3.执行put方法 该方法会执行hash(key) 得到key对应的hash值 算法是h = key.hashCode()) ^ (h >>> 16)
          public V put(K key, V value) {  //key 是java
             return putVal(hash(key), key, value, false, true);
     }
+    
+    
         4.执行 putVal
         final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
-        Node<K,V>[] tab; Node<K,V> p; int n, i;//定义了辅助变量
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        //定义了辅助变量
         //table 就是HashMap 的一个数组，类型是 Node[]
+        
         // if语句 表示如果当前table 是null，或者大小==0
         //就是第一次扩容，到16个空间
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
+            
         //(1)根据key得到的hash 去计算该key应该存放在table表的哪个索引位置
         //并把这个位置的对象， 赋给 p
         //(2)判断p是否为null
@@ -1367,21 +1374,25 @@ public class HashsetSource {
         if (p = tab[i = (n - 1) & hash]) == null)
             tab[i] = newNode(hash, key, value, null);
         else {
-        //一个开发技巧提示：在需要局部变量（辅助变量）时候，在创建
-            Node<K,V> e; K k;//
+        
+        	//一个开发技巧提示：在需要局部变量（辅助变量）时候，在创建
+            Node<K,V> e; K k;
             //如果当前索引位置对应的链表的第一个元素和准备添加的key的 hash值一样
             //并且满足下面两个条件之一：
-             //(1)准备加入的 key和p指向的 Node结点的key 是同一个对象
-             //(2)或者p指向的 Node结点的key 的equals() 和准备加入的key比较后 相同
-             //就不能加入
-            if (p.hash == hash &&
-                ((k = p.key) == key || (key != null && key.equals(k))))
+            //(1)准备加入的 key和p指向的 Node结点的key 是同一个对象
+            //(2)或者p指向的 Node结点的key 的equals() 和准备加入的key比较后 相同
+            //就不能加入
+            if (p.hash == hash &&((k = p.key) == key || (key != null && key.equals(k))))
                 e = p;
               //再判断 p是不是一颗红黑树，
               //如果是一颗红黑树，就调用 putTreeVal() 来进行添加
+              
             else if (p instanceof TreeNode)
                 e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
-            else {//如果table对应索引位置，已经是一个链表，就使用for循环比较
+            else {
+            
+            
+            //如果table对应索引位置，已经是一个链表，就使用for循环比较
             //(1)依次和该链表的每一个元素比较后，都不相同，则加入到该链表的最后
             //   注意再把元素添加到链表后，立即判断 该链表是否已经达到8个结点
             //   就调用 treeifyBin() 对当前这个链表进行树化(转成红黑树)
@@ -2268,10 +2279,12 @@ public class HashMapSource01 {
         //1.执行构造器 new HashMap()
         //  初始化加载因子 loadFactor=0.75
         //   HashMap$Node[] table =null
+        
         //2.执行put  调用hash方法，计算key的hash值(h = key.hashCode()) ^ (h >>> 16)
 //        public V put(K key, V value) {
 //            return putVal(hash(key), key, value, false, true);
 //        }
+
         //3.执行putVal方法
             final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                                boolean evict) {

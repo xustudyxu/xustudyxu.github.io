@@ -1,7 +1,7 @@
 module.exports = [
   {
     title:'MySQL',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/MySQL/MySQL',
 

@@ -1,5 +1,7 @@
 # Jdbc Template
 
+[[toc]]
+
 ## Jdbc Template(概念和准备)
 
 1. 什么是JdbcTemplate
@@ -203,7 +205,7 @@ public class BookDaoImpl implements BookDao{
       public void delete(String id) {
           String sql="delete from t_book where userId=?)";
           int update = jdbcTemplate.update(sql, id);
-          System.out.println(update>0?"修改成功":"修改失败");
+          System.out.println(update>0?"删除成功":"删除失败");
   
       }
   ```
@@ -228,9 +230,11 @@ public class BookDaoImpl implements BookDao{
 
   ![1641044579855](./images/04/05.png)
 
-  ![1641044745229](./images/04/06.png)
+  + 删除结果
 
-  ![1641044776850](./images/04/07.png)
+  ![1642243953069](./images/04/06.png)
+  
+  ![1642244109262](./images/04/07.png)
 
 ## Jdbc Template数据库操作数据库(查询返回某个值)
 

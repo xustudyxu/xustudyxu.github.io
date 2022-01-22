@@ -1,5 +1,7 @@
 # IOC 容器
 
+[[toc]]
+
 ## IOC 概念和原理
 
 ### 什么是IOC
@@ -471,6 +473,13 @@ public class Stu {
 第一步，创建类，让这个类作为工厂bean，实现接口FactoryBean
 
 ```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2021/12/4  17:42
+ */
+public class MyBean implements FactoryBean<Course> {
+
     //定义返回bean
     @Override
     public Course getObject() throws Exception {
@@ -489,14 +498,8 @@ public class Stu {
     public boolean isSingleton() {
         return false;
     }
+}
 
-  @Test
-    public void testCollection3(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("bean3.xml");
-        Course course=context.getBean("myBean", Course.class);
-        System.out.println(course);
-
-    }
 ```
 
 第二步，配置Spring配置文件

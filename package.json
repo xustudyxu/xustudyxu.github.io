@@ -4,21 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  ,
-  "dev":"vuepress dev docs", "build":"vuepress build docs",
-    "deploy":"bash deploy.sh" },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@vssue/api-github-v4": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
+    "caniuse-lite": "^1.0.30001296",
+    "countup.js": "^2.0.8",
     "mermaid": "^8.11.4",
     "moment": "^2.29.1"
   },
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.9.5",
-    "vuepress": "^1.9.5"
+    "@vuepress/plugin-nprogress": "^1.9.5",
+    "@vuepress/plugin-pwa": "^1.9.5",
+    "vuepress": "^1.9.7"
   }
 }
