@@ -1,10 +1,10 @@
 # HttpMessageConverter
 
+[[toc]]
+
 HttpMessageConverter，报文信息转换器，**将请求报文转换为Java对象**，或将**Java对象转换为响应报文**
 
 HttpMessageConverter提供了两个注解和两个类型：@RequestBody，@ResponseBody，RequestEntity，ResponseEntity
-
-[[toc]]
 
 ## @RequestBody
 

@@ -1,0 +1,1 @@
+module.exports = require("./busuanzi.pure.js");

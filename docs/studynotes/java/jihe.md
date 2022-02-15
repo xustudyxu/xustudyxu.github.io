@@ -753,11 +753,6 @@ public class ArrayListDetail {
 + 代码演示:
 
 ```java
-package com.study.collection_;
-
-import java.util.ArrayList;
-
-@SuppressWarnings({"all"})
 public class ArrayListSource {
     /*
     （2）当创建ArrayList对象时，如果使用的是无参构造器，则初始elementData容量为0，
@@ -765,74 +760,65 @@ public class ArrayListSource {
 
      */
     public static void main(String[] args) {
-        //使用无参构造器创建ArrayList对象
-        /*1.创建了一个空的elementData数组={}
-        public ArrayList() {
-        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
-    }
-        //2.执行list.add（1）先确定是否要扩容 （2）然后在执行 赋值
-         public boolean add(E e) {
-        ensureCapacityInternal(size + 1);  // Increments modCount!!
-        elementData[size++] = e;
-        return true;
-    }
-
-       //3.该方法确定minCapacity (1)第一次扩容  为10
-       private void ensureCapacityInternal(int minCapacity) {
-        ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
-    }
-       //4.
-       private void ensureExplicitCapacity(int minCapacity) {
-             modCount++;//（1）记录集和修改的次数
-
-             // overflow-conscious code
-              if (minCapacity - elementData.length > 0)
-                  grow(minCapacity);（2)如果elementData大小不够，就调用grow()去扩容
-          }
-
-        //5.private void grow(int minCapacity) {                          //（1）真的扩容
-        //        // overflow-conscious code                              //（2）使用扩容机制确定要扩容到多大
-        //        int oldCapacity = elementData.length;                   //（3）第一次newCapacity=10
-        //        int newCapacity = oldCapacity + (oldCapacity >> 1);     //（4）第二次及其以后，按照1.5倍扩容
-        //        if (newCapacity - minCapacity < 0)                      //（5）扩容使用的是Arrays.copyOf() 会保留原有的数据
-        //            newCapacity = minCapacity;
-        //        if (newCapacity - MAX_ARRAY_SIZE > 0)
-        //            newCapacity = hugeCapacity(minCapacity);
-        //        // minCapacity is usually close to size, so this is a win:
-        //        elementData = Arrays.copyOf(elementData, newCapacity);
-        //    }
-
-
-         */
-        /*
-        如果使用的是指定大小的构造器，则初始elementData容量为指定大小，
-        如果需要扩容，则直接扩容elementData为1.5倍
-         */
-
-        ArrayList list = new ArrayList();
-
-
+		ArrayList list = new ArrayList();
         //使用for循环给list集合添加 1-10数据
         for (int i = 1; i <=10; i++) {
-            list.add(i);
-            
+            list.add(i);            
         }
         //使用for循环给list集合添加 11-15数据
         for (int i = 11; i <=15; i++) {
             list.add(i);
 
         }
-
-
         list.add(100);
         list.add(200);
         list.add(null);
-
-
-
     }
 }
 
+```
+
+```java
+//使用无参构造器创建ArrayList对象
+//1.创建了一个空的elementData数组={}
+    public ArrayList(){
+        this.elementData=DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+        }
+//2.执行list.add（1）先确定是否要扩容 （2）然后在执行 赋值
+    public boolean add(E e){
+        ensureCapacityInternal(size+1);  // Increments modCount!!
+        elementData[size++]=e;
+        return true;
+        }
+
+//3.该方法确定minCapacity (1)第一次扩容  为10
+    private void ensureCapacityInternal(int minCapacity){
+        ensureExplicitCapacity(calculateCapacity(elementData,minCapacity));
+        }
+//4.
+    private void ensureExplicitCapacity(int minCapacity){
+        modCount++;//（1）记录集和修改的次数
+
+        // overflow-conscious code
+        if(minCapacity-elementData.length>0)
+        	grow(minCapacity);//（2)如果elementData大小不够，就调用grow()去扩容
+        }
+//5.
+    private void grow(int minCapacity){                   //（1）真的扩容
+        // overflow-conscious code                        //（2）使用扩容机制确定要扩容到多大
+        int oldCapacity=elementData.length;               //（3）第一次newCapacity=10
+        int newCapacity=oldCapacity+(oldCapacity>>1);     //（4）第二次及其以后，按照1.5倍扩容
+        if(newCapacity-minCapacity< 0)                    //（5）扩容使用的是Arrays.copyOf() 会保留原有的数据
+        	newCapacity=minCapacity;
+        if(newCapacity-MAX_ARRAY_SIZE>0)
+        	newCapacity=hugeCapacity(minCapacity);
+        // minCapacity is usually close to size, so this is a win:
+        elementData=Arrays.copyOf(elementData,newCapacity);
+        }
+    /*
+        如果使用的是指定大小的构造器，则初始elementData容量为指定大小，
+        如果需要扩容，则直接扩容elementData为1.5倍
+         */
 ```
 
 ## Vector 底层结构和源码剖析
@@ -854,55 +840,54 @@ public class Vector_ {
         //无参构造器
         Vector vector = new Vector();
         for (int i = 0; i < 10; i++) {
-            vector.add(i);
-            
+            vector.add(i);     
         }
         vector.add(100);
         System.out.println("Vector="+vector);
-        //解读源码
-        //1.new Vector() 底层
-        /* public Vector() {
-               this(10);
-          }
-          补充:如果是 Vector vector=new Vector(8);
-          走的方法：
-          public Vector(int initialCapacity) {
-                this(initialCapacity, 0);
-            }
-
-            2.vector.add(i)
-          2.1//下面这个方法就是添加数据到Vector集合
-           public synchronized boolean add(E e) {
-               modCount++;
-               ensureCapacityHelper(elementCount + 1);
-               elementData[elementCount++] = e;
-               return true;
-    }
-          2.2//确定是否需要扩容条件：minCapacity-elementDate.length>0
-          private void ensureCapacityHelper(int minCapacity) {
-         // overflow-conscious code
-         if (minCapacity - elementData.length > 0)
-             grow(minCapacity);
-     }
-           2.3 //如果 需要的数组大小不够用，就扩容，扩容后的算法
-            private void grow(int minCapacity) {
-            // overflow-conscious code
-            int oldCapacity = elementData.length;
-            int newCapacity = oldCapacity + ((capacityIncrement > 0) ?
-                                             capacityIncrement : oldCapacity);
-              //就是扩容两倍
-            if (newCapacity - minCapacity < 0)
-                newCapacity = minCapacity;
-            if (newCapacity - MAX_ARRAY_SIZE > 0)
-                newCapacity = hugeCapacity(minCapacity);
-            elementData = Arrays.copyOf(elementData, newCapacity);
-        }
-              */
-
-
     }
 }
 
+```
+
+```java
+//解读源码
+//1.new Vector() 底层
+    public Vector() {
+        this(10);
+        }
+//补充:如果是 Vector vector=new Vector(8);
+//走的方法：
+    public Vector(int initialCapacity) {
+        this(initialCapacity, 0);
+        }
+
+//2.vector.add(i)
+//2.1//下面这个方法就是添加数据到Vector集合
+    public synchronized boolean add(E e) {
+        modCount++;
+        ensureCapacityHelper(elementCount + 1);
+        elementData[elementCount++] = e;
+        return true;
+        }
+//2.2//确定是否需要扩容条件：minCapacity-elementDate.length>0
+    private void ensureCapacityHelper(int minCapacity) {
+        // overflow-conscious code
+        if (minCapacity - elementData.length > 0)
+        	grow(minCapacity);
+        }
+//2.3 //如果 需要的数组大小不够用，就扩容，扩容后的算法
+    private void grow(int minCapacity) {
+        // overflow-conscious code
+        int oldCapacity = elementData.length;
+        int newCapacity = oldCapacity + ((capacityIncrement > 0) ?
+        capacityIncrement : oldCapacity);
+        //就是扩容两倍
+        if (newCapacity - minCapacity < 0)
+        	newCapacity = minCapacity;
+        if (newCapacity - MAX_ARRAY_SIZE > 0)
+        	newCapacity = hugeCapacity(minCapacity);
+        elementData = Arrays.copyOf(elementData, newCapacity);
+        }
 ```
 
 ### Vector 和 ArrayList 的比较
@@ -1049,65 +1034,61 @@ public class LinkedListCRUD {
         for (Object o1 :linkedList) {
             System.out.println("o1="+o1);
         }
-
-
-        //源码阅读
-        //1.LinkedList linkedList = new LinkedList();
-         /*public LinkedList() {
-        }
-        //2.这时linkedlist 的属性 first=null last=null
-        3.执行
-         public boolean add(E e) {
-            linkLast(e);
-            return true;
-        }
-        //4. 将新的结点，加入到我们的双向链表的最后
-         void linkLast(E e) {
-        //        final Node<E> l = last;
-        //        final Node<E> newNode = new Node<>(l, e, null);
-        //        last = newNode;
-        //        if (l == null)
-        //            first = newNode;
-        //        else
-        //            l.next = newNode;
-        //        size++;
-        //        modCount++;
-        //    }
-
-*/      /*
-            1.执行 removeFirst();
-            public E remove() {
-                    return removeFirst();
-                }
-                2.public E removeFirst() {
-                    final Node<E> f = first;
-                    if (f == null)
-                        throw new NoSuchElementException();
-                    return unlinkFirst(f);
-                }
-                3.执行unlinkFirst，将f 指向双向链表的第一个结点
-                private E unlinkFirst(Node<E> f) {
-                    // assert f == first && f != null;
-                    final E element = f.item;
-                    final Node<E> next = f.next;
-                    f.item = null;
-                    f.next = null; // help GC
-                    first = next;
-                    if (next == null)
-                        last = null;
-                    else
-                        next.prev = null;
-                    size--;
-                    modCount++;
-                    return element;
-                }
-
-
-
-*/
     }
 }
 
+```
+
+```java
+//源码阅读
+//1.LinkedList linkedList = new LinkedList();
+    public LinkedList() {
+        }
+//2.这时linkedlist 的属性 first=null last=null
+//3.执行
+    public boolean add(E e) {
+        linkLast(e);
+        return true;
+        }
+        //4. 将新的结点，加入到我们的双向链表的最后
+    void linkLast(E e) {
+        final Node<E> l = last;
+        final Node<E> newNode = new Node<>(l, e, null);
+        last = newNode;
+        if (l == null)
+            first = newNode;
+        else
+            l.next = newNode;
+        size++;
+        modCount++;
+        }
+//1.执行 removeFirst();
+    public E remove() {
+        return removeFirst();
+    }
+//2.
+    public E removeFirst() {
+    final Node<E> f = first;
+        if (f == null)
+            throw new NoSuchElementException();
+        return unlinkFirst(f);
+        }
+//3.执行unlinkFirst，将f 指向双向链表的第一个结点
+    private E unlinkFirst(Node<E> f) {
+// assert f == first && f != null;
+        final E element = f.item;
+        final Node<E> next = f.next;
+        f.item = null;
+        f.next = null; // help GC
+        first = next;
+        if (next == null)
+            last = null;
+        else
+            next.prev = null;
+        size--;
+        modCount++;
+        return element;
+        }
 ```
 
 ## ArrayList 和 LinkedList 比较
@@ -1304,12 +1285,322 @@ class Dog{//定义了Dog类
 }
 ```
 
-### HashSet 底层机制说明
+## HashSet 底层机制说明
 
-1. **分析HashSet底层是HashMap, HashMap底层是(数组+链表+红黑树)**
-2. **HashSetStructure.java 为了让大家真正理解，老韩模拟简单的数组+链表结构**
+## Java7 HashMap
 
-![1626617633288](./images/jihe/21.png)
+### 概述
+
+之所以把*HashSet*和*HashMap*放在一起讲解，是因为二者在Java里有着相同的实现，前者仅仅是对后者做了一层包装，也就是说*HashSet*里面有一个*HashMap*(适配器模式)。因此本文将重点分析*HashMap*。
+
+*HashMap*实现了*Map*接口，即允许放入`key`为`null`的元素，也允许插入`value`为`null`的元素；除该类未实现同步外，其余跟`Hashtable`大致相同；跟*TreeMap*不同，该容器不保证元素顺序，根据需要该容器可能会对元素重新哈希，元素的顺序也会被重新打散，因此不同时间迭代同一个*HashMap*的顺序可能会不同。 根据对冲突的处理方式不同，哈希表有两种实现方式，一种开放地址方式(Open addressing)，另一种是冲突链表方式(Separate chaining with linked lists)。**Java7 HashMap采用的是冲突链表方式**。
+
+![1644287750105](./images/jihe/45.png)
+
+从上图容易看出，如果选择合适的哈希函数，`put()`和`get()`方法可以在常数时间内完成。但在对*HashMap*进行迭代时，需要遍历整个table以及后面跟的冲突链表。因此对于迭代比较频繁的场景，不宜将*HashMap*的初始大小设的过大。
+
+有两个参数可以影响*HashMap*的性能: 初始容量(inital capacity)和负载系数(load factor)。初始容量指定了初始`table`的大小，负载系数用来指定自动扩容的临界值。当`entry`的数量超过`capacity*load_factor`时，容器将自动扩容并重新哈希。对于插入元素较多的场景，将初始容量设大可以减少重新哈希的次数。
+
+将对象放入到*HashMap*或*HashSet*中时，有两个方法需要特别关心: `hashCode()`和`equals()`。**hashCode()方法决定了对象会被放到哪个bucket里，当多个对象的哈希值冲突时，equals()方法决定了这些对象是否是“同一个对象”**。所以，如果要将自定义的对象放入到`HashMap`或`HashSet`中，需要*@Override*`hashCode()`和`equals()`方法。
+
+### get()
+
+`get(Object key)`方法根据指定的`key`值返回对应的`value`，该方法调用了`getEntry(Object key)`得到相应的`entry`，然后返回`entry.getValue()`。因此`getEntry()`是算法的核心。 算法思想是首先通过`hash()`函数得到对应`bucket`的下标，然后依次遍历冲突链表，通过`key.equals(k)`方法来判断是否是要找的那个`entry`。
+
+![1644287783233](./images/jihe/46.png)
+
+上图中`hash(k)&(table.length-1)`等价于`hash(k)%table.length`，原因是*HashMap*要求`table.length`必须是2的指数，因此`table.length-1`就是二进制低位全是1，跟`hash(k)`相与会将哈希值的高位全抹掉，剩下的就是余数了。
+
+```java
+//getEntry()方法
+final Entry<K,V> getEntry(Object key) {
+	......
+	int hash = (key == null) ? 0 : hash(key);
+    for (Entry<K,V> e = table[hash&(table.length-1)];//得到冲突链表
+         e != null; e = e.next) {//依次遍历冲突链表中的每个entry
+        Object k;
+        //依据equals()方法判断是否相等
+        if (e.hash == hash &&
+            ((k = e.key) == key || (key != null && key.equals(k))))
+            return e;
+    }
+    return null;
+}
+```
+
+### put()
+
+`put(K key, V value)`方法是将指定的`key, value`对添加到`map`里。该方法首先会对`map`做一次查找，看是否包含该元组，如果已经包含则直接返回，查找过程类似于`getEntry()`方法；如果没有找到，则会通过`addEntry(int hash, K key, V value, int bucketIndex)`方法插入新的`entry`，插入方式为**头插法**。
+
+![1644287818323](./images/jihe/47.png)
+
+```java
+//addEntry()
+void addEntry(int hash, K key, V value, int bucketIndex) {
+    if ((size >= threshold) && (null != table[bucketIndex])) {
+        resize(2 * table.length);//自动扩容，并重新哈希
+        hash = (null != key) ? hash(key) : 0;
+        bucketIndex = hash & (table.length-1);//hash%table.length
+    }
+    //在冲突链表头部插入新的entry
+    Entry<K,V> e = table[bucketIndex];
+    table[bucketIndex] = new Entry<>(hash, key, value, e);
+    size++;
+}
+```
+
+### remove()
+
+`remove(Object key)`的作用是删除`key`值对应的`entry`，该方法的具体逻辑是在`removeEntryForKey(Object key)`里实现的。`removeEntryForKey()`方法会首先找到`key`值对应的`entry`，然后删除该`entry`(修改链表的相应引用)。查找过程跟`getEntry()`过程类似。
+
+![1644287840902](./images/jihe/48.png)
+
+```java
+//removeEntryForKey()
+final Entry<K,V> removeEntryForKey(Object key) {
+	......
+	int hash = (key == null) ? 0 : hash(key);
+    int i = indexFor(hash, table.length);//hash&(table.length-1)
+    Entry<K,V> prev = table[i];//得到冲突链表
+    Entry<K,V> e = prev;
+    while (e != null) {//遍历冲突链表
+        Entry<K,V> next = e.next;
+        Object k;
+        if (e.hash == hash &&
+            ((k = e.key) == key || (key != null && key.equals(k)))) {//找到要删除的entry
+            modCount++; size--;
+            if (prev == e) table[i] = next;//删除的是冲突链表的第一个entry
+            else prev.next = next;
+            return e;
+        }
+        prev = e; e = next;
+    }
+    return e;
+}
+```
+
+##  Java8 HashMap
+
+Java8 对 HashMap 进行了一些修改，最大的不同就是利用了红黑树，所以其由 **数组+链表+红黑树** 组成。
+
+根据 Java7 HashMap 的介绍，我们知道，查找的时候，根据 hash 值我们能够快速定位到数组的具体下标，但是之后的话，需要顺着链表一个个比较下去才能找到我们需要的，时间复杂度取决于链表的长度，为 O(n)。
+
+为了降低这部分的开销，在 Java8 中，当链表中的元素达到了 8 个时，会将链表转换为红黑树，在这些位置进行查找的时候可以降低时间复杂度为 O(logN)。
+
+来一张图简单示意一下吧：
+
+![1644287866177](./images/jihe/49.png)
+
+注意，上图是示意图，主要是描述结构，不会达到这个状态的，因为这么多数据的时候早就扩容了。
+
+下面，我们还是用代码来介绍吧，个人感觉，Java8 的源码可读性要差一些，不过精简一些。
+
+Java7 中使用 Entry 来代表每个 HashMap 中的数据节点，Java8 中使用 Node，基本没有区别，都是 key，value，hash 和 next 这四个属性，不过，Node 只能用于链表的情况，红黑树的情况需要使用 TreeNode。
+
+我们根据数组元素中，第一个节点数据类型是 Node 还是 TreeNode 来判断该位置下是链表还是红黑树的。
+
+### put 过程分析
+
+```java
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+
+// 第四个参数 onlyIfAbsent 如果是 true，那么只有在不存在该 key 时才会进行 put 操作
+// 第五个参数 evict 我们这里不关心
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+               boolean evict) {
+    Node<K,V>[] tab; Node<K,V> p; int n, i;
+    // 第一次 put 值的时候，会触发下面的 resize()，类似 java7 的第一次 put 也要初始化数组长度
+    // 第一次 resize 和后续的扩容有些不一样，因为这次是数组从 null 初始化到默认的 16 或自定义的初始容量
+    if ((tab = table) == null || (n = tab.length) == 0)
+        n = (tab = resize()).length;
+    // 找到具体的数组下标，如果此位置没有值，那么直接初始化一下 Node 并放置在这个位置就可以了
+    if ((p = tab[i = (n - 1) & hash]) == null)
+        tab[i] = newNode(hash, key, value, null);
+
+    else {// 数组该位置有数据
+        Node<K,V> e; K k;
+        // 首先，判断该位置的第一个数据和我们要插入的数据，key 是不是"相等"，如果是，取出这个节点
+        if (p.hash == hash &&
+            ((k = p.key) == key || (key != null && key.equals(k))))
+            e = p;
+        // 如果该节点是代表红黑树的节点，调用红黑树的插值方法，本文不展开说红黑树
+        else if (p instanceof TreeNode)
+            e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+        else {
+            // 到这里，说明数组该位置上是一个链表
+            for (int binCount = 0; ; ++binCount) {
+                // 插入到链表的最后面(Java7 是插入到链表的最前面)
+                if ((e = p.next) == null) {
+                    p.next = newNode(hash, key, value, null);
+                    // TREEIFY_THRESHOLD 为 8，所以，如果新插入的值是链表中的第 8 个
+                    // 会触发下面的 treeifyBin，也就是将链表转换为红黑树
+                    if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                        treeifyBin(tab, hash);
+                    break;
+                }
+                // 如果在该链表中找到了"相等"的 key(== 或 equals)
+                if (e.hash == hash &&
+                    ((k = e.key) == key || (key != null && key.equals(k))))
+                    // 此时 break，那么 e 为链表中[与要插入的新值的 key "相等"]的 node
+                    break;
+                p = e;
+            }
+        }
+        // e!=null 说明存在旧值的key与要插入的key"相等"
+        // 对于我们分析的put操作，下面这个 if 其实就是进行 "值覆盖"，然后返回旧值
+        if (e != null) {
+            V oldValue = e.value;
+            if (!onlyIfAbsent || oldValue == null)
+                e.value = value;
+            afterNodeAccess(e);
+            return oldValue;
+        }
+    }
+    ++modCount;
+    // 如果 HashMap 由于新插入这个值导致 size 已经超过了阈值，需要进行扩容
+    if (++size > threshold)
+        resize();
+    afterNodeInsertion(evict);
+    return null;
+}
+```
+
+和 Java7 稍微有点不一样的地方就是，Java7 是先扩容后插入新值的，Java8 先插值再扩容，不过这个不重要。
+
+### 数组扩容
+
+resize() 方法用于初始化数组或数组扩容，每次扩容后，容量为原来的 2 倍，并进行数据迁移。
+
+```java
+final Node<K,V>[] resize() {
+    Node<K,V>[] oldTab = table;
+    int oldCap = (oldTab == null) ? 0 : oldTab.length;
+    int oldThr = threshold;
+    int newCap, newThr = 0;
+    if (oldCap > 0) { // 对应数组扩容
+        if (oldCap >= MAXIMUM_CAPACITY) {
+            threshold = Integer.MAX_VALUE;
+            return oldTab;
+        }
+        // 将数组大小扩大一倍
+        else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
+                 oldCap >= DEFAULT_INITIAL_CAPACITY)
+            // 将阈值扩大一倍
+            newThr = oldThr << 1; // double threshold
+    }
+    else if (oldThr > 0) // 对应使用 new HashMap(int initialCapacity) 初始化后，第一次 put 的时候
+        newCap = oldThr;
+    else {// 对应使用 new HashMap() 初始化后，第一次 put 的时候
+        newCap = DEFAULT_INITIAL_CAPACITY;
+        newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+    }
+
+    if (newThr == 0) {
+        float ft = (float)newCap * loadFactor;
+        newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?
+                  (int)ft : Integer.MAX_VALUE);
+    }
+    threshold = newThr;
+
+    // 用新的数组大小初始化新的数组
+    Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];
+    table = newTab; // 如果是初始化数组，到这里就结束了，返回 newTab 即可
+
+    if (oldTab != null) {
+        // 开始遍历原数组，进行数据迁移。
+        for (int j = 0; j < oldCap; ++j) {
+            Node<K,V> e;
+            if ((e = oldTab[j]) != null) {
+                oldTab[j] = null;
+                // 如果该数组位置上只有单个元素，那就简单了，简单迁移这个元素就可以了
+                if (e.next == null)
+                    newTab[e.hash & (newCap - 1)] = e;
+                // 如果是红黑树，具体我们就不展开了
+                else if (e instanceof TreeNode)
+                    ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
+                else { 
+                    // 这块是处理链表的情况，
+                    // 需要将此链表拆成两个链表，放到新的数组中，并且保留原来的先后顺序
+                    // loHead、loTail 对应一条链表，hiHead、hiTail 对应另一条链表，代码还是比较简单的
+                    Node<K,V> loHead = null, loTail = null;
+                    Node<K,V> hiHead = null, hiTail = null;
+                    Node<K,V> next;
+                    do {
+                        next = e.next;
+                        if ((e.hash & oldCap) == 0) {
+                            if (loTail == null)
+                                loHead = e;
+                            else
+                                loTail.next = e;
+                            loTail = e;
+                        }
+                        else {
+                            if (hiTail == null)
+                                hiHead = e;
+                            else
+                                hiTail.next = e;
+                            hiTail = e;
+                        }
+                    } while ((e = next) != null);
+                    if (loTail != null) {
+                        loTail.next = null;
+                        // 第一条链表
+                        newTab[j] = loHead;
+                    }
+                    if (hiTail != null) {
+                        hiTail.next = null;
+                        // 第二条链表的新的位置是 j + oldCap，这个很好理解
+                        newTab[j + oldCap] = hiHead;
+                    }
+                }
+            }
+        }
+    }
+    return newTab;
+}
+```
+
+### get 过程分析
+
+相对于 put 来说，get 真的太简单了。
+
+- 计算 key 的 hash 值，根据 hash 值找到对应数组下标: hash & (length-1)
+- 判断数组该位置处的元素是否刚好就是我们要找的，如果不是，走第三步
+- 判断该元素类型是否是 TreeNode，如果是，用红黑树的方法取数据，如果不是，走第四步
+- 遍历链表，直到找到相等(==或equals)的 key
+
+```java
+public V get(Object key) {
+    Node<K,V> e;
+    return (e = getNode(hash(key), key)) == null ? null : e.value;
+}
+final Node<K,V> getNode(int hash, Object key) {
+    Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
+    if ((tab = table) != null && (n = tab.length) > 0 &&
+        (first = tab[(n - 1) & hash]) != null) {
+        // 判断第一个节点是不是就是需要的
+        if (first.hash == hash && // always check first node
+            ((k = first.key) == key || (key != null && key.equals(k))))
+            return first;
+        if ((e = first.next) != null) {
+            // 判断是否是红黑树
+            if (first instanceof TreeNode)
+                return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+
+            // 链表遍历
+            do {
+                if (e.hash == hash &&
+                    ((k = e.key) == key || (key != null && key.equals(k))))
+                    return e;
+            } while ((e = e.next) != null);
+        }
+    }
+    return null;
+}
+  
+```
 
 1. **HashSet 底层是HashMap**
 2. **添加一个元素时，先得到hash值，会转成->索引值***
@@ -1318,135 +1609,7 @@ class Dog{//定义了Dog类
 5. **如果有，调用 equals比较，如果相同，就放弃添加，如果不相同，则添加到最后**
 6. **在java8中，如果一条链表的元素个数到达 TREEIFY_THRESHOLD(默认64) 就会进行树化（红黑树）**
 
-+ 代码演示:
-
-```java
-package com.study.set_;
-
-import java.util.HashSet;
-
-@SuppressWarnings({"all"})
-public class HashsetSource {
-    public static void main(String[] args) {
-
-        HashSet hashSet = new HashSet();
-        hashSet.add("java");
-        hashSet.add("php");
-        hashSet.add("java");
-        System.out.println("set="+hashSet);
-
-        /*
-        源码解读：
-        1.执行Hashset
-        public HashSet() {
-            map = new HashMap<>();
-    }
-        2.执行add()
-         public boolean add(E e) {
-            return map.put(e, PRESENT)==null; //PRESENT=new Object();
-          }
-          
-          
-        3.执行put方法 该方法会执行hash(key) 得到key对应的hash值 算法是h = key.hashCode()) ^ (h >>> 16)
-         public V put(K key, V value) {  //key 是java
-            return putVal(hash(key), key, value, false, true);
-    }
-    
-    
-        4.执行 putVal
-        final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
-                   boolean evict) {
-        Node<K,V>[] tab; Node<K,V> p; int n, i;
-        //定义了辅助变量
-        //table 就是HashMap 的一个数组，类型是 Node[]
-        
-        // if语句 表示如果当前table 是null，或者大小==0
-        //就是第一次扩容，到16个空间
-        if ((tab = table) == null || (n = tab.length) == 0)
-            n = (tab = resize()).length;
-            
-        //(1)根据key得到的hash 去计算该key应该存放在table表的哪个索引位置
-        //并把这个位置的对象， 赋给 p
-        //(2)判断p是否为null
-        //(2.1) 如果 p为null，表示没有存放过元素，就创建一个Node(key="java",value=PRESENT)
-        //(2.2)就放在该位置 tab[i]=newNode(hash, key, value, null)
-
-        if (p = tab[i = (n - 1) & hash]) == null)
-            tab[i] = newNode(hash, key, value, null);
-        else {
-        
-        	//一个开发技巧提示：在需要局部变量（辅助变量）时候，在创建
-            Node<K,V> e; K k;
-            //如果当前索引位置对应的链表的第一个元素和准备添加的key的 hash值一样
-            //并且满足下面两个条件之一：
-            //(1)准备加入的 key和p指向的 Node结点的key 是同一个对象
-            //(2)或者p指向的 Node结点的key 的equals() 和准备加入的key比较后 相同
-            //就不能加入
-            if (p.hash == hash &&((k = p.key) == key || (key != null && key.equals(k))))
-                e = p;
-              //再判断 p是不是一颗红黑树，
-              //如果是一颗红黑树，就调用 putTreeVal() 来进行添加
-              
-            else if (p instanceof TreeNode)
-                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
-            else {
-            
-            
-            //如果table对应索引位置，已经是一个链表，就使用for循环比较
-            //(1)依次和该链表的每一个元素比较后，都不相同，则加入到该链表的最后
-            //   注意再把元素添加到链表后，立即判断 该链表是否已经达到8个结点
-            //   就调用 treeifyBin() 对当前这个链表进行树化(转成红黑树)
-            //   注意，再转成红黑树时，要进行判断， 判断条件如下：
-            //       if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
-            //          resize();
-            //如果上面条件成立，先table扩容
-            // 只有上面条件不成立时，才转换成红黑树
-            //(2)次和该链表的每一个元素比较过程中，如果有相同的情况，就直接break
-
-                for (int binCount = 0; ; ++binCount) {
-                    if ((e = p.next) == null) {
-                        p.next = newNode(hash, key, value, null);
-                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
-                            treeifyBin(tab, hash);
-                        break;
-                    }
-                    if (e.hash == hash &&
-                        ((k = e.key) == key || (key != null && key.equals(k))))
-                        break;
-                    p = e;
-                }
-            }
-            if (e != null) { // existing mapping for key
-                V oldValue = e.value;
-                if (!onlyIfAbsent || oldValue == null)
-                    e.value = value;
-                afterNodeAccess(e);
-                return oldValue;
-            }
-        }
-        ++modCount;
-        //size 就是我们每加入一个结点Node(k,v,h,next) ,size就会加加
-        if (++size > threshold)
-            resize();//扩容
-        afterNodeInsertion(evict);
-        return null;
-    }
-
-         */
-
-    }
-}
-/*
-1.HashSet 底层是HashMap
-2.添加一个元素时，先得到hash值，会转成->索引值
-3.找到存储数据表table，看这个索引位置是否已经存放的有元素
-4.如果没有，直接加入
-5.如果有，调用 equals比较，如果相同，就放弃添加，如果不相同，则添加到最后
-6.在java8中，如果一条链表的元素个数到达 TREEIFY_THRESHOLD(默认64) 就会进行树化（红黑树）
- */
-```
-
-### HashSet 课堂练习 1
+### HashSet 课堂练习 
 
 定义一个Employee类，该类包含:private成员属性name,age要求:
 
@@ -1526,7 +1689,7 @@ class Employee{
 }
 ```
 
-### HashSet 课后练习 2
+### HashSet 课后练习
 
 定义一个Employee类，该类包含：private成员属性name，salbirthday(MyDate类型),其中birthday为Mydate类型(属性包括:year,month,day),
    + 要求：
@@ -2275,103 +2438,100 @@ public class HashMapSource01 {
 
         System.out.println("map="+map);
 
-      /*  //老师解读HashMap的源码
-        //1.执行构造器 new HashMap()
-        //  初始化加载因子 loadFactor=0.75
-        //   HashMap$Node[] table =null
-        
-        //2.执行put  调用hash方法，计算key的hash值(h = key.hashCode()) ^ (h >>> 16)
-//        public V put(K key, V value) {
-//            return putVal(hash(key), key, value, false, true);
-//        }
-
-        //3.执行putVal方法
-            final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
-                               boolean evict) {
-                    Node<K,V>[] tab; Node<K,V> p; int n, i;//辅助变量
-                    //如果底层的table 数组为 null，或者 length=0，就扩容到16
-                    if ((tab = table) == null || (n = tab.length) == 0)
-                        n = (tab = resize()).length;
-                        //取出hash值对应的table的索引位置的Node,如果为null，就直接把加入的k-v
-                        //创建一个Node ，加入该位置即可
-                    if ((p = tab[i = (n - 1) & hash]) == null)
-                        tab[i] = newNode(hash, key, value, null);
-                    else {
-                        Node<K,V> e; K k;     //辅助变量
-                        if (p.hash == hash &&
-                       //如果table的索引位置的key的hash相同和key的hash相同
-                       //并满足（存在的结点key和准备添加的key是同一个对象 || equals返回真 )
-                       //就认为不能加入新的k-v
-                            ((k = p.key) == key || (key != null && key.equals(k))))
-                            e = p;
-                        else if (p instanceof TreeNode)   //如果当前的table的已有的Node是红黑数，就按照红黑树的方式处理
-                            e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
-                        else {
-                        //如果找到的结点，后面是链表，就循环比较
-                            for (int binCount = 0; ; ++binCount) {           //死循环
-                                if ((e = p.next) == null) {   //如果整个链表，没有和他相同，就加到该链表的最后
-                                    p.next = newNode(hash, key, value, null);
-                                    //加入后，判断当前链表的个数，是否已经到8个，到8个，后
-                                    //就调用 treeifyBin 方法进行红黑树的转换
-                                    if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
-                                        treeifyBin(tab, hash);
-                                    break;
-                                }
-                                if (e.hash == hash &&  //如果在循环比较中，发现有相同，就break
-                                    ((k = e.key) == key || (key != null && key.equals(k))))
-                                    break;
-                                p = e;
-                            }
-                        }
-                        if (e != null) { // existing mapping for key
-                            V oldValue = e.value;
-                            if (!onlyIfAbsent || oldValue == null)
-                                e.value = value;    //替换key对应的value
-                            afterNodeAccess(e);
-                            return oldValue;
-                        }
-                    }
-                    ++modCount;  //每增加一个Node,就size++
-                    if (++size > threshold[12-24-48]) //如size>临界值，就扩容
-                        resize();
-                    afterNodeInsertion(evict);
-                    return null;
-             }
-             4.关于树化(转成红黑树)
-             //如果table为 null 或者大小还没到 64，展示不会树化，而是进行扩容
-             //否则才会真正的树化 ->剪枝（删除的足够多 转化为链表)
-              final void treeifyBin(Node<K,V>[] tab, int hash) {
-                int n, index; Node<K,V> e;
-                if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
-                    resize();
-       */
-
-
-
-        //总结：
-        /**
-         * (1)HashMap底层维护了Node类型的数组table,默认为null
-         * (2)当创建对象时，将加载因子(loadfactor)初始化为0.75
-         * (3)当添加key-val时，通过key的哈希值得到在table的索引，然后判断该索引处是否有元素，
-         * 如果没有元素直接添加。如果该索引处有元素，继续判断该元素的key是否和准备加入的key
-         * 相同，如果相等，就直接替换val;如果不相等需要判断是树结构还是链表结构，做出
-         * 相应处理。如果添加时发现容量不够，则需要扩容。
-         * (4)第一次添加，则需要扩容table容量为16，临界值(threhold)为12.
-         * (5)以后再扩容，则需要扩容table为原来的2倍，临界值为原来的2倍,即24，以此类推
-         * (6)在java8中，如果一条链表的元素个数超过TREEIFY_THRESHOLD(默认是8),并且
-         * table的大小>=MIN_TREEIFY_CAPACITY(默认64),就会进行树化
-         */
-
-       
-
-
-
-
-
-
     }
 }
 
+```
+
+```java
+//1.执行构造器 new HashMap()
+	public HashSet() {
+        map = new HashMap<>();
+        }
+  //初始化加载因子 loadFactor=0.75
+  // HashMap$Node[] table =null
+//2.执行put  调用hash方法，计算key的hash值(h = key.hashCode()) ^ (h >>> 16)
+    public V put(K key,V value){
+        return putVal(hash(key),key,value,false,true);
+        }
+//3.执行putVal方法
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;//辅助变量
+        
+        //如果底层的table 数组为 null，或者 length=0，就扩容到16
+        if ((tab = table) == null || (n = tab.length) == 0)
+            n = (tab = resize()).length;
+        
+        //取出hash值对应的table的索引位置的Node,如果为null，就直接把加入的k-v
+        //创建一个Node ，加入该位置即可
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            tab[i] = newNode(hash, key, value, null);
+        else {
+            Node<K,V> e; K k;//辅助变量
+            
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                //如果table的索引位置的key的hash相同和key的hash相同
+                //并满足（存在的结点key和准备添加的key是同一个对象 || equals返回真 )
+                //就认为不能加入新的k-v
+                e = p;
+            else if (p instanceof TreeNode)//如果当前的table的已有的Node是红黑数，就按照红黑树的方式处理
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {
+                //如果找到的结点，后面是链表，就循环比较
+                for (int binCount = 0; ; ++binCount) { //死循环
+                    if ((e = p.next) == null) {  //如果整个链表，没有和他相同，就加到该链表的最后
+                        p.next = newNode(hash, key, value, null);
+                        //加入后，判断当前链表的个数，是否已经到8个，到8个，后
+                        //就调用 treeifyBin 方法进行红黑树的转换
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break; 
+                    }
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break; //如果在循环比较中，发现有相同，就break
+                    p = e;
+                }
+            }
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;  //替换key对应的value
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;  //每增加一个Node,就size++
+        if (++size > threshold)//如size>临界值，就扩容
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+//4.关于树化(转成红黑树)
+////如果table为 null 或者大小还没到 64，展示不会树化，而是进行扩容
+////否则才会真正的树化 ->剪枝（删除的足够多 转化为链表)
+   final void treeifyBin(Node<K,V>[] tab, int hash) {
+        int n, index; Node<K,V> e;
+        if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
+            resize();
+        else if ((e = tab[index = (n - 1) & hash]) != null) {
+            TreeNode<K,V> hd = null, tl = null;
+            do {
+                TreeNode<K,V> p = replacementTreeNode(e, null);
+                if (tl == null)
+                    hd = p;
+                else {
+                    p.prev = tl;
+                    tl.next = p;
+                }
+                tl = p;
+            } while ((e = e.next) != null);
+            if ((tab[index] = hd) != null)
+                hd.treeify(tab);
+        }
+    }
 ```
 
 ## Map 接口实现类-Hashtable
@@ -3051,7 +3211,11 @@ class Person{
 
 ![1626621046598](./images/jihe/44.png)
 
+## 参考资料
 
++ https://www.pdai.tech/
+
+  
 
 
 

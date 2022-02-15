@@ -1,44 +1,44 @@
 module.exports = [
   {
     title:'Spring5 入门案例',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Spring5/Spring01',
 
       ]
   },{
     title:'Spring5 核心之控制反转IOC',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Spring5/IOC',
 
       ]
   },{
     title:'Spring5 核心之面向切面编程AOP',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Spring5/AOP',
 
       ]
   },{
     title:'Spring5 JdbcTemplate操作数据库',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Spring5/JdbcTemplate',
 
       ]
   },{
     title:'Spring5 事务',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Spring5/affair',
 
       ]
   },{
     title:'Spring5 新功能',
-    collapsable: true,
+    collapsable: false,
     children:[
-    '/studynotes/Spring5/Spring5新功能',
+    '/studynotes/Spring5/Spring5New_',
 
       ]
   }

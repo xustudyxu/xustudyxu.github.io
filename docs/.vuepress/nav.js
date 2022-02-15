@@ -19,19 +19,9 @@ module.exports = [
         items: [
           { text: 'Spring5', link: '/studynotes/Spring5/one/' },
           { text: 'SpringMVC', link: '/studynotes/SpringMVC/one/' },
-          { text: 'Mybatis', link: '/studynotes/Mybatis/one/' }
+          { text: 'Mybatis', link: '/studynotes/Mybatis/index/' }
         ]
-      }, {
-        text: '项目管理',
-        items: [
-          { text: 'Maven', link: '/studynotes/Maven/one/' }
-        ]
-      }, {
-        text: '数据库',
-        items: [
-          { text: 'MySQL', link: '/studynotes/MySQL/one/' }
-        ]
-      },
+      }
     ]
   }, {
     text: '大数据',
@@ -39,22 +29,35 @@ module.exports = [
       {
         text: 'Python',
         items: [
-          { text: 'Python基础', link: '/studynotes/Python/one/' },
+          { text: 'Python基础', link: '/studynotes/Python/python01/' },
           { text: '数据分析', link: '/studynotes/dataCleaning/one/' }
         ]
       },
-      {
-        text: '数据库',
-        items: [
-          { text: 'MySQL', link: '/studynotes/MySQL/one/' }
-        ]
-      },
+  
     ]
   },
   {
-    text: '操作系统',
+    text: '数据库',
     items: [
-      { text: 'Linux', link: '/studynotes/Linux/one/' },
+      { text: 'SQL 数据库', 
+        items:[
+          {text: 'MySQL', link: '/studynotes/MySQL/MySQL/' }
+        ]
+      },
+      { text: 'NoSQL 数据库', 
+      items:[
+        {text: 'Redis', link: '/studynotes/Redis/one/' }
+      ]
+    },
+    ]
+  },
+
+  {
+    text: '项目管理|部署',
+    items: [
+      { text: 'Linux', link: '/studynotes/Linux/1/' },
+      { text: 'Maven', link: '/studynotes/Maven/one/' },
+      { text: 'Git', link: '/studynotes/Git/Git_/' },
     ]
   },
 
@@ -74,6 +77,8 @@ module.exports = [
         items: [
           { text: 'Java SE 8参考手册', link: 'https://docs.oracle.com/javase/8/docs/api/index.html' },
           { text: 'MySQL5.7参考手册', link: 'https://dev.mysql.com/doc/refman/5.7/en/' },
+          { text: 'Spring官方文档', link: 'https://spring.io/' },
+          { text: 'MyBatis管方文档', link: 'https://mybatis.org/mybatis-3/zh/index.html' },
         ]
       }
       , {

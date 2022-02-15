@@ -48,9 +48,9 @@ public class Object01 {
 
 ### 类与对象的关系示意图
 
-<img src="./images/oop/01.png" alt="1640424315266" style="zoom: 50%;" />
+![](./images/oop/01.png)
 
-<img src="./images/oop/02.png" alt="1640424534022" style="zoom:50%;" />
+![](./images/oop/02.png)
 
  ### 快速入门
 
@@ -221,7 +221,7 @@ class Person {
 
 请问：p2.age究竟是多少?并画出内存图
 
-<img src="./images/oop/05.png" alt="1640425982891" style="zoom: 67%;" />
+![](./images/oop/05.png)
 
 ### 类和对象的内存分配机制
 
@@ -258,7 +258,7 @@ p.age = 10
 		//System.out.println(b.age);//出现异常
 ```
 
-<img src="./images/oop/06.png" alt="1640426239085" style="zoom:67%;" />
+![](./images/oop/06.png)
 
 ## 成员方法
 
@@ -652,7 +652,7 @@ class Abc{
 }
 ```
 
-<img src="https://figure-bed-liqun.oss-cn-beijing.aliyuncs.com/uPic/image-20210701160456117.png" alt="image-20210701160456117" style="zoom:50%;" />
+![1643250495461](./images/oop/31.png)
 
 ### 引用数据类型的传参机制
 
@@ -720,7 +720,7 @@ class AB{
 
 引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！
 
-<img src="https://figure-bed-liqun.oss-cn-beijing.aliyuncs.com/uPic/image-20210701160510969.png" alt="image-20210701160510969" style="zoom:50%;" />
+![1643250513382](./images/oop/32.png)
 
 ### 成员方法返回类型是引用类型应用实例
 
@@ -826,7 +826,7 @@ class T{
 
 ![1640435398856](./images/oop/09.png)
 
-<img src="./images/oop/10.png" alt="1640435486532" style="zoom: 67%;" />
+![](./images/oop/10.png)
 
 ### 递归重要原则
 
@@ -3853,7 +3853,7 @@ class Child {
 
 ### 类变量和内存布局
 
-![这里写图片描述](https://img-blog.csdn.net/20170904090054484?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaXRteWhvbWUxOTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![1643250782397](./images/oop/33.png)
 
 1. static变量是同一个类所有对象共享
 2. static类变量，在类加载的时候就生成了
@@ -4843,7 +4843,7 @@ abstract class H{
 2. 要求统计得到各自完成任务的时间
 3. 请编程实现
 
-<img src="./images/oop/25.png" alt="1640692877073" style="zoom:67%;" />
+![](./images/oop/25.png)
 
 ```java
 package com.study10abstract_.testtemplated;
@@ -4918,7 +4918,7 @@ public class BB extends Template{
 
 ### 为什么有接口
 
-<img src="./images/oop/26.png" alt="1640693051184" style="zoom:67%;" />
+![](./images/oop/26.png)
 
 ### 接口快速入门
 
@@ -5033,9 +5033,9 @@ public class Interface01 {
 
 ### 接口理解
 
-<img src="./images/oop/27.png" alt="1640695889191" style="zoom:67%;" />
+![](./images/oop/27.png)
 
-<img src="./images/oop/28.png" alt="1640695908551" style="zoom:67%;" />
+![](./images/oop/28.png)
 
 ```java
 package com.study11interface_.interface03;
@@ -5242,7 +5242,7 @@ class B implements AA{
 
 ### 接口的多态特性
 
-<img src="./images/oop/30.png" alt="1640698262870" style="zoom: 67%;" />
+![](./images/oop/29.png)
 
 ```java
 package com.study11interface_.interface04;

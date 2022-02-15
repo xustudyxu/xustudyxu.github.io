@@ -1,0 +1,14 @@
+// GoTop Minimum display width on mobile
+// When you set The `mobileShow` property to false
+// 可以通过`palette.styl`重写覆盖(https://v1.vuepress.vuejs.org/zh/config/#palette-styl)
+// 默认GoTop插件在移动设备上的最小显示宽度
+$goTopMobile ?= 500px;
+// GoTop容器
+$goTopContainer = '#go-to-top-plus';
+
+@media screen and (max-width: $goTopMobile) {
+  {$goTopContainer} {
+    // 这种写法不能动态加载css，弃用
+    // display: none !important;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "vuepress-plugin-blog-multidir",
+  "version": "1.0.5",
+  "main": "index.js",
+  "description": "A VuePress blog plugin which Support multiple folders",
+  "author": "tolking <qw13131wang@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/tolking/vuepress-plugin-blog-multidir",
+  "bugs": {
+    "url": "https://github.com/tolking/vuepress-plugin-blog-multidir/issues"
+  },
+  "homepage": "https://github.com/tolking/vuepress-plugin-blog-multidir",
+  "doc": "https://ououe.com/lib/vuepress-plugin-blog-multidir.html",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "plugin",
+    "blog",
+    "blog-multidir",
+    "pagination"
+  ],
+  "dependencies": {
+    "@vuepress/shared-utils": "^1.0.0-alpha.39"
+  }
+}

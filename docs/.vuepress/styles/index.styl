@@ -1,0 +1,48 @@
+.custom-page-class{
+    /* 自定义的样式 */
+}
+
+// markdown blockquote
+blockquote
+  font-size 1rem
+  color #2c3e50;
+  border-left .5rem solid #42b983
+  background-color #f3f5f7
+  margin 1rem 0
+  padding 1rem 0 1rem 1rem
+
+  & > p
+    margin 0
+
+// markdown h1
+h1
+  font-size 2rem
+  padding-bottom 1rem
+  border-bottom 1px solid $borderColor
+
+// markdown h2
+h2
+  font-size 1.65rem
+  border-bottom 0px solid $borderColor
+
+// custom block for tip
+.custom-block
+  .custom-block-title
+    font-weight 600
+    margin-bottom -0.4rem
+  &.tip, &.warning, &.danger
+    padding .1rem 1.5rem
+    border-left-width .5rem
+    border-left-style solid
+    margin 1rem 0
+  &.tip
+    background-color #dfefff
+    border-color #428eb9
+
+// logo
+.navbar
+  .logo
+    height $navbarHeight - 1.6rem
+    min-width $navbarHeight - 1.6rem
+    margin-right 0rem
+    vertical-align top

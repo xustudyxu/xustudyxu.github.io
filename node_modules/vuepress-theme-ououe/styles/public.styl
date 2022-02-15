@@ -1,0 +1,120 @@
+html
+  font-size 16px
+
+body,
+input,
+textarea,
+button,
+select 
+  font-family -apple-system,BlinkMacSystemFont,Microsoft YaHei,Segoe UI,Roboto,Source Han Sans SC,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neu,PingFang SC,sans-serif
+
+.pointer 
+  cursor pointer
+  user-select none
+
+.inblock 
+  display inline-block
+  vertical-align top
+
+.img 
+  width 100%
+  height 100%
+
+.main
+  margin 0 auto
+  width 100%
+  max-width $mainWidth
+  @media (max-width $phoneWidth)
+    padding: 0 .5rem
+    width auto
+
+.search-box
+  input
+    border 1px solid $borderColor
+    background-color $bgColor
+    transition all .5s ease-in-out
+    &:focus
+      border-color $accentColor
+  .suggestions
+    background $bgColor
+    border-color darken($borderColor, 10%)
+  .suggestion
+    a
+      color lighten($textColor, 35%)
+    &.focused
+      background-color darken($bgColor, 10%)
+      a
+        color $accentColor
+  @media (prefers-color-scheme: dark)
+    input
+      border 1px solid $borderDarkColor
+      background-color $bgDarkColor
+      &:focus
+        border-color $accentDarkColor
+    .suggestions
+      background $bgDarkColor
+      border-color lighten($bgDarkColor, 5%)
+    .suggestion
+      a
+        color lighten($textDarkColor, 35%)
+      &.focused
+        background-color darken($bgDarkColor, 10%)
+        a
+          color $accentDarkColor
+  @media (max-width $phoneWidth)
+    margin-right 0
+    input
+      left 0 !important
+
+// 页面过渡动画
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .2s;
+}
+.fade-transform-enter {
+  opacity: 0;
+  transform: scale(.99);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: scale(1.01);
+}
+
+.global-ui
+  .go-to-top
+    z-index 100
+  // pwa
+  .sw-update-popup
+    border-color $accentColor !important
+    background $bgColor !important
+    color $textColor !important
+    button
+      color #fff !important
+      background-color $accentColor !important
+      border-color $accentColor !important
+      &:hover
+        background-color lighten($accentColor, 10%) !important
+    @media (prefers-color-scheme: dark)
+      border-color $accentDarkColor !important
+      background $bgDarkColor !important
+      color $textDarkColor !important
+      button
+        background-color $accentDarkColor !important
+        border-color $accentDarkColor !important
+        &:hover
+          background-color darken($accentDarkColor, 10%) !important
+
+// scroll bar
+@media (min-width: $MQMobile)
+  ::-webkit-scrollbar
+    max-width 6px
+    max-height 12px
+    background-color $bgColor
+    @media (prefers-color-scheme: dark)
+      background-color $bgDarkColor
+
+  ::-webkit-scrollbar-thumb
+    background-color $textColor
+    border-radius 6px
+    @media (prefers-color-scheme: dark)
+      background-color $textDarkColor

@@ -1,0 +1,40 @@
+/* BASE - Base Variable file along with starting point Mixins and Placeholders. 
+========================================================================== */
+
+@import 'config.scss';
+
+/** respond */
+
+@mixin respond-to($key) {
+    @if map-has-key($breakpoints, $key) {
+        @media screen and (max-width: #{inspect(map-get($breakpoints, $key))}) {
+            @content;
+        }
+    }
+    @else {
+        @warn "No value could be retrieved from `#{$breakpoints}`. please make sure it is defined in `#{$breakpoints}` map";
+    }
+}
+
+
+/** prefix */
+
+@mixin css3($property, $value) {
+    @each $prefix in -webkit-,
+    -moz-,
+    -ms-,
+    -o-,
+    '' {
+        #{$prefix}#{$property}: $value
+    }
+}
+
+
+/** BEM */
+
+@mixin b($block) {
+    $B: $namespace + '-' + $block !global;
+    .#{$B} {
+        @content;
+    }
+}

@@ -1,55 +1,15 @@
-const moment = require('moment');
+const pluginsConf=require('./config/pluginsConf.js');
 module.exports = {
     base: '/Blog/', //设置站点根路径
-    title: '个人博客',
-    description: '纸上得带终觉浅,绝知此事要躬行',
+    title: 'xustudyxu\'s Personal Website',
+    description: '一起学习编程!', 
     dest: './dist',
     port: '7777',
-    plugins: [
-        [
-            '@vuepress/last-updated', {
-                transformer: (timestamp, lang) => {
-                    moment.locale(lang)
-                    return moment(timestamp).format("LLLL")
-                }
-            }
-        ],
-        [
-            '@vssue/vuepress-plugin-vssue', {
-                // set `platform` rather than `api`
-                platform: 'github-v4',
-
-                // all other options of Vssue are allowed
-                owner: 'xustudyxu',
-                repo: 'Blog',
-                clientId: '6183c7ad1308a51ceab2',
-                clientSecret: '653fbccad90a90c6630c2a1716e5d23f0b1d3f7d',
-                autoCreateIssue: true
-
-            }
-        ],
-        [
-            '@vuepress/medium-zoom', {
-                selector: 'img',
-
-            }
-        ], [
-            '@vuepress/pwa', {
-                serviceWorker: true,
-                updatePopup: {
-                    message: "发现新内容可用",
-                    buttonText: "刷新"
-                }
-            }
-        ],['@vuepress/nprogress']
-
-    ],
-
-
+    plugins:pluginsConf,
     head: [
-        ['link', { rel: 'icon', href: '/img/01.favicon' }],
-        ['link', { rel: 'stylesheet', href: '/css/style.css' }],
-        ['script', { charset: 'utf-8', href: '/js/main.js' }]
+        ['link', { rel: 'icon', href: './img/02.png' }],
+        ['link', { rel: 'stylesheet', href: './css/style.css' }],
+        ['script', { charset: 'utf-8', href: './js/main.js' }]
     ],
     markdown: {
         lineNumbers: true
@@ -58,7 +18,26 @@ module.exports = {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
         sidebarDepth: 2,
+        lastUpdated: '上次更新',
         searchMaxSuggestoins: 10,
+        // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+        repo: 'xustudyxu/VuepressBlog',
+        // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+        // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+        repoLabel: '查看源码',
+
+        // 以下为可选的编辑链接选项
+
+        // 假如你的文档仓库和项目本身不在一个仓库：
+        docsRepo: 'xustudyxu/Blog',
+        // 假如文档不是放在仓库的根目录下：
+        docsDir: 'docs',
+        // 假如文档放在一个特定的分支下：
+        docsBranch: 'gh-pages',
+        // 默认是 false, 设置为 true 来启用
+        editLinks: true,
+        // 默认为 "Edit this page"
+        editLinkText: '帮助我们改善此页面！',
         serviceWorker: {
             updatePopup: {
                 message: "有新的内容.",
@@ -68,6 +47,6 @@ module.exports = {
         editLinks: true,
         editLinkText: '在 GitHub 上编辑此页 ！'
     }
-}
 
 
+  }

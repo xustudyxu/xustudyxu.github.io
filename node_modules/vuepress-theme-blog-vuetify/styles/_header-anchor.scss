@@ -1,0 +1,46 @@
+@import 'variables';
+
+#content {
+  h1, h2, h3, h4, h5, h6 {
+    &[id] {
+      position: relative;
+      pointer-events: none;
+
+      // for scrolling offset
+      &:before {
+        content: '';
+        display: block;
+        height: $h-anchor-margin-top;
+        margin-top: -1 * $h-anchor-margin-top;
+      }
+
+      // for ability to fire hover event of parent
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - #{$h-anchor-margin-top});
+        pointer-events: auto;
+      }
+
+      // #
+      a.header-anchor {
+        font-size: 0.85em;
+        font-weight: normal;
+        position: absolute;
+        padding-right: 0.3em; // for click-ability
+        left: -0.8em;
+        opacity: 0;
+        pointer-events: auto;
+      }
+      &:hover {
+        a.header-anchor {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

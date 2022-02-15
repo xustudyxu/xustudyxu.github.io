@@ -1,7 +1,5 @@
 # MySQL
 
-[[toc]]
-
 ## 1.1 数据库三层结构
 
 1. <font color=#DC4040 size=4 face="黑体">所谓安装Mysql数据库，就是在主机安装一个数据库管理系统(DBMS)，这个管理程序可以管理多个数据库。DBMS(database manage system)</font>

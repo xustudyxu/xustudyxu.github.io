@@ -58,10 +58,10 @@ Cookie[] cookies = request.getCookies();
 // 判断数组是否为空
 if (cookies != null && cookies.length > 0) {
 // 遍历Cookie数组
-for (Cookie cookie : cookies){
-System.out.println(cookie.getName());
-System.out.println(cookie.getValue());
-}
+	for (Cookie cookie : cookies){
+		System.out.println(cookie.getName());
+		System.out.println(cookie.getValue());
+	}
 }
 ```
 
