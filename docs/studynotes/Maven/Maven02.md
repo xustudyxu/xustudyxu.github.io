@@ -757,3 +757,45 @@ mvn install -P dev_env
 4. 快速打包（因为测试需要耗费时间）
 5. ....
 
+### 使用命令跳过测试
+
++ 命令
+
+```shell
+mvn 指令 -D skipTests
+```
+
++ 注意事项
+  + 执行的指令生命周期必须包含测试环节
+
+### 使用界面操作跳过测试
+
+![1645531491169](./images/02/19.png)
+
+### 使用配置跳过测试
+
+```xml
+             <plugin>
+                    <!--配置跳过测试-->
+                    <artifactId>mawen-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                    <configuration>
+                        <!--设置跳过测试-->
+                        <skipTests>true</skipTests>
+                        <!--包含指定的测试用例-->
+                        <includes>
+                            <include>**/User*Test.java</include>
+                        </includes>
+                        <!--排除指定的测试用例-->
+                        <excludes>
+                            <exclude>**/User*TestCase.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+```
+
+## 私服(重点)
+
+分模块开发：
+
+![1645532391715](./images/02/20.png)
