@@ -1,5 +1,7 @@
 # 第一章 Python 基础篇(一)
 
+[学习视频地址](https://www.bilibili.com/video/BV1wD4y1o7AS?from=search&seid=3699907135172980455&spm_id_from=333.337.0.0)
+
 ## 1.1 Python中的输出函数
 
 ### 1.1.1 print()函数

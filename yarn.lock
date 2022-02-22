@@ -9777,6 +9777,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
+vuepress-plugin-authors@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-authors/-/vuepress-plugin-authors-0.0.2.tgz#f3442b3ebb330e0020b964118cc978dcb8da6c9d"
+  integrity sha512-07opP9BM323RPnBnZMGdEV2bv/ulswP68iBeC3ml4HjsxTjMfQtLNSTynBtsgUaycS9BEpkh7xXEpLcnMVUfIA==
+  dependencies:
+    cross-spawn "^6.0.5"
+
 vuepress-plugin-baidu-autopush@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/vuepress-plugin-baidu-autopush/download/vuepress-plugin-baidu-autopush-1.0.1.tgz#e5042170f05a585c4a38f876e01ff4706cd82fbe"
@@ -9892,6 +9899,11 @@ vuepress-plugin-permalink-pinyin@^1.0.0:
   integrity sha512-4VmLCl0Zo/gz5diow4ShpXqH9Qg/9bmPwsm/CNc0UB46gevoXsb7tylHrgcEMJzC04xYo3SxrNC6M49nbBSSpw==
   dependencies:
     transliteration "^2.1.2"
+
+vuepress-plugin-plausible-analytics@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-plausible-analytics/-/vuepress-plugin-plausible-analytics-0.2.1.tgz#d6733b17305bd37d5b9797460c8a8d179b79fc2d"
+  integrity sha512-e4ZLAFEbfhjpHv08+QqO1lMZeDa/kcg71yLtzG1LCre7sfihQyuV82ZFU3yGflqDgimcfv2AkZe24fIdoRqYmg==
 
 vuepress-plugin-qrcode@^1.0.7:
   version "1.0.7"

@@ -311,7 +311,7 @@ response.addCookie(cookie);
 
 cookie的路径指的是可以访问该cookie的**顶层目录**，**该路径的子路径也可以访问该cookie**。
 
-::: details Click to view the code written by the author
+::: details Click to view the code writen by the author
 
 ```java
 /**

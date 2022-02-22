@@ -1,5 +1,7 @@
 # Maven
 
+[学习视频地址](https://www.bilibili.com/video/BV1Ah411S7ZE?from=search&seid=14759276795870625829&spm_id_from=333.337.0.0)
+
 ## Maven简介
 
 - 传统项目管理状态分析

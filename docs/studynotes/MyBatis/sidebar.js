@@ -27,6 +27,13 @@ module.exports = [
     '/studynotes/MyBatis/DynamicSQL',
 
       ]
+  }, {
+    title:'缓存',
+    collapsable: false,
+    children:[
+    '/studynotes/MyBatis/Cache_',
+
+      ]
   }
   
 ]

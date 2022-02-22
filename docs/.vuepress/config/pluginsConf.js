@@ -1,7 +1,8 @@
 const moment = require('moment');
 moment.locale("zh-cn");
 module.exports=[
-    
+        [ "plausible-analytics"],// plausible.io 添加分析
+        ['authors'],
         ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
         [ 'vuepress-plugin-gotop-plus' ] ,//返回页首
         ['vuepress-plugin-smooth-scroll'],//平滑插件
@@ -63,7 +64,7 @@ module.exports=[
             }
           },
           {
-            icon: '/img/04',
+            icon: '',
             name: 'github',
             popover: {
               type: 'html',

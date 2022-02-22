@@ -1,4 +1,7 @@
 # SpringMVC简介
+
+[学习视频地址](https://www.bilibili.com/video/BV1Ry4y1574R?from=search&seid=13810950434984257553&spm_id_from=333.337.0.0)
+
 ### 什么是MVC
 
 MVC是一种软件架构的思想，将软件按照模型、视图、控制器来划分
@@ -38,8 +41,3 @@ SpringMVC 是 Spring 为表述层开发提供的一整套完备的解决方案�
 
 ![1641608180152](./images/01/01.png)
 
-::: tip
-
-这是一个提示
-
-:::
