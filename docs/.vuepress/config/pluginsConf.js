@@ -60,7 +60,7 @@ module.exports=[
             popover: {
               type: 'text',
               title: '纯文本说明',
-              text: '这是一个纯文本的内容展示，就是一段话'
+              text: '在b站学编程'
             }
           },
           {
@@ -69,7 +69,7 @@ module.exports=[
             popover: {
               type: 'html',
               title: '使用简单的 HTML 显示',
-              html: '<h1>使用简单的 HTML</h1> 进行展示 <a href="https://github.com/xustudyxu/Blog/tree/gh-pages"> 链接到github </a>'
+              html: '<h1>使用简单的 HTML</h1> 进行展示 <a href="https://github.com/xustudyxu/VuepressBlog"> 链接到github </a>'
             }
           }, {
             icon: '',
