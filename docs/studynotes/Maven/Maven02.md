@@ -800,3 +800,140 @@ mvn 指令 -D skipTests
 
 ![1645532391715](./images/02/20.png)
 
+## Nexus介绍
+
++ Nexus是Sonatype公司的一款maven私服产品
++ [下载地址]([Download (sonatype.com)](https://help.sonatype.com/repomanager3/product-information/download))
+
++ 在bin目录下启动nexus服务
+
+```shell
+nexus /run nexus
+```
+
+1. 访问(默认端口8081)
+
+![1645604806551](./images/02/21.png)
+
+2. 停止服务运行
+
+```shell
+./bin/nexus stop
+```
+
++ 修改基础配置信息
+  + 安装路径下etc目录中nexus-default.properties文件保存有nexus基础配置信息，例如默认访问端口
++ 修改服务器运行配置信息
+  + 安装路径下bin目录中nexus.vmoptions文件保存有nexus服务器启动对应的配置信息，例如默认占用内存空间
+
+## Nexus操作
+
+### 仓库分类和手工资源上传
+
+私服资源的获取：下图所示，我们要把快照版的资源放在一个仓库里，把发行版的资源放在一个仓库里，第三方公共资源放在一个仓库里，这样方便进行管理，势必要对仓库进行分类和分组。
+
+
+![1645605381246](./images/02/22.png)
+
+> 仓库分类
+
++ 宿主仓库`hosted`：保存无法从中央仓库获取的资源
+  + 自主研发
+  + 第三方非开源项目
++ 代理仓库`proxy`：代理远程仓库，通过nexus访问其他公共仓库，例如中央仓库
+
++ 仓库组`group`：
+  + 将若干仓库组成一个群组，简化配置
+  + 仓库组不能保存资源，属于设计型仓库
+
+![1645605758254](./images/02/23.png)
+
+1. 新建一个仓库，例如frx01-release
+
+![1645605865070](./images/02/24.png)
+
+2. 仓库类型选择宿主仓库`maven2(hosted)`
+
+![1645605928933](./images/02/25.png)
+
+3. 创建好后，将其加入到maven-public仓库组中，方便管理
+   ![1645606071752](./images/02/26.png)
+
+4. 将ssm-pojo打包好的jar包上传至`frx01-release`
+
+![1645606570324](./images/02/27.png)
+
+5. 查看仓库里的ssm-pojo资源
+
+![1645606725674](./images/02/28.png)
+
+### 本地仓库访问私服
+
+idea环境中的资源上传与下载：
+
+![1645606763861](./images/02/29.png)
+
+1. 配置本地仓库访问私服的权限（`setting.xml`）
+
+```xml
+<!--配置访问服务器的权限，用户名密码-->
+<servers>
+	<server>
+		<id>frx01-release</id>
+      	<username>admin</username>
+      	<password>admin</password>
+	</server>
+	<server>
+		<id>frx01-snapshots</id>
+      	<username>admin</username>
+      	<password>admin</password>
+	</server>
+</servers>
+```
+
+2. 配置本地仓库资源的下载来源
+
+```xml
+	  <!-- 配置具体的仓库的下载镜像 -->
+	  <mirror>
+		  <!-- 此镜像的唯一标识符，用来区分不同的mirror元素 -->
+		  <id>nexus-aliyun</id>
+		  <!-- 对哪种仓库进行镜像，简单说就是替代哪个仓库 -->
+		  <mirrorOf>central</mirrorOf>
+		  <!-- 镜像名称 -->
+		  <name>Nexus aliyun</name>
+		  <!-- 镜像URL -->
+		  <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+	  </mirror>
+	<!--其他的从私服下载-->
+	  <mirror>
+		  <id>nexus-frx01</id>
+		  <mirrorOf>*</mirrorOf>
+		  <url>http://localhost:8081/repository/maven-public/</url>
+	  </mirror>
+```
+
+3. 配置当前项目ssm访问私服上传资源的保存位置（`pom.xml`）
+
+```xml
+    <!--发布配置管理-->
+    <distributionManagement>
+        <repository>
+            <!--发布到发行版的仓库，注意这里的id必须和setting.xml配置的id相同-->
+            <id>frx01-release</id>
+            <!--发行版仓库的url-->
+            <url>http://localhost:8081/repository/frx01-release/</url>
+        </repository>
+        <snapshotRepository>
+            <!--发布到快照版的仓库-->
+            <id>frx01-snapshot</id>
+            <!--快照版仓库的url-->
+            <url>http://localhost:8081/repository/frx01-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+```
+
++ 执行deploy命令
+
+![1645609193893](./images/02/30.png)
+
