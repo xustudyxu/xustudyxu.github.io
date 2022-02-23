@@ -2231,9 +2231,9 @@ autocomplete.js@0.36.0:
   dependencies:
     immediate "^3.2.3"
 
-autocomplete.js@^0.38.0:
+autocomplete.js@^0.38.1:
   version "0.38.1"
-  resolved "https://registry.npmmirror.com/autocomplete.js/download/autocomplete.js-0.38.1.tgz#9b006c985d996165ebbc62af33f5b4c32d209cc2"
+  resolved "https://registry.npmmirror.com/autocomplete.js/-/autocomplete.js-0.38.1.tgz#9b006c985d996165ebbc62af33f5b4c32d209cc2"
   integrity sha512-6pSJzuRMY3pqpozt+SXThl2DmJfma8Bi3SVFbZHS0PW/N72bOUv+Db0jAh2cWOhTsA4X+GNmKvIl8wExJTnN9w==
   dependencies:
     immediate "^3.2.3"
@@ -4113,6 +4113,11 @@ deepmerge@^1.5.2:
   resolved "https://registry.nlark.com/deepmerge/download/deepmerge-1.5.2.tgz?cache=0&sync_timestamp=1622025358084&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdeepmerge%2Fdownload%2Fdeepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
   integrity sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.npmmirror.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 default-gateway@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmmirror.com/default-gateway/download/default-gateway-4.2.0.tgz#167104c7500c2115f6dd69b0a536bb8ed720552b"
@@ -4253,13 +4258,13 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-docs-searchbar.js@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmmirror.com/docs-searchbar.js/download/docs-searchbar.js-2.0.1.tgz#fa44481c7e747f8486e292b45623ea6d18abea0c"
-  integrity sha512-4TnsUNKDW4RCxpAcNcb7z5uACemGCusJ4RVBrq3M99nJWcvSxY7yzVKMHblWav95FUzFz3vu5439y9TtsKn5ag==
+docs-searchbar.js@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmmirror.com/docs-searchbar.js/-/docs-searchbar.js-2.1.0.tgz#3ecf48f46926a425b0282546096489439573b2d4"
+  integrity sha512-lHDeJelI8NrtmTrX38rZN86BQ6pxL8QzlfMqR6dHhfAXdrpDX2nNRT51sNSg6nIuI0ubpCVyJMyncedglmK/FA==
   dependencies:
-    autocomplete.js "^0.38.0"
-    meilisearch "^0.23.0"
+    autocomplete.js "^0.38.1"
+    meilisearch "0.24.0"
     to-factory "^1.0.0"
     zepto "^1.2.0"
 
@@ -6480,6 +6485,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmmirror.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 lodash.trimend@^4.5.1:
   version "4.5.1"
   resolved "https://registry.npmmirror.com/lodash.trimend/download/lodash.trimend-4.5.1.tgz#12804437286b98cad8996b79414e11300114082f"
@@ -6685,10 +6695,10 @@ medium-zoom@^1.0.4:
   resolved "https://registry.npm.taobao.org/medium-zoom/download/medium-zoom-1.0.6.tgz#9247f21ca9313d8bbe9420aca153a410df08d027"
   integrity sha1-kkfyHKkxPYu+lCCsoVOkEN8I0Cc=
 
-meilisearch@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.npmmirror.com/meilisearch/download/meilisearch-0.23.0.tgz#eed5098bd147c13658c3f92e658df9cbfb9e8953"
-  integrity sha512-bLNonPJK2pJz2akjwolcc/Eqnz/GKJ7y1I4Flg4zjL+v0yPFyIGFFdfe0dw93JWFJWj/RbLS2Q6dDTobZQ9Ehg==
+meilisearch@0.24.0:
+  version "0.24.0"
+  resolved "https://registry.npmmirror.com/meilisearch/-/meilisearch-0.24.0.tgz#a71454baac058f502b931af17069ab676fbaced6"
+  integrity sha512-qME1dsHZePBQi8qFdhbilcFzaL+oZJgUuls+FZ23hHpdhJI+iMFSmjjcfsxq5hdg2qczbCXv7yAo3Sh8xgfkgA==
   dependencies:
     cross-fetch "^3.1.4"
 
@@ -9886,12 +9896,12 @@ vuepress-plugin-mailchimp@^1.4.1:
     jsonp "^0.2.1"
     query-string "^6.9.0"
 
-vuepress-plugin-meilisearch@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-meilisearch/download/vuepress-plugin-meilisearch-0.11.4.tgz#98d452c3e8614cd9471afb16c10dbbc8bd245983"
-  integrity sha512-9uAUiGP+r0ZKwSi7CEnrtT9iS7hECyCdpdxDM7RLe2LCV2b0v7M9vkFLmu/jv6iHsocGc5bWNQt45dAM2L+1ig==
+vuepress-plugin-meilisearch@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-meilisearch/-/vuepress-plugin-meilisearch-0.12.0.tgz#7fb95720269e2274ef4b55df0a7b6fbf7b06156d"
+  integrity sha512-lQt9Id3Wk04lNMJsCmRvTh/B4WHF7g4Ao52aZjXaaGSHo7Is7cJ1uxDo4xHKdB0kjCH+0yjN+XUsFIWLjgRVfw==
   dependencies:
-    docs-searchbar.js "^2.0.1"
+    docs-searchbar.js "^2.1.0"
 
 vuepress-plugin-permalink-pinyin@^1.0.0:
   version "1.0.0"
@@ -9917,10 +9927,12 @@ vuepress-plugin-reading-progress@^1.0.10:
   resolved "https://registry.npm.taobao.org/vuepress-plugin-reading-progress/download/vuepress-plugin-reading-progress-1.0.10.tgz#0b9d44e27d583ff20e0307993aa4cbda49f3bdca"
   integrity sha1-C51E4n1YP/IOAweZOqTL2knzvco=
 
-vuepress-plugin-right-anchor@^2.0.0-rc.3:
-  version "2.0.0-rc.3"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-right-anchor/download/vuepress-plugin-right-anchor-2.0.0-rc.3.tgz#ec3bf7cc76a413a273d6d153b9042c56f0726d67"
-  integrity sha1-7Dv3zHakE6Jz1tFTuQQsVvBybWc=
+vuepress-plugin-right-anchor@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-right-anchor/-/vuepress-plugin-right-anchor-0.5.5.tgz#f5b8b12e8c911e51a3203d6e40f5d3b0d3213d10"
+  integrity sha512-C/zKeCw8Zzcd62DSGyiOwG6gOE9//VY5lPFPXxh1N/kJ2ICoCLNKBTFk2L9oDRgpWVc1TXk4HDqT+wxqz7MgmQ==
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 vuepress-plugin-seo@^0.1.2:
   version "0.1.4"
@@ -9947,6 +9959,13 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   integrity sha1-bv8tTBhsypF8yfffKwr33nyMZDg=
   dependencies:
     smoothscroll-polyfill "^0.4.3"
+
+vuepress-plugin-social-share@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-social-share/-/vuepress-plugin-social-share-1.1.0.tgz#0249554ab452364147d2dcb834ada55745e100bb"
+  integrity sha512-r5JroZG3pTA1DFTxvoNevO7ORlrv3gu0kSGemnmIh11cQ5ruvhpa75eUS5/ovoX1WewGziSyCRmFEhgucpl8aw==
+  dependencies:
+    deepmerge "^4.2.2"
 
 vuepress-plugin-toolbar@^1.0.1:
   version "1.0.1"

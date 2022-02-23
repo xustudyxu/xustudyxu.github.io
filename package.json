@@ -24,7 +24,7 @@
     "vuepress-plugin-gotop-plus": "^1.0.4",
     "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
-    "vuepress-plugin-meilisearch": "^0.11.4",
+    "vuepress-plugin-meilisearch": "^0.12.0",
     "vuepress-plugin-toolbar": "^1.0.1",
     "vuepress-theme-ououe": "^1.5.3",
     "vuepress-theme-yilia-plus": "^1.0.0"
@@ -44,8 +44,9 @@
     "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-plausible-analytics": "^0.2.1",
     "vuepress-plugin-qrcode": "^1.0.7",
-    "vuepress-plugin-right-anchor": "^2.0.0-rc.3",
+    "vuepress-plugin-right-anchor": "^0.5.5",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
+    "vuepress-plugin-social-share": "^1.1.0",
     "vuepress-theme-blog-vuetify": "^1.5.1",
     "vuepress-theme-note": "^1.1.3"
   },

@@ -1,0 +1,14 @@
+{
+  "social-share": {
+    "description": "Social share component in local mode.",
+    "attributes": [
+      "networks",
+      "tags",
+      "isPlain"
+    ]
+  },
+  "global-social-share": {
+    "description": "Social share component in global mode.",
+    "attributes": []
+  }
+}
