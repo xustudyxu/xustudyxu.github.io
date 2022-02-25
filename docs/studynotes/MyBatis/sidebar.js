@@ -34,6 +34,13 @@ module.exports = [
     '/studynotes/MyBatis/Cache_',
 
       ]
+  }, {
+    title:'逆向工程',
+    collapsable: false,
+    children:[
+    '/studynotes/MyBatis/reverse_engineering',
+
+      ]
   }
   
 ]

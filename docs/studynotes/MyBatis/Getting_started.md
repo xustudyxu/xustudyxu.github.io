@@ -81,20 +81,30 @@ public class Employee {
 }
 ```
 
-+ 引入依赖
++ 创建maven工程引入相关依赖
 
 ```xml
-<dependency>
-    <groupId>org.mybatis</groupId>
-    <artifactId>mybatis</artifactId>
-    <version>3.4.1</version>
-</dependency>
-
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>6.0.6</version>
-</dependency>
+<dependencies>
+	<!-- Mybatis核心 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.5.7</version>
+	</dependency>
+	<!-- junit测试 -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+		<scope>test</scope>
+	</dependency>
+	<!-- MySQL驱动 -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.3</version>
+	</dependency>
+</dependencies>
 ```
 
 + 或者导入相关的jar包
