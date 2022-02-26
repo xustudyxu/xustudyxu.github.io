@@ -10034,9 +10034,22 @@ vuepress-theme-yilia-plus@^1.0.0:
     "@vuepress/theme-default" "^1.0.3"
     busuanzi.pure.js "^1.0.2"
 
-vuepress@^1.3.1, vuepress@^1.4.1, vuepress@^1.9.7:
+vuepress@^1.3.1, vuepress@^1.4.1:
   version "1.9.7"
   resolved "https://registry.npmmirror.com/vuepress/download/vuepress-1.9.7.tgz#2cd6709a2228f5cef588115aaeabf820ab9ed7cc"
+  integrity sha512-aSXpoJBGhgjaWUsT1Zs/ZO8JdDWWsxZRlVme/E7QYpn+ZB9iunSgPMozJQNFaHzcRq4kPx5A4k9UhzLRcvtdMg==
+  dependencies:
+    "@vuepress/core" "1.9.7"
+    "@vuepress/theme-default" "1.9.7"
+    "@vuepress/types" "1.9.7"
+    cac "^6.5.6"
+    envinfo "^7.2.0"
+    opencollective-postinstall "^2.0.2"
+    update-notifier "^4.0.0"
+
+vuepress@^1.9.7:
+  version "1.9.7"
+  resolved "https://registry.npmmirror.com/vuepress/-/vuepress-1.9.7.tgz#2cd6709a2228f5cef588115aaeabf820ab9ed7cc"
   integrity sha512-aSXpoJBGhgjaWUsT1Zs/ZO8JdDWWsxZRlVme/E7QYpn+ZB9iunSgPMozJQNFaHzcRq4kPx5A4k9UhzLRcvtdMg==
   dependencies:
     "@vuepress/core" "1.9.7"
