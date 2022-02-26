@@ -42,7 +42,7 @@ jobs:
       # 如果缓存没有命中，安装依赖，根据实际来改，也可以是npm，这里是用的yarn
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+        run: yarn && yarn build
  
          - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
