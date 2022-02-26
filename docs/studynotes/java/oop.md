@@ -381,7 +381,6 @@ public class Method02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        //int [][]map= {{0,0,1},{1,1,1},{1,1,3}};
         //使用方法完成数组
         MyTools too1=new MyTools();
         too1.printArr(map);
