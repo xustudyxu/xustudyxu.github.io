@@ -1,6 +1,6 @@
 const pluginsConf=require('./config/pluginsConf.js');
 module.exports = {
-    base: '/Blog/', //设置站点根路径
+    base: '/VuepressBlog/', //设置站点根路径
     title: 'xustudyxu\'s Blog',
     description: '一起学习编程!', 
     dest: './docs/.vuepress/dist',
