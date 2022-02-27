@@ -1,4 +1,12 @@
 module.exports = [
+  {
+    title:'Java 面向对象',
+    collapsable: true,
+    children:[
+    '/studynotes/java/oop',
+
+      ]
+  },
  {
     title:'Java 枚举和注解',
     collapsable: true,
