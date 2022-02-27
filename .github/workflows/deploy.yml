@@ -50,7 +50,7 @@ jobs:
          # 部署到你的目标仓库，这里就是你的仓库名
           REPO: git@github.com:xustudyxu/Blog.git
           # 部署到 gh-pages 分支
-          BRANCH: gh-pages
+          BRANCH: master:gh-pages
           # 部署目录为 VuePress 的默认输出目录
           FOLDER: docs/.vuepress/dist
           # 当前仓库的密钥
