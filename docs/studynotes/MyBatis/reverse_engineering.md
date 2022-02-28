@@ -176,7 +176,7 @@ MyBatis Generator
 public class MBGTest {
 
     @Test
-    public void testMBG() throws IOException {
+    public void testMBG() {
         try {
 
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
@@ -210,7 +210,7 @@ Process finished with exit code 0
 
 ```java
     @Test
-    public void testMBG() throws IOException {
+    public void testMBG() {
         try {
 
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
@@ -246,7 +246,7 @@ Process finished with exit code 0
 
 ```java
     @Test
-    public void testMBG() throws IOException {
+    public void testMBG() {
         try {
 
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
