@@ -41,6 +41,14 @@ module.exports = [
     '/studynotes/MyBatis/reverse_engineering',
 
       ]
+  }, {
+    title:'分页插件',
+    collapsable: false,
+    children:[
+    '/studynotes/MyBatis/page_plu',
+
+      ]
   }
+  
   
 ]
