@@ -11,8 +11,6 @@
 
 MyBatis Generator
 
-MyBatis Generator：
-
 简称MBG，是一个专门为MyBatis框架使用者定制的代码生成器，可以快速的根据表生成对应的映射文件，接口，以及bean类。支持基本的增删改查，以及QBC风格的条件查询。但是表连接、存储过程等这些复杂sql的定义需要我们手工编写
 
 [官方文档地址](http://www.mybatis.org/generator/)
