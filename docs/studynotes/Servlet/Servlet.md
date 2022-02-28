@@ -2,18 +2,14 @@
 
 Servlet 是 Server 与 Applet 的缩写，是服务端小程序的意思。使用 Java 语言编写的服务器端程序，
 可以生成动态的 WEB 页，Servlet 主要运行在服务器端，并由服务器调用执行， 是一种按照 Servlet 标
-准来开发的类。 是 SUN 公司提供的一门用于开发动态 Web 资源的技术。（言外之意：要实现 web 开
-发，需要实现 Servlet 标准）
+准来开发的类。 是 SUN 公司提供的一门用于开发动态 Web 资源的技术。（言外之意：要实现 web 开发，需要实现 Servlet 标准）
 
 Servlet 本质上也是 Java 类，但要遵循 Servlet 规范进行编写，没有 main()方法，它的创建、使用、
-销毁都由 Servlet 容器进行管理(如 Tomcat)。（言外之意：写自己的类，不用写 main 方法，别人自动
-调用）
+销毁都由 Servlet 容器进行管理(如 Tomcat)。（言外之意：写自己的类，不用写 main 方法，别人自动调用）
 
-Servlet 是和 HTTP 协议是紧密联系的，其可以处理 HTTP 协议相关的所有内容。这也是 Servlet 应用
-广泛的原因之一。
+Servlet 是和 HTTP 协议是紧密联系的，其可以处理 HTTP 协议相关的所有内容。这也是 Servlet 应用广泛的原因之一。
 
-提供了 Servlet 功能的服务器，叫做 Servlet 容器，其常见容器有很多，如 Tomcat, Jetty, WebLogic
-Server, WebSphere, JBoss 等等。
+提供了 Servlet 功能的服务器，叫做 Servlet 容器，其常见容器有很多，如 Tomcat, Jetty, WebLogicServer, WebSphere, JBoss 等等。
 
 ## 创建Web项目
 
@@ -62,14 +58,6 @@ public class Servlet01 extends HttpServlet {
 请求处理的操作，业务代码则可以写在该方法中。
 
 ```java
-package com.frx01.servlet01;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 /**
  * @author frx
  * @version 1.0
@@ -129,11 +117,11 @@ public class Servlet01 extends HttpServlet {
 + 也可以配置多个访问路径
 
 ```java
-@WebServlet(name="Servlet01",value={"/ser01",'/ser001'})
+@WebServlet(name="Servlet01",value={"/ser01","/ser001"})
 ```
 
 ```java
-@WebServlet(name="Servlet01",urlPatterns={"/ser01",'/ser001'})
+@WebServlet(name="Servlet01",urlPatterns={"/ser01","/ser001"})
 ```
 
 ### 发布项目并启动服务
@@ -157,8 +145,7 @@ public class Servlet01 extends HttpServlet {
 
 ### 访问并查看结果
 
-在项目正确发布到服务器上之后，用户即可通过浏览器访问该项目中的资源。注意 url 的 格式正确，
-tomcat 的端口为 8080。
+在项目正确发布到服务器上之后，用户即可通过浏览器访问该项目中的资源。注意 url 的 格式正确，tomcat 的端口为 8080。
 
 浏览器访问地址:http://localhost:8080/s0/ser01
 
