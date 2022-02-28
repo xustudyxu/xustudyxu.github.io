@@ -1,11 +1,21 @@
 # MyBatis的逆向工程
 
+[[toc]]
+
 + 正向工程：先创建Java实体类，由框架负责根据实体类生成数据库表。Hibernate是支持正向工程
   的。
 + 逆向工程：先创建数据库表，由框架负责根据数据库表，反向生成如下资源：
   + Java实体类
   + Mapper接口
   + Mapper映射文件
+
+MyBatis Generator：
+
+简称MBG，是一个专门为MyBatis框架使用者定制的代码生成器，可以快速的根据表生成对应的映射文件，接口，以及bean类。支持基本的增删改查，以及QBC风格的条件查询。但是表连接、存储过程等这些复杂sql的定义需要我们手工编写
+
+[官方文档地址](http://www.mybatis.org/generator/)
+
+[官方工程地址](https://github.com/mybatis/generator/releases)
 
 ## 创建逆向工程的步骤
 
@@ -49,6 +59,12 @@
                         <artifactId>mysql-connector-java</artifactId>
                         <version>5.1.8</version>
                     </dependency>
+                      <dependency>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                        <version>1.2.14</version>
+                        <optional>true</optional>
+        			</dependency>
                 </dependencies>
             </plugin>
         </plugins>
@@ -139,5 +155,120 @@
 
 ### 执行MBG插件的generate目标
 
+![1646015265183](./images/04/03.png)
+
+清新简洁版效果:
+
+![1646016045824](./images/04/04.png)
+
+奢华尊享版效果:
+
+![1646016342888](./images/04/05.png)
+
++ 测试
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/2/28  10:55
+ */
+public class MBGTest {
+
+    @Test
+    public void testMBG() throws IOException {
+        try {
+
+            InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            SqlSession openSession = sqlSessionFactory.openSession(true);
+            EmpMapper mapper = openSession.getMapper(EmpMapper.class);
+            //查询数据
+            Emp emp = mapper.selectByPrimaryKey(3);
+            System.out.println(emp);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+
++ 结果
+
+```java
+DEBUG 02-28 11:28:40,132 ==>  Preparing: select id, last_name, gender, email, d_id from tbl_employee where id = ?  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:28:40,185 ==> Parameters: 3(Integer)  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:28:40,219 <==      Total: 1  (BaseJdbcLogger.java:137) 
+Emp{id=3, lastName='jerry', gender='1', email='jerry@123.com', dId=null}
+
+Process finished with exit code 0
+```
+
 ## QBC查询
+
+### 根据条件查询
+
+```java
+    @Test
+    public void testMBG() throws IOException {
+        try {
+
+            InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            SqlSession openSession = sqlSessionFactory.openSession(true);
+            EmpMapper mapper = openSession.getMapper(EmpMapper.class);
+            //根据条件查询
+            EmpExample example = new EmpExample();
+            example.createCriteria().andLastNameEqualTo("frank").andGenderEqualTo("1");
+            List<Emp> list = mapper.selectByExample(example);
+            for (Emp emp : list) {
+                System.out.println(emp);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+```
+
++ 结果
+
+```java
+DEBUG 02-28 11:27:59,060 ==>  Preparing: select id, last_name, gender, email, d_id from tbl_employee WHERE ( last_name = ? and gender = ? )  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:27:59,102 ==> Parameters: frank(String), 1(String)  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:27:59,136 <==      Total: 1  (BaseJdbcLogger.java:137) 
+Emp{id=5, lastName='frank', gender='1', email='frank@athome.com', dId=2}
+
+Process finished with exit code 0
+```
+
+### 根据主键修改
+
+```java
+    @Test
+    public void testMBG() throws IOException {
+        try {
+
+            InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            SqlSession openSession = sqlSessionFactory.openSession(true);
+            EmpMapper mapper = openSession.getMapper(EmpMapper.class);
+            //根据主键修改
+            mapper.updateByPrimaryKey(new Emp(1,"admin","1","123@qq.com",1));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+```
+
++ 结果
+
+```java
+DEBUG 02-28 11:39:37,371 ==>  Preparing: update tbl_employee set last_name = ?, gender = ?, email = ?, d_id = ? where id = ?  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:39:37,431 ==> Parameters: admin(String), 1(String), 123@qq.com(String), 1(Integer), 1(Integer)  (BaseJdbcLogger.java:137) 
+DEBUG 02-28 11:39:37,831 <==    Updates: 1  (BaseJdbcLogger.java:137) 
+
+Process finished with exit code 0
+```
 
