@@ -52,12 +52,12 @@ module.exports = [
   ['vuepress-plugin-smooth-scroll'],//平滑插件
   ['vuepress-plugin-baidu-autopush'],
   ['vuepress-plugin-global-toc'],//全局目录
-  // ['@vuepress/last-updated', {
-  //   transformer: (timestamp, lang) => {
-  //     return moment(timestamp).format("LLLL")
-  //   }
-  // }
-  // ],//最后更新插件
+  ['@vuepress/last-updated', {
+    transformer: (timestamp, lang) => {
+      return moment(timestamp).format("LLLL")
+    }
+  }
+  ],//最后更新插件
   ['vuepress-plugin-code-copy', true],//复制代码插件
   ['img-lazy'],//图片缓存加载
   ['@vuepress/active-header-links', {
