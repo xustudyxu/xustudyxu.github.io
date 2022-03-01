@@ -3,7 +3,7 @@ module.exports = {
     base: '/VuepressBlog/', //设置站点根路径
     title: 'xustudyxu\'s Blog',
     description: '一起学习编程!', 
-    dest: './docs/.vuepress/dist',
+    dest: 'docs/.vuepress/dist',
     port: '7777',
     plugins:pluginsConf,
     head: [
