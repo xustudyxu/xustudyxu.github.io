@@ -16,24 +16,6 @@ const extendsNetworks = {
   },
 }
 module.exports = [
-  //   [
-  //     'vuepress-plugin-right-anchor',//右侧导航栏
-  //     {
-  //       showDepth: 2,
-  //       ignore: [
-  //         '/',
-  //         '/api/'
-  //         // more...
-  //       ],
-  //       expand: {
-  //         trigger: 'click',
-  //         clickModeDefaultOpen: true
-  //       },
-  //       customClass: 'your-customClass',
-  //       disableGlobalUI: false,
-  //     }
-
-  // ],
   [
     'social-share',
     {
