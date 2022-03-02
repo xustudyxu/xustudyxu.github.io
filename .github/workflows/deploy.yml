@@ -5,12 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
-      fetch-depth: 0
-      persist-credentials: false
+      uses: actions/checkout@main
+      with:
+        fetch-depth: 0
+        persist-credentials: false
 
     - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: jenkey2011/vuepress-deploy@main
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: xustudyxu/VuepressBlog
