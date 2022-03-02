@@ -6,19 +6,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Get Git Log
-      id: git_log
-      uses: Edisonboy/latest-git-log-action@main
-      with:
-        tag: origin/master
 
-    #获取指定时区的时间
-    - name: Get Time
-      id: time
-      uses: JantHsueh/get-time-action@master
+    - name: Get LastTime
+      uses: actions/checkout@main
       with:
-        timeZone: 8
-        
+        persist-credentials: false
+        fetch-depth: 0
+     
+
+
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
