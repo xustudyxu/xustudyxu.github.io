@@ -1,5 +1,9 @@
 name: Build And Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -7,20 +11,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
       with:
-        fetch-depth: 0
         persist-credentials: false
-
-    - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: xustudyxu/VuepressBlog
-        TARGET_BRANCH: gh-pages
-        BUILD_SCRIPT: yarn && yarn build 
-        BUILD_DIR: docs/.vuepress/dist/
-
-
-
+        fetch-depth: 0
+    - name: Build
+      run: yarn && yarn build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@main
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        branch: gh-pages
+        folder: docs/.vuepress/dist/
 
 # name: Build and Deploy 
 # on:
