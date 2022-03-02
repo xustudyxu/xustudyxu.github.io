@@ -78,33 +78,12 @@ module.exports = [
 
     opts: [{
       icon: '',
-      name: '纯展示'
-    },
-    {
-      icon: '',
-      name: '文本',
-      popover: {
-        type: 'text',
-        title: '纯文本说明',
-        text: '在b站学编程'
-      }
-    },
-    {
-      icon: '',
-      name: 'github',
-      popover: {
-        type: 'html',
-        title: '使用简单的 HTML 显示',
-        html: '<h1>使用简单的 HTML</h1> 进行展示 <a href="https://github.com/xustudyxu/VuepressBlog"> 链接到github </a>'
-      }
-    }, {
-      icon: '',
       name: '用手机看',
       link: '',
       popover: {
         title: '扫描二维码',
         type: 'image',
-        imageUrl: 'https://qr.api.cli.im/newqr/create?data=https%3A%2F%2Fqr06.cn%2FEsHCt1&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=2dac2ea9cf7baabae1f72caf377cb890',
+        imageUrl: 'https://qr.api.cli.im/newqr/create?data=https%253A%252F%252Fxustudyxu.github.io%252FVuepressBlog%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=35192b7bdf2849a3a25b259e110339be',
       }
     }
     ]
