@@ -11,6 +11,14 @@ jobs:
       uses: Edisonboy/latest-git-log-action@main
       with:
         tag: origin/master
+
+    #获取指定时区的时间
+    - name: Get Time
+      id: time
+      uses: JantHsueh/get-time-action@master
+      with:
+        timeZone: 8
+        
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
