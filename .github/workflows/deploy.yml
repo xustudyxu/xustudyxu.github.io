@@ -11,7 +11,7 @@ jobs:
         persist-credentials: false
 
     - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@main
+      uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: xustudyxu/VuepressBlog
