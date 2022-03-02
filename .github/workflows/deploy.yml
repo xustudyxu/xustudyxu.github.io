@@ -5,11 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@master
+    - name: Get Git Log
+      id: git_log
+      uses: Edisonboy/latest-git-log-action@main
       with:
-        persist-credentials: false
-        fetch-depth:0
-
+        tag: origin/master
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
