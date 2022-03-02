@@ -6,15 +6,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-
-    - name: Get LastTime
-      uses: actions/checkout@main
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-     
-
-
+      
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
@@ -23,6 +15,12 @@ jobs:
         TARGET_BRANCH: gh-pages
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist/
+
+    - name: Get LastTime
+      uses: actions/checkout@main
+      with:
+        persist-credentials: false
+        fetch-depth: 0
 
 
 
