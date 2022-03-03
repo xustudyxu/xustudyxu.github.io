@@ -79,6 +79,7 @@ module.exports = [
           { text: 'MySQL5.7参考手册', link: 'https://dev.mysql.com/doc/refman/5.7/en/' },
           { text: 'Spring官方文档', link: 'https://spring.io/' },
           { text: 'MyBatis管方文档', link: 'https://mybatis.org/mybatis-3/zh/index.html' },
+          { text: 'Vuepress官方文档', link: 'https://vuepress.vuejs.org/' },
         ]
       }
       , {
