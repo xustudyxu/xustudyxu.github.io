@@ -1,10 +1,8 @@
 # LeetCode 算法题
 
-::: tip
+[[toc]]
 
-每天一道
-
-:::
+> 每天一道
 
 ## 简单
 
@@ -35,6 +33,15 @@
 输入：nums = [3,3], target = 6
 输出：[0,1]
 
++ 解题思路:
+
++ 方法一:
+  + 枚举在数组中所有的不同的两个下标的组合
+  + 逐个检查它们所对应的数的和是否等于target
++ 复杂度分析:
+  + 时间复杂度:O(n^2),这里n为数组的长度
+  + 空间复杂度:O(1),只用到常数个临时变量
+
 ```java
 class Solution {
     int arr[]=new int[2];
@@ -52,28 +59,42 @@ class Solution {
 }
 ```
 
-+  能不能想出一个小于 时间复杂度的算法？`O(n2) `
++ 方法二:查找表法
+  + 在遍历的同时，记录一些信息，一省去一层循环，这是“以空间换时间”的想法
+  + 需要记录已经遍历过的数值和它所对应的下标，可以借助查找表实现
+  + 查找表与两个常用的实现:
+    + <font color=##dd0000 >哈希表</font>
+    + 平衡二叉搜索树
++ 复杂度分析：
+  + 时间复杂度:O(n),这里n为数组的长度
+  + 空间复杂度:O(n),哈希表里最多需要存n-1个键值对
+
+![1646297611805](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1646297611805.png)
+
+::: tip
+
+遍历nums,第一个元素6，不在哈希表中，key为6，value为0，存入哈希表；遍历元素3，与之对应的元素应该是target-3=5,5不在哈希表中，key为3，value为1，存入哈希表中;遍历到元素8，与之对应的元素应该是target-8=0,0不在哈希表中，key为8，value为2，存入哈希表中；遍历到元素2，与之对应的元素应该是target-2=6,6在哈希表中；因此6和2就是我们要找的两个元素，对应的下标分别是0,3,将数组[0,3]返回即可，算法到此结束。
+
+:::
 
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int[] indexs = new int[2];
-        
-        // 建立k-v ，一一对应的哈希表
-        HashMap<Integer,Integer> hashmap = new HashMap<Integer,Integer>();
-        for(int i = 0; i < nums.length; i++){
-            if(hashmap.containsKey(nums[i])){  //这个nums[i]的值等于i
-                indexs[0] = i;
-                indexs[1] = hashmap.get(nums[i]);
-                return indexs;
+ 		int len=nums.length;
+        Map<Integer,Integer> hashMap=new HashMap<>(len-1);
+        hashMap.put(nums[0],0);
+        for(int i=1;i<len;i++){
+            int another=target-nums[i];
+            if(hashMap.containsKey(another)){
+                return new int[]{i,hashMap.get(target-nums[i])};
             }
-            // 将数据存入 key为补数 ，value为下标
-            hashmap.put(target-nums[i],i);
+            hashMap.put(nums[i],i);
         }
-            return indexs;
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
 ```
 
-> containsKey(Object key) 方法的规范中写道：“当且仅当此映射包含针对满足 (key\==null ? k==null : key.equals(k)) 的键 k 的映射关系时，返回 true”。
+> 使用 Map 的containsKey() 方法来检测another是否存在, 如果key存在,则返回i以及与之对应的数的下标hashMap.get(target-nums[i]，如果another不存在则将nums[i]，与之对应的下标i存入哈希表中。
 
+ 
