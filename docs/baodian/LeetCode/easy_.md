@@ -72,7 +72,7 @@ class Solution {
   + 时间复杂度:O(n),这里n为数组的长度
   + 空间复杂度:O(n),哈希表里最多需要存n-1个键值对
 
-![1646297611805](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1646297611805.png)
+![1646297611805](./images/easy_/01.png)
 
 ::: tip
 
