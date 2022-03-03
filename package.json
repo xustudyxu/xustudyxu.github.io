@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@docsearch/js": "3",
     "@jamesives/github-pages-deploy-action": "^4.2.5",
     "@vssue/api-github-v4": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
