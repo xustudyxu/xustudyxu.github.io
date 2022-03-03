@@ -14,4 +14,5 @@ module.exports = {
      '/studynotes/Git/':require('../studynotes/Git/sidebar'),
      '/baodian/zero': require('../baodian/zero/sidebar'),//第二个模块下面的侧边栏
      '/baodian/high': require('../baodian/high/sidebar'),
+     '/baodian/LeetCode_': require('../baodian/LeetCode_/sidebar'),
 }	
