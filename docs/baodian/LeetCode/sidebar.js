@@ -1,7 +1,7 @@
 module.exports = [
   {
-    title:'LeetCode算法题',
-    collapsable: true,
+    title:'难度-简单',
+    collapsable: false,
     children:[
     '/baodian/LeetCode/easy_.md',
     ]

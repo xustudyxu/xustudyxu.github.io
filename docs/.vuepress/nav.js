@@ -64,7 +64,7 @@ module.exports = [
   {
     text: '面试宝典',
     items: [
-      { text: 'LeetCode算法题', link: '/baodian/LeetCode_/easy_' },
+      { text: '力扣算法题', link: '/baodian/LeetCode/easy_' },
       { text: '初级开发篇', link: '/baodian/zero/' },
       { text: '中高进阶篇', link: '/baodian/high/' },
   
