@@ -1,3 +1,7 @@
+
+
+
+
 # 常用类
 
 ## 包装类
@@ -271,9 +275,33 @@ public class StringExercise03 {
 
 ### 经典题
 
-![1627617612107](./images/CYlei/06.png)
+题一:
 
-![1627617636517](./images/CYlei/24.png)
+String a="hello"+"abc";
+
+创建了几个对象?只有一个对象
+
+String a="hello"+"abc";//==>优化等价 String a="helloabc";
+
+分析:
+
+1. 编译器不傻，做了个优化，判断创建的常量池对象，是否有引用指向
+
+题2：
+
+String a="hello";//创建a对象
+
+String b="abc";//创建b对象
+
+String c=a+b;//创建了三个对象
+
+小结:底层是StringBuilder sb=new StringBuilder(); sb.append(a); sb.append(b);
+
+sb是在堆中，并且append是在原来字符串的基础上追加的.
+
+**重要规则**,String c1 ="ab"+ "cd";//常量相加，看的是池 。
+
+String c1=a+b;//变量相加，是在堆中。
 
 + 代码演示：
 
@@ -308,17 +336,23 @@ public class StringExercise08 {
 
 ```
 
-![1627617763213](./images/CYlei/07.png)
+
 
 ## String 类的常见方法
 
 ### 说明
 
-![1627617892328](./images/CYlei/08.png)
+![1627617892328](./images/CYlei/09.png)
 
 ### String 类的常见方法一览
 
-![1627617969084](./images/CYlei/09.png)
++ equals //区分大小写，判断内容是否相等
++ equalslgnoreCase//忽略大小写的判断内容是否相等length//获取字符的个数，字符串的长度
++ indexOf//获取字符在字符串中第1次出现的索引,索引从0开始,如果找不到,返回-1
++ lastIndexOf//获取字符在字符串中最后1次出现的索引,索引从0开始,如找不到,返回-1
++ substring//截取指定范围的子串
++ trim//去前后空格
++ charAt//获取某索引处的字符，注意不能使用Str[index]这种方式.
 
 + 代码演示：
 
@@ -353,7 +387,14 @@ public class StringMethod01 {
 
 ```
 
-![1627618017704](./images/CYlei/10.png)
++ toUpperCase
++ toLowerCaseconcat
++ replace替换字符串中的字符
++ split 分割字符串,对于某些分割字符，我们需要转义比如|\\\等
++ 案例: String poem="锄禾日当午,汗滴禾下土,谁知盘中餐,粒粒皆辛苦";和文件路径.
++ compareTo //比较两个字符串的大小toCharArray l/转换成字符数组
++ format//格式字符串,%s字符串%c字符%d整型%.2f 浮点型
++ 案例，将一个人的信息格式化输出.
 
 + 代码演示：
 
@@ -408,7 +449,7 @@ public class StringMethod02 {
 
 ### 基本介绍
 
-![1627618154022](./images/CYlei/11.png)
+![1627618154022](./images/CYlei/12.png)
 
 + 代码演示：
 
@@ -585,11 +626,25 @@ public class StringBuilder01 {
 
 ### StringBuilder 常用方法
 
-![1627618886218](./images/CYlei/12.png)
+![1627618886218](./images/CYlei/13.png)
 
 ### String、StringBuffer和StringBuilder 的比较
 
-![1627618956285](./images/CYlei/14.png)
+1. StringBuilder 和StringBuffer非常类似，均代表可变的字符序列，而且方法也一样
+
+2. String:不可变字符序列,效率低,但是复用率高。
+
+3. StringBuffer:可变字符序列、效率较高(增删)、线程安全,看源码
+
+4. StringBuilder:可变字符序列、效率最高、线程不安全
+
+5. String使用注意说明:
+
+   string s="a";//创建了一个字符串
+
+   s += "b";
+
+//实际上原来的"a"字符串对象已经丢弃了，现在又产生了一个字符串s+"b”(也就是"ab")。如果多次执行这些改变串内容的操作，会导致大量副本字符串对象存留在内存中，降低效率。如果这样的操作放到循环中，会极大影响程序的性能=>**结论**:如果我们对String做大量修改，不要使用String
 
 ### String、StringBuffer 和 StringBuilder 的效率测试
 
@@ -693,9 +748,17 @@ public class MathMethod {
 
 ### Arrays 类常见方法应用案例
 
-![1627619333525](./images/CYlei/16.png)
+Arrays里面包含了一系列静态方法，用于管理或操作数组(比如排序和搜索)
 
+1. toString返回数组的字符串形式
 
+   Arrays.toString(arr)
+
+2. sort排序(自然排序和定制排序)
+
+3. binarySearch通过二分搜索法进行查找,要求必须排好序
+
+   int index = Arrays.binarySearch(arr, 3);
 
 ```java
 package com.study.arrays_;
@@ -827,11 +890,23 @@ public class ArraySortCustom {
 
 ```
 
+4. copyOf 数组元素的复制
 
+   Integer[] newArr = Arrays.copyOf(arr, arr.length);
 
-![1627619346017](./images/CYlei/17.png)
+5. fill数组元素的填充
 
+   Integer[] num = new Integer[]{9,3.2};
 
+   Arrays.fill(num,99);
+
+6. equals比较两个数组元素内容是否完全一致
+
+   boolean equals = Arrays.equals(arr, arr2);
+
+7. asList将一组值，转换成list
+
+   List\<Integer> asList = Arrays.asList(2,3,4,5,6,1);
 
 + 代码演示：
 
@@ -894,7 +969,19 @@ public class ArrayMethod02 {
 
 ### System 类常见方法和案例 
 
-![1627619633027](./images/CYlei/18.png)
+exit 退出当前程序
+
+arraycopy:复制数组元系，比较适合底层调用,一般使用Arrays.copyOf完成复制数组.
+
+int[] src={1,2,3};
+
+int[] dest = new int[3];
+
+System.arraycopy(src, 0, dest, 0, 3);
+
+currentTimeMillens:返回当前时间距离1970-1-1的毫秒数
+
+gc:运行垃圾回收机制System.gc0);
 
 + 代码演示：
 
@@ -1148,7 +1235,25 @@ public class LocalDate_ {
 
 ### Instant 时间戳
 
-![1627620583385](./images/CYlei/22.png)
+类似于Date
+
+提供了一系列和Date类转换的方式lnstant—>Date:
+
+Date date = Date.from(instant);
+
+Date—>Instant:
+
+Instant instant = date.tolnstant();
+
+案例演示:
+
+Instant now = Instant.now();
+
+System.out.println(now);
+
+Date date = Date.from(now);
+
+Instant instant = date.tolnstant();
 
 + 代码演示：
 

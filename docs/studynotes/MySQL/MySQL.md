@@ -299,7 +299,15 @@ CREATE TABLE `emp`(
 
 ## 1.11 修改表-课堂练习
 
-![1629352268278](./images/17.png)
++ 应用实例
+  + 员工表emp的上增加一个image列，varchar类型(要求在resume后面).
+  + 修改job列，使其长度为60。
+  + 删除sex列
+  + 表名改为employee.
+  + 修改表的字符集为utf8
+  + 列名name修改为user_name
+
+alter table user change column name username varchar(20);
 
 ```sql
 # 修改表的操作
@@ -413,7 +421,11 @@ SELECT * FROM goods2;
 
 ### 1.14.2 基本使用
 
-![1629375504182](./images/20.png)
+要求:在上面创建的employee表中修改表中的纪录
+
+1. 将所有员工薪水修改为5000元。
+2. 将姓名为小妖怪的员工薪水修改为3000元。
+3. 将老妖怪的薪水在原有基础上增加1000元。
 
 ```sql
 -- 演示update语句
@@ -712,7 +724,9 @@ SELECT SUM(chinese)/COUNT(*) FROM student;
 
 ### 1.17.3 avg
 
-![1629458975309](./images/28.png)
+AVG函数返回满足where条件的一列的平均值
+
+Select avg(列名) {avg(列名)...} from tablename [WHERE  where_definition]
 
 ```sql
 -- 演示avg的使用
