@@ -64,9 +64,9 @@ module.exports = [
   {
     text: '面试宝典',
     items: [
-      { text: '力扣算法题', link: '/studynotes/baodian/LeetCode/easy_' },
-      { text: '初级开发篇', link: '/studynotes/baodian/zero/README' },
-      { text: '中高进阶篇', link: '/studynotes/baodian/high/README' },
+      { text: '力扣算法题', link: '/studynotes/baodian/LeetCode/easy_/' },
+      { text: '初级开发篇', link: '/studynotes/baodian/zero/one/' },
+      { text: '中高进阶篇', link: '/studynotes/baodian/high/one/' },
   
     ]
   },

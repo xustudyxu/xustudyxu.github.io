@@ -6,5 +6,4 @@ module.exports = [
     'studynotes/baodian/LeetCode/easy_',
     ]
   }
-  
 ]
