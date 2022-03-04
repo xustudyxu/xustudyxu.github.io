@@ -24,9 +24,7 @@
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-global-toc": "^1.1.0",
     "vuepress-plugin-gotop-plus": "^1.0.4",
-    "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
-    "vuepress-plugin-meilisearch": "^0.12.0",
     "vuepress-plugin-toolbar": "^1.0.1"
   },
   "devDependencies": {

@@ -1,9 +1,10 @@
 module.exports = [
   {
     title:'难度-简单',
-    collapsable: true,
+    collapsable: false,
     children:[
-    ['难度-简单','studynotes/baodian/LeetCode/easy_'],
+    '/baodian/LeetCode/easy_',
     ]
   }
+  
 ]
