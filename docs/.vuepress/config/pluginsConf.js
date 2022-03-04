@@ -73,8 +73,9 @@ module.exports = [
         buttonText: "刷新"
       }
     }
-  ], ['@vuepress/nprogress']//进度条
-  , ['vuepress-plugin-toolbar', {
+  ], ['@vuepress/nprogress'],//进度条
+  [ 'code-switcher' ],//多种语言代码块
+  ['vuepress-plugin-toolbar', {
 
     opts: [{
       icon: '',

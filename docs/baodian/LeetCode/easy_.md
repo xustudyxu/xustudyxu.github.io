@@ -100,4 +100,88 @@ class Solution {
 
 > 使用 Map 的containsKey() 方法来检测another是否存在, 如果key存在,则返回i以及与之对应的数的下标hashMap.get(target-nums[i]，如果another不存在则将nums[i]，与之对应的下标i存入哈希表中。
 
- 
+ ### 回文数(3,4)
+
+[题目地址](https://leetcode-cn.com/problems/palindrome-number/)
+
+给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
+
+回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+
+例如，121 是回文，而 123 不是。
+
+**示例 1：**
+
+输入：x = 121
+
+输出：true
+
+**示例 2：**
+
+输入：x = -121
+
+输出：false
+
+解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数
+
++ 方法一:进阶-反转一半数字
+  + 时间复杂度:0(\log_10n)
+  + 空间复杂度:0(1)
+
+![1646407646006](./images/easy_/02.png)
+
+::: tip
+
+奇数位关于中间数对称，偶数位关于最中间两个数之间对称，x取余10的操作，结果1放在整形变量revertedNumber中，x除以10，舍去最后一位，第一轮迭代；x取余10的操作，整形变量由1变为12，x除以10，第二轮迭代；x越来越小，整形变量越来越大;对于偶数位，迭代终止的条件为x=revertedNumber,对于偶数位迭代终止的条件为x<revertedNumber;奇数位还需一轮迭代，x取余10的操作，整形变量由12变为123，x除以10;对于偶数位，判断数字x和反转后的数字是否相同；对于奇数位，将反转后的数字除以10看是否与x相同
+
+:::
+
+```java
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x == 0) return true;
+        if (x < 0 || x % 10 == 0 && x!=0) return false;
+        int reversedNumber = 0;
+        while (x > reversedNumber) {
+            reversedNumber = reversedNumber * 10 + x % 10;
+            x /= 10;
+        }
+        return x == reversedNumber || x == reversedNumber / 10;
+    }
+}
+```
+
++ 其他解法
+
+<CodeSwitcher :languages="{java:'Java',python:'Python'}">
+
+<template v-slot:java>
+
+
+```java
+class Solution {
+    public boolean isPalindrome(int x) {
+        StringBuilder sb = new StringBuilder(Integer.toString(x));
+        if (sb.toString().equals(sb.reverse().toString())) return true;//reverse()反转字符串
+        else return false;
+    }
+}
+```
+
+</template>
+
+<template v-slot:python>
+
+
+```python
+class Solution:
+    def isPalindrome(self,x:int)->bool:
+        s=str(x)
+        l=len(s)
+        h=l/2
+    	return s[:h]==s[-1:-h-1:-1]  #前一半字符串和后一半字符串是否相等
+```
+
+</template>
+</CodeSwitcher>
+
