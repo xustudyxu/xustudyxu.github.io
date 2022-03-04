@@ -2474,13 +2474,6 @@ autocomplete.js@0.36.0:
   dependencies:
     immediate "^3.2.3"
 
-autocomplete.js@^0.38.1:
-  version "0.38.1"
-  resolved "https://registry.npmmirror.com/autocomplete.js/-/autocomplete.js-0.38.1.tgz#9b006c985d996165ebbc62af33f5b4c32d209cc2"
-  integrity sha512-6pSJzuRMY3pqpozt+SXThl2DmJfma8Bi3SVFbZHS0PW/N72bOUv+Db0jAh2cWOhTsA4X+GNmKvIl8wExJTnN9w==
-  dependencies:
-    immediate "^3.2.3"
-
 autoprefixer@^9.5.1:
   version "9.8.8"
   resolved "https://registry.npmmirror.com/autoprefixer/download/autoprefixer-9.8.8.tgz#fd4bd4595385fa6f06599de749a4d5f7a474957a"
@@ -3045,7 +3038,7 @@ chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
+chalk@^2.0.0, chalk@^2.3.2, chalk@^2.4.1:
   version "2.4.2"
   resolved "https://registry.npmmirror.com/chalk/download/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
@@ -3506,13 +3499,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-cross-fetch@^3.1.4:
-  version "3.1.5"
-  resolved "https://registry.npmmirror.com/cross-fetch/download/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
-  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
-  dependencies:
-    node-fetch "2.6.7"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -4479,16 +4465,6 @@ dns-txt@^2.0.2:
   integrity sha1-uR2Ab10nGI5Ks+fRB9iBocxGQrY=
   dependencies:
     buffer-indexof "^1.0.0"
-
-docs-searchbar.js@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/docs-searchbar.js/-/docs-searchbar.js-2.1.0.tgz#3ecf48f46926a425b0282546096489439573b2d4"
-  integrity sha512-lHDeJelI8NrtmTrX38rZN86BQ6pxL8QzlfMqR6dHhfAXdrpDX2nNRT51sNSg6nIuI0ubpCVyJMyncedglmK/FA==
-  dependencies:
-    autocomplete.js "^0.38.1"
-    meilisearch "0.24.0"
-    to-factory "^1.0.0"
-    zepto "^1.2.0"
 
 docsearch.js@^2.5.2:
   version "2.6.3"
@@ -6862,13 +6838,6 @@ medium-zoom@^1.0.4:
   resolved "https://registry.npm.taobao.org/medium-zoom/download/medium-zoom-1.0.6.tgz#9247f21ca9313d8bbe9420aca153a410df08d027"
   integrity sha1-kkfyHKkxPYu+lCCsoVOkEN8I0Cc=
 
-meilisearch@0.24.0:
-  version "0.24.0"
-  resolved "https://registry.npmmirror.com/meilisearch/-/meilisearch-0.24.0.tgz#a71454baac058f502b931af17069ab676fbaced6"
-  integrity sha512-qME1dsHZePBQi8qFdhbilcFzaL+oZJgUuls+FZ23hHpdhJI+iMFSmjjcfsxq5hdg2qczbCXv7yAo3Sh8xgfkgA==
-  dependencies:
-    cross-fetch "^3.1.4"
-
 memory-fs@^0.4.1:
   version "0.4.1"
   resolved "https://registry.nlark.com/memory-fs/download/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
@@ -7168,7 +7137,7 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@2.6.7, node-fetch@^2.6.7:
+node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.npmmirror.com/node-fetch/download/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -9943,15 +9912,6 @@ vuepress-plugin-gotop-plus@^1.0.4:
     lodash.debounce "^4.0.8"
     openteam-postinstall "^1.0.2"
 
-vuepress-plugin-helper-live2d@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-helper-live2d/download/vuepress-plugin-helper-live2d-1.0.2.tgz#6ba1c2f0a440c9263078ae5083de26fbbfac0759"
-  integrity sha1-a6HC8KRAySYweK5Qg94m+7+sB1k=
-  dependencies:
-    chalk "^2.4.2"
-    lodash "^4.17.15"
-    openteam-postinstall "^1.0.2"
-
 vuepress-plugin-img-lazy@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmmirror.com/vuepress-plugin-img-lazy/download/vuepress-plugin-img-lazy-1.0.4.tgz#f444c1e21a2c95117f1bcb97a0962660362fa181"
@@ -9959,13 +9919,6 @@ vuepress-plugin-img-lazy@^1.0.4:
   dependencies:
     markdown-it-img-lazy "^1.0.2"
     markdown-it-imsize "^2.0.1"
-
-vuepress-plugin-meilisearch@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-meilisearch/-/vuepress-plugin-meilisearch-0.12.0.tgz#7fb95720269e2274ef4b55df0a7b6fbf7b06156d"
-  integrity sha512-lQt9Id3Wk04lNMJsCmRvTh/B4WHF7g4Ao52aZjXaaGSHo7Is7cJ1uxDo4xHKdB0kjCH+0yjN+XUsFIWLjgRVfw==
-  dependencies:
-    docs-searchbar.js "^2.1.0"
 
 vuepress-plugin-permalink-pinyin@^1.0.0:
   version "1.0.0"
