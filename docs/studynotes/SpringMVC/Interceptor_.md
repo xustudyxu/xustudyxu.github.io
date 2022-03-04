@@ -1,13 +1,3 @@
----
-title: Interceptor_
-date: 2022-01-23 16:00:19
-permalink: /pages/a19f7d/
-categories:
-  - studynotes
-  - SpringMVC
-tags:
-  - 
----
 # 拦截器
 
 [[toc]]

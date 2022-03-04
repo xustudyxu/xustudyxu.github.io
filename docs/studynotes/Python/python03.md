@@ -1,13 +1,3 @@
----
-title: python03
-date: 2021-12-20 18:44:19
-permalink: /pages/dd2e30/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第三章 Python 基础篇(三)
 
 ## 3.1 Python的输入函数input()

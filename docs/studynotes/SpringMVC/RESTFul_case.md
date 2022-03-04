@@ -1,13 +1,3 @@
----
-title: RESTFul_case
-date: 2022-01-21 19:35:41
-permalink: /pages/70cf4b/
-categories:
-  - studynotes
-  - SpringMVC
-tags:
-  - 
----
 # RESTful案例
 
 [[toc]]

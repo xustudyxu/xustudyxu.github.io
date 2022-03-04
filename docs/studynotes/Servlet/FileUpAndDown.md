@@ -1,13 +1,3 @@
----
-title: FileUpAndDown
-date: 2022-01-14 18:00:09
-permalink: /pages/842c85/
-categories:
-  - studynotes
-  - Servlet
-tags:
-  - 
----
 # 文件的上传和下载
 
 在上网的时候我们常常遇到文件上传的情况，例如上传头像、上传资料等；当然除了上传，遇见下载的情况也很多，接下来看看我们 servlet 中怎么实现文件的上传和下载。

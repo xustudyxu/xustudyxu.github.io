@@ -1,13 +1,3 @@
----
-title: one
-date: 2021-12-20 18:44:20
-permalink: /pages/924836/
-categories:
-  - studynotes
-  - SpringMVC
-tags:
-  - 
----
 # SpringMVC简介
 
 [学习视频地址](https://www.bilibili.com/video/BV1Ry4y1574R?from=search&seid=13810950434984257553&spm_id_from=333.337.0.0)

@@ -1997,7 +1997,7 @@
     "@vuepress/shared-utils" "1.9.7"
     "@vuepress/types" "1.9.7"
 
-"@vuepress/plugin-search@1.9.7", "@vuepress/plugin-search@^1.2.0", "@vuepress/plugin-search@^1.3.1", "@vuepress/plugin-search@^1.4.1":
+"@vuepress/plugin-search@1.9.7", "@vuepress/plugin-search@^1.2.0", "@vuepress/plugin-search@^1.3.1", "@vuepress/plugin-search@^1.4.1", "@vuepress/plugin-search@^1.8.2":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-search/download/@vuepress/plugin-search-1.9.7.tgz#37a4714973ccac8c28837fc72a38ae0888d874bf"
   integrity sha512-MLpbUVGLxaaHEwflFxvy0pF9gypFVUT3Q9Zc6maWE+0HDWAvzMxo6GBaj6mQPwjOqNQMf4QcN3hDzAZktA+DQg==
@@ -5318,6 +5318,11 @@ find-up@^4.0.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
+
+flexsearch@^0.6.32:
+  version "0.6.32"
+  resolved "https://registry.npmmirror.com/flexsearch/-/flexsearch-0.6.32.tgz#1e20684d317af65baa445cdd9864a5f5b320f510"
+  integrity sha512-EF1BWkhwoeLtbIlDbY/vDSLBen/E5l/f1Vg7iX5CDymQCamcx1vhlc3tIZxIDplPjgi0jhG37c67idFbjg+v+Q==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -10219,6 +10224,14 @@ vuepress-plugin-feed@^0.1.8:
     lodash.trimstart "^4.5.1"
     remove-markdown "0.3.0"
     striptags "3.1.1"
+
+vuepress-plugin-flexsearch@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-flexsearch/-/vuepress-plugin-flexsearch-0.3.0.tgz#278818bb2f1cc338215de12822b13f3c318780c9"
+  integrity sha512-dffrD35hDE6FcpN3JRTy5E9tccq1uB7l+ocdPBObuiuFjHJP/xlU+pOR3Yc6yQlsvP5ResweGOP2kaeGViorBg==
+  dependencies:
+    "@vuepress/plugin-search" "^1.8.2"
+    flexsearch "^0.6.32"
 
 vuepress-plugin-git-log@^1.0.1:
   version "1.0.1"

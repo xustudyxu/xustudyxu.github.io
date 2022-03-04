@@ -1,13 +1,3 @@
----
-title: Spring01
-date: 2021-12-20 18:44:20
-permalink: /pages/36f6ce/
-categories:
-  - studynotes
-  - Spring5
-tags:
-  - 
----
 # 入门案例
 
 [[toc]]

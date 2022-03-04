@@ -1,13 +1,3 @@
----
-title: Git_
-date: 2022-01-25 15:23:50
-permalink: /pages/6f937f/
-categories:
-  - studynotes
-  - Git
-tags:
-  - 
----
 # Git 概述
 
 [学习视频地址](https://www.bilibili.com/video/BV1vy4y1s7k6?from=search&seid=3454018643224740891&spm_id_from=333.337.0.0)

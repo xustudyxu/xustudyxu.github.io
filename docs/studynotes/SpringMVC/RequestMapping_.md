@@ -1,13 +1,3 @@
----
-title: RequestMapping_
-date: 2022-01-16 19:09:40
-permalink: /pages/6ea390/
-categories:
-  - studynotes
-  - SpringMVC
-tags:
-  - 
----
 # @RequestMapping注解
 
 [[toc]]

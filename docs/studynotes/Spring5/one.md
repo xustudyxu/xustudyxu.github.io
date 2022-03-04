@@ -1,13 +1,3 @@
----
-title: one
-date: 2021-12-20 18:44:20
-permalink: /pages/430dd8/
-categories:
-  - studynotes
-  - Spring5
-tags:
-  - 
----
 # Spring5 框架
 
 [学习视频地址](https://www.bilibili.com/video/BV1Vf4y127N5?from=search&seid=10332266168544277867&spm_id_from=333.337.0.0)

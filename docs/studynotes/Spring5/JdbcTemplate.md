@@ -1,13 +1,3 @@
----
-title: JdbcTemplate
-date: 2022-01-01 23:21:07
-permalink: /pages/30003a/
-categories:
-  - studynotes
-  - Spring5
-tags:
-  - 
----
 # Jdbc Template
 
 [[toc]]

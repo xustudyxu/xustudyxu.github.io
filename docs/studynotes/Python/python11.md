@@ -1,13 +1,3 @@
----
-title: python11
-date: 2021-12-20 18:44:19
-permalink: /pages/e92164/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第十一章 Python 异常处理
 
 ## 11.1 Bug的由来及分类

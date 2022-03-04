@@ -1,13 +1,3 @@
----
-title: io
-date: 2021-12-20 18:44:12
-permalink: /pages/7fb254/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # IO流
 
 ## 文件

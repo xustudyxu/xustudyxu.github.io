@@ -1,13 +1,3 @@
----
-title: Git_command
-date: 2022-01-26 19:18:36
-permalink: /pages/faef70/
-categories:
-  - studynotes
-  - Git
-tags:
-  - 
----
 ## Git 常用命令
 
 [[toc]]

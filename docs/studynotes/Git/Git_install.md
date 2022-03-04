@@ -1,13 +1,3 @@
----
-title: Git_install
-date: 2022-01-26 13:51:59
-permalink: /pages/fdbe2a/
-categories:
-  - studynotes
-  - Git
-tags:
-  - 
----
 # Git 安装
 
  官网地址： https://git-scm.com/

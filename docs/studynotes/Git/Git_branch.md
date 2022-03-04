@@ -1,13 +1,3 @@
----
-title: Git_branch
-date: 2022-01-27 16:47:48
-permalink: /pages/378f9d/
-categories:
-  - studynotes
-  - Git
-tags:
-  - 
----
 # Git 分支操作
 
 [[toc]]

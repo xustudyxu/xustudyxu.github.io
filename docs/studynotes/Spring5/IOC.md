@@ -1,13 +1,3 @@
----
-title: IOC
-date: 2021-12-20 18:44:20
-permalink: /pages/676c8a/
-categories:
-  - studynotes
-  - Spring5
-tags:
-  - 
----
 # IOC 容器
 
 [[toc]]

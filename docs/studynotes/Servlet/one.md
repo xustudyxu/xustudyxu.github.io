@@ -1,13 +1,3 @@
----
-title: one
-date: 2022-01-10 20:30:03
-permalink: /pages/471a63/
-categories:
-  - studynotes
-  - Servlet
-tags:
-  - 
----
 # Servlet
 
 [学习视频地址](https://www.bilibili.com/video/BV1ZC4y1t7Aa?from=search&seid=8683124770659686534&spm_id_from=333.337.0.0)

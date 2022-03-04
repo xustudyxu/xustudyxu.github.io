@@ -1,13 +1,3 @@
----
-title: python09
-date: 2021-12-20 18:44:19
-permalink: /pages/3a5d60/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第九章 Python 字符串
 
 ## 9.1 字符串的驻留机制

@@ -1,13 +1,3 @@
----
-title: python04
-date: 2021-12-20 18:44:19
-permalink: /pages/4f37f9/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第四章 Python 基础篇(四)
 
 ## 4.1 程序的组织结构

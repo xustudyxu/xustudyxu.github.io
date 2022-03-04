@@ -1,13 +1,3 @@
----
-title: Getting_started
-date: 2022-02-04 15:47:02
-permalink: /pages/e8bd88/
-categories:
-  - studynotes
-  - MyBatis
-tags:
-  - 
----
 # MyBatis 入门案例
 
 [[toc]]

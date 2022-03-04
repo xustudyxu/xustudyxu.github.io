@@ -1,13 +1,3 @@
----
-title: fanxing
-date: 2021-12-20 18:44:12
-permalink: /pages/18a80a/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # 泛型
 
 ## 泛型的理解和好处

@@ -1,13 +1,3 @@
----
-title: jdbc
-date: 2021-12-20 18:44:12
-permalink: /pages/e0d4be/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # JDBC 和数据库连接池
 
 ## JDBC概述

@@ -1,13 +1,3 @@
----
-title: Reflection
-date: 2021-12-20 18:44:12
-permalink: /pages/10780d/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # 反射
 
 ## 一个需求引出反射

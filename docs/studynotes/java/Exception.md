@@ -1,13 +1,3 @@
----
-title: Exception
-date: 2021-12-20 18:44:12
-permalink: /pages/bc551a/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # 异常-Exception
 
 ## 看个实际的问题和一段代码

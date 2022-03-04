@@ -1,13 +1,3 @@
----
-title: jihe
-date: 2021-12-20 18:44:12
-permalink: /pages/79fcbb/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # 集合
 
 ## 集合的理解和好处

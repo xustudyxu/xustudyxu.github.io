@@ -1,13 +1,3 @@
----
-title: RegExp
-date: 2021-12-20 18:44:12
-permalink: /pages/860f42/
-categories:
-  - studynotes
-  - java
-tags:
-  - 
----
 # 正则表达式
 
 ## 为什么要学习正则表达式

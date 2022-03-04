@@ -1,13 +1,3 @@
----
-title: python05
-date: 2021-12-20 18:44:19
-permalink: /pages/1b194b/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第五章 Python 基础篇 (五)
 
 ## 5.1 内置函数range()

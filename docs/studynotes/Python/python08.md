@@ -1,13 +1,3 @@
----
-title: python08
-date: 2021-12-20 18:44:19
-permalink: /pages/aa5e5e/
-categories:
-  - studynotes
-  - Python
-tags:
-  - 
----
 # 第八章 Python 元组和集合
 
 ## 8.1 什么是元组

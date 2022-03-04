@@ -1,13 +1,3 @@
----
-title: index
-date: 2022-02-03 18:18:02
-permalink: /pages/69f60c/
-categories:
-  - studynotes
-  - MyBatis
-tags:
-  - 
----
 # MyBatis
 
 [学习视频地址](https://www.bilibili.com/video/BV1mW411M737?from=search&seid=11694251287569762189&spm_id_from=333.337.0.0)
