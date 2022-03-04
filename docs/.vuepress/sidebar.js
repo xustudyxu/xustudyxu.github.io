@@ -12,5 +12,5 @@ module.exports = {
      '/studynotes/MyBatis/':require('../studynotes/MyBatis/sidebar'),
      '/studynotes/Servlet/':require('../studynotes/Servlet/sidebar'),
      '/studynotes/Git/':require('../studynotes/Git/sidebar'),
-     '/studynotes/baodian/LeetCode/':require('../studynotes/baodian/LeetCode/sidebar')
+     '/baodian/LeetCode/':require('../baodian/LeetCode/sidebar')
 }	

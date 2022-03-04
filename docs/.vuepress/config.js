@@ -17,10 +17,10 @@ module.exports = {
     themeConfig: {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
+        sidebarDepth: 2,
         lastUpdated: '上次更新',
         search:true,
         searchMaxSuggestions: 10,
-        sidebarDepth: 2,
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
         repo: 'xustudyxu/VuepressBlog',
         // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
