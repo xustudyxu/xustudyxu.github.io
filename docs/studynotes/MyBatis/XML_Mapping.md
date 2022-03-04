@@ -1,3 +1,13 @@
+---
+title: XML_Mapping
+date: 2022-02-07 15:57:07
+permalink: /pages/534d8d/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # XML 映射文件
 
 [[toc]]

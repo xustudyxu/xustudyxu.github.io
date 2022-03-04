@@ -1,3 +1,13 @@
+---
+title: MySQL
+date: 2021-12-20 18:44:18
+permalink: /pages/097747/
+categories:
+  - studynotes
+  - MySQL
+tags:
+  - 
+---
 # MySQL
 
 [学习视频地址](https://www.bilibili.com/video/BV1fh411y7R8?from=search&seid=8859201345785431941&spm_id_from=333.337.0.0)

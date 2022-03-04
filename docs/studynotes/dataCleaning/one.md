@@ -1,3 +1,13 @@
+---
+title: one
+date: 2021-12-20 18:44:12
+permalink: /pages/2c0e61/
+categories:
+  - studynotes
+  - dataCleaning
+tags:
+  - 
+---
 # 数据分析介绍
 
 ![](./images/00/01.gif)

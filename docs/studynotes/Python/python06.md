@@ -1,3 +1,13 @@
+---
+title: python06
+date: 2021-12-20 18:44:19
+permalink: /pages/c7456c/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第六章 Python 列表
 
 ## 6.1 为什么需要列表

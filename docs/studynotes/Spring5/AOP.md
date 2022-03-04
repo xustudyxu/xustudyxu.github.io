@@ -1,3 +1,13 @@
+---
+title: AOP
+date: 2021-12-29 19:15:51
+permalink: /pages/7e6150/
+categories:
+  - studynotes
+  - Spring5
+tags:
+  - 
+---
 # Spring AOP
 
 [[toc]]

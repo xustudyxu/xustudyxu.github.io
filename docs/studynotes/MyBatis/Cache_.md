@@ -1,3 +1,13 @@
+---
+title: Cache_
+date: 2022-02-17 16:17:21
+permalink: /pages/a1aad6/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # 缓存
 
 [[toc]]

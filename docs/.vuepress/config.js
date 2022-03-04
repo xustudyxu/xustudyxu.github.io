@@ -17,14 +17,13 @@ module.exports = {
     themeConfig: {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
+        lastUpdated: '上次更新',
         algolia: {
             apiKey: '685c8fc1740599abf382c782da3717a8',
             indexName: 'xustudyxu-blog',
-            // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
-            appId: '4YPBTYO9VH',
+            appId:'4YPBTYO9VH'
           },
         sidebarDepth: 2,
-        searchMaxSuggestoins: 10,
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
         repo: 'xustudyxu/VuepressBlog',
         // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为

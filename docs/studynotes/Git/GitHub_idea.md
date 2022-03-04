@@ -1,3 +1,13 @@
+---
+title: GitHub_idea
+date: 2022-01-29 16:46:33
+permalink: /pages/de6b32/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # IDEA 集成 GitHub
 
 ## 设置 GitHub 账号

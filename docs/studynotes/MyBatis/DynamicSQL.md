@@ -1,3 +1,13 @@
+---
+title: DynamicSQL
+date: 2022-02-14 15:12:48
+permalink: /pages/fe0b2f/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # 动态SQL
 
 [[toc]]

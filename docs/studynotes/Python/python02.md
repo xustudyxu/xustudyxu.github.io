@@ -1,3 +1,13 @@
+---
+title: python02
+date: 2021-12-20 18:44:19
+permalink: /pages/3b3476/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第二章 Python 基础篇(二)
 
 ## 2.1 二进制与字符编码

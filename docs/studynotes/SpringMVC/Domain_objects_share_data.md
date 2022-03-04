@@ -1,3 +1,13 @@
+---
+title: Domain_objects_share_data
+date: 2022-01-18 17:59:31
+permalink: /pages/68d9b7/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # 域对象共享数据
 
 [[toc]]

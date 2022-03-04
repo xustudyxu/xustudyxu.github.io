@@ -1,3 +1,13 @@
+---
+title: Maven01
+date: 2021-12-20 18:44:18
+permalink: /pages/d0fb8d/
+categories:
+  - studynotes
+  - Maven
+tags:
+  - 
+---
 # Maven 基础
 
 ## Maven 下载

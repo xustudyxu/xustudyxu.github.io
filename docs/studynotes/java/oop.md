@@ -1,3 +1,13 @@
+---
+title: oop
+date: 2021-12-25 17:31:42
+permalink: /pages/d69c3b/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 面向对象
 
 ## 类与对象
@@ -5935,5 +5945,5 @@ class Outer10{//外部类
 >
 > 一定要坚持下去!
 
-
+<div id="docsearch"></div>
 

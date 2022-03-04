@@ -1,3 +1,13 @@
+---
+title: RESTFul_
+date: 2022-01-19 17:57:23
+permalink: /pages/6082f5/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # RESTFul
 
 [[toc]]

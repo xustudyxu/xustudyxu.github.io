@@ -1,3 +1,13 @@
+---
+title: XML_config
+date: 2022-02-05 14:26:57
+permalink: /pages/aa2fc6/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # XML 配置
 
 [[toc]]

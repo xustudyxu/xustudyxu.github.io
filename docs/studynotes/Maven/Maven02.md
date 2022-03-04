@@ -1,3 +1,13 @@
+---
+title: Maven02
+date: 2021-12-20 18:44:18
+permalink: /pages/876ea1/
+categories:
+  - studynotes
+  - Maven
+tags:
+  - 
+---
 # Maven 高级
 
 ## 工程模块与模块划分(重点)
@@ -641,7 +651,7 @@ mvn help:system
 	+ 作用：在任意配置文件中加载pom文件中定义的属性
 	+ 调用格式：`${ }`
 
-1. 例如jdbc.properties要读取父工程pom文件中的属性。首先在父工程pom文件中的<build>标签中：
+1. 例如jdbc.properties要读取父工程pom文件中的属性。首先在父工程pom文件中的\<build>标签中：
 
 
 ```xml

@@ -1,3 +1,13 @@
+---
+title: python14
+date: 2021-12-20 18:44:19
+permalink: /pages/276ce0/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第十四章 Python 文件
 
 ## 14.1 编码格式的介绍

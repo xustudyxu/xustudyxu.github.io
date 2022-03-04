@@ -1,3 +1,13 @@
+---
+title: Git_idea
+date: 2022-01-29 15:15:38
+permalink: /pages/b1203d/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # IDEA 集成Git
 
 ## 配置 Git 忽略文件

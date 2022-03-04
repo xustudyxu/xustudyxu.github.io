@@ -1,3 +1,13 @@
+---
+title: python10
+date: 2021-12-20 18:44:19
+permalink: /pages/296543/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第十章 Python 函数与变量作用域
 
 ## 10.1 函数的创建和调用

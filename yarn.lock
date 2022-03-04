@@ -1087,6 +1087,25 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@better-scroll/core@^2.0.0-beta.6", "@better-scroll/core@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.npmmirror.com/@better-scroll/core/-/core-2.4.2.tgz#e69470012d79923a18034c3e4931720fbb06eae5"
+  integrity sha512-IqVZLnh04YpaEAy9wJDxtFK/stxVQjB9A9Wcr3Uwkj7Av1TtFpin+t/TObl53diNDG5ZJ+vck/OAthphpuugLA==
+  dependencies:
+    "@better-scroll/shared-utils" "^2.4.2"
+
+"@better-scroll/shared-utils@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.npmmirror.com/@better-scroll/shared-utils/-/shared-utils-2.4.2.tgz#1ac5c97495727093a22a8009560795dd5e3c18da"
+  integrity sha512-Gy/Jfbpu+hq0u+PcjkTqyXGqAf+0dexTzEZ5IDXEVwJVLmd3cx8A73oTcAZ8QZgk4wSHvlMjXecSaptkhnNPEw==
+
+"@better-scroll/slide@^2.0.0-beta.6":
+  version "2.4.2"
+  resolved "https://registry.npmmirror.com/@better-scroll/slide/-/slide-2.4.2.tgz#024528ae57516a2ee99bea346381589e4e6a039c"
+  integrity sha512-VfdFHm/meo4nEyfx0JLn8rUHfQdQCnoBHs/BsV+vmjVivKg+cVgfS+QaytrIulWKqNAWNlfXbAaNtZMv8gNKZg==
+  dependencies:
+    "@better-scroll/core" "^2.4.2"
+
 "@braintree/sanitize-url@^3.1.0":
   version "3.1.0"
   resolved "https://registry.nlark.com/@braintree/sanitize-url/download/@braintree/sanitize-url-3.1.0.tgz#8ff71d51053cd5ee4981e5a501d80a536244f7fd"
@@ -1873,7 +1892,7 @@
     markdown-it-emoji "^2.0.0"
     mdurl "^1.0.1"
 
-"@vuepress/plugin-active-header-links@1.9.7", "@vuepress/plugin-active-header-links@^1.4.1", "@vuepress/plugin-active-header-links@^1.9.7":
+"@vuepress/plugin-active-header-links@1.9.7", "@vuepress/plugin-active-header-links@^1.2.0", "@vuepress/plugin-active-header-links@^1.4.1", "@vuepress/plugin-active-header-links@^1.9.7":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-active-header-links/download/@vuepress/plugin-active-header-links-1.9.7.tgz#11b3b148d50ebd0a9a9d9e97aa34d81ae04e7307"
   integrity sha512-G1M8zuV9Og3z8WBiKkWrofG44NEXsHttc1MYreDXfeWh/NLjr9q1GPCEXtiCjrjnHZHB3cSQTKnTqAHDq35PGA==
@@ -1944,7 +1963,7 @@
     "@vuepress/types" "1.9.5"
     medium-zoom "^1.0.4"
 
-"@vuepress/plugin-nprogress@1.9.7", "@vuepress/plugin-nprogress@^1.3.1", "@vuepress/plugin-nprogress@^1.4.1":
+"@vuepress/plugin-nprogress@1.9.7", "@vuepress/plugin-nprogress@^1.2.0", "@vuepress/plugin-nprogress@^1.3.1", "@vuepress/plugin-nprogress@^1.4.1":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-nprogress/download/@vuepress/plugin-nprogress-1.9.7.tgz#76d8368fa26c190ee23c399401a71ec78ffb9744"
   integrity sha512-sI148igbdRfLgyzB8PdhbF51hNyCDYXsBn8bBWiHdzcHBx974sVNFKtfwdIZcSFsNrEcg6zo8YIrQ+CO5vlUhQ==
@@ -1978,7 +1997,7 @@
     "@vuepress/shared-utils" "1.9.7"
     "@vuepress/types" "1.9.7"
 
-"@vuepress/plugin-search@1.9.7", "@vuepress/plugin-search@^1.3.1", "@vuepress/plugin-search@^1.4.1":
+"@vuepress/plugin-search@1.9.7", "@vuepress/plugin-search@^1.2.0", "@vuepress/plugin-search@^1.3.1", "@vuepress/plugin-search@^1.4.1":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-search/download/@vuepress/plugin-search-1.9.7.tgz#37a4714973ccac8c28837fc72a38ae0888d874bf"
   integrity sha512-MLpbUVGLxaaHEwflFxvy0pF9gypFVUT3Q9Zc6maWE+0HDWAvzMxo6GBaj6mQPwjOqNQMf4QcN3hDzAZktA+DQg==
@@ -3127,7 +3146,7 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.1.0, chalk@^4.1.2:
+chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/chalk/download/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -5591,6 +5610,11 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
+good-storage@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmmirror.com/good-storage/-/good-storage-1.1.1.tgz#081501c01607d5fee2a214f94e8f5f9cb994789f"
+  integrity sha512-+0UEpRT03fJgEJoeTVVz41ISC5+jaQrDIWatQ4BoDQfOiBBsjNanymi9sAtLFdEAADQN0FYR8mGpeqxSCe8oXQ==
+
 got@^9.6.0:
   version "9.6.0"
   resolved "https://registry.npmmirror.com/got/download/got-9.6.0.tgz#edf45e7d67f99545705de1f7bbeeeb121765ed85"
@@ -6566,6 +6590,13 @@ json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.nlark.com/json-stringify-safe/download/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+
+json2yaml@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/json2yaml/-/json2yaml-1.1.0.tgz#5414d907f9816586b80c513ec2e3aeb2ab819a6c"
+  integrity sha512-/xse+m0SlllfZahQrNOelmLrFNfeZv4QG0QKlvg7VsPSGIxpB3X+ggLkdffwmI1DdQ3o9XjZX+K+EOI1epdKgg==
+  dependencies:
+    remedial "1.x"
 
 json3@^3.3.3:
   version "3.3.3"
@@ -8580,6 +8611,11 @@ relateurl@0.2.x:
   resolved "https://registry.npm.taobao.org/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
+remedial@1.x:
+  version "1.0.8"
+  resolved "https://registry.npmmirror.com/remedial/-/remedial-1.0.8.tgz#a5e4fd52a0e4956adbaf62da63a5a46a78c578a0"
+  integrity sha512-/62tYiOe6DzS5BqVsNpH/nkGlX45C/Sp6V+NtiN6JQNS1Viay7cWkazmRkrQrdFj2eshDe96SIQNIoMxqhzBOg==
+
 remove-markdown@0.3.0, remove-markdown@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmmirror.com/remove-markdown/download/remove-markdown-0.3.0.tgz#5e4b667493a93579728f3d52ecc1db9ca505dc98"
@@ -9410,7 +9446,7 @@ stylus-loader@^3.0.2:
     lodash.clonedeep "^4.5.0"
     when "~3.6.x"
 
-stylus@^0.54.8:
+stylus@^0.54.5, stylus@^0.54.8:
   version "0.54.8"
   resolved "https://registry.npmmirror.com/stylus/download/stylus-0.54.8.tgz#3da3e65966bc567a7b044bfe0eece653e099d147"
   integrity sha512-vr54Or4BZ7pJafo2mpf0ZcwA74rpuYCZbxrHBsH8kbcXOwSfvBFwsRfpGO5OD5fhG5HDCFW737PKaawI7OqEAg==
@@ -10358,6 +10394,27 @@ vuepress-theme-ououe@^1.5.3:
     vuepress-plugin-blog-multidir "^1.0.4"
     vuepress-plugin-img-lazy "^1.0.4"
     vuepress-plugin-reading-progress "^1.0.10"
+
+vuepress-theme-vdoing@^1.9.5:
+  version "1.9.5"
+  resolved "https://registry.npmmirror.com/vuepress-theme-vdoing/-/vuepress-theme-vdoing-1.9.5.tgz#7cbb8947c9514bbbe5081f8e2d038d5faa766dda"
+  integrity sha512-B9UKqdFa6wyX3BcEMwePR7r/K7HWaNabVi+kO4CJwE3g2D8xin8bzgUO/VNv+k/EGQQoqcymYfdyYXo90/7log==
+  dependencies:
+    "@better-scroll/core" "^2.0.0-beta.6"
+    "@better-scroll/slide" "^2.0.0-beta.6"
+    "@vuepress/plugin-active-header-links" "^1.2.0"
+    "@vuepress/plugin-nprogress" "^1.2.0"
+    "@vuepress/plugin-search" "^1.2.0"
+    chalk "^4.0.0"
+    docsearch.js "^2.5.2"
+    good-storage "^1.1.1"
+    js-yaml "^3.13.1"
+    json2yaml "^1.1.0"
+    lodash "^4.17.15"
+    stylus "^0.54.5"
+    stylus-loader "^3.0.2"
+    vuepress-plugin-container "^2.0.2"
+    vuepress-plugin-smooth-scroll "^0.0.3"
 
 vuepress-theme-yilia-plus@^1.0.0:
   version "1.0.0"

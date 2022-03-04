@@ -27,9 +27,8 @@
     "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-meilisearch": "^0.12.0",
-    "vuepress-plugin-toolbar": "^1.0.1",
-    "vuepress-theme-ououe": "^1.5.3",
-    "vuepress-theme-yilia-plus": "^1.0.0"
+    "vuepress-plugin-toolbar": "^1.0.1"
+
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.9.7",
@@ -48,10 +47,8 @@
     "vuepress-plugin-qrcode": "^1.0.7",
     "vuepress-plugin-right-anchor": "^0.5.5",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
-    "vuepress-plugin-social-share": "^1.1.0",
-    "vuepress-theme-blog-vuetify": "^1.5.1",
-    "vuepress-theme-note": "^1.1.3",
-    "watchpack": "^2.3.1"
+    "vuepress-plugin-social-share": "^1.1.0"
+
   },
   "directories": {
     "doc": "docs"

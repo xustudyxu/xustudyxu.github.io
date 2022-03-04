@@ -1,3 +1,13 @@
+---
+title: SpringMVC_View
+date: 2022-01-19 14:48:57
+permalink: /pages/d85079/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # SpringMVC的视图
 
 [[toc]]

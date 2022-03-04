@@ -1,3 +1,13 @@
+---
+title: enum
+date: 2021-12-20 18:44:12
+permalink: /pages/55c02f/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # 枚举和注解
 
 ## 先看一个需求

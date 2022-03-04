@@ -1,3 +1,13 @@
+---
+title: Get_request_parameters
+date: 2022-01-17 19:55:43
+permalink: /pages/babe5e/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # SpringMVC 获取请求参数
 
 [[toc]]

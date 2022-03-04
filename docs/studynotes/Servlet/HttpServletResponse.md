@@ -1,3 +1,13 @@
+---
+title: HttpServletResponse
+date: 2022-01-12 23:03:30
+permalink: /pages/edaa1d/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # HttpServletResponse对象
 
 Web服务器收到客户端的http请求，会针对每一次请求，分别创建一个用于**代表请求**的 request 对象和**代表响应**的 response 对象。

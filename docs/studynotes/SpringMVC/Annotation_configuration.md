@@ -1,3 +1,13 @@
+---
+title: Annotation_configuration
+date: 2022-01-24 14:57:15
+permalink: /pages/2f9197/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # 注解配置SpringMVC
 
 [[toc]]

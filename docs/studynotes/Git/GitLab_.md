@@ -1,3 +1,13 @@
+---
+title: GitLab_
+date: 2022-01-30 21:20:57
+permalink: /pages/3b3fb2/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # 自建代码托管平台-GitLab
 
 ## GitLab 简介

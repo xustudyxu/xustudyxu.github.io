@@ -1,3 +1,13 @@
+---
+title: idea
+date: 2022-01-10 20:56:51
+permalink: /pages/cde102/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # IDEA的使用
 
 ## IDEA的简介

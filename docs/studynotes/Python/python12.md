@@ -1,3 +1,13 @@
+---
+title: python12
+date: 2021-12-20 18:44:19
+permalink: /pages/e2c707/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第十二章 Python 面向对象
 
 ## 12.1 编程思想

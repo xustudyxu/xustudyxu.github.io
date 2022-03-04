@@ -1,3 +1,13 @@
+---
+title: python07
+date: 2021-12-20 18:44:19
+permalink: /pages/7ff6ff/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 第七章 Python 字典
 
 ## 7.1 什么是字典
