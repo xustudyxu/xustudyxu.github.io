@@ -14,5 +14,5 @@ module.exports = {
      '/studynotes/Git/':require('../studynotes/Git/sidebar'),
      '/baodian/LeetCode/':require('../baodian/LeetCode/sidebar'),
      '/baodian/zero/':require('../baodian/zero/sidebar'),
-     '/baodian/high/':require('../baodian/high/sidebar')
+     '/baodian/high/':require('../baodian/high/sidebar'),
 }	
