@@ -12,7 +12,7 @@ module.exports = {
      '/studynotes/MyBatis/':require('../studynotes/MyBatis/sidebar'),
      '/studynotes/Servlet/':require('../studynotes/Servlet/sidebar'),
      '/studynotes/Git/':require('../studynotes/Git/sidebar'),
-     '/baodian/zero': require('../baodian/zero/sidebar'),//第二个模块下面的侧边栏
-     '/baodian/high': require('../baodian/high/sidebar'),
-     '/baodian/LeetCode': require('../baodian/LeetCode/sidebar'),
+     '/baodian/zero': require('../studynotes/baodian/zero/sidebar'),//第二个模块下面的侧边栏
+     '/baodian/high': require('../studynotes/baodian/high/sidebar'),
+     '/baodian/LeetCode': require('../studynotes/baodian/LeetCode/sidebar'),
 }	

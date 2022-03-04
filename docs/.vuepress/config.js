@@ -19,9 +19,16 @@ module.exports = {
         sidebar: require("./sidebar.js"),
         lastUpdated: '上次更新',
         algolia: {
+            appId: '4YPBTYO9VH',
+
             apiKey: '685c8fc1740599abf382c782da3717a8',
+
             indexName: 'xustudyxu-blog',
-            appId:'4YPBTYO9VH'
+
+            container: '### REPLACE ME WITH A CONTAINER (e.g. div) ###',
+
+            debug: false // Set debug to true if you want to inspect the modal
+
           },
         sidebarDepth: 2,
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
