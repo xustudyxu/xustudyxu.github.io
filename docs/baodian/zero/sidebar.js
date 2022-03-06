@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title:'初级宝典',
+    title:'SSM-CRUD',
     collapsable: false,
     children:[
-    '/baodian/zero/bd1',
+    '/baodian/zero/SSM-CRUD',
     ]
   }
   
