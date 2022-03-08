@@ -5,7 +5,7 @@ module.exports = [
       {
         text: 'Java基础',
         items: [
-          { text: 'JavaSE', link: '/studynotes/Java/one/' }
+          { text: 'JavaSE', link: '/studynotes/Java/one_' }
         ]
       }, {
         text: 'JavaWeb',
@@ -19,7 +19,7 @@ module.exports = [
         items: [
           { text: 'Spring5', link: '/studynotes/Spring5/one/' },
           { text: 'SpringMVC', link: '/studynotes/SpringMVC/one/' },
-          { text: 'Mybatis', link: '/studynotes/Mybatis/index/' }
+          { text: 'Mybatis', link: '/studynotes/Mybatis/index_' }
         ]
       }
     ]
