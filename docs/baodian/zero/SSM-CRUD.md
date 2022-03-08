@@ -420,5 +420,105 @@ CREATE TABLE tbl_dept(
 </generatorConfiguration>
 ```
 
+### 修改逆向工程生成的EmployeeMapper.xml
+
++ 向Employee添加department属性，并提供set和get方法
++ 在Employyee接口中添加两个方法
+
+```java
+	List<Employee> selectByExampleWithDept(EmployeeExample example);
+
+    Employee selectByPrimaryKeyWithDept(Integer empId);
+```
+
++ 向EmployeeMapper.xml中添加
+
+```xml
+<resultMap type="com.frx01.crud.bean.Employee" id="WithDeptResultMap">
+    <id column="emp_id" jdbcType="INTEGER" property="empId" />
+    <result column="emp_name" jdbcType="VARCHAR" property="empName" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="d_id" jdbcType="INTEGER" property="dId" />
+    <!-- 指定联合查询出的部门字段的封装 -->
+    <association property="department" javaType="com.frx01.crud.bean.Department">
+      <id column="dept_id" property="deptId"/>
+      <result column="dept_name" property="deptName"/>
+    </association>
+  </resultMap>
+
+<!--   List<Employee> selectByExampleWithDept(EmployeeExample example);
+   Employee selectByPrimaryKeyWithDept(Integer empId);
+   -->
+  <!-- 根据条件查询员工同时带部门信息 -->
+  <select id="selectByExampleWithDept" resultMap="WithDeptResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="WithDept_Column_List" />
+    FROM tbl_emp e
+    left join tbl_dept d on e.`d_id`=d.`dept_id`
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+	<!--根据主键查询员工同时带部门信息 -->
+  <select id="selectByPrimaryKeyWithDept" resultMap="WithDeptResultMap">
+    select
+    <include refid="WithDept_Column_List" />
+    FROM tbl_emp e
+    left join tbl_dept d on e.`d_id`=d.`dept_id`
+    where emp_id = #{empId,jdbcType=INTEGER}
+  </select>
+```
+
++ 测试
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/3/7  22:04
+ * 测试dao层的工作
+ * 推荐Spring的项目就可以使用Spring单元测试,可以自动注入需要的组件
+ * 1.导入SpringTest模块
+ * 2.@ContextConfiguration指定Spring配置文件的位置
+ * 3.直接autowired要使用的组件即可
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"}) //指定Spring配置文件的位置
+public class MapperTest {
+
+    @Autowired
+    DepartmentMapper departmentMapper;
+    /**
+     * 测试DepartmentMapper
+     */
+    @Test
+    public void testCRUD(){
+        //1.创建SpringIOC容器
+        // ApplicationContext ioc=new ClassPathXmlApplicationContext("applicationContext.xml");
+        //2.从容器中获取Mapper
+        //DepartmentMapper bean = ioc.getBean(DepartmentMapper.class);
+        System.out.println(departmentMapper);
+        
+    }
+}
+```
+
++ 结果
+
+```java
+org.apache.ibatis.binding.MapperProxy@3c01cfa1
+
+Process finished with exit code 0
+```
+
+
+
 
 
