@@ -1,5 +1,7 @@
 # SSM-CRUD
 
+[学习视频地址](https://www.bilibili.com/video/BV17W411g7zP?p=4&spm_id_from=pageDriver)
+
 [[toc]]
 
 ## 功能点
@@ -51,6 +53,7 @@
   <!--引入项目依赖的jar包-->
   <!--SpringMVC、Spring、-->
   <dependencies>
+    <!--引入分页插件-->
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
@@ -253,10 +256,10 @@ jdbc.password=hsp
 </beans>
 ```
 
-配置applicationContext.xml
+### 配置applicationContext.xml
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -269,25 +272,26 @@ jdbc.password=hsp
 
     <!--扫描-->
     <context:component-scan base-package="com.frx01">
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+       <!-- <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+-->
     </context:component-scan>
 
     <!--Spring的配置文件,这里主要配置和业务主要逻辑有关的-->
     <!--=======================数据源,事务控制===========================-->
     <context:property-placeholder location="classpath:dbconfig.properties"/>
-
     <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
         <property name="driverClass" value="${jdbc.driverClass}"></property>
         <property name="user" value="${jdbc.user}"></property>
-        <property name="password" value="{jdbc.password}"></property>
+        <property name="password" value="${jdbc.password}"></property>
     </bean>
 
     <!-- ======================配置和Mybatis的整合=====================-->
-    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--指定mybatis全局配置文件的位置-->
-        <property name="configLocation " value="classpath:mybatis-config.xml"></property>
-        <property name="dataSource" value="pooledDataSource"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="dataSource" ref="pooledDataSource"></property>
         <!--指定mybatis，mapper文件的位置-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
     </bean>
@@ -296,6 +300,12 @@ jdbc.password=hsp
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     <!--扫描所有dao接口的实现，加入到ioc容器中-->
         <property name="basePackage" value="com.frx01.crud"></property>
+    </bean>
+
+    <!-- 配置一个可以执行批量的sqlSession -->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+        <constructor-arg name="executorType" value="BATCH"></constructor-arg>
     </bean>
 
     <!--========================事务控制的配置========================-->
@@ -312,7 +322,7 @@ jdbc.password=hsp
         </aop:config>
 
     <!--配置事务增强,配置事务如何切入-->
-    <tx:advice id="txAdvice">
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <!--所有方法都是事务方法-->
             <tx:method name="*"/>
@@ -355,9 +365,12 @@ CREATE TABLE tbl_dept(
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <!--指定javabean包名-->
-        <typeAliases>
+    <typeAliases>
         <package name="com.frx01.crud.bean"/>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 </configuration>
 ```
 
@@ -495,6 +508,12 @@ public class MapperTest {
 
     @Autowired
     DepartmentMapper departmentMapper;
+
+    @Autowired
+    EmployeeMapper employeeMapper;
+
+    @Autowired
+    SqlSession sqlSession;
     /**
      * 测试DepartmentMapper
      */
@@ -505,20 +524,203 @@ public class MapperTest {
         //2.从容器中获取Mapper
         //DepartmentMapper bean = ioc.getBean(DepartmentMapper.class);
         System.out.println(departmentMapper);
-        
+
+        //1.插入几个部门
+        //departmentMapper.insertSelective(new Department(null,"开发部"));
+        //departmentMapper.insertSelective(new Department(null,"测试部"));
+
+        //2.生成员工数据，测试员工插入
+        employeeMapper.insertSelective(new Employee(null,"冯荣旭","M","abc@qq.com",1));
+
+        //3.批量插入多个员工;批量插入：使用可以执行批量操作的SqlSession
+        //for (){
+        //    employeeMapper.insertSelective(new Employee(null,"冯荣旭","M","abc@qq.com",1));
+        //}
+        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+        for(int i=0;i<1000;i++){
+            String uid = UUID.randomUUID().toString().substring(0, 5)+""+i;
+            mapper.insert(new Employee(null,"uid","M",uid+"@qq.com",1));
+
+        }
+        System.out.println("批量完成");
     }
 }
+
 ```
 
 + 结果
 
 ```java
 org.apache.ibatis.binding.MapperProxy@3c01cfa1
+批量完成
+Process finished with exit code 0
+```
+
+## CRUD-查询
+
+![1646813168340](./images/SSM-CRUD/01.png)
+
+1. 访问index.jsp页面
+2. index.jsp页面发送出查询员工列表请求
+3. EmployeeController来接受请求，查出员工数据
+4. 来到list.jsp页面进行展示
+
+`index.jsp`
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>员工列表</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+`EmployeeService.java`
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/3/9  16:13
+ */
+@Service
+public class EmployeeService {
+
+    @Autowired
+    EmployeeMapper employeeMapper;
+
+    /**
+     * 查询所有员工
+     * @return
+     */
+    public List<Employee> getAll() {
+        return employeeMapper.selectByExampleWithDept(null);
+    }
+}
+```
+
+`EmployeeController.java`
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/3/9  16:10
+ * 处理员工CRUD请求
+ */
+@Controller
+public class EmployeeController {
+
+    @Autowired
+    EmployeeService employeeService;
+    /**
+     * 查询员工数据
+     * @return
+     */
+    @RequestMapping("/emps")
+    public String getEmps(
+            @RequestParam(value = "pn", defaultValue = "1") Integer pn,
+            Model model) {
+        // 这不是一个分页查询；
+        // 引入PageHelper分页插件
+        // 在查询之前只需要调用，传入页码，以及每页的大小
+        PageHelper.startPage(pn, 5);
+        // startPage后面紧跟的这个查询就是一个分页查询
+        List<Employee> emps = employeeService.getAll();
+        // 使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
+        // 封装了详细的分页信息,包括有我们查询出来的数据，传入连续显示的页数
+        PageInfo page = new PageInfo(emps, 5);
+        model.addAttribute("pageInfo", page);
+
+        return "list";
+    }
+}
+```
+
+`MVC_Test.java`
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/3/9  17:38
+ * 使用Spring测试供的测试请求功能，测试curd请求的正确性
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@ContextConfiguration(locations = {"classpath:applicationContext.xml",
+        "file:F:\\SSM-CRUD\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml"})
+public class MVC_Test {
+
+    // 传入Springmvc的ioc
+    @Autowired
+    WebApplicationContext context;
+    // 虚拟mvc请求，获取到处理结果。
+    MockMvc mockMvc;
+
+    @Before
+    public void initMokcMvc() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+    }
+
+    @Test
+    public void testPage() throws Exception {
+        //模拟请求拿到返回值
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/emps").param("pn", "5")).andReturn();
+        //请求成功以后，请求域中会有pageInfo；我们可以取出pageInfo进行验证
+        MockHttpServletRequest request = result.getRequest();
+        PageInfo pi =(PageInfo) request.getAttribute("pageInfo");
+
+        System.out.println("当前页码：" + pi.getPageNum());
+        System.out.println("总页码：" + pi.getPages());
+        System.out.println("总记录数：" + pi.getTotal());
+        System.out.println("在页面需要连续显示的页码");
+        int[] nums = pi.getNavigatepageNums();
+        for (int i : nums) {
+            System.out.print(" " + i);
+        }
+
+        //获取员工数据
+        List<Employee> list = pi.getList();
+        for (Employee employee : list) {
+            System.out.println("ID：" + employee.getEmpId() + "==>Name:" + employee.getEmpName());
+        }
+
+    }
+
+}
+```
+
++ 结果
+
+```java
+当前页码：5
+总页码：401
+总记录数：2003
+在页面需要连续显示的页码
+ 3 4 5 6 7ID：1023==>Name:41b6b19
+ID：1024==>Name:fcd9920
+ID：1025==>Name:9b04621
+ID：1026==>Name:f776422
+ID：1027==>Name:f8a9523
 
 Process finished with exit code 0
 ```
 
++ 遇到的问题，如果你是跟着老师写的，P13会报空指针异常
 
+![1646836492516](./images/SSM-CRUD/02.png)
+
++ 你可以将applicationContext.xml中的
+
+  <context:exclude-filter type="annotation"
+                           expression="org.springframework.stereotype.Controller"/>
+
+   注释掉
 
 
 
