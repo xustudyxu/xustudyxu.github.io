@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/11.gif
 actionText: 快速上手 →
-actionLink: /studynotes/java/one.md
+actionLink: /studynotes/java/one_.md
 features:
 - title: 学习
   details: 学习只是生活中的一小部分，仅此而已。
