@@ -32,7 +32,7 @@ web开发
 
 ### 响应式编程
 
-![1646982058530](./images/Spring_SpringBoot2/02.png)
+![1647053572789](./images/Spring_SpringBoot2/02.png)
 
 ### 内部源码设计
 
@@ -52,9 +52,7 @@ web开发
 - Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
   - 内嵌web服务器
 
-- Provide opinionated 'starter' dependencies to simplify your build
-
-  configuration
+- Provide opinionated 'starter' dependencies to simplify your build configuration
 
   - 自动starter依赖，简化构建配置
 
@@ -95,8 +93,6 @@ In short, the **microservice architectural style** is an approach to developing 
 
 ## 分布式
 
-![1646982399125](./images/Spring_SpringBoot2/03.png)
-
 ### 分布式的困难
 
 - 远程调用
@@ -114,7 +110,7 @@ In short, the **microservice architectural style** is an approach to developing 
 
 + SpringBoot+SpringCloud
 
-![1646982510759](./images/Spring_SpringBoot2/04.png)
+![1647053611543](./images/Spring_SpringBoot2/03.png)
 
 ## 云原生
 
@@ -132,19 +128,19 @@ In short, the **microservice architectural style** is an approach to developing 
 
 ### 上云的解决
 
-![1646982622145](./images/Spring_SpringBoot2/05.png)
+![1647053629806](./images/Spring_SpringBoot2/04.png)
 
 ## 如何学习SpringBoot
 
 ### 官网文档架构
 
-![1646982653209](./images/Spring_SpringBoot2/06.png)
+![1647053665752](./images/Spring_SpringBoot2/05.png)
 
-![1646982669670](./images/Spring_SpringBoot2/07.png)
+![1647053682378](./images/Spring_SpringBoot2/06.png)
 
 查看版本新特性；
 
 https://github.com/spring-projects/spring-boot/wiki#release-notes
 
-![1646982696533](./images/Spring_SpringBoot2/08.png)
+![1647053715587](./images/Spring_SpringBoot2/07.png)
 

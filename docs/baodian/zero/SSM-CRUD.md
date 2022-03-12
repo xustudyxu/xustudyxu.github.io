@@ -567,7 +567,7 @@ Process finished with exit code 0
 
 `index.jsp`
 
-```jsp
+```js
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
