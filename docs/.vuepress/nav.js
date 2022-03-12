@@ -50,7 +50,11 @@ module.exports = [
         {text: 'NoSQL数据库概论', link: '/studynotes/NoSQL/index_/' },
         {text: 'Redis', link: '/studynotes/Redis/one/' }
       ]
-    },
+    },{ text: 'Hadoop', 
+    items:[
+      {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
+    ]
+  },
     ]
   },
 
