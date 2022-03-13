@@ -546,7 +546,7 @@ start-dfs.sh
 
 ![1647136110366](./images/01/25.png)
 
-+ hdfs dfs -mkdir /to1 ,创建个文件夹试一下
++ hdfs dfs -mkdir /t01 ,创建个文件夹试一下
 
 ```shell
 [root@master ~]# hdfs dfs -mkdir /t01
