@@ -33,7 +33,7 @@ module.exports = [
           { text: 'Python基础', link: '/studynotes/Python/python01/' },
           { text: '数据分析', link: '/studynotes/dataCleaning/one/' }
         ]
-      },,{ text: 'Hadoop', 
+      },{ text: 'Hadoop', 
       items:[
         {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
       ]
