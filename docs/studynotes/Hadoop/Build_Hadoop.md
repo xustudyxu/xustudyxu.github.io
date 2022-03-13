@@ -516,7 +516,7 @@ ssh-copy-id slave3
 
 ![1647177363103](./images/01/27.png)
 
-+ exit
++ exit退出
 
 ![1647177383366](./images/01/28.png)
 
@@ -546,7 +546,7 @@ start-dfs.sh
 
 + jps查看关于java线程状态
 
-![1647182637072](./images/01/35.png)
+![1647184247877](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1647184247877.png)
 
 + 访问URL
 
