@@ -546,7 +546,7 @@ start-dfs.sh
 
 + jps查看关于java线程状态
 
-![1647184247877](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1647184247877.png)
+![1647184247877](./images/01/35.png)
 
 + 访问URL
 
