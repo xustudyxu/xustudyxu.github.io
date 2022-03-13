@@ -467,9 +467,9 @@ slave3
 
 ```xml
 192.168.197.200 master
-192.168.197.201 salve1
-192.168.197.202 salve2
-192.168.197.203 salve3
+192.168.197.201 slave1
+192.168.197.202 slave2
+192.168.197.203 slave3
 ```
 
 ## 配置从节点的网络
@@ -484,14 +484,14 @@ slave3
 >
 > 可以看前面的笔记
 
-+ salve1修改主机名为salve1
++ 节点一修改主机名为slave1
   + IP地址指定为192.168.197.201
-+ salve1修改主机名为salve2
++ 节点二修改主机名为slave2
   - IP地址指定为192.168.197.202
-+ salve1修改主机名为salve3
++ 节点三修改主机名为slave3
   - IP地址指定为192.168.197.203
 
-![1647104912260](./images/01/16.png)
+![1647178333969](./images/01/29.png)
 
 ### 免密登录
 
@@ -507,36 +507,46 @@ ssh-keygen -t rsa
 
 ```shell
 ssh-copy-id master
-ssh-copy-id salve1
-ssh-copy-id salve2
-ssh-copy-id salve3
+ssh-copy-id slave1
+ssh-copy-id slave2
+ssh-copy-id slave3
 ```
 
 + ssh master
 
-![1647136809171](./images/01/01.png)
+![1647177363103](./images/01/27.png)
 
 + exit
 
-![1647136820191](./images/01/02.png)
+![1647177383366](./images/01/28.png)
 
-+ 格式化
++ 主节点格式化
 
 ```shell
 hdfs namenode -format
 ```
 
-+ 开启集群：
+`中途可能需要你输入Y`
+
+![1647180781381](./images/01/31.png)
+
++ 主节点开启集群：
 
 ```shell
 start-dfs.sh
 ```
 
-![1647135935829](./images/01/22.png)
+`中途输入主机密码`
+
+![1647181583167](./images/01/33.png)
+
++ 启动资源管理yarn
+
+![1647182320747](./images/01/34.png)
 
 + jps查看关于java线程状态
 
-![1647136021505](./images/01/23.png)
+![1647182637072](./images/01/35.png)
 
 + 访问URL
 
