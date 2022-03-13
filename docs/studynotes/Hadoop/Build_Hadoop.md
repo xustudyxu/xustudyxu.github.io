@@ -4,7 +4,7 @@
 
 ::: tip
 
-安装软件作为一件事，应该一气呵成，希望你腾出一两个小时的时间来完成搭建，提前祝你搭建成功!
+搭建集群作为一件事，应该一气呵成，希望你腾出一两个小时的时间来完成搭建，提前祝你搭建成功!
 
 :::
 
@@ -466,6 +466,7 @@ slave3
 ```
 
 ```xml
+192.168.197.200 master
 192.168.197.201 salve1
 192.168.197.202 salve2
 192.168.197.203 salve3
@@ -477,7 +478,7 @@ slave3
 
 ![1647102133075](./images/01/14.png)
 
-![1647102155736](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1647102155736.png)
+![1647102155736](./images/01/15.png)
 
 > 因为是完整克隆，我们的主机名也要重新设置，并且指定IP地址
 >
@@ -490,7 +491,7 @@ slave3
 + salve1修改主机名为salve3
   - IP地址指定为192.168.197.203
 
-![1647104912260](./images/01/15.png)
+![1647104912260](./images/01/16.png)
 
 ### 免密登录
 
@@ -502,19 +503,22 @@ ssh-keygen -t rsa
 
 按照默认回车就完了
 
-+ 
++ 将每台机器的公钥拷贝给每台机器，注意下面的指令要求4台机器都执行
 
 ```shell
 ssh-copy-id master
+ssh-copy-id salve1
+ssh-copy-id salve2
+ssh-copy-id salve3
 ```
 
-+ ssh 'master'
++ ssh master
 
-![1647105370027](./images/01/16.png)
+![1647136809171](./images/01/01.png)
 
 + exit
 
-![1647105451611](./images/01/17.png)
+![1647136820191](./images/01/02.png)
 
 + 格式化
 
@@ -528,13 +532,27 @@ hdfs namenode -format
 start-dfs.sh
 ```
 
-![1647107045691](./images/01/18.png)
+![1647135935829](./images/01/22.png)
+
++ jps查看关于java线程状态
+
+![1647136021505](./images/01/23.png)
 
 + 访问URL
 
-![1647106991055](./images/01/19.png)
+![1647136089278](./images/01/24.png)
 
 + 文件系统
 
-![1647107142578](./images/01/20.png)
+![1647136110366](./images/01/25.png)
+
++ hdfs dfs -mkdir /to1 ,创建个文件夹试一下
+
+```shell
+[root@master ~]# hdfs dfs -mkdir /t01
+```
+
++ 访问URL
+
+![1647136483174](./images/01/26.png)
 
