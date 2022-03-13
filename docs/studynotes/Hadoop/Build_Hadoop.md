@@ -540,7 +540,11 @@ start-dfs.sh
 
 ![1647181583167](./images/01/33.png)
 
-+ 启动资源管理yarn
++ 主节点启动资源管理yarn
+
+```shell
+start-yarn.sh
+```
 
 ![1647182320747](./images/01/34.png)
 
