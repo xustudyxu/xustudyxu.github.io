@@ -243,14 +243,14 @@ tar -zxvf jdk-8u301-linux-x64.tar.gz -C /usr/local/java
 通过修改/etc/profile文件完成环境变量JAVA_HOME、PATH和CLASSPATH的设置，输入G跳转到最后，在配置文件/etc/profile的最后添加如下内容
 
 ```shell
+vim /etc/profile
+```
+
+```shell
 # set java environment
 export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-```
-
-```shell
-vim /etc/profile
 ```
 
 使用命令“source /etc/profile”重新加载配置文件或者重启机器，使配置生效，Java环境变量配置成功后的系统变量“PATH”值
