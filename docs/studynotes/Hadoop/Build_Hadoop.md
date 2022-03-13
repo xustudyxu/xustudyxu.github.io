@@ -271,7 +271,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)
 
 ## 安装Hadoop
 
-在上面我已经提供了Hadoop(v2.10.1)的下载地址
+在上面我已经提供了Hadoop(v2.10.1)的下载地址,老师提供的也有
 
 + 下载完成，再次使用XFTP传送到linux系统的/opt/hadoop/中
 
@@ -557,4 +557,3 @@ start-dfs.sh
 ![1647136483174](./images/01/26.png)
 
 > ## enjoy
-

@@ -33,7 +33,11 @@ module.exports = [
           { text: 'Python基础', link: '/studynotes/Python/python01/' },
           { text: '数据分析', link: '/studynotes/dataCleaning/one/' }
         ]
-      },
+      },,{ text: 'Hadoop', 
+      items:[
+        {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
+      ]
+    },
   
     ]
   },
@@ -50,11 +54,7 @@ module.exports = [
         {text: 'NoSQL数据库概论', link: '/studynotes/NoSQL/index_/' },
         {text: 'Redis', link: '/studynotes/Redis/one/' }
       ]
-    },{ text: 'Hadoop', 
-    items:[
-      {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
-    ]
-  },
+    }
     ]
   },
 
