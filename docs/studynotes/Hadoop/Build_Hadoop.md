@@ -222,7 +222,7 @@ Running transaction
 
 + 我是用的是jdk-8u301-linux-x64.tar.gz,这个版本
 
-  >  这个jdk压缩包，可以问我要
+  >  这个jdk压缩包，可以问我要,如果用老师给的jdk，**注意JDK版本**
 
 + 使用XFTP将压缩包传送到Linux系统中,我是下载到/opt/java1.8/这个文件夹中
 
@@ -247,7 +247,7 @@ vim /etc/profile
 ```
 
 ```shell
-# set java environment
+# set java environment  #注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
 export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
@@ -264,7 +264,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 ```shell
 [root@master java1.8]# java -version
-java version "1.8.0_301"
+java version "1.8.0_301"  #用老师给的jdk这里应该显示"1.8.0_211"
 Java(TM) SE Runtime Environment (build 1.8.0_301-b09)
 Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)
 ```
@@ -365,6 +365,8 @@ hdfs-site.xml               mapred-env.cmd
 vim hadoop-env.sh
 ```
 
+> 注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
+
 ```shell
 export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 ```
@@ -375,8 +377,10 @@ export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 vim yarn-env.sh
 ```
 
+> 注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
+
 ```shell
-JAVA_HOME=/usr/local/java/jdk1.8.0_301
+JAVA_HOME=/usr/local/java/jdk1.8.0_301 
 ```
 
 + 配置HDFS主节点信息、持久化和数据文件的主目录
@@ -453,8 +457,10 @@ vim yarn-site.xml
 vim slaves
 ```
 
+> 写入你的三个从节点主机名
+
 ```xml
-slave1
+slave1 
 slave2
 slave3
 ```
@@ -462,11 +468,13 @@ slave3
 + 提前准备主机名解析文件，为后面的克隆机器做好准备（可选，若不做，克隆后为每台机器重新添加亦可）
 
 ```shell
- vim /etc/hosts
+vim /etc/hosts
 ```
 
+> 写入你的主从节点的IP地址和主机名
+
 ```xml
-192.168.197.200 master
+192.168.197.200 master 
 192.168.197.201 slave1
 192.168.197.202 slave2
 192.168.197.203 slave3
@@ -483,6 +491,8 @@ slave3
 > 因为是完整克隆，我们的主机名也要重新设置，并且指定IP地址
 >
 > 可以看前面的笔记
+>
+> 修改与上面**你自己的/etc/hosts**里的**IP地址与主机名**保持一致
 
 + 节点一修改主机名为slave1
   + IP地址指定为192.168.197.201
