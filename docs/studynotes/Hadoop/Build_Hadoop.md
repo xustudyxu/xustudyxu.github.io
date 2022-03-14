@@ -110,7 +110,7 @@ OpenJDK Runtime Environment (build 1.8.0_262-b10)
 OpenJDK 64-Bit Server VM (build 25.262-b10, mixed mode)
 ```
 
-其次，使用“**rpm-qa|grep jdk**”命令查询jdk软件
+其次，使用“**rpm -qa|grep jdk**”命令查询jdk软件
 
 ```shell
 [root@master ~]# rpm -qa|grep jdk
@@ -253,14 +253,14 @@ export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 ```
 
-使用命令“source /etc/profile”重新加载配置文件或者重启机器，使配置生效，Java环境变量配置成功后的系统变量“PATH”值
+使用命令“**source /etc/profile**”重新加载配置文件或者重启机器，使配置生效，Java环境变量配置成功后的系统变量“PATH”值
 
 ```shell
 [root@master java]# echo $PATH
 /usr/local/java/jdk1.8.0_301/bin:/usr/local/java/1.8.0_301/bin:/opt/hadoop/hadoop-2.10.1/bin:/usr/local/java/jdk1.8.0_261/bin:/opt/hadoop/hadoop-2.10.1/bin:/opt/java1.8/jdk1.8.0_301/bin:/opt/hadoop/bin:/opt/java1.8/jdk1.8.0_301/bin:/opt/hadoop/bin:/opt/java1.8/jdk1.8.0_301/bin:/opt/java1.8/jdk1.8.0_301/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
 ```
 
-验证Java,再次使用命令“java -version”，查看Java是否安装配置成功及其版本
+验证Java,再次使用命令“**java -version**”，查看Java是否安装配置成功及其版本
 
 ```shell
 [root@master java1.8]# java -version
