@@ -1,5 +1,9 @@
 # SpringBoot2 快速入门
 
+[[toc]]
+
++ [官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started)
+
 ## 系统要求
 
 + Java8&兼容Java14
@@ -135,6 +139,38 @@ public class HelloController {
 ![1647260401686](./images/02/01.png)
 
 > 非常非常的好用，非常非常的奈斯，非常非常的妙
+
+### 一些思考
+
+> 到此，你会发现一个简单的web程序居然完成了。这里你需要一些思考：
+
+### 为什么我们添加一个starter-web模块便可以了呢？
+
+我们安装Maven Helper的插件，用来查看spring-boot-starter-web模块的依赖
+
+![1647314395559](./images/02/04.png)
+
+我们看下这个模块的依赖，你便能初步窥探出模块支撑
+
+![1647314639501](./images/02/05.png)
+
+### 我们如何更改更多Server的配置呢？比如Tomcat Server
+
+为什么Tomcat默认端口是8080？ 如前文所述，SpringBoot最强大的地方在于约定大于配置，只要你引入某个模块的xx-start包，它将自动注入配置，提供了这个模块的功能；比如这里我们在POM中添加了如下的包
+
+```xml
+<dependencies>
+        <!--web场景启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+```
+
+它内嵌了Tomcat并且提供了默认的配置，比如默认端口是8080.
+
+我们可以在application.properties或者application.yml中配置
 
 ### 简化配置
 
