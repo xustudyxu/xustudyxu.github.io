@@ -46,7 +46,7 @@ vim /etc/sysconfig/network-scripts/ifcfg-ens33
 
 6. 输入i进入编辑模式。[vim用法](https://xustudyxu.github.io/VuepressBlog/studynotes/Linux/4/#_4-2-3-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F).,这里我们有五处需要修改:
 
-![1647088342861](./images/01/09.png)
+![1647305826635](./images/01/09.png)
 
 1. IP配置方法：将双引号里的dhcp改为static
 2. 指定IP地址为192.168.197.200
