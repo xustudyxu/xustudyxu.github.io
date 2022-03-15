@@ -36,7 +36,7 @@ module.exports = [
     transformer: (timestamp, lang) => {
       const moment = require('moment');
       moment.locale("zh-cn");
-      return moment(timestamp).format("LLLL")
+      return moment(timestamp).format("LL")
     }
   }
   ],//最后更新插件
