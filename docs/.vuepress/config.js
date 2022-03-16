@@ -12,7 +12,8 @@ module.exports = {
         ['script', { charset: 'utf-8', href: './js/main.js' }]
     ],
     markdown: {
-        lineNumbers: true
+        lineNumbers: true,
+    
     },
     themeConfig: {
         nav: require("./nav.js"),

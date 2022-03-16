@@ -13,6 +13,13 @@ module.exports = [
     '/studynotes/SpringBoot2/Getting_Start',
 
       ]
+  },{
+    title:'了解自动装配原理',
+    collapsable: false,
+    children:[
+    '/studynotes/SpringBoot2/automatic_assembly',
+
+      ]
   }
   
 ]
