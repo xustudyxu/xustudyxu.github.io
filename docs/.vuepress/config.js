@@ -13,6 +13,7 @@ module.exports = {
     ],
     markdown: {
         lineNumbers: true,
+        extractHeaders: [ 'h2', 'h3', 'h4' ]
       },
     themeConfig: {
         nav: require("./nav.js"),
