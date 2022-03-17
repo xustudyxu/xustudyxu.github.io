@@ -8,3 +8,5 @@
 
 老师视频地址:https://www.bilibili.com/video/[BV1fh411y7R8](https://www.bilibili.com/video/BV1fh411y7R8/?spm_id_from=333.788.video.desc.click)?spm_id_from=333.999.0.0
 
+<Vssue title="Vssue Demo6"/>
+
