@@ -6,5 +6,5 @@
 
 :white_flower::hugs:
 
-:first_quarter_moon:
+
 
