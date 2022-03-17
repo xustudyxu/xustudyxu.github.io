@@ -15,6 +15,9 @@ module.exports = {
         lineNumbers: true,
     
     },
+    markdown: {
+        extractHeaders: [ 'h2', 'h3', 'h4' ]
+      },
     themeConfig: {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
