@@ -3,7 +3,7 @@ module.exports = [
     title:'HBase简介',
     collapsable: false,
     children:[
-    '/studynotes/HBase/index',
+    '/studynotes/HBase/index_',
 
       ]
   },{
