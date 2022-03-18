@@ -64,7 +64,7 @@ RegionServer主要负责响应用户的请求，向HDFS中读写数据。一般�
 
 ## 逻辑模型
 
-![1647595287488](D:/vuepress/VuepressBlog/docs/studynotes/HBase/images/04/01.png)
+![1647595287488](./images/04/01.png)
 
 **关系型数据库特点：**
 
@@ -80,15 +80,15 @@ RegionServer主要负责响应用户的请求，向HDFS中读写数据。一般�
 
 ## 物理模型
 
-![1647595450740](D:/vuepress/VuepressBlog/docs/studynotes/HBase/images/04/02.png)
+![1647595450740](./images/04/02.png)
 
 ## 实际存储方式
 
-![1647595475646](D:/vuepress/VuepressBlog/docs/studynotes/HBase/images/04/03.png)
+![1647595475646](./images/04/03.png)
 
-![1647595492574](D:/vuepress/VuepressBlog/docs/studynotes/HBase/images/04/04.png)
+![1647595492574](./images/04/04.png)
 
 表中的数据按照行键的字典序分成多个**region**存在不同的**regionserver**上
 
-![1647595523739](D:/vuepress/VuepressBlog/docs/studynotes/HBase/images/04/05.png)
+![1647595523739](./images/04/05.png)
 
