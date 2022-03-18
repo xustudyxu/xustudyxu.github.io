@@ -52,7 +52,8 @@ module.exports = [
       { text: 'NoSQL 数据库', 
       items:[
         {text: 'NoSQL数据库概论', link: '/studynotes/NoSQL/index_/' },
-        {text: 'Redis', link: '/studynotes/Redis/one/' }
+        {text: 'Redis', link: '/studynotes/Redis/one/' },
+        {text: 'HBase', link: '/studynotes/Hbase/index/' }
       ]
     }
     ]
