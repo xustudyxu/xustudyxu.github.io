@@ -1,4 +1,4 @@
-# SpringMVC简介
+# SpringMVC简介<badge text="v5.3.1" />
 
 [学习视频地址](https://www.bilibili.com/video/BV1Ry4y1574R?from=search&seid=13810950434984257553&spm_id_from=333.337.0.0)
 
@@ -16,6 +16,12 @@ JavaBean分为两类：
 V：View，视图层，指工程中的html或jsp等页面，作用是与用户进行交互，展示数据
 
 C：Controller，控制层，指工程中的servlet，作用是接收请求和响应浏览器
+
+1. 表现层（UI）：通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。
+2. 业务逻辑层（BLL）：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。
+3. 数据访问层（DAL）：该层所做事务直接操作数据库，针对数据的增添、删除、修改、更新、查找等。
+
+![1647678149570](./images/01/07.png)
 
 MVC的工作流程：
 用户通过视图层发送请求到服务器，在服务器中请求被Controller接收，Controller调用相应的Model层处理请求，处理完毕将结果返回到Controller，Controller再根据请求处理的结果找到相应的View视图，渲染数据后最终响应给浏览器

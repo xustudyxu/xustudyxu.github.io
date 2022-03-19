@@ -1,4 +1,4 @@
-# Spring Boot2
+# Spring Boot2<badge text="v2.3.4" />
 
 [学习视频地址](https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=10378994471653424568&spm_id_from=333.337.0.0)
 

@@ -1,4 +1,4 @@
-# Spring5 框架
+# Spring5 框架<badge text="v5.2.6" />
 
 [学习视频地址](https://www.bilibili.com/video/BV1Vf4y127N5?from=search&seid=10332266168544277867&spm_id_from=333.337.0.0)
 

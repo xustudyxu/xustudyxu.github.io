@@ -1,4 +1,4 @@
-# MyBatis
+# MyBatis<badge text="v3.4.1" />
 
 [学习视频地址](https://www.bilibili.com/video/BV1mW411M737?from=search&seid=11694251287569762189&spm_id_from=333.337.0.0)
 
