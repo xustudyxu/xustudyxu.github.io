@@ -18,7 +18,7 @@ module.exports = {
     themeConfig: {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         lastUpdated: '上次更新',
         // search: true,
         // searchMaxSuggestions: 10,
