@@ -215,7 +215,7 @@ public class MainApplication {
 
 + 控制台输出
 
-::: detail
+::: details
 
 ```java
 org.springframework.context.annotation.internalConfigurationAnnotationProcessor
