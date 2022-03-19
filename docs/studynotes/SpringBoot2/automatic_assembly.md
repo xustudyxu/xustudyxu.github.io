@@ -118,7 +118,7 @@
 
 ### 组件添加
 
-#### **@Configuration**
+### @Configuration
 
 + 基本使用
 + Full模式与Lite模式
@@ -215,8 +215,135 @@ public class MainApplication {
 
 + 控制台输出
 
+::: detail
+
 ```java
-...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+mainApplication
+org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory
+worldController
+myConfig
+helloController
+tom22
+user01
+org.springframework.boot.autoconfigure.AutoConfigurationPackages
+org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+propertySourcesPlaceholderConfigurer
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration
+websocketServletWebServerCustomizer
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat
+tomcatServletWebServerFactory
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration
+servletWebServerFactoryCustomizer
+tomcatServletWebServerFactoryCustomizer
+org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor
+org.springframework.boot.context.internalConfigurationPropertiesBinderFactory
+org.springframework.boot.context.internalConfigurationPropertiesBinder
+org.springframework.boot.context.properties.BoundConfigurationProperties
+org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+server-org.springframework.boot.autoconfigure.web.ServerProperties
+webServerFactoryCustomizerBeanPostProcessor
+errorPageRegistrarBeanPostProcessor
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration
+dispatcherServlet
+spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration
+dispatcherServletRegistration
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration
+org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration
+taskExecutorBuilder
+applicationTaskExecutor
+spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration
+error
+beanNameViewResolver
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration
+conventionErrorViewResolver
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+errorAttributes
+basicErrorController
+errorPageCustomizer
+preserveErrorControllerTargetClassPostProcessor
+spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration
+requestMappingHandlerAdapter
+requestMappingHandlerMapping
+welcomePageHandlerMapping
+mvcConversionService
+mvcValidator
+mvcContentNegotiationManager
+mvcPathMatcher
+mvcUrlPathHelper
+viewControllerHandlerMapping
+beanNameHandlerMapping
+routerFunctionMapping
+resourceHandlerMapping
+mvcResourceUrlProvider
+defaultServletHandlerMapping
+handlerFunctionAdapter
+mvcUriComponentsContributor
+httpRequestHandlerAdapter
+simpleControllerHandlerAdapter
+handlerExceptionResolver
+mvcViewResolver
+mvcHandlerMappingIntrospector
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+defaultViewResolver
+viewResolver
+requestContextFilter
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
+formContentFilter
+org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration
+mbeanExporter
+objectNamingStrategy
+mbeanServer
+org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration
+springApplicationAdminRegistrar
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
+org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+applicationAvailability
+org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+lifecycleProcessor
+spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration
+standardJacksonObjectMapperBuilderCustomizer
+spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration
+jacksonObjectMapperBuilder
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration
+parameterNamesModule
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration
+jacksonObjectMapper
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+jsonComponentModule
+org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration
+stringHttpMessageConverter
+org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration
+mappingJackson2HttpMessageConverter
+org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration
+org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration
+messageConverters
+org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties
+org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration
+taskSchedulerBuilder
+spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties
+org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration
+restTemplateBuilder
+org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration
+tomcatWebServerFactoryCustomizer
+org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration
+org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration
+characterEncodingFilter
+localeCharsetMappingsCustomizer
+org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration
 multipartConfigElement
 multipartResolver
 spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties
@@ -225,5 +352,269 @@ org.springframework.aop.config.internalAutoProxyCreator
 com.frx01.boot.config.MyConfig$$EnhancerBySpringCGLIB$$eb877df3@5b69d40d
 true
 用户的宠物是不是容器中的宠物:false
+```
+
+:::
+
+### @Bean、@Component、@Controller、@Service、@Repository
+
+@Controller 控制层类，
+
+@Service 业务层类，
+
+@Repository 持久层类，
+
+@Component 无法归类到前3种
+
+使用@Component注解在一个类上，表示将此类标记为Spring容器中的一个Bean。
+
+### @ComponentScan、@Import
+
+@ComponentScan默认是扫描的路径是同级路径及同级路径的子目录
+
+@ComponentScan：扫描包
+
+@Import：自动从类中的**无参构造函数**创建一个实例注册到 IOC 容器中
+
+【注意】@Import所创建的实例在 IOC 容器中**默认的id名为类的全限定名**，如 User 类就是：com.frx01.bean.User
+
+### @Conditional
+
+条件装配：满足Conditional指定的条件，则进行组件注入
+
+![1647686315872](./images/03/02.png)
+
+> 例如:测试@ConditionalOnBean和@ConditionalOnMissingBean
+
+```java
+//@ConditionalOnBean(name="tom") //容器中有tom的时候 添加组件user01
+@ConditionalOnMissingBean(name="tom")//容器中没有tom的时候 添加组件user01
+@Configuration(proxyBeanMethods = true)//告诉SpringBoot这是一个配置类 == 配置文件
+public class MyConfig {
+
+    @Bean("tom22") //自定义组件名
+    public Pet tomcatPet(){
+        return new Pet("tomcat");
+
+    }
+
+    /**
+     * 外部无论对配置类中的这个组件注册方法调用多少次获取到都是之前注册容器中的单实例对象
+     * @return
+     */
+//    @ConditionalOnBean(name="tom")//容器中有tom的时候 添加组件user01
+    @Bean //给容器中添加组件。以方法名作为组件id。返回类型:就是组件类型。返回的值，就是组件中在容器中的实例
+    public User user01(){
+        User zhangsan = new User("zhangsan", 18);
+        //User组件依赖了Pet组件
+        zhangsan.setPet(tomcatPet());
+        return new User("zhangsan",18);
+    }
+}
+```
+
++ 测试
+
+```java
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan("com.frx01")
+public class MainApplication {
+
+    public static void main(String[] args) {
+
+        //1.返回我们的IOC容器
+        ConfigurableApplicationContext run= SpringApplication.run(MainApplication.class,args);
+
+        //2.查看容器里面的组件
+        String[] names = run.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
+        
+        boolean user01 = run.containsBean("user01");
+        System.out.println("容器中user01组件:"+user01);
+
+        boolean tom22 = run.containsBean("tom22");
+        System.out.println("容器中tom22组件:"+tom22);
+
+    }
+}
+```
+
++ 控制台输出
+
+```java
+...
+容器中user01组件:true
+容器中tom22组件:true
+```
+
+### 原生配置文件引入
+
+### @ImportResource
+
+导入Spring配置文件，让它生效
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="frx" class="com.frx01.boot.bean.User">
+        <property name="name" value="zhangsan"></property>
+        <property name="age" value="18"></property>
+    </bean>
+
+    <bean id="cat" class="com.frx01.boot.bean.Pet">
+        <property name="name" value="tomcat"></property>
+    </bean>
+</beans>
+```
+
++ 配置
+
+```java
+@ImportResource("classpath:beans.xml")
+public class MyConfig {
+}
+```
+
++ 测试
+
+```java
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan("com.frx01")
+public class MainApplication {
+
+    public static void main(String[] args) {
+       //1.返回我们的IOC容器
+        ConfigurableApplicationContext run= SpringApplication.run(MainApplication.class,args);
+
+        //2.查看容器里面的组件
+        String[] names = run.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
+        
+		boolean frx = run.containsBean("frx");
+        System.out.println("容器中frx组件:"+frx);
+
+        boolean cat = run.containsBean("cat");
+        System.out.println("容器中cat组件:"+cat);
+
+    }
+}
+```
+
++ 控制台输出
+
+```java
+...
+容器中frx组件:true
+容器中cat组件:true
+```
+
+### 配置绑定
+
+如何使用Java读取到properties文件中的内容，并且把它封装到JavaBean中，以供随时使用；
+
+```java
+public class getProperties {
+     public static void main(String[] args) throws FileNotFoundException, IOException {
+         Properties pps = new Properties();
+         pps.load(new FileInputStream("a.properties"));
+         Enumeration enum1 = pps.propertyNames();//得到配置文件的名字
+         while(enum1.hasMoreElements()) {
+             String strKey = (String) enum1.nextElement();
+             String strValue = pps.getProperty(strKey);
+             System.out.println(strKey + "=" + strValue);
+             //封装到JavaBean。
+         }
+     }
+ }
+```
+
+### @Component+@ConfigurationProperties
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/3/19  23:50
+ * 只有在容器的组件，才会拥有SpringBoot提供的强大功能
+ */
+@Component
+@ConfigurationProperties(prefix = "mycar")
+public class Car {
+
+    private String brand;
+    private Integer price;
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", price=" + price +
+                '}';
+    }
+}
+```
+
++ 测试
+
+```java
+@RestController  //@ResponseBody与@Controller的合体
+public class HelloController {
+
+    @Autowired
+    Car car;
+
+    @RequestMapping("/car")
+    private Car car(){
+        return car;
+    }
+}
+```
+
++ 访问URL
+
+![1647705489009](./images/03/03.png)
+
+### @EnableConfigurationProperties + @ConfigurationProperties
+
+```java
+@ConfigurationProperties(prefix = "mycar") //没有@Component注解
+public class Car {
+    ...
+}
+```
+
++ +
+
+```java
+@EnableConfigurationProperties(Car.class)
+//1.开启Car配置绑定功能
+//2.把这个Car组件自动注册到容器中
+public class MyConfig {
+    ...
+}
 ```
 

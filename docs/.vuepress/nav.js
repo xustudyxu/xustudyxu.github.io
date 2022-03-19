@@ -35,7 +35,7 @@ module.exports = [
         ]
       },{ text: 'Hadoop', 
       items:[
-        {text: 'Hadoop<badge text="v2.10.1" />', link: '/studynotes/Hadoop/Build_Hadoop/' },
+        {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
       ]
     },
   
