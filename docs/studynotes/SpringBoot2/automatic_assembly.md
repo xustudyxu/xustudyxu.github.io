@@ -893,11 +893,47 @@ public @interface AutoConfigurationPackage {}
 ### 按需开启自动配置项
 
 1. 虽然我们127个场景自动配置启动的时候默认全部加载。
-2. 按照条件装配规则，最终会按需配置。
+2. 按照条件装配规则(@Conditional)，最终会按需配置。
 
+### 修改默认配置
 
+```java
+ @Bean
+		@ConditionalOnBean(MultipartResolver.class)  //容器中有这个类型组件
+		@ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) //容器中没有这个名字 multipartResolver 的组件
+		public MultipartResolver multipartResolver(MultipartResolver resolver) {
+            //给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。
+            //SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范
+			// Detect if the user has created a MultipartResolver but named it incorrectly
+			return resolver;
+		}
+//给容器中加入了文件上传解析器；
+```
 
+SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了，以用户的优先
 
+```java
+	@Bean
+	@ConditionalOnMissingBean
+	public CharacterEncodingFilter characterEncodingFilter() {
+    }
+```
 
+`总结`:
 
+> - SpringBoot先加载所有的自动配置类 xxxxAutoConfiguration
+> - 每个自动配置类按照条件进行生效，默认都会绑定配置文件指定的值,xxxxProperties里面拿。xxxxProperties和配置文件进行绑定
+> - 生效的配置类就会给容器中装配很多的组件
+> - 只要容器中有这些组件，相当于这些功能就有了
+> - 只要用户有自己配置的，就以用户的优先
+> - 定制化
+>   - 用户直接自己@Bean替换底层的组件
+>   - 用户去看组件是获取的配置文件什么值就去修改
+>
+> ```properties
+> #例如
+> server.servlet.encoding.charset=GBK 
+> ```
+>
+> xxxxAutoConfiguration----->组件----->xxxxProperties里面拿值---->application.properties
 
