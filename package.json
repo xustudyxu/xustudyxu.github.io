@@ -27,6 +27,7 @@
     "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-meilisearch": "^0.12.0",
+    "vuepress-plugin-music-bar": "^3.7.6",
     "vuepress-plugin-toolbar": "^1.0.1",
     "vuepress-theme-ououe": "^1.5.3",
     "vuepress-theme-yilia-plus": "^1.0.0"
