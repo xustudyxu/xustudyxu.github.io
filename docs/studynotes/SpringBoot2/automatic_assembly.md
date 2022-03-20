@@ -578,6 +578,11 @@ public class Car {
 }
 ```
 
+```properties
+mycar.brand=BYD
+mycar.price=100000
+```
+
 + 测试
 
 ```java
