@@ -942,3 +942,168 @@ SpringBoot默认会在底层配好所有的组件。但是如果用户自己配�
 >
 > xxxxAutoConfiguration----->组件----->xxxxProperties里面拿值---->application.properties
 
+### 最佳实践
+
++ 引入场景依赖
+  + [场景](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters)
++ 查看自动配置了哪些（选做）
+  + 自己分析，引入场景对应的自动配置一般都生效了
+  + 配置文件中debug=true开启自动配置报告。Negative（不生效）\Positive（生效）
+
++ 是否需要修改
+  + 参照文档修改配置项
+    + [参照文档](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties)
+    + 自己分析。xxxProperties绑定了配置文件的哪些
+  + 自定义加入或者替换组件
+    + @Bean、@Componet...
+  + 自定义器 **XXXXCustomizer**;
+  + ...
+
+## 开发小技巧
+
+### Lombok
+
+简化javabean开发
+
+```xml
+      <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+```
+
+搜索插件lombok
+
+![1647867572425](./images/03/05.png)
+
+**@Data**注解:set和get方法
+
+**@ToString**注解:tostring方法
+
+**@Slf4j**注解:日志
+
+**@EqualsAndHashCode**注解:equals和hashcode方法
+
+**@NoArgsConstructor**:无参构造器
+
+**@AllArgsConstructor**:全参构造器
+
+简化JavaBean开发
+
+```java
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
+@EqualsAndHashCode
+public class User {
+    private String name;
+    private Integer age;
+    private Pet pet;
+
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+简化日志开发
+
+```java
+@Slf4j
+@RestController  //@ResponseBody与@Controller的合体
+public class HelloController {
+
+    @Autowired
+    Car car;
+
+    @RequestMapping("/car")
+    private Car car(){
+        return car;
+    }
+
+    @RequestMapping("/hello") //映射请求
+    public String handle01(){
+
+        log.info("请求进来了...");
+        return "Hello,SpringBoot2"+"你好"; //向浏览器返回
+    }
+}
+```
+
+### dev-tools
+
+```xml
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+```
+
+项目或者页面修改以后：Ctrl+F9；就能实时生效 //JRebel
+
+### Spring Initailizr（项目初始化向导）
+
+#### 选择我们需要的开发场景
+
+File->New Project
+
+![1647868884019](./images/03/06.png)
+
+Next
+
+![1647869166987](./images/03/07.png)
+
+Next
+
+![1647869913216](./images/03/08.png)
+
+想要什么选择就行
+
+#### 自动依赖引入
+
+```xml
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.10</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.frx01.boot</groupId>
+    <artifactId>springboot-helloworld</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springboot-helloworld</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+```
+
+#### 自动构建项目结构
+
+![1647870207499](./images/03/09.png)
+
+#### 自动编写好主配置类
+
+```java
+@SpringBootApplication
+public class SpringbootHelloworldApplication {
+
+    public static void main(String[] args) {
+       SpringApplication.run(SpringbootHelloworldApplication.class, args);
+    }
+}
+```
+
