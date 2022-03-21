@@ -17,7 +17,7 @@ module.exports = [
   [
     'vuepress-plugin-right-anchor',
     {
-      showDepth: 4,
+      showDepth: 2,
       ignore: [
         '/',
         '/api/'
