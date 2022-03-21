@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title:'SpringBoo2 基础',
+    title:'SpringBoot2 基础',
     collapsable: false,
     children:[
     '/studynotes/SpringBoot2/Spring_SpringBoot',
