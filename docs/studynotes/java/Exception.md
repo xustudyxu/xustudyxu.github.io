@@ -1,4 +1,4 @@
-# 异常-Exception
+# Java 异常-Exception
 
 ## 看个实际的问题和一段代码
 

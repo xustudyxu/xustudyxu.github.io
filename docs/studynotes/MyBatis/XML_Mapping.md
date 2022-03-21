@@ -339,14 +339,19 @@ public interface EmployeeMapper {
 + names：{0=id, 1=lastName}；构造器的时候就确定好了
 
 确定流程：
-1.获取每个标了param注解的参数的@Param的值：id，lastName； 赋值给name;
-2.每次解析一个参数给map中保存信息：（key：参数索引，value：name的值）
-name的值：
-标注了param注解：注解的值
-没有标注：
-1.全局配置：useActualParamName（jdk1.8）：name=参数名
-2.name=map.size()；相当于当前元素的索引
-{0=id, 1=lastName,2=2}
+
+1. 获取每个标了param注解的参数的@Param的值：id，lastName； 赋值给name;
+
+2. 每次解析一个参数给map中保存信息：（key：参数索引，value：name的值）
+
+   name的值：
+
+   标注了param注解：注解的值
+
+   没有标注：
+
+   1. 全局配置：useActualParamName（jdk1.8）：name=参数名
+   2. name=map.size()；相当于当前元素的索引{0=id, 1=lastName,2=2}
 
 args【1，“Tom”,‘hello’】:
 
@@ -538,7 +543,9 @@ EmployeeMapperTest.java
 
 ```
 
-### resultMap-自定义结果映射规则
+## resultMap
+
+### 自定义结果映射规则
 
 EmployeeMapperPlus.java
 
@@ -604,7 +611,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-关联查询-环境搭建
+### 关联查询-环境搭建
 
 创建数据库表
 
@@ -668,7 +675,7 @@ public class Department {
 }
 ```
 
-### resultMap-关联查询-级联属性封装结果
+### 关联查询-级联属性封装结果
 
 EmployeeMapperPlus.java
 
@@ -724,7 +731,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-关联查询-association定义关联对象封装规则
+### 关联查询-association定义关联对象封装规则
 
 EmployeeMapperPlus.java
 
@@ -777,7 +784,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-关联查询-association分步查询
+### 关联查询-association分步查询
 
 DepartmentMapper.java
 
@@ -859,7 +866,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-关联查询-分步查询&延迟加载
+### 关联查询-分步查询&延迟加载
 
 我们每次查询Employee对象的时候，都将一起查询出来。部门信息在我们使用的时候再去查询；分段查询的基础之上加上两个配置：
 
@@ -884,7 +891,7 @@ mybatis-config.xml
 | lazyLoadingEnabled    | 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 `fetchType` 属性来覆盖该项的开关状态。 | true\|false | false                                     |
 | aggressiveLazyLoading | 开启时，任一方法的调用都会加载该对象的所有延迟加载属性。 否则，每个延迟加载属性会按需加载（参考 `lazyLoadTriggerMethods`)。 | true\|false | false在 3.4.1 及之前的版本中默认为 true） |
 
-### resultMap-关联查询-collection定义关联集合封装规则
+### 关联查询-collection定义关联集合封装规则
 
 DepartmentMapper.java
 
@@ -956,7 +963,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-关联查询-collection分步查询&延迟加载
+### 关联查询-collection分步查询&延迟加载
 
 DepartmentMapper.java
 
@@ -1013,7 +1020,7 @@ EmployeeMapperTest.java
     }
 ```
 
-### resultMap-分步查询传递多列值&fetchType
+### 分步查询传递多列值&fetchType
 
 扩展：
 
@@ -1040,7 +1047,7 @@ DepartmentMapper.xml
     </select>
 ```
 
-### resultMap-discriminator鉴别器
+### discriminator鉴别器
 
 EmployeeMapperPlus.java
 

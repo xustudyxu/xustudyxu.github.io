@@ -1,18 +1,20 @@
 module.exports = [
   {
-    title:'Maven 基础',
+    title:'Maven',
     collapsable: false,
     children:[
     '/studynotes/Maven/Maven01',
-
-      ]
-  },{
-    title:'Maven 高级',
-    collapsable: false,
-    children:[
     '/studynotes/Maven/Maven02',
 
       ]
-  }
+    }
+  // },{
+  //   title:'Maven 高级',
+  //   collapsable: false,
+  //   children:[
+  //   '/studynotes/Maven/Maven02',
+
+  //     ]
+  // }
   
 ]

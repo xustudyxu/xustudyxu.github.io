@@ -1,4 +1,4 @@
-# 第三章 Python 基础篇(三)
+# Python 基础篇(三)
 
 ## 3.1 Python的输入函数input()
 

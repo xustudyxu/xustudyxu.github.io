@@ -1,4 +1,4 @@
-# JDBC 和数据库连接池
+# Java JDBC和数据库连接池
 
 ## JDBC概述
 

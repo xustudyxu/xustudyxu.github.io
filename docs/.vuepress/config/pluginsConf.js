@@ -15,6 +15,24 @@ const extendsNetworks = {
 }
 module.exports = [
   [
+    'vuepress-plugin-right-anchor',
+    {
+      showDepth: 4,
+      ignore: [
+        '/',
+        '/api/'
+        // more...
+      ],
+      expand: {
+        trigger: 'click',
+        clickModeDefaultOpen: true
+      },
+      customClass: 'your-customClass',
+      disableGlobalUI: false,
+    }
+  
+],//右侧导航
+  [
     'social-share',
     {
       networks: ['qq', 'email'],
@@ -75,21 +93,25 @@ module.exports = [
     }
   ], ['@vuepress/nprogress'],//进度条
   [ 'code-switcher' ],//多种语言代码块
-  ['vuepress-plugin-toolbar', {
+  // ['vuepress-plugin-toolbar', {
 
-    opts: [{
-      icon: '',
-      name: '用手机看',
-      link: '',
-      popover: {
-        title: '扫描二维码',
-        type: 'image',
-        imageUrl: 'https://qr.api.cli.im/newqr/create?data=https%253A%252F%252Fxustudyxu.github.io%252FVuepressBlog%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=35192b7bdf2849a3a25b259e110339be',
-      }
-    }
-    ]
-  }
-  ],
+  //   opts: [
+  //      {
+  //       icon: '',
+  //       name: '纯展示'
+  //     },{
+  //     icon: '',
+  //     name: '用手机看',
+  //     link: '',
+  //     popover: {
+  //       title: '扫描二维码',
+  //       type: 'image',
+  //       imageUrl: 'https://qr.api.cli.im/newqr/create?data=https%253A%252F%252Fxustudyxu.github.io%252FVuepressBlog%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=35192b7bdf2849a3a25b259e110339be',
+  //     }
+  //   }
+  //   ]
+  // }
+  // ],
   [
     'vuepress-plugin-clean-urls', //支持链接
     {
