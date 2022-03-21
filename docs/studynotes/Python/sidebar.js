@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title: 'Python 基础篇(一)',
+    title: 'Python 基础',
     collapsable: false,
     children: [
       '/studynotes/Python/python01',

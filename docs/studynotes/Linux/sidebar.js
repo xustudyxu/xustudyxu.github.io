@@ -1,7 +1,7 @@
 module.exports = [
   {
     title:'Linux',
-    collapsable: true,
+    collapsable: false,
     children:[
     '/studynotes/Linux/1',
     '/studynotes/Linux/2',
