@@ -14,9 +14,6 @@ const extendsNetworks = {
   },
 }
 module.exports = [
-  ['sitemap',{ //站点地图
-    hostname: 'https://xustudyxu.github.io/VuepressBlog/'
-  }],
   [
     'vuepress-plugin-right-anchor',
     {
