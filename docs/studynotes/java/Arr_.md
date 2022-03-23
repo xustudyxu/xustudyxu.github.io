@@ -3,7 +3,7 @@
 ## 为什么需要数组
 
 一个养鸡场有 6 只鸡，它们的体重分别是 3kg,5kg,1kg,3.4kg,2kg,50kg 。请问这六只鸡的总体重是多少?平
-均体重是多少? 请你编一个程序。 Array01.java
+均体重是多少? 请你编一个程序。
 
 思路：
 
@@ -34,39 +34,39 @@ public class Array01 {
 	3. 分析传统实现的方式问题. 6->600->566
 	4. 引出新的技术 -> 使用数
 	*/
-// double hen1 = 3;
-// double hen2 = 5;
-// double hen3 = 1;
-// double hen4 = 3.4;
-// double hen5 = 2;
-// double hen6 = 50;
-// double totalWeight = hen1 + hen2 + hen3 + hen4 + hen5 + hen6;
-// double avgWeight = totalWeight / 6;
-// System.out.println("总体重=" + totalWeight + "平均体重 + avgWeight);
+        // double hen1 = 3;
+        // double hen2 = 5;
+        // double hen3 = 1;
+        // double hen4 = 3.4;
+        // double hen5 = 2;
+        // double hen6 = 50;
+        // double totalWeight = hen1 + hen2 + hen3 + hen4 + hen5 + hen6;
+        // double avgWeight = totalWeight / 6;
+        // System.out.println("总体重=" + totalWeight + "平均体重 + avgWeight);
 
-   //定义一个数组
-   //1. double[] 表示 是 double 类型的数组， 数组名 hens
-   //2. {3, 5, 1, 3.4, 2, 50} 表示数组的值/元素,依次表示数组的	
-   double[] hens = {3, 5, 1, 3.4, 2, 50, 7.8, 88.8,1.1,5.6,100};
-   //遍历数组得到数组的所有元素的和， 使用 for
-   //老韩解读
-   //1. 我们可以通过 hens[下标] 来访问数组的元素
-   // 下标是从 0 开始编号的比如第一个元素就是 hens[0]
-   // 第 2 个元素就是 hens[1] , 依次类推
-   //2. 通过 for 就可以循环的访问 数组的元素/值
-   //3. 使用一个变量 totalWeight 将各个元素累积
-   System.out.println("===使用数组解决===");
-   //老师提示： 可以通过 数组名.length 得到数组的大小/长度
-   //System.out.println("数组的长度=" + hens.length);
-   double totalWeight = 0;
-   for( int i = 0; i < hens.length; i++) {
-    //System.out.println("第" + (i+1) + "个元素的值=" + hens[i]);
-   		totalWeight += hens[i];
-    }
-    System.out.println("总体重=" + totalWeight+ "平均体重=" + (totalWeight / hens.length) );
-    }
+       //定义一个数组
+       //1. double[] 表示 是 double 类型的数组， 数组名 hens
+       //2. {3, 5, 1, 3.4, 2, 50} 表示数组的值/元素,依次表示数组的	
+       double[] hens = {3, 5, 1, 3.4, 2, 50, 7.8, 88.8,1.1,5.6,100};
+       //遍历数组得到数组的所有元素的和， 使用 for
+       //老韩解读
+       //1. 我们可以通过 hens[下标] 来访问数组的元素
+       // 下标是从 0 开始编号的比如第一个元素就是 hens[0]
+       // 第 2 个元素就是 hens[1] , 依次类推
+       //2. 通过 for 就可以循环的访问 数组的元素/值
+       //3. 使用一个变量 totalWeight 将各个元素累积
+       System.out.println("===使用数组解决===");
+       //老师提示： 可以通过 数组名.length 得到数组的大小/长度
+       //System.out.println("数组的长度=" + hens.length);
+       double totalWeight = 0;
+       for( int i = 0; i < hens.length; i++) {
+        //System.out.println("第" + (i+1) + "个元素的值=" + hens[i]);
+            totalWeight += hens[i];
+        }
+        System.out.println("总体重=" + totalWeight+ "平均体重=" + (totalWeight / hens.length) );
+        }
+	}
 }
-
 ```
 
 ### 数组的使用
@@ -107,7 +107,7 @@ public class Array02 {
 
 + 先声明数组
 
-  语法:数据类型 数组名[]; 也可以 数据类型[] 数组名
+  语法:数据类型 数组名[]; 也可以 数据类型[] 数组名;
 
   int a[]; 或者 int[] a;
 
@@ -622,7 +622,6 @@ public class TwoDimeensionalArray01 {
 		  0 0 0 0 0 0
 		 */
 		//什么是二维数组；
-		//老韩解读
 		//1.从定义形式上看 int[][]
         //2.可以这样理解，原来的一维数组的每个元素是一维数组，就会构成二维数组
 		int[][] arr= {{0,0,0,0,0,0},
@@ -656,8 +655,17 @@ public class TwoDimeensionalArray01 {
 
 ### 使用方式 1: 动态初始化
 
-1. 语法: 类型[][] 数组名=new 类型\[大小][大小]
-2.  比如: int a[][]=new int\[2][3]
+1. 语法: 
+
+   ```java
+   类型[][] 数组名=new 类型[大小][大小];
+   ```
+
+2. 比如: 
+
+   ```java
+   int a[][]=new int[2][3]
+   ```
 
 ```java
 public class TwoDimeensionalArray02 {
@@ -682,11 +690,13 @@ public class TwoDimeensionalArray02 {
 
 ### 使用方式 2: 动态初始化
 
-先声明：类型 数组名[][]; TwoDimensionalArray02.java
+```java
+先声明：类型 数组名[][];
 
-再定义(开辟空间) 数组名 = new 类型\[大小][大小]
+再定义(开辟空间) 数组名 = new 类型[大小][大小];
 
 赋值(有默认值，比如 int 类型的就是 0)
+```
 
 ### 使用方式 3: 动态初始化-列数不确定
 
@@ -734,13 +744,13 @@ public class TwoDimeensionalArray03 {
 
 ### 使用方式 4: 静态初始化
 
-定义 类型 数组名[][] = {{值 1,值 2..},{值 1,值 2..},{值 1,值 2..}}
-
-使用即可 [ 固定方式访问 ]
+```
+定义类型 数组名[][] = {{值 1,值 2..},{值 1,值 2..},{值 1,值 2..}};
+```
 
 比如:
 
-int[][] arr = {{1,1,1}, {8,8,9}, {100}};
+![1648032410936](./images/arr/09.png)
 
 + 解读
 
@@ -750,7 +760,11 @@ int[][] arr = {{1,1,1}, {8,8,9}, {100}};
 
 ### 案例演示
 
-int arr[][]={{4,6},{1,4,5,7},{-2}}; 遍历该二维数组，并得到和
+```java
+int arr[][]={{4,6},{1,4,5,7},{-2}};
+```
+
+ 遍历该二维数组，并得到和
 
 ```java
 public class TwoDimeensionalArray04 {
@@ -780,15 +794,22 @@ public class TwoDimeensionalArray04 {
 
 1. 一维数组的声明方式有:
 
-   int[] x 或者 int x[]
+   ```java
+   	int[] x 或者 int x[]
+   ```
 
 2. 二维数组的声明方式有:
 
-   int\[][] y 或者 int[] y[] 或者 int y\[][]
+   ```java
+   	int[][] y  或者 int y[][]
+   ```
 
 3. 二维数组实际上是由多个一维数组组成的，它的各个一维数组的长度可以相同，也可以不相同。比如： map[][] 是一个二维数组
 
-   int map [][] = {{1,2},{3,4,5}}
-
-   由 map[0] 是一个含有两个元素的一维数组 ，map[1] 是一个含有三个元素的一维数组构成，我们也称为列数不等的二维数组
+   ```java
+	int map [][] = {{1,2},{3,4,5}}
+   //由 map[0] 是一个含有两个元素的一维数组 ，map[1] 是一个含有三个元素的一维数组构成，我们也称为列数不等的二维数组
+   ```
+   
+   
 
