@@ -64,7 +64,7 @@ public class Array01 {
             totalWeight += hens[i];
         }
         System.out.println("总体重=" + totalWeight+ "平均体重=" + (totalWeight / hens.length) );
-        }
+        
 	}
 }
 ```
