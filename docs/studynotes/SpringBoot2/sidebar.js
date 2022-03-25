@@ -14,6 +14,7 @@ module.exports = [
       collapsable: false,
       children:[
       '/studynotes/SpringBoot2/yaml_',
+      '/studynotes/SpringBoot2/Web_develop',
    
   
         ]
