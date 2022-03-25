@@ -11,36 +11,21 @@ Spring Boot provides auto-configuration for Spring MVC that **works well with mo
 The auto-configuration adds the following features on top of Spring’s defaults:
 
 - Inclusion of `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
-
-- - 内容协商视图解析器和BeanName视图解析器
-
+- 内容协商视图解析器和BeanName视图解析器
 - Support for serving static resources, including support for WebJars (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content))).
-
-- - 静态资源（包括webjars）
-
+- 静态资源（包括webjars）
 - Automatic registration of `Converter`, `GenericConverter`, and `Formatter` beans.
-
-- - 自动注册 `Converter，GenericConverter，Formatter `
-
+- 自动注册 `Converter，GenericConverter，Formatter `
 - Support for `HttpMessageConverters` (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-message-converters)).
-
-- - 支持 `HttpMessageConverters` （后来我们配合内容协商理解原理）
-
+- 支持 `HttpMessageConverters` （后来我们配合内容协商理解原理）
 - Automatic registration of `MessageCodesResolver` (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-message-codes)).
-
-- - 自动注册 `MessageCodesResolver` （国际化用）
-
+- 自动注册 `MessageCodesResolver` （国际化用）
 - Static `index.html` support.
-
-- - 静态index.html 页支持
-
+- 静态index.html 页支持
 - Custom `Favicon` support (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-favicon)).
-
-- - 自定义 `Favicon`  
-
+- 自定义 `Favicon`  
 - Automatic use of a `ConfigurableWebBindingInitializer` bean (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-web-binding-initializer)).
-
-- - 自动使用 `ConfigurableWebBindingInitializer` ，（DataBinder负责将请求数据绑定到JavaBean上）
+- 自动使用 `ConfigurableWebBindingInitializer` ，（DataBinder负责将请求数据绑定到JavaBean上）
 
 > If you want to keep those Spring Boot MVC customizations and make more [MVC customizations](https://docs.spring.io/spring/docs/5.2.9.RELEASE/spring-framework-reference/web.html#mvc) (interceptors, formatters, view controllers, and other features), you can add your own `@Configuration` class of type `WebMvcConfigurer` but **without** `@EnableWebMvc`.
 >
@@ -111,8 +96,10 @@ https://www.webjars.org/
 
 - 静态资源路径下  index.html
 
-- - **可以配置静态资源路径**
+  + **可以配置静态资源路径**
+
   - **但是不可以配置静态资源的访问前缀。否则导致 index.html不能被默认访问**
+
 
 ```yaml
 spring:
