@@ -11,21 +11,21 @@ Spring Boot provides auto-configuration for Spring MVC that **works well with mo
 The auto-configuration adds the following features on top of Spring’s defaults:
 
 - Inclusion of `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
-- 内容协商视图解析器和BeanName视图解析器
+  - 内容协商视图解析器和BeanName视图解析器
 - Support for serving static resources, including support for WebJars (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content))).
-- 静态资源（包括webjars）
+  - 静态资源（包括webjars）
 - Automatic registration of `Converter`, `GenericConverter`, and `Formatter` beans.
-- 自动注册 `Converter，GenericConverter，Formatter `
+  - 自动注册 `Converter，GenericConverter，Formatter `
 - Support for `HttpMessageConverters` (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-message-converters)).
-- 支持 `HttpMessageConverters` （后来我们配合内容协商理解原理）
+  - 支持 `HttpMessageConverters` （后来我们配合内容协商理解原理）
 - Automatic registration of `MessageCodesResolver` (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-message-codes)).
-- 自动注册 `MessageCodesResolver` （国际化用）
+  - 自动注册 `MessageCodesResolver` （国际化用）
 - Static `index.html` support.
-- 静态index.html 页支持
+  - 静态index.html 页支持
 - Custom `Favicon` support (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-favicon)).
-- 自定义 `Favicon`  
+  - 自定义 `Favicon`  
 - Automatic use of a `ConfigurableWebBindingInitializer` bean (covered [later in this document](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc-web-binding-initializer)).
-- 自动使用 `ConfigurableWebBindingInitializer` ，（DataBinder负责将请求数据绑定到JavaBean上）
+  - 自动使用 `ConfigurableWebBindingInitializer` ，（DataBinder负责将请求数据绑定到JavaBean上）
 
 > If you want to keep those Spring Boot MVC customizations and make more [MVC customizations](https://docs.spring.io/spring/docs/5.2.9.RELEASE/spring-framework-reference/web.html#mvc) (interceptors, formatters, view controllers, and other features), you can add your own `@Configuration` class of type `WebMvcConfigurer` but **without** `@EnableWebMvc`.
 >
@@ -123,3 +123,144 @@ spring:
 ```
 
 > 了解
+
+## 静态资源配置原理
+
++ SpringBoot启动默认加载  xxxxAutoConfiguration 类(自动配置类)
++ SpringMVC功能的自动配置类 WebMvcAutoConfiguration，生效
+
+```java
+@Configuration(
+    proxyBeanMethods = false
+)
+@ConditionalOnWebApplication(
+    type = Type.SERVLET
+)
+@ConditionalOnClass({Servlet.class, DispatcherServlet.class, WebMvcConfigurer.class})
+@ConditionalOnMissingBean({WebMvcConfigurationSupport.class})
+@AutoConfigureOrder(-2147483638)
+@AutoConfigureAfter({DispatcherServletAutoConfiguration.class, TaskExecutionAutoConfiguration.class, ValidationAutoConfiguration.class})
+public class WebMvcAutoConfiguration {}
+```
+
++ 给容器中配置了什么
+
+```java {2}
+ 	@Import({WebMvcAutoConfiguration.EnableWebMvcConfiguration.class})
+    @EnableConfigurationProperties({WebMvcProperties.class, ResourceProperties.class})
+    @Order(0)
+    public static class WebMvcAutoConfigurationAdapter implements WebMvcConfigurer {}
+```
+
++ 配置文件的相关属性和xxx进行了绑定。WebMvcProperties\==spring.mvc、ResourceProperties==spring.resources
+
+### 配置类只有一个有参构造器
+
+```java
+	//有参构造器所有参数的值 都会从容器中确定
+        public WebMvcAutoConfigurationAdapter(ResourceProperties resourceProperties, WebMvcProperties mvcProperties, ListableBeanFactory beanFactory, ObjectProvider<HttpMessageConverters> messageConvertersProvider, ObjectProvider<WebMvcAutoConfiguration.ResourceHandlerRegistrationCustomizer> resourceHandlerRegistrationCustomizerProvider, ObjectProvider<DispatcherServletPath> dispatcherServletPath, ObjectProvider<ServletRegistrationBean<?>> servletRegistrations) {
+            this.resourceProperties = resourceProperties;
+            this.mvcProperties = mvcProperties;
+            this.beanFactory = beanFactory;
+            this.messageConvertersProvider = messageConvertersProvider;
+            this.resourceHandlerRegistrationCustomizer = (WebMvcAutoConfiguration.ResourceHandlerRegistrationCustomizer)resourceHandlerRegistrationCustomizerProvider.getIfAvailable();
+            this.dispatcherServletPath = dispatcherServletPath;
+            this.servletRegistrations = servletRegistrations;
+        }
+
+```
+
++ resourceProperties:获取和spring.resources绑定的所有的值的对象
+
++ WebMvcProperties mvcProperties:获取和spring.mvc绑定的所有的值的对象
+
++ ListableBeanFactory beanFactory:Spring的beanFactory 
++ ObjectProvider\<HttpMessageConverters> messageConvertersProvider:找到所有的HttpMessageConverters
++ ResourceHandlerRegistrationCustomizer:找到资源处理器的自定义器
++ DispatcherServletPath
++ ServletRegistrationBean:给应用注册原生的Servlet、Filter
+
+### 资源处理的默认规则
+
+```java
+        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            if (!this.resourceProperties.isAddMappings()) {
+                logger.debug("Default resource handling disabled");
+            } else {
+                Duration cachePeriod = this.resourceProperties.getCache().getPeriod();
+                CacheControl cacheControl = this.resourceProperties.getCache().getCachecontrol().toHttpCacheControl();
+                //webjars的规则
+                if (!registry.hasMappingForPattern("/webjars/**")) {
+                    this.customizeResourceHandlerRegistration(registry.addResourceHandler(new String[]{"/webjars/**"}).addResourceLocations(new String[]{"classpath:/META-INF/resources/webjars/"}).setCachePeriod(this.getSeconds(cachePeriod)).setCacheControl(cacheControl));
+                }
+
+                String staticPathPattern = this.mvcProperties.getStaticPathPattern();
+                if (!registry.hasMappingForPattern(staticPathPattern)) {
+                    this.customizeResourceHandlerRegistration(registry.addResourceHandler(new String[]{staticPathPattern}).addResourceLocations(WebMvcAutoConfiguration.getResourceLocations(this.resourceProperties.getStaticLocations())).setCachePeriod(this.getSeconds(cachePeriod)).setCacheControl(cacheControl));
+                }
+
+            }
+        }
+```
+
++ this.resourceProperties.isAddMappings():如果配成false,静态资源被禁用
+
+```yaml
+spring:
+  resources:
+    add-mappings: false #禁用所有静态资源
+```
+
+```java
+@ConfigurationProperties(
+    prefix = "spring.resources",
+    ignoreUnknownFields = false
+)
+public class ResourceProperties {
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = new String[]{"classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"};
+    private String[] staticLocations;
+    private boolean addMappings;
+    private final ResourceProperties.Chain chain;
+    private final ResourceProperties.Cache cache;
+
+    public ResourceProperties() {
+        this.staticLocations = CLASSPATH_RESOURCE_LOCATIONS;
+        this.addMappings = true;
+        this.chain = new ResourceProperties.Chain();
+        this.cache = new ResourceProperties.Cache();
+    }
+
+    public String[] getStaticLocations() {
+        return this.staticLocations;
+    }
+```
+
+### 欢迎页的规则
+
+```java {3}
+      	@Bean
+        public WelcomePageHandlerMapping welcomePageHandlerMapping(ApplicationContext applicationContext, FormattingConversionService mvcConversionService, ResourceUrlProvider mvcResourceUrlProvider) {
+            WelcomePageHandlerMapping welcomePageHandlerMapping = new WelcomePageHandlerMapping(new TemplateAvailabilityProviders(applicationContext), applicationContext, this.getWelcomePage(), this.mvcProperties.getStaticPathPattern());
+            welcomePageHandlerMapping.setInterceptors(this.getInterceptors(mvcConversionService, mvcResourceUrlProvider));
+            welcomePageHandlerMapping.setCorsConfigurations(this.getCorsConfigurations());
+            return welcomePageHandlerMapping;
+        }
+```
+
++ HandlerMapping:处理器映射。保存了每一个Handler能处理哪些请求
+
+```java
+	WelcomePageHandlerMapping(TemplateAvailabilityProviders templateAvailabilityProviders, ApplicationContext applicationContext, Optional<Resource> welcomePage, String staticPathPattern) {
+        if (welcomePage.isPresent() && "/**".equals(staticPathPattern)) {
+            //要用欢迎页，必须是/**
+            logger.info("Adding welcome page: " + welcomePage.get());
+            this.setRootViewName("forward:index.html");
+        } else if (this.welcomeTemplateExists(templateAvailabilityProviders, applicationContext)) {
+            //调用Controller /index
+            logger.info("Adding welcome page template: index");
+            this.setRootViewName("index");
+        }
+
+    }
+```
+
