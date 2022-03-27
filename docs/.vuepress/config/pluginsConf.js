@@ -15,6 +15,17 @@ const extendsNetworks = {
   },
 }
 module.exports = [
+  [{ 'seo': { /* options */ }}],
+  [{'sitemap': {
+    hostname: 'https://xustudyxu.github.io/VuepressBlog/'
+  }
+  }],
+  [
+    '@vuepress/google-analytics',
+    {
+      'ga': '' // UA-00000000-0
+    }
+  ],
   [
     'vuepress-plugin-right-anchor',
     {

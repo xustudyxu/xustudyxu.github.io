@@ -1805,7 +1805,7 @@
     vuepress-plugin-mailchimp "^1.4.1"
     vuepress-plugin-sitemap "^2.3.1"
 
-"@vuepress/plugin-google-analytics@^1.7.1":
+"@vuepress/plugin-google-analytics@^1.7.1", "@vuepress/plugin-google-analytics@^1.9.7":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-google-analytics/-/plugin-google-analytics-1.9.7.tgz#0162e7bb28686422298c04a12f2e7727a2708d90"
   integrity sha512-ZpsYrk23JdwbcJo9xArVcdqYHt5VyTX9UN9bLqNrLJRgRTV0X2jKUkM63dlKTJMpBf+0K1PQMJbGBXgOO7Yh0Q==
@@ -10206,6 +10206,11 @@ vuepress-plugin-seo@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmmirror.com/vuepress-plugin-seo/-/vuepress-plugin-seo-0.1.4.tgz#be8e5577491c1fc317a7ad4abe3ae51ff317be1e"
   integrity sha512-foNKrAAKihiC47bx0UXFzs/+BIFmnowTQsLVF/8pfsnsPDp8FXjkTGyjxyjOhbwj7ADPv32CdX3pEoYGnZ7OjA==
+
+vuepress-plugin-seo@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-seo/-/vuepress-plugin-seo-0.2.0.tgz#2fa4fd7ef2eb6c71f62302f264aeba47c6560ee9"
+  integrity sha512-/Rqul20UTL30mZyCbNwkfAfP50Yr7jzWlavQ92OVzZ8PcpZGXoDc+eoKQyKLQKL3G96dqvuCCbIMbW7RRs7Bhw==
 
 vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
