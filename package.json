@@ -23,25 +23,18 @@
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-code-switcher": "^1.1.0",
     "vuepress-plugin-global-toc": "^1.1.0",
-    "vuepress-plugin-gotop-plus": "^1.0.4",
-    "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
-    "vuepress-plugin-meilisearch": "^0.12.0",
-    "vuepress-plugin-music-bar": "^3.7.6",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-toolbar": "^1.0.1",
-    "vuepress-theme-ououe": "^1.5.3",
-    "vuepress-theme-yilia-plus": "^1.0.0"
+    "vuepress-plugin-toolbar": "^1.0.1"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.9.7",
-    "@vuepress/plugin-back-to-top": "^2.0.0-beta.35",
+    "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-google-analytics": "^1.9.7",
     "@vuepress/plugin-medium-zoom": "^1.9.5",
     "@vuepress/plugin-nprogress": "^1.9.5",
     "@vuepress/plugin-pwa": "^1.9.5",
     "vuepress": "^1.9.7",
-    "vuepress-plugin-authors": "^0.0.2",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-clean-urls": "^1.1.2",
     "vuepress-plugin-dehydrate": "^1.1.5",
@@ -53,8 +46,6 @@
     "vuepress-plugin-seo": "^0.2.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-social-share": "^1.1.0",
-    "vuepress-theme-blog-vuetify": "^1.5.1",
-    "vuepress-theme-note": "^1.1.3",
     "watchpack": "^2.3.1"
   },
   "directories": {
