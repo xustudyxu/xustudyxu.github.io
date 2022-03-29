@@ -39,9 +39,9 @@ The auto-configuration adds the following features on top of Spring’s defaults
 >
 > **使用** `@EnableWebMvc+@Configuration+DelegatingWebMvcConfiguration 全面接管SpringMVC`
 
-### 静态资源访问
+## 简单功能分析
 
-#### 静态资源目录
+### 静态资源访问
 
 只要静态资源放在类路径下： called `/static` (or `/public` or `/resources` or `/META-INF/resources`
 
@@ -124,7 +124,7 @@ spring:
 
 > 了解
 
-## 静态资源配置原理
+### 静态资源配置原理
 
 + SpringBoot启动默认加载  xxxxAutoConfiguration 类(自动配置类)
 + SpringMVC功能的自动配置类 WebMvcAutoConfiguration，生效
@@ -154,7 +154,7 @@ public class WebMvcAutoConfiguration {}
 
 + 配置文件的相关属性和xxx进行了绑定。WebMvcProperties\==spring.mvc、ResourceProperties==spring.resources
 
-### 配置类只有一个有参构造器
+#### 配置类只有一个有参构造器
 
 ```java
 		//有参构造器所有参数的值 都会从容器中确定
@@ -180,7 +180,7 @@ public class WebMvcAutoConfiguration {}
 + DispatcherServletPath
 + ServletRegistrationBean:给应用注册原生的Servlet、Filter
 
-### 资源处理的默认规则
+#### 资源处理的默认规则
 
 ```java
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -235,7 +235,7 @@ public class ResourceProperties {
     }
 ```
 
-### 欢迎页的规则
+#### 欢迎页的规则
 
 ```java {3}
       	@Bean
@@ -264,9 +264,11 @@ public class ResourceProperties {
     }
 ```
 
-## 请求参数处理-请求映射
+## 请求参数处理
 
-### rest使用与原理
+### 请求映射
+
+#### rest使用与原理
 
 - @xxxMapping；
 
@@ -366,7 +368,7 @@ public class WebConfig {
 }
 ```
 
-### 请求映射原理
+#### 请求映射原理
 
 ![1648538411442](./images/05/02.png)
 
