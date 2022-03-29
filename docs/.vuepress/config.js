@@ -19,10 +19,9 @@ module.exports = {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),
         sidebarDepth: 0,
-        searchMaxSuggestions: 10,
         lastUpdated: '上次更新',
-        // search: true,
-        // searchMaxSuggestions: 10,
+        search: true,
+        searchMaxSuggestions: 10,
         
         algolia: {
             apiKey: '685c8fc1740599abf382c782da3717a8',

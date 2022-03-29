@@ -14,8 +14,6 @@ features:
 footer: Copyright © 2021-present xustudyxu
 ---
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=270 src="//music.163.com/outchain/player?type=0&id=7342774859&auto=0&height=430"></iframe>
-
 ## 给我留言
 
 <Vssue title="Vssue Demo10"/>
