@@ -309,15 +309,6 @@ public class ResourceProperties {
 	public OrderedHiddenHttpMethodFilter hiddenHttpMethodFilter() {
 		return new OrderedHiddenHttpMethodFilter();
 	}
-
-
-	//自定义filter
-    @Bean
-    public HiddenHttpMethodFilter hiddenHttpMethodFilter(){
-        HiddenHttpMethodFilter methodFilter = new HiddenHttpMethodFilter();
-        methodFilter.setMethodParam("_m");
-        return methodFilter;
-    }
 ```
 
 > Rest原理(表单提交要使用REST风格)
@@ -360,3 +351,79 @@ spring:
 
 > @GetMapping相当于@RequestMapping(method=RequestMethod.GET)
 
++ 自定义filter
+
+```java
+@Configuration
+public class WebConfig {
+
+    @Bean
+    public HiddenHttpMethodFilter hiddenHttpMethodFilter(){
+        HiddenHttpMethodFilter methodFilter=new HiddenHttpMethodFilter();
+        methodFilter.setMethodParam("_m");
+        return methodFilter;
+    }
+}
+```
+
+### 请求映射原理
+
+![1648538411442](./images/05/02.png)
+
+SpringMVC功能分析都从 org.springframework.web.servlet.DispatcherServlet->doDispatch()
+
+```java {16}
+    protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpServletRequest processedRequest = request;
+        HandlerExecutionChain mappedHandler = null;
+        boolean multipartRequestParsed = false;
+        WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
+
+        try {
+            try {
+                ModelAndView mv = null;
+                Object dispatchException = null;
+
+                try {
+                    processedRequest = this.checkMultipart(request);
+                    multipartRequestParsed = processedRequest != request;
+                    //找到当前请求使用哪个Handler(Controller的方法)处理
+                    mappedHandler = this.getHandler(processedRequest);
+                	//HandlerMapping:处理器映射/***->xxx
+```
+
+```java {3}
+    @Nullable
+    protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
+        if (this.handlerMappings != null) {
+            Iterator var2 = this.handlerMappings.iterator();
+
+            while(var2.hasNext()) {
+                HandlerMapping mapping = (HandlerMapping)var2.next();
+                HandlerExecutionChain handler = mapping.getHandler(request);
+                if (handler != null) {
+                    return handler;
+                }
+            }
+        }
+
+        return null;
+    }
+```
+
+![1648540432113](./images/05/03.png)
+
+**RequestMappingHandlerMapping**:保存了所有@RequestMapping和handler的映射规则。
+
+![1648542073358](./images/05/04.png)
+
+所有的请求映射都保存在HandlerMapping中
+
++ SpringBoot自动配置欢迎页的WelcomePageHandlerMaping。访问/能访问到index.html
++ SpringBoot自动配置了默认的RequestMappingHandlerMapping
++ 请求进来，挨个尝试所有的HandlerMapping看是否有请求信息。
+  + 如果有就找到这个请求对应的handler
+  + 如果没有就是下一个HandlerMapping
++ 我们需要一些自定义的映射处理，我们也可以自己给容器中放**HandlerMapping**。自定义**HandlerMapping**
+
+​                         
