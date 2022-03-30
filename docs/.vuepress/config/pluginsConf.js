@@ -81,10 +81,10 @@ module.exports = [
       platform: 'github-v4',
 
       // all other options of Vssue are allowed
-      owner: 'xustudyxu',
-      repo: 'xustudyxu.github.io',
+      owner: 'xu',
+      repo: 'fun',
       clientId: '48eb3723b4711182c6d8',
-      clientSecret: '733631821a866300ff4a47bc671cf886ded591d0',
+      clientSecret: '6ca7e8c9c6872503fe697cd36c3f50bc6db06148',
       autoCreateIssue: true
 
     }
