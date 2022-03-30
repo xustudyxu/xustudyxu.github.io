@@ -16,10 +16,6 @@ const extendsNetworks = {
 }
 module.exports = [
   [{ 'seo': { /* options */ }}],
-  [{'sitemap': {
-    hostname: 'https://xustudyxu.github.io/VuepressBlog/'
-  }
-  }],
   [
     '@vuepress/google-analytics',
     {
