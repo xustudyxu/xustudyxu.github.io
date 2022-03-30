@@ -84,7 +84,7 @@ module.exports = [
       owner: 'xustudyxu',
       repo: 'xustudyxu.github.io',
       clientId: '48eb3723b4711182c6d8',
-      clientSecret: '34b28a1038f4901c15a75236b4ff17490aee7809',
+      clientSecret: '0d84a3ce2c68d65cdaffdca198e80bf1e7ca62d1',
       autoCreateIssue: true
 
     }
