@@ -82,9 +82,9 @@ module.exports = [
 
       // all other options of Vssue are allowed
       owner: 'xustudyxu',
-      repo: 'xustudyxu.github.io',
+      repo: 'frxcat.fun',
       clientId: '48eb3723b4711182c6d8',
-      clientSecret: 'd53f80ddfb62d964e01eddc1d1dcf2b379915291',
+      clientSecret: '2e0e034d2afb8241f827f2427d10bb6b4e2eda99',
       autoCreateIssue: true
 
     }
