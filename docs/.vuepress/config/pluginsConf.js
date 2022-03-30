@@ -82,9 +82,9 @@ module.exports = [
 
       // all other options of Vssue are allowed
       owner: 'xustudyxu',
-      repo: 'VuepressBlog',
-      clientId: 'e97a81e2f3ce480d4016',
-      clientSecret: 'de09bd084d2ea89c85a7d07c87ea27ce261c19d3',
+      repo: 'xustudyxu.github.io',
+      clientId: '48eb3723b4711182c6d8',
+      clientSecret: '733631821a866300ff4a47bc671cf886ded591d0',
       autoCreateIssue: true
 
     }

@@ -53,10 +53,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xustudyxu/VuepressBlog.git"
+    "url": "git+https://github.com/xustudyxu/xustudyxu.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/xustudyxu/VuepressBlog/issues"
+    "url": "https://github.com/xustudyxu/xustudyxu.github.io/issues"
   },
-  "homepage": "https://github.com/xustudyxu/VuepressBlog#readme"
+  "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme"
 }
