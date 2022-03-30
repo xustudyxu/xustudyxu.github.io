@@ -1,6 +1,6 @@
 const pluginsConf = require('./config/pluginsConf.js');
 module.exports = {
-    base: '/VuepressBlog/', //设置站点根路径
+    base: '/', //设置站点根路径
     title: 'xustudyxu\'s Blog',
     description: '一起学习编程!',
     dest: 'docs/.vuepress/dist',
@@ -30,7 +30,7 @@ module.exports = {
             appId: '4YPBTYO9VH',
         },
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-        repo: 'xustudyxu/VuepressBlog',
+        repo: 'xustudyxu/xustudyxu.github.io',
         // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
         // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
         repoLabel: 'Github',
@@ -39,7 +39,7 @@ module.exports = {
         // 以下为可选的编辑链接选项
 
         // // 假如你的文档仓库和项目本身不在一个仓库：
-        docsRepo: 'xustudyxu/VuepressBlog',
+        docsRepo: 'xustudyxu/xustudyxu.github.io',
         // // 假如文档不是放在仓库的根目录下：
         docsDir: 'docs',
         // // 假如文档放在一个特定的分支下：
