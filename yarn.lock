@@ -2091,6 +2091,13 @@ autocomplete.js@0.36.0:
   dependencies:
     immediate "^3.2.3"
 
+autocomplete.js@^0.38.1:
+  version "0.38.1"
+  resolved "https://registry.npmmirror.com/autocomplete.js/-/autocomplete.js-0.38.1.tgz#9b006c985d996165ebbc62af33f5b4c32d209cc2"
+  integrity sha512-6pSJzuRMY3pqpozt+SXThl2DmJfma8Bi3SVFbZHS0PW/N72bOUv+Db0jAh2cWOhTsA4X+GNmKvIl8wExJTnN9w==
+  dependencies:
+    immediate "^3.2.3"
+
 autoprefixer@^9.5.1:
   version "9.8.8"
   resolved "https://registry.npmmirror.com/autoprefixer/download/autoprefixer-9.8.8.tgz#fd4bd4595385fa6f06599de749a4d5f7a474957a"
@@ -3075,6 +3082,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-fetch@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.npmmirror.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
+  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
+  dependencies:
+    node-fetch "2.6.7"
+
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.nlark.com/cross-spawn/download/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -4021,6 +4035,16 @@ dns-txt@^2.0.2:
   integrity sha1-uR2Ab10nGI5Ks+fRB9iBocxGQrY=
   dependencies:
     buffer-indexof "^1.0.0"
+
+docs-searchbar.js@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmmirror.com/docs-searchbar.js/-/docs-searchbar.js-2.1.1.tgz#ed9519c0f39a99ad9d231963245e4fc81edd994b"
+  integrity sha512-K9QkhpLUi8KRoEoI8Gz7dOAYHSPUZ0uB3qb0QkWsq9cU+FAMCZPQoePfN9TObTKcX95AYQUXHV2cgd1StHYWrg==
+  dependencies:
+    autocomplete.js "^0.38.1"
+    meilisearch "^0.25.0"
+    to-factory "^1.0.0"
+    zepto "^1.2.0"
 
 docsearch.js@^2.5.2:
   version "2.6.3"
@@ -6293,6 +6317,13 @@ medium-zoom@^1.0.4:
   resolved "https://registry.npm.taobao.org/medium-zoom/download/medium-zoom-1.0.6.tgz#9247f21ca9313d8bbe9420aca153a410df08d027"
   integrity sha1-kkfyHKkxPYu+lCCsoVOkEN8I0Cc=
 
+meilisearch@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.npmmirror.com/meilisearch/-/meilisearch-0.25.0.tgz#8e980fbdd36b9fe6ed606205e262418f21e64d84"
+  integrity sha512-TSIJTh5lva7WHBaoG3arNYQXuIAQkcD3BY09h2nHhjHS/wzxWKJM45x5bEC67Grw8zXihVqqmWty4a4ps4S+tg==
+  dependencies:
+    cross-fetch "^3.1.5"
+
 memory-fs@^0.4.1:
   version "0.4.1"
   resolved "https://registry.nlark.com/memory-fs/download/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
@@ -6582,7 +6613,7 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@^2.6.7:
+node-fetch@2.6.7, node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.npmmirror.com/node-fetch/download/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -9252,6 +9283,13 @@ vuepress-plugin-img-lazy@^1.0.4:
   dependencies:
     markdown-it-img-lazy "^1.0.2"
     markdown-it-imsize "^2.0.1"
+
+vuepress-plugin-meilisearch@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-meilisearch/-/vuepress-plugin-meilisearch-0.12.1.tgz#4b9d1d92462118d82e23cb6cee010e123892714a"
+  integrity sha512-ivXmYtTWStLMfXwn1qMN8HEbKiUP55tEj4mir/ZubQ+jRZNnSHNEAE8Ce0Xs0SpqCwxcoZCuGTsLYCyJw1vdXA==
+  dependencies:
+    docs-searchbar.js "^2.1.1"
 
 vuepress-plugin-permalink-pinyin@^1.0.0:
   version "1.0.0"

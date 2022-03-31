@@ -47,7 +47,7 @@ The auto-configuration adds the following features on top of Spring’s defaults
 
 访问 ： 当前项目根路径/ + 静态资源名
 
-原理： **静态映射/****。
+原理： `静态映射/**`。
 
 **请求进来，先去找Controller看能不能处理。不能处理的所有请求又都交给静态资源处理器**。静态资源也找不到则响应404页面
 
@@ -315,7 +315,7 @@ public class ResourceProperties {
 
 > Rest原理(表单提交要使用REST风格)
 >
-> + 表单提交会带上**_method=PUT**
+> + 表单提交会带上`_method=PUT`
 > + **请求过来被**HiddenHttpMethodFilter拦截
 >   + 请求是否正常，并且是POST
 >     + 获取到_method的值
