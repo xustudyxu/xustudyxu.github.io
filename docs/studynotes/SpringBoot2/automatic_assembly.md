@@ -903,7 +903,7 @@ public @interface AutoConfigurationPackage {}
 ### 修改默认配置
 
 ```java
- @Bean
+ 		@Bean
 		@ConditionalOnBean(MultipartResolver.class)  //容器中有这个类型组件
 		@ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) //容器中没有这个名字 multipartResolver 的组件
 		public MultipartResolver multipartResolver(MultipartResolver resolver) {
