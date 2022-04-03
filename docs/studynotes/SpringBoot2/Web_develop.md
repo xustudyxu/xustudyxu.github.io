@@ -832,3 +832,72 @@ public class ViewTestController {
 + 测试结果
 
 ![1648831751654](./images/05/06.png)
+
+### 构建后台管理项目
+
+#### 项目创建
+
+thymeleaf、web-starter、devtools、lombok
+
+#### 静态资源处理
+
+自动配置好，我们只需要把所有静态资源放到 static 文件夹下
+
+#### 路径构建
+
+th:action="@{/login}"
+
+#### 页面跳转
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/3  17:27
+ */
+@Controller
+public class IndexController {
+
+    /**
+     * 来登录页
+     * @return
+     */
+    @GetMapping(value = {"/","/login"})
+    public String loginPage(){
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String main(User user, HttpSession session, Model model){
+
+        if(!StringUtils.isEmpty(user.getUserName())&&"123456".equals(user.getPassword())){
+            //把登陆成功的用户保存起来
+            session.setAttribute("loginUser",user);
+            //登陆成功重定向到main.html;重定向防止表单重复提交
+            return "redirect:/main.html";
+        }else {
+            model.addAttribute("msg","账号密码错误");
+            //回到登录页
+            return "login";
+        }
+    }
+
+    /**
+     * 去main页面
+     * @return
+     */
+    @GetMapping("/main.html")
+    public String mainPage(HttpSession session,Model model){
+        //是否登录 拦截器，过滤器
+        Object loginUser = session.getAttribute("loginUser");
+        if(loginUser!=null){
+            return "main";
+        }else {
+            //回到登录页
+            model.addAttribute("msg","请重新登录");
+            return "login";
+        }
+    }
+}
+```
+

@@ -1,4 +1,4 @@
-#  Spring Boot 常用注解
+#  Spring Boot2 常用注解
 
 [[toc]]
 
