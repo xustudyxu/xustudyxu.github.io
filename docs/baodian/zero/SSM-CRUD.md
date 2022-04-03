@@ -239,7 +239,7 @@ jdbc.password=hsp
         <!--SpringMVC的配置文件，包含网站跳转逻辑的控制，配置-->
         <context:component-scan base-package="com.frx01" use-default-filters="false">
                 <!--只扫描控制器-->
-                <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+                <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         </context:component-scan>
 
         <!--配置视图解析器-->
@@ -711,16 +711,9 @@ ID：1027==>Name:f8a9523
 Process finished with exit code 0
 ```
 
-+ 遇到的问题，如果你是跟着老师写的，P13会报空指针异常
 
-![1646836492516](./images/SSM-CRUD/02.png)
 
-+ 你可以将applicationContext.xml中的
 
-  <context:exclude-filter type="annotation"
-                           expression="org.springframework.stereotype.Controller"/>
-
-   注释掉
 
 
 
