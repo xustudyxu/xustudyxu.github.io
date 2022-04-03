@@ -5,6 +5,7 @@ module.exports = [
     children:[
     '/studynotes/SpringBoot2/Spring_SpringBoot',
     '/studynotes/SpringBoot2/Getting_Start',
+    '/studynotes/SpringBoot2/annotation_',
     '/studynotes/SpringBoot2/automatic_assembly',
 
       ]
