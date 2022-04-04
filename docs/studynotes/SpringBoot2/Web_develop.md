@@ -901,3 +901,142 @@ public class IndexController {
 }
 ```
 
+#### 数据渲染
+
+```java
+  @GetMapping("/dynamic_table")
+    public String dynamic_table(Model model){
+        //表格内容的遍历
+        List<User> users = Arrays.asList(new User("zhangsan", "123456"),
+                new User("lisi", "123444"),
+                new User("haha", "aaaaa"),
+                new User("hehe ", "aaddd"));
+        model.addAttribute("users",users);
+
+        return "table/dynamic_table";
+    }
+```
+
+```html
+<table class="display table table-bordered" id="hidden-table-info">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>密码</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="gradeX" th:each="user,stats:${users}">
+            <td th:text="${stats.count}">Trident</td>
+            <td th:text="${user.userName}">Internet</td>
+            <td >[[${user.password}]]</td>
+        </tr>
+        </tbody>
+        </table>
+```
+
+### 拦截器
+
+#### HandlerInterceptor 接口
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/5  0:30
+ * 登陆检查
+ * 1.配置好拦截器要拦截哪些请求
+ * 2.把这些配置放在容器中
+ */
+@Slf4j
+public class LoginInterceptor implements HandlerInterceptor {
+
+    /**
+     * 目标方法执行之前
+     * @param request
+     * @param response
+     * @param handler
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        String requestURI = request.getRequestURI();
+        log.info("拦截的请求路径是{}",requestURI);
+
+        //登陆检查逻辑
+        HttpSession session = request.getSession();
+        Object loginUser = session.getAttribute("loginUser");
+        if(loginUser!=null){
+            //放行
+            return true;
+        }
+        //拦截住,未登录，跳转到登录页
+        request.setAttribute("msg","请先登录");
+//        response.sendRedirect("/");
+        request.getRequestDispatcher("/").forward(request,response);
+        return false;
+    }
+
+    /**
+     * 目标方法执行完成以后
+     * @param request
+     * @param response
+     * @param handler
+     * @param modelAndView
+     * @throws Exception
+     */
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        log.info("postHandle执行{}",modelAndView);
+    }
+
+    /**
+     * 页面渲染以后
+     * @param request
+     * @param response
+     * @param handler
+     * @param ex
+     * @throws Exception
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        log.info("afterCompletion执行异常{}",ex);
+    }
+}
+```
+
+#### 配置拦截器
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/5  1:04
+ * 1.编写一个拦截器，实现HandlerInterceptor 接口
+ * 2.拦截器注册到容器中  实现WebMvcConfigurer的addInterceptors方法
+ * 3.指定拦截规则【如果是拦截所有，静态资源也会被拦截】
+ */
+@Configuration
+public class AdminWebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginInterceptor())
+                .addPathPatterns("/**")  //所有请求都被拦截 //静态资源也会拦截
+                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**","/js/**"); //放行的请求
+    }
+}
+```
+
++ 结果
+
+```java
+preHandle拦截的请求路径是/main.html
+当前方法是:mainPage
+postHandle执行ModelAndView [view="main";model={}]
+afterComletion执行异常{}
+```
+
