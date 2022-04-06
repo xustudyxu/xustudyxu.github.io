@@ -735,9 +735,9 @@ th:if="${not #lists.isEmpty(prod.comments)}">view</a>
 
 ![1648828945914](./images/05/05.png)
 
-### thymeleaf使用
+## thymeleaf使用
 
-#### 引入Starter
+### 引入Starter
 
 ```xml
         <dependency>
@@ -746,7 +746,7 @@ th:if="${not #lists.isEmpty(prod.comments)}">view</a>
         </dependency>
 ```
 
-#### 自动配置好了thymeleaf
+### 自动配置好了thymeleaf
 
 ```java
 @Configuration(proxyBeanMethods = false)
@@ -768,7 +768,7 @@ public class ThymeleafAutoConfiguration { }
     public static final String DEFAULT_SUFFIX = ".html"; //xxx.html
 ```
 
-#### 页面开发
+### 页面开发
 
 + View层
 
@@ -833,21 +833,21 @@ public class ViewTestController {
 
 ![1648831751654](./images/05/06.png)
 
-### 构建后台管理项目
+## 构建后台管理项目
 
-#### 项目创建
+### 项目创建
 
 thymeleaf、web-starter、devtools、lombok
 
-#### 静态资源处理
+### 静态资源处理
 
 自动配置好，我们只需要把所有静态资源放到 static 文件夹下
 
-#### 路径构建
+### 路径构建
 
 th:action="@{/login}"
 
-#### 页面跳转
+### 页面跳转
 
 ```java
 /**
@@ -901,7 +901,7 @@ public class IndexController {
 }
 ```
 
-#### 数据渲染
+### 数据渲染
 
 ```java
   @GetMapping("/dynamic_table")
@@ -936,9 +936,9 @@ public class IndexController {
         </table>
 ```
 
-### 拦截器
+## 拦截器
 
-#### HandlerInterceptor 接口
+### HandlerInterceptor 接口
 
 ```java
 /**
@@ -1008,7 +1008,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 }
 ```
 
-#### 配置拦截器
+### 配置拦截器
 
 ```java
 /**
@@ -1040,3 +1040,86 @@ postHandle执行ModelAndView [view="main";model={}]
 afterComletion执行异常{}
 ```
 
+## 文件上传
+
+### 页面表单
+
+```html
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="submit" value="提交">
+</form>
+```
+
+### 文件上传代码
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/6  17:01
+ * 文件上传测试
+ */
+@Slf4j
+@Controller
+public class FormTestController {
+
+    @GetMapping("/form_layouts")
+    public String form_layouts(){
+        return "form/form_layouts";
+    }
+
+    /**
+     * MultipartFile自动封装上传过来的文件
+     * @param email
+     * @param username
+     * @param headerImg
+     * @param photos
+     * @return
+     */
+    @PostMapping("/upload")
+    public String upload(@RequestParam("email") String email,
+                         @RequestParam("username") String username,
+                         @RequestPart("headerImg")MultipartFile headerImg,
+                         @RequestPart("photos") MultipartFile[] photos) throws IOException {
+
+        log.info("上传的信息:emails={},username={},headerImg={},photos={}",
+                email,username,headerImg.getSize(),photos.length);
+        
+        if(!headerImg.isEmpty()){
+            //保存到文件服务器，OOS服务器
+            String filename = headerImg.getOriginalFilename();
+            headerImg.transferTo(new File("D:\\cache\\"+filename));
+        }
+
+        if(photos.length>0){
+            for (MultipartFile photo : photos) {
+                if(!photo.isEmpty()){
+                    String filename = photo.getOriginalFilename();
+                    photo.transferTo(new File("D:\\cache\\"+filename));
+                }
+            }
+        }
+        return "main";
+    }
+}
+```
+
+## 异常处理
+
+### 错误处理
+
+#### 默认规则
+
+- 默认情况下，Spring Boot提供`/error`处理所有错误的映射
+- 对于机器客户端，它将生成JSON响应，其中包含错误，HTTP状态和异常消息的详细信息。对于浏览器客户端，响应一个“ whitelabel”错误视图，以HTML格式呈现相同的数据
+
+![1649253280798](./images/05/07.png)
+
+![1649253820292](./images/05/08.png)
+
+- **要对其进行自定义，添加**`View`**解析为**`error`
+- 要完全替换默认行为，可以实现 `ErrorController `并注册该类型的Bean定义，或添加`ErrorAttributes类型的组件`以使用现有机制但替换其内容。
+- error/下的4xx，5xx页面会被自动解析
+
+![1649254271361](./images/05/09.png)
