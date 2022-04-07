@@ -1123,3 +1123,178 @@ public class FormTestController {
 - error/下的4xx，5xx页面会被自动解析
 
 ![1649254271361](./images/05/09.png)
+
+## Web原生组件注入(Servlet、Filter、Listener)
+
+### 使用Servlet API
+
+```java
+@ServletComponentScan(basePackages = "com.frx01.admin")//指定原生Servlet组件都放在那里
+@SpringBootApplication
+public class Boot05WebAdminApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Boot05WebAdminApplication.class, args);
+    }
+}
+```
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/7  15:54
+ */
+@WebServlet(urlPatterns = "/my")//效果：直接相应，没有Spring的拦截器
+public class MyServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().write("666");
+    }
+}
+```
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/7  16:03
+ */
+@Slf4j
+@WebFilter(urlPatterns = {"/css/*","/images/*"})
+public class MyFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        log.info("MyFilter初始化完成");
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        log.info("MyFilter工作");
+        chain.doFilter(request,response);
+    }
+
+    @Override
+    public void destroy() {
+        log.info("MyFilter销毁");
+    }
+}
+```
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/7  16:13
+ */
+@Slf4j
+@WebListener
+public class MyServletContextListener implements ServletContextListener {
+
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        log.info("MyServletContextListener监听到项目初始化完成");
+
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        log.info("MyServletContextListener监听到项目销毁");
+    }
+}
+```
+
+> 推荐这种方式
+
+扩展：DispatchServlet 如何注册进来
+
+- 容器中自动配置了  DispatcherServlet  属性绑定到 WebMvcProperties；对应的配置文件配置项是 **spring.mvc。**
+- **通过** **ServletRegistrationBean**\<DispatcherServlet> 把 DispatcherServlet  配置进来。
+- 默认映射的是 / 路径
+
+![1649319582679](./images/05/10.png)
+
+Tomcat-Servlet；
+
+多个Servlet都能处理到同一层路径，精确优选原则
+
+A： /my/
+
+B： /my/1
+
+### 使用RegistrationBean
+
+`ServletRegistrationBean`, `FilterRegistrationBean`, and `ServletListenerRegistrationBean`
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/7  16:22
+ */
+
+@Configuration(proxyBeanMethods = true) /*(proxyBeanMethods = true)*/ //保证依赖的组件始终是单实例的
+public class MyRegistConfig {
+
+    @Bean
+    public ServletRegistrationBean myServlet(){
+        MyServlet myServlet = new MyServlet();
+        return new ServletRegistrationBean(myServlet,"/my","/my02");
+    }
+
+    @Bean
+    public FilterRegistrationBean myFilter(){
+        MyFilter myFilter = new MyFilter();
+//        return new FilterRegistrationBean(myFilter,myServlet());
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(myFilter);
+        filterRegistrationBean.setUrlPatterns(Arrays.asList("/my","/css/*"));
+        return new FilterRegistrationBean(myFilter);
+    }
+
+    @Bean
+    public ServletListenerRegistrationBean myListener(){
+        MyServletContextListener myServletContextListener = new MyServletContextListener();
+        return new ServletListenerRegistrationBean(myServletContextListener);
+    }
+}
+```
+
+## 定制化原理
+
+### 定制化的常见方式
+
+- 修改配置文件；
+- **xxxxxCustomizer；**
+- **编写自定义的配置类   xxxConfiguration；+** **@Bean替换、增加容器中默认组件；视图解析器** 
+- **Web应用 编写一个配置类实现** **WebMvcConfigurer 即可定制化web功能；+ @Bean给容器中再扩展一些组件**
+
+```java
+@Configuration
+public class AdminWebConfig implements WebMvcConfigurer
+```
+
+- @EnableWebMvc + WebMvcConfigurer —— @Bean  可以全面接管SpringMVC，所有规则全部自己重新配置； 实现定制和扩展功能
+
+- - 原理
+
+    1、WebMvcAutoConfiguration  默认的SpringMVC的自动配置功能类。静态资源、欢迎页.....
+
+    2、一旦使用 @EnableWebMvc 、。会 @Import(DelegatingWebMvcConfiguration.**class**)
+
+    3、**DelegatingWebMvcConfiguration** 的 作用，只保证SpringMVC最基本的使用
+
+- - - 把所有系统中的 WebMvcConfigurer 拿过来。所有功能的定制都是这些 WebMvcConfigurer  合起来一起生效
+    - 自动配置了一些非常底层的组件。**RequestMappingHandlerMapping**、这些组件依赖的组件都是从容器中获取
+    - **public class** DelegatingWebMvcConfiguration **extends** **WebMvcConfigurationSupport**
+
+- ​	4、**WebMvcAutoConfiguration** 里面的配置要能生效 必须  @ConditionalOnMissingBean(**WebMvcConfigurationSupport**.**class**)
+
+- ​	5、@EnableWebMvc  导致了 **WebMvcAutoConfiguration  没有生效。**
+
+- ... ...
+
+### 原理分析套路
+
+**场景starter** **- xxxxAutoConfiguration - 导入xxx组件 - 绑定xxxProperties --** **绑定配置文件项**
+
