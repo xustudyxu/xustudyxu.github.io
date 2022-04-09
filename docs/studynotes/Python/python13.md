@@ -1,6 +1,6 @@
 # Python 模块与包
 
-## 13.1 什么叫模块
+## 什么叫模块
 
 + 模块
 
@@ -14,7 +14,7 @@
     + <font color=#DC4040 size=4 face="黑体">提高代码的可维护性</font>
     + <font color=#DC4040 size=4 face="黑体">提高代码的可重复性</font>
 
-## 13.2 自定义模块
+## 自定义模块
 
 + 创建模块
 
@@ -92,7 +92,7 @@ print(calc.div(10,4))  #2.5
 # print(add(10,20))
 ```
 
-## 13.3 以主程序形式运行
+## 以主程序形式运行
 
 + 以主程序形式运行
 
@@ -127,7 +127,7 @@ import calc2
 print(calc2.add(100,200))
 ```
 
-## 13.4 Python中的包
+## Python中的包
 
 + Python中的包
 
@@ -175,7 +175,7 @@ from package1.module_A import a
 #使用from...import可以导入包，模块，函数，变量
 ```
 
-## 13.5 Python中常用的内置函数
+## Python中常用的内置函数
 
 | 模块名   | 描述                                                         |
 | -------- | ------------------------------------------------------------ |
@@ -213,7 +213,7 @@ print(urllib.request.urlopen('http://www.baidu.com').read())
 print(math.pi)
 ```
 
-## 13.6 第三方模块的 安装及使用
+## 第三方模块的 安装及使用
 
 + 第三方模块的安装
 

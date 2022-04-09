@@ -2,7 +2,7 @@
 
 [学习视频地址](https://www.bilibili.com/video/BV1fh411y7R8?from=search&seid=8859201345785431941&spm_id_from=333.337.0.0)
 
-## 1.1 数据库三层结构
+## 数据库三层结构
 
 1. <font color=#DC4040 size=4 face="黑体">所谓安装Mysql数据库，就是在主机安装一个数据库管理系统(DBMS)，这个管理程序可以管理多个数据库。DBMS(database manage system)</font>
 2. <font color=#DC4040 size=4 face="黑体">一个数据库中可以创建多个表,以保存数据(信息)。</font>
@@ -10,18 +10,18 @@
 
 ![1629032675009](./images/01.png)
 
-## 1.2 数据在数据库中的存储方式
+## 数据在数据库中的存储方式
 
 ![1629073146674](./images/02.png)
 
-## 1.3 SQL语句分类
+## SQL语句分类
 
 + <font color=#DC4040 size=4 face="黑体">DDL:数据定义语句[create表，库...]</font>
 + <font color=#DC4040 size=4 face="黑体">DML:数据操作语句[增加insert,修改update，删除delete]</font>
 + <font color=#DC4040 size=4 face="黑体">DQL:数据查询语句[select ]</font>
 + <font color=#DC4040 size=4 face="黑体">DCL:数据控制语句[管理数据库:比如用户权限grant revoke ]</font>
 
-## 1.4 创建数据库
+## 创建数据库
 
 ![1629073300994](./images/03.png)
 
@@ -50,7 +50,7 @@ WHERE NAME='tom'
 	
 ```
 
-## 1.5 查看、删除数据库
+## 查看、删除数据库
 
 ![1629086123306](./images/04.png)
 
@@ -69,7 +69,7 @@ CREATE DATABASE `CREATE`
 DROP DATABASE frx_db01
 ```
 
-## 1.6 备份恢复数据库
+## 备份恢复数据库
 
 ![1629098174252](./images/05.png)
 
@@ -87,7 +87,7 @@ source d:\\bak.sql
 #第二个恢复方法，直接将bak.sql的内容放到查询编辑器中，执行
 ```
 
-## 1.7 创建表
+## 创建表
 
 ![1629102354195](./images/06.png)
 
@@ -106,11 +106,11 @@ CREATE TABLE `USER`(
 	CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB;
 ```
 
-## 1.8 Mysql 常用数据类型(列类型)
+## Mysql 常用数据类型(列类型)
 
 ![1629120841386](./images/07.png)
 
-### 1.8.1 数值型(整数)的基本使用
+### 数值型(整数)的基本使用
 
 ![1629300936917](./images/08.png)
 
@@ -134,12 +134,12 @@ INSERT INTO t4 VALUES(0);
 SELECT * FROM t4
 ```
 
-### 1.8.2 整型如何定义一个无符号的整数
+### 整型如何定义一个无符号的整数
 
 + <font color=#DC4040 size=4 face="黑体">create table t10(id tinyint);//默认是有符号的</font>
 + <font color=#DC4040 size=4 face="黑体">create table t11(id tinyint unisigned);//无符号的</font>
 
-### 1.8.3 数值型(bit)的使用
+### 数值型(bit)的使用
 
 1.基本使用
 
@@ -167,7 +167,7 @@ SELECT * FROM t05 WHERE num = 1;
 
 ```
 
-### 1.8.4 数值型(小数)的基本使用
+### 数值型(小数)的基本使用
 
 ![1629301462022](./images/09.png)
 
@@ -197,7 +197,7 @@ SELECT * FROM t08;
 	
 ```
 
-### 1.8.5 字符串的基本使用
+### 字符串的基本使用
 
 ![1629301560455](./images/11.png)
 
@@ -219,7 +219,7 @@ CREATE TABLE t10(
 DROP TABLE t10;
 ```
 
-### 1.8.6 字符串使用细节
+### 字符串使用细节
 
 ![1629301648385](./images/12.png)
 
@@ -245,7 +245,7 @@ INSERT INTO t13 VALUES('韩顺平教育','韩顺平教育100','韩顺平教育10
 SELECT * FROM t13;
 ```
 
-### 1.8.7 日期类型的基本使用
+### 日期类型的基本使用
 
 ![1629301836739](./images/14.png)
 
@@ -265,7 +265,7 @@ INSERT INTO t14(birthday,job_time)
 	-- 如果我们更新 t14表的某条记录，login_time列会自动的以当前时间进行更新
 ```
 
-## 1.9 创建表练习
+## 创建表练习
 
 ![1629301921632](./images/15.png)
 
@@ -293,11 +293,11 @@ CREATE TABLE `emp`(
 	
 ```
 
-## 1.10 修改表-基本介绍
+## 修改表-基本介绍
 
 ![1629302019059](./images/16.png)
 
-## 1.11 修改表-课堂练习
+## 修改表-课堂练习
 
 + 应用实例
   + 员工表emp的上增加一个image列，varchar类型(要求在resume后面).
@@ -337,16 +337,16 @@ ALTER TABLE employee
 	CHANGE `name` user_name VARCHAR(32) NOT NULL DEFAULT ''
 ```
 
-## 1.12 数据库 CRUD语句
+## 数据库 CRUD语句
 
 1. **Insert语句        (添加数据)**
 2. **Update语句     (更新数据)**
 3. **Delete语句       (删除语句)**
 4. **Select语句        (查找语句)**
 
-## 1.13 Insert 语句
+## Insert 语句
 
-### 1.13.1 使用 INSERT 语句向表中插入数据
+### 使用 INSERT 语句向表中插入数据
 
 ![1629366261830](./images/18.png)
 
@@ -370,7 +370,7 @@ SELECT * FROM goods
 
 ```
 
-### 1.13.2 细节说明
+### 细节说明
 
 ```sql
 # 说明insert 语句的细节
@@ -413,13 +413,13 @@ INSERT INTO `goods2`(id,goods_name)
 SELECT * FROM goods2;
 ```
 
-## 1.14 update 语句
+## update 语句
 
-### 1.14.1 使用 update 语句修改表中数据
+### 使用 update 语句修改表中数据
 
 ![1629375478105](./images/19.png)
 
-### 1.14.2 基本使用
+### 基本使用
 
 要求:在上面创建的employee表中修改表中的纪录
 
@@ -453,16 +453,16 @@ UPDATE employee
 SELECT * FROM employee;
 ```
 
-### 1.14.3 使用细节
+### 使用细节
 
 1. <font color=#DC4040 size=4 face="黑体">UPDATE语法可以用新值更新原有表行中的各列。</font>
 2. <font color=#DC4040 size=4 face="黑体">SET子句指示要修改哪些列和要给予哪些值。</font>
 3. <font color=#DC4040 size=4 face="黑体">WHERE子句指定应更新哪些行。如没有WHERE子句,则更新所有的行(记录)，因此老师提醒一定小心。</font>
 4. <font color=#DC4040 size=4 face="黑体">如果需要修改多个字段,可以通过set字段1=值1,字段2=值2.….</font>
 
-## 1.15 delete 语句
+## delete 语句
 
-### 1.15.1 使用 delete 语句删除表中数据
+### 使用 delete 语句删除表中数据
 
 ![1629384583281](./images/21.png)
 
@@ -483,19 +483,19 @@ SELECT * FROM employee;
  DROP TABLE employee;
 ```
 
-### 1.15.2 使用细节
+### 使用细节
 
 1. <font color=#DC4040 size=4 face="黑体">如果不使用where子句，将删除表中所有数据。</font>
 2. <font color=#DC4040 size=4 face="黑体">Delete语句不能删除某一列的值(可使用update设为null或者")</font>
 3. <font color=#DC4040 size=4 face="黑体">使用delete语句仅删除记录，不删除表本身。如要删除表，使用drop table语句。drop table表名;</font>
 
-## 1.16 select 语句
+## select 语句
 
-### 1.16.1  基本语法
+### 基本语法
 
 ![1629421931886](./images/22.png)
 
-### 1.16.2 注意事项 
+### 注意事项 
 
 1. <font color=#DC4040 size=4 face="黑体">Select 指定查询哪些列的数据。</font>
 2. <font color=#DC4040 size=4 face="黑体">column指定列名。</font>
@@ -503,7 +503,7 @@ SELECT * FROM employee;
 4. <font color=#DC4040 size=4 face="黑体">From指定查询哪张表。</font>
 5. <font color=#DC4040 size=4 face="黑体">DISTINCT可选，指显示结果时，是否去掉重复数据</font>
 
-### 1.16.3 课堂练习
+### 课堂练习
 
 > 查询表中所有学生的信息。
 >
@@ -545,15 +545,15 @@ SELECT DISTINCT `name`,english FROM student;
 
 ```
 
-### 1.16.4 使用表达式对查询的列进行运算
+### 使用表达式对查询的列进行运算
 
 ![1629427350498](./images/23.png)
 
-### 1.16.5 在 select 语句中可使用 as 语句
+### 在 select 语句中可使用 as 语句
 
 ![1629427379127](./images/24.png)
 
-### 1.16.6 练习
+### 练习
 
 > 统计每个学生的总分
 > 在所有学生总分加10分的情况
@@ -586,11 +586,11 @@ SELECT `name`,(chinese+english+math) AS total_score FROM student
 SELECT `math` AS`Math` FROM student
 ```
 
-### 1.16.7 在 where 子句中经常使用的运算符
+### 在 where 子句中经常使用的运算符
 
 ![1629428801576](./images/25.png)
 
-### 1.16.8 使用 where 子句，进行过滤查询
+### 使用 where 子句，进行过滤查询
 
 > 查询姓名为赵云的学生成绩
 >
@@ -645,7 +645,7 @@ SELECT * FROM student
 	WHERE `name` LIKE '李%';
 ```
 
-### 1.16.9 使用 order by 子句排序查询结果
+### 使用 order by 子句排序查询结果
 
 ![1629446589270](./images/26.png)
 
@@ -665,9 +665,9 @@ SELECT `name`,(chinese+math+english) AS total_score FROM student
 	ORDER BY total_score;
 ```
 
-## 1.17 合计/统计函数
+## 合计/统计函数
 
-### 1.17.1 count
+### count
 
 <font color=#DC4040 size=4 face="黑体">Select count(*) | count(列名) from table_name [WHERE where_definition]</font>
 
@@ -706,7 +706,7 @@ SELECT COUNT(*) FROM t15;-- 4
 SELECT COUNT(`name`) FROM t15; -- 3
 ```
 
-### 1.17.2 sum
+### sum
 
 ![1629456070193](./images/27.png)
 
@@ -722,7 +722,7 @@ SELECT SUM(chinese+math+english) AS total_score FROM student
 SELECT SUM(chinese)/COUNT(*) FROM student;
 ```
 
-### 1.17.3 avg
+### avg
 
 AVG函数返回满足where条件的一列的平均值
 
@@ -736,7 +736,7 @@ SELECT AVG(math) FROM student;
 SELECT AVG(chinese+math+english) FROM student;
 ```
 
-### 1.17.4  max/min
+### max/min
 
 ![1629459791232](./images/29.png)
 
@@ -751,11 +751,11 @@ SELECT MAX(math),MIN(math)
 	FROM student;
 ```
 
-### 1.17.5 使用 group by 子句对列进行分组 
+### 使用 group by 子句对列进行分组 
 
 ![1629465717058](./images/30.png)
 
-### 1.17.6 使用 having 子句对分组后的结果进行过滤
+### 使用 having 子句对分组后的结果进行过滤
 
 ![1629465758005](./images/31.png)
 
@@ -849,7 +849,7 @@ SELECT AVG(sal) AS avg_sal,deptno
 		HAVING avg_sal<2000;
 ```
 
-## 1.18 字符串相关函数
+## 字符串相关函数
 
 ![1629465840228](./images/32.png)
 
@@ -899,7 +899,7 @@ SELECT TRIM(' 韩顺平教育 ')FROM DUAL;
 
 ```
 
-## 1.19 数学相关函数
+## 数学相关函数
 
 ![1629474280529](./images/33.png)
 
@@ -943,7 +943,7 @@ SELECT RAND() FROM DUAL;
 
 ```
 
-## 1.20 时间日期相关函数
+## 时间日期相关函数
 
 ![1629543017438](./images/34.png)
 
@@ -1025,7 +1025,7 @@ SELECT FROM_UNIXTIME(1618493484,'%Y-%m-%d %H:%i:%s')FROM DUAL;
 
 ```
 
-## 1.21 加密和系统函数
+## 加密和系统函数
 
 | USER()            | 查询用户                                                     |
 | ----------------- | ------------------------------------------------------------ |
@@ -1073,7 +1073,7 @@ SELECT *FROM mysql.user
 
 ```
 
-## 1.22 流程控制函数
+## 流程控制函数
 
 ![1629555278379](./images/37.png)
 
@@ -1111,9 +1111,9 @@ SELECT ename,(
 	FROM emp;
 ```
 
-## 1.23 mysql 表查询-加强
+## mysql 表查询-加强
 
-### 1.23.1 介绍
+### 介绍
 
 > 在前面我们讲过mysql表的基本查询，但是都是对一张表进行的查询,这在实际的软件开发中，还远远的不够。
 > 下面我们讲解的过程中，将使用前面创建三张表(emp,dept,salgrade)为大家演示如何进行多表查询
@@ -1177,7 +1177,7 @@ SELECT * FROM emp
 
 ```
 
-### 1.23.2 分页查询
+### 分页查询
 
 ![1629601087836](./images/38.png)
 
@@ -1207,7 +1207,7 @@ SELECT * FROM emp
 
 ```
 
-### 1.23.3 使用分组函数和分组子句
+### 使用分组函数和分组子句
 
 > 显示每种岗位的雇员总数、平均工资。
 >
@@ -1241,7 +1241,7 @@ SELECT MAX(sal)-MIN(sal)
 	FROM emp;
 ```
 
-### 1.23.4 数据分组的总结
+### 数据分组的总结
 
 ![1629610214176](./images/39.png)
 
@@ -1257,17 +1257,17 @@ SELECT deptno,AVG(sal) AS avg_sal
 	LIMIT 0,2
 ```
 
-## 1.24 mysql多表查询
+## mysql多表查询
 
-### 1.24.1 问题的引出(重点，难点)
+### 问题的引出(重点，难点)
 
 ![1629611929571](./images/40.png)
 
-### 1.24.2 说明
+### 说明
 
 <font color=#DC4040 size=4 face="黑体">多表查询是指基于两个和两个以上的表查询.在实际应用中,查询单个表可能不能满足你的需求.</font>
 
-### 1.24 .3 多表查询练习
+### 多表查询练习
 
 ![1629612077599](./images/41.png)
 
@@ -1311,7 +1311,7 @@ SELECT ename,sal,grade
 		ORDER BY emp.deptno DESC
 ```
 
-### 1.24.4 自连接
+### 自连接
 
 <font color=#DC4040 size=4 face="黑体">自连接是指在同一张表的连接查询[将同一张表看做两张表].</font>
 
@@ -1330,19 +1330,19 @@ SELECT worker.ename AS '职员名',boss.ename AS '上级名'
 	WHERE worker.mgr=boss.empno;
 ```
 
-## 1.25 mysql表子查询
+## mysql表子查询
 
-### 1.25.1 什么是子查询
+### 什么是子查询
 
 <font color=#DC4040 size=4 face="黑体">子查询是指嵌入在其它 sql 语句中的 select 语句,也叫嵌套查询</font>
 
-### 1.25.2 单行子查询
+### 单行子查询
 
 <font color=#DC4040 size=4 face="黑体">单行子查询是指只返回一行数据的子查询语句</font>
 
 > 请思考：如何显示与 SMITH 同一部门的所有员工?
 
-### 1.25.3 多行子查询
+### 多行子查询
 
 <font color=#DC4040 size=4 face="黑体">多行子查询指返回多行数据的子查询 ,使用关键字 in</font>
 
@@ -1388,7 +1388,7 @@ SELECT ename,job,sal,deptno
 	)AND deptno !=10
 ```
 
-### 1.25.4 在多行子查询中使用 all 操作符
+### 在多行子查询中使用 all 操作符
 
 ```sql
 -- all 和 any 的使用
@@ -1413,7 +1413,7 @@ SELECT ename,sal,deptno
 
 ```
 
-### 1.25.5 在多行子查询中使用 any 操作符
+### 在多行子查询中使用 any 操作符
 
 ```sql
 -- 请思考：如何显示工资比部门30的其中一个员工的工资高的员工的姓名、工资和部门号
@@ -1433,7 +1433,7 @@ SELECT ename,sal,deptno
 		WHERE deptno =30)
 ```
 
-### 1.25.6 多列子查询
+### 多列子查询
 
 <font color=#DC4040 size=4 face="黑体">多列子查询是指查询返回多个列数据的子查询语句。</font>
 
@@ -1467,7 +1467,7 @@ SELECT *
 		WHERE `name`='宋江');
 ```
 
-### 1.25.7 在 from 子句中使用子查询
+### 在 from 子句中使用子查询
 
 > 请思考:查找每个部门工资高于本部门平均工资的人的资料
 >
@@ -1534,9 +1534,9 @@ SELECT tmp.* ,dname,loc
 
 ```
 
-## 1.26 表复制
+## 表复制
 
-### 1.26.1 自我复制数据(蠕虫复制)
+### 自我复制数据(蠕虫复制)
 
 <font color=#DC4040 size=4 face="黑体">有时，为了对某个sql语句进行效率测试，我们需要海量数据时，可以使用此法为表创建海量数据。</font>
 
@@ -1604,9 +1604,9 @@ SELECT * FROM my_tab02
 
 ```
 
-## 1.27 合并查询
+## 合并查询
 
-### 1.27.1 介绍
+### 介绍
 
 <font color=#DC4040 size=4 face="黑体">有时在实际应用中，为了合并多个select语句的结果，可以使用集合操作符号union , union all </font>
 
@@ -1634,7 +1634,7 @@ UNION
 SELECT ename,sal,job FROM emp WHERE job='MANAGER'-- 6
 ```
 
-### 1.27.2 外连接
+### 外连接
 
 1. <font color=#DC4040 size=4 face="黑体">左外连接(如果左侧的表完全显示我们就说是左外连接) select...from 表1 left join 表2 on条件 [表1：左表 表2：右表]</font>
 2. <font color=#DC4040 size=4 face="黑体">右外连接(如果右侧的表完全显示我们就说是右外连接) select...from 表1 rigth join 表2 on条件 [表1：左表 表2：右表]</font>
@@ -1698,7 +1698,7 @@ SELECT `name`,stu.id,grade
 	ON stu.id=exam.id;
 ```
 
-### 1.27.3 课堂练习
+### 课堂练习
 
 > 列出部门名称和这些部门的员工信息(名字和工作)，同时列出那些没有员工的部门名。5min
 > 1．使用左外连接实现
@@ -1719,13 +1719,13 @@ SELECT dname,ename,job
 	ON emp.deptno=dept.deptno
 ```
 
-## 1.28 mysql约束
+## mysql约束
 
-### 1.28.1 基本介绍
+### 基本介绍
 
 <font color=#DC4040 size=4 face="黑体">约束用于确保数据库的数据满足特定的商业规则。在mysql中，约束包括: not null、unique,primary key,foreign key,和check五种。</font>
 
-### 1.28.2 primary key(主键)-基本使用
+### primary key(主键)-基本使用
 
 ![1629687417568](./images/43.png)
 
@@ -1795,7 +1795,7 @@ DESC t20 -- 查看t20 表的结果，显示约束情况
 DESC t18	
 ```
 
-### 1.28.3 not null和unique(唯一)
+### not null和unique(唯一)
 
 ![1629700439164](./images/44.png)
 
@@ -1827,7 +1827,7 @@ CREATE TABLE t22(
 DESC t22
 ```
 
-### 1.28.4 foreign key(外键)
+### foreign key(外键)
 
 ![1629701585443](./images/45.png)
 
@@ -1870,7 +1870,7 @@ DELETE FROM my_class
 	WHERE id=100 -- 没有任何一条记录指向 主表100,就可以删去
 ```
 
-### 1.28.5 check
+### check
 
 ![1629705343475](./images/47.png)
 
@@ -1892,7 +1892,7 @@ INSERT INTO t23
 SELECT * FROM t23
 ```
 
-### 1.28.6 商店售货系统表设计案例
+### 商店售货系统表设计案例
 
 ![1629705886743](./images/48.png)
 
@@ -1925,13 +1925,13 @@ CREATE TABLE purchase(
 	DESC purchase
 ```
 
-## 1.29 自增长
+## 自增长
 
-### 1.29.1 自增长基本介绍
+### 自增长基本介绍
 
 ![1629712898799](./images/49.png)
 
-### 1.29.3 自增长使用细节
+### 自增长使用细节
 
 1. <font color=#DC4040 size=4 face="黑体">一般来说自增长是和primary key配合使用的</font>
 2. <font color=#DC4040 size=4 face="黑体">自增长也可以单独使用[但是需要配合一个unique]</font>
@@ -1974,14 +1974,14 @@ SELECT * FROM t25;
 -- 如果指定了自增长，一般来说，就按照自增长的规则来添加数据
 ```
 
-## 1.30 mysql索引(index)
+## mysql索引(index)
 
-### 1.30.1 索引快速入门
+### 索引快速入门
 
 1. <font color=#DC4040 size=4 face="黑体">说起提高数据库性能,索引是最物美价廉的东西了。不用加内存，不用改程序,不用调sql，查询速度就可能提高百倍干倍。</font>
 2. <font color=#DC4040 size=4 face="黑体">没有建立索引的字段，查询起来依旧很慢</font>
 
-### 1.30.2 索引的原理
+### 索引的原理
 
 ![1629719574810](./images/50.png)
 
@@ -1993,11 +1993,11 @@ SELECT * FROM t25;
    1. <font color=#DC4040 size=4 face="黑体">磁盘占用</font>
    2. <font color=#DC4040 size=4 face="黑体">对dml(update delete insert)语句的效率影响,</font>
 
-### 1.30.3 索引的类型
+### 索引的类型
 
 ![1629720340627](./images/52.png)
 
-### 1.30.4 索引使用
+### 索引使用
 
 ![1629720362812](./images/53.png)
 
@@ -2101,19 +2101,19 @@ CREATE INDEX name_index ON sportman(NAME) -- 方式一
 ALTER TABLE sportman ADD INDEX name_index(NAME)-- 方式二
 ```
 
-### 1.30.5 小结：哪些列上适合使用索引
+### 小结：哪些列上适合使用索引
 
 ![1629723140867](./images/54.png)
 
-## 1.31 mysql事务
+## mysql事务
 
 ![1629723492945](./images/55.png)
 
-### 1.31.1 什么是事务
+### 什么是事务
 
 <font color=#DC4040 size=4 face="黑体">事务用于保证数据的一致性,它由一组相关的dml语句组成,该组的dml语句要么全部成功，要么全部失败。如:转账就要用事务来处理,用以保证数据的一致性。</font>
 
-### 1.31.2 事务和锁
+### 事务和锁
 
 ![1629726237643](./images/56.png)
 
@@ -2146,15 +2146,15 @@ ROLLBACK
 COMMIT 
 ```
 
-### 1.31.3 回退事务
+### 回退事务
 
 <font color=#DC4040 size=4 face="黑体">在介绍回退事务前，先介绍一下保存点(savepoint).保存点是事务中的点.用于取消部分事务，当结束事务时(commit),会自动的删除该事务所定义的所有保存点.当执行回退事务时，通过指定保存点可以回退到指定的点。</font>
 
-### 1.31.4 提交事务
+### 提交事务
 
 <font color=#DC4040 size=4 face="黑体">使用commit语句可以提交事务.当执行了commit语句子后,会确认事务的变化、结金事除徨专野放锁数据生效。当使用commit语句结束事务子后，其它会话[其他连接]将可以查着到事务变化后的新数据[所有数据就正式生效.]</font>
 
-### 1.31.5 事务细节讨论
+### 事务细节讨论
 
 ![1629727464805](./images/57.png)
 
@@ -2184,9 +2184,9 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 ```
 
-## 1.32 mysql 事务隔离级别
+## mysql 事务隔离级别
 
-### 1.32.1 事务隔离级别介绍
+### 事务隔离级别介绍
 
 1. <font color=#DC4040 size=4 face="黑体">多个连接开启各自事务操作数据库中数据时，数据库系统要负责隔离操作，以保证各个连接在获取数据时的准确性。</font>（通俗解释)
 2. 如果不考虑隔离性,可能会引发如下问题:
@@ -2194,11 +2194,11 @@ ROLLBACK -- 表示直接回退到事务开始的状态
    + <font color=#DC4040 size=4 face="黑体">不可重复读</font>
    + <font color=#DC4040 size=4 face="黑体">幻读</font>
 
-### 1.32.2 查看事务隔离级别
+### 查看事务隔离级别
 
 ![1629728557374](./images/58.png)
 
-### 1.32.3 事务隔离级别
+### 事务隔离级别
 
 概念:Mysql隔离级别定义了**事务与事务之间的隔离程度。**
 
@@ -2211,7 +2211,7 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 说明：√可能出现 ×不会出现 
 
-###  1.32.4 设置事务隔离级别
+###  设置事务隔离级别
 
 ![1629778973887](./images/59.png)
 
@@ -2266,9 +2266,9 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 
 **左边的事务经过修改和添加，但是提交了，右边依然可以看到修改和添加的信息，这就是不可重复度和幻读，因为左边的提交已经直接影响到了右边的操作。**
 
-## 1.33 mysql 事务 ACID
+## mysql 事务 ACID
 
-### 1.33.1 事务的 acid 特性
+### 事务的 acid 特性
 
 1. <font color=#DC4040 size=4 face="黑体">原子性(Atomicity)</font>
    **原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。**
@@ -2279,13 +2279,13 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 4. <font color=#DC4040 size=4 face="黑体">持久性(Durability)</font>
    **持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，接下来即使数据库发生故障也不应该对其有任何影响**
 
-## 1.34 mysql 表类型和存储引擎
+## mysql 表类型和存储引擎
 
-### 1.34.1 基本介绍
+### 基本介绍
 
 ![1629781158623](./images/62.png)
 
-### 1.34.2 主要的存储引擎/表类型特点
+### 主要的存储引擎/表类型特点
 
 | 特点           | Myism | InnoDB | Memory | Archive |
 | -------------- | :---: | :----: | :----: | :-----: |
@@ -2304,7 +2304,7 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 | 内存使用       |  底   |   高   |  中等  |   底    |
 | 支持外键       |       |  支持  |        |         |
 
-### 1.34.3 细节说明
+### 细节说明
 
 重点介绍三种:MyISAM、InnoDB、MEMORY
 
@@ -2312,7 +2312,7 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 2. <font color=#DC4040 size=4 face="黑体">InnoDB存储引擎提供了具有提交、回滚和崩溃恢复能力的事务安全。但是比起MylSAM存储引擎，InnoDB写的处理效率差一些并且会占用更多的磁盘空间以保留数据和索引。</font>
 3. <font color=#DC4040 size=4 face="黑体">MEMORY存储引擎使用存在内存中的内容来创建表。每个MEMORY表只实际对应-个磁盘文件。MEMORY类型的表访问非常得快，因为它的数据是放在内存中的，并且默认使用HASH索引。但是一旦MySQL服务关闭，表中的数据就会丢失掉,表的结构还在。</font>
 
-### 1.34.4 三种存储引擎表使用案例
+### 三种存储引擎表使用案例
 
 ```sql
 -- 查看所有的存储引擎
@@ -2350,26 +2350,26 @@ SELECT *FROM t29
 ALTER TABLE t29 ENGINE =INNODB
 ```
 
-### 1.34.5 如何选择表的存储引擎
+### 如何选择表的存储引擎
 
 1. <font color=#DC4040 size=4 face="黑体">如果你的应用不需要事务，处理的只是基本的CRUD操作，那么MylSAN是不二选择,速度快</font>
 2. <font color=#DC4040 size=4 face="黑体">如果需要支持事务，选择lnnoDB.</font>
 3. <font color=#DC4040 size=4 face="黑体">Memory存储引擎就是将数据存储在内存中，由于没有磁盘I./O的等待速度极快。但由于是内存存储引擎，所做的任何修改在服务器重启后都将消失。</font>(经典用法 用户的在线状态().)
 
-## 1.35 视图(view)
+## 视图(view)
 
-### 1.35.1 看需求
+### 看需求
 
 ![1629784399842](./images/63.png)
 
-### 1.35.2 基本概念
+### 基本概念
 
 1. <font color=#DC4040 size=4 face="黑体">视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含列,其数据来自对应的真实表(基表)</font>
 2. 视图和基表关系的示意图
 
 ![1629784469879](./images/64.png)
 
-### 1.35.3 视图的基本使用
+### 视图的基本使用
 
 1. <font color=#DC4040 size=4 face="黑体">create view视图名as select语句</font>
 2. <font color=#DC4040 size=4 face="黑体">alter view视图名as select语句   --更新成新的视图</font>
@@ -2399,7 +2399,7 @@ SHOW CREATE VIEW emp_view01
 DROP VIEW emp_view01
 ```
 
-### 1.35.4 视图细节讨论
+### 视图细节讨论
 
 ![1629785641532](./images/65.png)
 
@@ -2432,11 +2432,11 @@ UPDATE  emp
 SELECT * FROM emp_view02
 ```
 
-### 1.35.5 视图最佳实践
+### 视图最佳实践
 
 ![1629787024360](./images/66.png)
 
-### 1.36.6 视图课堂练习
+### 视图课堂练习
 
 > 针对emp , dept,和salgrade张三表.创建一个视图emp_view03，可以显示雇员编号，雇员名，雇员部门名称和薪水级别[即使用三张表，构建一个视图] view02.sql
 
@@ -2461,51 +2461,51 @@ DESC emp_view03
 SELECT  * FROM emp_view03
 ```
 
-## 1.36 Mysql管理
+## Mysql管理
 
-### 1.36.1 Mysql 用户
+### Mysql 用户
 
 ![1629793521438](./images/67.png)
 
 ![1629795159009](./images/68.png)
 
-### 1.36.2 创建用户
+### 创建用户
 
 <font color=#DC4040 size=4 face="黑体">create user  '用户名 '@'允许登录位置'identified by   ‘密码'  </font>
 
 说明:创建用户,同时指定密码
 
-### 1.36.3 删除用户
+### 删除用户
 
 <font color=#DC4040 size=4 face="黑体">drop user ‘用户名’@’允许登录位置’;</font>
 
-### 1.36.4 用户修改密码
+### 用户修改密码
 
 修改自己的密码:
 <font color=#DC4040 size=4 face="黑体">set password = password('密码');</font>
 修改他人的密码（需要有修改用户密码权限):
 <font color=#DC4040 size=4 face="黑体">set password for '用户名'@'登录位置'= password(密码');</font>
 
-### 1.36.5 mysql中的权限
+### mysql中的权限
 
 ![1629796066725](./images/71.png)
 
-### 1.36.6 给用户授权
+### 给用户授权
 
 ![1629797694449](./images/70.png)
 
-### 1.36.7 回收用户权限
+### 回收用户权限
 
 基本语法：<font color=#DC4040 size=4 face="黑体">revoke权限列表on库.对象名from '用户名"@"登录位置';</font>
 
-### 1.36.8 权限生效指令
+### 权限生效指令
 
 如果权限没有生效，可以执行下面命令.
 
 + 基本语法:
   <font color=#DC4040 size=4 face="黑体">FLUSH PRIVILEGES;</font>
 
-### 1.36.9 课堂练习题
+### 课堂练习题
 
 > 创建一个用户(你的名字，拼音)，密码123，并且只可以从本地登录，不让远程登录mysql
 > 创建库和表testdb下的news表,要求:使用root用户创建
@@ -2551,7 +2551,7 @@ REVOKE ALL testdb.news FROM 'rongxu'@'localhost'
 DROP USER 'rongxu'@'localhost'
 ```
 
-### 1.36.10 细节说明
+### 细节说明
 
 1. <font color=#DC4040 size=4 face="黑体">在创建用户的时候，如果不指定Host,则为%，%表示表示所有IP都有连接权限create user XXX;</font>
 2. <font color=#DC4040 size=4 face="黑体">你也可以这样指定 create user 'xxx' @'192.168.1.%’表示xxx用户在192.168.1.*的ip可以登录mysql</font>

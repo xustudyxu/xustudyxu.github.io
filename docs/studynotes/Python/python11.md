@@ -1,6 +1,6 @@
 # Python 异常处理
 
-## 11.1 Bug的由来及分类
+## Bug的由来及分类
 
 + Bug的由来
   + 世界上第一部万用计算机的进化版-马克2号(Mrrk ||)
@@ -11,7 +11,7 @@
 
 ![1635322405578](./images/11/02.png)
 
-### 11.1.1 Bug的常见类型
+### Bug的常见类型
 
 + 粗心导致的语法错误 SybtaxError
 
@@ -65,9 +65,9 @@
     + 解决方案：
       + 第一层for循环遍历列表可以得到每一部电影,而每一部电影又是一个字典,只需要根据key在字典中取值即可。根据演员的键actors取出学员的列表,使用判断name在列表中是否存在，最后根据电影名称的键title取出电影的名称,进行输出
 
-## 11.2 Python的异常处理机制
+## Python的异常处理机制
 
-### 11.2.1 try...except 结构
+### try...except 结构
 
 + **单个except结构**
 
@@ -125,7 +125,7 @@ print('程序结束')
 
 ```
 
-### 11.2.2 try...except...else结构
+### try...except...else结构
 
 + <font color=#DC4040 size=4 face="黑体">如果try块中没有抛出异常,则执行else块,如果try中抛出异常，则执行except块</font>
 
@@ -147,7 +147,7 @@ else:
 
 ```
 
-### 11.2.3 try...except...else...finally结构
+### try...except...else...finally结构
 
 + <font color=#DC4040 size=4 face="黑体">finally块无论是否发生异常都会被执行，能采用来释放try块中申请的资源</font>
 
@@ -171,7 +171,7 @@ finally:
     print('谢谢您的使用')
 ```
 
-## 11.3 Python中常见的异常类型
+## Python中常见的异常类型
 
 | 序号 | 异常类型          | 描述                        |
 | ---- | ----------------- | --------------------------- |
@@ -202,7 +202,7 @@ dic={'name':'张三','age':20}
 # a=int('hello') #ValueError 
 ```
 
-## 11.4 traceback模块
+## traceback模块
 
 + 使用traceback模块打印异常信息
 
@@ -221,7 +221,7 @@ except:
     traceback.print_exc()
 ```
 
-## 11.5 PyCharm开发环境的调试
+## PyCharm开发环境的调试
 
 ![1635328551969](./images/11/06.png)
 
