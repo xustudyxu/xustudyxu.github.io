@@ -39,7 +39,7 @@
 2. 重新声明版本（maven的属性的就近优先原则）
 
 ```xml
- <properties>
+ 	<properties>
         <java.version>1.8</java.version>
         <mysql.version>5.1.49</mysql.version>
     </properties>
@@ -113,4 +113,150 @@ class Boot05WebAdminApplicationTests {
 
 Process finished with exit code 0
 ```
+
+## 使用Druid数据源
+
+### druid官方github地址
+
+https://github.com/alibaba/druid
+
+整合第三方技术的两种方式
+
++ 自定义
++ 找starter
+
+### 自定义方式
+
+#### 创建数据源
+
+```xml
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
+        </dependency>
+```
+
+#### StatViewServlet
+
+> StatViewServlet的用途包括：
+>
+> + 提供监控信息展示的html页面
+> + 提供监控信息的JSON API
+
+```xml
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+```
+
+#### StatFilter
+
+> 用于统计监控信息；如SQL监控、URI监控
+
+```xml
+需要给数据源中配置如下属性；可以允许多个filter，多个用，分割；如：
+
+<property name="filters" value="stat,slf4j" />
+```
+
+系统中所有filter:
+
+| 别名          | Filter类名                                              |
+| ------------- | ------------------------------------------------------- |
+| default       | com.alibaba.druid.filter.stat.StatFilter                |
+| stat          | com.alibaba.druid.filter.stat.StatFilter                |
+| mergeStat     | com.alibaba.druid.filter.stat.MergeStatFilter           |
+| encoding      | com.alibaba.druid.filter.encoding.EncodingConvertFilter |
+| log4j         | com.alibaba.druid.filter.logging.Log4jFilter            |
+| log4j2        | com.alibaba.druid.filter.logging.Log4j2Filter           |
+| slf4j         | com.alibaba.druid.filter.logging.Slf4jLogFilter         |
+| commonlogging | com.alibaba.druid.filter.logging.CommonsLogFilter       |
+
+**慢SQL记录配置**
+
+```xml
+<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+    <property name="slowSqlMillis" value="10000" />
+    <property name="logSlowSql" value="true" />
+</bean>
+
+使用 slowSqlMillis 定义慢SQL的时长
+```
+
+### 使用官方starter方式
+
+#### 引入druid-starter
+
+```xml
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.17</version>
+        </dependency>
+```
+
+#### 分析自动配置
+
+- 扩展配置项 **spring.datasource.druid**
+- DruidSpringAopConfiguration.**class**,   监控SpringBean的；配置项：**spring.datasource.druid.aop-patterns**
+- DruidStatViewServletConfiguration.**class**, 监控页的配置：**spring.datasource.druid.stat-view-servlet；默认开启**
+-  DruidWebStatFilterConfiguration.**class**, web监控配置；**spring.datasource.druid.web-stat-filter；默认开启**
+- DruidFilterConfiguration.**class**}) 所有Druid自己filter的配置
+
+```java
+    private static final String FILTER_STAT_PREFIX = "spring.datasource.druid.filter.stat";
+    private static final String FILTER_CONFIG_PREFIX = "spring.datasource.druid.filter.config";
+    private static final String FILTER_ENCODING_PREFIX = "spring.datasource.druid.filter.encoding";
+    private static final String FILTER_SLF4J_PREFIX = "spring.datasource.druid.filter.slf4j";
+    private static final String FILTER_LOG4J_PREFIX = "spring.datasource.druid.filter.log4j";
+    private static final String FILTER_LOG4J2_PREFIX = "spring.datasource.druid.filter.log4j2";
+    private static final String FILTER_COMMONS_LOG_PREFIX = "spring.datasource.druid.filter.commons-log";
+    private static final String FILTER_WALL_PREFIX = "spring.datasource.druid.filter.wall";
+```
+
+#### 配置示例
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/maven
+    username: root
+    password: hsp
+    driver-class-name: com.mysql.jdbc.Driver
+
+    druid:
+      filters: stat,wall               #底层开启功能，stat（sql监控），wall（防火墙）
+
+      filter: 
+        stat:                          #对上面filters里面的stat的详细配置
+          slow-sql-millis: 1000
+          logSlowSql: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+
+      aop-patterns: com.frx01.admin.*  #监控SpringBean
+      stat-view-servlet:               #配置监控页功能
+        enabled: true
+        login-username: admin
+        login-password: 123456
+        reset-enable: false
+
+      web-stat-filter:                 # 监控web
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+```
+
+SpringBoot配置示例
+
+https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter
+
+配置项列表[https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8](https://github.com/alibaba/druid/wiki/DruidDataSource配置属性列表)
 
