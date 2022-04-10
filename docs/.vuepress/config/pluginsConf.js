@@ -24,8 +24,9 @@ module.exports = [
   ],
   ['ribbon'],//漂亮丝带
   ['cursor-effects'],//点击效果
-  [['dynamic-title'],//动态标题
-    'social-share',
+  ['dynamic-title'],//动态标题
+  ['fulltext-search'],//全文搜索
+  ['social-share',
     {
       networks: ['qq', 'email'],
       email: '1812903531@qq.com',

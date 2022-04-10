@@ -55,8 +55,12 @@ module.exports = {
             }
         },
         editLinks: true,
-        editLinkText: '帮助我改善此页面'
+        editLinkText: '帮助我改善此页面',
+        footer: {
+            createYear: 2021, // 博客创建年份
+            copyrightInfo:
+              'xustudyxu', // 博客版权信息，支持a标签或换行标签</br>
+          },
     }
-
 
 }

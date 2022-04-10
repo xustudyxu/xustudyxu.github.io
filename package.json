@@ -42,6 +42,7 @@
     "vuepress-plugin-dehydrate": "^1.1.5",
     "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-flexsearch": "^0.3.0",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-git-log": "^1.0.1",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-plausible-analytics": "^0.2.1",
