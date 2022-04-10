@@ -56,6 +56,21 @@ module.exports = {
         },
         editLinks: true,
         editLinkText: '帮助我改善此页面',
+        social: {
+            // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
+            icons: [
+              {
+                iconClass: 'icon-youjian',
+                title: '发邮件',
+                link: 'mailto:1812903531@qq.com',
+              },
+              {
+                iconClass: 'icon-github',
+                title: 'GitHub',
+                link: 'https://github.com/xustudyxu',
+              },
+            ],
+          },
         footer: {
             createYear: 2021, // 博客创建年份
             copyrightInfo:
