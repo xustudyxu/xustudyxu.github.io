@@ -1025,6 +1025,36 @@
     "@actions/github" "5.0.0"
     "@actions/io" "1.1.1"
 
+"@moefy-canvas/core@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/@moefy-canvas/core/-/core-0.3.0.tgz#09ad70e51b20729441b381ab1ac9ccdb31002ae5"
+  integrity sha512-ZWE78QcK4fU3badHXLPQLcORU23b4SQtJFWtHHoXIl8qSxNVmLUUCmGnJ85Rg52/uAMbedZNi/kIIF4fu8I4Pg==
+
+"@moefy-canvas/theme-popper@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/@moefy-canvas/theme-popper/-/theme-popper-0.3.0.tgz#49ea9b935703f2cadf5a758bcf5f0f6efdfa3650"
+  integrity sha512-p3KGs/RqCO47oD9mvn3HdTPcVhoyGUOqVyT/vXNBDXLEA/t14RW0a4lhjY6iKNisM23BVQNwjIxZBZrdkBnAUQ==
+  dependencies:
+    "@moefy-canvas/core" "^0.3.0"
+    "@moefy-canvas/utils" "^0.3.0"
+    ts-debounce "^4.0.0"
+
+"@moefy-canvas/theme-ribbon@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/@moefy-canvas/theme-ribbon/-/theme-ribbon-0.3.0.tgz#bce94bc6e77ac84edbaee5aafb025be30bab6b30"
+  integrity sha512-1+TC7Or9cxdXdh7jYtgv9DsIYdUE5pEWNfJ0zRpa7+dL4cfFVHkDChrsUQewc1Qkyjc71YmKRtwZZFhQMdVqww==
+  dependencies:
+    "@moefy-canvas/core" "^0.3.0"
+    "@moefy-canvas/utils" "^0.3.0"
+    ts-debounce "^4.0.0"
+
+"@moefy-canvas/utils@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/@moefy-canvas/utils/-/utils-0.3.0.tgz#882836c028164953d4c6d284754d8242159b1495"
+  integrity sha512-dsdYvQKZg16yd+cvFDtL4zu8lPDJbHYcVBxMR4/MY+N/hSsMF8PMH04cE4szYstoZHrlLBZcB2cZEoxGas5PKw==
+  dependencies:
+    "@moefy-canvas/core" "^0.3.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.nlark.com/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8835,6 +8865,11 @@ transliteration@^2.1.2:
   dependencies:
     yargs "^16.1.0"
 
+ts-debounce@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/ts-debounce/-/ts-debounce-4.0.0.tgz#33440ef64fab53793c3d546a8ca6ae539ec15841"
+  integrity sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==
+
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.nlark.com/tty-browserify/download/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -9293,12 +9328,24 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-cursor-effects@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-cursor-effects/-/vuepress-plugin-cursor-effects-1.1.2.tgz#9df2a08106b58d06f6d41b99b5ba600f332586fe"
+  integrity sha512-xzVn55AhSFEL3rXtS3nm6r+ICAc/XktgTIFaYft9DrY5/3nDrwsPsYbKXcAsXbHgkpLRekuuE6LXMPnraSJOBQ==
+  dependencies:
+    "@moefy-canvas/theme-popper" "^0.3.0"
+
 vuepress-plugin-dehydrate@^1.1.5:
   version "1.1.5"
   resolved "https://registry.npmmirror.com/vuepress-plugin-dehydrate/-/vuepress-plugin-dehydrate-1.1.5.tgz#c29f08b85f337d3bc7c0ba09fe58cd9ed2f6e6c1"
   integrity sha512-9F2x1vLCK4poPUMkLupD4HsgWdbZ68Escvma+DE1Dk6aAJdH5FGwmfOMxj4sMCBwz7S4s6bTMna+QQgD3+bzBA==
   dependencies:
     "@vuepress/shared-utils" "^1.2.0"
+
+vuepress-plugin-dynamic-title@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-dynamic-title/-/vuepress-plugin-dynamic-title-1.0.0.tgz#867e7a8b821ad35ccfaaafc2358bc129817d422f"
+  integrity sha512-CN1wtkPNG3shGzEFgqOa2dzojSle7SeAaf+Cw77Xmkv8jvB3wO5r2zXkIHTjiclQY1c5q5lE8h2A9vQaLdor2Q==
 
 vuepress-plugin-flexsearch@^0.3.0:
   version "0.3.0"
@@ -9353,6 +9400,13 @@ vuepress-plugin-qrcode@^1.0.7:
   integrity sha1-M1fuK76fbWAe36uBwujySyZsEhU=
   dependencies:
     qrcode.vue "^1.7.0"
+
+vuepress-plugin-ribbon@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-ribbon/-/vuepress-plugin-ribbon-1.1.2.tgz#075fa2aa4ec93a4a4fd62208996f39f408e10756"
+  integrity sha512-4G9VH415QxxJKZVu/ZKGDbjFutjWQzs+mmGPszWesZXlgZHgBFeAqfFnmfOJfFBdsGqzwED48e0/hBFxAvouAQ==
+  dependencies:
+    "@moefy-canvas/theme-ribbon" "^0.3.0"
 
 vuepress-plugin-right-anchor@^0.5.5:
   version "0.5.5"
