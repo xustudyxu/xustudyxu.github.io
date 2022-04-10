@@ -1,8 +1,18 @@
-# Spring5 框架<badge text="v5.2.6" />
+---
+title: Spring5 框架
+date: 2021-12-20 18:44:20
+permalink: /pages/462a90/
+categories:
+  - studynotes
+  - Spring5
+tags:
+  - 
+---
+# Spring5 框架
 
 [学习视频地址](https://www.bilibili.com/video/BV1Vf4y127N5?from=search&seid=10332266168544277867&spm_id_from=333.337.0.0)
 
-## Spring5 框架概述
+## Spring5 框架概述<badge text="Spring5(v5.2.6)" />
 
 1. Spring是**轻量级的开源的JavaEE框架**。
 2. Spring可以解决企业应用开发的复杂性。

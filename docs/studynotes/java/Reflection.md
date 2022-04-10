@@ -1,3 +1,13 @@
+---
+title: Java 反射
+date: 2021-12-20 18:44:12
+permalink: /pages/630cd1/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 反射
 
 ## 一个需求引出反射

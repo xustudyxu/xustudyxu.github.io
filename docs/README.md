@@ -11,7 +11,7 @@ features:
 - title: 积累
   details: “故不积跬步，无以至千里；不积小流，无以成江海”。
 
-footer: Copyright © 2021-present xustudyxu
+footer: Theme by Vdoing|Copyright © 2021-present xustudyxu
 ---
 
 ## 给我留言

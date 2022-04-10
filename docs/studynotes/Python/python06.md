@@ -1,3 +1,13 @@
+---
+title: Python 列表
+date: 2021-12-20 18:44:19
+permalink: /pages/0c3637/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 列表
 
 ## 为什么需要列表

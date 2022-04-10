@@ -1,3 +1,13 @@
+---
+title: Java 数组、排序和查找
+date: 2022-03-23 17:40:10
+permalink: /pages/88c216/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 数组、排序和查找
 
 ## 为什么需要数组

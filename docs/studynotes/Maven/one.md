@@ -1,3 +1,13 @@
+---
+title: Maven
+date: 2021-12-20 18:44:18
+permalink: /pages/45eca1/
+categories:
+  - studynotes
+  - Maven
+tags:
+  - 
+---
 # Maven
 
 [学习视频地址](https://www.bilibili.com/video/BV1Ah411S7ZE?from=search&seid=14759276795870625829&spm_id_from=333.337.0.0)

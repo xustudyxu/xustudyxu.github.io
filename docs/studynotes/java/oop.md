@@ -1,3 +1,13 @@
+---
+title: Java 面向对象
+date: 2021-12-25 17:31:42
+permalink: /pages/6f7849/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 面向对象
 
 ## 类与对象

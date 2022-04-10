@@ -1,3 +1,13 @@
+---
+title: SpringBoot2 常用注解
+date: 2022-04-03 20:23:02
+permalink: /pages/8de32c/
+categories:
+  - studynotes
+  - SpringBoot2
+tags:
+  - 
+---
 #  SpringBoot2 常用注解
 
 [[toc]]

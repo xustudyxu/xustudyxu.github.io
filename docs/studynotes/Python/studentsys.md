@@ -1,3 +1,13 @@
+---
+title: 学生信息管理系统
+date: 2021-12-20 18:44:19
+permalink: /pages/960407/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # 学生信息管理系统
 
 ## 需求分析

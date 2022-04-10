@@ -1,3 +1,13 @@
+---
+title: HttpServletRequest对象
+date: 2022-01-12 21:02:22
+permalink: /pages/2d4cf3/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # HttpServletRequest对象
 
 HttpServletRequest 对象：主要作用是用来接收客户端发送过来的请求信息，例如：请求的参数，发

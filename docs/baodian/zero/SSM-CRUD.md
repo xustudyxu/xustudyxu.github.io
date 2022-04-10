@@ -1,3 +1,13 @@
+---
+title: SSM-CRUD
+date: 2022-03-06 17:22:37
+permalink: /pages/98f56c/
+categories:
+  - baodian
+  - zero
+tags:
+  - 
+---
 # SSM-CRUD
 
 [学习视频地址](https://www.bilibili.com/video/BV17W411g7zP?p=4&spm_id_from=pageDriver)

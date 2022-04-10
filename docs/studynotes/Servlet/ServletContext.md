@@ -1,3 +1,13 @@
+---
+title: ServletContext对象
+date: 2022-01-14 15:26:14
+permalink: /pages/69ffc7/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # ServletContext对象
 
 每一个 web 应用都有且仅有一个ServletContext 对象，又称 Application 对象，从名称中可知，该对

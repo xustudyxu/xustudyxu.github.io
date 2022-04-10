@@ -1,3 +1,13 @@
+---
+title: 搭建Hadoop集群
+date: 2022-03-13 01:46:27
+permalink: /pages/600247/
+categories:
+  - studynotes
+  - Hadoop
+tags:
+  - 
+---
 # 搭建Hadoop集群
 
 [[toc]]

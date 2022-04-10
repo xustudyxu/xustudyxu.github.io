@@ -1,3 +1,13 @@
+---
+title: Python 元组和集合
+date: 2021-12-20 18:44:19
+permalink: /pages/c2949b/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 元组和集合
 
 ## 什么是元组

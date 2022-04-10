@@ -1,3 +1,13 @@
+---
+title: IDEA 集成 GitHub
+date: 2022-01-29 16:46:33
+permalink: /pages/03bcc4/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # IDEA 集成 GitHub
 
 ## 设置 GitHub 账号

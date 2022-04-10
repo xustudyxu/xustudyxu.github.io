@@ -1,3 +1,13 @@
+---
+title: Python 面向对象
+date: 2021-12-20 18:44:19
+permalink: /pages/dc61e6/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 模块与包
 
 ## 什么叫模块

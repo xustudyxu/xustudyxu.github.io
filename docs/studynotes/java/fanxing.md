@@ -1,3 +1,13 @@
+---
+title: Java 泛型
+date: 2021-12-20 18:44:12
+permalink: /pages/c4ffc2/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 泛型
 
 ## 泛型的理解和好处

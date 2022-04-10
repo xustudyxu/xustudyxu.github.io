@@ -22,24 +22,24 @@ module.exports = [
       'ga': 'G-896N66VNVW' // UA-00000000-0
     }
   ],
-  [
-    'vuepress-plugin-right-anchor',
-    {
-      showDepth: 4,
-      ignore: [
-        '/',
-        '/api/'
-        // more...
-      ],
-      expand: {
-        trigger: 'click',
-        clickModeDefaultOpen: true
-      },
-      customClass: 'your-customClass',
-      disableGlobalUI: false,
-    }
+//   [
+//     'vuepress-plugin-right-anchor',
+//     {
+//       showDepth: 4,
+//       ignore: [
+//         '/',
+//         '/api/'
+//         // more...
+//       ],
+//       expand: {
+//         trigger: 'click',
+//         clickModeDefaultOpen: true
+//       },
+//       customClass: 'your-customClass',
+//       disableGlobalUI: false,
+//     }
   
-],//右侧导航
+// ],//右侧导航
   [
     'social-share',
     {

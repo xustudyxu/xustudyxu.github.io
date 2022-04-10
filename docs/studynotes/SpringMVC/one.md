@@ -1,8 +1,18 @@
-# SpringMVC简介<badge text="v5.3.1" />
+---
+title: SpringMVC简介
+date: 2021-12-20 18:44:20
+permalink: /pages/2e990c/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
+# SpringMVC简介
 
 [学习视频地址](https://www.bilibili.com/video/BV1Ry4y1574R?from=search&seid=13810950434984257553&spm_id_from=333.337.0.0)
 
-## 什么是MVC
+## 什么是MVC<badge text="SpringMVC(v5.3.1)" />
 
 MVC是一种软件架构的思想，将软件按照模型、视图、控制器来划分
 

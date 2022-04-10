@@ -19,7 +19,8 @@ module.exports = [
         items: [
           { text: 'Spring5', link: '/studynotes/Spring5/one/' },
           { text: 'SpringMVC', link: '/studynotes/SpringMVC/one/' },
-          { text: 'Mybatis', link: '/studynotes/Mybatis/index_/' },
+          { text: 'MyBatis', link: '/studynotes/MyBatis/index_/' },
+          { text: 'MyBatis-Plus', link: '/studynotes/MyBatis/Plus_index_/' },
           { text: 'SpringBoot2', link: '/studynotes/SpringBoot2/index_/' }
         ]
       }

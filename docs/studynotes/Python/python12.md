@@ -1,3 +1,13 @@
+---
+title: Python 面向对象
+date: 2021-12-20 18:44:19
+permalink: /pages/117f6e/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 面向对象
 
 ## 编程思想

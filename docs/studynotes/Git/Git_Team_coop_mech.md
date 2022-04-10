@@ -1,3 +1,13 @@
+---
+title: Git 团队协作机制
+date: 2022-01-28 17:43:28
+permalink: /pages/4c7b56/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # Git 团队协作机制
 
 ## 团队内协作机制

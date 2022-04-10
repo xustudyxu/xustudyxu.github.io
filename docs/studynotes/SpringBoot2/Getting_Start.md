@@ -1,3 +1,13 @@
+---
+title: SpringBoot2 快速入门
+date: 2022-03-11 15:13:54
+permalink: /pages/9ce58f/
+categories:
+  - studynotes
+  - SpringBoot2
+tags:
+  - 
+---
 # SpringBoot2 快速入门
 
 [[toc]]

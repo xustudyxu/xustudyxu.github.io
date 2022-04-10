@@ -1,3 +1,13 @@
+---
+title: Java 集合
+date: 2021-12-20 18:44:12
+permalink: /pages/a55052/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 集合
 
 ## 集合的理解和好处

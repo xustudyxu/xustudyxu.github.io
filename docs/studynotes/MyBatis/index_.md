@@ -1,8 +1,18 @@
-# MyBatis<badge text="v3.4.1" />
+---
+title: MyBatis
+date: 2022-02-03 18:18:02
+permalink: /pages/0e424f/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
+# MyBatis
 
 [学习视频地址](https://www.bilibili.com/video/BV1mW411M737?from=search&seid=11694251287569762189&spm_id_from=333.337.0.0)
 
-## MyBatis 简介
+## MyBatis 简介<badge text="MyBatis(v3.4.1)" />
 
 + MyBatis 是支持定制化 SQL、存储过程以及高级映射的优秀的**持久层框架**。
 

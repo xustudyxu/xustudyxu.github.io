@@ -1,3 +1,13 @@
+---
+title: IDEA 集成Git
+date: 2022-01-29 15:15:38
+permalink: /pages/062fb4/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # IDEA 集成Git
 
 ## 配置 Git 忽略文件

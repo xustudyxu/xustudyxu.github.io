@@ -1,3 +1,13 @@
+---
+title: Java 异常-Exception
+date: 2021-12-20 18:44:12
+permalink: /pages/c48a60/
+categories:
+  - studynotes
+  - java
+tags:
+  - 
+---
 # Java 异常-Exception
 
 ## 看个实际的问题和一段代码

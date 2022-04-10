@@ -1,3 +1,13 @@
+---
+title: Python 基础篇(二)
+date: 2021-12-20 18:44:19
+permalink: /pages/d1e311/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 基础篇(二)
 
 ## 二进制与字符编码

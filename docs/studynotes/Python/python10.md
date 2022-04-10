@@ -1,3 +1,13 @@
+---
+title: Python 函数与变量作用域
+date: 2021-12-20 18:44:19
+permalink: /pages/37511a/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 函数与变量作用域
 
 ## 函数的创建和调用

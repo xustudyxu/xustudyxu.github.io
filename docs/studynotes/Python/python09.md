@@ -1,3 +1,13 @@
+---
+title: Python 字符串
+date: 2021-12-20 18:44:19
+permalink: /pages/0c0743/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 字符串
 
 ## 字符串的驻留机制

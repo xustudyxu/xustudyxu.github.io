@@ -1,3 +1,13 @@
+---
+title: 配置文件
+date: 2022-03-22 18:33:23
+permalink: /pages/4225cc/
+categories:
+  - studynotes
+  - SpringBoot2
+tags:
+  - 
+---
 # 配置文件
 
 [[toc]]

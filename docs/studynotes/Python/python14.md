@@ -1,3 +1,13 @@
+---
+title: Python 文件
+date: 2021-12-20 18:44:19
+permalink: /pages/fc4de7/
+categories:
+  - studynotes
+  - Python
+tags:
+  - 
+---
 # Python 文件
 
 ## 编码格式的介绍

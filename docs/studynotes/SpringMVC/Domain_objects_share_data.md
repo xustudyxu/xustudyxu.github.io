@@ -1,3 +1,13 @@
+---
+title: 域对象共享数据
+date: 2022-01-18 17:59:31
+permalink: /pages/128a00/
+categories:
+  - studynotes
+  - SpringMVC
+tags:
+  - 
+---
 # 域对象共享数据
 
 [[toc]]

@@ -15,6 +15,7 @@ module.exports = {
         lineNumbers: true,
         extractHeaders: [ 'h2', 'h3', 'h4' ]
       },
+    theme:'vdoing',
     themeConfig: {
         nav: require("./nav.js"),
         sidebar: require("./sidebar.js"),

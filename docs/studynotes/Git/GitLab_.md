@@ -1,3 +1,13 @@
+---
+title: 自建代码托管平台-GitLab
+date: 2022-01-30 21:20:57
+permalink: /pages/68b3e1/
+categories:
+  - studynotes
+  - Git
+tags:
+  - 
+---
 # 自建代码托管平台-GitLab
 
 ## GitLab 简介

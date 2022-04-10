@@ -1,3 +1,13 @@
+---
+title: XML 配置
+date: 2022-02-05 14:26:57
+permalink: /pages/ba216f/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # XML 配置
 
 [[toc]]

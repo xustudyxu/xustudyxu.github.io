@@ -1,3 +1,13 @@
+---
+title: IDEA的使用
+date: 2022-01-10 20:56:51
+permalink: /pages/d755d3/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # IDEA的使用
 
 ## IDEA的简介

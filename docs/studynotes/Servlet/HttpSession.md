@@ -1,3 +1,13 @@
+---
+title: HttpSession对象
+date: 2022-01-14 14:49:09
+permalink: /pages/4dd5dd/
+categories:
+  - studynotes
+  - Servlet
+tags:
+  - 
+---
 # HttpSession对象
 
 **HttpSession对象**是 javax.servlet.http.HttpSession 的实例，该接口并不像 HttpServletRequest 或HttpServletResponse 还存在一个父接口，该接口只是一个纯粹的接口。这因为 session 本身就属于

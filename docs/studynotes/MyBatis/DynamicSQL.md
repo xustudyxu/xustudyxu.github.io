@@ -1,3 +1,13 @@
+---
+title: 动态SQL
+date: 2022-02-14 15:12:48
+permalink: /pages/72d6fc/
+categories:
+  - studynotes
+  - MyBatis
+tags:
+  - 
+---
 # 动态SQL
 
 [[toc]]
