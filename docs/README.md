@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/00.png
+heroImage: /img/09.png
 actionText: 快速上手 →
 actionLink: /studynotes/java/one_.md
 features:

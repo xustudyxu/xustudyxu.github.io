@@ -74,16 +74,16 @@ module.exports = {
         {
           iconClass: 'icon-weixin',
           title: '微信',
-          link: 'https://raw.githubusercontent.com/xustudyxu/xustudyxu.github.io/master/docs/.vuepress/public/img/wx.png',
+          link: './img/wx.png',
         },
       ],
     },
     author: {
-      name: '冯荣旭', // 必需
+      name: 'xu', // 必需
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://raw.githubusercontent.com/xustudyxu/xustudyxu.github.io/master/docs/.vuepress/public/img/01.png',
+      avatar: './img/01.png',
       name: 'xustudyxu',
       slogan: '一起学习编程!',
     },
