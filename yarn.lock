@@ -1570,15 +1570,7 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@1.9.7", "@vuepress/plugin-active-header-links@^1.2.0":
-  version "1.9.7"
-  resolved "https://registry.npmmirror.com/@vuepress/plugin-active-header-links/download/@vuepress/plugin-active-header-links-1.9.7.tgz#11b3b148d50ebd0a9a9d9e97aa34d81ae04e7307"
-  integrity sha512-G1M8zuV9Og3z8WBiKkWrofG44NEXsHttc1MYreDXfeWh/NLjr9q1GPCEXtiCjrjnHZHB3cSQTKnTqAHDq35PGA==
-  dependencies:
-    "@vuepress/types" "1.9.7"
-    lodash.debounce "^4.0.8"
-
-"@vuepress/plugin-active-header-links@^1.9.7":
+"@vuepress/plugin-active-header-links@1.9.7", "@vuepress/plugin-active-header-links@^1.2.0", "@vuepress/plugin-active-header-links@^1.9.7":
   version "1.9.7"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.9.7.tgz#11b3b148d50ebd0a9a9d9e97aa34d81ae04e7307"
   integrity sha512-G1M8zuV9Og3z8WBiKkWrofG44NEXsHttc1MYreDXfeWh/NLjr9q1GPCEXtiCjrjnHZHB3cSQTKnTqAHDq35PGA==
@@ -2534,6 +2526,11 @@ bundle-require@2.1.8:
   version "2.1.8"
   resolved "https://registry.npmmirror.com/bundle-require/download/bundle-require-2.1.8.tgz#28f6de9d4468a6b7b76fb5c9bf52e70f5091245d"
   integrity sha512-oOEg3A0hy/YzvNWNowtKD0pmhZKseOFweCbgyMqTIih4gRY1nJWsvrOCT27L9NbIyL5jMjTFrAUpGxxpW68Puw==
+
+busuanzi.pure.js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/busuanzi.pure.js/-/busuanzi.pure.js-1.0.3.tgz#a03784db9e5b2c42a059b16551d2511933a46f5c"
+  integrity sha512-tPULdyx+8NNb9geZYDpktKmHAYx9f2LEOBaHyWCaM7iPEMIa/43KgYAUluuU7YG9UFSOFpj4dO7Nj2Vlu3V9Rg==
 
 bytes@3.0.0:
   version "3.0.0"

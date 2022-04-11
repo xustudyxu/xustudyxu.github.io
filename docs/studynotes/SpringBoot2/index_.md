@@ -8,7 +8,7 @@ categories:
 tags:
   - 
 ---
-# Spring Boot2
+# SpringBoot2
 
 [学习视频地址](https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=10378994471653424568&spm_id_from=333.337.0.0)
 
@@ -16,7 +16,7 @@ tags:
 
 <img src="https://img.shields.io/badge/b%E7%AB%99-%E9%9B%B7%E7%A5%9E-green">
 
-## 学习要求<badge text="v2.3.4" />
+## 学习要求<badge text="(SpringBoot)v2.3.4" />
 
 + 熟悉Spring基础
 + 熟悉Maven使用
