@@ -14,8 +14,9 @@ tags:
 ## 关于学习
 
 + 学习环境
-  + 在校大三学生，大数据专业，但是想做Java后端开发。
+  + 我是一名在校大三学生，大数据专业，但是想做Java后端开发。
   + 学校比较差一些，但是我能坚持下去学习。
+    +  我要做到我认为我能做到的最好。
 + 目标
   + ”脱贫，脱贫，脱贫“。
   + 让我和我的家人都过上更好的生活。努力！奋斗！
@@ -27,7 +28,7 @@ tags:
 
 + 正在做或已经做完
   + ...
-  + [更新清单](https://xustudyxu.github.io/archives/)
+  + [更新清单](../../@pages/archivesPage.md)
   + MyBatis-Plus
 + 后来
   + 练习基于SpringBoot项目
@@ -37,7 +38,7 @@ tags:
 
 ### 博客
 
-::: cardList
+::: cardList 2
 ```yaml
 - name: Vuepress
   desc: Vue 驱动的静态站点生成器
@@ -56,7 +57,7 @@ tags:
 
 ### 帮助手册
 
-::: cardList
+::: cardList 2
 
 ```yaml
 - name: JavaSE8参考手册
@@ -66,7 +67,7 @@ tags:
   bgColor: '#CBEAFA' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#6854A1' # 可选，默认var(--textColor)
 - name: mysql5.7参考手册
-  desc: 🚀一款简洁高效的VuePress 知识管理&博客主题
+  desc: Including MySQL NDB Cluster 7.5 and NDB Cluster 7.6
   avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160912%2F811373b9aacf444587d4712c57eeb5f7_th.jpg&refer=http%3A%2F%2Fimg.mp.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652245256&t=bca65b41607b3445c3d0c26aa9499a2f
   link: https://dev.mysql.com/doc/refman/5.7/en/
   bgColor: '#CBEAFA'
@@ -89,11 +90,11 @@ tags:
 
 ### 在线编辑
 
-::: cardList
+::: cardList 2
 
 ```yaml
 - name: 图片压缩
-  desc: 
+  desc:  方便
   avatar: https://tinypng.com/images/pro/panda-pro.png
   link: https://tinypng.com/
   bgColor: '#CBEAFA'
@@ -110,7 +111,7 @@ tags:
 
 ### 在线服务
 
-::: cardList
+::: cardList 2
 
 ```yaml
 - name: 腾讯云
@@ -118,13 +119,13 @@ tags:
   avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fjz.3xiao.com%2Fstatic%2Fupload%2Fimage%2F20211002%2F1633146460403734.jpg&refer=http%3A%2F%2Fjz.3xiao.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652246073&t=da0fc6ed33488743c973cc75464bf82e
   link: https://cloud.tencent.com/
   bgColor: '#CBEAFA'
-  textColor: '#fff'
+  textColor: '#6854A1'
 - name: 阿里云
   desc: 丰富、安全、稳定的产品及服务
   avatar: https://img.alicdn.com/tfs/TB13DzOjXP7gK0jSZFjXXc5aXXa-212-48.png
   link: https://www.aliyun.com/
   bgColor: '#CBEAFA'
-  textColor: '#fff'
+  textColor: '#6854A1'
 ```
 
 :::

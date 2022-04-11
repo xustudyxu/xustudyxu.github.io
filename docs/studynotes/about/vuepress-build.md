@@ -89,7 +89,7 @@ Hexo 一直驱动着 Vue 的文档 —— 事实上，在把我们的主站从 H
 
 你可以参考这两篇官方文档：
 
-::: cardList
+::: cardList 2
 
 ```yaml
 - name: Vuepress
@@ -108,3 +108,4 @@ Hexo 一直驱动着 Vue 的文档 —— 事实上，在把我们的主站从 H
 
 :::
 
++ 参考:https://vuepress.vuejs.org/zh/
