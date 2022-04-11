@@ -6,7 +6,7 @@ module.exports = [
       'ga': 'G-896N66VNVW' // UA-00000000-0
     }
   ],
-  // ['ribbon'],//漂亮丝带
+  ['ribbon'],//漂亮丝带
   ['cursor-effects'],//点击效果
   ['dynamic-title'],//动态标题
   ['fulltext-search'],//全文搜索
