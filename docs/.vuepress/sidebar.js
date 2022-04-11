@@ -19,4 +19,5 @@ module.exports = {
      '/baodian/LeetCode/':require('../baodian/LeetCode/sidebar'),
      '/baodian/zero/':require('../baodian/zero/sidebar'),
      '/baodian/high/':require('../baodian/high/sidebar'),
+     '/studynotes/about/':require('../studynotes/about/sidebar'),
 }	
