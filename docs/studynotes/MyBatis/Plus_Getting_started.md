@@ -238,7 +238,7 @@ mybatis-plus:
 
 ### 结果
 
-```
+```java
 ...
 ==>  Preparing: SELECT id,name,age,email FROM user
 ==> Parameters: 
