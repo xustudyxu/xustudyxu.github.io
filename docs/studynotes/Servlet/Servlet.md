@@ -1,14 +1,14 @@
 ---
-title: Servlet
+title: Servlet 概论
 date: 2022-01-11 20:40:22
 permalink: /pages/8bcdb7/
 categories:
   - studynotes
   - Servlet
 tags:
-  - 
+  - Servlet
 ---
-# Servlet
+# Servlet 概论
 
 Servlet 是 Server 与 Applet 的缩写，是服务端小程序的意思。使用 Java 语言编写的服务器端程序，
 可以生成动态的 WEB 页，Servlet 主要运行在服务器端，并由服务器调用执行， 是一种按照 Servlet 标

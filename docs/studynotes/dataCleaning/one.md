@@ -6,7 +6,7 @@ categories:
   - studynotes
   - dataCleaning
 tags:
-  - 
+  - 数据分析
 ---
 # 数据分析介绍
 

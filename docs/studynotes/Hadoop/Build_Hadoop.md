@@ -6,7 +6,7 @@ categories:
   - studynotes
   - Hadoop
 tags:
-  - 
+  - Hadoop
 ---
 # 搭建Hadoop集群
 

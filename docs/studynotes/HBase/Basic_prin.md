@@ -6,7 +6,7 @@ categories:
   - studynotes
   - HBase
 tags:
-  - 
+  - HBase
 ---
 # HBase基本原理
 

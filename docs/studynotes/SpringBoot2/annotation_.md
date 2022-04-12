@@ -6,7 +6,7 @@ categories:
   - studynotes
   - SpringBoot2
 tags:
-  - 
+  - SpringBoot2
 ---
 #  SpringBoot2 常用注解
 

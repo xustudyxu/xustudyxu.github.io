@@ -6,7 +6,7 @@ categories:
   - studynotes
   - Git
 tags:
-  - 
+  - Git
 ---
 # Git 团队协作机制
 

@@ -6,7 +6,7 @@ categories:
   - studynotes
   - java
 tags:
-  - 
+  - java
 ---
 # Java JDBC和数据库连接池
 

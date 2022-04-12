@@ -6,7 +6,7 @@ categories:
   - studynotes
   - SpringMVC
 tags:
-  - 
+  - SpringMVC
 ---
 # SpringMVC 获取请求参数
 

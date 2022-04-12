@@ -6,7 +6,7 @@ categories:
   - studynotes
   - MySQL
 tags:
-  - 
+  - MySQL
 ---
 # MySQL
 

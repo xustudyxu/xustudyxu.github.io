@@ -6,7 +6,7 @@ categories:
   - studynotes
   - NoSQL
 tags:
-  - 
+  - NoSQL
 ---
 # NoSQL数据库理论基础 
 

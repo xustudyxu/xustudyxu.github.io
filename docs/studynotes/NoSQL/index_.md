@@ -6,7 +6,7 @@ categories:
   - studynotes
   - NoSQL
 tags:
-  - 
+  - NoSQL
 ---
 # 非关系型数据库
 

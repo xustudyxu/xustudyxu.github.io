@@ -6,7 +6,7 @@ categories:
   - studynotes
   - Python
 tags:
-  - 
+  - Python
 ---
 # 学生信息管理系统
 

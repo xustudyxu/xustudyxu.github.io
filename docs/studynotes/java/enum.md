@@ -6,7 +6,7 @@ categories:
   - studynotes
   - java
 tags:
-  - 
+  - java
 ---
 # Java 枚举和注解
 

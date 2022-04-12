@@ -6,7 +6,7 @@ categories:
   - studynotes
   - Python
 tags:
-  - 
+  - Python
 ---
 # Python 函数与变量作用域
 

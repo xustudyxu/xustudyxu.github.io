@@ -6,7 +6,7 @@ categories:
   - studynotes
   - SpringMVC
 tags:
-  - 
+  - SpringMVC
 ---
 # SpringMVC的视图
 

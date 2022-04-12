@@ -6,7 +6,7 @@ categories:
   - studynotes
   - SpringMVC
 tags:
-  - 
+  - SpringMVC
 ---
 # 注解配置SpringMVC
 

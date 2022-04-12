@@ -6,7 +6,7 @@ categories:
   - studynotes
   - Python
 tags:
-  - 
+  - Python
 ---
 # Python 元组和集合
 

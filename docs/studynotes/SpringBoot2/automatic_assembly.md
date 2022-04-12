@@ -6,7 +6,7 @@ categories:
   - studynotes
   - SpringBoot2
 tags:
-  - 
+  - SpringBoot2
 ---
 # 了解自动装配原理
 
