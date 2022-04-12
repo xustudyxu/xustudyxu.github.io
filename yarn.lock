@@ -1025,6 +1025,13 @@
     "@actions/github" "5.0.0"
     "@actions/io" "1.1.1"
 
+"@moefe/vue-aplayer@^2.0.0-beta.5":
+  version "2.0.0-beta.5"
+  resolved "https://registry.npmmirror.com/@moefe/vue-aplayer/-/vue-aplayer-2.0.0-beta.5.tgz#f6bbd1802562e8e30ef9106192008a90bed2a354"
+  integrity sha512-ytzp4GStzjftuh7H1rIS/ziqwV1FO67iTLSkDxgN0J2bqlO+rBgDDr83Y+pZKBIgRUc30uu/UZHqmE4QiBHHeg==
+  dependencies:
+    vue "^2.5.17"
+
 "@moefy-canvas/core@^0.3.0":
   version "0.3.0"
   resolved "https://registry.npmmirror.com/@moefy-canvas/core/-/core-0.3.0.tgz#09ad70e51b20729441b381ab1ac9ccdb31002ae5"
@@ -9295,7 +9302,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.nlark.com/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^2.6.10:
+vue@^2.5.17, vue@^2.6.10:
   version "2.6.14"
   resolved "https://registry.npmmirror.com/vue/download/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
@@ -9405,6 +9412,13 @@ vuepress-plugin-meilisearch@^0.12.1:
   integrity sha512-ivXmYtTWStLMfXwn1qMN8HEbKiUP55tEj4mir/ZubQ+jRZNnSHNEAE8Ce0Xs0SpqCwxcoZCuGTsLYCyJw1vdXA==
   dependencies:
     docs-searchbar.js "^2.1.1"
+
+vuepress-plugin-meting@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-meting/-/vuepress-plugin-meting-0.3.1.tgz#6318b608f6dc89b61308922c8cd2c02e42f92da2"
+  integrity sha512-VrY0gHV93oHH9ePSHxZk/TqieOapmnEKBbS3K39rDMv5/AWGp03GoGi39elZX/bPFcG3aWgQO28suC5nO7VdKw==
+  dependencies:
+    "@moefe/vue-aplayer" "^2.0.0-beta.5"
 
 vuepress-plugin-permalink-pinyin@^1.0.0:
   version "1.0.0"

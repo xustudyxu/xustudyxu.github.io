@@ -6,6 +6,12 @@ module.exports = [
       'ga': 'G-896N66VNVW' // UA-00000000-0
     }
   ],
+  [
+    'meting',
+    {
+       auto: 'https://music.163.com/#/playlist?id=7342774859'
+    },
+ ],//音乐播放器
   ['ribbon'],//漂亮丝带
   ['cursor-effects'],//点击效果
   ['dynamic-title'],//动态标题

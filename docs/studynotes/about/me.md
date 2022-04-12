@@ -80,7 +80,7 @@ tags:
   textColor: '#6854A1'
 - name: MyBatis官方手册
   desc: MyBatis 是一款优秀的持久层框架
-  avatar: https://mybatis.org/images/mybatis-logo.png
+  avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F5954965-a4c6debe556f5296.jpg%3FimageMogr2%2Fauto-orient%2Fstrip%7CimageView2%2F1%2Fw%2F300%2Fh%2F240&refer=http%3A%2F%2Fupload-images.jianshu.io&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652335521&t=d278df97e04ffbc14d1bbad73d141afa
   link: https://mybatis.org/mybatis-3/zh/index.html
   bgColor: '#CBEAFA'
   textColor: '#6854A1'
@@ -122,7 +122,7 @@ tags:
   textColor: '#6854A1'
 - name: 阿里云
   desc: 丰富、安全、稳定的产品及服务
-  avatar: https://img.alicdn.com/tfs/TB13DzOjXP7gK0jSZFjXXc5aXXa-212-48.png
+  avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Farticle-fd.zol-img.com.cn%2Ft_s640x2000%2Fg6%2FM00%2F0C%2F08%2FChMkKmB0BzeIEjOmAABZn7Z5Z28AANESgPQgwYAAFm3602.jpg&refer=http%3A%2F%2Farticle-fd.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652334376&t=3a1e7077ee6f5a308a0ad3e99a3d412d	
   link: https://www.aliyun.com/
   bgColor: '#CBEAFA'
   textColor: '#6854A1'
