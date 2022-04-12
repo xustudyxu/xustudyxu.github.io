@@ -19,6 +19,7 @@ module.exports = [
       collapsable: false,
       children:[
       '/studynotes/MyBatis/Plus_index_',
+      '/studynotes/MyBatis/Plus_Getting_started',
   
         ]
     }

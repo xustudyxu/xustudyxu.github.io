@@ -4,6 +4,7 @@ date: 2022-04-11 12:36:12
 permalink: /pages/9013e4/
 categories:
   - studynotes
+  - about
 tags:
   - 
 ---

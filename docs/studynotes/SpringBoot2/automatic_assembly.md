@@ -986,7 +986,7 @@ SpringBoot默认会在底层配好所有的组件。但是如果用户自己配�
 
 ![1647867572425](./images/03/05.png)
 
-**@Data**注解:set和get方法
+**@Data**注解:包括下面所有方法除了有参构造方法
 
 **@ToString**注解:tostring方法
 

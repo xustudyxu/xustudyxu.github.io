@@ -1,14 +1,14 @@
 ---
-title: MyBatis-Plus简介
+title: MyBatis-Plus 简介
 date: 2022-04-10 20:59:39
 permalink: /pages/e0594a/
 categories:
   - studynotes
-  - MyBatis
+  - MyBatis-Plus
 tags:
   - 
 ---
-# MyBatis-Plus简介
+# MyBatis-Plus 简介
 
 [学习视频地址](https://www.bilibili.com/video/BV12R4y157Be?p=1)
 
@@ -49,3 +49,16 @@ tags:
 ## 框架结构
 
 ![1649594177202](./Plus-images/01/02.png)
+
+## 代码及文档地址
+
+官方地址: http://mp.baomidou.com
+
+代码发布地址:
+
+Github: https://github.com/baomidou/mybatis-plus
+
+Gitee: https://gitee.com/baomidou/mybatis-plus
+
+文档发布地址: https://baomidou.com/pages/24112f
+
