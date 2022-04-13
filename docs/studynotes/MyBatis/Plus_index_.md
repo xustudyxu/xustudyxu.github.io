@@ -6,7 +6,7 @@ categories:
   - studynotes
   - MyBatis-Plus
 tags:
-  - MyBatis
+  - MyBatis-Plus
 ---
 # MyBatis-Plus 简介
 
