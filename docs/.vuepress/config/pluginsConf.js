@@ -13,7 +13,6 @@ module.exports = [
   ["plausible-analytics"],// plausible.io 添加分析
   ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
   // ['@vuepress/back-to-top'],//返回页首
-  ['vuepress-plugin-smooth-scroll'],//平滑插件
   ['vuepress-plugin-baidu-autopush'],
   ['@vuepress/last-updated', {
     transformer: (timestamp, lang) => {
