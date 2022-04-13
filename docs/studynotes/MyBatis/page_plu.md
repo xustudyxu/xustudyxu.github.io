@@ -4,9 +4,9 @@ date: 2022-02-28 21:46:34
 permalink: /pages/ca7f77/
 categories:
   - studynotes
-  - MyBatis
+  - MyBatis-Plus
 tags:
-  - MyBatis
+  - MyBatis-Plus
 ---
 # 分页插件
 
