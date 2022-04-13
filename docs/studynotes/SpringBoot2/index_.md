@@ -1,5 +1,5 @@
 ---
-title: Spring Boot2
+title: Spring Boot2 简介
 date: 2022-03-11 14:51:46
 permalink: /pages/00bb5d/
 categories:
@@ -8,7 +8,7 @@ categories:
 tags:
   - SpringBoot2
 ---
-# SpringBoot2
+# SpringBoot2 简介
 
 [学习视频地址](https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=10378994471653424568&spm_id_from=333.337.0.0)
 

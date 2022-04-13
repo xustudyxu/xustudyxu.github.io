@@ -1,5 +1,5 @@
 ---
-title: Spring5 框架
+title: Spring5 简介
 date: 2021-12-20 18:44:20
 permalink: /pages/462a90/
 categories:
@@ -8,7 +8,7 @@ categories:
 tags:
   - Spring5
 ---
-# Spring5 框架
+# Spring5 简介
 
 [学习视频地址](https://www.bilibili.com/video/BV1Vf4y127N5?from=search&seid=10332266168544277867&spm_id_from=333.337.0.0)
 
