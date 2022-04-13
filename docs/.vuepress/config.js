@@ -73,7 +73,7 @@ module.exports = {
         {
           iconClass: 'icon-weixin',
           title: '微信',
-          link: './img/wx.png',
+          link: 'https://frxcat.fun/img/wx.png',
         },
       ],
     },
