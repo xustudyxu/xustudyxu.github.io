@@ -12,7 +12,50 @@ tags:
 
 [[toc]]
 
-## 介绍
+## 配置环境
+
+> 1. git(版本控制)
+>    - [下载地址](https://git-scm.com/)(最新版就OK，下载速度较慢一些，可以问我要安装包)
+> 2. node(核心)
+>    - [下载地址](https://nodejs.org/en/)(版本需要大于等于8，最新版本就行)
+> 3. yarn(npm包管理的替代)
+>    + [下载地址](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+> 4. vscode(编辑器)
+>    + [下载地址](https://code.visualstudio.com/)
+
+#### 验证
+
+![1649959367803](./images/build/01.png)
+
+> 环境安装成功了
+
+## 快速上手
+
+直接克隆我的项目，修改就可以了
+
+```shell
+git clone git@github.com:xustudyxu/xustudyxu.github.io.git
+```
+
++ 本地启动命令,在项目中右键git bash
+
+```shell
+vuepress dev docs
+```
+
++ 构建，生成静态文件
+
+```shell
+vuepress build docs
+```
+
+> 还有很多，如果你想自己去学习每一步细节，比如git命令的使用，如何如何配置，如何实现自动化部署，安装好用的插件，使用好用的主题等等等
+
++ [git命令使用](../Git/Git_command)
+
++ [参考b站视频](https://www.bilibili.com/video/BV1vb411m7NY?spm_id_from=333.337.search-card.all.click)
+
+## Vuepress介绍
 
 VuePress 由两部分组成：第一部分是一个[极简静态网站生成器](https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/core)，它包含由 Vue 驱动的[主题系统](https://vuepress.vuejs.org/zh/theme/)和[插件 API](https://vuepress.vuejs.org/zh/plugin/)，另一个部分是为书写技术文档而优化的[默认主题](https://vuepress.vuejs.org/zh/theme/default-theme-config.html)，它的诞生初衷是为了支持 Vue 及其子项目的文档需求。
 
