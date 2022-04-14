@@ -10,8 +10,6 @@ tags:
 ---
 # SSM-CRUD
 
-[学习视频地址](https://www.bilibili.com/video/BV17W411g7zP?p=4&spm_id_from=pageDriver)
-
 [[toc]]
 
 ## 功能点
