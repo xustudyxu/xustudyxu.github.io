@@ -16,7 +16,9 @@ features:
 
 <Vssue title="Vssue Demo20"/>
 
-
+<ClientOnly>
+  <WebInfo/>
+</ClientOnly>
 
 
 

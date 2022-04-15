@@ -21,6 +21,7 @@ module.exports = [
       '/studynotes/MyBatis/Plus_index_',
       '/studynotes/MyBatis/Plus_Getting_started',
       '/studynotes/MyBatis/Plus_base_crud',
+      '/studynotes/MyBatis/Plus_annotation',
         ]
     }
   

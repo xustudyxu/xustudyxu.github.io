@@ -4,9 +4,9 @@ date: 2022-03-06 17:22:37
 permalink: /pages/98f56c/
 categories:
   - baodian
-  - zero
+  - SSM整合
 tags:
-  - 
+  - SSM整合
 ---
 # SSM-CRUD
 

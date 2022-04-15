@@ -1,5 +1,5 @@
 ---
-title: 基本CRUD
+title: MyBatis-Plus 基本CRUD
 date: 2022-04-15 01:28:14
 permalink: /pages/bcc63c/
 categories:
@@ -8,7 +8,7 @@ categories:
 tags:
   - MyBatis-Plus
 ---
-# 基本CRUD
+# MyBatis-Plus 基本CRUD
 
 [[toc]]
 
