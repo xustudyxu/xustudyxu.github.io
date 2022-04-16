@@ -51,11 +51,11 @@ tags:
 
 + FileSystemXmlApplicationContext
 
-  >  	configLocation:要写上配置文件在系统盘(某个盘)里的路径
+  `configLocation:要写上配置文件在系统盘(某个盘)里的路径`
 
 + ClassPathXmlApplicationContext
 
-  >  	configLocation:要写上类路径
+  `configLocation:要写上类路径`
 
 # IOC操作Bean管理
 

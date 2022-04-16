@@ -25,10 +25,12 @@ div[class*="language-"]
       color #9e9e9e
 
 // 加粗字体颜色
-strong
-  // color 
-  color #11A8CD
 
+a {
+    font-weight: 500;
+    color: #3eaf7c;
+    text-decoration: none;
+}
 .suggestions
   max-height 800 px
   overflow-y scroll
@@ -36,9 +38,7 @@ strong
   color #64acff
   font-weight bold
 
-.footer {
-  color: #fff;
-}
+
 
 // 解决目录页和标题冲突问题，新版已经解决，这里是旧版的j（2022-4-16）
 // .theme-vdoing-content:not(.custom) > h1,
@@ -86,7 +86,9 @@ strong
       .highlight-lines .highlighted
         &:before
           background-color rgba(0,0,0,.66)
+    padding-bottom 0.5rem
   div[class*="language-"].line-numbers-mode::after  // 代码块的行数和内容分割线颜色
+    padding-bottom 0.5rem
     border-right 1px solid rgba(0, 0, 0, 0.66)
    // 下面代码块深色和浅色通用
    // `` 包裹的背景色
@@ -99,7 +101,7 @@ strong
     background-color #fdefee
     border-left .25rem solid #e95f59
     padding 10px 16px
-    opacity .9
+    opacity 1
   // 选中代码块的颜色
   pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
   code[class*="language-"]::selection, code[class*="language-"] ::selection {
