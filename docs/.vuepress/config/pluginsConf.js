@@ -19,7 +19,7 @@ module.exports = [
 //         globalUIComponents: ["GlobalTip"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
 //     }
 // ],
-  ['ribbon'],//漂亮丝带
+  // ['ribbon'],//漂亮丝带
   // ['dynamic-title'],//动态标题
   ['fulltext-search'],//全文搜索
   ["plausible-analytics"],// plausible.io 添加分析
@@ -36,8 +36,8 @@ module.exports = [
   ],//最后更新插件
   ['one-click-copy', {
     copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-    copyMessage: '复制成功!', // default is 'Copied successfully!'
-    toolTipMessage: '复制失败!', // default is ''Copy to clipboard'
+    copyMessage: '复制成功', // default is 'Copied successfully!'
+    toolTipMessage: '复制失败', // default is ''Copy to clipboard'
     duration: 300, // prompt message display time
   }],//复制代码插件
   ['img-lazy'],//图片缓存加载
