@@ -9,7 +9,7 @@ features:
 - title: 脚踏实地
   details: 付出就会有收获。
 - title: 积累
-  details: “故不积跬步，无以至千里；不积小流，无以成江海”。
+  details: 积跬步以至千里。
 ---
 
 ## 给我留言

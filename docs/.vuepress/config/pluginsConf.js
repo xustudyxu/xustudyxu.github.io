@@ -6,9 +6,15 @@ module.exports = [
       'ga': 'G-896N66VNVW' // UA-00000000-0
     }
   ],
+  //  全局提示
+//   [
+//     {
+//         name: 'custom-plugins',
+//         globalUIComponents: ["GlobalTip"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+//     }
+// ],
   ['ribbon'],//漂亮丝带
-  //['cursor-effects'],//点击效果
-  ['dynamic-title'],//动态标题
+  // ['dynamic-title'],//动态标题
   ['fulltext-search'],//全文搜索
   ["plausible-analytics"],// plausible.io 添加分析
   ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
