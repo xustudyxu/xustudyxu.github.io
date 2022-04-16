@@ -3,7 +3,6 @@ title: Java 泛型
 date: 2021-12-20 18:44:12
 permalink: /pages/c4ffc2/
 categories:
-  - studynotes
   - java
 tags:
   - java

@@ -3,7 +3,6 @@ title: SpringMVC 获取请求参数
 date: 2022-01-17 19:55:43
 permalink: /pages/e7b000/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

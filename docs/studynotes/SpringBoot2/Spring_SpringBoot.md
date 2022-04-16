@@ -3,7 +3,6 @@ title: Spring与SpringBoot
 date: 2022-03-11 15:12:52
 permalink: /pages/0d4af0/
 categories:
-  - studynotes
   - SpringBoot2
 tags:
   - SpringBoot2

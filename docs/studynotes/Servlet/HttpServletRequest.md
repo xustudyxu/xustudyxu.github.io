@@ -3,7 +3,6 @@ title: HttpServletRequest对象
 date: 2022-01-12 21:02:22
 permalink: /pages/2d4cf3/
 categories:
-  - studynotes
   - Servlet
 tags:
   - Servlet

@@ -3,7 +3,6 @@ title: MyBatis-Plus 常用注解
 date: 2022-04-15 19:10:22
 permalink: /pages/acce37/
 categories:
-  - studynotes
   - MyBatis-Plus
 tags:
   - MyBatis-Plus

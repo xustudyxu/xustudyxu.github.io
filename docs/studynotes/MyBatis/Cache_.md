@@ -3,7 +3,6 @@ title: 缓存
 date: 2022-02-17 16:17:21
 permalink: /pages/c47d25/
 categories:
-  - studynotes
   - MyBatis
 tags:
   - MyBatis

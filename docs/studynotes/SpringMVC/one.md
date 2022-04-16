@@ -3,7 +3,6 @@ title: SpringMVC 简介
 date: 2021-12-20 18:44:20
 permalink: /pages/2e990c/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

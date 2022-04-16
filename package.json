@@ -46,6 +46,7 @@
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-git-log": "^1.0.1",
     "vuepress-plugin-meting": "^0.3.1",
+    "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-plausible-analytics": "^0.2.1",
     "vuepress-plugin-qrcode": "^1.0.7",

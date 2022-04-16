@@ -3,7 +3,6 @@ title: Spring5 简介
 date: 2021-12-20 18:44:20
 permalink: /pages/462a90/
 categories:
-  - studynotes
   - Spring5
 tags:
   - Spring5

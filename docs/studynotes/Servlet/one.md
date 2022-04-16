@@ -3,7 +3,6 @@ title: Servlet
 date: 2022-01-10 20:30:03
 permalink: /pages/1574fe/
 categories:
-  - studynotes
   - Servlet
 tags:
   - Servlet

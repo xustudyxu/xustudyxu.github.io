@@ -9420,6 +9420,11 @@ vuepress-plugin-meting@^0.3.1:
   dependencies:
     "@moefe/vue-aplayer" "^2.0.0-beta.5"
 
+vuepress-plugin-one-click-copy@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-one-click-copy/-/vuepress-plugin-one-click-copy-1.0.6.tgz#71563b1851013705fab6d48b0bda6028dddbf0e7"
+  integrity sha512-apFCcsBwk9IEDm5HwD6dwor30rl8gr0VjPkmrQlFSR2KD7OjK3ZUwioeEvbrcAiZBi35V6YgndLAHksJXRfpnQ==
+
 vuepress-plugin-permalink-pinyin@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/vuepress-plugin-permalink-pinyin/-/vuepress-plugin-permalink-pinyin-1.0.0.tgz#5961878d59beec6124bce8336326892c21af4dfe"

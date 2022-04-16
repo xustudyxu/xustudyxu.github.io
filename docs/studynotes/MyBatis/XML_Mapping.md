@@ -3,7 +3,6 @@ title: XML 映射文件
 date: 2022-02-07 15:57:07
 permalink: /pages/c86777/
 categories:
-  - studynotes
   - MyBatis
 tags:
   - MyBatis

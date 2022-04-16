@@ -3,7 +3,6 @@ title: Maven 基础
 date: 2021-12-20 18:44:18
 permalink: /pages/f5fbac/
 categories:
-  - studynotes
   - Maven
 tags:
   - Maven

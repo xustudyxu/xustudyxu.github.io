@@ -3,7 +3,6 @@ title: Web开发
 date: 2022-03-23 16:49:12
 permalink: /pages/6e9ab8/
 categories:
-  - studynotes
   - SpringBoot2
 tags:
   - SpringBoot2

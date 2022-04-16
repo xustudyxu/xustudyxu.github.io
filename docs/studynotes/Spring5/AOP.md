@@ -3,7 +3,6 @@ title: Spring核心之面向切面编程AOP
 date: 2021-12-29 19:15:51
 permalink: /pages/e914bb/
 categories:
-  - studynotes
   - Spring5
 tags:
   - Spring5

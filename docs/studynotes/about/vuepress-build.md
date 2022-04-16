@@ -3,8 +3,7 @@ title: 关于-文章搭建
 date: 2022-04-11 12:48:33
 permalink: /pages/e4861f/
 categories:
-  - studynotes
-  - about
+  - 关于
 tags:
   - 关于
 ---

@@ -3,7 +3,6 @@ title: ServletContext对象
 date: 2022-01-14 15:26:14
 permalink: /pages/69ffc7/
 categories:
-  - studynotes
   - Servlet
 tags:
   - Servlet

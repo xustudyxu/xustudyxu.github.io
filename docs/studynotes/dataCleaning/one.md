@@ -3,8 +3,7 @@ title: 数据分析介绍
 date: 2021-12-20 18:44:12
 permalink: /pages/e0bd06/
 categories:
-  - studynotes
-  - dataCleaning
+  - 数据分析
 tags:
   - 数据分析
 ---

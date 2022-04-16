@@ -3,7 +3,6 @@ title: Python 异常处理
 date: 2021-12-20 18:44:19
 permalink: /pages/050858/
 categories:
-  - studynotes
   - Python
 tags:
   - Python

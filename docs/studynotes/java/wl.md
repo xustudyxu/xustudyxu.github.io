@@ -3,7 +3,6 @@ title: Java 网络编程
 date: 2021-12-20 18:44:12
 permalink: /pages/c5fffc/
 categories:
-  - studynotes
   - java
 tags:
   - java

@@ -3,7 +3,6 @@ title: MyBatis的逆向工程
 date: 2022-02-25 22:13:52
 permalink: /pages/b147f3/
 categories:
-  - studynotes
   - MyBatis
 tags:
   - MyBatis

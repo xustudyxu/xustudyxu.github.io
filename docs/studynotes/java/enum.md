@@ -3,7 +3,6 @@ title: Java 枚举和注解
 date: 2021-12-20 18:44:12
 permalink: /pages/d8cd4d/
 categories:
-  - studynotes
   - java
 tags:
   - java

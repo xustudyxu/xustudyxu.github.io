@@ -3,7 +3,6 @@ title: 文件上传和下载
 date: 2022-01-22 16:38:35
 permalink: /pages/6376a9/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

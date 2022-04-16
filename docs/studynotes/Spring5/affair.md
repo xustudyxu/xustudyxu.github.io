@@ -3,7 +3,6 @@ title: Spring5 事务
 date: 2022-01-04 19:33:20
 permalink: /pages/1a5d78/
 categories:
-  - studynotes
   - Spring5
 tags:
   - Spring5

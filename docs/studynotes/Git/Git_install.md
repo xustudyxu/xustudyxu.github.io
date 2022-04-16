@@ -3,7 +3,6 @@ title: Git 安装
 date: 2022-01-26 13:51:59
 permalink: /pages/fecc39/
 categories:
-  - studynotes
   - Git
 tags:
   - Git

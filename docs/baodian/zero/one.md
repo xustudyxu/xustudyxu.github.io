@@ -1,14 +1,13 @@
 ---
-title: 基础项目
+title: 初级开发篇
 date: 2022-03-04 15:46:54
 permalink: /pages/39558d/
 categories:
-  - baodian
-  - zero
+  - 初级开发篇
 tags:
-  - 
+  - 初级开发篇
 ---
-# 基础项目
+# 初级开发篇
 
 纸上得来终觉浅，绝知此事要躬行。
 

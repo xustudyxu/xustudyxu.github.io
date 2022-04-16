@@ -3,7 +3,6 @@ title: MyBatis-Plus 简介
 date: 2022-04-10 20:59:39
 permalink: /pages/e0594a/
 categories:
-  - studynotes
   - MyBatis-Plus
 tags:
   - MyBatis-Plus

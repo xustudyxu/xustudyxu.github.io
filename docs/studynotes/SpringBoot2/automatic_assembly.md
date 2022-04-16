@@ -3,7 +3,6 @@ title: 了解自动装配原理
 date: 2022-03-16 18:13:40
 permalink: /pages/2f4dd2/
 categories:
-  - studynotes
   - SpringBoot2
 tags:
   - SpringBoot2

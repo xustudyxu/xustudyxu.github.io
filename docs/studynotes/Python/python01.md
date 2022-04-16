@@ -3,7 +3,6 @@ title: Python 基础篇(一)
 date: 2021-12-20 18:44:19
 permalink: /pages/b9268d/
 categories:
-  - studynotes
   - Python
 tags:
   - Python

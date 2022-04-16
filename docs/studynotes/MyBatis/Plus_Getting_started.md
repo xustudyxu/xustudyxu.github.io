@@ -3,7 +3,6 @@ title: MyBatis-Plus 入门案例
 date: 2022-04-12 15:54:54
 permalink: /pages/7e2604/
 categories:
-  - studynotes
   - MyBatis-Plus
 tags:
   - MyBatis-Plus

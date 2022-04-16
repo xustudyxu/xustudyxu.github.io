@@ -3,7 +3,6 @@ title: RequestMapping注解
 date: 2022-01-16 19:09:40
 permalink: /pages/b0f942/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

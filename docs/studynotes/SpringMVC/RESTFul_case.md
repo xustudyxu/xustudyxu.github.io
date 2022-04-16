@@ -3,7 +3,6 @@ title: RESTful案例
 date: 2022-01-21 19:35:41
 permalink: /pages/46d5d1/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

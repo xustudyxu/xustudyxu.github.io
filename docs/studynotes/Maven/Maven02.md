@@ -3,7 +3,6 @@ title: Maven 高级
 date: 2021-12-20 18:44:18
 permalink: /pages/61c56d/
 categories:
-  - studynotes
   - Maven
 tags:
   - Maven

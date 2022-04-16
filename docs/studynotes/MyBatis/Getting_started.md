@@ -3,7 +3,6 @@ title: MyBatis 入门案例
 date: 2022-02-04 15:47:02
 permalink: /pages/a7566d/
 categories:
-  - studynotes
   - MyBatis
 tags:
   - MyBatis

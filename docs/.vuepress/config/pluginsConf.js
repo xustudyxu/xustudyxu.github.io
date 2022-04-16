@@ -6,6 +6,12 @@ module.exports = [
       'ga': 'G-896N66VNVW' // UA-00000000-0
     }
   ],
+  [
+    {
+        name: 'custom-plugins',//代码块皮肤
+        globalUIComponents: ["BlockToggle"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+    }
+],
   //  全局提示
 //   [
 //     {
@@ -28,7 +34,12 @@ module.exports = [
     }
   }
   ],//最后更新插件
-  ['vuepress-plugin-code-copy', true],//复制代码插件
+  ['one-click-copy', {
+    copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
+    copyMessage: '复制成功!', // default is 'Copied successfully!'
+    toolTipMessage: '复制失败!', // default is ''Copy to clipboard'
+    duration: 300, // prompt message display time
+  }],//复制代码插件
   ['img-lazy'],//图片缓存加载
   ['@vuepress/active-header-links', {
     sidebarLinkSelector: '.sidebar-link',

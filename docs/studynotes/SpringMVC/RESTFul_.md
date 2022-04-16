@@ -3,7 +3,6 @@ title: RESTFul
 date: 2022-01-19 17:57:23
 permalink: /pages/52337a/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

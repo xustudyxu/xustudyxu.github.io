@@ -3,7 +3,6 @@ title: SpringMVC的视图
 date: 2022-01-19 14:48:57
 permalink: /pages/4da987/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

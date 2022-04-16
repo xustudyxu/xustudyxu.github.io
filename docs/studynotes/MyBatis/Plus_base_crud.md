@@ -3,7 +3,6 @@ title: MyBatis-Plus 基本CRUD
 date: 2022-04-15 01:28:14
 permalink: /pages/bcc63c/
 categories:
-  - studynotes
   - MyBatis-Plus
 tags:
   - MyBatis-Plus

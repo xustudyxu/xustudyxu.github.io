@@ -3,7 +3,6 @@ title: 注解配置SpringMVC
 date: 2022-01-24 14:57:15
 permalink: /pages/9a61b7/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

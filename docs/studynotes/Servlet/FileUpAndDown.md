@@ -3,7 +3,6 @@ title: 文件的上传和下载
 date: 2022-01-14 18:00:09
 permalink: /pages/dd4e59/
 categories:
-  - studynotes
   - Servlet
 tags:
   - Servlet

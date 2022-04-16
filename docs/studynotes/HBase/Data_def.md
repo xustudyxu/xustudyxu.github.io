@@ -3,7 +3,6 @@ title: HBase数据定义
 date: 2022-03-23 20:56:04
 permalink: /pages/c23c27/
 categories:
-  - studynotes
   - HBase
 tags:
   - HBase

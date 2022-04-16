@@ -3,7 +3,6 @@ title: HBase基本原理
 date: 2022-03-23 21:31:26
 permalink: /pages/e16a48/
 categories:
-  - studynotes
   - HBase
 tags:
   - HBase

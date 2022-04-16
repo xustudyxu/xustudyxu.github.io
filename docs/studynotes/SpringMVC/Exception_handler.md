@@ -3,7 +3,6 @@ title: 异常处理器
 date: 2022-01-24 11:11:07
 permalink: /pages/dd2d01/
 categories:
-  - studynotes
   - SpringMVC
 tags:
   - SpringMVC

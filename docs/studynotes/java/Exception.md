@@ -3,7 +3,6 @@ title: Java 异常-Exception
 date: 2021-12-20 18:44:12
 permalink: /pages/c48a60/
 categories:
-  - studynotes
   - java
 tags:
   - java

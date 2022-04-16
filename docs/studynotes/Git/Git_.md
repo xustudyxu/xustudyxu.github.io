@@ -3,7 +3,6 @@ title: Git 概述
 date: 2022-01-25 15:23:50
 permalink: /pages/34892c/
 categories:
-  - studynotes
   - Git
 tags:
   - Git

@@ -3,7 +3,6 @@ title: HBase数据操作
 date: 2022-03-23 21:17:09
 permalink: /pages/0ef396/
 categories:
-  - studynotes
   - HBase
 tags:
   - HBase

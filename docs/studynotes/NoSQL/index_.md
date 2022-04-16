@@ -3,7 +3,6 @@ title: 非关系型数据库
 date: 2022-03-11 18:35:18
 permalink: /pages/7ab056/
 categories:
-  - studynotes
   - NoSQL
 tags:
   - NoSQL

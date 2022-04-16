@@ -3,7 +3,6 @@ title: Spring5 入门案例
 date: 2021-12-20 18:44:20
 permalink: /pages/bd7bd6/
 categories:
-  - studynotes
   - Spring5
 tags:
   - Spring5

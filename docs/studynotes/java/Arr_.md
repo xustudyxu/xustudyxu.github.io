@@ -3,7 +3,6 @@ title: Java 数组、排序和查找
 date: 2021-12-20 18:44:12
 permalink: /pages/88c216/
 categories:
-  - studynotes
   - java
 tags:
   - java

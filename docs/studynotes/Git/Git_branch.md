@@ -3,7 +3,6 @@ title: Git 分支操作
 date: 2022-01-27 16:47:48
 permalink: /pages/8d7d1d/
 categories:
-  - studynotes
   - Git
 tags:
   - Git

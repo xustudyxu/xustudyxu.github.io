@@ -3,7 +3,6 @@ title: JavaSE知识体系
 date: 2021-12-20 18:44:12
 permalink: /pages/e05ef5/
 categories:
-  - studynotes
   - java
 tags:
   - java

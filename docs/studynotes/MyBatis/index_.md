@@ -3,7 +3,6 @@ title: MyBatis 简介
 date: 2022-02-03 18:18:02
 permalink: /pages/0e424f/
 categories:
-  - studynotes
   - MyBatis
 tags:
   - MyBatis

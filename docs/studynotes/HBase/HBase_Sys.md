@@ -3,7 +3,6 @@ title: HBase系统架构
 date: 2022-03-18 17:17:28
 permalink: /pages/e33def/
 categories:
-  - studynotes
   - HBase
 tags:
   - HBase

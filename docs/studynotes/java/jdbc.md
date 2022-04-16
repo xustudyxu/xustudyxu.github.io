@@ -3,7 +3,6 @@ title: Java JDBC和数据库连接池
 date: 2021-12-20 18:44:12
 permalink: /pages/27cdd8/
 categories:
-  - studynotes
   - java
 tags:
   - java

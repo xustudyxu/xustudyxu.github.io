@@ -3,7 +3,6 @@ title: Spring Boot2 简介
 date: 2022-03-11 14:51:46
 permalink: /pages/00bb5d/
 categories:
-  - studynotes
   - SpringBoot2
 tags:
   - SpringBoot2

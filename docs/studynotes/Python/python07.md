@@ -3,7 +3,6 @@ title: Python 字典
 date: 2021-12-20 18:44:19
 permalink: /pages/c424c4/
 categories:
-  - studynotes
   - Python
 tags:
   - Python

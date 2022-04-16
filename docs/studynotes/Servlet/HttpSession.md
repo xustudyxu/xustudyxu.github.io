@@ -3,7 +3,6 @@ title: HttpSession对象
 date: 2022-01-14 14:49:09
 permalink: /pages/4dd5dd/
 categories:
-  - studynotes
   - Servlet
 tags:
   - Servlet

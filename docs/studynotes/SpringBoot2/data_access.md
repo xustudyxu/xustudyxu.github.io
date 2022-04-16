@@ -3,7 +3,6 @@ title: 数据访问
 date: 2022-04-08 20:23:52
 permalink: /pages/3f7351/
 categories:
-  - studynotes
   - SpringBoot2
 tags:
   - SpringBoot2
