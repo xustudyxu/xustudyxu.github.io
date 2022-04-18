@@ -13,7 +13,7 @@ tags:
 
 ## wapper介绍
 
-![1650200702899](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1650200702899.png)
+![1650200702899](./Plus-images/05/01.png)
 
 + Wrapper ： 条件构造抽象类，最顶端父类
   + AbstractWrapper ： 用于查询条件封装，生成 sql 的 where 条件
