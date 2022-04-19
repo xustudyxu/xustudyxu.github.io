@@ -5,7 +5,7 @@ module.exports = [
     children:[
     '/studynotes/about/me',
     '/studynotes/about/vuepress-build',
-    '/@pages/archivesPage:scroll:'
+    '/@pages/archivesPage'
       ]
   }
   
