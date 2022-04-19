@@ -1,5 +1,5 @@
 ---
-title: Plus_Plugin
+title: MyBatis-Plus 插件
 date: 2022-04-19 16:38:36
 permalink: /pages/160497/
 categories:
