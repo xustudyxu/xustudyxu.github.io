@@ -70,7 +70,7 @@ Process finished with exit code 0
 > 查询用户信息，按照年龄的降序排序，若年龄相同，则按照Id升序排序
 
 ```java
-@Test
+	@Test
     public void test02(){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("age")
@@ -142,7 +142,7 @@ Process finished with exit code 0
 > 将（年龄大于20并且用户名中包含有a）或邮箱为null的用户信息修改
 
 ```java
-@Test
+	@Test
     public void test04(){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.gt("age",20)
@@ -214,7 +214,7 @@ Process finished with exit code 0
 > 查询用户信息的username，age和email字段
 
 ```java
-   @Test
+   	@Test
     public void test06(){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("user_name","age","email");

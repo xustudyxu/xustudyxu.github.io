@@ -23,6 +23,7 @@ module.exports = [
       '/studynotes/MyBatis/Plus_base_crud',
       '/studynotes/MyBatis/Plus_annotation',
       '/studynotes/MyBatis/Plus_Conditional_constructor',
+      '/studynotes/MyBatis/Plus_Plugin',
         ]
     }
   
