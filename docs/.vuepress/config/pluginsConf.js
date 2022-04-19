@@ -1,3 +1,10 @@
+const autometa_options = {
+  site: {
+    name   : 'frxcat',
+    twitter: 'frxcat',
+  },
+  canonical_base: 'https://frxcat.fun/',
+};
 module.exports = [
   [{ 'seo': { /* options */ }}],
   [
@@ -25,7 +32,12 @@ module.exports = [
   ["plausible-analytics"],// plausible.io 添加分析
   ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
   // ['@vuepress/back-to-top'],//返回页首
-  ['vuepress-plugin-baidu-autopush'],
+  ['vuepress-plugin-baidu-autopush'],//百度自动推送
+  [ 'autometa', autometa_options ],//自动元标记插件，有助于SEO
+  ['seo'],
+  [ 'sitemap',{
+    hostname: 'https://frxcat.fun/'
+  },],
   ['@vuepress/last-updated', {
     transformer: (timestamp, lang) => {
       const moment = require('moment');

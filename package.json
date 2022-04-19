@@ -37,6 +37,7 @@
     "@vuepress/plugin-pwa": "^1.9.5",
     "busuanzi.pure.js": "^1.0.3",
     "vuepress": "^1.9.7",
+    "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-clean-urls": "^1.1.2",
     "vuepress-plugin-cursor-effects": "^1.1.2",
