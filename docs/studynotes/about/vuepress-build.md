@@ -30,7 +30,12 @@ tags:
 
 ## 快速上手
 
-直接克隆我的项目，修改就可以了
+> 如果你想自己去学习每一步细节，比如git命令的使用，如何配置，如何实现自动化部署，安装好用的插件，使用好看的主题等等等
+
+- [git命令使用](../Git/Git_command/)
+- [参考b站视频](https://www.bilibili.com/video/BV1vb411m7NY?spm_id_from=333.337.search-card.all.click)
+
+如果你`已经学过git和vuepress的基本使用`，可以直接克隆我的项目，修改就可以了
 
 ```shell
 git clone git@github.com:xustudyxu/xustudyxu.github.io.git
@@ -48,12 +53,6 @@ vuepress dev docs
 ```shell
 vuepress build docs
 ```
-
-> 还有很多，如果你想自己去学习每一步细节，比如git命令的使用，如何配置，如何实现自动化部署，安装好用的插件，使用好看的主题等等等
-
-+ [git命令使用](../Git/Git_command/)
-
-+ [参考b站视频](https://www.bilibili.com/video/BV1vb411m7NY?spm_id_from=333.337.search-card.all.click)
 
 ## Vuepress介绍
 
