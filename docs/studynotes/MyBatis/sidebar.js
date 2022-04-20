@@ -27,6 +27,7 @@ module.exports = [
       '/studynotes/MyBatis/Plus_enum',
       '/studynotes/MyBatis/Plus_AutoMakecode',
       '/studynotes/MyBatis/Plus-MoreDataSource',
+      '/studynotes/MyBatis/Plus_MyBatisX',
         ]
     }
   
