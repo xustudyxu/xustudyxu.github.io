@@ -25,6 +25,7 @@ module.exports = [
       '/studynotes/MyBatis/Plus_Conditional_constructor',
       '/studynotes/MyBatis/Plus_Plugin',
       '/studynotes/MyBatis/Plus_enum',
+      '/studynotes/MyBatis/Plus_AutoMakecode',
         ]
     }
   
