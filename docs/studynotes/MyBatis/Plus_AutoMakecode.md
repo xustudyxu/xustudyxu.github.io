@@ -1,5 +1,5 @@
 ---
-title: MyBatis-Plus 码生成器
+title: MyBatis-Plus 代码生成器
 date: 2022-04-20 19:28:55
 permalink: /pages/b0e3b4/
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - MyBatis-Plus
 ---
-# MyBatis-Plus 码生成器
+# MyBatis-Plus 代码生成器
 
 [[toc]]
 
