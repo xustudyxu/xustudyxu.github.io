@@ -108,7 +108,7 @@ lsmod
 
 ```shell
 [root@frx01 ~]# echo $LANG
-zh_CN.UTF-8 #中文和
+zh_CN.UTF-8 #中文哈
 ```
 
 ```shell
@@ -257,5 +257,7 @@ virt-manager
 
 ![1650533255204](./images/02/08.png)
 
+## 参考资料
 
++ https://blog.csdn.net/m0_50019871/article/details/109581648?spm=1001.2014.3001.5502
 
