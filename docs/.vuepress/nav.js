@@ -39,9 +39,10 @@ module.exports = [{
         { text: '数据分析', link: '/pages/e0bd06/' }
       ]
     }, {
-      text: 'Hadoop',
+      text: '环境搭建',
       items: [
-        { text: 'Hadoop', link: '/pages/600247/' },
+        { text: 'Hadoop集群', link: '/pages/600247/' },
+        { text: 'KVM虚拟化技术', link: '/pages/cdeb68/' },
       ]
     },
 
