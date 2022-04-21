@@ -41,8 +41,8 @@ tags:
 git clone git@github.com:xustudyxu/xustudyxu.github.io.git
 ```
 
-+ 执行命令`yarn install`用于安装项目的所有依赖项。依赖关系从您的项目`package.json`文件中检索，并存储在`yarn.lock`文件中。
-+ 本地启动命令,在项目中右键git bash
++ 在项目中右键git bash,执行命令`yarn install`用于安装项目的所有依赖项。依赖关系从项目`package.json`文件中检索，并存储在`yarn.lock`文件中。
++ 本地启动命令
 
 ```shell
 vuepress dev docs
