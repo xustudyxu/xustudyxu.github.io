@@ -1,86 +1,93 @@
-module.exports = [
-  {
-    text: 'Java全栈',
-    items: [
-      {
-        text: 'Java基础',
-        items: [
-          { text: 'JavaSE', link: '/studynotes/Java/one_/' }
-        ]
-      }, {
-        text: 'JavaWeb',
-        items: [
-          { text: 'Servlet', link: '/studynotes/Servlet/one/' }
+module.exports = [{
+  text: '导航栏', link: '/pages/a3df94/'
 
-        ]
-      },
-      {
-        text: '主流框架',
-        items: [
-          { text: 'Spring5', link: '/studynotes/Spring5/one/' },
-          { text: 'SpringMVC', link: '/studynotes/SpringMVC/one/' },
-          { text: 'MyBatis', link: '/studynotes/MyBatis/index_/' },
-          { text: 'MyBatis-Plus', link: '/studynotes/MyBatis/Plus_index_/' },
-          { text: 'SpringBoot2', link: '/studynotes/SpringBoot2/index_/' }
-        ]
-      }
-    ]
-  }, {
-    text: '大数据',
-    items: [
-      {
-        text: 'Python',
-        items: [
-          { text: 'Python基础', link: '/studynotes/Python/python01/' },
-          { text: '数据分析', link: '/studynotes/dataCleaning/one/' }
-        ]
-      },{ text: 'Hadoop', 
-      items:[
-        {text: 'Hadoop', link: '/studynotes/Hadoop/Build_Hadoop/' },
+}
+  ,
+{
+  text: 'Java全栈',
+  items: [
+    {
+      text: 'Java基础',
+      items: [
+        { text: 'JavaSE', link: '/pages/e05ef5/' }
+      ]
+    }, {
+      text: 'JavaWeb',
+      items: [
+        { text: 'Servlet', link: '/pages/1574fe/' }
+
       ]
     },
-  
-    ]
-  },
-  {
-    text: '数据库',
-    items: [
-      { text: 'SQL 数据库', 
-        items:[
-          {text: 'MySQL', link: '/studynotes/MySQL/MySQL/' }
-        ]
-      },
-      { text: 'NoSQL 数据库', 
-      items:[
-        {text: 'NoSQL数据库概论', link: '/studynotes/NoSQL/index_/' },
-        {text: 'Redis', link: '/studynotes/Redis/one/' },
-        {text: 'HBase', link: '/studynotes/HBase/index_/' }
+    {
+      text: '主流框架',
+      items: [
+        { text: 'Spring5', link: '/pages/462a90/' },
+        { text: 'SpringMVC', link: '/pages/2e990c/' },
+        { text: 'MyBatis', link: '/pages/0e424f/' },
+        { text: 'MyBatis-Plus', link: '/pages/e0594a/' },
+        { text: 'SpringBoot2', link: '/pages/00bb5d/' }
       ]
     }
-    ]
-  },
+  ]
+}, {
+  text: '大数据',
+  items: [
+    {
+      text: 'Python',
+      items: [
+        { text: 'Python基础', link: '/pages/b9268d/' },
+        { text: '数据分析', link: '/pages/e0bd06/' }
+      ]
+    }, {
+      text: 'Hadoop',
+      items: [
+        { text: 'Hadoop', link: '/pages/600247/' },
+      ]
+    },
 
-  {
-    text: '项目管理|部署',
-    items: [
-      { text: 'Linux', link: '/studynotes/Linux/1/' },
-      { text: 'Maven', link: '/studynotes/Maven/one/' },
-      { text: 'Git', link: '/studynotes/Git/Git_/' },
-    ]
-  },
+  ]
+},
+{
+  text: '数据库',
+  items: [
+    {
+      text: 'SQL 数据库',
+      items: [
+        { text: 'MySQL', link: '/pages/e0de1d/' }
+      ]
+    },
+    {
+      text: 'NoSQL 数据库',
+      items: [
+        { text: 'NoSQL数据库概论', link: '/pages/7ab056/' },
+        { text: 'Redis', link: '/pages/23f172/' },
+        { text: 'HBase', link: '/pages/2aae92/' }
+      ]
+    }
+  ]
+},
 
-  {
-    text: '面试宝典',
-    items: [
-      { text: '力扣算法题', link: '/baodian/LeetCode/easy_/' },
-      { text: '初级开发篇', link: '/baodian/zero/one/' },
-      { text: '中高进阶篇', link: '/baodian/high/one/' },
-  
-    ]
-  },
+{
+  text: '项目管理|部署',
+  items: [
+    { text: 'Linux', link: '/pages/99e9dc/' },
+    { text: 'Maven', link: '/pages/45eca1/' },
+    { text: 'Git', link: '/pages/34892c/' },
+  ]
+},
 
-  {
-    text: '关于',link: '/studynotes/about/me/'
+{
+  text: '面试宝典',
+  items: [
+    { text: '力扣算法题', link: '/pages/40ee62/' },
+    { text: '初级开发篇', link: '/pages/39558d/' },
+    { text: '中高进阶篇', link: '/pages/41f848/' },
 
-  }
+  ]
+},
+
+{
+  text: '关于', link: '/pages/9013e4/'
+
+}
 ]
