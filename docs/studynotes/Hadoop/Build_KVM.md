@@ -68,11 +68,18 @@ gpgcheck=0
 yum -y install qemu-kvm libvirt libguestfs-tools virt-install virt-manager libvirt-python
 ```
 
-解释：qemu-kvm ： kvm 主程序， KVM虚拟化模块
+解释：
+
+qemu-kvm ： kvm 主程序， KVM虚拟化模块
+
 virt-manager： KVM图形化管理工具
+
 libvirt： 虚拟化服务
+
 libguestfs-tools : 虚拟机的系统管理工具
+
 virt-install ： 安装虚拟机的实用工具 。比如 virt-clone克隆工具就是这个包安装的
+
 libvirt-python ： python 调用libvirt 虚拟化服务的 api 接口库文件
 
 4. 开启并查看安装KVM后的服务
@@ -117,9 +124,9 @@ zh_CN.UTF-8 #中文哈
 
 ### KVM配置网络
 
-网桥介绍: 我们经常所说的 Bridge设备其实就是网桥设备，也就相当亍现在的二层交换机，用亍连接 同一网段内的所有机器，所以我们的目的就是将网络设备 eth0添加到 br0，此时 br0 就成为了所谓的交 换机设备，我们物理机的 eth0也是连接在上面的。
+网桥介绍: 我们经常所说的 Bridge设备其实就是网桥设备，也就相当于现在的二层交换机，用于连接 同一网段内的所有机器，所以我们的目的就是将网络设备 eth0添加到 br0，此时 br0 就成为了所谓的交 换机设备，我们物理机的 eth0也是连接在上面的。
 
-添加桥接设备 br0： 相当亍一个二层交换机
+添加桥接设备 br0： 相当于一个二层交换机
 
 1. 安装桥设备工具
 
@@ -149,7 +156,7 @@ ifdown-isdn      ifup-bnep        ifup-routes
 
 ::: danger
 
-网段是你自己的网段，我的是192.168.197.1，[查看自己的网段步骤](/pages/600247/#配置网络)
+网段使用你自己的网段，我的是192.168.197.1，[查看自己的网段步骤](/pages/600247/#配置网络)
 
 :::
 
@@ -158,10 +165,10 @@ TYPE="Bridge"
 BOOTPROTO="none"
 DEVICE="cloudbr0"     
 ONBOOT="yes"
-IPADDR="192.168.197.188"
+IPADDR="192.168.197.188"   #需要修改
 NETMASK="255.255.255.0"
-GATEWAY="192.168.197.2"
-DNS1="192.168.197.2"
+GATEWAY="192.168.197.2"    #需要修改
+DNS1="192.168.197.2"       #需要修改
 STP="yes"
 ```
 
