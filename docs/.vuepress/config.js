@@ -8,7 +8,7 @@ module.exports = {
   port: '7777',
   plugins: pluginsConf,
   head: [
-    ['link', { rel: 'icon', href: './img/02.png' }],
+    ['link', { rel: 'icon', href: '/img/02.png' }],
     ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
@@ -54,7 +54,7 @@ module.exports = {
     // // 默认是 false, 设置为 true 来启用
 
     //首页大图
-    bodyBgImg: './img/00.png',  // 你的图片路径(必须位于 public 下)，可以是 URL
+    bodyBgImg: '/img/00.png',  // 你的图片路径(必须位于 public 下)，可以是 URL
     bodyBgImgOpacity: 1, // body 背景图透明度，选值 0 ~ 1.0, 默认0.5
 
     serviceWorker: {
@@ -90,7 +90,7 @@ module.exports = {
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: './img/01.png',
+      avatar: '/img/01.png',
       name: 'xustudyxu',
       slogan: '一起学习编程!',
     },
