@@ -1,7 +1,7 @@
 ---
 title: MySQL
 date: 2021-12-20 18:44:18
-permalink: /pages/4a0255/
+permalink: /pages/e0de1d/
 categories:
   - MySQL
 tags:

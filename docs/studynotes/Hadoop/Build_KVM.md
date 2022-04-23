@@ -25,7 +25,7 @@ KVM有一个内核模块叫 kvm.ko，只用于管理虚拟 CPU 和内存。
 那 IO 的虚拟化，比如存储和网络设备则是由 Linux 内核与Qemu来实现。
 作为一个 Hypervisor，KVM 本身只关注虚拟机调度和内存管理这两个方面。IO 外设的任务交给 Linux 内核和 Qemu。
 
-KVM，是一个开源的系统虚拟化模块，自 Linux 2.6.20 之后集成在Linux的各个主要发行版本中。 它使用 Linux自身的调度器进行管理，所以相对亍Xen，其核心源码很少。KVM 目前已成为学术界的主 流 VMM(虚拟机监控器)之一。KVM的虚拟化需要硬件支持（如 Intel VT技术戒者 AMD V技术)。是基于硬件的完全虚拟化。而 Xen 早期则是基亍软件模拟的 Para-Virtualization。
+KVM，是一个开源的系统虚拟化模块，自 Linux 2.6.20 之后集成在Linux的各个主要发行版本中。 它使用 Linux自身的调度器进行管理，所以相对亍Xen，其核心源码很少。KVM 目前已成为学术界的主 流 VMM(虚拟机监控器)之一。KVM的虚拟化需要硬件支持（如 Intel VT技术戒者 AMD V技术)。是基于硬件的完全虚拟化。而 Xen 早期则是基于软件模拟的 Para-Virtualization。
 
 ### KVM实际操作
 
