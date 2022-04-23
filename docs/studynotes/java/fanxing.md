@@ -1,7 +1,7 @@
 ---
 title: Java 泛型
 date: 2021-12-20 18:44:12
-permalink: /pages/c4ffc2/
+permalink: /pages/6a0f85/
 categories:
   - java
 tags:
@@ -13,7 +13,7 @@ tags:
 
 ### 看一个需求
 
-![1626348153995](./images/fanxing/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/01.png)
 
 代码实现：
 
@@ -1009,9 +1009,7 @@ class Fish<T,R>{//泛型类
 
 ### 自定义泛型方法练习
 
-![1626403164395](./images/fanxing/02.png)
-
-
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/02.png)
 
 ```java
 package cmd.study.customgeneric;
@@ -1046,7 +1044,7 @@ class Dog{}
 
 ### 泛型的继承和通配符说明 
 
-![1626408401851](./images/fanxing/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/03.png)
 
 ### 应用案例
 
@@ -1138,7 +1136,7 @@ class C extends B{}
 
 ## 本章作业
 
-![1626410474707](./images/fanxing/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/04.png)
 
 代码实现：
 
@@ -1289,7 +1287,7 @@ public class Homework01 {
 
 ### 为什么需要 JUnit
 
-![1626410692288](./images/fanxing/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/05.png)
 
 代码演示：
 
@@ -1322,5 +1320,5 @@ public class Junit_ {
 
 ```
 
-![1626411202069](./images/fanxing/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/fanxing/06.png)
 

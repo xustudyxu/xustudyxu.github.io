@@ -13,39 +13,39 @@ tags:
 
 ### 网络通信
 
-![1627724726381](./images/wl/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/01.png)
 
 ### 网络
 
-![1627724783269](./images/wl/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/02.png)
 
 ### 地址
 
-![1627797703944](./images/wl/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/03.png)
 
 ### ipv4 地址分类
 
-![1628050513767](./images/wl/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/04.png)
 
 ### 域名
 
-![1628051621554](./images/wl/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/06.png)
 
-![1627797858956](./images/wl/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/05.png)
 
 ### 网络通信协议
 
-![1628050788365](./images/wl/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/07.png)
 
 + TCP/IP
 
 **TCP/IP (Transmission Control Protocol/Internet Protocol)的简写,中文译名为传输控制协议/因特网互联协议,又叫网络通讯协议,这个协议是lnternet最基本的协议、Internet国际互联网络的基础,简单地说，就是由网络层的IP协议和传输层的TCP协议组成的。**[示意图]
 
-![1627798867910](./images/wl/09.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/09.png)
 
 ### 网络通信协议的相关概念
 
-![1627798545510](./images/wl/08.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/08.png)
 
 ### TCP和UDP
 
@@ -57,7 +57,7 @@ tags:
 4. <font color=#0099ff size=3 face="黑体">在连接中可进行大数据量的传输</font>
 5. <font color=#0099ff size=3 face="黑体">传输完毕,需释放已建立的连接</font>,**效率低**
 
-![](./images/wl/01.gif)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/01.gif)
 
 + **UDP协议：用户数据协议**
 
@@ -72,7 +72,7 @@ tags:
 5. 举例:厕所通知:发短信
 
 
-![1627799953263](./images/wl/10.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/10.png)
 
 ## InetAddress 类
 
@@ -134,19 +134,19 @@ public class API_ {
 
 ### 基本介绍
 
-![1627873648690](./images/wl/11.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/11.png)
 
 + 示意图:
 
-![1627873681961](./images/wl/12.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/12.png)
 
 ## TCP 网络通信编程
 
 ### 基本介绍
 
-![1627880079646](./images/wl/13.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/13.png)
 
-![1627957181327](./images/wl/14.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/14.png)
 
 ### 应用案例 1(使用字节流)
 
@@ -643,29 +643,29 @@ public class TCPFileUploadClient {
 
 ### netstat 指令
 
-![1627984135635](./images/wl/15.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/15.png)
 
 ### TCP 网络通讯不为人知的秘密
 
-![1627989723542](./images/wl/16.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/16.png)
 
-![1627989742643](./images/wl/17.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/17.png)
 
 ## UDP 网络通信编程[了解]
 
 ### 基本介绍
 
-![1628040414819](./images/wl/18.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/18.png)
 
 ### 基本流程
 
-![1628040475752](./images/wl/19.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/19.png)
 
-![1628040533150](./images/wl/20.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/20.png)
 
 ### 应用案例
 
-![1628043633779](./images/wl/21.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/21.png)
 
 + 代码演示:
 
@@ -775,7 +775,7 @@ public class UDPSenderB {
 
 ## 本章作业
 
-![1628047403728](./images/wl/22.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/wl/22.png)
 
 + 代码演示：
 

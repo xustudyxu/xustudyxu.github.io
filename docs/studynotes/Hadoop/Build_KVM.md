@@ -35,7 +35,7 @@ KVM，是一个开源的系统虚拟化模块，自 Linux 2.6.20 之后集成在
 
 :::
 
-![1650517273718](./images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/01.png)
 
 1. 查看 CPU 是否支持硬件虚拟化技术
 
@@ -182,7 +182,7 @@ vim /etc/sysconfig/network-scripts/ifcfg-ens33
 
 把我们原来的静态IP配置删除，添加一行`BRIDGE=cloudbr0`
 
-![1650522970726](./images/02/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/02.png)
 
 保存退出
 
@@ -227,7 +227,7 @@ mkdir /opt/minmal-linux
 cd /opt/minmal-linux
 ```
 
-![1650523438764](./images/02/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/03.png)
 
 右键传输一下就OK
 
@@ -237,19 +237,19 @@ cd /opt/minmal-linux
 virt-manager
 ```
 
-![1650523522548](./images/02/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/04.png)
 
 前进
 
-![1650523614714](./images/02/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/05.png)
 
 前进，前进，前进
 
-![1650524588588](./images/02/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/06.png)
 
 完成
 
-![1650529648128](./images/02/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/07.png)
 
 继续，最小安装，取消启用KDUMP，主机名想改改，分区点击那个硬盘，完成
 
@@ -262,7 +262,7 @@ virt-manager
 
 ### 结果
 
-![1650533255204](./images/02/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/02/08.png)
 
 ## 参考资料
 

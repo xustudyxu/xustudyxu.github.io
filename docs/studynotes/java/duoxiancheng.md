@@ -1,7 +1,7 @@
 ---
 title: Java 多线程
 date: 2021-12-20 18:44:12
-permalink: /pages/45f6a2/
+permalink: /pages/005d24/
 categories:
   - java
 tags:
@@ -13,21 +13,21 @@ tags:
 
 ### 程序
 
-![1626426754137](./images/duoxiancheng/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/01.png)
 
 ### 进程
 
-![1626426820994](./images/duoxiancheng/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/02.png)
 
 ### 什么是线程
 
-![1626426926133](./images/duoxiancheng/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/03.png)
 
 ### 其他相关概念
 
-![1626426975558](./images/duoxiancheng/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/04.png)
 
-![1626427034043](./images/duoxiancheng/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/05.png)
 
 ## 线程的基本使用
 
@@ -40,7 +40,7 @@ tags:
 
 ### 线程应用案例 1-继承 Thread 类
 
-![1626427514654](./images/duoxiancheng/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/06.png)
 
 + 代码演示：
 
@@ -238,9 +238,9 @@ class T2 implements Runnable {
 
 ### 线程如何理解
 
-![1626428078148](./images/duoxiancheng/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/07.png)
 
-![1626428316349](./images/duoxiancheng/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/08.png)
 
 ## 继承 Thread vs 实现 Runnable 的区别
 
@@ -322,7 +322,7 @@ class SellTicket02 implements Runnable {
 
 ### 应用案列
 
-![1626428813375](./images/duoxiancheng/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/09.png)
 
 + 代码实现
 
@@ -369,15 +369,15 @@ class T extends Thread{
 
 ### 常用方法第一组
 
-![1626428971584](./images/duoxiancheng/10.png)
+![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/10.png)
 
 ### 注意事项和细节
 
-![1626429016980](./images/duoxiancheng/11.png)
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/11.png)
 
 ### 应用案例
 
-![1626429112688](./images/duoxiancheng/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/12.png)
 
 + 代码演示：
 
@@ -424,11 +424,11 @@ class T extends Thread{//自定义的线程类
 
 ### 方法第二组
 
-![1626429311759](./images/duoxiancheng/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/13.png)
 
 ### 应用案例
 
-![1626429394749](./images/duoxiancheng/14.png)
+![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/14.png)
 
 + 代码测试yield和join方法
 
@@ -469,7 +469,7 @@ class T2 extends Thread{
 
 ### 课堂练习
 
-![1626429510731](./images/duoxiancheng/15.png)
+![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/15.png)
 
 + 代码演示：
 
@@ -561,11 +561,11 @@ class MyDaemonThread extends Thread{
 
 ### JDK 中用 Thread.State 枚举表示了线程的几种状态
 
-![1626430113791](./images/duoxiancheng/16.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/16.png)
 
 ### 线程状态转换图
 
-![1626430414604](./images/duoxiancheng/17.png)
+![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/17.png)
 
 ### 写程序查看线程状态 
 
@@ -614,7 +614,7 @@ class T extends Thread {
 
 ### 先看一个问题
 
-![1626430583198](./images/duoxiancheng/18.png)
+![18](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/18.png)
 
 ## Synchronized
 
@@ -625,11 +625,11 @@ class T extends Thread {
 
 ### 同步具体方法
 
-![1626430804243](./images/duoxiancheng/19.png)
+![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/19.png)
 
 ## 析同步原理
 
-![1626430877035](./images/duoxiancheng/20.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/20.png)
 
 ## 互斥锁
 

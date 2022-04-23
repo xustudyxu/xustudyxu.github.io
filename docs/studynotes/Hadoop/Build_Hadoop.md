@@ -1,12 +1,22 @@
 ---
+title: Build_Hadoop
+date: 2022-03-13 01:46:27
+permalink: /pages/bd31bc/
+categories:
+  - studynotes
+  - Hadoop
+tags:
+  - 
+---
 title: 搭建Hadoop集群
 date: 2022-03-13 01:46:27
 permalink: /pages/600247/
 categories:
+
   - Hadoop
 tags:
   - Hadoop
----
+
 # 搭建Hadoop集群
 
 [[toc]]
@@ -30,17 +40,19 @@ tags:
   + DataNode主机名:slave2(从节点2)
   + DataNode主机名:slave3(从节点3)
 
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/11.png)
+
 ## 配置网络
 
 >  为了方便远程工具登录，我们需要指定IP地址
 
 1. 打开命令行cmd，输入**ipconfig**查看VMnet8的ip网段，每个人的可能都不一样，例如我的就是192.168.197.1
 
-![1647086855017](./images/01/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/07.png)
 
 2. 打开VMware，点击编辑，选择虚拟网络编辑器，查看VMnet8的网段和cmd命令行的网段是否一致，若一致，则可以继续。不一致，需要点击更改设置，还原默认设置。
 
-![1647087175017](./images/01/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/08.png)
 
 3. 安装虚拟机
 
@@ -55,7 +67,7 @@ vim /etc/sysconfig/network-scripts/ifcfg-ens33
 
 6. 输入i进入编辑模式。[vim用法](https://xustudyxu.github.io/VuepressBlog/studynotes/Linux/4/#_4-2-3-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F).,这里我们有五处需要修改:
 
-![1647305826635](./images/01/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/09.png)
 
 1. IP配置方法：将双引号里的dhcp改为static
 2. 指定IP地址为192.168.197.200
@@ -65,7 +77,7 @@ vim /etc/sysconfig/network-scripts/ifcfg-ens33
 
 > ip地址我们可以自己设置，但是设置的ip地址必须要在虚拟机地址的范围内，查看虚拟机ip地址的范围如下图所示：
 >
-> ![1647088718877](./images/01/10.png)
+> ![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/10.png)
 
 修改完成后，保存退出，输入指令
 
@@ -89,8 +101,6 @@ rtt min/avg/max/mdev = 25.284/26.713/28.489/1.331 ms
 ```
 
 > 现在主节点已经可以上网，并且能够远程登录连接了
-
-![1647089427165](./images/01/11.png)
 
 ## 修改主机名
 
@@ -241,7 +251,7 @@ mkdir /opt/java1.8
 
 + 右键传输一下就OK了
 
-![1647091843570](./images/01/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/12.png)
 
 ```shell
 mkdir /usr/local/java
@@ -288,7 +298,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)
 mkdir /opt/hadoop/
 ```
 
-![1647094006650](./images/01/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/13.png)
 
 + 传输完成
 
@@ -493,9 +503,9 @@ vim /etc/hosts
 
 ### 克隆三台完整的虚拟机
 
-![1647102133075](./images/01/14.png)
+![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/14.png)
 
-![1647102155736](./images/01/15.png)
+![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/15.png)
 
 > 因为是完整克隆，我们的主机名也要重新设置，并且指定IP地址
 >
@@ -510,7 +520,7 @@ vim /etc/hosts
 + 节点三修改主机名为slave3
   - IP地址指定为192.168.197.203
 
-![1647178333969](./images/01/29.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/16.png)
 
 ### 免密登录
 
@@ -533,11 +543,11 @@ ssh-copy-id slave3
 
 + ssh master
 
-![1647177363103](./images/01/27.png)
+![27](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/27.png)
 
 + exit退出
 
-![1647177383366](./images/01/28.png)
+![28](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/28.png)
 
 + 主节点格式化
 
@@ -547,7 +557,7 @@ hdfs namenode -format
 
 `中途可能需要你输入Y`
 
-![1647180781381](./images/01/31.png)
+![31](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/31.png)
 
 + 主节点开启集群：
 
@@ -557,7 +567,7 @@ start-dfs.sh
 
 `中途输入主机密码`
 
-![1647181583167](./images/01/33.png)
+![33](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/33.png)
 
 + 主节点启动资源管理yarn
 
@@ -565,19 +575,19 @@ start-dfs.sh
 start-yarn.sh
 ```
 
-![1647182320747](./images/01/34.png)
+![34](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/34.png)
 
 + jps查看关于java线程状态
 
-![1647184247877](./images/01/35.png)
+![35](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/35.png)
 
 + 访问URL
 
-![1647136089278](./images/01/24.png)
+![24](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/24.png)
 
 + 文件系统
 
-![1647136110366](./images/01/25.png)
+![25](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/25.png)
 
 + hdfs dfs -mkdir /t01 ,创建个文件夹试一下
 
@@ -587,7 +597,7 @@ start-yarn.sh
 
 + 访问URL
 
-![1647136483174](./images/01/26.png)
+![26](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Hadoop/images/01/26.png)
 
 > ## enjoy
 

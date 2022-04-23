@@ -126,7 +126,7 @@ public class RegTheory_ {
 }
 ```
 
-![1639371384242](./images/RegExp/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/01.png)
 
 `总结`:
 
@@ -195,15 +195,15 @@ public class RegExp02 {
 
 ### 元字符-字符匹配符
 
-![1639650477738](./images/RegExp/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/02.png)
 
-![1639650489515](./images/RegExp/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/03.png)
 
 + 应用案例
 
-![1639659837597](./images/RegExp/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/04.png)
 
-![1639659889822](./images/RegExp/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/05.png)
 
 ```java
 package com.regexp;
@@ -253,7 +253,7 @@ public class RegExp03 {
 
 ### 元字符-选择匹配符
 
-![1639659971447](./images/RegExp/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/06.png)
 
 ```java
 package com.regexp;
@@ -289,15 +289,15 @@ public class RegExp04 {
 
 用于指定其前面的字符和组合项连续出现多少次
 
-![1639660339339](./images/RegExp/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/07.png)
 
 + 应用举例
 
-![1639744196314](./images/RegExp/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/08.png)
 
-![1639744223494](./images/RegExp/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/09.png)
 
-![1639744287581](./images/RegExp/10.png)
+![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/10.png)
 
 ```java
 package com.regexp;
@@ -354,7 +354,7 @@ public class RegExp05 {
 定位符, 规定要匹配的字符串出现的位置，比如在字符串的开始还是在结束的位置，这个也是相当有用的，必须掌
 握 
 
-![1639744415329](./images/RegExp/11.png)
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/11.png)
 
 ```java
 package com.regexp;
@@ -396,7 +396,7 @@ public class RegExp06 {
 
 ### 分组
 
-![1639745701001](./images/RegExp/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/12.png)
 
 ```java
 package com.regexp;
@@ -440,13 +440,13 @@ public class RegExp07 {
 
 ```
 
-![1639745714490](./images/RegExp/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/13.png)
 
 ## 应用实例
 
 ### 对字符串进行如下验证
 
-![1639748619667](./images/RegExp/14.png)
+![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/14.png)
 
 ```java
 package com.regexp;
@@ -533,7 +533,7 @@ public class RegExp11 {
 
 ## 正则表达式三个常用类
 
-![1639751620040](./images/RegExp/15.png)
+![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/15.png)
 
 + Pattern类的方法matches()
 
@@ -563,9 +563,9 @@ public class PatternMethod {
 
 + Matcher类的方法
 
-![1639752424976](./images/RegExp/16.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/16.png)
 
-![1639752804019](./images/RegExp/17.png)
+![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/17.png)
 
 ```java
 package com.regexp;
@@ -798,9 +798,9 @@ public class StringReg {
 
 ## 本章作业
 
-![1639756632135](./images/RegExp/18.png)
+![18](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/18.png)
 
-![1639757496467](./images/RegExp/19.png)
+![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/RegExp/19.png)
 
 ```java
 package com.regexp;

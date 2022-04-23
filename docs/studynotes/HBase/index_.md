@@ -21,7 +21,7 @@ tags:
 
 ## Hadoop与Hbase
 
-![1647592531447](./images/01/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/01/01.png)
 
 ## 什么是HBase
 
@@ -33,7 +33,7 @@ HBase(Hadoop Database)是一个开源的、面向列大数据存(Column-Oriented
 
 Apache HBase最初是Powerset公司为了处理自然语言搜索产生的海量数据而开展的项目
 
-![1647591973566](./images/01/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/01/02.png)
 
 ## HBase特性
 
@@ -47,7 +47,7 @@ HBase的单表可以有**百亿行**，**百万列**，可以在**横向**和**�
 
 HBase是面向列（族）存储的，并且列（族）拥有独立索引，对数据的权限控制也是从列族层面来实现的。
 
-![1647592102264](./images/01/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/01/03.png)
 
 ### 稀疏性
 
@@ -86,7 +86,7 @@ Hadoop是一个分布式的基础架构，实现分布式的存储和分布式�
 
 HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数目的Datanodes组成。Namenode是一个中心服务器，负责管理文件系统的名字空间(namespace)以及客户端对文件的访问。集群中的Datanode一般是一个节点一个，负责管理它所在节点上的存储。HDFS暴露了文件系统的名字空间，用户能够以文件的形式在上面存储数据。从内部看，一个文件其实被分成一个或多个数据块，这些块存储在一组Datanode上。Namenode执行文件系统的名字空间操作，比如打开、关闭、重命名文件或目录。它也负责确定数据块到具体Datanode节点的映射。Datanode负责处理文件系统客户端的读写请求。在Namenode的统一调度下进行数据块的创建、删除和复制。
 
-![1647593244804](./images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/02/01.png)
 
 ### HDFS-块
 
@@ -123,7 +123,7 @@ HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数�
 
 作用：定期的合并editslog和fsimage文件，合并过程会周期性的进行
 
-![1647593834617](./images/02/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/02/02.png)
 
 - Checkpiont：合并的时间点，默认3600秒，或editlog文件达到64M。
 
@@ -135,15 +135,15 @@ HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数�
 - 响应NameNode的相关指令，比如完成数据块的复制、删除等
 - 定期发送心跳信息给NameNode，告知NameNode当前节点存储的文件块信息
 
-![1647593959796](./images/02/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/02/03.png)
 
 ### HDFS-读文件机制
 
-![1647594085668](./images/02/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/02/04.png)
 
 ### HDFS-写文件机制
 
-![1647594122254](./images/02/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/02/05.png)
 
 ### HDFS-副本机制
 

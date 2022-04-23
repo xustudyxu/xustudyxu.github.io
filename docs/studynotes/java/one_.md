@@ -9,7 +9,7 @@ tags:
 ---
 # JAVASE知识体系
 
-![An image](./images/11/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/11/04.png)
 
 ## 学习视频来源
 

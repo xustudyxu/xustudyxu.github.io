@@ -1,7 +1,7 @@
 ---
 title: Java 面向对象
 date: 2021-12-25 17:31:42
-permalink: /pages/6f7849/
+permalink: /pages/f3fe89/
 categories:
   - java
 tags:
@@ -57,9 +57,9 @@ public class Object01 {
 
 ### 类与对象的关系示意图
 
-![](./images/oop/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/01.png)
 
-![](./images/oop/02.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/03.png)
 
  ### 快速入门
 
@@ -108,7 +108,7 @@ class Cat{
 
 ### 对象在内存中存在形式(重要)
 
-![1640425269799](./images/oop/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/04.png)
 
 ### 属性/成员变量/变量
 
@@ -230,7 +230,7 @@ class Person {
 
 请问：p2.age究竟是多少?并画出内存图
 
-![](./images/oop/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/05.png)
 
 ### 类和对象的内存分配机制
 
@@ -267,7 +267,7 @@ p.age = 10
 		//System.out.println(b.age);//出现异常
 ```
 
-![](./images/oop/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/06.png)
 
 ## 成员方法
 
@@ -370,7 +370,7 @@ class Person{
 
 提示：画出程序执行过程[getSum]+说明
 
-![1640426574880](./images/oop/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/07.png)
 
 ### 为什么需要成员方法
 
@@ -539,7 +539,7 @@ class AA{
 
 ### 类定义的完善
 
-![1640427787476](./images/oop/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/08.png)
 
 ### 课堂练习题
 
@@ -660,7 +660,7 @@ class Abc{
 }
 ```
 
-![1643250495461](./images/oop/31.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/31.png)
 
 ### 引用数据类型的传参机制
 
@@ -728,7 +728,7 @@ class AB{
 
 引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！
 
-![1643250513382](./images/oop/32.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/32.png)
 
 ### 成员方法返回类型是引用类型应用实例
 
@@ -832,9 +832,9 @@ class T{
 
 ```
 
-![1640435398856](./images/oop/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/09.png)
 
-![](./images/oop/10.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/10.png)
 
 ### 递归重要原则
 
@@ -920,7 +920,7 @@ class TT{
 
 ### 递归调用应用实例-迷宫问题
 
-![1640435854710](./images/oop/11.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/11.png)
 
 ```java
 public class MiGong {
@@ -1052,7 +1052,7 @@ class T {
 
 + 汉诺塔代码实现
 
-![1640436584176](./images/oop/12.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/12.png)
 
 ```java
 package day05;
@@ -1675,7 +1675,7 @@ Person p=new Person("小倩",20);
 
 ```
 
-![1640447375232](./images/oop/14.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/14.png)
 
 ## this关键字
 
@@ -1724,7 +1724,7 @@ class Dog01  {
 
 ### 深入理解this
 
-![1640442744419](./images/oop/13.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/13.png)
 
 ```java
 	public void info() {//成员方法，输出属性信息
@@ -1870,11 +1870,11 @@ public class TestPerson {
 
 ### 包的本质分析
 
-![1640517436586](./images/oop/17.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/17.png)
 
 ### 快速入门
 
-![1640517497255](./images/oop/18.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/18.png)
 
 ### 包的命名
 
@@ -2375,7 +2375,7 @@ public class Pupil {
 继承可以解决代码复用,让我们的编程更加靠近人类思维.当多个类存在相同的属性(变量)和方法时,可以从这些类中
 抽象出父类,在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可。画出继承的示意图
 
-![1640526794223](./images/oop/19.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/19.png)
 
 ### 继承的基本语法
 
@@ -2938,7 +2938,7 @@ public class Override01 {
 
 ### 先看一个问题
 
-![1640530585599](./images/oop/20.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/20.png)
 
 +  使用传统的方法来解决（private 属性）
 
@@ -3390,7 +3390,7 @@ class BB extends AA{
 
 ### Java的动态绑定机制
 
-![1640532852115](./images/oop/21.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/21.png)
 
    ```java
 package com.study5poly_.dynamic_;
@@ -3654,7 +3654,7 @@ class Person_{
 
 ### hashCode方法
 
-![1640590096154](./images/oop/15.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/15.png)
 
 1. 提高具有哈希结构的容器的效率
 2. 两个引用，如果指向的同一个对象，则哈希值是一样的，反之，则不一样
@@ -3793,7 +3793,7 @@ F8: 逐行执行代码
 
 shift+F8: 跳出方法
 
-![1640592408492](./images/oop/16.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/16.png)
 
 ## 类变量和类方法
 
@@ -3861,7 +3861,7 @@ class Child {
 
 ### 类变量和内存布局
 
-![1643250782397](./images/oop/33.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/33.png)
 
 1. static变量是同一个类所有对象共享
 2. static类变量，在类加载的时候就生成了
@@ -4072,7 +4072,7 @@ class D{
 
 ### 深入理解main方法
 
-![1640686289023](./images/oop/22.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/22.png)
 
 ### 特别提示
 
@@ -4705,7 +4705,7 @@ class BBB{
 
 ### 先看一个问题
 
-![1640691750512](./images/oop/23.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/23.png)
 
 ```java
 package com.study10abstract_;
@@ -4789,7 +4789,7 @@ abstract class A{
 5. 抽象类可以有任意成员【抽象类本质还是类】
 6. 抽象方法不能有主体，既不能实现
 
-![1640692501931](./images/oop/24.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/24.png)
 
 7. 如果一个类继承了抽象类，则它必须实现抽象类的所有抽象方法，除非它自己也声明为abstract类
 
@@ -4851,7 +4851,7 @@ abstract class H{
 2. 要求统计得到各自完成任务的时间
 3. 请编程实现
 
-![](./images/oop/25.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/25.png)
 
 ```java
 package com.study10abstract_.testtemplated;
@@ -4926,7 +4926,7 @@ public class BB extends Template{
 
 ### 为什么有接口
 
-![](./images/oop/26.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/26.png)
 
 ### 接口快速入门
 
@@ -5041,9 +5041,9 @@ public class Interface01 {
 
 ### 接口理解
 
-![](./images/oop/27.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/27.png)
 
-![](./images/oop/28.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/28.png)
 
 ```java
 package com.study11interface_.interface03;
@@ -5116,7 +5116,7 @@ public class Interface03 {
 1. 接口不能被实例化
 2. 接口中所有的方法是public方法，接口中抽象方法，可以不用abstract修饰
 
-![1640696088612](./images/oop/29.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/29.png)
 
 3. 一个普通类实现接口，就必须将该接口的所有方法都实现
 4. 抽象类实现接口，可以不用实现接口的方法
@@ -5250,7 +5250,7 @@ class B implements AA{
 
 ### 接口的多态特性
 
-![](./images/oop/29.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/30.png)
 
 ```java
 package com.study11interface_.interface04;

@@ -358,7 +358,7 @@ interface IPlaying{
 
 ### @Override 注解的案例
 
-![1629009241789](./images/11/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/11/01.png)
 
 + 代码演示：
 
@@ -395,7 +395,7 @@ class Son extends Father{
 }
 ```
 
-![1629009305220](./images/11/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/11/02.png)
 
 ### @Deprecated 注解的案例
 
@@ -478,7 +478,7 @@ public class SuppressWarnings_ {
 
 ```
 
-![1629009432965](./images/11/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/11/03.png)
 
 ## JDK 的元 Annotation
 
