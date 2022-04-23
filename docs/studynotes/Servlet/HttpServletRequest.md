@@ -370,9 +370,9 @@ public class Servlet05 extends HttpServlet {
 
 - 控制台
 
-![1641985735300](./images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/01.png)
 
 - 访问URL
 
-![1641986047464](./images/03/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/02.png)
 

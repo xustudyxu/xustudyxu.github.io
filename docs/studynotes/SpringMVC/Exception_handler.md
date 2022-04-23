@@ -78,7 +78,7 @@ SpringMVC提供了自定义的异常处理器SimpleMappingExceptionResolver，�
 
 + 访问URL结果
 
-![1642991106752](./images/09/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/09/01.png)
 
 ## 基于注解的异常处理
 
@@ -120,7 +120,7 @@ public class ExceptionController {
 
 :::
 
-+ 访问URL结果
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/09/01.png)
+
+
 

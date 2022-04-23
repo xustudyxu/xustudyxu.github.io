@@ -230,7 +230,7 @@ DROP TABLE t10;
 
 ### 字符串使用细节
 
-![1629301648385](./images/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/12.png)
 
 ![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/13.png)
 
