@@ -25,7 +25,7 @@ tags:
   + 感谢您的阅读。
 + 联系方式
 
-![1649651968853](./images/me/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/me/01.png)
 
 ## 关于计划
 

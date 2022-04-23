@@ -24,7 +24,7 @@ tags:
 
 #### 验证
 
-![1649959367803](./images/build/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/build/01.png)
 
 > 环境安装成功了
 

@@ -11,39 +11,39 @@ tags:
 
 ## 设置 GitHub 账号
 
-![1643441223798](./images/07/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/01.png)
 
-![1643441255606](./images/07/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/02.png)
 
 ## 分享工程到 GitHub
 
-![1643441465204](./images/07/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/03.png)
 
-![1643441561680](./images/07/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/04.png)
 
-![1643441986153](./images/07/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/05.png)
 
 来到 GitHub 中发现已经帮我们创建好了 Git-Test 的远程仓库。
 
-![1643442020603](./images/07/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/06.png)
 
 ## push 推送本地库到远程库
 
 右键点击项目，可以将当前分支的内容 push 到 GitHub 的远程仓库中。
 
-![1643442164035](./images/07/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/07.png)
 
-![1643442294554](./images/07/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/08.png)
 
 define Remote：在这里可以创建远程链接的别名
 
-![1643442322367](./images/07/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/09.png)
 
 Name:在这里指定远程连接的别名
 
 URL：在这里指定要push的远程仓库的地址
 
-![1643442550079](./images/07/10.png)
+![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/10.png)
 
 ::: tip
 
@@ -55,11 +55,11 @@ push 是将本地库代码推送到远程库，如果本地库代码跟远程库
 
 右键点击项目，可以将远程仓库的内容 pull 到本地仓库。
 
-![1643445444812](./images/07/11.png)
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/11.png)
 
-![1643445512499](./images/07/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/12.png)
 
-![1643445605054](./images/07/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/13.png)
 
 ::: tip
 
@@ -69,13 +69,13 @@ pull 是拉取远端仓库代码到本地，如果远程库代码和本地库代
 
 ## clone 克隆远程库到本地
 
-![1643445840226](./images/07/14.png)
+![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/14.png)
 
 + 填写要clone项目的ssh
 
-![1643445870347](./images/07/15.png)
+![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/15.png)
 
 + 结果
 
-![1643445956441](./images/07/16.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/07/16.png)
 
