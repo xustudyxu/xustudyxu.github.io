@@ -25,7 +25,7 @@ tags:
 >
 > 程序抛出异常，Table 'mybatis_plus.user' doesn't exist，因为现在的表名为t_user，而默认操作的表名和实体类型的类名一致，即user表
 
-![1650030033802](./Plus-images/04/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/01.png)
 
 ### 通过@TableName解决问题
 
@@ -92,7 +92,7 @@ mybatis-plus:
 >
 > 程序抛出异常，Field 'uid' doesn't have a default value，说明MyBatis-Plus没有将uid作为主键赋值
 
-![1650030062837](./Plus-images/04/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/02.png)
 
 ### 通过@TableId解决问题
 
@@ -133,7 +133,7 @@ Process finished with exit code 0
 >
 > 此时需要通过@TableId注解的value属性，指定表中的主键字段，`@TableId("uid")`或`@TableId(value="uid")`
 
-![1650030266900](./Plus-images/04/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/03.png)
 
 ```java
 public class User {
@@ -211,7 +211,7 @@ mybatis-plus:
 
 单表数据拆分有两种方式：垂直分表和水平分表。示意图如下：
 
-![1650032280908](./Plus-images/04/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/04.png)
 
 + **垂直分表**
 
@@ -257,7 +257,7 @@ mybatis-plus:
 
 12bit作为毫秒内的流水号（意味着每个节点在每毫秒可以产生 4096 个 ID）。
 
-![1650032554712](./Plus-images/04/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/05.png)
 
 + 优点：
 
@@ -356,7 +356,7 @@ Process finished with exit code 0
 
 > step1：数据库中创建逻辑删除状态列，设置默认值为0
 
-![1650035055804](./Plus-images/04/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/04/06.png)
 
 > step2：实体类中添加逻辑删除属性
 
@@ -431,3 +431,4 @@ Process finished with exit code 0
 测试查询功能，被逻辑删除的数据默认不会被查询
 
 ::: 
+

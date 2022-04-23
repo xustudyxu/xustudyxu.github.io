@@ -29,7 +29,7 @@ CREATE TABLE t_book(
 
 + 引入相关的jar包
 
-![1641039376015](./images/04/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/01.png)
 
 + 在Spring文件中配置数据库的连接池
 
@@ -190,9 +190,9 @@ public class BookDaoImpl implements BookDao{
        }
    ```
 
-   ![1641042802653](./images/04/02.png)
+   ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/02.png)
 
-   ![1641042915087](./images/04/03.png)
+   ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/03.png)
 
 ## Jdbc Template数据库操作数据库(修改和删除)
 
@@ -235,15 +235,15 @@ public class BookDaoImpl implements BookDao{
           bookService.deleteBook("1");
   ```
 
-  ![1641044382584](./images/04/04.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/04.png)
 
-  ![1641044579855](./images/04/05.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/05.png)
 
   + 删除结果
 
-  ![1642243953069](./images/04/06.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/06.png)
   
-  ![1642244109262](./images/04/07.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/07.png)
 
 ## Jdbc Template数据库操作数据库(查询返回某个值)
 
@@ -273,7 +273,7 @@ public class BookDaoImpl implements BookDao{
 
    + 测试
 
-     ![1641046181328](./images/04/08.png)
+     ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/08.png)
 
 ## Jdbc Template数据库操作数据库(查询返回某个对象)
 
@@ -304,7 +304,7 @@ public class BookDaoImpl implements BookDao{
 
    + 测试
 
-     ![1641047340204](./images/04/09.png)
+     ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/09.png)
 
 1. 场景:查询图书列表分页
 
@@ -335,7 +335,7 @@ public class BookDaoImpl implements BookDao{
 
    + 测试
 
-     ![1641048165960](./images/04/10.png)
+     ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/10.png)
 
 ## Jdbc Template数据库操作数据库(批量操作)
 
@@ -377,7 +377,8 @@ public class BookDaoImpl implements BookDao{
              bookService.batchAdd(batchArgs);
      ```
 
-     ![1641049286102](./images/04/11.png)
+
+   ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/11.png)
 
 3. JdbcTemplate实现批量修改操作
 
@@ -409,7 +410,7 @@ public class BookDaoImpl implements BookDao{
       }
   ```
 
-  ![1641050052305](./images/04/12.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/12.png)
 
 4. JdbcTemplate实现批量删除操作
 
@@ -437,5 +438,5 @@ public class BookDaoImpl implements BookDao{
           bookService.batchDelete(batchArgs);
   ```
 
-  ![1641050438711](./images/04/13.png)
+  ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/04/13.png)
 

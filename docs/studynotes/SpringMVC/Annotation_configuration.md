@@ -404,4 +404,4 @@ public class TestController {
 
 + 访问URL
 
-![1643005470505](./images/10/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/10/01.png)

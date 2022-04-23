@@ -13,7 +13,7 @@ tags:
 
 主要内容
 
-![1641817852480](./images/01/001.png)
+![001](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/01/001.png)
 
 ::: tip
 

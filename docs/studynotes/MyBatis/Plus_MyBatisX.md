@@ -21,25 +21,25 @@ MyBatisX插件用法：[MybatisX快速开发插件 | MyBatis-Plus](https://baomi
 
 ## 安装MyBatisX插件
 
-![1650470770049](./Plus-images/08/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/01.png)
 
 设置Database
 
-![1650471652153](./Plus-images/08/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/02.png)
 
-![1650471711615](./Plus-images/08/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/03.png)
 
-![1650471813349](./Plus-images/08/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/04.png)
 
 Next
 
-![1650471917522](./Plus-images/08/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/05.png)
 
 Finish
 
 ## 使用结果
 
-![1650471995398](./Plus-images/08/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/06.png)
 
 ```java
 @TableName(value ="t_user")
@@ -108,7 +108,7 @@ public class User implements Serializable {
 
 ## 生成自定义功能
 
-![1650472197651](./Plus-images/08/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/07.png)
 
 + 自动生成方法
 

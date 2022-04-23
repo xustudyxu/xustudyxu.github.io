@@ -189,16 +189,16 @@ success<br>
 
 + 访问URL
 
-![1642585915530](./images/06/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/06/01.png)
 
 + 控制台
 + 添加用户信息
 
-![1642585940731](./images/06/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/06/02.png)
 
 + 修改用户信息
 
-![1642586003066](./images/06/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/06/03.png)
 
 
 

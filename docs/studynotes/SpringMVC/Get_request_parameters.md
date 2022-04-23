@@ -352,9 +352,9 @@ public class User {
 
 + 访问URL
 
-![1642420310276](./images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/03/01.png)
 
 + 控制台
 
-![1642420348157](./images/03/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/03/02.png)
 

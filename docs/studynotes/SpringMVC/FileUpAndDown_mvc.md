@@ -190,13 +190,13 @@ public class FileUpAndDownController {
 
 + 访问URL
 
-![1642840632709](./images/08/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/08/01.png)
 
 + 文件下载
 
-![1642840653026](./images/08/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/08/02.png)
 
 + 文件上传
 
-![1642840682852](./images/08/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/08/03.png)
 

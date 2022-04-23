@@ -545,13 +545,13 @@ public class EmployeeController {
 
 + 访问URL
 
-![1642757085842](./images/07/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/01.png)
 
 + 测试更新
 
-![1642757132255](./images/07/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/02.png)
 
 + 结果
 
-![1642757147051](./images/07/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/03.png)
 

@@ -15,7 +15,7 @@ tags:
   + **Python的解释器使用的是Unicode(内存)**
   + **py文件在磁盘上使用UTF-8存储(外存)**
 
-![1635852015377](./images/14/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/14/01.png)
 
 + 指定编码格式
 
@@ -33,17 +33,17 @@ tags:
 + 文件读写操作流程
 + 操作原理
 
-![1635852721469](./images/14/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/14/02.png)
 
 ### 文件的读写操作
 
 + 内置函数open()创建文件对象
 
-![1635853070153](./images/14/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/14/03.png)
 
 + 语法规则
 
-![1635853089421](./images/14/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/14/04.png)
 
 1. 创建一个file文件 
 
@@ -194,7 +194,7 @@ file.close() #close之后就不能 继续写代码了
 
 + **with语句可以自动管理上下文资源,不论什么原因跳出with块,都能确保文件正确的关闭,以此来达到释放资源的目的**
 
-![1635951487804](./images/14/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/14/05.png)
 
 ```python
 """

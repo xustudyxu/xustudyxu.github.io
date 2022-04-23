@@ -306,13 +306,13 @@ success
 
 + 访问URL
 
-![1642331265429](./images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/02/01.png)
 
 + 点击测试
 
-![1642331297787](./images/02/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/02/02.png)
 
 + 控制台
 
-![1642331331926](./images/02/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/02/03.png)
 

@@ -122,5 +122,5 @@ public class ExceptionController {
 
 + 访问URL结果
 
-![1642993657339](./images/09/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/09/01.png)
 

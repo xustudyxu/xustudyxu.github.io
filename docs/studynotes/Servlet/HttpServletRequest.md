@@ -270,11 +270,11 @@ public class Servlet03 extends HttpServlet {
 
 - 请求转发到jsp页面
 
-![1641905499658](./images/02/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/12.png)
 
 - 请求转发到html页面
 
-![1641905603282](./images/02/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/13.png)
 
 ## request作用域
 

@@ -15,11 +15,11 @@ tags:
 + **Python内置的数据结构之一,与列表一样是一个可变序列**
 + **以键值对的方式存储数据，字典是一个**<font color=#DC4040 size=4 face="黑体">无序</font>**的序列**
 
-![1634545996579](./images/07/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/01.png)
 
 + 字典示意图
 
-![1634548280830](./images/07/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/02.png)
 
 + 字典的实现原理
   - **字典的实现原理与查字典类似，查字典是先根据部首或拼音查找汉字对应的页码。Python中的字典是根据key查找value所在的位置**
@@ -63,7 +63,7 @@ print(d)
 
 ### 字典中元素的获取
 
-![1634642715128](./images/07/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/03.png)
 
 ### **[]如果字典中不存在指定的key,抛出keyError异常**
 
@@ -92,7 +92,7 @@ print(scores.get('麻七',99))  #99是在查找'麻七'不存在时，提供的�
 
 + key的判断
 
-![1634644055875](./images/07/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/04.png)
 
 + 字典元素的删除
 
@@ -132,7 +132,7 @@ print(scores)
 
 + 获取字典视图的三个方法
 
-![1634644811999](./images/07/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/05.png)
 
 ```python
 """
@@ -215,12 +215,12 @@ print(lst) #10,100,20,30
 
 ## 字典生成式
 
-![1634653424438](./images/07/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/06.png)
 
 + 内置函数zip()
   - **用于将可迭代的对象作为参数,将对象中对应的元素打包成一个元祖,然后返回由这些返回由这些元组组成的列表**
 
-![1634653652559](./images/07/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/07/07.png)
 
 ```python
 """

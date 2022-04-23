@@ -30,7 +30,7 @@ public String testHello(){
 }
 ```
 
-![1642575135065](./images/05/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/05/01.png)
 
 ## 转发视图
 
@@ -49,7 +49,7 @@ public String testForward(){
 }
 ```
 
-![1642575154656](./images/05/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/05/02.png)
 
 ## 重定向视图
 
@@ -66,7 +66,7 @@ public String testRedirect(){
 }
 ```
 
-![1642575172476](./images/05/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/05/03.png)
 
 ::: tip
 
@@ -177,9 +177,9 @@ success<br>
 
 :::
 
-+ 访问URL
++ 访问URL进行测试
 
-![1642574907802](./images/05/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/05/04.png)
 
 
 

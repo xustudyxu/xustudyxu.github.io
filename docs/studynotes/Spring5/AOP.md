@@ -17,7 +17,7 @@ tags:
 2. 通俗描述:不通过修改源代码方式，在主干功能里面添加新功能
 3. 使用登陆例子说明AOP
 
-![ ](./images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/01.png)
 
 ## AOP底层原理
 
@@ -31,7 +31,7 @@ tags:
 
 + 创建子类的动态对象，增强类的方法
 
-![1640421701083](./images/03/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/02.png)
 
 ## AOP(JDK动态代理)
 
@@ -47,7 +47,7 @@ tags:
 
 + 调用newProxyInstance方法
 
-![1640760679519](./images/03/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/04.png)
 
 方法有三个参数:
 
@@ -161,7 +161,7 @@ class UserDaoProxy implements InvocationHandler{
 
 + **方面/切面（Aspect）**：横切关注点的模块化，比如上边提到的日志组件。可以认为是通知、引入和切入点的组合；在Spring中可以使用Schema和@AspectJ方式进行组织实现；在AOP中表示为**在哪干和干什么集合**；
 
-![1640776424645](./images/03/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/03.png)
 
 ## AOP操作(准备工作)
 
@@ -178,7 +178,7 @@ class UserDaoProxy implements InvocationHandler{
 
 3. 在项目工程里面引入AOP相关依赖
 
-![1640777696624](./images/03/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/05.png)
 
 4. 切入点表达式
 
@@ -348,7 +348,7 @@ public class TestAop {
 
 ```
 
-![1640782810749](./images/03/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/03/06.png)
 
 5. 相同切入点抽取
 

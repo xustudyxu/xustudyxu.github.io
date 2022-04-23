@@ -20,9 +20,9 @@ tags:
   + **提高可读性便于调试**
 + 函数的创建
 
-![1635154072770](./images/10/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/01.png)
 
-![1635154498644](./images/10/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/02.png)
 
 ```python
 """
@@ -41,7 +41,7 @@ print(result) #3
 
 ## 函数的参数传递
 
-![](./images/10/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/03.png)
 
 ```python
 """
@@ -63,7 +63,7 @@ print(res)
 
 ## 函数调用的参数传递内存分析
 
-![1635237715539](./images/10/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/04.png)
 
 ```python
 """
@@ -154,7 +154,7 @@ print(fun3())
 
 + 函数定义时，给形参设置默认值，只有默认值不符的时候才需要传递实参
 
-![1635239737838](./images/10/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/05.png)
 
 ```python
 """
@@ -349,7 +349,7 @@ print(age)
   + 缺点:占用内存多，效率低下
   + 优点:思路和代码简单
 
-![1635244584317](./images/10/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/10/06.png)
 
 ```python
 """

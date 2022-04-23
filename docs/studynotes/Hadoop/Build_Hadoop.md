@@ -1,22 +1,12 @@
 ---
-title: Build_Hadoop
-date: 2022-03-13 01:46:27
-permalink: /pages/bd31bc/
-categories:
-  - studynotes
-  - Hadoop
-tags:
-  - 
----
 title: 搭建Hadoop集群
 date: 2022-03-13 01:46:27
 permalink: /pages/600247/
 categories:
-
   - Hadoop
 tags:
   - Hadoop
-
+---
 # 搭建Hadoop集群
 
 [[toc]]

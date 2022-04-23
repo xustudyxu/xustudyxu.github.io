@@ -32,11 +32,11 @@ tags:
   + 统计学生总人数模块
   + 显示全部学生信息模块
 
-![1636026077343](./images/15/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/01.png)
 
 ### 系统业务流程
 
-![1636027284632](./images/15/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/02.png)
 
 ### 系统发开必备
 
@@ -54,11 +54,11 @@ tags:
 
 + 系统主界面运行效果图
 
-![1636027792509](./images/15/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/03.png)
 
 ### 主函数的业务流程
 
-![1636027841463](./images/15/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/04.png)
 
 ### 实现主函数
 
@@ -78,94 +78,94 @@ tags:
 + 实现录入学生信息功能
   + 从控制台录入学生信息，并且把它们保存到磁盘文件中
 
-![1636182978993](./images/15/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/05.png)
 
 + 业务流程
 
-![1636183062468](./images/15/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/06.png)
 
 + 具体实现
   + save(student)函数，用于将学生信息保存到文件
   + insert()函数，用于录入学生信息
 
-![1636183270379](./images/15/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/07.png)
 
 ## 删除学生信息功能
 
 + 实现删除学生信息功能
   + 从控制台录入学生ID，到磁盘文件中找到对应的学生信息，并将其删除
 
-![1636192515250](./images/15/08.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/08.png)
 
 + 业务流程
 
-![1636192586231](./images/15/09.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/09.png)
 
 ## 修改学生信息功能
 
 + 实现修改学生信息功能
   + 从控制台录入学生ID，到磁盘文件中找到对应的学生信息，将其修改
 
-![1636279063796](./images/15/10.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/10.png)
 
 + 业务流程
 
-![1636279151482](./images/15/11.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/11.png)
 
 ## 查找学生信息功能
 
 + 实现查询学生信息功能
   + 从控制台录入学生ID或姓名，到磁盘文件中找到对应的学生信息
 
-![1636281853164](./images/15/12.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/12.png)
 
 + 业务流程
 
-![1636281913078](./images/15/13.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/13.png)
 
 ## 统计学生总人数功能
 
 + 实现统计学生总人数功能
   + 统计学生信息文件中保存的学生信息个数
 
-![1636283294233](./images/15/14.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/14.png)
 
 + 业务流程
 
-![1636283318070](./images/15/15.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/15.png)
 
 ## 显示所有学生信息功能
 
 + 实现显示所有信息功能
   + 将学生信息文件中保存的全部学生信息获取并显示
 
-![1636283764074](./images/15/16.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/16.png)
 
 + 业务流程
 
-![1636283809950](./images/15/17.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/17.png)
 
 ## 排序模块设计
 
 + 实现按学生成绩排序功能
   + 主要对学生信息按英语成绩、Python成绩、Java成绩、总成绩进行升序或降序排序
 
-![1636284210560](./images/15/18.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/18.png)
 
 + 业务流程
 
-![1636284323388](./images/15/19.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/19.png)
 
 ## 项目打包
 
 + 在线安装方式
   + pip install Pyinstaller
 
-![1636286249250](./images/15/20.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/20.png)
 
 + 执行打包操作
 
-![1636286283083](./images/15/21.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/15/21.png)
 
 ```python
 """

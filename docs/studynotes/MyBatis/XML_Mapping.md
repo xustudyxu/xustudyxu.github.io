@@ -83,21 +83,21 @@ public interface EmployeeMapper {
 
 + 增加结果
 
-![1644215058771](./images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/01.png)
 
-![1644215100882](./images/03/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/02.png)
 
 + 修改结果
 
-![1644215257781](./images/03/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/03.png)
 
-![1644215273475](./images/03/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/04.png)
 
 + 测试删除
 
-![1644215365047](./images/03/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/05.png)
 
-![1644215382903](./images/03/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/06.png)
 
 ### 另外
 
@@ -109,7 +109,7 @@ public interface EmployeeMapper {
 
 + 测试返回值
 
-![1644215807909](./images/03/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/07.png)
 
 ### insert-获取自增主键的值
 
@@ -129,7 +129,7 @@ public interface EmployeeMapper {
 
 + 获取自增主键id的值
 
-![1644217212448](./images/03/08.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/08.png)
 
 官方文档:[insert、update、delete](https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#insert_update_and_delete)
 

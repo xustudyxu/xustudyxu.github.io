@@ -17,7 +17,7 @@ tags:
 
 [地址](https://github.com/mybatis/mybatis-3/)
 
-![1643960773306](./images/01/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/01/03.png)
 
 ##  HelloWorld简单版
 
@@ -118,7 +118,7 @@ public class Employee {
 
 + 或者导入相关的jar包
 
-![1643947378486](./images/01/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/01/04.png)
 
 
 
@@ -198,7 +198,7 @@ public class MyBatisTest {
 }
 ```
 
-![1643957558383](./images/01/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/01/01.png)
 
 1. 根据xml配置文件(全局配置文件)创建一个SqlSessionFactory对象
 
@@ -286,7 +286,7 @@ public class MyBatisTest{
 }
 ```
 
-![1643959058705](./images/01/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/01/02.png)
 
 1. 接口式编程
 

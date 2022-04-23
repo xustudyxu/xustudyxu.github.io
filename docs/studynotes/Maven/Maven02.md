@@ -11,7 +11,7 @@ tags:
 
 ## 工程模块与模块划分(重点)
 
-![1638254816678](./images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/01.png)
 
 ### ssm_pojo拆分
 
@@ -22,7 +22,7 @@ tags:
 
 1. 拷贝原始项目中对应的相关代码到该模块中，删除不必要的测试类和配置文件
 
-![1645260551259](./images/02/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/02.png)
 
 + 这个模块的pom文件
 
@@ -68,7 +68,7 @@ tags:
 1.  新建模块ssm_dao，拷贝原始项目中对应的相关代码到该模块中，删除不必要的测试类和非dao层的配置文件。
 
 
-![1645260671308](./images/02/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/03.png)
 
 2. 对于dao层的pom文件内容如下（即所需的资源）：注意ssm_pojo资源的导入
 
@@ -168,7 +168,7 @@ tags:
 1. 新建模块ssm_service，拷贝原始项目中对应的相关代码到该模块中，删除不必要的非service层的配置文件。注意保留测试类test。
 
 
-![1645261299569](./images/02/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/04.png)
 
 2. 对于service层的pom文件内容如下（即所需的资源）：注意ssm_dao资源的导入，此外无需导入ssm_pojo的资源，因为他间接依赖了ssm_dao的ssm_pojo资源。对ssm_dao进行install命令。
 
@@ -224,7 +224,7 @@ tags:
 1. 利用骨架webapp新建maven模块ssm_controller。拷贝原始项目中对应的相关代码到该模块中，删除不必要的非controller层的配置文件。
 
 
-![1645261530089](./images/02/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/05.png)
 
 2. 对于controller层的pom文件内容如下（即所需的资源）：注意ssm_service资源的导入和间接依赖：
 
@@ -299,13 +299,13 @@ tags:
 
 聚合：多模块的构建维护。
 
-![1645267590958](./images/02/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/06.png)
 
 + 聚合作用：聚合用于快速构建maven工程，一次性构建多个项目或模块
 
 1. 创建一个空模块ssm，该项目中只有一个pom文件
 
-![1645269480832](./images/02/07.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/07.png)
 
 2. 打包类型定义为pom，并定义当前模块进行构建时关联的其他模块名称
 
@@ -325,17 +325,17 @@ tags:
 
 注意：参与聚合操作的模块最终执行顺序与模块间的依赖关系有关，与配置顺序无关
 
-![1645269557297](./images/02/08.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/08.png)
 
 1. 执行mvn install并观察：
 
 + 各个模块的打包方式和打包顺序
 
-![1645269636565](./images/02/09.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/09.png)
 
 + 打包耗时
 
-![1645269681206](./images/02/10.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/10.png)
 
 ## 继承(重点)
 
@@ -343,7 +343,7 @@ tags:
 
 继承:模块依赖关系维护
 
-![1645270192268](./images/02/11.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/11.png)
 
 + 继承作用：通过继承可以实现在子工程中沿用父工程的配置
 + maven中的继承与java中的继承相似，在子工程中配置继承关系
@@ -499,7 +499,7 @@ tags:
 
 以下资源，子工程都可以从父工程中继承：
 
-![1645357984914](./images/02/12.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/12.png)
 
 ### 继承和聚合的区别
 
@@ -519,7 +519,7 @@ tags:
 
 ### 版本统一的重要性
 
-![1645420668072](./images/02/13.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/13.png)
 
   ### 自定义属性
 
@@ -617,7 +617,7 @@ mvn help:system
 
 ### 工程版本区分
 
-![1645434609869](./images/02/14.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/14.png)
 
 + `SNAPSHOT`快照版本
   + 项目开发过程中，为方便团队成员合作，解决模块间相互依赖和时时更新的问题，开发者对每个模块进行构建的时候，输出的临时性版本叫快照版本（测试阶段版本）
@@ -643,7 +643,7 @@ mvn help:system
 
 资源配置多文件维护：
 
-![1645435236089](./images/02/15.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/15.png)
 
 配置文件引用pom属性：
 
@@ -704,7 +704,7 @@ jdbc.password=12345678
 
 多环境兼容：
 
-![1645440655885](./images/02/16.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/16.png)
 
 1. 在父工程pom文件中：
 
@@ -748,11 +748,11 @@ mvn install -P dev_env
 
 例如：新建一个maven配置，在开发环境执行install命令：
 
-![1645440673285](./images/02/17.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/17.png)
 
 执行后查看jdbc.properties文件：
 
-![1645440779972](./images/02/18.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/18.png)
 
 可见是按照开发环境的地址127.2.2.2进行项目安装的
 
@@ -779,7 +779,7 @@ mvn 指令 -D skipTests
 
 ### 使用界面操作跳过测试
 
-![1645531491169](./images/02/19.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/19.png)
 
 ### 使用配置跳过测试
 
@@ -807,7 +807,7 @@ mvn 指令 -D skipTests
 
 分模块开发：
 
-![1645532391715](./images/02/20.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/20.png)
 
 ## Nexus介绍
 
@@ -822,7 +822,7 @@ nexus /run nexus
 
 1. 访问(默认端口8081)
 
-![1645604806551](./images/02/21.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/21.png)
 
 2. 停止服务运行
 
@@ -842,7 +842,7 @@ nexus /run nexus
 私服资源的获取：下图所示，我们要把快照版的资源放在一个仓库里，把发行版的资源放在一个仓库里，第三方公共资源放在一个仓库里，这样方便进行管理，势必要对仓库进行分类和分组。
 
 
-![1645605381246](./images/02/22.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/22.png)
 
 > 仓库分类
 
@@ -855,32 +855,32 @@ nexus /run nexus
   + 将若干仓库组成一个群组，简化配置
   + 仓库组不能保存资源，属于设计型仓库
 
-![1645605758254](./images/02/23.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/23.png)
 
 1. 新建一个仓库，例如frx01-release
 
-![1645605865070](./images/02/24.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/24.png)
 
 2. 仓库类型选择宿主仓库`maven2(hosted)`
 
-![1645605928933](./images/02/25.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/25.png)
 
 3. 创建好后，将其加入到maven-public仓库组中，方便管理
-   ![1645606071752](./images/02/26.png)
+   ![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/26.png)
 
 4. 将ssm-pojo打包好的jar包上传至`frx01-release`
 
-![1645606570324](./images/02/27.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/27.png)
 
 5. 查看仓库里的ssm-pojo资源
 
-![1645606725674](./images/02/28.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/28.png)
 
 ### 本地仓库访问私服
 
 idea环境中的资源上传与下载：
 
-![1645606763861](./images/02/29.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/29.png)
 
 1. 配置本地仓库访问私服的权限（`setting.xml`）
 
@@ -944,5 +944,5 @@ idea环境中的资源上传与下载：
 
 + 执行deploy命令
 
-![1645609193893](./images/02/30.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/02/30.png)
 

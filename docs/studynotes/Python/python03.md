@@ -13,11 +13,11 @@ tags:
 
 + input()函数的介绍
 
-![1633230096183](./images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/01.png)
 
 + input()函数的基本使用
 
-![1633230479652](./images/03/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/02.png)
 
 ```python
 """
@@ -37,11 +37,11 @@ print(a+b)
 
 ## Python中的运算符
 
-![1633242400246](./images/03/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/03.png)
 
 ### 算术运算符
 
-![1633242449566](./images/03/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/04.png)
 
 ```python
 """
@@ -90,7 +90,7 @@ print(-9%4)  #3                            -9-4*(-3)    -9-(-12) 3
 
 ### 赋值运算符
 
-![1633759567847](./images/03/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/06.png)
 
 ```python
 """
@@ -139,7 +139,7 @@ print('交换之后:',a,b)
 
 ### 比较运算符
 
-![1633764690798](./images/03/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/07.png)
 
 ```python
 """
@@ -182,7 +182,7 @@ print(lst1 is not lst2) #  True
 
 ### 布尔运算符
 
-![1633785572646](./images/03/08.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/08.png)
 
 | 运算符 | 运算数 |       | 运算结果 | 备注                                    |
 | ------ | ------ | ----- | -------- | --------------------------------------- |
@@ -199,7 +199,7 @@ print(lst1 is not lst2) #  True
 
 ### 位运算符
 
-![1633795132253](./images/03/09.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/09.png)
 
 ```python
 """
@@ -259,7 +259,7 @@ print(4>>2)
 
 ### 运算符的优先级
 
-![1633796903069](./images/03/10.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/03/10.png)
 
 + 算术运算符
   + 位运算符
