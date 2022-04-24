@@ -743,17 +743,17 @@ public class MethodExercise02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//编写一个方法copyPerson，可以复制一个Person对象，返回复制的对象。克隆对象，
-   //注意要求得到新对象和原来的对象是两个独立的对象，，只是他们的属性相同
-	Person03 p=new Person03();
-	  p.name="milan";
-	  p.age=100;
-	 MyTools02 tools= new MyTools02();
-	Person03 p2=tools.copyPerson(p);
-	//到此p和p2是Person对象，但是是两个独立的对象，属性相同
-	System.out.println("p的属性age"+p.age+",p的名字"+p.name);
-	System.out.println("p2的属性age"+p2.age+",p的名字"+p2.name);
-	//这里老师提示：可以通过输出对象的hashCode看看对象是否是一个
-	System.out.println(p==p2);
+   		//注意要求得到新对象和原来的对象是两个独立的对象，，只是他们的属性相同
+		Person03 p=new Person03();
+	  	p.name="milan";
+	  	p.age=100;
+	 	MyTools02 tools= new MyTools02();
+		Person03 p2=tools.copyPerson(p);
+		//到此p和p2是Person对象，但是是两个独立的对象，属性相同
+		System.out.println("p的属性age"+p.age+",p的名字"+p.name);
+		System.out.println("p2的属性age"+p2.age+",p的名字"+p2.name);
+		//这里提示：可以通过输出对象的hashCode看看对象是否是一个
+		System.out.println(p==p2);
 	}
 
 }
@@ -770,10 +770,10 @@ class MyTools02{
 		//4.方法体,判断
 	public Person03 copyPerson(Person03 p) {
 		//创建一个新的对象
-	Person03 p2=new Person03();
-	p2.name=p.name; //把原来的名字赋给p2.name
-	p2.age=p.age;//把原来对象的年龄赋给p2.age
-	return p2;
+		Person03 p2=new Person03();
+		p2.name=p.name; //把原来的名字赋给p2.name
+		p2.age=p.age;//把原来对象的年龄赋给p2.age
+		return p2;
 	}
 }
 ```
@@ -827,8 +827,7 @@ class T{
 			return factorial(n-1)*n;
 		}
 	}
-	}
-
+}
 
 ```
 
@@ -904,18 +903,17 @@ class TT{
         4.规律就是  前一天的桃子 =（后一天的桃子 +1）*2
         5.递归
         */
-        public int peach(int day) {
-        	if(day==10) { //第10天，只有一个桃
-        		return 1;
-        	}else if(day>=1&&day<=9){
-        		return(peach(day+1)+1)*2;	
-        	}else {
-        		System.out.println("day在1-10，请重新输入");
-        		return -1;
-        	}
-        	
-        }
-        }
+    public int peach(int day) {
+    	if(day==10) { //第10天，只有一个桃
+    		return 1;
+    	}else if(day>=1&&day<=9){
+        	return(peach(day+1)+1)*2;	
+    	}else {
+        	System.out.println("day在1-10，请重新输入");
+        	return -1;
+     	}
+    }
+}
 ```
 
 ### 递归调用应用实例-迷宫问题
@@ -1513,10 +1511,10 @@ public class Constructor01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//当我们new一个对象时，直接通过构造器指定名字的年龄
-     Person  p1= new Person("smith",80);
-     System.out.println("p1的信息如下");
-     System.out.println("p1对象name="+p1.name);//smith
-     System.out.println("p1对象age="+p1.age);//80
+     	Person  p1= new Person("smith",80);
+     	System.out.println("p1的信息如下");
+     	System.out.println("p1对象name="+p1.name);//smith
+     	System.out.println("p1对象age="+p1.age);//80
 	}
 
 }
@@ -1620,10 +1618,10 @@ public class ConstructorExercise {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-   Person2 p1=new Person2();//无参构造器
-   System.out.println("p1的信息name="+p1.name+"，age="+p1.age);
-   Person2 p2=new Person2("scott",50);
-   System.out.println("p2的信息name="+p2.name+"，age="+p2.age);
+   		Person2 p1=new Person2();//无参构造器
+   		System.out.println("p1的信息name="+p1.name+"，age="+p1.age);
+   		Person2 p2=new Person2("scott",50);
+   		System.out.println("p2的信息name="+p2.name+"，age="+p2.age);
 	} 
 
 }
@@ -1799,7 +1797,7 @@ class T{
 	f1();
 	//第二种方式
 	this.f1();	
-}
+	}
     //
 }
 ```
@@ -1943,8 +1941,8 @@ public class Import01 {
        for(int i=0;i<arr.length;i++){
            System.out.print(arr[i]+"\t");
        }
-       }
-
+   }
+}
 ```
 
 ### 注意事项和细节
@@ -2190,7 +2188,7 @@ class Person{
         return "信息为 name="+name+"  age="+age+" salary= "+salary;
     }
 
-        }
+}
 ```
 
 ### 将构造器和setXxx结合
@@ -2891,12 +2889,6 @@ public class Dog extends Animal {
     public void eat(){
 
     }
-
-
-
-
-
-
 }
     class AAA {
 
@@ -3447,7 +3439,7 @@ package com.study5poly_.polyarr_;
 
 public class PloyArray {
     public static void main(String[] args) {
-//应用实例：现有一个继承机构如下：要求创建1个Person对象。
+		//应用实例：现有一个继承机构如下：要求创建1个Person对象。
         //2个Student 对象和2个Teacher对象，统一放在数组中，并调用每个对象say方法
         Person person[] = new Person[5];
         person[0] = new Person("jack", 20);
@@ -3455,7 +3447,7 @@ public class PloyArray {
         person[2] = new Student("smith", 19, 30.1);
         person[3] = new Teacher("scott", 30, 20000);
         person[4] = new Teacher("king", 50, 25000);
-//循环遍历多态数组，调用say()方法
+		//循环遍历多态数组，调用say()方法
         for (int i = 0; i < person.length; i++) {
             //person[i]编译类型 是Person ，运行由jvm机来判断
             //动态绑定机制
@@ -3938,8 +3930,7 @@ class B{
 class C{
     public static String address="北京";
 
-        }
-
+}
         
 ```
 
@@ -4062,7 +4053,6 @@ class D{
         hi();
 
     }
-
 
 }
 
@@ -5831,9 +5821,6 @@ public class MemberInnerClass {
         //第二方式 在外部类中 编写一个方法 可以返回Inner08的对象
         Outer08.Inner08 inner08Instance = outer08.getInner08Instance();
         inner08Instance.say();
-
-
-
     }
 }
 class Outer08{
@@ -5870,8 +5857,6 @@ class Outer08{
         inner08.say();
         System.out.println(inner08.salary);
     }
-
-
 }
 ```
 
@@ -5906,8 +5891,6 @@ public class StaticInnerClass01 {
         System.out.println("===============");
         Outer10.getInner10_();
         inner102.say();
-
-
 
     }
 }

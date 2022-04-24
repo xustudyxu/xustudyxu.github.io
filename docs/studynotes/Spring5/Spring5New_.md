@@ -152,12 +152,9 @@ public class JTest5 {
 }
 ```
 
-## SpringWebflux介绍
 
-1. SpringWebflux是Spring5添加新的模块，用于web开发的，功能和SpringMVC类似的，Webflux使用当前一种比较流程响应式编程出现的框架。
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/04.png)
+
 
 ​                                                                                                                                                                                                    
 
-学完SpringMVC和SpringBoot再来学习Webflux...
