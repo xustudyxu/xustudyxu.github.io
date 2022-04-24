@@ -37,6 +37,25 @@ tags:
   + 练习基于SpringBoot项目
   + 练习基于SpringBoot+MyBatis-Plus项目
 
+## 友情链接
+
+::: cardList 3
+
+```yaml
+- name: Evan's blog
+  desc: 积跬步以至千里，致敬每个爱学习的你。
+  avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg
+  link: https://xugaoyi.com/
+  bgColor: '#CBEAFA'
+- name:  Young Kbt blog
+  desc: 朝圣的使徒，正在走向编程的至高殿堂！
+  avatar: https://cdn.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png
+  link: https://notes.youngkbt.cn/
+  bgColor: '#CBEAFA'
+```
+
+:::
+
 ## 常用链接
 
 ### 博客
@@ -96,12 +115,6 @@ tags:
 ::: cardList 2
 
 ```yaml
-- name: 图片压缩
-  desc:  方便
-  avatar: https://tinypng.com/images/pro/panda-pro.png
-  link: https://tinypng.com/
-  bgColor: '#CBEAFA'
-  textColor: '#6854A1'
 - name: 逼格徽章
   desc: 好看的徽章
   avatar: https://img-blog.csdnimg.cn/img_convert/dab82097e9b5cb3768cab858d2944d62.png
