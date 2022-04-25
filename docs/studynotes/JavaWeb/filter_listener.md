@@ -1,108 +1,15 @@
 ---
-title: inter
+title: 过滤器|监听器
 date: 2022-04-25 23:19:05
 permalink: /pages/f883e2/
 categories:
-  - studynotes
+  - JavaWeb
 tags:
-  - 
+  - JavaWeb
 ---
-# 拦截器 过滤器 监听器
+# 过滤器|监听器
 
 [[toc]]
-
-## 什么是拦截器
-
-作用：SpringMVC 用于拦截 Controller 的路由请求。
-
-本质：AOP 面向切面编程。
-
-场景：权限检查（登录拦截，接口安全校验）、日志记录（推荐使用原生 AOP）、性能监控（接口访问的执行时间）、通用行为（获取 Cookie 信息，获取用户信息等）。
-
-## 自定义拦截器
-
-1. 定义一个自定义拦截实现 HandlerInterceptor 接口，重写三个方法。
-
-```java
-/**
- * @author frx
- * @version 1.0
- * @date 2022/4/25  23:05
- */
-@Slf4j
-public class LoginInterceptor implements HandlerInterceptor {
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("1-----preHandle----->");
-        return true;
-    }
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("3-----postHandle----->");
-    }
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("4-----afterCompletion----->");
-    }
-}
-```
-
-2. 定义一个配置类实现 WebMvcConfigurer 接口，重写 addInterceptors 方法，注册拦截器并定义规则。
-
-```java
-/**
- * @author frx
- * @version 1.0
- * @date 2022/4/25  23:12
- */
-@Configuration
-public class WebMvcConfiguration implements WebMvcConfigurer {
-    @Bean
-    public LoginInterceptor getLoginInterceptor() {
-        return new LoginInterceptor();
-    }
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(getLoginInterceptor()).addPathPatterns("/api/**");
-    }
-}
-```
-
-3. 定义测试接口。
-
-```java
-/**
- * @author frx
- * @version 1.0
- * @date 2022/4/25  23:13
- */
-@RestController
-@Slf4j
-public class HelloController {
-    @GetMapping("/api/hello")
-    public String hello() {
-        log.info("2-----hello----->");
-        return "hello";
-    }
-}
-```
-
-4. 结果
-
-```java
-2022-04-25 23:21:05.142  INFO 19276 --- [nio-8888-exec-5] c.f.i.config.LoginInterceptor            : 1-----preHandle----->
-2022-04-25 23:21:05.143  INFO 19276 --- [nio-8888-exec-5] c.f.i.controller.HelloController         : 2-----hello----->
-2022-04-25 23:21:05.148  INFO 19276 --- [nio-8888-exec-5] c.f.i.config.LoginInterceptor            : 3-----postHandle----->
-2022-04-25 23:21:05.148  INFO 19276 --- [nio-8888-exec-5] c.f.i.config.LoginInterceptor            : 4-----afterCompletion----->
-```
-
-## 单个拦截器执行流程
-
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2yt4trspxew0.webp)
-
-## 多个拦截器的执行流程
-
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.3ukw3z3zmk60.webp)
 
 ## 什么是过滤器
 
