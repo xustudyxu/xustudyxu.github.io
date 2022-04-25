@@ -14,7 +14,9 @@ module.exports = [{
     }, {
       text: 'JavaWeb',
       items: [
-        { text: 'Servlet', link: '/pages/1574fe/' }
+        { text: 'Servlet', link: '/pages/1574fe/' },
+        { text: 'MVC', link: '/pages/8bc1c4/' },
+        { text: 'filter|listener', link: '/pages/f883e2/' },
 
       ]
     },

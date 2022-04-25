@@ -10,7 +10,7 @@ module.exports = {
      '/studynotes/Spring5/':require('../studynotes/Spring5/sidebar'),
      '/studynotes/SpringMVC/':require('../studynotes/SpringMVC/sidebar'),
      '/studynotes/MyBatis/':require('../studynotes/MyBatis/sidebar'),
-     '/studynotes/Servlet/':require('../studynotes/Servlet/sidebar'),
+     '/studynotes/JavaWeb/':require('../studynotes/JavaWeb/sidebar'),
      '/studynotes/Git/':require('../studynotes/Git/sidebar'),
      '/studynotes/SpringBoot2/':require('../studynotes/SpringBoot2/sidebar'),
      '/studynotes/NoSQL/':require('../studynotes/NoSQL/sidebar'),
