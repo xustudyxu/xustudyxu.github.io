@@ -54,7 +54,7 @@ module.exports = {
     // // 默认是 false, 设置为 true 来启用
 
     //首页大图
-    bodyBgImg: 'https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/00.6grp3511u2s0.webp',  // 你的图片路径(必须位于 public 下)，可以是 URL
+    bodyBgImg: 'https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2a9ingyx8u4g.webp',  // 你的图片路径(必须位于 public 下)，可以是 URL
     bodyBgImgOpacity: 1, // body 背景图透明度，选值 0 ~ 1.0, 默认0.5
 
     serviceWorker: {
