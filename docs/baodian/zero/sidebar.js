@@ -5,6 +5,13 @@ module.exports = [
     children:[
     '/baodian/zero/SSM-CRUD',
     ]
+  },
+  {
+    title:'SpringBoot+MyBatis-Plus',
+    collapsable: false,
+    children:[
+    '/baodian/zero/reggie',
+    ]
   }
   
 ]

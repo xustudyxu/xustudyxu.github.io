@@ -52,6 +52,11 @@ tags:
   avatar: https://cdn.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png
   link: https://notes.youngkbt.cn/
   bgColor: '#CBEAFA'
+- name:  Java 全栈知识体系
+  desc: 告别碎片化学习，帮助你构筑你自己的知识体系
+  avatar: https://www.pdai.tech/_images/index-read.gif
+  link: https://www.pdai.tech/
+  bgColor: '#CBEAFA'
 ```
 
 :::
