@@ -503,3 +503,102 @@ public class R<T> {
     }
 ```
 
+## 完善登录功能
+
+### 问题分析
+
+> 前面我们已经完成了后台系统的员工登录功能开发，但是还存在一个问题:用户如果不登录，直接访问系统首页面，照样可以正常访问。
+>
+> 这种设计并不合理，我们希望看到的效果应该是，只有登录成功后才可以访问系统中的页面，如果没有登录则跳转到登录页面。
+>
+> 那么，具体应该怎么实现呢?
+>
+> 答案就是使用过滤器或者拦截器，在过滤器或者拦截器中判断用户是否已经完成登录，如果没有登录则跳转到登录页面。
+
+### 代码实现
+
+实现步骤:
+
+1. 创建自定义过滤器LoginCheckFilter
+2. 在启动类上加入注解`@ServletComponentScan`
+3. 完善过滤器的处理逻辑
+
+过滤器具体的处理逻辑如下：
+
+1. 获取本次请求的URL
+2. 判断本次请求是否需要处理
+3. 如果不需要处理，则直接放行
+4. 判断登录状态，如果已登录，则直接放行
+5. 如果未登录则返回未登录结果
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7da0nnlnot4.webp)
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.h9118ipujl4.webp)
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/28  9:32
+ *检查用户是否已经完成登录
+ */
+@WebFilter(filterName = "LoginCheckFilter",urlPatterns = "/*")
+@Slf4j
+public class LoginCheckFilter implements Filter {
+
+    //路径匹配器，支持通配符
+    public static final AntPathMatcher PATH_MATCHER=new AntPathMatcher();
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest request=(HttpServletRequest) servletRequest;
+        HttpServletResponse response=(HttpServletResponse) servletResponse;
+
+        //1.获取本次请求的URI
+        String requestURI = request.getRequestURI();
+
+        //1.1定义不需要处理的请求路径
+        String[] urls = new String[]{
+                "/employee/login",//登录 放行
+                "/employee/logout",
+                "/backend/**",  //后端静态资源
+                "/front/**"     //前端静态资源
+        };
+        //2.判断本次请求是否需要处理
+        boolean check = check(urls, requestURI);
+
+        //3.如果不需要处理，则直接放行
+        if(check){
+            filterChain.doFilter(request,response);
+            return;
+        }
+
+        //4.判断登录状态，如果已登录，则直接放行
+        if(request.getSession().getAttribute("employee")!=null){
+            filterChain.doFilter(request,response);
+            return;
+        }
+
+        //5.如果未登录则返回未登录结果，通过输出流方式向客户端页面响应数据
+        response.getWriter().write(JSON.toJSONString(R.error("NOTLOGIN")));
+        return;
+    }
+
+    /**
+     * 路径匹配，检查本次请求是否需要放行
+     * @param urls
+     * @param requestURI
+     * @return
+     */
+    public boolean check(String[] urls,String requestURI){
+        for (String url : urls) {
+            boolean match = PATH_MATCHER.match(url, requestURI);
+            if(match){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```
+
