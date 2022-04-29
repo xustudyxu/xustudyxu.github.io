@@ -468,7 +468,7 @@ public class R<T> {
     }
 ```
 
-## 后台系统推出功能
+## 后台系统退出功能
 
 ### 需求分析
 
@@ -556,6 +556,9 @@ public class LoginCheckFilter implements Filter {
 
         //1.获取本次请求的URI
         String requestURI = request.getRequestURI();
+        log.info("拦截到请求:{}",requestURI);
+
+
 
         //1.1定义不需要处理的请求路径
         String[] urls = new String[]{
@@ -569,16 +572,19 @@ public class LoginCheckFilter implements Filter {
 
         //3.如果不需要处理，则直接放行
         if(check){
+            log.info("本次请求{}不需要处理",requestURI);
             filterChain.doFilter(request,response);
             return;
         }
 
         //4.判断登录状态，如果已登录，则直接放行
         if(request.getSession().getAttribute("employee")!=null){
+            log.info("用户已登录，用户id为；{}",request.getSession().getAttribute("employee"));
             filterChain.doFilter(request,response);
             return;
         }
 
+        log.info("用户未登录");
         //5.如果未登录则返回未登录结果，通过输出流方式向客户端页面响应数据
         response.getWriter().write(JSON.toJSONString(R.error("NOTLOGIN")));
         return;
@@ -602,3 +608,147 @@ public class LoginCheckFilter implements Filter {
 }
 ```
 
+### 功能测试
+
++ 测试未登录直接访问index页面
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3m6lv9yahcy0.webp)
+
+## 新增员工
+
+### 需求分析
+
+后台系统中可以管理员工信息，通过新增员工来添加后台系统用户。点击[添加员工]按钮跳转到新增页面，如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7ob0wlo3spc.webp)
+
+### 数据模型
+
+新增员工，其实就是将我们新增页面录入的员工数据插入到employee表。需要注意，employee表中对username字段加入了唯一约束，因为username是员工的登录账号，必须是唯一的
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.v139523rze8.webp)
+
+employee表中的status字段已经设置了默认值1，表示状态正常。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.32fegy1e7ys0.webp)
+
+### 代码开发
+
+在开发代码之前，需要梳理一下整个程序的执行过程:
+
+1. 页面发送ajax请求，将新增员工页面中输入的数据以json的形式提交到服务端
+2. 服务端Controller接收页面提交的数据并调用Service将数据进行保存
+3. Service调用Mapper操作数据库，保存数据
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.x2n5bomhveo.webp)
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.74bo2v369180.webp)
+
+```java
+    /**
+     * 新增员工
+     * @param employee
+     * @return
+     */
+    @PostMapping
+    public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
+        log.info("新增员工，员工信息:{}",employee.toString());
+
+        //设置初始密码123456，需要进行md5 加密处理
+        employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+        employee.setCreateTime(LocalDateTime.now());
+        employee.setUpdateTime(LocalDateTime.now());
+
+        //获得当前登录用户的Id
+        Long empId = (Long) request.getSession().getAttribute("employee");
+
+        employee.setCreateUser(empId);
+        employee.setUpdateUser(empId);
+
+        employeeService.save(employee);
+
+        return R.success("新增员工成功");
+    }
+```
+
++ 测试
+
+```java
+2022-04-29 16:02:28.657  INFO 796 --- [nio-8088-exec-7] c.frx01.reggie.filter.LoginCheckFilter   : 用户已登录，用户id为；1
+2022-04-29 16:02:42.761  INFO 796 --- [nio-8088-exec-7] c.f.r.controller.EmployeeController      : 新增员工，员工信息:Employee(id=null, username=zhangsan, name=张三, password=null, phone=18339981812, sex=1, idNumber=123456789987654321, status=null, createTime=null, updateTime=null, createUser=null, updateUser=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a83e3ef] was not registered for synchronization because synchronization is not active
+2022-04-29 16:04:02.546 ERROR 796 --- [nio-8088-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true, jdbcUrl : jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true, lastPacketReceivedIdleMillis : 127717
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6da4076d] will not be managed by Spring
+==>  Preparing: INSERT INTO employee ( id, username, name, password, phone, sex, id_number, create_time, update_time, create_user, update_user ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: 1519950622798766082(Long), zhangsan(String), 张三(String), e10adc3949ba59abbe56e057f20f883e(String), 18339981812(String), 1(String), 123456789987654321(String), 2022-04-29T16:03:54.404(LocalDateTime), 2022-04-29T16:03:54.806(LocalDateTime), 1(Long), 1(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a83e3ef]
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2hzz2pq29680.webp)
+
+### 全局异常捕获
+
+> 前面的程序还存在一个问题，就是当我们在新增员工时输入的账号已经存在，由于employee表中对该字段加入了唯一约束，此时程序会抛出异常:
+>
+> `java. sql.SQLIntegrityConstraintViolationException: Duplicate entry 'zhangsan’for key 'idx_username`
+>
+> 此时需要我们的程序进行异常捕获，通常有两种处理方式:
+>
+> 1. 在Controller方法中加入try、catch进行异常捕获  //不推荐
+>
+> ```java
+>         try {
+>             employeeService.save(employee);
+>         } catch (Exception e) {
+>             R.error("新增员工失败");
+>         }
+>         return R.success("新增员工成功");
+> ```
+>
+> 2. 使用异常处理器进行全局捕获
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/4/29  16:20
+ * desc:全局异常处理
+ */
+@ControllerAdvice(annotations = {RestController.class,Controller.class})  //拦截类上面加了RestController注解或者Controller的controller\
+@ResponseBody
+@Slf4j
+public class GlobalExceptionHandler {
+
+    /**
+     * 异常处理方法
+     * @return
+     */
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public R<String> exceptionHandler(SQLIntegrityConstraintViolationException ex){
+        log.error(ex.getMessage());
+
+        if(ex.getMessage().contains("Duplicate entry")){
+            String[] split = ex.getMessage().split(" ");
+            String msg=split[2]+"已存在";
+            return  R.error(msg);
+        }
+        return R.error("未知错误");
+    }
+}
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2whfttupru80.webp)
+
+### 小结
+
+::: tip 小结
+
+1. 根据产品原型明确业务需求
+2. 重点分析数据的流转过程和数据格式
+3. 通过debug断点调试跟踪程序执行过程
+
+:::
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6jzl7cma1wk0.webp)

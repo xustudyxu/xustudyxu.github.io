@@ -16,11 +16,11 @@ tags:
 > 1. git(版本控制)
 >    - [下载地址](https://git-scm.com/)(最新版就OK，下载速度较慢一些，可以问我要安装包)
 > 2. node(核心)
->    - [下载地址](https://nodejs.org/en/)(版本需要大于等于8，最新版本就行)
+>    - [下载地址](https://nodejs.org/en/)(最新版本就行)
 > 3. yarn(npm包管理的替代)
->    + [下载地址](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+>    + [下载地址](https://classic.yarnpkg.com/en/docs/install#windows-stable)(最新版本就行)
 > 4. vscode(编辑器)
->    + [下载地址](https://code.visualstudio.com/)
+>    + [下载地址](https://code.visualstudio.com/)(最新版本就行)
 
 #### 验证
 
