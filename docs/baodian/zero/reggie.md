@@ -752,3 +752,301 @@ public class GlobalExceptionHandler {
 :::
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6jzl7cma1wk0.webp)
+
+## 员工信息分页显示
+
+### 需求分析
+
+系统中的员工很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中都会以分页的方式来展示列表数据。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5c671konoi00.webp)
+
+### 代码开发
+
+在开发代码之前，需要梳理一下整个程序的执行过程：
+
+1. 页面发送ajax请求，将分页查询参数(page、pageSize、name)提交到服务端
+2. 服务端Controller接收页面提交的数据并调用Service查询数据
+3. Service调用Mapper操作数据库，查询分页数据
+4. Controller将查询到的分页数据响应给页面
+5. 页面接收到分页数据并通过ElementUl的Table组件展示到页面上
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.15qobcscm14w.webp)
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.f85ybkxqfgw.webp)
+
++ 配置分页插件
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/5/1  16:59
+ * desc:配置MP的分页插件
+ */
+@Configuration
+public class MyBatisPlusConfig {
+
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor(){
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+        return null;
+    }
+}
+```
+
++  编写处理器
+
+```java
+    /**
+     * 员工信息的分页查询
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize,String name){
+        log.info("page={},pageSize={},name={}",page,pageSize,name);
+
+        //构造分页构造器
+        Page pageInfo=new Page(page,pageSize);
+
+        //构造条件构造器
+        LambdaQueryWrapper<Employee> queryWrapper=new LambdaQueryWrapper();
+        //添加过滤条件
+        queryWrapper.like(StringUtils.isNotEmpty(name),Employee::getName,name);
+        //排序条件
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+
+        //执行查询
+        employeeService.page(pageInfo,queryWrapper);
+
+        return R.success(pageInfo);
+    }
+```
+
++ 测试，查看服务端响应的json
+
+```json
+{
+	"code": 1,
+	"msg": null,
+	"data": {
+		"records": [{
+			"id": 1520694192883232769,
+			"username": "lisi12",
+			"name": "李四",
+			"password": "e10adc3949ba59abbe56e057f20f883e",
+			"phone": "18339976721",
+			"sex": "1",
+			"idNumber": "123456789123456789",
+			"status": 1,
+			"createTime": [2022, 5, 1, 17, 18, 43],
+			"updateTime": [2022, 5, 1, 17, 18, 43],
+			"createUser": 1,
+			"updateUser": 1
+		}, {
+			"id": 1520694004332429315,
+			"username": "lisi",
+			"name": "李四",
+			"password": "e10adc3949ba59abbe56e057f20f883e",
+			"phone": "18339976721",
+			"sex": "1",
+			"idNumber": "123456789987654321",
+			"status": 1,
+			"createTime": [2022, 5, 1, 17, 17, 58],
+			"updateTime": [2022, 5, 1, 17, 17, 58],
+			"createUser": 1,
+			"updateUser": 1
+		}, {
+			"id": 1519950622798766082,
+			"username": "zhangsan",
+			"name": "张三",
+			"password": "e10adc3949ba59abbe56e057f20f883e",
+			"phone": "18339981812",
+			"sex": "1",
+			"idNumber": "123456789987654321",
+			"status": 1,
+			"createTime": [2022, 4, 29, 16, 3, 54],
+			"updateTime": [2022, 4, 29, 16, 3, 55],
+			"createUser": 1,
+			"updateUser": 1
+		}, {
+			"id": 1,
+			"username": "admin",
+			"name": "管理员",
+			"password": "e10adc3949ba59abbe56e057f20f883e",
+			"phone": "13812312312",
+			"sex": "1",
+			"idNumber": "110101199001010047",
+			"status": 1,
+			"createTime": [2021, 5, 6, 17, 20, 7],
+			"updateTime": [2021, 5, 10, 2, 24, 9],
+			"createUser": 1,
+			"updateUser": 1
+		}],
+		"total": 0,
+		"size": 10,
+		"current": 1,
+		"orders": [],
+		"optimizeCountSql": true,
+		"hitCount": false,
+		"countId": null,
+		"maxLimit": null,
+		"searchCount": true,
+		"pages": 0
+	},
+	"map": {}
+}
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6xpydt42gnk.webp)
+
+> 账号状态响应的是1，为什么页面显示正常？
+>
+> ```html
+>         <el-table-column label="账号状态">
+>           <template slot-scope="scope">
+>             {{ String(scope.row.status) === '0' ? '已禁用' : '正常' }}
+>           </template>
+>         </el-table-column>
+> ```
+
+## 启用、禁用员工账号
+
+### 需求分析
+
+在员工管理列表页面，可以对某个员工账号进行启用或者禁用操作。账号禁用的员工不能登录系统，启用后的员工可以正常登录。
+
+需要注意，只有管理员（admin用户）可以对其他普通用户进行启用、禁用操作，所以普通用户登录系统后启用、禁用按钮不显示。
+
+如果某个员工账号状态为正常，则按钮显示为“禁用”，如果员工账号状态为已禁用，则按钮显示为“启用”。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.68eldra6u100.webp)
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5xnc26ppcu40.webp)
+
+### 代码开发
+
+页面是怎么做到只有管理员admin能够看到启用，禁用按钮的?
+
+```html {3}
+		created() {
+          this.init()
+          if(localStorage.getItem('userInfo')!=null) {
+            //获取当前登录员工的账号，并赋值给模型数据user
+            this.user = JSON.parse(localStorage.getItem('userInfo')).username
+          }
+        },
+```
+
+```html {9}
+            </el-button>
+            <el-button
+              type="text"
+              size="small"
+              class="delBut non"
+              @click="statusHandle(scope.row)"
+              v-if="user === 'admin'"
+            >
+              {{ scope.row.status == '1' ? '禁用' : '启用' }}
+            </el-button>
+```
+
+在开发代码之前，需要梳理一下整个程序的执行过程：
+
+1. 页面发送ajax请求，将参数(id、status)提交到服务端
+2. 服务端Controller接收页面提交的数据并调用Service更新数据
+3. Service调用Mapper操作数据库
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1y3cpvdor0f4.webp)
+
+页面中的ajax请求是如何发送的呢
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7jmo8s9xyuo0.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 根据id修改员工信息
+     * @param employee
+     * @return
+     */
+    @PutMapping
+    public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
+        log.info(employee.toString());
+
+        Long empId = (Long) request.getSession().getAttribute("employee");
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(empId);
+        employeeService.updateById(employee);
+        return R.success("员工信息修改成功");
+    }
+```
+
+> 测试过程没有报错，但是功能并没有实现，查看数据库中的数据也没有变化。
+>
+> 观察控制台输出的SQL：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1efldv8seqo0.webp)
+
+SQL执行的结果是更新的数据行数为0，仔细观察id的值，和数据库中对应记录的id值并不相同
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4xrs6cljb1s0.webp)
+
+### 代码修复
+
+通过观察控制台输出的5QL发现页面传递过来的员工id的值和数据库中的id值不一致，这是怎么回事呢?
+
+分页查询时服务端响应给页面的数据中id的值为19位数字，类型为long
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.3vz7gcxpamo0.webp)
+
+页面中js处理long型数字只能精确到前16位，所以最终通过ajax请求提交给服务器的时候id变为了1520694192883232<font color=##dd0000>800</font>
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.b3dwlex8n2g.webp)
+
+前面我们已经发现了问题的原因，即js对long型数据进行处理时丢失精度，导致提交的id和数据库中的id不一致。
+
+如何解决这个问题？
+
+我们可以在服务器给页面响应json数据时进行处理，将`long型数据统一转为String字符串`
+
+具体实现步骤:
+
+1. 提供对象转换器lacksonObjectMapper,基于lackson进行java对象到json数据的转换
+2. 在WebMvcConfig配置类中扩展Spring mvc的消息转换器，在此消息转换器中使用提供的对象转换器进行Java对象到json数据的转换
+
+```java
+    /**
+     * 扩展mvc框架的消息转换器
+     * @param converters
+     */
+    @Override
+    protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+
+        log.info("扩展消息转换器...");
+        //创建消息转换器对象
+        MappingJackson2CborHttpMessageConverter messageConverter=new MappingJackson2CborHttpMessageConverter();
+        //设置对象转换器，底层使用Jackson将Java对象转为json
+        messageConverter.setObjectMapper(new JacksonObjectMapper());
+        //将上面的消息转换器对象追加到mvc框架的转换器容器集合中
+        converters.add(0,messageConverter);
+    }
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6vo139weyz00.webp)
+
+### 功能测试
+
+```java
+==>  Preparing: UPDATE employee SET status=?, update_time=?, update_user=? WHERE id=?
+==> Parameters: 0(Integer), 2022-05-01T20:46:06.772(LocalDateTime), 1(Long), 1520694192883232769(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@299d2b9]
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.axkrn5nmpyg.webp)
+
