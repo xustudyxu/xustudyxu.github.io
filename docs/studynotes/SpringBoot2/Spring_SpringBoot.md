@@ -13,7 +13,7 @@ tags:
 
 ## Spring能做什么
 
-![1646981762486](./images/Spring_SpringBoot2/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/01.png)
 
 ## Spring的生态
 
@@ -41,7 +41,7 @@ web开发
 
 ### 响应式编程
 
-![1647053572789](./images/Spring_SpringBoot2/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/02.png)
 
 ### 内部源码设计
 
@@ -119,7 +119,7 @@ In short, the **microservice architectural style** is an approach to developing 
 
 + SpringBoot+SpringCloud
 
-![1647053611543](./images/Spring_SpringBoot2/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/03.png)
 
 ## 云原生
 
@@ -137,19 +137,19 @@ In short, the **microservice architectural style** is an approach to developing 
 
 ### 上云的解决
 
-![1647053629806](./images/Spring_SpringBoot2/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/04.png)
 
 ## 如何学习SpringBoot
 
 ### 官网文档架构
 
-![1647053665752](./images/Spring_SpringBoot2/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/05.png)
 
-![1647053682378](./images/Spring_SpringBoot2/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/06.png)
 
 查看版本新特性；
 
 https://github.com/spring-projects/spring-boot/wiki#release-notes
 
-![1647053715587](./images/Spring_SpringBoot2/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/07.png)
 
