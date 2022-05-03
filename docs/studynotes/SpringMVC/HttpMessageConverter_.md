@@ -162,7 +162,7 @@ public String testAjax(String username, String password){
 
 ResponseEntity用于控制器方法的返回值类型，该控制器方法的返回值就是响应到浏览器的响应报文
 
-::: details Click to view the code writen by author
+::: details Click to view the code written by author
 
 ```java
 /**

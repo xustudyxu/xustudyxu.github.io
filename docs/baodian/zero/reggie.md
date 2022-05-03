@@ -80,7 +80,7 @@ CREATE DATABASE reggie CHARACTER SET utf8 COLLATE utf8_bin
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2eelc0y98n8k.webp)
 
-::: warning
+::: warning 注意
 
 导入表结构，既可以使用上面的图形界面，也可以使用MySQL命令`source sql文件的绝对路径`通过命令导入表结构时，注意sql文件不要放在中文目录中
 
@@ -424,7 +424,7 @@ public class R<T> {
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.s541nyod1nk.webp)
 
-+ 编写控制器
++ 编写处理映射器
 
 ```java
     /**
@@ -642,6 +642,8 @@ employee表中的status字段已经设置了默认值1，表示状态正常。
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.74bo2v369180.webp)
 
++ 编写处理映射器
+
 ```java
     /**
      * 新增员工
@@ -794,7 +796,7 @@ public class MyBatisPlusConfig {
 }
 ```
 
-+  编写处理器
++  编写处理映射器
 
 ```java
     /**
@@ -964,7 +966,7 @@ public class MyBatisPlusConfig {
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7jmo8s9xyuo0.webp)
 
-+ 编写处理器
++ 编写处理映射器
 
 ```java
     /**
