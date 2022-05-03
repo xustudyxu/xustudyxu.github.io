@@ -11,6 +11,7 @@ module.exports = [
     collapsable: false,
     children:[
     '/baodian/zero/reggie',
+    '/baodian/zero/reggie_Employee_management',
     ]
   }
   
