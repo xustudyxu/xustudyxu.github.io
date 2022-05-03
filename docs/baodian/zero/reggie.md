@@ -1050,3 +1050,55 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.axkrn5nmpyg.webp)
 
+## 编辑员工信息
+
+### 需求分析
+
+在员工管理列表页面点击编辑按钮，跳转到编辑页面，在编辑页面回显员工信息并进行修改，最后点击保存按钮完成编辑操作
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5pchvta5dms0.webp)
+
+### 代码开发
+
+在开发代码之前需要梳理一下操作过程和对应的程序的执行流程：
+
+1. 点击编辑按钮时，页面跳转到add.html，并在url中携带参数[员工id]
+2. 在add.html页面获取url中的参数[员工id]
+3. 发送ajax请求，请求服务端，同时提交员工id参数
+4. 服务端接收请求，根据员工id查询员工信息，将员工信息以json形式响应给页面
+5. 页面接收服务端响应的json数据，通过VUE的数据绑定进行员工信息回显
+6. 点击保存按钮，发送ajax请求，将页面中的员工信息以json方式提交给服务端
+7. 服务端接收员工信息，并进行处理，完成后给页面响应
+8. 页面接收到服务端响应信息后进行相应处理
+
+`注意`:**add.html页面为公共页面，新增员工和编辑员工都是在此页面操作**
+
++ 编写处理映射器
+
+```java
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public R<Employee> getById(@PathVariable Long id){
+        log.info("根据id查询信息...");
+        Employee employee = employeeService.getById(id);
+        if(employee!=null){
+            return R.success(employee);
+        }
+        return R.error("没有查询到对应员工信息");
+    }
+```
+
+### 功能测试
+
+将张三账号修改为Zhangsan
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4ue2x72kfy00.webp)
+
++ 结果
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.20tbp6d3wvc0.webp)
+
