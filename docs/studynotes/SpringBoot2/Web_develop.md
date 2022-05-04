@@ -46,7 +46,7 @@ The auto-configuration adds the following features on top of Spring’s defaults
 
 > If you want to take complete control of Spring MVC, you can add your own `@Configuration` annotated with `@EnableWebMvc`, or alternatively add your own `@Configuration`-annotated `DelegatingWebMvcConfiguration` as described in the Javadoc of `@EnableWebMvc`.
 >
-> **使用** `@EnableWebMvc+@Configuration+DelegatingWebMvcConfiguration 全面接管SpringMVC`
+> **使用** `@EnableWebMvc+@Configuration+DelegatingWebMvcConfiguration `**全面接管SpringMVC**
 
 ## 简单功能分析
 

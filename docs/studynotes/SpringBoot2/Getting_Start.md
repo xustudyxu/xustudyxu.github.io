@@ -236,8 +236,8 @@ Spring Boot 推荐的基础 POM 文件
 | spring-boot-starter-web          | 支持 Web 应用开发，包含 Tomcat 和 spring-mvc。               |
 | spring-boot-starter-websocket    | 支持使用 Tomcat 开发 WebSocket 应用。                        |
 | spring-boot-starter-ws           | 支持 Spring Web Services。                                   |
-| pring-boot-starter-actuator      | 添加适用于生产环境的功能，如性能指标和监测等功能。           |
-| pring-boot-starter-remote-shell  | 添加远程 SSH 支持。                                          |
+| spring-boot-starter-actuator     | 添加适用于生产环境的功能，如性能指标和监测等功能。           |
+| spring-boot-starter-remote-shell | 添加远程 SSH 支持。                                          |
 | spring-boot-starter-jetty        | 使用 Jetty 而不是默认的 Tomcat 作为应用服务器。              |
 | spring-boot-starter-log4j        | 添加 Log4j 的支持。                                          |
 | spring-boot-starter-logging      | 使用 Spring Boot 默认的日志框架 Logback。                    |
