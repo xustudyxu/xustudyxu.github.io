@@ -23,7 +23,7 @@ tags:
 >
 > 答案就是使用过滤器或者拦截器，在过滤器或者拦截器中判断用户是否已经完成登录，如果没有登录则跳转到登录页面。
 
-### 代码实现
+### 代码开发
 
 实现步骤:
 
@@ -152,7 +152,7 @@ employee表中的status字段已经设置了默认值1，表示状态正常。
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.74bo2v369180.webp)
 
-- 编写处理映射器
+- 编写处理器
 
 ```java
     /**
@@ -306,7 +306,7 @@ public class MyBatisPlusConfig {
 }
 ```
 
-- 编写处理映射器
+- 编写处理器
 
 ```java
     /**
@@ -476,7 +476,7 @@ public class MyBatisPlusConfig {
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7jmo8s9xyuo0.webp)
 
-- 编写处理映射器
+- 编写处理器
 
 ```java
     /**
@@ -583,7 +583,7 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 `注意`:**add.html页面为公共页面，新增员工和编辑员工都是在此页面操作**
 
-- 编写处理映射器
+- 编写处理器
 
 ```java
     /**

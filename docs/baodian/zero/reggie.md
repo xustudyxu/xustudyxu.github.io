@@ -426,7 +426,7 @@ public class R<T> {
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.s541nyod1nk.webp)
 
-+ 编写处理映射器
++ 编写处理器
 
 ```java
     /**

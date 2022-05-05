@@ -858,13 +858,13 @@ public class RecursionExercise01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("请输入一个整数");
-    TT t1=new TT();
-    Scanner input=new Scanner(System.in);
-   // long n=input.nextInt();
-   // System.out.println("当n="+n+"时对应的斐波那契数是"+t1.fibonacci(n));
-    int day;
-    day=input.nextInt();
-    System.out.println("第"+day+"天有"+t1.peach(day)+"个桃子");
+    	TT t1=new TT();
+    	Scanner input=new Scanner(System.in);
+   		// long n=input.nextInt();
+   		// System.out.println("当n="+n+"时对应的斐波那契数是"+t1.fibonacci(n));
+    	int day;
+    	day=input.nextInt();
+    	System.out.println("第"+day+"天有"+t1.peach(day)+"个桃子");
 	}
 
 }
