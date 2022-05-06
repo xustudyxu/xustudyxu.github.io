@@ -338,7 +338,7 @@ public class UserService {
 
 + 设置出现哪些异常不进行事务回滚
 
-## XML声明式声明式事务管理(了解)
+## XML声明式事务管理(了解)
 
 1. 在Spring配置文件中进行配置
 

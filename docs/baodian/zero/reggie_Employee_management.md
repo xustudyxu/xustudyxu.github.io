@@ -299,9 +299,9 @@ public class MyBatisPlusConfig {
 
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor(){
-        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-        interceptor.addInnerInterceptor(new PaginationInnerInterceptor());
-        return null;
+        MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
+        mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+        return mybatisPlusInterceptor;
     }
 }
 ```

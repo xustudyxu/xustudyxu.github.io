@@ -12,6 +12,7 @@ module.exports = [
     children:[
     '/baodian/zero/reggie',
     '/baodian/zero/reggie_Employee_management',
+    '/baodian/zero/reggie_Dish_management',
     ]
   }
   
