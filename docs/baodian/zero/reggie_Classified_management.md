@@ -1,7 +1,7 @@
 ---
 title: 瑞吉外卖-分类管理业务开发
 date: 2022-05-07 21:21:04
-permalink: /pages/233cd2/
+permalink: /pages/f2037b/
 categories:
   - 初级开发篇
 tags:
@@ -132,7 +132,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 + 新增用户小王，账号为test001,再次修改账号为test002
 
-![1651926420821](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1651926420821.png)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4mabyp51lwc0.webp)
 
 ### 功能完善
 
