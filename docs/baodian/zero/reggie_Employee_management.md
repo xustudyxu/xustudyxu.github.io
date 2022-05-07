@@ -39,7 +39,7 @@ tags:
 4. 判断登录状态，如果已登录，则直接放行
 5. 如果未登录则返回未登录结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7da0nnlnot4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.kf1svgdigpo.webp)
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.h9118ipujl4.webp)
 
