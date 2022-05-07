@@ -15,13 +15,16 @@ tags:
 
 ### 文件上传介绍
 
-文件上传，也称为uptoad，是指将本地图片、视频、音频等文件上传到服务器上，可以供其他用户浏览或下载的过程。文件上传在项目中应用非常广泛，我们经常发微博、发微信朋友圈都用到了文件上传功能。
+文件上传，也称为upload，是指将本地图片、视频、音频等文件上传到服务器上，可以供其他用户浏览或下载的过程。文件上传在项目中应用非常广泛，我们经常发微博、发微信朋友圈都用到了文件上传功能。
 
 文件上传时，对页面的form表单有如下要求:
 
-+ method="post"                                              采用post方式提交数据
-+ enctype="multipart/form-data"                  采用multipart格式上传文件
-+ type="file"                                                       采用input的file控件上传
++ method="post"                                              
+  + 采用post方式提交数据
++ enctype="multipart/form-data"                  
+  + 采用multipart格式上传文件
++ type="file"                                                       
+  + 采用input的file控件上传
 
 举例:
 
