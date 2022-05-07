@@ -256,7 +256,7 @@ vim /etc/profile
 ```
 
 ```shell
-# set java environment  #注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
+# set java environment  #注意JDK版本,用老师提供的jdk应该把jdk1.8.0_301改为jdk1.8.0_211
 export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
@@ -273,7 +273,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 ```shell
 [root@master java1.8]# java -version
-java version "1.8.0_301"  #用老师给的jdk这里应该显示"1.8.0_211"
+java version "1.8.0_301"  #用老师提供的jdk这里应该显示"1.8.0_211"
 Java(TM) SE Runtime Environment (build 1.8.0_301-b09)
 Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)
 ```
@@ -374,7 +374,7 @@ hdfs-site.xml               mapred-env.cmd
 vim hadoop-env.sh
 ```
 
-> 注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
+> 注意JDK版本,用老师提供jdk的应该把jdk1.8.0_301改为jdk1.8.0_211
 
 ```shell
 export JAVA_HOME=/usr/local/java/jdk1.8.0_301
@@ -386,7 +386,7 @@ export JAVA_HOME=/usr/local/java/jdk1.8.0_301
 vim yarn-env.sh
 ```
 
-> 注意JDK版本,用老师给的应该把jdk1.8.0_301改为jdk1.8.0_211
+> 注意JDK版本,用老师提供的jdk应该把jdk1.8.0_301改为jdk1.8.0_211
 
 ```shell
 JAVA_HOME=/usr/local/java/jdk1.8.0_301 
@@ -474,7 +474,7 @@ slave2
 slave3
 ```
 
-+ 提前准备主机名解析文件，为后面的克隆机器做好准备（可选，若不做，克隆后为每台机器重新添加亦可）
++ 提前准备主机名解析文件，为后面的克隆机器做好准备
 
 ```shell
 vim /etc/hosts
