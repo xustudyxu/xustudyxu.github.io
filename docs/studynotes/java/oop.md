@@ -219,7 +219,8 @@ public class Object03 {
 		p1.name="小明";
 		Person p2=p1;//p1赋值给了p2
 		System.out.println(p2.age);
-        
+    }
+}
 class Person {
 	int age;
 	String name;
@@ -354,7 +355,7 @@ class Person{
 	   return res;
 	   
    }
-   }
+}
    //方法调用小结
 /*
  *1.当程序执行到方法时，就会开辟一个独立的空间（栈空间)
@@ -682,16 +683,16 @@ public class MethodParameter02 {
 //		for(int i=0;i<arr.length;i++) {
 //			System.out.println(arr[i]+"\t");
 //		}
-//    System.out.println();
-    //测试
-    Person02 p=new Person02();
-    p.name="jack";
-    p.age=10;
+//    	System.out.println();
+    	//测试
+    	Person02 p=new Person02();
+    	p.name="jack";
+    	p.age=10;
     
-    b.test200(p);
-    //测试题，如果test200执行的是p=null，下面结果为10
-    //测试题，如果test200执行的是p=new Person（）;下面结果为10
-    System.out.println("main的p.age"+p.age);
+    	b.test200(p);
+    	//测试题，如果test200执行的是p=null，下面结果为10
+    	//测试题，如果test200执行的是p=new Person（）;下面结果为10
+    	System.out.println("main的p.age"+p.age);
 	}
 
 }
@@ -1315,8 +1316,7 @@ class T{
 		System.out.println("长度="+nums.length);
 		
 	}
-	//细节：可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最
-	//后
+	//细节：可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后
 	public void f2(String d1,double...nums) {
 		
 	}
