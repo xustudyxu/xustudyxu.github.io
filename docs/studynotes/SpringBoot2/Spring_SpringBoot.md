@@ -13,7 +13,7 @@ tags:
 
 ## Spring能做什么
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/01.png)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.25x5nu44ym68.webp)
 
 ## Spring的生态
 
