@@ -231,7 +231,7 @@ Running transaction
 
 + 我是用的是jdk-8u301-linux-x64.tar.gz,这个版本
 
-> 这个jdk压缩包，可以问我要,如果用老师给的jdk，**注意JDK版本**
+> 这个jdk压缩包，可以问我要,如果用老师提供的jdk，**注意JDK版本**
 
 + 使用XFTP将压缩包传送到Linux系统中,我是下载到/opt/java1.8/这个文件夹中
 
