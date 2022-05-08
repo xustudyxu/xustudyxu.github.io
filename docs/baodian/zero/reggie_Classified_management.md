@@ -521,3 +521,372 @@ public class CategoryController {
 + 测试新增豫菜
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6uih84xr2mo0.webp)
+
+## 分类信息分页查询
+
+### 需求分析
+
+系统中的分类很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中都会以分页的方式来展示列表数据。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.1g2a11q6aq5c.webp)
+
+### 代码开发
+
+在开发代码之前，需要梳理一下整个程序的执行过程:
+
+1. 页面发送ajax请求，将分页查询参数(page、pageSize)提交到服务端
+2. 服务端Controller接收页面提交的数据并调用Service查询数据
+3. Service调用Mapper操作数据库，查询分页数据
+4. Controller将查询到的分页数据响应给页面
+5. 页面接收到分页数据并通过ElementUI的Table组件展示到页面上
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.6peg69h50qg0.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 分页查询
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize){
+
+        //分页构造器
+        Page<Category> pageInfo=new Page<>(page,pageSize);
+        //条件构造器对象
+        LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByAsc(Category::getSort);
+
+        //进行分页查询
+        categoryService.page(pageInfo,queryWrapper);
+        return R.success(pageInfo);
+    }
+```
+
++ 结果
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.7dpzoljn47o0.webp)
+
+## 删除分类
+
+### 需求分析
+
+在分类管理列表页面，可以对某个分类进行删除操作。需要注意的是当分类关联了菜品或者套餐时,此分类不允许删除。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.4rupfq4clim0.webp)
+
+### 代码开发
+
+在开发代码之前，需要梳理一下整个程序的执行过程:
+
+1. 页面发送ajax请求，将参数(id)提交到服务器
+2. 服务器Controller接受页面提交的数据并调用Service删除数据
+3. Service调用Mapper操作数据库
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.6zcuwamln6w0.webp)
+
++ 编写处理器
+
+```java
+
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.5qrsoafre3g0.webp)
+
+### 功能完善
+
+前面我们已经实现了根据id删除分类的功能，但是并没有检查删除的分类是否关联了菜品或者套餐，所以我们需要进行功能完善。
+
+要完善分类删除功能，需要先准备基础的类和接口:
+
+1. 实体类Dish和Setmeal
+2. Mapper接口DishMapper和SetmealMapper
+3. Service接口DishService和SetmealService
+4. Service实现类DishServicelmpl和setmealServicelmpl
+
++ 实体类Dish
+
+```java
+/**
+ 菜品
+ */
+@Data
+public class Dish implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    //菜品名称
+    private String name;
+
+    //菜品分类id
+    private Long categoryId;
+
+    //菜品价格
+    private BigDecimal price;
+
+    //商品码
+    private String code;
+
+    //图片
+    private String image;
+
+    //描述信息
+    private String description;
+
+    //0 停售 1 起售
+    private Integer status;
+
+    //顺序
+    private Integer sort;
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Long createUser;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Long updateUser;
+
+    //是否删除
+    private Integer isDeleted;
+
+}
+```
+
++ 实体类Setmeal
+
+```java
+/**
+ * 套餐
+ */
+@Data
+public class Setmeal implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    //分类id
+    private Long categoryId;
+    
+    //套餐名称
+    private String name;
+    
+    //套餐价格
+    private BigDecimal price;
+    
+    //状态 0:停用 1:启用
+    private Integer status;
+
+    //编码
+    private String code;
+
+    //描述信息
+    private String description;
+    
+    //图片
+    private String image;
+    
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+    
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+    
+    @TableField(fill = FieldFill.INSERT)
+    private Long createUser;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Long updateUser;
+
+    //是否删除
+    private Integer isDeleted;
+}
+```
+
++ Mapper
+
+```java
+@Mapper
+public interface DishMapper extends BaseMapper<Dish> {
+}
+```
+
+```java
+@Mapper
+public interface SetmealMapper extends BaseMapper<Setmeal> {
+}
+```
+
++ Service
+
+```java
+public interface DishService extends IService<Dish> {
+}
+```
+
+```java
+public interface SetmealService extends IService<Setmeal> {
+}
+```
+
++ ServiceImpl
+
+```java
+@Service
+public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements DishService {
+}
+```
+
+```java
+@Service
+public class SermealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> implements SetmealService {
+}
+```
+
+> 在CategoryService接口中添加remove方法
+
+```java
+public interface CategoryService extends IService<Category>  {
+
+    public void remove(Long id);
+}
+```
+
+> 创建自定义异常类
+
+```java
+public class CustomException extends RuntimeException{
+    public CustomException(String message){
+        super(message);
+    }
+}
+```
+
+> CategoryServiceImpl重写CategoryService接口中的remove方法
+
+```java
+@Service
+public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> implements CategoryService{
+
+
+    @Autowired
+    private DishService dishService;
+
+    @Autowired
+    private SetmealService setmealService;
+    /**
+     * 根据id删除分类,删除之前需要进行判断
+     * @param id
+     */
+    @Override
+    public void remove(Long id) {
+
+        LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        //添加查询条件，根据分类ID进行查询
+        dishLambdaQueryWrapper.eq(Dish::getCategoryId,id);
+        int count1 = dishService.count(dishLambdaQueryWrapper);
+        if(count1>0){
+            //已经关联了菜品，如果已关联，抛出一个业务异常
+            throw new CustomException("当前分类下关联了菜品，不能删除");
+        }
+
+
+        //查询当前分类是否关联了套餐，如果已经关联，抛出一个业务异常
+        LambdaQueryWrapper<Setmeal> setmealLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        //添加查询条件，根据分类id进行查询
+        setmealLambdaQueryWrapper.eq(Setmeal::getCategoryId,id);
+        int count2 = setmealService.count(setmealLambdaQueryWrapper);
+        if(count2>0){
+            //已经关联了菜品，如果已关联，抛出一个业务异常
+            throw new CustomException("当前分类下关联了套餐，不能删除");
+        }
+
+        //正常删除分类
+        super.removeById(id);
+
+    }
+}
+```
+
+> 配置全局处理自定义异常
+
+```java
+    /**
+     * 异常处理方法
+     * @return
+     */
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException ex){
+        log.error(ex.getMessage());
+        return R.error(ex.getMessage());
+    }
+}
+```
+
+> 编写处理器,调用remove方法
+
+```java
+    /**
+     * 根据id删除分类
+     * @param id
+     * @return
+     */
+    @DeleteMapping
+    public R<String> delete(Long ids){
+        log.info("删除分类，id为{}",ids);
+        categoryService.remove(ids);
+        return R.success("分类信息删除成功");
+    }
+```
+
++ 测试删除湘菜
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.1mmvybbx7080.webp)
+
+## 修改分类
+
+### 需求分析
+
+在分类管理列表页面点击修改按钮，弹出修改窗口，在修改窗口回显分类信息并进行修改，最后点击确定按钮完成修改操作
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3ro10163xqs0.webp)
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.21zkdlcrrkbk.webp)
+
+### 代码开发
+
++ 编写控制器
+
+```java
+    /**
+     * 根据id修改分类信息
+     * @param category
+     * @return
+     */
+    @PutMapping
+    public R<String> update(@RequestBody Category category){
+        log.info("修改分类信息:",category);
+        categoryService.updateById(category);
+        return R.success("修改分类信息成功");
+    }
+```
+
++ 测试，将湘菜的名字改为湘菜123
+
+```java
+==>  Preparing: UPDATE category SET name=?, sort=?, update_time=?, update_user=? WHERE id=?
+==> Parameters: 湘菜123(String), 1(Integer), 2022-05-08T23:53:54.502(LocalDateTime), 1(Long), 1397844263642378242(Long)
+<==    Updates: 1
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5k4fhym3eu00.webp)
