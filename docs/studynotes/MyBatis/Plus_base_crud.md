@@ -205,7 +205,7 @@ Process finished with exit code 0
 
 > 最终执行的结果，所获取的id为1514632107652923393
 >
-> 这是因为MyBatis-Plus在实现插入数据时，会默认基于雪花算法的策略生成id
+> 这是因为MyBatis-Plus在实现插入数据时，会默认基于[雪花算法](/pages/acce37/#雪花算法)的策略生成id
 
 ## 删除
 

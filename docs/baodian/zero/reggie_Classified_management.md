@@ -378,3 +378,146 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 > 我们可以看出小王用户的修改用户的id为账号lisi用户的id
 
+## 新增分类
+
+### 需求分析
+
+后台系统中可以管理分类信息，分类包括两种类型，分别是菜品分类和套餐分类。当我们在后台系统中添加菜品时需要选择一个菜品分类，当我们在后台系统中添加一个套餐时需要选择一个套餐分类，在移动端也会按照菜品分类和套餐分类来展示对应的菜品和套餐。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.26bmqetniqww.webp)
+
+可以在后台系统的分类管理页面分别添加菜品分类和套餐分类，如下:
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.71uyaul8vo40.webp)
+
+### 数据模型
+
+新增分类，其实就是将我们新增窗口录入的分类数据插入到category表，表结构如下:
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5zhwa44b79s0.webp)
+
+### 代码开发
+
+在开发业务功能前，先将需要用到的类和接口基本结构创建好:
+
++ 实体类Category
+
+```java
+/**
+ * 分类
+ */
+@Data
+public class Category implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+    
+    //类型 1 菜品分类 2 套餐分类
+    private Integer type;
+    
+    //分类名称
+    private String name;
+
+    //顺序
+    private Integer sort;
+    
+    //创建时间
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+
+    //更新时间
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+    
+    //创建人
+    @TableField(fill = FieldFill.INSERT)
+    private Long createUser;
+    
+    //修改人
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Long updateUser;
+    
+    //是否删除
+    private Integer isDeleted;
+
+}
+```
+
++ 按照MP的要求创建Mapper接口CategoryMapper
+
+```java
+@Mappler
+public interface CategoryMapper extends BaseMapper<Category> {
+}
+```
+
++ 按照MP的要求创建业务层接口CategoryService
+
+```java
+public interface CategoryService extends IService<Category>  {
+}
+```
+
++ 按照MP的要求创建业务层实现类CategoryServicelmpl
+
+```java
+@Service
+public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> implements CategoryService{
+}
+```
+
++ 控制层CategoryController
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/5/8  18:02
+ */
+@RestController
+@RequestMapping("/category")
+public class CategoryController {
+
+    @Autowired
+    private CategoryService categoryService;
+}
+```
+
+在开发代码之前，需要梳理一下整个程序的执行过程:
+
+1. 页面(backend/page/category/list.html)发送ajax请求，将新增分类窗口输入的数据以json形式提交到服务端
+2. 服务端Controller接收页面提交的数据并调用Service将数据进行保存
+3. Service调用Maaper操作数据库，保存数据
+
+可以看到新增菜品分类和新增套餐分类请求的服务端地址和提交的json数据结构相同，所以服务端只需要提供一个方法统一处理即可：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.60fo44d7sg40.webp)
+
+```java
+@RestController
+@RequestMapping("/category")
+@Slf4j
+public class CategoryController {
+
+    @Autowired
+    private CategoryService categoryService;
+
+    /**
+     * 新增分类
+     * @param category
+     * @return
+     */
+    @PostMapping
+    public R<String> save(@RequestBody Category category){
+        log.info("category:{}",category);
+        categoryService.save(category);
+        return R.success("新增分类成功");
+
+    }
+}
+```
+
++ 测试新增豫菜
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6uih84xr2mo0.webp)

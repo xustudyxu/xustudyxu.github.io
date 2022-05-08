@@ -15,7 +15,7 @@ tags:
 
 ### 软件开发流程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.1grz72p44vts.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7l1ry1mxw0g0.webp)
 
 ### 角色分工
 
