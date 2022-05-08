@@ -71,6 +71,10 @@ tags:
 + 后台系统普通员工：登录后台管理系统，对菜品、套餐、订单等进行管理
 + C端用户：登录移动端用户，可以浏览菜品、添加购物车、设置地址、在线下单等
 
+### 项目功能
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.13lvg2jm9uww.webp)
+
 ## 开发环境搭建
 
 ### 数据库环境搭建
