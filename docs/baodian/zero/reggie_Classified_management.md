@@ -143,7 +143,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 可以使用`ThreadLocal`来解决此问题,它是JDK中提供的一个类。
 
-在学习ThreadLpcal之前，我们需要先确认一个事情，就是客户端发送的每次http请求，对应的在服务端都会分配一个新的线程来处理，在处理过程中涉及到下面类中的方法都属于相同的一个线程:
+在学习ThreadLocal之前，我们需要先确认一个事情，就是客户端发送的每次http请求，对应的在服务端都会分配一个新的线程来处理，在处理过程中涉及到下面类中的方法都属于相同的一个线程:
 
 1. `LogincheckFilter的doFilter方法`
 2. `EmployeeController的update方法`
@@ -591,7 +591,17 @@ public class CategoryController {
 + 编写处理器
 
 ```java
-
+    /**
+     * 根据id删除分类
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    public R<String> delete(Long ids){
+        log.info("删除分类，id为{}",ids);
+        categoryService.remove(ids);
+        return R.success("分类信息删除成功");
+    }
 ```
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.5qrsoafre3g0.webp)
