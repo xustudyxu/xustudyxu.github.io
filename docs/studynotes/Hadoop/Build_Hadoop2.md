@@ -105,7 +105,7 @@ mysql -u root -p
 
 > 密码不知道是什么,使用命令查看一下
 >
-> ```s
+> ```shell
 > grep 'temporary password' /var/log/mysqld.log
 > ```
 
@@ -364,7 +364,7 @@ vim hive-site.xml
 vim /etc/profile
 ```
 
-```she
+```shell
 # set hive environment
 export HIVE_HOME=/usr/local/hive-2.3.9
 export PATH=$HIVE_HOME/bin:$PATH
