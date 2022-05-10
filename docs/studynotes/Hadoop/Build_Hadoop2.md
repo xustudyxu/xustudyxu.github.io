@@ -13,7 +13,7 @@ tags:
 
 ## 安装和配置MySQL
 
-> 开启主机点虚拟机
+> 开启主节点虚拟机
 
 1. 创建目录
 
@@ -378,7 +378,7 @@ cd /usr/local/hive-2.3.9/bin
 
 ```shell {14}
 
-[root@master conf]# schematool -initSchema -dbType mysql
+[root@master bin]# schematool -initSchema -dbType mysql
 SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in [jar:file:/usr/local/hive-2.3.9/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: Found binding in [jar:file:/opt/hadoop/hadoop-2.10.1/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
