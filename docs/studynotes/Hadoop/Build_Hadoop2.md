@@ -55,7 +55,7 @@ yum install -y mysql-community-server
 >
 > ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.1x7958d9kc5c.webp)
 >
-> 说***的公钥尚未安装
+> 说xxx的公钥尚未安装
 >
 > + `解决办法`:
 >
