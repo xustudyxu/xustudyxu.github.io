@@ -178,3 +178,281 @@ public class CommonController {
 + 结果
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.46mizk8tizq0.webp)
+
+## 新增菜品
+
+### 需求分析
+
+后台系统中可以管理菜品信息，通过新增功能来添加一个新的菜品，在添加菜品时需要选择当前菜品所属的菜品分类，并且需要上传菜品图片，在移动端会按照菜品分类来展示对应的菜品信息。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.2382l0rlbmyo.webp)
+
+### 数据模型
+
+新增菜品，其实就是将新增页面录入的菜品信息插入到dish表，如果添加了口味做法，还需要向dish_flavor表插入数据。所以在新增菜品时，涉及到两个表:
+
++ dish：菜品表
++ dish_flavor：菜品口味表
+
+#### 数据模型-dish
+
+菜品表dish:
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5j6ur6bf6g00.webp)
+
+#### 数据模型-dish_flavor
+
+口味表dish_flavor:
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5vctlk83oyw0.webp)
+
+### 代码开发
+
+#### 准备工作
+
+在开发业务功能前，先将需要用到的类和接口基本结构创建好:
+
++ 实体类DishFlavor
+
+```java
+/**
+菜品口味
+ */
+@Data
+public class DishFlavor implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    //菜品id
+    private Long dishId;
+
+    //口味名称
+    private String name;
+
+    //口味数据list
+    private String value;
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Long createUser;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Long updateUser;
+
+    //是否删除
+    private Integer isDeleted;
+
+}
+```
+
++ Mapper接口DishFlavorMapper
+
+```java
+@Mapper
+public interface DishFlavorMapper extends BaseMapper<DishFlavor> {
+}
+```
+
++ 业务层接口DishFlavorService
+
+```java
+public interface DishFlavorService extends IService<DishFlavor> {
+}
+```
+
++ 业务层实现类 DishFlavorServicelmpl
+
+```java
+@Service
+public class DishFlavorServiceImpl extends ServiceImpl<DishFlavorMapper, DishFlavor> implements DishFlavorService {
+}
+```
+
++ 控制层DishController
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/5/10  22:53
+ * 菜品管理
+ */
+@RestController
+@RequestMapping("/dish")
+public class DishController {
+
+    @Autowired
+    private DishService dishService;
+
+    @Autowired
+    private DishFlavorService dishFlavorService;
+}
+```
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下新增菜品时前端页面和服务端的交互过程:
+
+1. 页面(backend/page/food/add.html)发送ajax请求，请求服务端获取菜品分类数据并展示到下拉框中
+2. 页面发送请求进行图片上传，请求服务端将图片保存到服务器(前面已经实现)
+3. 页面发送请求进行图片下载，将上传的图片进行回显(前面已经实现)
+4. 点击保存按钮，发送ajax请求，将菜品相关数据以json形式提交到服务端
+
+开发新增菜品功能，其实就是在服务端编写代码去处理前端页面发送的这4次请求即可。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.2aa7gr2w151c.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 根据条件查询分类数据
+     * @param category
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<Category>> list(Category category){
+
+        //条件构造器
+        LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
+        //添加条件
+        queryWrapper.eq(category.getType() != null, Category::getType, category.getType());
+        //添加排序条件
+        queryWrapper.orderByAsc(Category::getSort).orderByDesc(Category::getUpdateTime);
+
+        List<Category> list = categoryService.list(queryWrapper);
+
+        return R.success(list);
+    }
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5z3tdz9z8k80.webp)
+
+#### 接受页面提交的数据
+
++ 填写信息
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5ojudi0jva40.webp)
+
++ 保存
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.3piqep175940.webp)
+
+> 2000是2000分钱
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.64ch1hrj61w0.webp)
+
+#### 导入DTO
+
+> 传输的数据与实体类的属性并不是一一对应的
+
+编写DTO，用于封装页面提交的数据
+
+```java
+@Data
+public class DishDto extends Dish {
+
+    private List<DishFlavor> flavors = new ArrayList<>();
+
+    private String categoryName;
+
+    private Integer copies;
+}
+```
+
+::: tip 注意事项
+
+DTO,全程Data Transfer Object,即数据传输对象，一般用于展示层与服务层之间的数据传输。
+
+:::
+
+> 测试参数能否正确封装
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.1nawuzxpo0bk.webp)
+
+#### 保存数据到菜品表和菜品口味表
+
++ DishService.java
+
+```java
+public interface DishService extends IService<Dish> {
+
+    //新增菜品，同时插入菜品对应的口味数据，需要操作两张表：dish，dish_flavor
+    public void saveWithFlavor(DishDto dishDto);
+}
+```
+
++ DishServiceImpl.java
+
+```java
+@Service
+@Slf4j
+@EnableTransactionManagement
+public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements DishService {
+
+
+    @Autowired
+    private DishFlavorService dishFlavorService;
+
+    /**
+     *新增菜品，同时保存对应的口味数据
+     * @param dishDto
+     */
+    @Transactional //加入事务控制，保证数据一致性
+    @Override
+    public void saveWithFlavor(DishDto dishDto) {
+        //保存菜品的基本信息到菜品表dish
+        this.save(dishDto);
+
+        Long dishId = dishDto.getId();
+
+        //菜品口味
+        List<DishFlavor> flavors = dishDto.getFlavors();
+        flavors.stream().map(item->{
+            item.setDishId(dishId);
+            return item;
+        }).collect(Collectors.toList());
+        //保存菜品口味数据到菜品口味表dish_flavor
+        dishFlavorService.saveBatch(flavors);
+    }
+}
+```
+
++ 编写处理器
+
+```java
+    /**
+     * 新增菜品
+     * @param dishDto
+     * @return
+     */
+    @PostMapping
+    public R<String> save(@RequestBody DishDto dishDto){
+        log.info(dishDto.toString());
+        dishService.saveWithFlavor(dishDto);
+        return R.success("新增菜品成功");
+
+    }
+```
+
+### 功能测试
+
++ 添加菜品
+
+![1652199699964](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1652199699964.png)
+
++ 查询数据库中的菜品表
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6kgmfs3g40s0.webp)
+
++ 查询数据库中的口味表
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5ssratixkhs0.webp)
+
