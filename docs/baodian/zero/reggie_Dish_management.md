@@ -456,3 +456,203 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5ssratixkhs0.webp)
 
+## 菜品信息分页显示
+
+### 需求分析
+
+系统中的菜品数据很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中
+心都会以分页的方式来展示列表数据。
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.7epfrytxn800.webp)
+
+### 代码开发
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下菜品分页查询时前端页面和服务端的交互过程:
+
+1. 页面(backend/page/food/list.html)发送ajax请求，将分页查询参数(page、pageSize、name)提交到服务器，获取分页数据
+2. 页面发送请求，请求服务器进行图片下载，用于页面图片展示
+
+开发菜品信息分页查询功能，其实就是在服务器编写代码去处理前端页面发送的这2次请求。
+
++ 编写处理器
+
+```java
+    /**
+     * 菜品信息的分页
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize,String name){
+
+        //构造分页构造器对象
+        Page<Dish> pageInfo = new Page<>(page,pageSize);
+        Page<DishDto> dishDtoPage = new Page<>();
+
+
+        //条件构造器
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        //添加过滤条件
+        queryWrapper.like(name!=null,Dish::getName,name);
+        //添加排序条件
+        queryWrapper.orderByDesc(Dish::getUpdateTime);
+
+        //执行分页查询
+        dishService.page(pageInfo,queryWrapper);
+
+        //对象拷贝
+        BeanUtils.copyProperties(pageInfo,dishDtoPage,"records");
+        List<Dish> records = pageInfo.getRecords();
+        List<DishDto> list = records.stream().map((item)->{
+            DishDto dishDto =new DishDto();
+
+            BeanUtils.copyProperties(item,dishDto);
+            Long categoryId = item.getCategoryId();//分类Id
+            //根据id查询分类对象
+            Category category = categoryService.getById(categoryId);
+            String categoryName = category.getName();
+            dishDto.setCategoryName(categoryName);
+
+            return dishDto;
+        }).collect(Collectors.toList());
+        dishDtoPage.setRecords(list);
+        return R.success(dishDtoPage);
+    }
+```
+
+### 功能测试
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.6em3uzq25tc0.webp)
+
+## 修改菜品
+
+### 需求分析
+
+在菜品管理列表页面点击修改按钮，跳转到修改菜品页面，在修改页面回显菜品相关信息并进行修改，最后点击确定按钮完成操作
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.3km37iui29a0.webp)
+
+### 代码开发
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下修改菜品时前端页面(add.html)和服务端的交互过程:
+
+1. 页面发送ajax请求，请求服务端获取分类数据，用于菜品分类下拉框中数据展示
+2. 页面发送ajax请求，请求服务端，根据id查询当前菜品信息，用于菜品信息回显
+3. 页面发送请求，请求服务端进行图片下载，用于页图片回显
+4. 点击保存按钮，页面发送ajax请求，将修改后的菜品相关数据以json形式提交到服务端
+
+开发修改菜品功能，其实就是在服务端编写代码去处理前端页面发送的这4次请求即可。
+
+> 根据id查询菜品信息和对应的口味信息
+
++ DishService.java
+
+```java
+    //根据id查询菜品信息和对应口味信息
+    public DishDto getByIdWithFlavor(Long id);
+```
+
++ DishServiceImpl.java
+
+```java
+    /**
+     * 根据id查询菜品信息和对应的口味信息
+     * @param id
+     * @return
+     */
+    @Override
+    public DishDto getByIdWithFlavor(Long id) {
+        //查询 菜品基本信息 ，从dish表查询
+        Dish dish = this.getById(id);
+
+        DishDto dishDto = new DishDto();
+        BeanUtils.copyProperties(dish,dishDto);
+
+        //查询当前菜品对应的口味信息，从dish_flavor表查询
+        LambdaQueryWrapper<DishFlavor> queryWrapper=new LambdaQueryWrapper<>();
+        queryWrapper.eq(DishFlavor::getDishId,dish.getId());
+        List<DishFlavor> flavors = dishFlavorService.list(queryWrapper);
+        dishDto.setFlavors(flavors);
+
+        return dishDto;
+    }
+```
+
++ 编写处理器，调用getByIdWithFlavor方法
+
+```java
+    /**
+     * 根据id查询菜品信息和对应的口味信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public R<DishDto> get(@PathVariable("id") Long id){
+        DishDto dishDto = dishService.getByIdWithFlavor(id);
+        return R.success(dishDto);
+    }
+```
+
+> 修改菜品信息和口味信息
+
++ DishService.java
+
+```java
+	//更新菜品信息，同时更新对应的口味信息
+    public void updateWithFlavor(DishDto dishDto);
+```
+
++ DishServiceImpl.java
+
+```java
+    @Override
+	@Transactional
+    public void updateWithFlavor(DishDto dishDto) {
+        //更新dish表的基本信息
+        this.updateById(dishDto);
+
+        //清理当前菜品对应的口味数据--dish_flavor表的delete操作
+        LambdaQueryWrapper<DishFlavor> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(DishFlavor::getDishId,dishDto.getId());
+
+        dishFlavorService.remove(queryWrapper);
+
+        //添加当前提交过来的口味数据--dish_flavor表进行insert操作
+        List<DishFlavor> flavors = dishDto.getFlavors();
+        flavors.stream().map(item->{
+            item.setDishId(dishDto.getId());
+            return item;
+        }).collect(Collectors.toList());
+        dishFlavorService.saveBatch(flavors);
+
+    }
+```
+
++ 编写处理器，调用updateWithFlavor方法
+
+```java
+    /**
+     * 修改菜品
+     * @param dishDto
+     * @return
+     */
+    @PutMapping
+    public R<String> update(@RequestBody DishDto dishDto){
+        log.info(dishDto.toString());
+        dishService.updateWithFlavor(dishDto);
+        return R.success("修改菜品成功");
+
+    }
+```
+
+### 功能测试
+
++ 宫爆鸡丁价格修改为15
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.jthifi8ioo0.webp)
