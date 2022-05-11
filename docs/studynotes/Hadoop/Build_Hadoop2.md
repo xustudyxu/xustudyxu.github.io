@@ -280,6 +280,7 @@ tar -zxvf mysql-connector-java-5.1.48.tar.gz
 4. 把mysql-connector-java-5.1.48下的 mysql-connector-java-5.1.48-bin.jar移动至/usr/local/hive-2.3.9/lib下
 
 ```shell
+cd mysql-connector-java-5.1.48
 mv mysql-connector-java-5.1.48-bin.jar /usr/local/hive-2.3.9/lib/
 ```
 
@@ -333,7 +334,7 @@ cp hive-default.xml.template hive-default.xml
 vim hive-site.xml
 ```
 
-```shell
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
