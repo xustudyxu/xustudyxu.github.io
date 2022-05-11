@@ -28,7 +28,7 @@ module.exports = [
 // ],
   // ['ribbon'],//漂亮丝带
   // ['dynamic-title'],//动态标题
-  ['fulltext-search'],//全文搜索
+  // ['fulltext-search'],//全文搜索
   ["plausible-analytics"],// plausible.io 添加分析
   ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
   // ['@vuepress/back-to-top'],//返回页首
