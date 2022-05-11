@@ -371,6 +371,12 @@ export HIVE_HOME=/usr/local/hive-2.3.9
 export PATH=$HIVE_HOME/bin:$PATH
 ```
 
++ 使用命令**source /etc/profile**重新加载配置文件,使配置生效
+
+```shell
+source /etc/profile
+```
+
 + 初始化元数据
 
 ```shell
@@ -392,12 +398,6 @@ Starting metastore schema initialization to 2.3.0
 Initialization script hive-schema-2.3.0.mysql.sql
 Initialization script completed
 schemaTool completed
-```
-
-+ 使用命令**source /etc/profile**重新加载配置文件,使配置生效
-
-```shell
-source /etc/profile
 ```
 
 ### 验证Hive
@@ -431,3 +431,12 @@ hive
 + 主节点查看关于java线程状态
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.1nkuvjhkfv0g.webp)
+
+## 
+
+
+
+
+
+
+
