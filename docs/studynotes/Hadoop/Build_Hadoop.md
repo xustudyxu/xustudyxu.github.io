@@ -9,7 +9,7 @@ tags:
 ---
 # 搭建Hadoop集群
 
-[[[toc]]]
+[[toc]]
 
 ::: tip
 
