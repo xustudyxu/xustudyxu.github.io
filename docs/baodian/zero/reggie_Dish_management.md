@@ -446,7 +446,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 + 添加菜品
 
-![1652199699964](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1652199699964.png)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.5logfon9p5k0.webp)
 
 + 查询数据库中的菜品表
 
