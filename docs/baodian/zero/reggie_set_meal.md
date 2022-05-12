@@ -182,7 +182,7 @@ public class SetmealController {
 
 + 新增套餐分析
 
-[![OB7aQS.png](https://s1.ax1x.com/2022/05/12/OB7aQS.png)](https://imgtu.com/i/OB7aQS)
+![OB7aQS.png](https://s1.ax1x.com/2022/05/12/OB7aQS.png)
 
 + SermelService.java
 
@@ -245,7 +245,7 @@ public class SermealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
 
 ### 功能测试
 
-[![OBj2NQ.png](https://s1.ax1x.com/2022/05/12/OBj2NQ.png)](https://imgtu.com/i/OBj2NQ)
+![OBj2NQ.png](https://s1.ax1x.com/2022/05/12/OBj2NQ.png)
 
 ::: details 控制台输出
 
