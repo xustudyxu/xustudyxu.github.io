@@ -15,6 +15,7 @@ module.exports = [
     '/baodian/zero/reggie_Classified_management',
     '/baodian/zero/reggie_Dish_management',
     '/baodian/zero/reggie_set_meal',
+    '/baodian/zero/reggie_Mobile_terminal_development'
     ]
   }
   
