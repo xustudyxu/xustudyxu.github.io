@@ -47,9 +47,14 @@ tags:
 
 ### 腾讯云短信服务-创建签名
 
++ 搜索产品中的短信服务
+
 > 创建签名，自用必须有网站、APP、公众号、小程序等
 
 ![OcbQxA.png](https://s1.ax1x.com/2022/05/14/OcbQxA.png)
 
 > 待审核
 
+### 腾讯云短信服务-创建正文模板
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3r0aq6q44bg0.webp)
