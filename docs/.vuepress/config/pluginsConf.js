@@ -6,6 +6,12 @@ const autometa_options = {
   canonical_base: 'https://frxcat.fun/',
 };
 module.exports = [
+//   [ //记录上次阅读位置
+//     {
+//         name: 'custom-plugins',
+//         globalUIComponents: ["LastReadingPopup"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+//     }
+// ],
   [{ 'seo': { /* options */ }}],
   [
     '@vuepress/google-analytics',
