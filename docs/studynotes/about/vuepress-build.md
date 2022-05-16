@@ -30,7 +30,7 @@ tags:
 
 ## 快速上手
 
-> 如果你想自己去学习每一步细节，比如git命令的使用，如何配置导航栏，侧边栏，全局配置等，如何实现自动化部署，安装好用的插件，使用好看的主题等等等
+> If you want to learn the details of each step by yourself, such as the use of GIT command, how to configure navigation bar, sidebar, global configuration, how to realize automatic deployment, install useful plug-ins, use good-looking themes, etc
 
 - [git命令使用](../Git/Git_command/)
 - [参考b站视频](https://www.bilibili.com/video/BV1vb411m7NY?spm_id_from=333.337.search-card.all.click)
