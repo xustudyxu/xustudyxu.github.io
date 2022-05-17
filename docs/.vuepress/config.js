@@ -97,7 +97,7 @@ module.exports = {
     footer: {
       createYear: 2021, // 博客创建年份
       copyrightInfo:
-        'xustudyxu | <a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2022008983号</a>'
+        'xustudyxu | blog<br><a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2022008983号</a>'
     },
 
     // 站点配置（首页 & 文章页）
