@@ -43,7 +43,7 @@ tags:
 
 ### 发展历程
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/01.png)
 
 学生借阅图书的管理系统
 
@@ -52,13 +52,13 @@ tags:
 3. 记录学生借书还书行为
 4. 分析学生借阅喜好
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/02.png)
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/03.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/04.png)
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/05.png)
+![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/05.png)
 
 ### 关系型数据库的特点
 
@@ -124,7 +124,7 @@ tags:
 
 ### 什么是NoSQL
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/09.png)
+![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/index/09.png)
 
 + NoSQL不仅仅是sql，也可以简单理解为没有sql。
 + NoSQL数据库我们也称为非关系型数据模型数据库、分布式数据库。

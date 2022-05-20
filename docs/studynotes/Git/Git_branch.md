@@ -11,13 +11,13 @@ tags:
 
 [[toc]]
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/02.png)
 
 ## 什么是分支
 
 在版本控制过程中，同时推进多个任务，为每个任务，我们就可以创建每个任务的单独分支。使用分支意味着程序员可以把自己的工作从开发主线上分离开来，开发自己分支的时候，不会影响主线分支的运行。对于初学者而言，分支可以简单理解为副本，一个分支就是一个单独的副本。（**分支底层其实也是指针的引用**）
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/03.png)
 
 ## 分支的好处
 
@@ -290,7 +290,7 @@ DELL@FRXcomputer MINGW64 /d/git-Space (master)
 
 ## 创建分支和切换分支图解
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/04/01.png)
 
 master、hot-fix 其实都是指向具体版本记录的指针。当前所在的分支，其实是由 HEAD决定的。所以创建分支的本质就是多创建一个指针。
 

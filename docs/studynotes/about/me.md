@@ -34,7 +34,7 @@ sticky: 1
   + 感谢您的阅读。
 + 联系方式
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/me/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/me/01.png)
 
 ## 关于计划
 
@@ -53,12 +53,12 @@ sticky: 1
 ```yaml
 - name: Evan's blog
   desc: 积跬步以至千里，致敬每个爱学习的你。
-  avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg
+  avatar: https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg
   link: https://xugaoyi.com/
   bgColor: '#CBEAFA'
 - name:  Young Kbt blog
   desc: 朝圣的使徒，正在走向编程的至高殿堂！
-  avatar: https://cdn.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png
+  avatar: https://fastly.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png
   link: https://notes.youngkbt.cn/
   bgColor: '#CBEAFA'
 - name:  Java 全栈知识体系
@@ -84,7 +84,7 @@ sticky: 1
   textColor: '#6854A1' # 可选，默认var(--textColor)
 - name: vuepress-theme-vdoing
   desc: 🚀一款简洁高效的VuePress 知识管理&博客 主题
-  avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png
+  avatar: https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png
   link: https://doc.xugaoyi.com/
   bgColor: '#CBEAFA'
   textColor: '#6854A1'

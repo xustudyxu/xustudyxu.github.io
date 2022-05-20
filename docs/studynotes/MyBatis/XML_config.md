@@ -189,7 +189,7 @@ MyBatis 可以根据不同的数据库厂商执行不同的语句，这种多厂
 
 + 使用注解方式代替sql映射文件结果
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/02/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/02/01.png)
 
 官方文档:[mappers（映射器）](https://mybatis.org/mybatis-3/zh/configuration.html#mappers)
 

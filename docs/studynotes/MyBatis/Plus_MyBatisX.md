@@ -21,25 +21,25 @@ MyBatisX插件用法：[MybatisX快速开发插件 | MyBatis-Plus](https://baomi
 
 ## 安装MyBatisX插件
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/01.png)
 
 设置Database
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/02.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/02.png)
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/03.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/03.png)
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/04.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/04.png)
 
 Next
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/05.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/05.png)
 
 Finish
 
 ## 使用结果
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/06.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/06.png)
 
 ```java
 @TableName(value ="t_user")
@@ -108,7 +108,7 @@ public class User implements Serializable {
 
 ## 生成自定义功能
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/07.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/08/07.png)
 
 + 自动生成方法
 

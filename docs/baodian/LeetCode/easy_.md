@@ -81,7 +81,7 @@ class Solution {
   + 时间复杂度:O(n),这里n为数组的长度
   + 空间复杂度:O(n),哈希表里最多需要存n-1个键值对
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/baodian/LeetCode/images/easy_/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/baodian/LeetCode/images/easy_/01.png)
 
 ::: tip
 
@@ -137,7 +137,7 @@ class Solution {
   + 时间复杂度:0(\log_10n)
   + 空间复杂度:0(1)
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/baodian/LeetCode/images/easy_/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/baodian/LeetCode/images/easy_/02.png)
 
 ::: tip
 

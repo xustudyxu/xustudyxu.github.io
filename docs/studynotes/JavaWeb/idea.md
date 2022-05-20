@@ -43,24 +43,24 @@ IDEA 全称 IntelliJ IDEA，由JetBrains公司开发，是java编程语言开发
 
 1. 在IDEA中，选择左上角的 "File"，选择"Settings(或者在ideawelcome右下角的 "Configure"，选择"Settings" )
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/02.png)
 
 2. 进入设置页面
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/03.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/03.png)
 
 ### 设置字体
 
 1. 在Settings窗口中，点击 "Editor" —> "Color Scheme"
 2. 选择 "Color Scheme Font"，设置字体风格和字体大小，设置完之后选择 "Apply" 应用
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/04.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/04.png)
 
 ### 设置自动保存
 
 选择 "Appearance & Behavior"，选择 "System Settings"
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/05.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/05.png)
 
 ### 设置字体大小改变
 
@@ -68,19 +68,19 @@ IDEA 全称 IntelliJ IDEA，由JetBrains公司开发，是java编程语言开发
 
 选择 "Editor"，选择 "General"
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/08.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/08.png)
 
 ### 设置字体编码
 
 选择 "Editor"，选择 "File Encoding"，设置编码为 "UTF-8"
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/06.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/06.png)
 
 ### 设置自动编译
 
  选择 "Build,Execution,Deployment"，选择 "Compiler"
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/07.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/idea/07.png)
 
 ## IDEA常用快捷键
 

@@ -15,7 +15,7 @@ tags:
 
 ### region
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/01.png)
 
 客户端在插入，删除，查询数据时需要知道哪个Region服务器上存有自己所需的数据，这个查找Region的过程称之为Region定位。
 
@@ -23,7 +23,7 @@ tags:
 
 Region标识符，可以唯一标识每个Region，region标识符由‘表名、开始行键、RegionID’组成。为了定位每个Region所在的位置，就可以构建一张映射表，映射表的每个条目包含两项内容，一个是大数据存Region标识符，另一个是Region服务器标识，这个条目就表示储与管理Region和Region服务器之间的对应关系，从而就可以知道某个Region被保存在哪个Region服务器中。
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/02.png)
 
 ### Region定位
 
@@ -35,11 +35,11 @@ Region标识符，可以唯一标识每个Region，region标识符由‘表名�
 
    一般客户端获取到Region信息后会进行缓存，下次再查询不必从Zookeeper开始寻址。
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/03.png)
 
 ## 数据存储与读取
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/04.png)
 
 HBase的核心模块是Region服务器。
 
@@ -67,13 +67,13 @@ Store存储是HBase存储的核心，其中由两部分组成，一部分是MemS
 
 ### Store的合并分裂
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/05.png)
+![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/05.png)
 
 ### HFile
 
 HFile里面的每个键值对就是一个简单的byte数组。但是这个byte数组里面包含了很多项，并且有固定的结构。
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/06.png)
+![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/06/06.png)
 
 ### HBase写文件流程
 

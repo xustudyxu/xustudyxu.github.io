@@ -188,11 +188,11 @@ public class Session02 extends HttpServlet {
 
 + 请求转发跳转到jsp页面
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/05/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/05/01.png)
 
 + 重定向跳转到jsp页面
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/05/02.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/05/02.png)
 
 ## session对象的销毁
 

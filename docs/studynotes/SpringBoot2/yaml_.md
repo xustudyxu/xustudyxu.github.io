@@ -149,7 +149,7 @@ person:
 
 + 测试
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/04/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/04/01.png)
 
 ::: tip 提示
 

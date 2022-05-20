@@ -54,7 +54,7 @@ INSERT INTO user (id, name, age, email) VALUES
 
 新建module
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/02/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/02/01.png)
 
 Next,Next,Finish
 

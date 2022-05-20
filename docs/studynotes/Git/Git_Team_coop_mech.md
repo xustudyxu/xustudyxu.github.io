@@ -11,13 +11,13 @@ tags:
 
 ## 团队内协作机制
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/01.png)
 
 岳：冲儿，我先把代码推送到远程库，你把代码clone到本地，自己研究一下，有发现推送到远程库，然后我再把远程库的代码拉下来。
 
 ## 跨团队协作机制
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/02.png)
 
 岳的远程库叉(复制)一份到东方的远程库，东方克隆到本地，研究修改后，推送到远程库，东方发一个拉取请求，岳审核后，合并到远程库，拉到本地，徒弟也可以拉取。
 
@@ -25,9 +25,9 @@ Github网址:https://github.com/
 
 ## 创建远程仓库
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/03.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/04.png)
 
 ##  远程仓库操作
 
@@ -64,7 +64,7 @@ https://github.com/atguiguyueyue/git-shTest.git
 
 这个地址在创建完远程仓库后生成的连接，如图所示红框中
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/05.png)
+![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/05.png)
 
 ### 推送本地分支到远程仓库
 
@@ -90,7 +90,7 @@ To https://github.com/atguiguyueyue/git-shTest.git
 
 此时发现已将我们 master 分支上的内容推送到 GitHub 创建的远程仓库。
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/06.png)
+![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/06.png)
 
 ### 克隆远程仓库到本地
 
@@ -115,7 +115,7 @@ https://github.com/atguiguyueyue/git-shTest.git
 
 这个地址为远程仓库地址，克隆结果：初始化本地仓库
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/07.png)
+![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/07.png)
 
 ::: tip
 
@@ -127,24 +127,24 @@ clone 会做如下操作。1、拉取代码。2、初始化本地仓库。3、�
 
 1. 选择邀请合作者
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/08.png)
+![08](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/08.png)
 
 2. 填入想要合作的人
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/09.png)
+![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/09.png)
 
 3. 复 制 地 址 并 通 过 微 信 钉 钉 等 方 式 发 送 给 该 用 户 ， 复 制 内 容 如 下 ：
    https://github.com/atguiguyueyue/git-shTest/invitations
 
-![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/10.png)
+![10](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/10.png)
 
 4. 在 atguigulinghuchong 这个账号中的地址栏复制收到邀请的链接，点击接受邀请。
 
-![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/11.png)
+![11](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/11.png)
 
 5. 成功之后可以在 atguigulinghuchong 这个账号上看到 git-Test 的远程仓库。
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/12.png)
+![12](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/12.png)
 
 6. 令狐冲可以修改内容并 push 到远程仓库。
 
@@ -195,9 +195,9 @@ To https://github.com/atguiguyueyue/git-shTest.git
 
 7. 回到 atguiguyueyue 的 GitHub 远程仓库中可以看到，最后一次是 lhc 提交的。
 
-![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/13.png)
+![13](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/13.png)
 
-![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/14.png)
+![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/14.png)
 
 ### 拉取远程库内容
 
@@ -252,55 +252,55 @@ hello git! hello atguigu! hot-fix test
 
 1. 将远程仓库的地址复制发给邀请跨团队协作的人，比如东方不败。
 
-![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/15.png)
+![15](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/15.png)
 
 2. 在东方不败的 GitHub 账号里的地址栏复制收到的链接，然后点击 Fork 将项目叉到自己的本地仓库。
 
-![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/16.png)
+![16](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/16.png)
 
 叉入中…
 
-![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/17.png)
+![17](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/17.png)
 
 叉成功后可以看到当前仓库信息。
 
-![18](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/18.png)
+![18](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/18.png)
 
 3. 东方不败就可以在线编辑叉取过来的文件。
 
-![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/19.png)
+![19](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/19.png)
 
 4. 编辑完毕后，填写描述信息并点击左下角绿色按钮提交。
 
-![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/20.png)
+![20](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/20.png)
 
 5. 接下来点击上方的 Pull 请求，并创建一个新的请求。
 
-![21](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/21.png)
+![21](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/21.png)
 
-![22](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/22.png)
+![22](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/22.png)
 
-![23](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/23.png)
+![23](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/23.png)
 
 6. 回到岳岳 GitHub 账号可以看到有一个 Pull request 请求。
 
-![24](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/24.png)
+![24](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/24.png)
 
 进入到聊天室，可以讨论代码相关内容。
 
-![25](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/25.png)
+![25](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/25.png)
 
-![26](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/26.png)
+![26](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/26.png)
 
 7. 如果代码没有问题，可以点击 Merge pull reque 合并代码。
 
-![27](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/27.png)
+![27](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/27.png)
 
 ## SSH 免密登录
 
 我们可以看到远程仓库中还有一个 SSH 的地址，因此我们也可以使用 SSH 进行访问。
 
-![28](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/28.png)
+![28](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/28.png)
 
 + 具体操作如下:
 
@@ -362,11 +362,11 @@ AGBFeW2+K81XrmkP27FrLI6lDef atguiguyueyue@aliyun.com
 
 复制 id_rsa.pub 文件内容，登录 GitHub，点击用户头像→Settings→SSH and GPG keys
 
-![29](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/29.png)
+![29](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/29.png)
 
-![30](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/30.png)
+![30](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/30.png)
 
-![31](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/31.png)
+![31](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/05/31.png)
 
 接下来再往远程仓库 push 东西的时候使用 SSH 连接就不需要登录了。
 

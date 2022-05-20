@@ -53,7 +53,7 @@ tags:
 
 + 查看spring-boot-starter-web的分析依赖树
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/01.png)
 
 + 无需关注版本号，**自动版本仲裁**
 
@@ -391,7 +391,7 @@ true
 
 条件装配：满足Conditional指定的条件，则进行组件注入
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/02.png)
 
 > 例如:测试@ConditionalOnBean和@ConditionalOnMissingBean
 
@@ -610,7 +610,7 @@ public class HelloController {
 
 + 访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/03.png)
 
 #### @EnableConfigurationProperties + @ConfigurationProperties
 
@@ -902,7 +902,7 @@ public @interface AutoConfigurationPackage {}
 
 :::
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/04.png)
 
 ### 按需开启自动配置项
 
@@ -983,7 +983,7 @@ SpringBoot默认会在底层配好所有的组件。但是如果用户自己配�
 
 搜索插件lombok
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/05.png)
+![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/05.png)
 
 **@Data**注解:包括下面所有方法除了有参构造方法
 
@@ -1059,15 +1059,15 @@ public class HelloController {
 
 File->New Project
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/06.png)
+![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/06.png)
 
 Next
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/07.png)
+![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/07.png)
 
 Next
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/08.png)
+![08](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/08.png)
 
 想要什么选择就行
 
@@ -1102,7 +1102,7 @@ Next
 
 #### 自动构建项目结构
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/09.png)
+![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/03/09.png)
 
 #### 自动编写好主配置类
 

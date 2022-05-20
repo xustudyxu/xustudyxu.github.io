@@ -17,11 +17,11 @@ tags:
 2. <font color=#DC4040 size=4 face="黑体">一个数据库中可以创建多个表,以保存数据(信息)。</font>
 3. <font color=#DC4040 size=4 face="黑体">数据库管理系统(DBMS)、数据库和表的关系如图所示:示意图</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/01.png)
 
 ## 数据在数据库中的存储方式
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/02.png)
 
 ## SQL语句分类
 
@@ -32,7 +32,7 @@ tags:
 
 ## 创建数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/03.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/03.png)
 
 ```sql
 #演示数据库的操作
@@ -61,7 +61,7 @@ WHERE NAME='tom'
 
 ## 查看、删除数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/04.png)
 
 ```sql
 # 演示删除和查询数据库
@@ -80,7 +80,7 @@ DROP DATABASE frx_db01
 
 ## 备份恢复数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/05.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/05.png)
 
 ```sql
 #练习：database03.sq1 备份hsp_db02 和 hsp_db03 库中的数据，并恢复
@@ -98,7 +98,7 @@ source d:\\bak.sql
 
 ## 创建表
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/06.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/06.png)
 
 ```sql
 #指令创建表
@@ -117,11 +117,11 @@ CREATE TABLE `USER`(
 
 ## Mysql 常用数据类型(列类型)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/07.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/07.png)
 
 ### 数值型(整数)的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/08.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/08.png)
 
 ```sql
 # 演示整形的使用 
@@ -178,7 +178,7 @@ SELECT * FROM t05 WHERE num = 1;
 
 ### 数值型(小数)的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/09.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/09.png)
 
 ```sql
 # 演示decimal类型、float、double使用
@@ -208,7 +208,7 @@ SELECT * FROM t08;
 
 ### 字符串的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/11.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/11.png)
 
 ```sql
 # 演示字符串类型的使用 char varchar
@@ -230,9 +230,9 @@ DROP TABLE t10;
 
 ### 字符串使用细节
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/12.png)
+![12](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/12.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/13.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/13.png)
 
 ```sql
 # 演示字符串的使用细节
@@ -256,7 +256,7 @@ SELECT * FROM t13;
 
 ### 日期类型的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/14.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/14.png)
 
 ```sql
 # 演示时间相关的类型
@@ -276,7 +276,7 @@ INSERT INTO t14(birthday,job_time)
 
 ## 创建表练习
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/15.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/15.png)
 
 ```sql
 # 创建表的课堂练习
@@ -304,7 +304,7 @@ CREATE TABLE `emp`(
 
 ## 修改表-基本介绍
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/16.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/16.png)
 
 ## 修改表-课堂练习
 
@@ -357,7 +357,7 @@ ALTER TABLE employee
 
 ### 使用 INSERT 语句向表中插入数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/18.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/18.png)
 
 ```sql
 # 练习insert语句
@@ -426,7 +426,7 @@ SELECT * FROM goods2;
 
 ### 使用 update 语句修改表中数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/19.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/19.png)
 
 ### 基本使用
 
@@ -473,7 +473,7 @@ SELECT * FROM employee;
 
 ### 使用 delete 语句删除表中数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/21.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/21.png)
 
 ```sql
  -- delete 语句演示
@@ -502,7 +502,7 @@ SELECT * FROM employee;
 
 ### 基本语法
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/22.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/22.png)
 
 ### 注意事项 
 
@@ -556,11 +556,11 @@ SELECT DISTINCT `name`,english FROM student;
 
 ### 使用表达式对查询的列进行运算
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/23.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/23.png)
 
 ### 在 select 语句中可使用 as 语句
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/24.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/24.png)
 
 ### 练习
 
@@ -597,7 +597,7 @@ SELECT `math` AS`Math` FROM student
 
 ### 在 where 子句中经常使用的运算符
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/25.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/25.png)
 
 ### 使用 where 子句，进行过滤查询
 
@@ -656,7 +656,7 @@ SELECT * FROM student
 
 ### 使用 order by 子句排序查询结果
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/26.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/26.png)
 
 ```sql
 -- 演示order by使用
@@ -717,7 +717,7 @@ SELECT COUNT(`name`) FROM t15; -- 3
 
 ### sum
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/27.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/27.png)
 
 ```sql
 -- 演示sum函数的使用
@@ -747,7 +747,7 @@ SELECT AVG(chinese+math+english) FROM student;
 
 ### max/min
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/29.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/29.png)
 
 ```sql
 -- 演示max和min的使用
@@ -762,11 +762,11 @@ SELECT MAX(math),MIN(math)
 
 ### 使用 group by 子句对列进行分组 
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/30.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/30.png)
 
 ### 使用 having 子句对分组后的结果进行过滤
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/31.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/31.png)
 
 ```sql
 CREATE TABLE dept( /*部门表*/
@@ -860,7 +860,7 @@ SELECT AVG(sal) AS avg_sal,deptno
 
 ## 字符串相关函数
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/32.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/32.png)
 
 ```sql
 -- 演示字符串相关函数的使用
@@ -910,7 +910,7 @@ SELECT TRIM(' 韩顺平教育 ')FROM DUAL;
 
 ## 数学相关函数
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/33.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/33.png)
 
 ```sql
 -- 演示数学相关函数
@@ -954,11 +954,11 @@ SELECT RAND() FROM DUAL;
 
 ## 时间日期相关函数
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/34.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/34.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/35.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/35.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/36.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/36.png)
 
 ```sql
 -- 日期时间相关函数
@@ -1084,7 +1084,7 @@ SELECT *FROM mysql.user
 
 ## 流程控制函数
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/37.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/37.png)
 
 ```sql
  #演示流程控制语句
@@ -1188,7 +1188,7 @@ SELECT * FROM emp
 
 ### 分页查询
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/38.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/38.png)
 
 ```sql
 -- 分页查询
@@ -1252,7 +1252,7 @@ SELECT MAX(sal)-MIN(sal)
 
 ### 数据分组的总结
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/39.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/39.png)
 
 ```sql
 -- 应用案例：请统计各个部门group by 的平均工资 avg
@@ -1270,7 +1270,7 @@ SELECT deptno,AVG(sal) AS avg_sal
 
 ### 问题的引出(重点，难点)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/40.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/40.png)
 
 ### 说明
 
@@ -1278,7 +1278,7 @@ SELECT deptno,AVG(sal) AS avg_sal
 
 ### 多表查询练习
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/41.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/41.png)
 
 ```sql
 -- 多表查询
@@ -1736,7 +1736,7 @@ SELECT dname,ename,job
 
 ### primary key(主键)-基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/43.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/43.png)
 
 + 细节说明:
 
@@ -1806,7 +1806,7 @@ DESC t18
 
 ### not null和unique(唯一)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/44.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/44.png)
 
 ```sql
 -- unique的使用
@@ -1838,9 +1838,9 @@ DESC t22
 
 ### foreign key(外键)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/45.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/45.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/46.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/46.png)
 
 ```sql
 -- 外键演示
@@ -1881,7 +1881,7 @@ DELETE FROM my_class
 
 ### check
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/47.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/47.png)
 
 ```sql
 -- 演示check的使用
@@ -1903,7 +1903,7 @@ SELECT * FROM t23
 
 ### 商店售货系统表设计案例
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/48.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/48.png)
 
 ```sql
 CREATE TABLE goods_(
@@ -1938,7 +1938,7 @@ CREATE TABLE purchase(
 
 ### 自增长基本介绍
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/49.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/49.png)
 
 ### 自增长使用细节
 
@@ -1992,9 +1992,9 @@ SELECT * FROM t25;
 
 ### 索引的原理
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/50.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/50.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/51.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/51.png)
 
 1. <font color=#DC4040 size=4 face="黑体">没有索引为什么会慢?因为全表扫描.</font>
 2. <font color=#DC4040 size=4 face="黑体">使用索引为什么会快?形成一个索引的数据结构，比如二叉树</font>
@@ -2004,11 +2004,11 @@ SELECT * FROM t25;
 
 ### 索引的类型
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/52.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/52.png)
 
 ### 索引使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/53.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/53.png)
 
 5. **查询索引（三种方式）**
 
@@ -2112,11 +2112,11 @@ ALTER TABLE sportman ADD INDEX name_index(NAME)-- 方式二
 
 ### 小结：哪些列上适合使用索引
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/54.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/54.png)
 
 ## mysql事务
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/55.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/55.png)
 
 ### 什么是事务
 
@@ -2124,7 +2124,7 @@ ALTER TABLE sportman ADD INDEX name_index(NAME)-- 方式二
 
 ### 事务和锁
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/56.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/56.png)
 
 ```sql
 -- 事务的一个重要的概念和具体操作
@@ -2165,7 +2165,7 @@ COMMIT
 
 ### 事务细节讨论
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/57.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/57.png)
 
 ```sql
 -- 讨论事务细节
@@ -2205,7 +2205,7 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 ### 查看事务隔离级别
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/58.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/58.png)
 
 ### 事务隔离级别
 
@@ -2222,7 +2222,7 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 ###  设置事务隔离级别
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/59.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/59.png)
 
 ```sql
 -- 演示mysql的事务隔离级别
@@ -2267,11 +2267,11 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 
 
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/60.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/60.png)
 
 **左边的事务没有提交，但是右边可以看到左边添加的100用户信息，这就是脏读**
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/61.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/61.png)
 
 **左边的事务经过修改和添加，但是提交了，右边依然可以看到修改和添加的信息，这就是不可重复度和幻读，因为左边的提交已经直接影响到了右边的操作。**
 
@@ -2292,7 +2292,7 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 
 ### 基本介绍
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/62.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/62.png)
 
 ### 主要的存储引擎/表类型特点
 
@@ -2369,14 +2369,14 @@ ALTER TABLE t29 ENGINE =INNODB
 
 ### 看需求
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/63.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/63.png)
 
 ### 基本概念
 
 1. <font color=#DC4040 size=4 face="黑体">视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含列,其数据来自对应的真实表(基表)</font>
 2. 视图和基表关系的示意图
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/64.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/64.png)
 
 ### 视图的基本使用
 
@@ -2410,7 +2410,7 @@ DROP VIEW emp_view01
 
 ### 视图细节讨论
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/65.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/65.png)
 
 ```sql
 -- 视图的细节
@@ -2443,7 +2443,7 @@ SELECT * FROM emp_view02
 
 ### 视图最佳实践
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/66.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/66.png)
 
 ### 视图课堂练习
 
@@ -2474,9 +2474,9 @@ SELECT  * FROM emp_view03
 
 ### Mysql 用户
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/67.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/67.png)
 
-!![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
+!![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
 
 ### 创建用户
 
@@ -2497,11 +2497,11 @@ SELECT  * FROM emp_view03
 
 ### mysql中的权限
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/71.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/71.png)
 
 ### 给用户授权
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/70.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/70.png)
 
 ### 回收用户权限
 

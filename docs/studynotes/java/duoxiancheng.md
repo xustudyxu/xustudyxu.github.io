@@ -13,21 +13,21 @@ tags:
 
 ### 程序
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/01.png)
+![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/01.png)
 
 ### 进程
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/02.png)
+![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/02.png)
 
 ### 什么是线程
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/03.png)
+![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/03.png)
 
 ### 其他相关概念
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/04.png)
+![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/04.png)
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/05.png)
+![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/05.png)
 
 ## 线程的基本使用
 
@@ -40,7 +40,7 @@ tags:
 
 ### 线程应用案例 1-继承 Thread 类
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/06.png)
+![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/06.png)
 
 + 代码演示：
 
@@ -238,9 +238,9 @@ class T2 implements Runnable {
 
 ### 线程如何理解
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/07.png)
+![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/07.png)
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/08.png)
+![08](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/08.png)
 
 ## 继承 Thread vs 实现 Runnable 的区别
 
@@ -322,7 +322,7 @@ class SellTicket02 implements Runnable {
 
 ### 应用案列
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/09.png)
+![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/09.png)
 
 + 代码实现
 
@@ -369,15 +369,15 @@ class T extends Thread{
 
 ### 常用方法第一组
 
-![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/10.png)
+![10](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/10.png)
 
 ### 注意事项和细节
 
-![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/11.png)
+![11](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/11.png)
 
 ### 应用案例
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/12.png)
+![12](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/12.png)
 
 + 代码演示：
 
@@ -424,11 +424,11 @@ class T extends Thread{//自定义的线程类
 
 ### 方法第二组
 
-![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/13.png)
+![13](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/13.png)
 
 ### 应用案例
 
-![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/14.png)
+![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/14.png)
 
 + 代码测试yield和join方法
 
@@ -469,7 +469,7 @@ class T2 extends Thread{
 
 ### 课堂练习
 
-![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/15.png)
+![15](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/15.png)
 
 + 代码演示：
 
@@ -561,11 +561,11 @@ class MyDaemonThread extends Thread{
 
 ### JDK 中用 Thread.State 枚举表示了线程的几种状态
 
-![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/16.png)
+![16](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/16.png)
 
 ### 线程状态转换图
 
-![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/17.png)
+![17](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/17.png)
 
 ### 写程序查看线程状态 
 
@@ -614,7 +614,7 @@ class T extends Thread {
 
 ### 先看一个问题
 
-![18](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/18.png)
+![18](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/18.png)
 
 ## Synchronized
 
@@ -625,11 +625,11 @@ class T extends Thread {
 
 ### 同步具体方法
 
-![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/19.png)
+![19](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/19.png)
 
 ## 析同步原理
 
-![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/20.png)
+![20](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/duoxiancheng/20.png)
 
 ## 互斥锁
 

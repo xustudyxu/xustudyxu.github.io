@@ -566,7 +566,7 @@ Process finished with exit code 0
 
 ## CRUD-查询
 
-![1646813168340](./images/SSM-CRUD/01.png)
+![OLpGlV.png](https://s1.ax1x.com/2022/05/20/OLpGlV.png)
 
 1. 访问index.jsp页面
 2. index.jsp页面发送出查询员工列表请求
