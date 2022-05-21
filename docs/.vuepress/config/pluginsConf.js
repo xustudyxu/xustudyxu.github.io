@@ -55,7 +55,7 @@ module.exports = [
     toolTipMessage: '复制失败', // default is ''Copy to clipboard'
     duration: 1000, // prompt message display time
   }],//复制代码插件
-  ['img-lazy'],//图片缓存加载
+  // ['img-lazy'],//图片缓存加载
   ['@vuepress/active-header-links', {
     sidebarLinkSelector: '.sidebar-link',
     headerAnchorSelector: '.header-anchor'
