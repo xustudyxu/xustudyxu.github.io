@@ -41,7 +41,7 @@ module.exports = {
     repo: 'xustudyxu/xustudyxu.github.io',
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: 'Github',
+    repoLabel: '查看源码',
 
     // 以下为可选的编辑链接选项
     // 以下为可选的编辑链接选项
@@ -87,7 +87,7 @@ module.exports = {
       ],
     },
     author: {
-      name: 'xu', // 必需
+      name: '冯荣旭', // 必需
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
