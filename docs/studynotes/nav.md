@@ -883,14 +883,14 @@ export default {
           cardImgSrc: "https://fastly.jsdelivr.net/gh/Kele-Bingtang/static/img/tools/20220105020107.png",
           cardName: "jsdelivr",
           cardContent:
-            "fastly 服务",
+            "cdn 服务",
         },
         {
           cardSrc: "https://unpkg.com/",
           cardImgSrc: "https://fastly.jsdelivr.net/gh/Kele-Bingtang/static/img/tools/20220105020107.png",
           cardName: "unpkg",
           cardContent:
-            "常用的 fastly 服务",
+            "常用的 cdn 服务",
         },
         {
           cardSrc: "https://coderpad.io/",
