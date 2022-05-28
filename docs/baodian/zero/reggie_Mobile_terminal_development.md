@@ -58,3 +58,7 @@ tags:
 ### 腾讯云短信服务-创建正文模板
 
 ![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3r0aq6q44bg0.webp)
+
+### 腾讯云短信服务-发送短信
+
+![XuYuWV.png](https://s1.ax1x.com/2022/05/28/XuYuWV.png)
