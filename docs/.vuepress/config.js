@@ -98,7 +98,7 @@ module.exports = {
     footer: {
       createYear: 2021, // 博客创建年份
       copyrightInfo:
-        'xustudyxu | blog<br><a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2022008983号</a>'
+        'xustudyxu |<a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2022008983号</a><br>	<a href="https://imgtu.com/i/XQkn6x"><img src="https://s1.ax1x.com/2022/05/29/XQkn6x.png" alt="XQkn6x.png" border="0" /></a>	 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41018302000331" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">豫公网安备 41018302000331号</p></a>'
     },
 
     // 站点配置（首页 & 文章页）
