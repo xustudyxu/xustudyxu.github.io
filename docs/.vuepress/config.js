@@ -10,7 +10,7 @@ module.exports = {
   head: [
     ['script' , { href: './js/index.js' ,async:'async'}],
     ['link', { rel: 'icon', href: 'https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
-    ['link', { rel: 'stylesheet', href: './css/style.css' }],
+    // ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }],
