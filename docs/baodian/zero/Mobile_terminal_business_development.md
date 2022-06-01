@@ -1,3 +1,12 @@
+---
+title: 瑞吉外卖-移动端业务开发
+date: 2022-06-01 21:26:22
+permalink: /pages/93eacc/
+categories:
+  - 初级开发篇
+tags:
+  - 初级开发篇
+---
 # 瑞吉外卖-移动端业务开发
 
 [[toc]]
