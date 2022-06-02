@@ -250,3 +250,103 @@ public class AddressBookController {
 + 数据库
 
 ![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.78gg4mkvmss0.webp)
+
+## 菜品展示
+
+### 需求分析
+
+用户登陆成功后跳转到系统首页面，在首页需要根据分类来显示菜品和套餐。如果菜品设置了口味信息，需要展示`选择规格`按钮，否则显示`+`按钮。
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.ufiyqazbv80.webp)
+
+### 代码开发
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下前端页面和服务端的交互过程:
+
+1. 页面(front/index.html)发送ajax请求，获取分类数据（菜品分类和套餐分类)
+2. 页面发送ajax请求，获取第一个分类下的菜品或者套餐
+
+开发菜品展示功能，其实就是在服务端编写代码去处理前端页面发送的这2次请求即可。
+
+注意:首页加载完成后还发送了一次ajax请求用于加载购物车数据，此处可以将这次请求的地址暂时修改一下，从静态json文件获取数据，等后续开发购物车功能时再修改回来，如下:
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.214ufi4n3tk0.webp)
+
+#### 修改DishController中的list处理器
+
+> 经过上面修改，发现原来的list只有菜品信息，需要我们添加口味信息
+
+```java
+    /**
+     *根据条件查询对应的菜品数据
+     * @param dish
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<DishDto>> list(Dish dish){
+
+        //构造查询条件
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
+
+        //添加条件，查询条件为1(起售)
+        queryWrapper.eq(Dish:: getStatus,1);
+
+        //添加排序条件
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> list = dishService.list(queryWrapper);
+
+        List<DishDto> dishDtoList = list.stream().map((item)->{
+            DishDto dishDto =new DishDto();
+
+            BeanUtils.copyProperties(item,dishDto);
+            Long categoryId = item.getCategoryId();//分类Id
+            //根据id查询分类对象
+            Category category = categoryService.getById(categoryId);
+            if(category!=null) {
+                String categoryName = category.getName();
+                dishDto.setCategoryName(categoryName);
+            }
+            //当前菜品Id
+            Long dishId = item.getId();
+
+            LambdaQueryWrapper<DishFlavor> lambdaQueryWrapper=new LambdaQueryWrapper<>();
+            lambdaQueryWrapper.eq(DishFlavor::getDishId,dishId);
+            //SQL:select * from dish_flavor where dish_id = ?
+            List<DishFlavor> dishFlavorList = dishFlavorService.list(lambdaQueryWrapper);
+            dishDto.setFlavors(dishFlavorList);
+            return dishDto;
+        }).collect(Collectors.toList());
+
+        return R.success(dishDtoList);
+    }
+
+```
+
+> 经过测试，分类菜品的信息都能够正常显示，但是套餐菜品信息报404错误
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.5776rt9eybs0.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 根据条件查询套餐数据
+     * @param setmeal
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<Setmeal>> list(@RequestBody Setmeal setmeal){
+
+        LambdaQueryWrapper<Setmeal> queryWrapper=new LambdaQueryWrapper<>();
+        queryWrapper.eq(setmeal.getCategoryId()!=null,Setmeal::getCategoryId,setmeal.getCategoryId());
+        queryWrapper.eq(setmeal.getStatus()!=null,Setmeal::getStatus,setmeal.getStatus());
+        queryWrapper.orderByDesc(Setmeal::getUpdateTime);
+        List<Setmeal> list = setmealService.list(queryWrapper);
+        return R.success(list);
+        
+    }
+```
+
