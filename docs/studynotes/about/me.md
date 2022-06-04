@@ -38,7 +38,7 @@ sticky: 1
 
 ## 关于计划
 
-:::: tabs
+:::: tabs cache-lifetime="5" :options="{ useUrlFragment: false }"
 
 ::: tab 正在做或已经做完
 
