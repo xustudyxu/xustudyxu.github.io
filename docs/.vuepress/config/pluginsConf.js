@@ -44,7 +44,7 @@ module.exports = [
         additionalAudios: [], // 除 Meting 解析的 audio 外额外添加的 audio，一般官方自带的就行
         mutex: true, // 是否开启互斥模式，即该播放器播放音乐后，停止其他正在播放的播放器
         lrcType: 0, // 设置 lrc 歌词解析模式，可选值：3 | 1 | 0（0：禁用 lrc 歌词，1：lrc 格式的字符串，3：lrc 文件 url）
-        listFolded: false, // 刚打开播放器时，是否折叠播放列表
+        listFolded: true, // 刚打开播放器时，是否折叠播放列表
         listMaxHeight: 250, // 设置播放列表最大高度，单位为像素
         storageName: "vuepress-plugin-meting", // 设置存储播放器设置的 localStorage key
       },
