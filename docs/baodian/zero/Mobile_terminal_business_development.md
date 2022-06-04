@@ -359,3 +359,29 @@ public class AddressBookController {
 
 ![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220604/image.45vudgknce40.jpg)
 
+### 数据模型
+
+购物车对应的数据表为shopping_cart表，具体表结构如下:
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220604/image.24wto0mg195s.jpg)
+
+### 代码开发
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下购物车操作时前端页面和服务端的交互过程:
+
+1. 点击`加入购物车`或者`+`按钮，页面发送ajax请求，请i去服务端，将菜品或者套餐添加到购物车
+2. 点击购物车图标，页面发送ajax请求，请求服务器查询购物车中的菜品和套餐
+3. 点击清空购物车按钮，页面发送ajax请求，请求服务器来执行清空购物车操作
+
+开发购物车功能，其实就是在服务端编写代码去处理前端页面发送的这3次请求即可。
+
+#### 准备工作
+
+在开发业务功能前，先将需要用到的类和接口基本结构创建好：
+
++ 实体类ShoppingCart
++ Mapper接口ShoppingCartMapper
++ 业务层接口ShoppingCartService
++ 业务层实现类ShoppingCartServiceImpl
++ 控制层ShoppingCartCotroller
