@@ -38,13 +38,21 @@ sticky: 1
 
 ## 关于计划
 
-+ 正在做或已经做完
-  + ...
-  + [更新清单](../../@pages/archivesPage.md)**:heavy_check_mark:**
-  + MyBatis-Plus
-+ 后来
-  + 练习基于SpringBoot项目
-  + 练习基于SpringBoot+MyBatis-Plus项目
+:::: tabs
+
+::: tab 正在做或已经做完
+
+[更新清单](../../@pages/archivesPage.md)**:heavy_check_mark:**
+
+:::
+
+::: tab 接下来
+
+自主开发SSM项目
+
+:::
+
+::::
 
 ## 友情链接
 

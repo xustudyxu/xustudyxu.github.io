@@ -350,3 +350,12 @@ public class AddressBookController {
     }
 ```
 
+## 购物车
+
+### 需求分析
+
+移动端用户可以将菜品或者套餐添加到购物车。对于菜品来说，如果设置了口味信息，则需要选择规格后才能
+加入购物车;对于套餐来说，可以直接点击`+`将当前套餐加入购物车。在购物车中可以修改菜品和套餐的数量，也可以清空购物车。
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220604/image.45vudgknce40.jpg)
+
