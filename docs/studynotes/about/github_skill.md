@@ -1,5 +1,5 @@
 ---
-title: 关于github的六个神技巧
+title: 关于-github的六个神技巧
 date: 2022-06-05 00:23:38
 permalink: /pages/5f0cd1/
 categories:
