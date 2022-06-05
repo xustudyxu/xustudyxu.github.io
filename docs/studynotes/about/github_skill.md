@@ -3,9 +3,9 @@ title: 关于-github的六个神技巧
 date: 2022-06-05 00:23:38
 permalink: /pages/5f0cd1/
 categories:
-  - about
+  - 关于
 tags:
-  - about
+  - 关于
 ---
 # 关于-github的六个神技巧
 
