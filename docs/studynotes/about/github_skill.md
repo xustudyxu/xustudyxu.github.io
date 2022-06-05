@@ -7,7 +7,7 @@ categories:
 tags:
   - about
 ---
-# 关于github的六个神技巧
+# 关于-github的六个神技巧
 
 [[toc]]
 
@@ -338,3 +338,4 @@ github暗藏了一个命令面板`Ctrl`+`K`打开
 + https://docs.github.com/en
 + https://blog.csdn.net/PaperJack/article/details/118543980
 + https://www.bilibili.com/video/BV1q54y1f7h6?spm_id_from=333.999.0.0
+
