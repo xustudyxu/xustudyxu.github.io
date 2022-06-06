@@ -550,3 +550,324 @@ public class ShoppingCartController {
     }
 ```
 
+## 用户下单
+
+### 需求分析
+
+移动端用户将菜品或者套餐加入购物车后，可以点击购物车中的`去结算`按钮，页面跳转到订单确认页面，点击`去支付`按钮则完成下单操作。
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.a6w5jrs5vnc.jpg)
+
+### 数据模型
+
+用户下单业务对应的数据表为orders表和order_detail表:
+
++ orders:订单表
+
+订单表的具体表结构如下：
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.5v5c7a427140.jpg)
+
++ order_detail:订单明细表
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.5zjgzw9dbh00.jpg)
+
+### 代码开发
+
+#### 梳理交互过程
+
+在开发代码之前，需要梳理一下用户下单操作时前端页面和服务端的交互过程:
+
+1. 在购物车中点击`去结算`按钮，页面跳转到订单确认页面
+2. 在订单确认页面，发送ajax请求，请求服务端获取当前登录用户的默认地址
+3. 在订单确认页面，发送ajax请求，请求服务端获取当前登录用户的购物车数据
+4. 在订单确认页面点击`去支付`按钮，发送aiax请求，请求服务端完成下单操作
+
+开发用户下单功能，其实就是在服务端编写代码去处理前端页面发送的请求即可。
+
+#### 准备工作
+
+在开发业务功能前，先将需要用到的类和接口基本结构创建好:
+
++ 实体类Orders
+
+```java
+/**
+ * 订单
+ */
+@Data
+public class Orders implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    //订单号
+    private String number;
+
+    //订单状态 1待付款，2待派送，3已派送，4已完成，5已取消
+    private Integer status;
+    
+    //下单用户id
+    private Long userId;
+
+    //地址id
+    private Long addressBookId;
+
+    //下单时间
+    private LocalDateTime orderTime;
+    
+    //结账时间
+    private LocalDateTime checkoutTime;
+
+    //支付方式 1微信，2支付宝
+    private Integer payMethod;
+    
+    //实收金额
+    private BigDecimal amount;
+
+    //备注
+    private String remark;
+
+    //用户名
+    private String userName;
+
+    //手机号
+    private String phone;
+
+    //地址
+    private String address;
+
+    //收货人
+    private String consignee;
+}
+```
+
++ 实体类OrderDetail
+
+```java
+/**
+ * 订单明细
+ */
+@Data
+public class OrderDetail implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    //名称
+    private String name;
+
+    //订单id
+    private Long orderId;
+
+
+    //菜品id
+    private Long dishId;
+
+
+    //套餐id
+    private Long setmealId;
+
+
+    //口味
+    private String dishFlavor;
+
+
+    //数量
+    private Integer number;
+
+    //金额
+    private BigDecimal amount;
+
+    //图片
+    private String image;
+}
+```
+
++ Mapper接口OrderMapper
+
+```java
+@Mapper
+public interface OrderMapper extends BaseMapper<Orders> {
+}
+```
+
++ Mapper接口OrderDetailMapper
+
+```java
+@Mapper
+public interface OrderDetailMapper extends BaseMapper<OrderDetail> {
+}
+```
+
++ Service接口OrderService
+
+```java
+public interface OrderService extends IService<Orders> {
+}
+```
+
++ Service接口OrderDetailService
+
+```java
+public interface OrderDetailService extends IService<OrderDetail> {
+}
+```
+
++ OrderService接口实现类OrderServiceImpl
+
+```java
+@Slf4j
+@Service
+public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implements OrderService {
+}
+```
+
++ OrderDetailService接口实现类OrderDetailServiceImpl
+
+```java
+@Slf4j
+@Service
+public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper, OrderDetail> implements OrderDetailService{
+}
+```
+
++ 控制层OrderController
+
+```java
+@Slf4j
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+    @Autowired
+    private OrderService orderService;
+}
+```
+
++ 控制层OrderDetailController
+
+```java
+@Slf4j
+@RestController
+@RequestMapping("/orderDetail")
+public class OrderDetailController {
+    
+    @Autowired
+    private OrderDetailService orderDetailService;
+}
+```
+
++ OrderServiceImpl
+
+```java
+@Slf4j
+@Service
+public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implements OrderService {
+
+    @Autowired
+    private ShoppingCartService shoppingCartService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AddressBookService addressBookService;
+
+    @Autowired
+    private OrderDetailService orderDetailService;
+
+    /**
+     * 用户下单
+     * @param orders
+     */
+    @Transactional
+    @Override
+    public void submit(Orders orders) {
+
+        //获得当前用户Id
+        Long userId = BaseContext.getCurrentId();
+
+
+        //查询当前用户的购物车数据
+        LambdaQueryWrapper<ShoppingCart> wrapper=new LambdaQueryWrapper<>();
+        wrapper.eq(ShoppingCart::getUserId,userId);
+        List<ShoppingCart> shoppingCarts = shoppingCartService.list(wrapper);
+
+        if(shoppingCarts==null||shoppingCarts.size()==0){
+            throw new CustomException("购物车为空，不能下单");
+        }
+        //查询用户数据
+        User user = userService.getById(userId);
+
+        //查询地址数据
+        Long addressBookId = orders.getAddressBookId();
+        AddressBook addressBook = addressBookService.getById(addressBookId);
+        if(addressBook==null){
+            throw new CustomException("用户地址信息有误，不能下单");
+        }
+
+        long orderId = IdWorker.getId();//订单号
+
+        AtomicInteger amount=new AtomicInteger(0);
+
+        List<OrderDetail> orderDetails=shoppingCarts.stream().map((item)->{
+            OrderDetail orderDetail=new OrderDetail();
+            orderDetail.setOrderId(orderId);
+            orderDetail.setNumber(item.getNumber());
+            orderDetail.setDishFlavor(item.getDishFlavor());
+            orderDetail.setDishId(item.getDishId());
+            orderDetail.setSetmealId(item.getSetmealId());
+            orderDetail.setName(item.getName());
+            orderDetail.setImage(item.getImage());
+            orderDetail.setAmount(item.getAmount());
+            amount.addAndGet(item.getAmount().multiply(new BigDecimal(item.getNumber())).intValue());
+            return orderDetail;
+        }).collect(Collectors.toList());
+
+        orders.setId(orderId);
+        orders.setOrderTime(LocalDateTime.now());
+        orders.setCheckoutTime(LocalDateTime.now());
+        orders.setStatus(2);
+        orders.setAmount(new BigDecimal(amount.get()));//总金额
+        orders.setUserId(userId);
+        orders.setNumber(String.valueOf(orderId));
+        orders.setUserName(user.getName());
+        orders.setConsignee(addressBook.getConsignee());
+        orders.setPhone(addressBook.getPhone());
+        orders.setAddress((addressBook.getProvinceName() == null ? "" : addressBook.getProvinceName())
+                + (addressBook.getCityName() == null ? "" : addressBook.getCityName())
+                + (addressBook.getDistrictName() == null ? "" : addressBook.getDistrictName())
+                + (addressBook.getDetail() == null ? "" : addressBook.getDetail()));
+
+        //向订单表插入数据，一条数据
+        this.save(orders);
+
+        //向订单明细表插入数据，多条数据
+        orderDetailService.saveBatch(orderDetails);
+
+        //清空购物车数据
+        shoppingCartService.remove(wrapper);
+    }
+}
+```
+
++ 编写处理器
+
+```java
+    @PostMapping("/submit")
+    public R<String> submit(@RequestBody Orders orders){
+        log.info("订单数据:{}",orders);
+        orderService.submit(orders);
+        return R.success("下单成功");
+    }
+```
+
+### 功能测试
+
++ 点商务B套餐+全家福
+
+![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.297eup4ywfok.jpg)
+
