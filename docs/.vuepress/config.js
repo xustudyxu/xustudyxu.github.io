@@ -55,7 +55,7 @@ module.exports = {
     // // 默认是 false, 设置为 true 来启用
 
     //首页大图
-    bodyBgImg: 'https://s1.ax1x.com/2022/06/05/XwKxHI.jpg',  // 你的图片路径(必须位于 public 下)，可以是 URL
+    bodyBgImg: 'https://s1.ax1x.com/2022/05/20/OLpgmD.jpg',  // 你的图片路径(必须位于 public 下)，可以是 URL
     bodyBgImgOpacity: 1, // body 背景图透明度，选值 0 ~ 1.0, 默认0.5
 
     serviceWorker: {
