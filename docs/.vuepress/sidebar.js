@@ -20,4 +20,5 @@ module.exports = {
      '/baodian/zero/':require('../baodian/zero/sidebar'),
      '/baodian/high/':require('../baodian/high/sidebar'),
      '/studynotes/about/':require('../studynotes/about/sidebar'),
+     '/studynotes/Redis/':require('../studynotes/Redis/sidebar'),
 }	
