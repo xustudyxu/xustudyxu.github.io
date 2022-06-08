@@ -25,6 +25,13 @@
       <div class="webinfo-content">{{ totalWords }} 字</div>
     </div>
 
+    <div class="webinfo-item">
+      <div class="webinfo-item-title">最后活动时间：</div>
+      <div class="webinfo-content">
+        {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "前" }}
+      </div>
+    </div>
+
     <div v-if="indexView" class="webinfo-item">
       <div class="webinfo-item-title">本站被访问了：</div>
       <div class="webinfo-content">
@@ -49,7 +56,7 @@
 
 <script>
 import { dayDiff, timeDiff, lastUpdatePosts } from "../webSiteInfo/utils";
-let busuanzi; // 统计量
+import fetch from "../webSiteInfo/busuanzi"; // 统计量
 export default {
   data() {
     return {
@@ -101,7 +108,7 @@ export default {
       } else if (totalWords == "archives") {
         this.totalWords = 0;
         console.log(
-          "如果 totalWords 使用 archives，必须传入 eachFileWords，显然您并没有传入！"
+          "如果 totalWords = 'archives'，必须传入 eachFileWords，显然您并没有传入！"
         );
       } else {
         this.totalWords = totalWords;
@@ -149,38 +156,55 @@ export default {
      * 首页的统计量
      */
     getIndexViewCouter(iterationTime = 3000) {
-      if (busuanzi) {
-        busuanzi.fetch();
-      } else {
-        busuanzi = require("busuanzi.pure.js");
-      }
+      fetch();
       var i = 0;
       var defaultCouter = "9999";
-      // 如果 require 没有获取成功，则手动获取
-      // 但是容易产生访问量叠加，如果只需要第一次获取数据（可能获取失败），可注释掉，此内容是第一次获取失败后，重新获取访问量，可能导致访问量再次 + 1
-      // 取决于访问人的网络，以及 setTimeout 的时间（需求调节）
+      // 如果只需要第一次获取数据（可能获取失败），可注释掉 setTimeout 内容，此内容是第一次获取失败后，重新获取访问量
+      // 可能会导致访问量再次 + 1 原因：取决于 setTimeout 的时间（需求调节），setTimeout 太快导致第一个获取的数据没返回，就第二次获取，导致结果返回 + 2 的数据
       setTimeout(() => {
-        let interval = setInterval(() => {
-          const indexUv = document.querySelector(".web-site-pv");
-          const indexPv = document.querySelector(".web-site-uv");
-          if (indexPv || indexUv) {
-            i += iterationTime;
-            if (i > iterationTime * 10) {
-              indexPv.innerText = defaultCouter;
-              indexUv.innerText = defaultCouter;
-              clearInterval(interval); // 10 秒后无法获取，则取消获取
-            }
-            if (indexPv.innerText == "" && indexUv.innerText == "") {
-              // 手动获取访问量
-              busuanzi.fetch();
+        let indexUv = document.querySelector(".web-site-pv");
+        let indexPv = document.querySelector(".web-site-uv");
+        if (
+          indexPv &&
+          indexUv &&
+          indexPv.innerText == "" &&
+          indexUv.innerText == ""
+        ) {
+          let interval = setInterval(() => {
+            // 再次判断原因：防止进入 setInterval 的瞬间，访问量获取成功
+            if (
+              indexPv &&
+              indexUv &&
+              indexPv.innerText == "" &&
+              indexUv.innerText == ""
+            ) {
+              i += iterationTime;
+              if (i > iterationTime * 5) {
+                indexPv.innerText = defaultCouter;
+                indexUv.innerText = defaultCouter;
+                clearInterval(interval); // 5 次后无法获取，则取消获取
+              }
+              if (indexPv.innerText == "" && indexUv.innerText == "") {
+                // 手动获取访问量
+                fetch();
+              } else {
+                clearInterval(interval);
+              }
             } else {
               clearInterval(interval);
             }
-          } else {
+          }, iterationTime);
+          // 绑定 beforeDestroy 生命钩子，清除定时器
+          this.$once("hook:beforeDestroy", () => {
             clearInterval(interval);
-          }
-        }, iterationTime);
+            interval = null;
+          });
+        }
       }, iterationTime);
+    },
+    beforeMount() {
+      let webInfo = document.querySelector(".web-info");
+      webInfo && webInfo.parentNode.removeChild(webInfo);
     },
   },
 };

@@ -58,7 +58,8 @@ module.exports = [
   [
     {
         name: 'custom-plugins',//代码块皮肤
-        globalUIComponents: ["BlockToggle"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+        globalUIComponents: ["BlockToggle"],
+        globalUIComponents: ["PageInfo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
     }
 ],
   //  全局提示
