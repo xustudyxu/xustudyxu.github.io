@@ -25,12 +25,12 @@
       <div class="webinfo-content">{{ totalWords }} 字</div>
     </div>
 
-    <div class="webinfo-item">
+    <!-- <div class="webinfo-item">
       <div class="webinfo-item-title">最后活动时间：</div>
       <div class="webinfo-content">
         {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "前" }}
       </div>
-    </div>
+    </div> -->
 
     <div v-if="indexView" class="webinfo-item">
       <div class="webinfo-item-title">本站被访问了：</div>
@@ -63,7 +63,7 @@ export default {
       // Young Kbt
       mdFileCount: 0, // markdown 文档总数
       createToNowDay: 0, // 博客创建时间距今多少天
-      lastActiveDate: "", // 最后活动时间
+      // lastActiveDate: "", // 最后活动时间
       totalWords: 0, // 本站总字数
       indexView: true, // 开启访问量和排名统计
     };
