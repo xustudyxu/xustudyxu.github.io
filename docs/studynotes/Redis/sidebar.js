@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title:'NoSQL 数据库简介',
+    title:'Redis',
     collapsable: false,
     children:[
     '/studynotes/Redis/NoSQL_introduction',
