@@ -9,6 +9,8 @@ tags:
 ---
 # Redis 数据库简介
 
+[学习视频地址](https://www.bilibili.com/video/BV1Rv41177Af?p=1)
+
 [[toc]]
 
 ![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.1t1oqnudzvog.jpg)
