@@ -682,13 +682,13 @@ public @interface AutoConfigurationPackage {}
 2. **@Import({AutoConfigurationImportSelector.class})**
 
 1. 利用**getAutoConfigurationEntry(AnnotationMetadata annotationMetadata)**;给容器中批量导入一些组件
-2. 调用**List\<String> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);**获取到所有需要导入到容器中的配置类
+2. 调用`List<String> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);`获取到所有需要导入到容器中的配置类
 
-3. 利用工厂加载**Map<String, List\<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；**得到所有的组件
+3. 利用工厂加载`Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader);`得到所有的组件
 
-4. 从**META-INF/spring.factories**位置来加载一个文件。
+4. 从`META-INF/spring.factories`位置来加载一个文件。
 
-   默认扫描当前系统里面所有的**META-INF/spring.factories**位置的文件
+   默认扫描当前系统里面所有的`META-INF/spring.factories`位置的文件
 
    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
 
