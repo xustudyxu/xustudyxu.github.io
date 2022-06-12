@@ -25,12 +25,12 @@
       <div class="webinfo-content">{{ totalWords }} 字</div>
     </div>
 
-    <!-- <div class="webinfo-item">
+    <div class="webinfo-item">
       <div class="webinfo-item-title">最后活动时间：</div>
       <div class="webinfo-content">
         {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "前" }}
       </div>
-    </div> -->
+    </div>
 
     <div v-if="indexView" class="webinfo-item">
       <div class="webinfo-item-title">本站被访问了：</div>
