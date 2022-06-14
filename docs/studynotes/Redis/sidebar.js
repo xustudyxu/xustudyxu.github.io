@@ -7,6 +7,8 @@ module.exports = [
     '/studynotes/Redis/Redis_install',
     '/studynotes/Redis/Redis_datatype',
     '/studynotes/Redis/Redis_conf',
+    '/studynotes/Redis/Reids_PublishAndSubscribe',
+    '/studynotes/Redis/Reids_Newdatatype',
       ]
   }
   
