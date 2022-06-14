@@ -7,7 +7,7 @@ categories:
 tags:
   - Redis
 ---
-# Reids 发布和订阅
+# Redis 发布和订阅
 
 [[toc]]
 

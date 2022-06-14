@@ -1,5 +1,5 @@
 ---
-title: Redis_Newdatatype
+title: Redis 新数据类型
 date: 2022-06-14 21:16:42
 permalink: /pages/5dc910/
 categories:
