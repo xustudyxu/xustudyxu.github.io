@@ -1,10 +1,10 @@
 module.exports = [{
-  text: '导航', link: '/pages/a3df94/'
+  text: '导航栏', link: '/pages/a3df94/'
 
 }
   ,
 {
-  text: 'Java全栈',
+  text: 'Java',
   items: [
     {
       text: 'Java基础',
