@@ -1,3 +1,4 @@
+
 const autometa_options = {
   site: {
     name   : 'frxcat',
@@ -58,7 +59,7 @@ module.exports = [
   [
     {
         name: 'custom-plugins',//代码块皮肤
-        globalUIComponents: ["BlockToggle","PageInfo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+        globalUIComponents: ["BlockToggle","PageInfo","Twikoo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
     }
 ],
   //  全局提示
@@ -96,20 +97,20 @@ module.exports = [
     sidebarLinkSelector: '.sidebar-link',
     headerAnchorSelector: '.header-anchor'
   }],//自动生成侧边栏
-  [
-    '@vssue/vuepress-plugin-vssue', {
-      // set `platform` rather than `api`
-      platform: 'github-v4',
+  // [
+  //   '@vssue/vuepress-plugin-vssue', {
+  //     // set `platform` rather than `api`
+  //     platform: 'github-v4',
 
-      // all other options of Vssue are allowed
-      owner: 'xustudyxu',
-      repo: 'xustudyxu.github.io',
-      clientId: '48eb3723b4711182c6d8',
-      clientSecret: 'b71348f376e9e59c3b702c3fe26cee857b5ad6b3',
-      autoCreateIssue: true
+  //     // all other options of Vssue are allowed
+  //     owner: 'xustudyxu',
+  //     repo: 'xustudyxu.github.io',
+  //     clientId: '48eb3723b4711182c6d8',
+  //     clientSecret: 'b71348f376e9e59c3b702c3fe26cee857b5ad6b3',
+  //     autoCreateIssue: true
 
-    }
-  ],//评论
+  //   }
+  // ],//评论
   [
     '@vuepress/medium-zoom', { //图片放大
       selector: 'img',
