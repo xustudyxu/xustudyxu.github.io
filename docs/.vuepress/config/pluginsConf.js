@@ -58,7 +58,7 @@ module.exports = [
   // ],
   [
     {
-        name: 'custom-plugins',//代码块皮肤
+        name: 'custom-plugins',//代码块皮肤,页面信息，评论
         globalUIComponents: ["BlockToggle","PageInfo","Twikoo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
     }
 ],
