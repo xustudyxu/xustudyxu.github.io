@@ -1,5 +1,5 @@
 ---
-title: Reids 发布和订阅
+title: Redis 发布和订阅
 date: 2022-06-14 20:04:01
 permalink: /pages/d6b1c5/
 categories:
