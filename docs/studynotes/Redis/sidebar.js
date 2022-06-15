@@ -9,6 +9,7 @@ module.exports = [
     '/studynotes/Redis/Redis_conf',
     '/studynotes/Redis/Redis_PublishAndSubscribe',
     '/studynotes/Redis/Redis_Newdatatype',
+    '/studynotes/Redis/Redis_Java',
       ]
   }
   
