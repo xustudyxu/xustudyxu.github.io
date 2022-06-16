@@ -40,7 +40,7 @@ Jedis 是 Redis 官方推荐的 Java 连接开发工具。要在 Java 开发中�
 
 3. 编写测试代码，添加 Redis 服务所在的 IP 和 端口
 
-```shell
+```java
 public class JedisDemo1 {
 
     public static void main(String[] args) {

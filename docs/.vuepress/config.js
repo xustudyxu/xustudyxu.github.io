@@ -8,7 +8,7 @@ module.exports = {
   port: '7777',
   plugins: pluginsConf,
   head: [
-    ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.4.18/dist/twikoo.all.min.js' }],
+    ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
     ['script' , { href: './js/index.js' ,async:'async'}],
     ['link', { rel: 'icon', href: 'https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
     // ['link', { rel: 'stylesheet', href: './css/style.css' }],
