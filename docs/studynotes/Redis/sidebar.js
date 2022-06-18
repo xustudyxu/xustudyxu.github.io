@@ -11,6 +11,7 @@ module.exports = [
     '/studynotes/Redis/Redis_Newdatatype',
     '/studynotes/Redis/Redis_Java',
     '/studynotes/Redis/Redis_AffairAndLock',
+    '/studynotes/Redis/Redis_Persistence',
       ]
   }
   
