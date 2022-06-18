@@ -292,6 +292,3 @@ Redis 会记录上次重写时的 AOF 大小，默认配置是当 AOF 文件大�
   - 只要硬盘许可，应该尽量减少 AOF rewrite 的频率，AOF 重写的基础大小默认值 64M 太小了，可以设到 5G 以上，默认超过原大小 100% 大小重 写可以改到适当的数值
   - 如果不使用 AOF ，仅靠 `Master-Slave Repllcation` 实现高可用性也可以，能省掉一大笔 IO，也 减少了 rewrite 时带来的系统波动。代价是如果 Master/Slave 同时倒掉，会丢失十几分钟的数据， 启动脚本也要比较两个 Master/Slave 中的 RDB 文件，载入较新的那个，微博就是这种架构
 
-### 参考
-
-https://notes.youngkbt.cn/redis/persistence/#%E6%80%BB%E7%BB%93
