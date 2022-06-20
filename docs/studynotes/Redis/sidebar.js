@@ -13,6 +13,7 @@ module.exports = [
     '/studynotes/Redis/Redis_AffairAndLock',
     '/studynotes/Redis/Redis_Persistence',
     '/studynotes/Redis/Redis_MasterSlaveCopy',
+    '/studynotes/Redis/Redis_ClusterBuild',
       ]
   }
   
