@@ -14,6 +14,7 @@ module.exports = [
     '/studynotes/Redis/Redis_Persistence',
     '/studynotes/Redis/Redis_MasterSlaveCopy',
     '/studynotes/Redis/Redis_ClusterBuild',
+    '/studynotes/Redis/Redis_CacheProblem',
       ]
   }
   
