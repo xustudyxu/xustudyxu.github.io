@@ -15,6 +15,8 @@ module.exports = [
     '/studynotes/Redis/Redis_MasterSlaveCopy',
     '/studynotes/Redis/Redis_ClusterBuild',
     '/studynotes/Redis/Redis_CacheProblem',
+    '/studynotes/Redis/Redis_Distributedlock',
+    '/studynotes/Redis/Redis_6newfunction',
       ]
   }
   
