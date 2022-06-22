@@ -134,7 +134,7 @@ OK
 ```shell
 127.0.0.1:6379> acl whoami
 "default"
-127.0.0.1:6379> auth user2 password
+127.0.0.1:6379> auth user2 password  #切换到user2用户
 OK
 127.0.0.1:6379> acl whoami
 (error) NOPERM this user has no permissions to run the 'acl' command or its subcommand

@@ -88,7 +88,7 @@ module.exports = {
       ],
     },
     author: {
-      name: '冯荣旭', // 必需
+      name: 'xu', // 必需
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
