@@ -34,7 +34,7 @@ sticky: 1
   + 感谢您的阅读。
 + 联系方式
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/me/01.png)
+wx:frxcat
 
 ## 关于计划
 
@@ -485,7 +485,5 @@ sticky: 1
 | 🔹 `:small_blue_diamond:`             | 🔸 `:small_orange_diamond:`            | 🔺 `:small_red_triangle:`                   |
 | 🔻 `:small_red_triangle_down:`        |                                       |                                            |
 
-## 给我留言
 
-<Vssue title="Vssue Demo20"/>
 
