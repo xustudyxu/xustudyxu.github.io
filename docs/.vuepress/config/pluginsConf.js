@@ -30,7 +30,7 @@ module.exports = [
         // 不配置该项的话不会出现全局播放器
         server: "tencent", // 音乐平台，可选值： "netease" | "tencent" | "kuwo" | "kugou" | "baidu" | "xiami"，netease 是网易云
         type: "playlist", // 资源类型（播放列表、单曲、专辑等），可选值： "song" | "album" | "artist" | "playlist"
-        mid: "8520022037", // 资源 ID
+        mid: "8521978721", // 资源 ID
         // auto: 'https://music.163.com/playlist?id=2555412439',  // 资源 url，填写后可通过资源 url 自动解析资源平台、类型、ID，上述三个选项将被覆盖（本参数仅支持 netease、tencent、xiami 三平台）
       },
       aplayer: {
@@ -59,7 +59,7 @@ module.exports = [
   [
     {
         name: 'custom-plugins',//代码块皮肤,页面信息，评论
-        globalUIComponents: ["BlockToggle","PageInfo","Twikoo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+        globalUIComponents: ["BlockToggle","PageInfo","Aplayer","Twikoo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
     }
 ],
   //  全局提示
