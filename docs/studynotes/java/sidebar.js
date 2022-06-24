@@ -13,10 +13,10 @@ module.exports = [
     '/studynotes/Java/java/duoxiancheng',
     '/studynotes/Java/java/io',
     '/studynotes/Java/java/wl',
-   '/studynotes/Java/java/UsersSystem',
-   '/studynotes/Java/java/Reflection',
-   '/studynotes/Java/java/jdbc',
-   '/studynotes/Java/java/RegExp',
+    '/studynotes/Java/java/UsersSystem',
+    '/studynotes/Java/java/Reflection',
+    '/studynotes/Java/java/jdbc',
+    '/studynotes/Java/java/RegExp',
       ]
   },{
     title:'Servlet',
