@@ -3,9 +3,9 @@ title: Cookie 对象
 date: 2022-01-13 19:37:24
 permalink: /pages/da9006/
 categories:
-  - Servlet
+  - JavaWeb
 tags:
-  - Servlet
+  - JavaWeb
 ---
 # Cookie 对象
 

@@ -34,6 +34,7 @@ module.exports = [
       title:'Maven',
       collapsable: false,
       children:[
+      '/studynotes/project-management/Maven/one',
       '/studynotes/project-management/Maven/Maven01',
       '/studynotes/project-management/Maven/Maven02',
   

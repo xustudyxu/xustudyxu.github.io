@@ -3,9 +3,9 @@ title: HttpServletResponse对象
 date: 2022-01-12 23:03:30
 permalink: /pages/6b3234/
 categories:
-  - Servlet
+  - JavaWeb
 tags:
-  - Servlet
+  - JavaWeb
 ---
 # HttpServletResponse对象
 

@@ -3,9 +3,9 @@ title: IDEA的使用
 date: 2022-01-10 20:56:51
 permalink: /pages/d755d3/
 categories:
-  - Servlet
+  - JavaWeb
 tags:
-  - Servlet
+  - JavaWeb
 ---
 # IDEA的使用
 

@@ -3,9 +3,9 @@ title: Servlet 概论
 date: 2022-01-11 20:40:22
 permalink: /pages/8bcdb7/
 categories:
-  - Servlet
+  - JavaWeb
 tags:
-  - Servlet
+  - JavaWeb
 ---
 # Servlet 概论
 

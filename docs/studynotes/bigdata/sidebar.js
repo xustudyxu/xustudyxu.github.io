@@ -25,6 +25,7 @@ module.exports = [
     title:'数据分析',
     collapsable: false,
     children:[
+      '/studynotes/bigdata/dataCleaning/one',
     '/studynotes/bigdata/dataCleaning/00',
     '/studynotes/bigdata/dataCleaning/01',
     '/studynotes/bigdata/dataCleaning/02'
