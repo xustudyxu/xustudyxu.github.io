@@ -17,7 +17,6 @@ module.exports = [
     title:'SpringBoot+MyBatis-plus',
     collapsable: false,
     children:[
-    '/baodian/zero/SSM-CRUD',
     '/baodian/zero/reggie',
     '/baodian/zero/reggie_Employee_management',
     '/baodian/zero/reggie_Classified_management',
