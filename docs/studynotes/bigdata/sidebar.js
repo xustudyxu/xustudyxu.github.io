@@ -22,7 +22,7 @@ module.exports = [
     ]
   },
   {
-    title:'前奏',
+    title:'数据分析',
     collapsable: false,
     children:[
     '/studynotes/bigdata/dataCleaning/00',
