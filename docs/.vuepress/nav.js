@@ -19,19 +19,17 @@ module.exports = [{
         { text: 'filter|listener', link: '/pages/f883e2/' },
 
       ]
-    },
-    {
-      text: '主流框架',
-      items: [
-        { text: 'Spring5', link: '/pages/462a90/' },
-        { text: 'SpringMVC', link: '/pages/2e990c/' },
-        { text: 'MyBatis', link: '/pages/0e424f/' },
-        { text: 'MyBatis-Plus', link: '/pages/e0594a/' },
-        { text: 'SpringBoot2', link: '/pages/00bb5d/' }
-      ]
     }
+  
   ]
 }, {
+  text: 'Spring生态',
+  items: [
+    { text: 'Spring5', link: '/pages/462a90/' },
+    { text: 'SpringMVC', link: '/pages/2e990c/' },
+    { text: 'SpringBoot2', link: '/pages/00bb5d/' },
+  ]
+},{
   text: '大数据',
   items: [
     {
@@ -66,7 +64,14 @@ module.exports = [{
         { text: 'Redis', link: '/pages/e9cc9f/' },
         { text: 'HBase', link: '/pages/2aae92/' }
       ]
-    }
+    },
+    {
+      text: '框架',
+      items: [
+        { text: 'MyBatis', link: '/pages/0e424f/' },
+        { text: 'MyBatis-Plus', link: '/pages/e0594a/' }
+      ]
+    },
   ]
 },
 
