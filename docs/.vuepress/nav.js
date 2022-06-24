@@ -27,7 +27,7 @@ module.exports = [{
   items: [
     { text: 'Spring5', link: '/pages/462a90/' },
     { text: 'SpringMVC', link: '/pages/2e990c/' },
-    { text: 'SpringBoot2', link: '/pages/00bb5d/' },
+    { text: 'SpringBoot2', link: '/pages/0d4af0/' },
   ]
 },{
   text: '大数据',
