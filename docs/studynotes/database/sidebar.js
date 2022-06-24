@@ -38,6 +38,7 @@ module.exports = [
       collapsable: false,
       children:[
       '/studynotes/database/MongoDB/MongoDB_introduce',
+      '/studynotes/database/MongoDB/MongoDB_install',
         ]
     },{
     title:'HBase',
