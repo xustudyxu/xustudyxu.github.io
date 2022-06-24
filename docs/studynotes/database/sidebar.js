@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title:'MySQL 基础',
+    title:'MySQL',
     collapsable: false,
     children:[
     '/studynotes/database/MySQL/MySQL',
@@ -33,8 +33,14 @@ module.exports = [
       '/studynotes/database/Redis/Redis_Distributedlock',
       '/studynotes/database/Redis/Redis_6newfunction',
         ]
+    },  {
+      title:'MongoDB',
+      collapsable: false,
+      children:[
+      '/studynotes/database/MongoDB/MongoDB_introduce',
+        ]
     },{
-    title:'HBase 基础',
+    title:'HBase',
     collapsable: false,
     children:[
     '/studynotes/database/HBase/index_',
@@ -45,7 +51,7 @@ module.exports = [
 
       ]
         },{
-          title:'MyBatis 基础',
+          title:'MyBatis',
           collapsable: false,
           children:[
           '/studynotes/database/MyBatis/Getting_started',
