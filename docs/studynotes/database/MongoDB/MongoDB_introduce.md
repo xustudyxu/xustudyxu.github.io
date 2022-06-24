@@ -93,9 +93,7 @@ MySQL和MongoDB对比:
 
 ## 数据模型
 
-MongoDB的最小存储单位就是文档(document)对象。文档(document)对象对应于关系型数据库的行。数据在MongoDB中以
-
-BSON（Binary-JSON）文档的格式存储在磁盘上。
+MongoDB的最小存储单位就是文档(document)对象。文档(document)对象对应于关系型数据库的行。数据在MongoDB中以BSON（Binary-JSON）文档的格式存储在磁盘上。
 
 BSON（Binary Serialized Document Format）是一种类json的一种二进制形式的存储格式，简称Binary JSON。BSON和JSON一样，支持内嵌的文档对象和数组对象，但是BSON有JSON没有的一些数据类型，如Date和BinData类型。
 
@@ -128,9 +126,7 @@ MongoDB主要有如下特点：
 
 1. **高性能**
 
-MongoDB提供高性能的数据持久性。特别是,
-
-对嵌入式数据模型的支持减少了数据库系统上的I/O活动。
+MongoDB提供高性能的数据持久性。特别是,对嵌入式数据模型的支持减少了数据库系统上的I/O活动。
 
 索引支持更快的查询，并且可以包含来自嵌入式文档和数组的键。（文本索引解决搜索的需求、TTL索引解决历史数据自动过期的需求、地理位置索引可用于构建各种 O2O 应用）
 
