@@ -28,7 +28,7 @@ module.exports = [
     '/studynotes/Java/JavaWeb/HttpServletRequest',
     '/studynotes/Java/JavaWeb/HttpServletResponse',
     '/studynotes/Java/JavaWeb/Cookie',
-    '/studynotes/JavaWeb/HttpSession',
+    '/studynotes/Java/JavaWeb/HttpSession',
     '/studynotes/Java/JavaWeb/ServletContext',
     '/studynotes/Java/JavaWeb/FileUpAndDown',
 
