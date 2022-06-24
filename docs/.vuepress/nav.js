@@ -62,6 +62,7 @@ module.exports = [{
       items: [
         { text: 'NoSQL数据库概论', link: '/pages/7ab056/' },
         { text: 'Redis', link: '/pages/e9cc9f/' },
+        { text: 'MongoDB', link: '/pages/91197c/' },
         { text: 'HBase', link: '/pages/2aae92/' }
       ]
     },
