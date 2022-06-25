@@ -57,7 +57,7 @@ mongod --dbpath=..\data\db
 
 在解压目录中新建 config 文件夹，该文件夹中新建配置文件 mongod.conf ，内如参考如下：
 
-```sh
+```yaml
 storage:
 	#The directory where the mongod instance stores its data.Default Value is "\data\db" on Windows.
 	dbPath: D:\DevelopTools\mongoDB\data
@@ -89,7 +89,7 @@ b.如果路径中没有空格，则无需加引号。
 
 启动方式：
 
-```shell
+```sh
 mongod -f ../config/mongod.conf
 或
 mongod --config ../config/mongod.conf
@@ -97,7 +97,7 @@ mongod --config ../config/mongod.conf
 
 更多参数配置:
 
-```shell
+```yaml
 systemLog:
 	destination: file
 	#The path of the log file to which mongod or mongos should send all diagnostic logging information
@@ -119,7 +119,7 @@ setParameter:
 
 在命令提示符输入以下shell命令即可完成登陆
 
-```shell
+```sh
 mongo
 或
 mongo --host=127.0.0.1 --port=27017
@@ -173,7 +173,7 @@ MongoDB javascript shell是一个基于javascript的解释器，故是支持js�
 
 2. 上传压缩包到Linux中，解压到当前目录：
 
-```shell
+```sh
 tar -xvf mongodb-linux-x86_64-4.0.10.tgz
 ```
 
@@ -194,7 +194,7 @@ mkdir -p /mongodb/single/log
 
 5. 新建并修改配置文件
 
-```shell
+```sh
 vim /mongodb/single/mongod.conf
 ```
 
