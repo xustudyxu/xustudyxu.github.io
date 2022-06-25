@@ -68,7 +68,7 @@ tags:
 
 ##  MongoDB简介
 
-MongoDB是一个开`源、高性能、无模式的文档型数据库`，当初的设计就是用于简化开发和方便扩展，是NoSQL数据库产品中的一种。是最像关系型数据库（MySQL）的非关系型数据库。
+MongoDB是一个`开源、高性能、无模式的文档型数据库`，当初的设计就是用于简化开发和方便扩展，是NoSQL数据库产品中的一种。是最像关系型数据库（MySQL）的非关系型数据库。
 
 它支持的数据结构非常松散，是一种`类似于 JSON 的 格式叫BSON`，所以它`既可以存储比较复杂的数据类型`，又`相当的灵活`。
 
@@ -93,7 +93,7 @@ MySQL和MongoDB对比:
 
 ## 数据模型
 
-MongoDB的最小存储单位就是文档(document)对象。文档(document)对象对应于关系型数据库的行。数据在MongoDB中以BSON（Binary-JSON）文档的格式存储在磁盘上。
+MongoDB的`最小存储单位就是文档(document)对象`。`文档(document)对象`对应于关系型数据库的`行`。数据在MongoDB中以`BSON（Binary-JSON）`文档的格式存储在磁盘上。
 
 BSON（Binary Serialized Document Format）是一种类json的一种二进制形式的存储格式，简称Binary JSON。BSON和JSON一样，支持内嵌的文档对象和数组对象，但是BSON有JSON没有的一些数据类型，如Date和BinData类型。
 
