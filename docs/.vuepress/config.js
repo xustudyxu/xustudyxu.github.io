@@ -8,8 +8,18 @@ module.exports = {
   port: '7777',
   plugins: pluginsConf,
   head: [
+    ['script', {}, `
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e1aa9d15d62220ec692a843c08c79000";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>        
+    `],
     ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
-    ['script' , { href: './js/index.js' ,async:'async'}],
+    ['script', { href: './js/index.js', async: 'async' }],
     ['link', { rel: 'icon', href: 'https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
     // ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
@@ -22,7 +32,7 @@ module.exports = {
   ],
   markdown: {
     lineNumbers: true,
-    extractHeaders: ['h2', 'h3', 'h4','h5','h6']
+    extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6']
   },
   theme: 'vdoing',
   themeConfig: {
@@ -134,7 +144,7 @@ module.exports = {
       bubblePosition: 0,  // 气泡效果的位置，范围：0-100，不同数值代表不同的起始位置，0是整个图片，50是半张图（一半的下方）。bubble 为 true 生效。默认是 0
       bubbleNum: 200,   // 气泡的个数，bubble 为 true 生效，默认 200 个
     },
-    
+
 
   }
 
