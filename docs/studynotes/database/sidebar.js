@@ -42,6 +42,7 @@ module.exports = [
       '/studynotes/database/MongoDB/MongoDB_command',
       '/studynotes/database/MongoDB/MongoDB_Index',
       '/studynotes/database/MongoDB/MongoDB_Java',
+      '/studynotes/database/MongoDB/MongoDB_ClusterAndSecurity',
         ]
     },{
     title:'HBase',
