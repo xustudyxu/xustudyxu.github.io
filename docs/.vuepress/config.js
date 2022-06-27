@@ -102,7 +102,7 @@ module.exports = {
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/01.3d9wrma6qlq0.webp',
+      avatar: '![mmexport1656324824543](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp)',
       name: 'xustudyxu',
       slogan: '一起学习编程!',
     },
