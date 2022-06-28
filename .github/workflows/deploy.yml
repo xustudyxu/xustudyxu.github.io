@@ -1,60 +1,28 @@
-# name: Build And Deploy
-# on:
-#   push:
-#     branches:
-#       - master
-# env: # 设置环境变量
-#   TZ: Asia/Shanghai # 时区（设置时区可使页面中的 最近更新时间 使用时区时间）
-  
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: Checkout
-#       uses: actions/checkout@main
-#       with:
-#         persist-credentials: false
-#         fetch-depth: 0
-#     - name: Build and Deploy
-#       uses: jenkey2011/vuepress-deploy@master
-#       env:
-#         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-#         TARGET_REPO: xustudyxu/xustudyxu.github.io
-#         TARGET_BRANCH: gh-pages
-#         BUILD_SCRIPT: npm install && npm run build 
-#         BUILD_DIR: docs/.vuepress/dist/
-#         CNAME: frxcat.fun
-
-name: CI
-
-#on: [push]
-
-# 在master分支发生push事件时触发。
+name: Build And Deploy
 on:
   push:
     branches:
       - master
-
 env: # 设置环境变量
-  TZ: Asia/Shanghai # 时区（设置时区可使页面中的`最近更新时间`使用时区时间）
-
+  TZ: Asia/Shanghai # 时区（设置时区可使页面中的 最近更新时间 使用时区时间）
+  
 jobs:
-  build: # 自定义名称
-    runs-on: ubuntu-latest # 运行在虚拟机环境ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
+  build-and-deploy:
+    runs-on: ubuntu-latest ## 运行在最新虚拟机环境ubuntu
     steps:
-      - name: Checkout # 步骤1
-        uses: actions/checkout@v1 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
-      - name: Use Node.js ${{ matrix.node-version }} # 步骤2
-        uses: actions/setup-node@v1 # 作用：安装nodejs
-        with:
-          node-version: ${{ matrix.node-version }} # 版本
-      - name: run deploy.sh # 步骤3
-        env: # 设置环境变量
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # toKen私密变量
-        run: npm install && npm run deploy
+    - name: Checkout
+      uses: actions/checkout@main ## 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。
+      with:
+        persist-credentials: false
+        fetch-depth: 0  
+    - name: Build and Deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env: # 设置环境变量
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: xustudyxu/xustudyxu.github.io
+        TARGET_BRANCH: gh-pages
+        BUILD_SCRIPT: npm install && npm run build 
+        BUILD_DIR: docs/.vuepress/dist/
+        CNAME: frxcat.fun
+
 
