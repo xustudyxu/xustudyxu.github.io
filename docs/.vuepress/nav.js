@@ -29,6 +29,22 @@ module.exports = [{
     { text: 'SpringMVC', link: '/pages/2e990c/' },
     { text: 'SpringBoot2', link: '/pages/0d4af0/' },
   ]
+}, {
+  text: '中间件',
+  items: [
+    {
+      text: '搜索引擎',
+      items: [
+        { text: 'ElasticSearch', link: '/pages/596552/' },
+      ]
+    }, {
+      text: '消息队列',
+      items: [
+        { text: 'RabbitMQ', link: '' },
+      ]
+    },
+    
+  ]
 },{
   text: '大数据',
   items: [
