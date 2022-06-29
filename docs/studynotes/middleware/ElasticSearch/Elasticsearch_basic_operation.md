@@ -7,7 +7,7 @@ categories:
 tags:
   - ElasticSearch
 ---
-# Elasticsearch 基本操作
+# ElasticSearch 基本操作
 
 [[toc]]
 

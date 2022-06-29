@@ -35,7 +35,7 @@ module.exports = [{
     {
       text: '搜索引擎',
       items: [
-        { text: 'ElasticSearch', link: '/pages/596552/' },
+        { text: 'ElasticSearch', link: '/middleware/ElasticSearch/introduce' },
       ]
     }, {
       text: '消息队列',
