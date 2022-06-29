@@ -5,6 +5,7 @@ module.exports = [
     children:[
       '/studynotes/middleware/ElasticSearch/ElasticSearch_introduce',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_index',
+      '/studynotes/middleware/ElasticSearch/Elasticsearch_basic_operation',
     ]
   }
  
