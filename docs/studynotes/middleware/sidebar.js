@@ -4,6 +4,7 @@ module.exports = [
     collapsable: false,
     children:[
       '/studynotes/middleware/ElasticSearch/ElasticSearch_introduce',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_index',
     ]
   }
  

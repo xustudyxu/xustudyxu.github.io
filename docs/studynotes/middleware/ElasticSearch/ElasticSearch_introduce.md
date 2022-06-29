@@ -9,6 +9,8 @@ tags:
 ---
 # ElasticSearch 概述
 
+[学习视频地址](https://www.bilibili.com/video/BV1hh411D7sb?p=1&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
 [[toc]]
 
 ## Elasticsearch 是什么
