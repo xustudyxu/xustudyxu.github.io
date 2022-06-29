@@ -6,6 +6,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_introduce',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_index',
       '/studynotes/middleware/ElasticSearch/Elasticsearch_basic_operation',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Advanced_operation',
     ]
   }
  
