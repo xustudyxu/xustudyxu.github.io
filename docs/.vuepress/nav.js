@@ -35,7 +35,7 @@ module.exports = [{
     {
       text: '搜索引擎',
       items: [
-        { text: 'ElasticSearch', link: '/middleware/ElasticSearch/introduce' },
+        { text: 'ElasticSearch', link: '/pages/596552/' },
       ]
     }, {
       text: '消息队列',
@@ -77,8 +77,8 @@ module.exports = [{
       text: 'NoSQL 数据库',
       items: [
         { text: 'NoSQL数据库概论', link: '/pages/7ab056/' },
-        { text: 'Redis', link: '/database/Reids/Redis_introduction' },
-        { text: 'MongoDB', link: '/database/MongoDB/MongoDB_introduce' },
+        { text: 'Redis', link: '/pages/e9cc9f/' },
+        { text: 'MongoDB', link: '/pages/91197c/' },
         { text: 'HBase', link: '/pages/2aae92/' }
       ]
     },

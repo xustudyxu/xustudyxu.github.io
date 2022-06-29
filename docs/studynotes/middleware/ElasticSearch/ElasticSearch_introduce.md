@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 概述
 date: 2022-06-28 15:15:40
-permalink: /middleware/ElasticSearch/introduce
+permalink: /pages/596552/
 categories:
   - ElasticSearch
 tags:
