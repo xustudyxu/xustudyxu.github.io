@@ -1,7 +1,7 @@
 ---
 title: MongoDB 相关概念
 date: 2022-06-24 14:02:03
-permalink: /pages/91197c/
+permalink: /database/MongoDB/MongoDB_introduce
 categories:
   - MongoDB
 tags:

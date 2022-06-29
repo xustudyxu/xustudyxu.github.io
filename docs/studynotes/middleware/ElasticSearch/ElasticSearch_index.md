@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 安装
 date: 2022-06-28 22:57:13
-permalink: /pages/39931b/
+permalink: /middleware/ElasticSearch/ElasticSearch_install
 categories:
   - ElasticSearch
 tags:

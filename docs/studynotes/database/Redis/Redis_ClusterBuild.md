@@ -1,7 +1,7 @@
 ---
 title: Redis 集群搭建
 date: 2022-06-20 21:37:05
-permalink: /pages/e9f4dc/
+permalink: /database/Reids/Redis_ClusterBuild
 categories:
   - Redis
 tags:

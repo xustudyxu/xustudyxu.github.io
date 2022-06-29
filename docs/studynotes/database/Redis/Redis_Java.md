@@ -1,7 +1,7 @@
 ---
 title: Redis Java整合
 date: 2022-06-15 23:28:15
-permalink: /pages/75815c/
+permalink: /database/Reids/Redis_Java
 categories:
   - Redis
 tags:

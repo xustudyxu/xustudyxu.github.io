@@ -1,7 +1,7 @@
 ---
 title: 常用五大数据类型
 date: 2022-06-12 23:41:12
-permalink: /pages/d0967d/
+permalink: /database/Reids/Redis_datatype
 categories:
   - Redis
 tags:

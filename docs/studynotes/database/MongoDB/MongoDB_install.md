@@ -1,7 +1,7 @@
 ---
 title: MongoDB 安装
 date: 2022-06-24 17:46:18
-permalink: /pages/f2b03b/
+permalink: /database/MongoDB/MongoDB_install
 categories:
   - MongoDB
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Redis 缓存问题
 date: 2022-06-20 22:18:29
-permalink: /pages/ecb416/
+permalink: /database/Reids/Redis_CacheProblem
 categories:
   - Redis
 tags:

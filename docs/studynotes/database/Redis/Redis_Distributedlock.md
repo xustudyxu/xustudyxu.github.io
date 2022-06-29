@@ -1,7 +1,7 @@
 ---
 title: Redis 分布式锁
 date: 2022-06-21 20:22:56
-permalink: /pages/84b423/
+permalink: /database/Reids/Redis_Distributedlock
 categories:
   - Redis
 tags:

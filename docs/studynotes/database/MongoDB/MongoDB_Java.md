@@ -1,7 +1,7 @@
 ---
 title: MongoDB 整合Java案例
 date: 2022-06-26 21:11:01
-permalink: /pages/3db0a0/
+permalink: /database/MongoDB/MongoDB_Java
 categories:
   - MongoDB
 tags:

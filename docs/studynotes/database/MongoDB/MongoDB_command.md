@@ -1,7 +1,7 @@
 ---
 title: MongoDB 常用命令
 date: 2022-06-25 19:17:02
-permalink: /pages/bf2ea3/
+permalink: /database/MongoDB/MongoDB_command
 categories:
   - MongoDB
 tags:

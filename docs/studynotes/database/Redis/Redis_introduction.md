@@ -1,7 +1,7 @@
 ---
 title: Redis 数据库简介
 date: 2022-06-07 20:45:03
-permalink: /pages/e9cc9f/
+permalink: /database/Reids/Redis_introduction
 categories:
   - Redis
 tags:

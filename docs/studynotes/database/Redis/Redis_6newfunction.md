@@ -1,7 +1,7 @@
 ---
 title: Redis 6.0新功能
 date: 2022-06-21 20:45:22
-permalink: /pages/c860e9/
+permalink: /database/Reids/Redis_6newfunction
 categories:
   - Redis
 tags:

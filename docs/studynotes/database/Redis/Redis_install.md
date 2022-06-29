@@ -1,7 +1,7 @@
 ---
 title: Redis 概述安装
 date: 2022-06-10 20:39:01
-permalink: /pages/1a012a/
+permalink: /database/Reids/Redis_install
 categories:
   - Redis
 tags:

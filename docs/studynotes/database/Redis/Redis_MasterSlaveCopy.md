@@ -1,7 +1,7 @@
 ---
 title: Redis 主从复制
 date: 2022-06-19 23:10:09
-permalink: /pages/0579b7/
+permalink: /database/Reids/Redis_MasterSlaveCopy
 categories:
   - Redis
 tags:

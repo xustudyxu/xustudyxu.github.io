@@ -1,7 +1,7 @@
 ---
 title: Redis 事务与锁
 date: 2022-06-17 17:08:22
-permalink: /pages/8154b5/
+permalink: /database/Reids/Redis_AffairAndLock
 categories:
   - Redis
 tags:

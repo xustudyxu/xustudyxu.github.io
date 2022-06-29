@@ -1,7 +1,7 @@
 ---
 title: Redis 配置文件
 date: 2022-06-13 23:07:34
-permalink: /pages/058b72/
+permalink: /database/Reids/Redis_conf
 categories:
   - Redis
 tags:

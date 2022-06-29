@@ -1,7 +1,7 @@
 ---
 title: Redis 持久化操作
 date: 2022-06-18 22:22:18
-permalink: /pages/fa1248/
+permalink: /database/Reids/Redis_Persistence
 categories:
   - Redis
 tags:

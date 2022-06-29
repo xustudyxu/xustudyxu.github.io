@@ -1,7 +1,7 @@
 ---
 title: MongoDB 索引-Index
 date: 2022-06-25 21:16:12
-permalink: /pages/b31d16/
+permalink: /database/MongoDB/MongoDB_index
 categories:
   - MongoDB
 tags:

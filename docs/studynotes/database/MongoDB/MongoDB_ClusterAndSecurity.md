@@ -1,7 +1,7 @@
 ---
 title: MongoDB 集群和安全
 date: 2022-06-27 23:23:57
-permalink: /pages/5ed756/
+permalink: /database/MongoDB/MongoDB_ClusterAndSecurity
 categories:
   - MongoDB
 tags:
