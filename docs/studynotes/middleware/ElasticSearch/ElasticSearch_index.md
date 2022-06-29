@@ -37,7 +37,7 @@ Windows 版的 Elasticsearch 的安装很简单，解压即安装完毕，解压
 | lib      | 类库           |
 | logs     | 日志目录       |
 | moudules | 模块目录       |
-|          | 插件目录       |
+| plugins  | 插件目录       |
 
 解压后，进入 bin 文件目录，点击 elasticsearch.bat 文件启动 ES 服务
 
@@ -208,3 +208,154 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 ##### 创建文档
 
+索引已经创建好了，接下来我们来创建文档，并添加数据。这里的文档可以类比为关系型数据库中的表数据，添加的数据格式为 JSON 格式
+
+在 Postman 中，向 ES 服务器发`POST` 请求 ：http://127.0.0.1:9200/shopping/_doc
+
+```json
+{
+ "title":"小米手机",
+ "category":"小米",
+ "images":"http://www.gulixueyuan.com/xm.jpg",
+ "price":3999.00
+}
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5wglnskmpgs0.webp)
+
+此处发送请求的方式必须为 `POST`，不能是` PUT`，否则会发生错误,
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.1ta5l39n7z7k.webp)
+
+```json
+{
+ 	"_index"【索引】: "shopping",
+ 	"_type"【类型-文档】: "_doc",
+	"_id"【唯一标识】: "Xhsa2ncBlvF_7lxyCE9G", #可以类比为 MySQL 中的主键，随机生成
+	"_version"【版本】: 1,
+ 	"result"【结果】: "created", #这里的 create 表示创建成功
+ 	"_shards"【分片】: {
+ 		"total"【分片 - 总数】: 2,
+ 		"successful"【分片 - 成功】: 1,
+ 		"failed"【分片 - 失败】: 0
+ 	},
+ 	"_seq_no": 0,
+ 	"_primary_term": 1
+}
+```
+
+上面的数据创建后，由于没有指定数据唯一性标识（ID），默认情况下，ES 服务器会随机生成一个。
+
+如果想要`自定义唯一性标识`，需要在创建时指定：http://127.0.0.1:9200/shopping/_doc/1
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.58rsz7uqqt40.webp)
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.d2a3e2zo0bs.webp)
+
+> 此处需要注意：如果增加数据时明确数据主键，那么请求方式也可以为 PUT
+
+##### 查看文档
+
+查看文档时，需要指明文档的唯一性标识，类似于 MySQL 中数据的主键查询
+
+在 Postman 中，向 ES 服务器发` GET `请求 ：http://127.0.0.1:9200/shopping/_doc/1
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5gnvg6vy2xw0.webp)
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3aiusoqfb2o0.webp)
+
+```json
+{
+ 	"_index"【索引】: "shopping",
+ 	"_type"【文档类型】: "_doc",
+ 	"_id": "1",
+ 	"_version": 2,
+ 	"_seq_no": 2,
+ 	"_primary_term": 2,
+ 	"found"【查询结果】: true, # true 表示查找到，false 表示未查找到
+ 	"_source"【文档源信息】: {
+ 		"title": "华为手机",
+ 		"category": "华为",
+ 		"images": "http://www.gulixueyuan.com/hw.jpg",
+ 		"price": 4999.00
+ 	}
+}
+```
+
+查询所有数据:	http://127.0.0.1:9200/shopping/_search   发送`	GET`请求
+
+##### 修改文档
+
++ 全局修改
+
+和新增文档一样，输入相同的 URL 地址请求，如果请求体变化，会将原有的数据内容覆盖
+
+在 Postman 中，向 ES 服务器发` POST` 请求 ：http://127.0.0.1:9200/shopping/_doc/1
+
+```json
+{
+ 	"title":"华为手机",
+ 	"category":"华为",
+ 	"images":"http://www.gulixueyuan.com/hw.jpg",
+ 	"price":4999.00
+}
+```
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.334ba6eupjy0.webp)
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.cmq143r0no8.webp)
+
++ 局部修改
+
+在 Postman 中，向 ES 服务器发` POST` 请求 ：http://127.0.0.1:9200/shopping/_updata/1
+
+
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5qg2uu195m80.webp)
+
+再次查看文档:
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6m71s5usigw0.webp)
+
+##### 删除文档
+
+删除一个文档不会立即从磁盘上移除，它只是被标记成已删除（逻辑删除）。
+
+在 Postman 中，向 ES 服务器发` DELETE `请求 ：http://127.0.0.1:9200/shopping/_doc/1
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.476ikbhzz5e0.webp)
+
+服务器响应结果如下：
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6y551su4g080.webp)
+
+```json
+{
+	 "_index": "shopping",
+ 	 "_type": "_doc",
+ 	 "_id": "1",
+ 	 "_version"【版本】: 4, #对数据的操作，都会更新版本
+ 	 "result"【结果】: "deleted", # deleted 表示数据被标记为删除
+ 	 "_shards": {
+ 		"total": 2,
+ 		"successful": 1,
+ 		"failed": 0
+ 	},
+ 	"_seq_no": 4,
+ 	"_primary_term": 2
+}
+```
+
+删除后再查询当前文档信息
+
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3m13d7xdiqg0.webp)
