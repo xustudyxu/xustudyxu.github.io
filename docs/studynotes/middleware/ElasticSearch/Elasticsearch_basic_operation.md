@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch 基本操作
+title: ElasticSearch 基本操作
 date: 2022-06-29 17:04:43
 permalink: /middleware/ElasticSearch/basic_operation
 categories:
