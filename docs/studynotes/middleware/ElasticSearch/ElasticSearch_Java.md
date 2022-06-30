@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch Java整合
 date: 2022-06-30 23:57:29
-permalink: /pages/6ad554/
+permalink: /middleware/ElasticSearch/ElasticSearch_Java
 categories:
   - ElasticSearch
 tags:
