@@ -19,7 +19,7 @@ tags:
 
   + **仅保存一份相同且不可变字符串的方法，不同的值被存放在字符串的驻留池中，Python的驻留机制对相同的字符串只保留一份拷贝，后续创建相同字符时，不会开辟空间，而是把该字符串的地址付给新创建的变量**
 
-  ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/01.png)
+  ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/01.png)
 
 + 驻留机制的几种情况(交互模式)
 
@@ -308,7 +308,7 @@ print('*'.join('Python')) #P*y*t*h*o*n
   + <font color=#DC4040 size=4 face="黑体">不具备增、删、改等操作</font>
   + <font color=#DC4040 size=4 face="黑体">切片操作将产生新的对象</font>
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/02.png)
 
 ```python
 """
@@ -346,7 +346,7 @@ print(s[-6::]) #Python
 
 ### 格式化字符串的两种方式
 
-![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/03.png)
+![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/03.png)
 
 ```python
 """
@@ -407,7 +407,7 @@ print('hellohello')                   #hellohello
 
 + 为什么需要编码转换
 
-![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/04.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/09/04.png)
 
 + 编码与解码的方式
   + 编码:将字符串转换为二进制数据(bytes)

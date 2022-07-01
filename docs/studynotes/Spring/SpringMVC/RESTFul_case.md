@@ -545,13 +545,13 @@ public class EmployeeController {
 
 + 访问URL
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/01.png)
 
 + 测试更新
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/02.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/02.png)
 
 + 结果
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/03.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/07/03.png)
 

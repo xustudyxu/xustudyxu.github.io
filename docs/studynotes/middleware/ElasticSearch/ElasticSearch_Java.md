@@ -567,9 +567,518 @@ public class ESTest_Doc_QueryAll {
 Process finished with exit code 0
 ```
 
-### 条件查询
+### 条件查询-term
+
+```java {12}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));
+
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(QueryBuilders.termQuery("age","18"));
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
++ 结果
 
 ```java
+响应时间:140ms
+是否超时:false
+命中数量:1 hits
+MaxScore:1.0
+详细数据:
+{"name":"可乐","sex":"男","age":18}
 
+Process finished with exit code 0
+```
+
+### 条件查询-terms
+
+```java {12}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));
+
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(QueryBuilders.termsQuery("age","18","20","23"));
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
++ 结果
+
+```java
+响应时间:185ms
+是否超时:false
+命中数量:2 hits
+MaxScore:1.0
+详细数据:
+{"name":"可乐","sex":"男","age":18}
+{"name":"冰糖","sex":"女","age":20}
+
+Process finished with exit code 0
+```
+
+### 分页查询
+
+```java {11-14}
+ public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));       
+		//分页查询
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(QueryBuilders.matchAllQuery());
+        sourceBuilder.from(0);
+        sourceBuilder.size(2);
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+```java
+响应时间:2ms
+是否超时:false
+命中数量:5 hits
+MaxScore:1.0
+详细数据:
+{"name":"可乐","sex":"男","age":18}
+{"name":"冰糖","sex":"女","age":20}
+
+Process finished with exit code 0
+```
+
+### 排序查询
+
+```java {13}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));        
+		//查询排序
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(QueryBuilders.matchAllQuery());
+        sourceBuilder.sort("age", SortOrder.DESC);
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+```java
+响应时间:59ms
+是否超时:false
+命中数量:5 hits
+MaxScore:NaN
+详细数据:
+{"name":"蜜桃","sex":"女","age":30}
+{"name":"酸橙","sex":"男","age":24}
+{"name":"雪梨","sex":"女","age":22}
+{"name":"冰糖","sex":"女","age":20}
+{"name":"可乐","sex":"男","age":18}
+
+Process finished with exit code 0
+```
+
+### 过滤字段
+
+```java {14-16}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));        
+		//过滤字段
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.query(QueryBuilders.matchAllQuery());
+
+        String[] excludes={"age"};
+        String[] includes={"name"};
+        sourceBuilder.fetchSource(includes,excludes);
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
++ 结果:
+
+```java
+响应时间:3ms
+是否超时:false
+命中数量:5 hits
+MaxScore:1.0
+详细数据:
+{"name":"可乐"}
+{"name":"冰糖"}
+{"name":"雪梨"}
+{"name":"酸橙"}
+{"name":"蜜桃"}
+
+Process finished with exit code 0
+```
+
+### Bool查询
+
+```java {13-18}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));       
+		//组合查询
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
+        //必须包含
+        boolQueryBuilder.must(QueryBuilders.matchQuery("age","30"));
+        //一定不含
+        boolQueryBuilder.mustNot(QueryBuilders.matchQuery("username","可乐"));
+        //可能包含
+        boolQueryBuilder.should(QueryBuilders.matchQuery("sex","男"));
+        sourceBuilder.query(boolQueryBuilder);
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("响应时间:"+response.getTook());
+        System.out.println("是否超时:"+response.isTimedOut());
+        System.out.println("命中数量:"+hits.getTotalHits());
+        System.out.println("MaxScore:"+hits.getMaxScore());
+        System.out.println("详细数据:");
+        for (SearchHit hit : hits) {
+            //输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+```java
+响应时间:68ms
+是否超时:false
+命中数量:1 hits
+MaxScore:1.0
+详细数据:
+{"name":"蜜桃","sex":"女","age":30}
+
+Process finished with exit code 0
+```
+
+### 范围查询
+
+```java {12-15}
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));       
+		//范围查询
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        RangeQueryBuilder rangeQuery = QueryBuilders.rangeQuery("age");
+        rangeQuery.gte(30);
+        rangeQuery.lte(40);
+        sourceBuilder.query(rangeQuery);
+
+        request.source(sourceBuilder);
+        SearchResponse response = esClient.search(request, RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("took:" + response.getTook());
+        System.out.println("timeout:" + response.isTimedOut());
+        System.out.println("total:" + hits.getTotalHits());
+        System.out.println("MaxScore:" + hits.getMaxScore());
+        for (SearchHit hit : hits) {
+            // 输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+```java
+took:1ms
+timeout:false
+total:1 hits
+MaxScore:1.0
+{"name":"蜜桃","sex":"女","age":30}
+
+Process finished with exit code 0
+```
+
+### 模糊查询
+
+```java
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http")));
+        //模糊查询
+		SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        QueryBuilders.fuzzyQuery("name","wangwu").fuzziness(Fuzziness.ONE);
+
+
+        request.source(sourceBuilder);
+        SearchResponse response = esClient.search(request, RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("took:" + response.getTook());
+        System.out.println("timeout:" + response.isTimedOut());
+        System.out.println("total:" + hits.getTotalHits());
+        System.out.println("MaxScore:" + hits.getMaxScore());
+        for (SearchHit hit : hits) {
+            // 输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+```java
+took:2ms
+timeout:false
+total:5 hits
+MaxScore:1.0
+详细数据：
+{"name":"可乐","sex":"男","age":18}
+{"name":"冰糖","sex":"女","age":20}
+{"name":"雪梨","sex":"女","age":22}
+{"name":"酸橙","sex":"男","age":24}
+{"name":"蜜桃","sex":"女","age":30}
+
+Process finished with exit code 0
+```
+
+### 高亮查询
+
+```java
+public class ESTermQuery {
+    public static void main(String[] args) throws IOException {
+        //连接ES客户端
+        RestHighLevelClient esClient =
+                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", 9200, "http"))); 
+		//高亮查询
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+
+        //构建查询的请求体
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        TermsQueryBuilder termsQueryBuilder = QueryBuilders.termsQuery("age", "18","20");
+
+        sourceBuilder.query(termsQueryBuilder);
+
+        HighlightBuilder highlightBuilder = new HighlightBuilder();
+        highlightBuilder.preTags("<font color='red'>");
+        highlightBuilder.postTags("</font>");
+        highlightBuilder.field("age");
+
+        request.source(sourceBuilder);
+        SearchResponse response = esClient.search(request, RequestOptions.DEFAULT);
+
+        //查询匹配
+        SearchHits hits = response.getHits();
+        System.out.println("took:" + response.getTook());
+        System.out.println("timeout:" + response.isTimedOut());
+        System.out.println("total:" + hits.getTotalHits());
+        System.out.println("MaxScore:" + hits.getMaxScore());
+        System.out.println("详细数据：");
+        for (SearchHit hit : hits) {
+            // 输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+        //关闭ES客户端
+        esClient.close();
+    }
+}
+```
+
+结果:
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220701/image.7iu4a53cmrw0.webp)
+
+## 聚合查询
+
+### 最大年龄
+
+```java
+public class EsArrgQuery {
+
+    public static void main(String[] args) throws IOException {
+        // 连接 ES 客户端 
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http")));
+
+        // 高亮查询
+        SearchRequest request = new SearchRequest().indices("user");
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.aggregation(AggregationBuilders.max("maxAge").field("age"));
+        // 3.客户端发送请求，获取响应对象
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+        // 4.打印响应结果
+        System.out.println(response);
+
+        // 关闭 ES 客户端
+        esClient.close();
+    }
+}
+```
+
+### 分组统计
+
+```java
+public class EsArrgQuery {
+
+    public static void main(String[] args) throws IOException {
+        // 连接 ES 客户端 
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http")));
+
+        // 高亮查询
+        SearchRequest request = new SearchRequest().indices("user");
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.aggregation(AggregationBuilders.terms("ageGroupby").field("age"));
+        // 3.客户端发送请求，获取响应对象
+        SearchResponse response = esClient.search(request.source(sourceBuilder), RequestOptions.DEFAULT);
+        // 4.打印响应结果
+        SearchHits hits = response.getHits();
+        System.out.println(response);
+
+        // 关闭 ES 客户端
+        esClient.close();
+    }
+}
 ```
 

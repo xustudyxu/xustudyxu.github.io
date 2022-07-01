@@ -11,7 +11,7 @@ tags:
 
 ## 为什么需要列表
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/01.png)
 
 ```python
 """
@@ -30,7 +30,7 @@ print(lst)    #['hello','world',98]
 
 ## 列表的创建
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/02.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/02.png)
 
 ```python
 """
@@ -49,7 +49,7 @@ lst2=list(['hello','world',98])
 
 ## 列表的特点
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/03.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/03.png)
 
 ```python
 """
@@ -70,7 +70,7 @@ lst2=list(['hello','world',98])
 
  ## 列表的查询操作
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/04.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/04.png)
 
 ```python
 """
@@ -105,7 +105,7 @@ print(lst[-3])
 
 ### 获取列表的多个元素
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/05.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/05.png)
 
 ```python
 """
@@ -138,7 +138,7 @@ print(lst[6:0:-2])          #[70, 50, 30]
 
 ### 判断元素是否存在&&元素遍历
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/06.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/06.png)
 
 ```python
 """
@@ -306,7 +306,7 @@ print(desc_list) #[98, 54, 40, 20, 10]
 
 ## 列表生成式
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/07.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/06/07.png)
 
 ```python
 """

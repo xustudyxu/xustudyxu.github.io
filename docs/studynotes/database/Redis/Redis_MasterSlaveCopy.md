@@ -13,7 +13,7 @@ tags:
 
 ## 概念
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.4mf4xesn8lw.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.4mf4xesn8lw.webp)
 
 主从复制，是指将一台 Redis 服务器的数据，复制到其他的 Redis 服务器。前者称为主节点 (master/leader)，后者称为从节点(slave/follower)；数据的复制是单向的，只能由主节点到从节点。**Master 以写为主，Slave 以读为主**。
 
@@ -35,7 +35,7 @@ tags:
 
 对于这种场景，我们可以使如下这种架构：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.1gitjgqit1eo.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.1gitjgqit1eo.webp)
 
 ## 搭建一主多从
 
@@ -85,7 +85,7 @@ cp /etc/redis.conf /myredis/redis.conf
 
 + 关闭appendonly
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.41b7mn7ovcm0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.41b7mn7ovcm0.webp)
 
 ```shell
 vim redis6379.conf
@@ -123,7 +123,7 @@ redis-cli -p 6380
 redis-cli -p 6381
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.3tg125lyubm0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.3tg125lyubm0.webp)
 
 ## 配置三类
 
@@ -139,17 +139,17 @@ redis-cli -p 6381
 slaveof 127.0.0.1 6379
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.2nd28pe2kdw0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.2nd28pe2kdw0.webp)
 
 + 在主机设置值，在从机都可以取到，但是从机不能写值
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.5ckyr14k44s0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.5ckyr14k44s0.webp)
 
 我们这里是使用命令搭建，是「暂时的」，如果重启三个 Redis 服务，则又恢复到三主的地位
 
 如果想配置「永久的」，则去配置里进行修改，找到 `slaveof <ip> <port>` 指令进行配置：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.4tcrhaywr380.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.4tcrhaywr380.webp)
 
 > 使用规则
 
@@ -163,13 +163,13 @@ slaveof 127.0.0.1 6379
 
 上一个 Slave 可以是下一个 Slave 和 Master，Slave 同样可以接收其他 Slaves 的连接和同步请求，那么该 Slave 作为了链条中下一个的 Master，可以有效减轻 Master 的写压力，去中心化降低风险。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.73an9sywqrs0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.73an9sywqrs0.webp)
 
 在一个从机用 `slaveof <ip> <port>` 指令连接另一个从机
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.3c8aowrzbpm0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.3c8aowrzbpm0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.4amz2iybjkk0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.4amz2iybjkk0.webp)
 
 ### 反客为主
 
@@ -188,7 +188,7 @@ slaveof 127.0.0.1 6379
 - 增量复制：Master 继续将新的所有收集到的修改命令依次传给 Slave，完成同步
 - 但是只要是重新连接 Master，一次完全同步（全量复制）将被自动执行
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.5eivho3kll00.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.5eivho3kll00.webp)
 
 ## 哨兵模式
 
@@ -200,7 +200,7 @@ slaveof 127.0.0.1 6379
 
 哨兵模式是一种特殊的模式，首先 Redis 提供了哨兵的命令，哨兵是一个独立的进程，作为进程，它会独立运行。其原理是 **哨兵通过发送命令，等待 Redis 服务器响应，从而监控运行的多个 Redis 实例**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.4drtau9vige0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.4drtau9vige0.webp)
 
 这里的哨兵有两个作用：
 
@@ -209,7 +209,7 @@ slaveof 127.0.0.1 6379
 
 然而一个哨兵进程对 Redis 服务器进行监控，可能会出现问题，为此，我们可以使用多个哨兵进行监控。各个哨兵之间还会进行监控，这样就形成了多哨兵模式。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.3lsffl4hg0e0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.3lsffl4hg0e0.webp)
 
 假设主服务器宕机，哨兵 1 先检测到这个结果，系统并不会马上进行 failover 过程，仅仅是哨兵 1 主观的认为主服务器不可用，这个现象成为 **主观下线**。当后面的哨兵也检测到主服务器不可用，并且数量达到一定值时，那么哨兵之间就会进行一次投票，投票的结果由一个哨兵发起，进行 failover [故障转移]操作。切换成功后，就会通过发布订阅模式，让各个哨兵把自己监控的从服务器实现切换主机，这个过程称为 **客观下线**。
 
@@ -238,11 +238,11 @@ redis-sentinel myredis/sentinel.conf
 
 成功启动哨兵模式：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.3dhl97lren60.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.3dhl97lren60.webp)
 
 此时哨兵监视着我们的主机 6379，当我们断开主机后：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220619/image.6p02ncej3ao0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220619/image.6p02ncej3ao0.webp)
 
 哪个从机会被选举为主机呢？根据优先级别：`slave-priority`，这个指令需要去每个从机的配置文件进行配置，默认都是 100。
 

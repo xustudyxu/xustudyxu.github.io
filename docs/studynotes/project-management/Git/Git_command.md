@@ -79,7 +79,7 @@ drwxr-xr-x 1 DELL 197121 0  1月 26 16:13 .git/
 
 3. 结果查看
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/03/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Git/images/03/01.png)
 
 ## 查看本地库状态
 
@@ -330,5 +330,5 @@ hello git!
 
 Git 切换版本，底层其实是**移动的 HEAD 指针**，具体原理如下图所示。
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/03/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Git/images/03/02.png)
 

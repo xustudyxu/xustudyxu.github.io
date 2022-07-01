@@ -31,7 +31,7 @@ tags:
 
 ## 搭建事务操作环境
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/01.png)
 
 1. 创建数据库表,添加数据
 
@@ -191,7 +191,7 @@ tags:
 
    1. 提供一个接口，代表事务管理器，这个接口针对不同的框架提供不同的实现类
 
-   ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/02.png)
+   ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/02.png)
 
 ## 注解声明式事务管理
 
@@ -247,13 +247,13 @@ tags:
 
 1. 在service类上面添加注解@Transactiona，在这个注解里面可以配置事务相关参数
 
-   ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/03.png)
+   ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/03.png)
 
 ### propagation：事务传播行为
 
 1. 多事务方法直接进行调用，这个过程中事务是如何进行管理的
 
-   ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/04.png)
+   ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/04.png)
 
 事务的传播行为可以由传播属性指定。Spring定义了7种类传播行为
 
@@ -282,11 +282,11 @@ public class UserService {
 
    1. 脏读：一个未提交事务读取到另一个 未提交事务的数据
 
-      ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/05.png)
+      ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/05.png)
 
    2. 不可重复读
 
-      ![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/06.png)
+      ![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/05/06.png)
 
    3. 幻读:一个未提交事务读取到另一个提交事务添加数据
 

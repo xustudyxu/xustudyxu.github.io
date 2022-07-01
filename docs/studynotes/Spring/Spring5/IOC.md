@@ -25,11 +25,11 @@ tags:
 
 + 原始方式与工厂模式对比
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/01.png)
 
 ### 图解IOC底层原理
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/02.png)
 
 ## IOC 接口(BeanFactory)
 
@@ -47,7 +47,7 @@ tags:
 
 3. ApplicationContext接口有实现类
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/03.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/03.png)
 
 + FileSystemXmlApplicationContext
 
@@ -534,7 +534,7 @@ public class MyBean implements FactoryBean<Course> {
     }
 ```
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/04.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/04.png)
 
 3. 如何设置单实例还是多实例
    
@@ -563,7 +563,7 @@ public class MyBean implements FactoryBean<Course> {
     }
 ```
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/05.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/05.png)
 
 + singleton和prototype区别
 
@@ -642,7 +642,7 @@ public class Orders {
     </bean>
 ```
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/06.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/06.png)
 
 4. bean的后置处理器，bean生命周期有七步
 
@@ -696,7 +696,7 @@ public class Orders {
    </beans>
    ```
 
-   ![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/07.png)
+   ![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/07.png)
 
 ## xml 自动装配
 
@@ -750,7 +750,7 @@ public class Orders {
 2. 引入外部属性文件配置数据库连接池 
 + 创建外部属性文件，properteis格式文件，写数据库信息
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/08.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/08.png)
 
 + 把外部properties属性文件引入到spring配置文件中
 
@@ -798,7 +798,7 @@ public class Orders {
 
 第一步 引入依赖
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/09.png)   
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/09.png)   
 
 第二步 开启组件扫描
 
@@ -950,5 +950,5 @@ public class SpringConfig {
     }
 ```
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/10.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/02/10.png)
 

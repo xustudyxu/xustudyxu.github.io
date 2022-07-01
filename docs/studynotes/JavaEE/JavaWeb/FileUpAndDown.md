@@ -136,15 +136,15 @@ public class UploadServlet extends HttpServlet {
 
 + 访问URL
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/01.png)
 
 + 控制台
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/02.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/02.png)
 
 + 查看文件是否存在
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/03.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/03.png)
 
 ## 文件下载
 
@@ -204,11 +204,11 @@ download 属性可以不写任何信息，会自动使用默认文件名。如�
 
 + 访问URL
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/04.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/04.png)
 
 + 点击压缩文件
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/05.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/05.png)
 
 + 设置download属性
 
@@ -226,7 +226,7 @@ download 属性可以不写任何信息，会自动使用默认文件名。如�
 
 + 效果
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/06.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/06.png)
 
 ### 后台实现下载
 
@@ -363,18 +363,18 @@ public class DownloadServlet extends HttpServlet {
 
 + 访问URL
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/07.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/07.png)
 
 + 不输入任何点击下载
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/08.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/08.png)
 
 + 输入不存在的文件名，点击下载
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/09.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/09.png)
 
 + 存入存在的文件，点击下载
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/10.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/06/10.png)
 
 下载成功!

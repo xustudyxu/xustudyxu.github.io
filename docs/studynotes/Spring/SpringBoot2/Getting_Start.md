@@ -145,7 +145,7 @@ public class HelloController {
 
 + 访问URL
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/01.png)
 
 > 非常非常的好用，非常非常的奈斯，非常非常的妙
 
@@ -157,11 +157,11 @@ public class HelloController {
 
 我们安装Maven Helper的插件，用来查看spring-boot-starter-web模块的依赖
 
-![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/04.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/04.png)
 
 我们看下这个模块的依赖，你便能初步窥探出模块支撑
 
-![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/05.png)
+![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/05.png)
 
 ### 我们如何更改更多Server的配置呢？比如Tomcat Server
 
@@ -204,11 +204,11 @@ server.port=8888
 
 **把项目打成jar包，直接在目标服务器执行即可**。
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/02.png)
 
 + 访问URL
 
-![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/03.png)
+![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/02/03.png)
 
 ::: tip
 

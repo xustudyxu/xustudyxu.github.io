@@ -15,7 +15,7 @@ tags:
 
 ## Spring能做什么
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.25x5nu44ym68.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.25x5nu44ym68.webp)
 
 ## Spring的生态
 
@@ -43,7 +43,7 @@ web开发
 
 ### 响应式编程
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/02.png)
 
 ### 内部源码设计
 
@@ -121,7 +121,7 @@ In short, the **microservice architectural style** is an approach to developing 
 
 + SpringBoot+SpringCloud
 
-![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/03.png)
+![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/03.png)
 
 ## 云原生
 
@@ -139,19 +139,19 @@ In short, the **microservice architectural style** is an approach to developing 
 
 ### 上云的解决
 
-![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/04.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/04.png)
 
 ## 如何学习SpringBoot
 
 ### 官网文档架构
 
-![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/05.png)
+![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/05.png)
 
-![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/06.png)
+![06](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/06.png)
 
 查看版本新特性；
 
 https://github.com/spring-projects/spring-boot/wiki#release-notes
 
-![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/07.png)
+![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/Spring_SpringBoot2/07.png)
 

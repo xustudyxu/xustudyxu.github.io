@@ -15,11 +15,11 @@ tags:
 
 + 管理后台
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.2xswdjlu12a0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.2xswdjlu12a0.webp)
 
 + 移动端
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.2bryvgbt1ou8.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.2bryvgbt1ou8.webp)
 
 ## 公共字段自动填充
 
@@ -34,11 +34,11 @@ tags:
 | create_time | bigint   |
 | update_time | bigint   |
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.57qz99h9c680.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.57qz99h9c680.webp)
 
 能不能对于这些公共字段在某个地方统一处理，来简化开发呢?答案就是使用Mybatis Plus提供的<font color=##dd0000>公共字段自动填充</font>功能。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5cupob4zrjs0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5cupob4zrjs0.webp)
 
 ### 代码实现
 
@@ -132,7 +132,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 + 新增用户小王，账号为test001,再次修改账号为test002
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4mabyp51lwc0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4mabyp51lwc0.webp)
 
 ### 功能完善
 
@@ -372,9 +372,9 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 :::
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4a2e84hzsyk0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4a2e84hzsyk0.webp)
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.3errpy5gvn00.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.3errpy5gvn00.webp)
 
 > 我们可以看出小王用户的修改用户的id为账号lisi用户的id
 
@@ -384,17 +384,17 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 后台系统中可以管理分类信息，分类包括两种类型，分别是菜品分类和套餐分类。当我们在后台系统中添加菜品时需要选择一个菜品分类，当我们在后台系统中添加一个套餐时需要选择一个套餐分类，在移动端也会按照菜品分类和套餐分类来展示对应的菜品和套餐。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.26bmqetniqww.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.26bmqetniqww.webp)
 
 可以在后台系统的分类管理页面分别添加菜品分类和套餐分类，如下:
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.71uyaul8vo40.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.71uyaul8vo40.webp)
 
 ### 数据模型
 
 新增分类，其实就是将我们新增窗口录入的分类数据插入到category表，表结构如下:
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5zhwa44b79s0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.5zhwa44b79s0.webp)
 
 ### 代码开发
 
@@ -492,7 +492,7 @@ public class CategoryController {
 
 可以看到新增菜品分类和新增套餐分类请求的服务端地址和提交的json数据结构相同，所以服务端只需要提供一个方法统一处理即可：
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.60fo44d7sg40.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.60fo44d7sg40.webp)
 
 ```java
 @RestController
@@ -520,7 +520,7 @@ public class CategoryController {
 
 + 测试新增豫菜
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6uih84xr2mo0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.6uih84xr2mo0.webp)
 
 ## 分类信息分页查询
 
@@ -528,7 +528,7 @@ public class CategoryController {
 
 系统中的分类很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中都会以分页的方式来展示列表数据。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.1g2a11q6aq5c.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.1g2a11q6aq5c.webp)
 
 ### 代码开发
 
@@ -540,7 +540,7 @@ public class CategoryController {
 4. Controller将查询到的分页数据响应给页面
 5. 页面接收到分页数据并通过ElementUI的Table组件展示到页面上
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.6peg69h50qg0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.6peg69h50qg0.webp)
 
 + 编写处理器
 
@@ -568,7 +568,7 @@ public class CategoryController {
 
 + 结果
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.7dpzoljn47o0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.7dpzoljn47o0.webp)
 
 ## 删除分类
 
@@ -576,7 +576,7 @@ public class CategoryController {
 
 在分类管理列表页面，可以对某个分类进行删除操作。需要注意的是当分类关联了菜品或者套餐时,此分类不允许删除。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.4rupfq4clim0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.4rupfq4clim0.webp)
 
 ### 代码开发
 
@@ -586,7 +586,7 @@ public class CategoryController {
 2. 服务器Controller接受页面提交的数据并调用Service删除数据
 3. Service调用Mapper操作数据库
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.6zcuwamln6w0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.6zcuwamln6w0.webp)
 
 + 编写处理器
 
@@ -604,7 +604,7 @@ public class CategoryController {
     }
 ```
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.5qrsoafre3g0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/image.5qrsoafre3g0.webp)
 
 ### 功能完善
 
@@ -861,7 +861,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
 + 测试删除湘菜
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.1mmvybbx7080.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.1mmvybbx7080.webp)
 
 ## 修改分类
 
@@ -869,9 +869,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
 在分类管理列表页面点击修改按钮，弹出修改窗口，在修改窗口回显分类信息并进行修改，最后点击确定按钮完成修改操作
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3ro10163xqs0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.3ro10163xqs0.webp)
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.21zkdlcrrkbk.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.21zkdlcrrkbk.webp)
 
 ### 代码开发
 
@@ -899,4 +899,4 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 <==    Updates: 1
 ```
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5k4fhym3eu00.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.5k4fhym3eu00.webp)

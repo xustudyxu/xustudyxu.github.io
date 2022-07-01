@@ -13,7 +13,7 @@ tags:
 
 [[toc]]
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.1t1oqnudzvog.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.1t1oqnudzvog.jpg)
 
 ## 技术发展
 
@@ -27,21 +27,21 @@ tags:
 
 Web1.0的时代，数据访问量很有限，用一夫当关的高性能的单点服务器可以解决大部分问题。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.6oud1zlmuxc0.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.6oud1zlmuxc0.jpg)
 
 ### Web2.0时代
 
 随着Web2.0的时代的到来，用户访问量大幅度提升，同时产生了大量的用户数据。加上后来的智能移动设备的普及，所有的互联网平台都面临了巨大的性能挑战。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.6z6y7rmb2700.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.6z6y7rmb2700.jpg)
 
 ### 解决CPU及内存压力
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.68w0snj2wk00.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.68w0snj2wk00.jpg)
 
 ### 解决IO压力
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.16879uz0siqo.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.16879uz0siqo.jpg)
 
 ## NoSQL 数据库
 
@@ -69,7 +69,7 @@ NoSQL 不依赖业务逻辑方式存储，而以简单的`key-value`模式存储
 
 ### **Memcache**
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.182ny65xnqdc.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.182ny65xnqdc.jpg)
 
 + 很`早`出现的NoSql数据库
 + 数据都在内存中，一般`不持久化`
@@ -78,7 +78,7 @@ NoSQL 不依赖业务逻辑方式存储，而以简单的`key-value`模式存储
 
 ### `Redis`
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.4ac55hg7d1k0.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.4ac55hg7d1k0.jpg)
 
 + 几乎覆盖了Memcached的绝大部分功能
 + 数据都在内存中，`支持持久化`，主要用作备份恢复
@@ -87,7 +87,7 @@ NoSQL 不依赖业务逻辑方式存储，而以简单的`key-value`模式存储
 
 ### `MongoDB`
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.2tdz837532w0.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.2tdz837532w0.jpg)
 
 + 高性能、开源、模式自由(schema  free)的`文档型数据库`
 
@@ -100,15 +100,15 @@ NoSQL 不依赖业务逻辑方式存储，而以简单的`key-value`模式存储
 
 ### 行式数据库
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.6twpui5bneo0.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.6twpui5bneo0.jpg)
 
 ### **列式数据库**
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.5ufmal4bk20.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.5ufmal4bk20.jpg)
 
 #### **HBase**
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.69a056iwlf40.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.69a056iwlf40.jpg)
 
 HBase是`Hadoop`项目中的数据库。它用于需要对大量的数据进行随机、实时的读写操作的场景中。
 
@@ -116,7 +116,7 @@ HBase的目标就是处理数据量`非常庞大`的表，可以用`普通的计
 
 ####  **Cassandra[kəˈsændrə]**
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.4ua54uzp09s0.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.4ua54uzp09s0.jpg)
 
 Apache Cassandra是一款免费的开源NoSQL数据库，其设计目的在于管理由大量商用服务器构建起来的庞大集群上的`海量数据集(数据量通常达到PB级别)`。在众多显著特性当中，Cassandra最为卓越的长处是对写入及读取操作进行规模调整，而且其不强调主集群的设计思路能够以相对直观的方式简化各集群的创建与扩展流程。
 
@@ -148,9 +148,9 @@ Apache Cassandra是一款免费的开源NoSQL数据库，其设计目的在于�
 
 ## 图形数据库
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.5i6pukp7ya00.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.5i6pukp7ya00.jpg)
 
 主要应用：社会关系，公共交通网络，地图及网络拓谱(n*(n-1)/2)
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220607/image.29xsu06f6hgk.jpg)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220607/image.29xsu06f6hgk.jpg)
 

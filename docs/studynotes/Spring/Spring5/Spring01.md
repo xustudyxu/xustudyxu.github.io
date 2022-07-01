@@ -18,31 +18,31 @@ tags:
 
 第一次访问速度有点慢,耐心等待。
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/01.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/01.png)
 
 3. 下载完毕
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/02.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/02.png)
 
 ## 案例演示
 
 1. 打开idea,创建普通Java工程
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/03.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/03.png)
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/04.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/04.png)
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/05.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/05.png)
 
 2. 导入Spring5相关jar包
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/06.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/06.png)
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/07.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/07.png)
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/08.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/08.png)
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/09.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/09.png)
 
 + 或者使用maven引入相关依赖
 
@@ -98,7 +98,7 @@ public class User {
 
    1. Spring配置文件使用xml格式
 
-   ![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/10.png)
+   ![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/10.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,5 +144,5 @@ public class TestSpring5 {
 
 ```
 
-![00](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/11.png)
+![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/11.png)
 

@@ -57,7 +57,7 @@ tags:
 
 ### 腾讯云短信服务-创建正文模板
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3r0aq6q44bg0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.3r0aq6q44bg0.webp)
 
 ### 腾讯云短信服务-发送短信
 
@@ -284,9 +284,9 @@ public class UserController {
 
 + 移动端
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.1porudi2g4qo.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220601/image.1porudi2g4qo.webp)
 
 + 数据库
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.5j5vb3tkeiw0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220601/image.5j5vb3tkeiw0.webp)
 

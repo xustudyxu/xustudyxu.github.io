@@ -347,7 +347,7 @@ OK
 
 String的数据结构为简单动态字符串(Simple Dynamic String,缩写SDS)。是可以修改的字符串，内部结构实现上类似于Java的ArrayList，采用预分配冗余空间的方式来减少内存的频繁分配.
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.412xvg9m4nw0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.412xvg9m4nw0.webp)
 
 如图中所示，内部为当前字符串实际分配的空间capacity一般要高于实际字符串长度len。当字符串长度小于1M时，扩容都是加倍现有的空间，如果超过1M，扩容时一次只会多扩1M的空间。需要注意的是字符串最大长度为512M。
 
@@ -361,7 +361,7 @@ Redis 列表是简单的字符串列表，按照插入顺序排序。你可以�
 
 它的底层实际是个双`向链表`，对两端的操作性能很高，通过索引下标的操作中间的节点性能会较差。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.axobasgm674.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.axobasgm674.webp)
 
 ### 常用命令
 
@@ -500,7 +500,7 @@ List的数据结构为快速链表quickList。
 
 因为普通的链表需要的附加指针空间太大，会比较浪费空间。比如这个列表里存的只是int类型的数据，结构上还需要两个额外的指针prev和next。
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4ueo6wazv3e0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4ueo6wazv3e0.webp)
 
 ## 集合Set
 
@@ -647,7 +647,7 @@ Redis hash是一个string类型的`field`和`value`的映射表，hash特别适�
 
 主要有以下2种存储方式：
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5knxcnh942k0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.5knxcnh942k0.webp)
 
 ### 常用命令
 
@@ -907,13 +907,13 @@ zset底层使用了两个数据结构
 
 1.   有序链表
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7e61gymwxrs0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.7e61gymwxrs0.webp)
 
 要查找值为51的元素，需要从第一个元素开始依次查找、比较才能找到。共需要6次比较。
 
 2.   跳跃表
 
-![image](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.67ivzlf1vio0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.67ivzlf1vio0.webp)
 
 从第2层开始，1节点比51节点小，向后比较。
 

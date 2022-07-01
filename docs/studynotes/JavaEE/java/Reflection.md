@@ -13,7 +13,7 @@ tags:
 
 ### 请看下面的问题
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/01.png)
 
 + 代码演示：
 
@@ -80,11 +80,11 @@ public class ReflectionQuestion {
 
 ### Java Reflection
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/02.png)
 
 ### Java 反射机制原理示意图!!!
 
-![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/03.png)
+![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/03.png)
 
 ### Java 反射机制可以完成
 
@@ -243,7 +243,7 @@ public class Reflection02 {
 
 ### 基本介绍
 
-![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/04.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/04.png)
 
 + 代码演示:
 
@@ -294,7 +294,7 @@ public class Class01 {
 
 ### Class类的常用方法
 
-![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/05.png)
+![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/05.png)
 
 ### 应用实例
 
@@ -351,7 +351,7 @@ public class Class02 {
 
 ## 获取Class对象
 
-![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/06.png)
+![06](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/06.png)
 
 + 代码演示:
 
@@ -489,19 +489,19 @@ Class.forName("com.test.Cat");
 
 ### 类加载过程图
 
-![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/07.png)
+![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/07.png)
 
 ### 类加载各阶段完成任务
 
-![08](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/08.png)
+![08](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/08.png)
 
 ### 加载阶段
 
-![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/09.png)
+![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/09.png)
 
 ### 连接阶段-验证
 
-![10](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/10.png)
+![10](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/10.png)
 
 ### 连接阶段-准备
 
@@ -543,7 +543,7 @@ class A {
 
 ### Initialization（初始化)
 
-![11](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/11.png)
+![11](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/11.png)
 
 + 代码演示:
 
@@ -606,19 +606,19 @@ class B{
 
 ### 第一组: java.lang.Class 类
 
-![12](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/12.png)
+![12](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/12.png)
 
 ### 第二组：java.lang.reflect.Field 类
 
-![13](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/13.png)
+![13](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/13.png)
 
 ### 第三组: java.lang.reflect.Method 类
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/14.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/14.png)
 
 ### 第四组: java.lang.reflect.Constructor 类 
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/15.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/15.png)
 
 + 代码演示:
 
@@ -871,7 +871,7 @@ class User{//User类
 
 ### 访问属性
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/16.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/16.png)
 
 + 代码演示:
 
@@ -930,7 +930,7 @@ class Student{//类
 
 ### 访问方法
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/17.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/17.png)
 
 + 代码演示：
 
@@ -1001,7 +1001,7 @@ class Boss {
 
 ## 本章作业
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/18.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/Reflection/18.png)
 
 ```java
 package com.reflection.homework;

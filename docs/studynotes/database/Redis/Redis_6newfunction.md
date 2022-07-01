@@ -31,7 +31,7 @@ Redis ACL是Access Control List（访问控制列表）的缩写，该功能允�
 
 + 数据说明
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.onrn0viztts.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220621/image.onrn0viztts.webp)
 
 2. 使用`acl cat`命令
 
@@ -103,7 +103,7 @@ Redis ACL是Access Control List（访问控制列表）的缩写，该功能允�
 
 下面是有效ACL规则的列表。某些规则只是用于激活或删除标志，或对用户ACL执行给定更改的单个单词。其他规则是字符前缀，它们与命令或类别名称、键模式等连接在一起。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.18f2kyq9rc3k.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220621/image.18f2kyq9rc3k.webp)
 
 + 通过命令`acl setuser`创建新用户默认权限
 
@@ -158,7 +158,7 @@ IO多线程其实指**客户端交互部分**的**网络IO**交互处理模块**
 
 Redis6 加入多线程,但跟 Memcached 这种从 IO处理到数据访问多线程的实现模式有些差异。Redis 的多线程部分只是用来处理网络数据的读写和协议解析，执行命令仍然是单线程。之所以这么设计是不想因为多线程而变得复杂，需要去控制 key、lua、事务，LPUSH/LPOP等等的并发问题。整体的设计大体如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.62yuife2nb40.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220621/image.62yuife2nb40.webp)
 
 另外，多线程IO默认也是不开启的，需要再配置文件中配置
 
@@ -170,7 +170,7 @@ io-threads 4
 
 之前老版Redis想要搭集群需要单独安装ruby环境，Redis 5 将 redis-trib.rb 的功能集成到 redis-cli 。另外官方 redis-benchmark 工具开始支持 cluster 模式了，通过多线程的方式对多个分片进行压测。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.shprq0w1hyo.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220621/image.shprq0w1hyo.webp)
 
 ## Redis新功能持续关注
 

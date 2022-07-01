@@ -17,7 +17,7 @@ tags:
 2. <font color=#DC4040 size=4 face="黑体">Java程序员使用JDBC,可以连接任何提供了JDBC驱动程序的数据库系统，从而完成对数据库的各种操作。</font>
 3. **JDBC的基本原理图[重要!]**
 
-![01](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/01.png)
+![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/01.png)
 
 ### 模拟 JDBC
 
@@ -131,11 +131,11 @@ public class TestJDBC {
 
 ### JDBC 带来的好处
 
-![02](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/02.png)
+![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/02.png)
 
 ### JDBC API
 
-![03](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/03.png)
+![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/03.png)
 
 ## JDBC 快速入门
 
@@ -226,19 +226,19 @@ public class Jdbc01 {
 
 ### 方式二
 
-![04](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/04.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/04.png)
 
 ### 方式三
 
-![05](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/05.png)
+![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/05.png)
 
 ### 方式四
 
-![06](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/06.png)
+![06](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/06.png)
 
 ### 方式五
 
-![07](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/07.png)
+![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/07.png)
 
 ```java
 package com.jdbc;
@@ -433,7 +433,7 @@ public class Homework01 {
 2. <font color=#DC4040 size=4 face="黑体">ResultSet对象保持一个光标指向其当前的数据行。最初，光标位于第一行之前</font>
 3. <font color=#DC4040 size=4 face="黑体">next方法将光标移动到下一行，并且由于在ResultSet对象中没有更多行时返回false，因此可以在while循环中使用循环来遍历结果集</font>
 
-![08](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/08.png)
+![08](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/08.png)
 
 ### 应用实例
 
@@ -511,7 +511,7 @@ public class ResultSet_ {
 
 ### 基本介绍
 
-![09](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/09.png)
+![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/09.png)
 
 ```sql
 -- 演示sql注入
@@ -601,7 +601,7 @@ public class Statement_ {
 
 ### 基本介绍
 
-![10](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/10.png)
+![10](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/10.png)
 
 ### 预处理好处
 
@@ -684,7 +684,7 @@ public class PrepareStatement_ {
 
 ## JDBC的相关API小结
 
-![11](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/11.png)![11](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/12.png)
+![11](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/11.png)![11](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/12.png)
 
 ## 封装JDBCUtils
 
@@ -985,7 +985,7 @@ public class Transaction_ {
 
 ### 基本介绍
 
-![13](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/13.png)
+![13](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/13.png)
 
 ### 应用实例
 
@@ -1135,13 +1135,13 @@ public class ConQuestion {
 
 ### 传统方法Connection问题分析
 
-![14](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/14.png)
+![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/14.png)
 
 ### 数据库连接池种类
 
-![15](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/15.png)
+![15](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/15.png)
 
-![16](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/16.png)
+![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/16.png)
 
 ### C3P0应用实例
 
@@ -1344,7 +1344,7 @@ public class JDBCUtilsByDruid_USE {
 1. 关闭connection后，resultSet结果集无法使用
 2. resultSet 不利于数据的管理
 
-![17](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/17.png)
+![17](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/17.png)
 
 ### 用学过的知识解决
 
@@ -1588,7 +1588,7 @@ public class DBUtils_USE {
 
 ### 表和JavaBean的类型映射关系
 
-![18](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/18.png)
+![18](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/18.png)
 
 ## DAO和增删改查通用方法-BasicDAO
 
@@ -1601,9 +1601,9 @@ public class DBUtils_USE {
 3. **将来的表很多，业务需求复杂,不可能只靠一个Java类完成**
 4. 引出=》 BasicDAO画出示意图，看看在实际开发中，应该如何处理
 
-![19](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/19.png)
+![19](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/19.png)
 
-![20](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/20.png)
+![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/20.png)
 
 ### 基本说明
 
@@ -2263,5 +2263,5 @@ public class TestDAO {
 
 运行结果:
 
-![21](https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/21.png)
+![21](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jdbc/21.png)
 
