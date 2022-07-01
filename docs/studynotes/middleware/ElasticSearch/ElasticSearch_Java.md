@@ -274,7 +274,7 @@ Process finished with exit code 0
 
 ### 修改文档
 
-```java
+```java {10,11,12}
 public class ESTest_Doc_Update {
     public static void main(String[] args) throws IOException {
 
@@ -303,5 +303,273 @@ public class ESTest_Doc_Update {
 UPDATED
 
 Process finished with exit code 0
+```
+
+### 查询文档
+
+```java
+public class ESTest_Doc_Get {
+    public static void main(String[] args) throws IOException {
+
+        //创建ES客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http"))
+        );
+
+        //查询数据
+        GetRequest request = new GetRequest();
+        request.index("user").id("1001");
+        GetResponse response = esClient.get(request, RequestOptions.DEFAULT);
+        System.out.println(response.getSourceAsString());
+
+        esClient.close();
+    }
+}
+```
+
++ 结果
+
+```java
+{"name":"zhangsan","sex":"女","age":20}
+
+Process finished with exit code 0
+```
+
+### 删除文档
+
+```java
+public class ESTest_Doc_Delete {
+    public static void main(String[] args) throws IOException {
+
+        //创建ES客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http"))
+        );
+
+        //删除数据
+
+        DeleteRequest request = new DeleteRequest();
+        request.index("user").id("1001");
+        DeleteResponse response = esClient.delete(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        esClient.close();
+    }
+}
+```
+
++ 结果
+
+```java
+DeleteResponse[index=user,type=_doc,id=1001,version=6,result=deleted,shards=ShardInfo{total=2, successful=1, failures=[]}]
+
+Process finished with exit code 0
+```
+
+### 批量新增
+
+:::: tabs cache-lifetime="5" :options="{ useUrlFragment: false }"
+
+::: tab 非实体类批量新增
+
+```java
+public class ESTest_Doc_Insert_Batch {
+    public static void main(String[] args) throws IOException {
+
+        //创建ES客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http"))
+        );
+
+        //批量插入数据
+        BulkRequest request = new BulkRequest();
+        request.add(new IndexRequest().index("user").id("1001").source(XContentType.JSON,"name","zhangsan"));
+        request.add(new IndexRequest().index("user").id("1002").source(XContentType.JSON,"name","lisi"));
+        request.add(new IndexRequest().index("user").id("1003").source(XContentType.JSON,"name","wangwu"));
+        request.add(new IndexRequest().index("user").id("1004").source(XContentType.JSON,"name","lucy"));
+
+
+        BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
+        System.out.println(response.getTook());
+        System.out.println(response.getItems());
+
+        esClient.close();
+    }
+}
+```
+
+:::
+
+::: tab 实体类批量新增
+
+```java
+public class EsDocCreateBatch {
+
+    public static void main(String[] args) throws IOException {
+        // 连接 ES 客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http")));
+
+        BulkRequest request = new BulkRequest();
+        // 创建数据对象
+        User user = new User("可乐","18","男");
+        request.add(new IndexRequest().index("user").id("1001").source(XContentType.JSON, "username","可乐","age",18,"sex","男"));
+        request.add(new IndexRequest().index("user").id("1002").source(XContentType.JSON, "username","冰糖","age",20,"sex","女"));
+        request.add(new IndexRequest().index("user").id("1003").source(XContentType.JSON, "username","雪梨","age",22,"sex","女"));
+        request.add(new IndexRequest().index("user").id("1004").source(XContentType.JSON, "username","酸橙","age",24,"sex","男"));
+        request.add(new IndexRequest().index("user").id("1005").source(XContentType.JSON, "username","蜜桃","age",26,"sex","女"));
+        // 客户端发送请求，获取响应对象
+        BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
+        System.out.println("响应时间：" + response.getTook());
+        System.out.println("创建的内容：" + Arrays.toString(response.getItems()));
+
+
+        // 关闭 ES 客户端
+        esClient.close();
+    }
+}
+```
+
+:::
+:::::
+
++ 结果
+
+```java
+141ms
+[Lorg.elasticsearch.action.bulk.BulkItemResponse;@152aa092
+
+Process finished with exit code 0
+```
+
+### 批量删除
+
+```java
+public class ESTest_Doc_Delete_Batch {
+    public static void main(String[] args) throws IOException {
+
+        //创建ES客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http"))
+        );
+
+        //批量插入数据
+        BulkRequest request = new BulkRequest();
+        //配置修改参数
+        request.add(new DeleteRequest().index("user").id("1001"));
+        request.add(new DeleteRequest().index("user").id("1002"));
+        request.add(new DeleteRequest().index("user").id("1003"));
+        request.add(new DeleteRequest().index("user").id("1004"));
+        request.add(new DeleteRequest().index("user").id("1005"));
+        //客户端发送请求，获取响应对象
+        BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
+        //打印结果信息
+        System.out.println("响应时间："+response.getTook());
+        esClient.close();
+    }
+} 
+```
+
++ 结果
+
+```java
+响应时间：199ms
+
+Process finished with exit code 0
+```
+
+### 总结
+
+增删改查操作格式：
+
+- 连接 ES 客户端
+- 创建一个 `XXXRequest` 对象，其中 XXX 代表增删改查
+- 给该对象设置索引和文档
+- 调用 `.XXX`请求，传入参数，其中 XXX 代表增删改查
+
+## 高级查询
+
+### 查询准备
+
+本内容都是查询相关，所以需要插入几条数据
+
+```java
+public class EsDocCreateBatch {
+
+    public static void main(String[] args) throws IOException {
+        // 连接 ES 客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http")));
+
+        BulkRequest request = new BulkRequest();
+        ObjectMapper objectMapper = new ObjectMapper();
+        // 创建数据对象
+        request.add(new IndexRequest().index("user").id("1001").source(objectMapper.writeValueAsString(new User("可乐", 18, "男")), XContentType.JSON));
+        request.add(new IndexRequest().index("user").id("1002").source(objectMapper.writeValueAsString(new User("冰糖", 20, "女")), XContentType.JSON));
+        request.add(new IndexRequest().index("user").id("1003").source(objectMapper.writeValueAsString(new User("雪梨", 22, "女")), XContentType.JSON));
+        request.add(new IndexRequest().index("user").id("1004").source(objectMapper.writeValueAsString(new User("酸橙", 24, "男")), XContentType.JSON));
+        request.add(new IndexRequest().index("user").id("1005").source(objectMapper.writeValueAsString(new User("蜜桃", 30, "女")), XContentType.JSON));
+        // 客户端发送请求，获取响应对象
+        BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
+        System.out.println("响应时间：" + response.getTook());
+
+        // 关闭 ES 客户端
+        esClient.close();
+    }
+}
+```
+
+### 查询所有索引数据
+
+```java {12}
+public class ESTest_Doc_QueryAll {
+    public static void main(String[] args) throws IOException {
+
+        //创建ES客户端
+        RestHighLevelClient esClient = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("localhost",9200,"http"))
+        );
+
+        //1.查询索引中全部的数据
+        SearchRequest request = new SearchRequest();
+        request.indices("user");
+        SearchSourceBuilder query = new SearchSourceBuilder().query(QueryBuilders.matchAllQuery());
+        request.source(query);
+        SearchResponse response = esClient.search(request, RequestOptions.DEFAULT);
+
+        SearchHits hits = response.getHits();
+        System.out.println("总共的查询条数:"+hits.getTotalHits());
+        System.out.println("查询时间:"+response.getTook());
+        System.out.println("详细数据；");
+        for (SearchHit hit : hits) {
+            // 输出每条查询的结果信息
+            System.out.println(hit.getSourceAsString());
+        }
+        esClient.close();
+    }
+}
+```
+
+`indices(参数)` 的参数可以是多个索引。
+
++ 结果
+
+```java
+总共的查询条数:5 hits
+查询时间:136ms
+详细数据；
+{"name":"可乐","sex":"男","age":18}
+{"name":"冰糖","sex":"女","age":20}
+{"name":"雪梨","sex":"女","age":22}
+{"name":"酸橙","sex":"男","age":24}
+{"name":"蜜桃","sex":"女","age":30}
+
+Process finished with exit code 0
+```
+
+### 条件查询
+
+```java
+
 ```
 
