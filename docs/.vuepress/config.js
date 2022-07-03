@@ -18,9 +18,9 @@ module.exports = {
     })();
     </script>        
     `],
-    ['script', { src: 'https://cdn.staticaly.com/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
+    ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
     ['script', { href: './js/index.js', async: 'async' }],
-    ['link', { rel: 'icon', href: 'https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
+    ['link', { rel: 'icon', href: 'https://fastly.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
     // ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
