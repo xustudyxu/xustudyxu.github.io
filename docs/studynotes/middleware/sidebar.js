@@ -8,6 +8,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/Elasticsearch_basic_operation',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Advanced_operation',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Java',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_buildcluster',
     ]
   }
  
