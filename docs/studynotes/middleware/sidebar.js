@@ -10,6 +10,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Java',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_buildcluster',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Gainian',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_DistributedclusterAndRoutingcalculation',
     ]
   }
  
