@@ -1,3 +1,12 @@
+---
+title: ElasticSearch 分布式集群和路由计算
+date: 2022-07-04 21:58:06
+permalink: /middleware/ElasticSearch/ElasticSearch_DistributedclusterAndRoutingcalculation
+categories:
+  - ElasticSearch
+tags:
+  - ElasticSearch
+---
 # ElasticSearch 分布式集群和路由计算
 
 [[toc]]
@@ -131,3 +140,4 @@ routing 是一个可变值，默认是文档的 _id ，也可以设置成一个�
 这就解释了为什么我们要在创建索引的时候就确定好主分片的数量并且永远不会改变这个数量：因为如果数量变化了，那么所有之前路由的值都会无效，文档也再也找不到了。
 
 所有的文档 API（ get、index、delete、bulk、update 以及 mget ）都接受一个叫做 routing 的路由参数，通过这个参数我们可以自定义文档到分片的映射。一个自定义的路由参数可以用来确保所有相关的文档——例如所有属于同一个用户的文档——都被存储到同一个分片中。
+
