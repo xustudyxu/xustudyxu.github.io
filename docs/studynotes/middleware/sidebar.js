@@ -12,6 +12,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Gainian',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_DistributedclusterAndRoutingcalculation',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicecontrolprocess',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicingoperationprinciple',
     ]
   }
  
