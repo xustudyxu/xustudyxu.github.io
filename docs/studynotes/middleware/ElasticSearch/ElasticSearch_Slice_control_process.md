@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 分片控制流程
 date: 2022-07-05 20:23:48
-permalink: /middleware/ElasticSearch/ElasticSearch_Slicecontrolprocess
+permalink: /middleware/ElasticSearch/ElasticSearch_Slice_control_process
 categories:
   - ElasticSearch
 tags:

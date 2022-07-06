@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 分片操作原理
 date: 2022-07-05 21:41:41
-permalink: /middleware/ElasticSearch/ElasticSearch_Slicingoperationprinciple
+permalink: /middleware/ElasticSearch/ElasticSearch_Slicing_operation_principle
 categories:
   - ElasticSearch
 tags:

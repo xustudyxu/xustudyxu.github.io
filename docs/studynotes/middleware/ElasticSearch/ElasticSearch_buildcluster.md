@@ -184,9 +184,9 @@ http.cors.allow-origin: "*"
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220703/image.3638txpbrai0.webp)
 
-## Linux 集群之单台机器
+## Linux 集群
 
-如果没有在 Linux 安装过 ElasticSearch，[安装传送门](https://frxcat.fun/middleware/ElasticSearch/ElasticSearch_install/#linux%E4%B8%8A%E5%AE%89%E8%A3%85es)
+如果没有在 Linux 安装过 ElasticSearch，[安装传送门](/middleware/ElasticSearch/ElasticSearch_install/#linux%E4%B8%8A%E5%AE%89%E8%A3%85es)
 
 分别在多台机器安装 ElasticSearch。安装目录位于`/usr/local/elastic-stack/`里，在该目录下复制三份 ES 目录，名字自定义，这里的名字为了标识性，与端口有关
 

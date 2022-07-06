@@ -10,9 +10,10 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Java',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_buildcluster',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Gainian',
-      '/studynotes/middleware/ElasticSearch/ElasticSearch_DistributedclusterAndRoutingcalculation',
-      '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicecontrolprocess',
-      '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicingoperationprinciple',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Distributed_clusterAndRouting_calculation',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Slice_control_process',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicing_operation_principle',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_MultipleAnalyzers',
     ]
   }
  

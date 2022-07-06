@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 分布式集群和路由计算
 date: 2022-07-04 21:58:06
-permalink: /middleware/ElasticSearch/ElasticSearch_DistributedclusterAndRoutingcalculation
+permalink: /middleware/ElasticSearch/ElasticSearch_Distributed_clusterAndRouting_calculation
 categories:
   - ElasticSearch
 tags:
