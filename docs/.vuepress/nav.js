@@ -112,7 +112,7 @@ module.exports = [{
 },{
   text: '更多', 
   items: [
-    { test: '友情链接',link: '/pages/f6054a/'}
+    { text: '友情链接',link: '/pages/f6054a/'}
   ]
 
 }
