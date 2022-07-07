@@ -67,6 +67,11 @@ wx:frxcat
   avatar: https://www.pdai.tech/_images/index-read.gif
   link: https://www.pdai.tech/
   bgColor: '#CBEAFA'
+- name:  XPoet
+  desc: 懒惰是程序员第一生产力
+  avatar: https://cdn.staticaly.com/gh/XPoet/image-hosting@master/common-use/avatar.jpg
+  link: https://xpoet.cn/
+  bgColor: '#CBEAFA'
 ```
 
 :::
