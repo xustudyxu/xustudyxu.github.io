@@ -109,8 +109,14 @@ module.exports = [{
     { text: '中高进阶篇', link: '/pages/41f848/' },
 
   ]
-},
+},{
+  text: '更多', 
+  items: [
+    { test: '友情链接',link: '/pages/f6054a/'}
+  ]
 
+}
+,
 {
   text: '关于', link: '/pages/9013e4/'
 
