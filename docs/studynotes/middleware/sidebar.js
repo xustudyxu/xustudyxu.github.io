@@ -14,6 +14,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Slice_control_process',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Slicing_operation_principle',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_MultipleAnalyzers',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Conflict_problem_handling',
     ]
   }
  
