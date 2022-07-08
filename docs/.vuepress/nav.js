@@ -93,7 +93,7 @@ module.exports = [{
 },
 
 {
-  text: '项目管理|部署',
+  text: '工具',
   items: [
     { text: 'Linux', link: '/pages/99e9dc/' },
     { text: 'Maven', link: '/pages/45eca1/' },
@@ -102,7 +102,7 @@ module.exports = [{
 },
 
 {
-  text: '面试宝典',
+  text: '面试',
   items: [
     { text: '力扣算法题', link: '/pages/40ee62/' },
     { text: '初级开发篇', link: '/pages/39558d/' },
