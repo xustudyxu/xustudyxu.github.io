@@ -32,6 +32,11 @@ tags:
   avatar: https://cdn.staticaly.com/gh/XPoet/image-hosting@master/common-use/avatar.jpg
   link: https://xpoet.cn/
   bgColor: '#CBEAFA'
+- name:  浪里小白龙
+  desc: 欢迎来到我的世界!
+  avatar: https://xiaolong-oss-cdn.oss-cn-guangzhou.aliyuncs.com/myblog/images/logo.jpg
+  link: https://blog.xiaolong0418.com/
+  bgColor: '#CBEAFA'
 ```
 
 :::
