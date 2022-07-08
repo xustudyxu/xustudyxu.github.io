@@ -1,7 +1,7 @@
 ---
 title: ElasticSearch 多框架集成
 date: 2022-07-08 21:40:43
-permalink: /pages/c11b78/
+permalink: /middleware/ElasticSearch/ElasticSearch_Framework_integration
 categories:
   - ElasticSearch
 tags:

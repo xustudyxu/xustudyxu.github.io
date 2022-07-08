@@ -20,7 +20,7 @@ module.exports = {
     `],
     ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
     ['script', { href: './js/index.js', async: 'async' }],
-    ['link', { rel: 'icon', href: 'https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220423/02.6lsvccc3wy80.webp' }],
+    ['link', { rel: 'icon', href: 'https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp' }],
     // ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
