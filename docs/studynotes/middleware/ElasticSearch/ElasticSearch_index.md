@@ -223,3 +223,46 @@ chown -R elasticsearch /usr/local/elastic-stack/es
 }
 ```
 
+## Windows上安装Kibana
+
+Kibana 是一个免费且开放的用户界面，能够让你对 Elasticsearch 数据进行可视化，并 让你在 Elastic Stack 中进行导航。你可以进行各种操作，从跟踪查询负载，到理解请求如 何流经你的整个应用，都能轻松完成。
+
+下载时尽量下载与 ElasicSearch 一致的版本。
+
+### Windows版本
+
+前往官网下载 Windows 版本：[https://www.elastic.co/cn/downloads/kibana]()
+
+下载后进行解压，目录如图：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220708/image.3t3mfecg2ao0.webp)
+
+进入 bin 目录，双击 `kibana.bat` 启动服务
+
+> 启动 Kibana 之前要启动 Elasticsearch
+
+访问：http://localhost:5601/
+
+kibana 会自动去访问 9200，也就是 elasticsearch 的端口号
+
+**修改界面语言**
+
+访问界面是英文，可修改成中文，进入根目录下的 config 目录，打开 `kibana.yml` 文件
+
+滑到最底部，加入
+
+```yaml
+# 默认端口
+server.port: 5601
+# ES 服务器的地址
+elasticsearch.hosts: ["http://localhost:9200"]
+# 索引名
+kibana.index: ".kibana"
+# 支持中文
+i18n.locale: "zh-CN"
+```
+
+进入根目录下的 bin 目录，执行 kibana.bat 文件即可启动
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220708/image.7duf733o8340.webp)
+
