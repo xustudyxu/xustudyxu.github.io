@@ -100,7 +100,7 @@ public class LambdaTest {
 
 3. Lamdba表达式的使用分6种情况介绍
 
-> Lamdba表达式的本质，作为接口的示例
+> Lamdba表达式的本质，作为接口的实例
 
 :::: tabs cache-lifetime="5" :options="{ useUrlFragment: false }"
 
@@ -228,4 +228,3 @@ public class LambdaTest {
 ### 函数式接口的介绍
 
 如果一个接口中，只声明了一个抽象方法，则此接口就称为函数式接口。我们可以在一个接口上使用 @FunctionalInterface 注解，  这样做可以检查它是否是一个函数式接口。
-
