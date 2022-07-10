@@ -17,6 +17,7 @@ module.exports = [
     '/studynotes/JavaEE/java/Reflection',
     '/studynotes/JavaEE/java/jdbc',
     '/studynotes/JavaEE/java/RegExp',
+    '/studynotes/JavaEE/java/Java8Newfeatures',
       ]
   },{
     title:'Servlet',
