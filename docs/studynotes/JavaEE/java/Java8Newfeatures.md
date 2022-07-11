@@ -547,11 +547,136 @@ public class ConstructorRefTest {
 
 ### Stream API的概述
 
-+ Java8中有两大最为重要的改变。第一个是Lambda 表达式；另外一个则是Stream API。
++ Java8中有两大最为重要的改变。第一个是<mark>Lambda 表达式</mark>；另外一个则是<mark>Stream API</mark>。
 + Stream API ( `java.util.stream`)把真正的函数式编程风格引入到Java中。这是目前为止对Java类库最好的补充，因为Stream API可以极大提供Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。
 + Stream 是Java8 中处理集合的关键抽象概念，它可以指定你希望对集合进行的操作，可以执行非常复杂的查找、过滤和映射数据等操作。使用Stream API 对集合数据进行操作，就类似于使用SQL 执行的数据库查询。也可以使用Stream API 来并行执行操作。简言之，Stream API 提供了一种高效且易于使用的处理数据的方式。
 + 为什么要使用Stream API
 + **实际开发中，项目中多数数据源都来自于Mysql，Oracle等。但现在数据源可以更多了，有MongDB，Radis等，而这些NoSQL的数据就需要Java层面去处理**。
 + **Stream 和Collection 集合的区别：Collection 是一种静态的内存数据结构，而Stream 是有关计算的。前者是主要面向内存，存储在内存中，后者主要是面向CPU，通过CPU 实现计算**。
 
+1.Stream关注的是对数据的运算，与CPU打交道
+ * 集合关注的是数据的存储，与内存打交道
 
+2.
+
++ ①Stream 自己不会存储元素。
++ ②Stream 不会改变源对象。相反，他们会返回一个持有结果的新Stream。
++ ③Stream 操作是延迟执行的。这意味着他们会等到需要结果的时候才执行
+
+3.Stream 执行流程
+
++ ① Stream的实例化
++ ② 一系列的中间操作（过滤、映射、...)
++ ③ 终止操作
+
+
+ 4.说明：
+
++  4.1 一个中间操作链，对数据源的数据进行处理
+
++  4.2 一旦执行终止操作，就执行中间操作链，并产生结果。之后，不会再被使用
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220711/image.216f5anz1qo0.webp)
+
+### Stream实例化方式
+
++ 提供用于测试的数据
+
+```java
+public class EmployeeData {
+
+    public static List<Employee> getEmployees(){
+        List<Employee> list = new ArrayList<>();
+
+        list.add(new Employee(1001, "马化腾", 34, 6000.38));
+        list.add(new Employee(1002, "马云", 12, 9876.12));
+        list.add(new Employee(1003, "刘强东", 33, 3000.82));
+        list.add(new Employee(1004, "雷军", 26, 7657.37));
+        list.add(new Employee(1005, "李彦宏", 65, 5555.32));
+        list.add(new Employee(1006, "比尔盖茨", 42, 9500.43));
+        list.add(new Employee(1007, "任正非", 26, 4333.32));
+        list.add(new Employee(1008, "扎克伯格", 35, 2500.32));
+
+        return list;
+    }
+}
+```
+
+:::: tabs cache-lifetime="5" :options="{ useUrlFragment: false }"
+
+::: tab 通过集合
+
+```java
+    //创建Stream方式一：通过集合
+    @Test
+    public void test1(){
+
+        List<Employee> employees = EmployeeData.getEmployees();
+
+        //default Stream<E> stream();返回一个顺序流
+        Stream<Employee> stream = employees.stream();
+
+        //default Stream<E> parallelStream(); 返回一个并行流
+        Stream<Employee> parallelStream = employees.parallelStream();
+        
+    }
+```
+
+:::
+
+::: tab 通过数组
+
+```java
+    //创建Stream方式二：通过数组
+    @Test
+    public void test2(){
+
+        int[] arr = new int[]{1,2,3,4,5,6};
+        //调用Arrays类的static<T> Stream<T> stream(T[] array)：返回一个流
+        IntStream stream = Arrays.stream(arr);
+
+        Employee e1 = new Employee(1001,"Tom");
+        Employee e2 = new Employee(1002,"Jerry");
+        Employee[] arr1 = new Employee[]{e1,e2};
+        Stream<Employee> stream1 = Arrays.stream(arr1);
+        
+    }
+```
+
+:::
+
+::: 通过Stream的of()
+
+```java
+    //创建Stream方式三:通过Stream的of()
+    @Test
+    public void test3(){
+
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6);
+        
+    }
+```
+
+:::
+
+::: 创建无限流
+
+```java
+    //创建Stream方式四:创建无限流
+    @Test
+    public void test4(){
+
+        //迭代
+        //public static<T> Stream<T> iterate(final T seed,final UnaryOperator<T> f)
+        //遍历前10个偶数
+        Stream.iterate(0,t -> t+2).limit(10).forEach(System.out::println);
+
+        //生成
+        //public static<T> Stream<T> generate(Supplier<T> s)
+        Stream.generate(Math::random).limit(10).forEach(System.out::println);
+    }
+```
+
+:::
+
+::::
