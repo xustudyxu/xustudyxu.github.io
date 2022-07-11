@@ -645,7 +645,7 @@ public class EmployeeData {
 
 :::
 
-::: 通过Stream的of()
+::: tab 通过Stream的of()
 
 ```java
     //创建Stream方式三:通过Stream的of()
@@ -659,7 +659,7 @@ public class EmployeeData {
 
 :::
 
-::: 创建无限流
+::: tab 创建无限流
 
 ```java
     //创建Stream方式四:创建无限流
@@ -680,3 +680,4 @@ public class EmployeeData {
 :::
 
 ::::
+
