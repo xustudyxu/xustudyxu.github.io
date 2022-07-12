@@ -747,7 +747,438 @@ public class StreamAPITest1 {
 | `mapToLong(ToLongFunction f)`     | 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的LongStream。 |
 | `flatMap(Function f)`             | 接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。 |
 
-```java
+```java {9,13,14,18-21,25}
+public class StreamAPITest2 {
 
+    //映射
+    @Test
+    public void test2(){
+
+        //map(Function f)——接收一个函数作为参数，将元素转换成其他形式或提取信息，该函数会被应用到每个元素上，并将其映射成一个新的元素。
+        List<String> list = Arrays.asList("aa", "bb", "cc", "dd");
+        list.stream().map(str -> str.toUpperCase()).forEach(System.out::println);
+
+        //练习：1：获取员工姓名长度大于3的员工的姓名。
+        List<Employee> employees = EmployeeData.getEmployees();
+        Stream<String> namesStream = employees.stream().map(Employee::getName);
+        namesStream.filter(name -> name.length()>3).forEach(System.out::println);
+        System.out.println();
+
+        //练习：2：
+        Stream<Stream<Character>> streamStream = list.stream().map(StreamAPITest2::fromStringToStream);
+        streamStream.forEach(s -> {
+            s.forEach(System.out::println);
+        });
+        System.out.println();
+
+        //flatMap(Function f)——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
+        Stream<Character> characterStream = list.stream().flatMap(StreamAPITest2::fromStringToStream);
+        characterStream.forEach(System.out::println);
+    }
+
+    //将字符串中的多个字符构成的集合转换成对应的Stream的实例
+    public static Stream<Character> fromStringToStream(String str){
+        ArrayList<Character> list = new ArrayList<>();
+        for (Character c : str.toCharArray()) {
+            list.add(c);
+        }
+        return list.stream();
+    }
+
+    @Test
+    public void test3(){
+        ArrayList list1 = new ArrayList();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+
+        ArrayList list2 = new ArrayList();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+
+        list1.add(list2);
+        list1.addAll(list2);
+        System.out.println(list1);
+
+    }
+}
+```
+
+### Stream的中间操作：排序
+
+| 方法                     | 描述                               |
+| ------------------------ | ---------------------------------- |
+| `sorted()`               | 产生一个新流，其中按自然顺序排序   |
+| `sorted(Comparator com)` | 产生一个新流，其中按比较器顺序排序 |
+
+```java {11,19-26}
+/**
+ * 排序
+ */
+public class StreamAPITest3 {
+
+    @Test
+    public void test1(){
+
+        //sorted()--自然排序
+        List<Integer> list = Arrays.asList(12, 43, 65, 34, 87, 0, -98, 7);
+        list.stream().sorted().forEach(System.out::println);
+
+        //List<Employee> employees = EmployeeData.getEmployees();
+        //employees.stream().sorted().forEach(System.out::println);
+        //抛异常，没有去实现Comparable接口
+
+        //sorted(Comparator com)--定制排序,年龄从小到大，薪水从小到大
+        List<Employee> employees = EmployeeData.getEmployees();
+        employees.stream().sorted((e1,e2) -> {
+            int ageValue = Integer.compare(e1.getAge(),e2.getAge());
+            if(ageValue!=0){
+                return ageValue;
+            }else {
+                return Double.compare(e1.getSalary(),e2.getSalary());//从大到小 加-
+            }
+        }).forEach(System.out::println);
+        
+    }
+}
+```
+
+### Stream的终止操作：匹配与查找
+
+- 终端操作会从流的流水线生成结果。其结果可以是任何不是流的值，例如：List、Integer，甚至是void 。
+- 流进行了终止操作后，不能再次使用。
+
+| 方法                     | 描述                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| `allMatch(Predicate p)`  | 检查是否匹配所有元素                                         |
+| `anyMatch(Predicate p)`  | 检查是否至少匹配一个元素                                     |
+| `noneMatch(Predicate p)` | 检查是否没有匹配所有元素                                     |
+| `findFirst()`            | 返回第一个元素                                               |
+| `findAny()`              | 返回当前流中的任意元素                                       |
+| `count()`                | 返回流中元素总数                                             |
+| `max(Comparator c)`      | 返回流中最大值                                               |
+| `min(Comparator c)`      | 返回流中最小值                                               |
+| `forEach(Consumer c)`    | 内部迭代(使用Collection 接口需要用户去做迭代，称为外部迭代。相反，Stream API 使用内部迭代——它帮你把迭代做了) |
+
+```java {13,18,23,27,31,36,41,42,47,52,55}
+/**
+ * 测试Stream的终止操作
+ */
+public class StreamAPITest4 {
+
+    //1.匹配与查找
+    @Test
+    public void test1() {
+        List<Employee> employees = EmployeeData.getEmployees();
+
+        //allMatch(Predicate p)——检查是否匹配所有元素。
+        //练习；是否所有的员工的年龄都大于18
+        boolean allMatch = employees.stream().allMatch(e -> e.getAge() > 18);
+        System.out.println(allMatch);
+
+        //anyMatch(Predicate p)——检查是否至少匹配一个元素。
+        //练习：是否存在员工的工资大于 10000
+        boolean anyMatch = employees.stream().anyMatch(e -> e.getSalary() > 10000);
+        System.out.println(anyMatch);
+
+        //noneMatch(Predicate p)——检查是否没有匹配的元素。
+        //练习：是否存在员工姓“马”
+        boolean noneMatch = employees.stream().noneMatch(e -> e.getName().startsWith("马"));
+        System.out.println(noneMatch);
+
+        //findFirst——返回第一个元素
+        Optional<Employee> employee = employees.stream().findFirst();
+        System.out.println(employee);
+
+        //findAny——返回当前流中的任意元素
+        Optional<Employee> employee1 = employees.stream().findAny();
+        System.out.println(employee1);
+
+        // count——返回流中元素的总个数
+        //工资大于4500的
+        long count = employees.stream().filter(e -> e.getSalary() > 4500).count();
+        System.out.println(count);
+
+        //max(Comparator c)——返回流中最大值
+        //返回最高的工资
+        Stream<Double> salaryStream = employees.stream().map(e -> e.getSalary());
+        Optional<Double> maxSalary = salaryStream.max(Double::compare);
+        System.out.println(maxSalary);
+
+        //min(Comparator c)——返回流中最小值
+        //返回最低的工资的员工
+        Optional<Employee> employee2 = employees.stream().min((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()));
+        System.out.println(employee2);
+        System.out.println();
+
+        //forEach(Consumer c)——内部迭代
+        employees.stream().forEach(System.out::println);
+
+        //使用集合遍历的操作
+        employees.forEach(System.out::println);
+        
+    }
+}
+```
+
+### Stream的终止操作：归约
+
+| 方法                               | 描述                                                 |
+| ---------------------------------- | ---------------------------------------------------- |
+| `reduce(T iden, BinaryOperator b)` | 可以将流中元素反复结合起来，得到一个值。返回T        |
+| `reduce(BinaryOperator b)`         | 可以将流中元素反复结合起来，得到一个值。返回Optional |
+
+> 备注：map 和reduce 的连接通常称为map-reduce 模式，因Google 用它来进行网络搜索而出名。
+
+```java {9,15-17}
+public class StreamAPITest5 {
+
+    @Test
+    public void test1(){
+
+        //reduce(T identity, BinaryOperator)——可以将流中元素反复结合起来，得到一个值。返回 T
+        //练习1：计算1-10的自然数的和
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7,8,9,10);
+        Integer sum = list.stream().reduce(0, Integer::sum);//0是初始值
+        System.out.println(sum);
+
+        //reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值。返回 Optional<T>
+        //练习2：计算公司所有员工工资的总和
+        List<Employee> employees = EmployeeData.getEmployees();
+        Stream<Double> salaryStream = employees.stream().map(e -> e.getSalary());
+        //Optional<Double> sumMoney = salaryStream.reduce(Double::sum);
+        Optional<Double> sumMoney = salaryStream.reduce((d1, d2) -> d1 + d2);
+        System.out.println(sumMoney);
+
+    }
+}
+```
+
+### Stream的终止操作：收集
+
+| 方法                   | 描述                                                         |
+| ---------------------- | ------------------------------------------------------------ |
+| `collect(Collector c)` | 将流转换为其他形式。接收一个Collector接口的实现，用于给Stream中元素做汇总的方法 |
+
+```java {12,16}
+/**
+ * 收集
+ */
+public class StreamAPITest6 {
+
+    @Test
+    public void test1(){
+
+        //collect(Collector c)——将流转换为其他形式。接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法
+        //练习1：查找工资大于6000的员工，结果返回为一个List或Set
+        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employeeList = employees.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toList());
+        employeeList.forEach(System.out::println);
+        System.out.println();
+
+        Set<Employee> employeeSet = employees.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toSet());
+        employeeSet.forEach(System.out::println);
+    }
+
+}
+```
+
+> `Collector` 接口中方法的实现决定了如何对流执行收集的操作(如收集到`List、Set、Map`)。
+>
+> `Collectors`实用类提供了很多静态方法，可以方便地创建常见收集器实例，具体方法与实例如下表：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220713/image.1dobi5og323k.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220713/image.209xe7n0pqhs.webp)
+
+## Optional类
+
+### Optional类的介绍
+
+到目前为止，臭名昭著的空指针异常是导致Java应用程序失败的最常见原因。以前，为了解决空指针异常，Google公司著名的Guava项目引入了Optional类，Guava通过使用检查空值的方式来防止代码污染，它鼓励程序员写更干净的代码。受到Google Guava的启发，Optional类已经成为Java 8类库的一部分。
+
++ `Optional` 类(`java.util.Optional`) 是一个容器类，它可以保存类型T的值，代表这个值存在。或者仅仅保存`null`，表示这个值不存在。原来用null 表示一个值不存在，现`在Optional` 可以更好的表达这个概念。并且可以避免空指针异常。
++ Optional类的Javadoc描述如下：这是一个可以为null的容器对象。如果值存在则`isPresent()`方法会返回`true`，调用`get()`方法会返回该对象。
++ Optional提供很多有用的方法，这样我们就不用显式进行空值检测。
++ 创建Optional类对象的方法：
+  + `Optional.of(T t)`: 创建一个Optional 实例，<mark>t必须非空</mark>；
+  + `Optional.empty()` : 创建一个空的Optional 实例
+  + `Optional.ofNullable(T t)`：<mark>t可以为null</mark>
++ 判断Optional容器中是否包含对象：
+    + `boolean isPresent() `: 判断是否包含对象
+    + `void ifPresent(Consumer<? super T> consumer)` ：如果有值，就执行Consumer接口的实现代码，并且该值会作为参数传给它。
++ 获取Optional容器的对象：
+    + `T get()`: 如果调用对象包含值，返回该值，否则抛异常
+    +  `T orElse(T other)` ：如果有值则将其返回，否则返回指定的other对象。
+    + `T orElseGet(Supplier<? extends T> other)` ：如果有值则将其返回，否则返回由Supplier接口实现提供的对象。
+    +  `T orElseThrow(Supplier<? extends X> exceptionSupplier) `：如果有值则将其返回，否则抛出由Supplier接口实现提供的异常。
+
+> Girl类
+
+```java
+public class Girl {
+
+    private String name;
+
+    public Girl() {
+    }
+
+    public Girl(String name) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Girl{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+}
+```
+
+> Boy类
+
+```java
+public class Boy {
+
+    private Girl girl;
+
+    public Boy() {
+    }
+
+    public Boy(Girl girl) {
+        this.girl = girl;
+    }
+
+    public Girl getGirl() {
+        return girl;
+    }
+
+    public void setGirl(Girl girl) {
+        this.girl = girl;
+    }
+
+    @Override
+    public String toString() {
+        return "Boy{" +
+                "girl=" + girl +
+                '}';
+    }
+}
+```
+
+> 测试类
+
+```java {14,24,27}
+public class OptionalTest {
+
+    /**
+     * Optional.of(T t) : 创建一个 Optional 实例，t必须非空；
+     * Optional.empty() : 创建一个空的 Optional 实例
+     * Optional.ofNullable(T t)：t可以为null
+     */
+
+    @Test
+    public void test(){
+
+        Girl girl = new Girl();
+        //girl=null;//报空指针异常 of(T t)方法 必须保证t非空
+        Optional<Girl> optionalGirl = Optional.of(girl);
+
+    }
+
+    @Test
+    public void test1(){
+
+        Girl girl = new Girl();
+        girl=null;
+        //ofNullable(T t) //t可以为null
+        Optional<Girl> optionalGirl = Optional.ofNullable(girl);
+        //orElse(T t1):如果当前的Optional内部封装的t是非空的，则返回内部的t
+        //如果内部的t是空的，则返回orElse()方法中的参数t1
+        Girl lucy = optionalGirl.orElse(new Girl("Lucy"));
+        System.out.println(lucy);
+
+    }
+}
+```
+
+### Optional类的使用举例
+
+> 测试类
+
+```java
+/**
+ * Optional类：为了在程序中避免出现空指针异常而创建的。
+ *
+ * 常用的方法：ofNullable(T t)
+ *           orElse(T t)
+ */
+public class OptionTest1 {
+
+    public String getGirlName(Boy boy){
+        return boy.getGirl().getName();
+    }
+
+    @Test
+    public void test2(){
+        //让boy.getGirl()为null
+        Boy boy = new Boy();
+        String girlName = getGirlName(boy);
+        System.out.println(girlName);
+    }
+
+    //优化以后的getGirlName():
+    //没有Optional
+    /*public String getGirlName1(Boy boy){
+        if(boy !=null){
+            Girl girl = boy.getGirl();
+            if(girl!=null){
+                return girl.getName();
+            }
+        }
+        return null;
+    }*/
+
+    //优化以后的getGirlName():
+    //有Optional
+    //使用Optional类的getGirlName()
+    public String getGirlName2(Boy boy){
+        Optional<Boy> boyOptional = Optional.ofNullable(boy);
+        //此时的boy1一定非空
+        Boy boy1 = boyOptional.orElse(new Boy(new Girl("Smith")));
+        Girl girl = boy1.getGirl();
+        Optional<Girl> girlOptional = Optional.ofNullable(girl);
+        //此时的girl1一定非空
+        Girl girl1 = girlOptional.orElse(new Girl("Mary"));
+        return girl1.getName();
+    }
+
+    @Test
+    public void test3(){
+        Boy boy = null;//boy为null
+        String girlName2 = getGirlName2(boy);
+        System.out.println(girlName2);//Smith
+        boy=new Boy();//girl为null
+        String girlName3= getGirlName2(boy);
+        System.out.println(girlName3);//Mary
+
+        Boy boy1 = new Boy(new Girl("Lucy"));
+        String girlName4 = getGirlName2(boy1);
+        System.out.println(girlName4);//Lucy
+
+    }
+
+}
 ```
 
