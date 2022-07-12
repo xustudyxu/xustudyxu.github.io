@@ -681,3 +681,73 @@ public class EmployeeData {
 
 ::::
 
+### Stream的中间操作：筛选与切片
+
+多个中间操作可以连接起来形成一个流水线，除非流水线上触发终止操作，否则中间操作不会执行任何的处理！而在终止操作时一次性全部处理，称为“惰性求值”。
+
+| 方法                  | 描述                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| `filter(Predicate p)` | 接收Lambda ，从流中排除某些元素                              |
+| `distinct()`          | 筛选，通过流所生成元素的hashCode() 和equals() 去除重复元素   |
+| `limit(long maxSize)` | 截断流，使其元素不超过给定数量                               |
+| `skip(long n)`        | 跳过元素，返回一个扔掉了前n 个元素的流。若流中元素不足n 个，则返回一个空流。与limit(n)互补 |
+
+```java {18,23,28,39}
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/7/12  12:59
+ * desc:测试Stream的中间操作
+ */
+public class StreamAPITest1 {
+
+    //1.筛选与分片
+    @Test
+    public void test1(){
+
+        List<Employee> list = EmployeeData.getEmployees();
+
+        //filter(Predicate p)--接收Lambda, 从流中排除某些元素
+        Stream<Employee> stream = list.stream();
+        //查询员工表中薪资大于7000的员工
+        stream.filter(e -> e.getSalary()>7000).forEach(System.out::println);
+        System.out.println();
+
+        //limit(n)--使其元素不超过给定数量
+        stream = list.stream();
+        stream.limit(3).forEach(System.out::println);
+        System.out.println();
+
+        //skip(n)--跳过元素，返回一个扔掉了n个元素的流，若流中不足n个，侧返回一个空流。与 limit(n) 互补
+        stream = list.stream();
+        stream.skip(3).forEach(System.out::println);
+        System.out.println();
+
+        //distinct()--筛选，通过流所生成元素的hashCode()和equals()去除重复元素
+        stream = list.stream();
+        list.add(new Employee(1010, "xustudyxu", 40, 8000));
+        list.add(new Employee(1010, "xustudyxu", 40, 8000));
+        list.add(new Employee(1010, "xustudyxu", 40, 8000));
+        list.add(new Employee(1010, "xustudyxu", 40, 8000));
+        list.add(new Employee(1010, "xustudyxu", 40, 8000));
+//        System.out.println(list);
+        list.stream().distinct().forEach(System.out::println);
+        stream.close();
+    }
+}
+```
+
+### Stream的中间操作：映射
+
+| 方法                              | 描述                                                         |
+| --------------------------------- | ------------------------------------------------------------ |
+| `map(Function f)`                 | 接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。 |
+| `mapToDouble(ToDoubleFunction f)` | 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的DoubleStream。 |
+| `mapToInt(ToIntFunction f)`       | 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的IntStream。 |
+| `mapToLong(ToLongFunction f)`     | 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的LongStream。 |
+| `flatMap(Function f)`             | 接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。 |
+
+```java
+
+```
+
