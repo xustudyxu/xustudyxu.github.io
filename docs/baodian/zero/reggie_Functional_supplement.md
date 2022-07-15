@@ -66,7 +66,11 @@ tags:
     }
 ```
 
-> **注意：controller层的代码是不可以直接写业务的，建议把它抽离到service层，controller调用一下service的方法就行；**下面的批量删除功能是抽离的，controller没有写业务代码；
+::: tip 注意
+
+controller层的代码是不可以直接写业务的，建议把它抽离到service层，controller调用一下service的方法就行；下面的批量删除功能是抽离的，controller没有写业务代码；
+
+:::
 
 + 功能测试
 
