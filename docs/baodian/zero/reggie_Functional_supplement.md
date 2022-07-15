@@ -341,3 +341,135 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2lkv3fqm6s00.webp)
 
+## 后台按条件查看和展示客户订单
+
+点击订单明细，前端会发下面的请求：携带的数据是分页使查询用的；
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4q5gms8wmww0.webp)
+
+先写个controller看能不能接收到前端传过来的参数：**发现只要参数和前端传过来的参数名对应就可以拿到参数的**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.6qez9emkw6s0.webp)
+
+主要使用到mybatis-plus动态sql语句的生成：
+
+这里我就直接把功能直接写在controller层了，看自己需求分层；
+
+```java
+    /**
+     *后台查询订单明细
+     * @param page
+     * @param pageSize
+     * @param number
+     * @param beginTime
+     * @param endTime
+     * @return
+     */
+    @GetMapping("/page")
+    public R<Page> page(int page,int pageSize,String number,String beginTime,String endTime){
+        //分页构造器对象
+        Page<Orders> pageInfo = new Page<>(page, pageSize);
+        //构造条件查询对象
+        LambdaQueryWrapper<Orders> queryWrapper = new LambdaQueryWrapper<>();
+
+        //添加 查询条件 动态sql 字符串使用StringUtils.isNotEmpty这个方法来判断
+        queryWrapper.like(number!=null,Orders::getNumber,number)
+                .gt(StringUtils.isNotEmpty(beginTime),Orders::getOrderTime,beginTime)
+                .lt(StringUtils.isNotEmpty(endTime),Orders::getOrderTime,endTime);
+
+        orderService.page(pageInfo,queryWrapper);
+        return R.success(pageInfo);
+    }
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2dgx1psnb4e8.webp)
+
+但是如果你**想要这个username显示用户名的话**，那么有两种办法：
+
+方法1：就是在注册的user表中添加用户名；（实际上这个用户在注册的时候是没有填写username这个选项的，所以这里查询出来全是null，所以前端就展示不出来用户）
+
+**方法二：（推荐使用）**
+
+**因为我们不可能老是自己去数据库修改具体的值，所以这里我们使用用户下单的consignee来显示，数据库中也有，但是数据库中的consignee是可以为null的，所以在后台代码中帮订单添加该属性的时候要判断是否null！然后就是去修改前端代码就行:**
+
+修改ordei下的list,把72行的userName改成**consignee就行；**
+
+![image](https://git.poker/xustudyxu/image-hosting1/blob/master/20220715/image.3sf092gzvk60.webp?raw=true)
+
+测试效果：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.48iyk4xfsy60.webp)
+
+## 手机端减少购物车中的菜品或者套餐数量
+
+前端请求： http://localhost:8080/shoppingCart/sub
+
+请求方式：post
+
+携带参数可能是dish_id 也可能是 setmealId，所以我们需要实体类shoppingCart来接收;
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4wcvkecm2zk0.webp)
+
++ 编写处理器
+
+```java
+    /**
+     *客户端的套餐或者是菜品数量减少设置
+     *没必要设置返回值
+     * @param shoppingCart
+     * @return
+     */
+    @PostMapping("/sub")
+    @Transactional
+    public R<ShoppingCart> sub(@RequestBody ShoppingCart shoppingCart){
+
+        Long dishId = shoppingCart.getDishId();
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        //代表数量减少的是菜品数量
+        if(dishId!=null){
+            //通过dishId查出购物车对象
+            //这里必须要加两个条件，否则会出现用户互相修改对方与自己购物车中相同套餐或者是菜品的数量
+            queryWrapper.eq(ShoppingCart::getDishId,dishId)
+                    .eq(ShoppingCart::getUserId,BaseContext.getCurrentId());
+            ShoppingCart cart1= shoppingCartService.getOne(queryWrapper);
+            cart1.setNumber(cart1.getNumber()-1);
+            Integer LatestNumber = cart1.getNumber();
+            if(LatestNumber>0) {
+                //对操作的数据进行更新
+                shoppingCartService.updateById(cart1);
+            }else if(LatestNumber==0){
+                //如果购物车的菜品数量减为0，那么就把菜品从购物车删除
+                shoppingCartService.removeById(cart1.getId());
+            }else if(LatestNumber<0){
+                return R.error("操作异常");
+            }
+            return R.success(cart1);
+
+        }
+        Long setmealId = shoppingCart.getSetmealId();
+        if(setmealId!=null){
+            //代表是套餐数量减少
+            queryWrapper.eq(ShoppingCart::getSetmealId,setmealId)
+                    .eq(ShoppingCart::getUserId,BaseContext.getCurrentId());
+            ShoppingCart cart2 = shoppingCartService.getOne(queryWrapper);
+            cart2.setNumber(cart2.getNumber()-1);
+            Integer LatestNumber = cart2.getNumber();
+            if(LatestNumber>0){
+                //对操作数据更新
+                shoppingCartService.updateById(cart2);
+            }else if(LatestNumber==0){
+                //如果购物车的套餐数量减为0，那么就把套餐从购物车删除
+                shoppingCartService.removeById(cart2.getId());
+            }else if(LatestNumber<0){
+                return R.error("操作异常");
+            }
+            return R.success(cart2);
+        }
+        //如果两个大if判断都进不去
+        return R.error("操作异常");
+
+    }
+```
+
++ 经过测试，无错误
+
