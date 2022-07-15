@@ -473,3 +473,295 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 + 经过测试，无错误
 
+## 用户查看自己订单
+
+前端发送请求
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.5j69hlb9mvw0.webp)
+
+在OrderController中添加下面的方法；
+
+```java
+    @GetMapping("/userPage")
+    public R<Page> page(int page,int pageSize){
+
+        //分页构造器对象
+        Page<Orders> pageInfo = new Page<>(page, pageSize);
+        //构造条件查询对象
+        LambdaQueryWrapper<Orders> queryWrapper = new LambdaQueryWrapper<>();
+        //添加排序条件，根据更新时间降序排列
+        queryWrapper.orderByDesc(Orders::getOrderTime);
+        orderService.page(pageInfo,queryWrapper);
+        return R.success(pageInfo);
+    }
+```
+
++ 测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4t5vcofr2420.webp)
+
+**其实这里还没有完善！！！下面继续完善代码；**
+
+通过order.html这个页面我们可以发现：前端还需要下面这些数据；所以我们后端要传给它。。。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2qvajx45xqk0.webp)
+
+ 分析前端代码: 这个item是从order.orderDetails里面 获取到的，但是orders实体类里面并没有orderDetails这个属性，而且数据库中这个order表里面也没有这个字段，所以这里我使用的是dto来封装数据给前端，这就需要使用到dto对象的分页查询了，，，，，而且离谱的是前端就是传了一个分页页面大小的数据，，，，所以我们只能从本地线程中获取用户id开始，，一路查询数据。。。。。
+
+创建OrdersDto实体类:
+
+```java
+@Data
+public class OrderDto extends Orders {
+
+    private List<OrderDetail> orderDetails;
+}
+```
+
++ 编写处理器
+
+```java
+    //抽离的一个方法，通过订单id查询订单明细，得到一个订单明细的集合
+    //这里抽离出来是为了避免在stream中遍历的时候直接使用构造条件来查询导致eq叠加，从而导致后面查询的数据都是null
+    public List<OrderDetail> getOrderDetailListByOrderId(Long orderId){
+        LambdaQueryWrapper<OrderDetail> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(OrderDetail::getOrderId,orderId);
+        List<OrderDetail> orderDetailList = orderDetailService.list(queryWrapper);
+        return orderDetailList;
+    }
+
+    /**
+     * 用户端展示自己的订单分页查询
+     * @param page
+     * @param pageSize
+     * @return
+     * 正确方法:直接从分页对象中获取订单id就行，问题大大简化了
+     */
+    @GetMapping("/userPage")
+    public R<Page> page(int page,int pageSize){
+        //分页构造器对象
+        Page<Orders> pageInfo = new Page<>(page, pageSize);
+        Page<OrderDto> pageDto = new Page<>(page, pageSize);
+        //构造条件查询对象
+        LambdaQueryWrapper<Orders> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Orders::getUserId,BaseContext.getCurrentId());
+        //这里是直接把当前用户分页的结果查询出来，要添加用户id作为查询条件，否则会出现用户可以查询到其他用户的订单情况
+        //添加排序条件，根据更新时间排序
+        queryWrapper.orderByDesc(Orders::getOrderTime);
+        orderService.page(pageInfo,queryWrapper);
+
+        //通过OrderId查询对应的OrderDetail
+        LambdaQueryWrapper<OrderDetail> queryWrapper2 = new LambdaQueryWrapper<>();
+
+        //对OrderDto进行需要的属性赋值
+        List<Orders> records = pageInfo.getRecords();
+        List<OrderDto> orderDtoList = records.stream().map((item) -> {
+            OrderDto orderDto = new OrderDto();
+            //此时的orderDto对象里面orderDetails属性还是空，下面准备为他赋值
+            Long orderId = item.getId();//获取订单Id
+            List<OrderDetail> orderDetailList = this.getOrderDetailListByOrderId(orderId);
+            BeanUtils.copyProperties(item, orderDto);
+            //对orderDto进行orderDetails属性赋值
+            orderDto.setOrderDetails(orderDetailList);
+            return orderDto;
+        }).collect(Collectors.toList());
+
+        BeanUtils.copyProperties(pageInfo,pageDto,"records");
+        pageDto.setRecords(orderDtoList);
+        return R.success(pageDto);
+    }
+```
+
++ 测试下单
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2q6rx6wrefu0.webp)
+
++ **点击去支付，然后点击去查看订单：**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4tnhur36c880.webp)
+
+## 移动端的再来一单功能
+
+**由于这里没有写后台的确认订单功能，所以这里通过数据库修改订单状态来完成测试！**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2jc4frrzf080.webp)
+
+在order.html中可以看见这样一段前端代码:
+
+```html
+  <div class="btn" v-if="order.status === 4">//状态是4才会让你点击下面这个再来一单
+        <div class="btnAgain" @click="addOrderAgain(order)">再来一单</div>
+  </div>
+```
+
+然后找到addOrderAgain这个方法：前端使用post请求，请求地址order/again：
+
+```javascript
+//再来一单
+function orderAgainApi(data) {
+  return $axios({
+      'url': '/order/again',
+      'method': 'post',
+      data
+  })
+}
+```
+
++ 编写处理器
+
+```java
+
+```
+
++ 测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3m00dj9tmes0.webp)
+
++ 点击再来一单
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.40l7tsznnn60.webp)
+
+并且购物车表中也有数据：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.726dhlxuxos0.webp)
+
+## 移动端点击套餐图片查看套餐具体菜品
+
+点击移动端套餐的图片，发现会向后端发送一个get请求，浏览器具体请求的图片我就不放了，我在前端页面找到了对应的axios请求：
+
+```javascript
+//获取菜品分类对应的菜品
+function dishListApi(data) {
+    return $axios({
+        'url': '/dish/list',
+        'method': 'get',
+        params:{...data}
+    })
+}
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3wg8ouy1h8y0.webp)
+
++ 编写处理器
+
+```java
+
+```
+
++ 测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.1cgzu1p480hs.webp)
+
+## 删除地址
+
+前端点击删除地址：然后发送删除请求到后端
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.7cqu84vwpow0.webp)
+
+在后端使用controller接收：
+
+```java
+    /**
+     * 删除地址
+     * @param id
+     * @return
+     */
+    @DeleteMapping
+    public R<String> delete(@RequestParam("id") Long id){
+        if(id==null){
+            return R.error("请求异常");
+        }
+        LambdaQueryWrapper<AddressBook> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(AddressBook::getId,id).eq(AddressBook::getUserId,BaseContext.getCurrentId());
+        addressBookService.remove(queryWrapper);
+        //addressBookService.removeById(id);直接使用这个removeById不太严谨.....
+        return R.success("删除地址成功");
+    }
+```
+
+## 修改地址
+
+点击修改符号，发现回显信息已经写好了；
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.1q0zdzdz9ctc.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 修改地址
+     * @param addressBook
+     * @return
+     */
+    @PutMapping
+    public R<String> update(@RequestBody AddressBook addressBook){
+
+        if(addressBook==null){
+            return R.error("请求异常");
+        }
+        addressBookService.updateById(addressBook);
+        return R.success("修改成功");
+
+    }
+```
+
+## 后台订单状态的修改
+
+在后台订单明细中点击派送按钮：前端会发送下面的请求来：是json格式的数据；
+
+请求地址：http://localhost:8088/order
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.e884zpstk6o.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4916bv7pdda0.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * 修改订单状态
+     * @param map
+     * @return
+     */
+    @PutMapping
+    public R<String> orderStatusChange(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        Long orderId = Long.parseLong(id);
+        Integer status = Integer.parseInt(map.get("status"));
+        if(orderId==null||status==null){
+           return R.error("传入信息不合法");
+        }
+        Orders orders = orderService.getById(orderId);
+        orders.setStatus(status);
+        orderService.updateById(orders);
+
+        return R.success("订单信息修改成功");
+    }
+```
+
++ 测试，派送6月6日的订单
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.5k9qwxvxiro0.webp)
+
+## 移动端登陆退出功能
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.77tlrb1jkb00.webp)
+
++ 编写处理器
+
+```java
+    /**
+     * C端用户退出功能
+     * ①在controller中创建对应的处理方法来接受前端的请求，请求方式为post；
+     * ②清理session中的用户id
+     * ③返回结果（前端页面会进行跳转到登录页面）
+     * @param request
+     * @return
+     */
+    @PostMapping("/loginout")
+    public R<String> logout(HttpServletRequest request){
+        request.removeAttribute("user");
+        return R.success("退出成功");
+    }
+```
+
