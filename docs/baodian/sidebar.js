@@ -24,7 +24,8 @@ module.exports = [
     '/baodian/zero/reggie_set_meal',
     '/baodian/zero/reggie_Mobile_terminal_development',
     '/baodian/zero/Mobile_terminal_business_development',
-    '/baodian/zero/reggie_Functional_supplement'
+    '/baodian/zero/reggie_Functional_supplement',
+    '/baodian/zero/reggie_Cache_optimization'
 
     ]
   }, {
