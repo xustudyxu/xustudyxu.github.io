@@ -398,7 +398,7 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 修改ordei下的list,把72行的userName改成**consignee就行；**
 
-![image](https://git.poker/xustudyxu/image-hosting1/blob/master/20220715/image.3sf092gzvk60.webp?raw=true)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3sf092gzvk60.webp)
 
 测试效果：
 
