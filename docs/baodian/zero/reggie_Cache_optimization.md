@@ -173,7 +173,121 @@ public class RedisConfig extends CachingConfigurerSupport {
 
 1、改造DishController的list方法，先从Redis中获取菜品数据，如果有则直接返回，无需查询数据库;如果没有则查询数据库，并将查询到的菜品数据放入Redis。
 
-```java
+```java {10-20,56}
+    /**
+     * 根据条件查询对应的菜品数据
+     *
+     * @param dish
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<DishDto>> list(Dish dish) {
+        List<DishDto> dishDtoList=null;
+        //动态构造key
+        String key = "dish_"+dish.getCategoryId()+"_"+dish.getStatus();//dish_12346564616163166_1
 
+        //先从redis中获取缓存数据
+
+        dishDtoList=(List<DishDto>) redisTemplate.opsForValue().get("key");
+        //如果存在，直接返回，无需查询数据
+        if(dishDtoList!=null){
+            //如果存在，就直接返回，无需查询数据库
+            return R.success(dishDtoList);
+        }
+
+        //构造查询条件
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+
+        //添加条件，查询条件为1(起售)
+        queryWrapper.eq(Dish::getStatus, 1);
+
+        //添加排序条件
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> list = dishService.list(queryWrapper);
+
+        dishDtoList = list.stream().map((item) -> {
+            DishDto dishDto = new DishDto();
+
+            BeanUtils.copyProperties(item, dishDto);
+            Long categoryId = item.getCategoryId();//分类Id
+            //根据id查询分类对象
+            Category category = categoryService.getById(categoryId);
+            if (category != null) {
+                String categoryName = category.getName();
+                dishDto.setCategoryName(categoryName);
+            }
+            //当前菜品Id
+            Long dishId = item.getId();
+
+            LambdaQueryWrapper<DishFlavor> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+            lambdaQueryWrapper.eq(DishFlavor::getDishId, dishId);
+            //SQL:select * from dish_flavor where dish_id = ?
+            List<DishFlavor> dishFlavorList = dishFlavorService.list(lambdaQueryWrapper);
+            dishDto.setFlavors(dishFlavorList);
+            return dishDto;
+        }).collect(Collectors.toList());
+
+        //如果不存在，需要查询数据库，将查询到的菜品数据缓存到redis
+        redisTemplate.opsForValue().set(key,dishDtoList,60, TimeUnit.MINUTES);
+
+        return R.success(dishDtoList);
+    }
+```
+
++ 测试
+  + 18129035311是我登录的手机号，9294就是我的验证码，有效期五分钟，登陆成功后会清除缓存
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220717/image.s2nfir3wiuo.webp)
+
+2、改造DishController的save和update方法，加入清理缓存的逻辑
+
++ save
+
+```java {12-16}
+    /**
+     * 新增菜品
+     *
+     * @param dishDto
+     * @return
+     */
+    @PostMapping
+    public R<String> save(@RequestBody DishDto dishDto) {
+        log.info(dishDto.toString());
+        dishService.saveWithFlavor(dishDto);
+        //清理所有菜品缓存数据
+        //Set keys = redisTemplate.keys("dish_*");
+        //redisTemplate.delete(keys);
+        //清理某个分类下面的菜品缓存数据
+        Object key = redisTemplate.opsForValue().get("dish_" + dishDto.getCategoryId() + "_" + dishDto.getStatus());
+        redisTemplate.delete(key);
+        return R.success("新增菜品成功");
+
+    }
+```
+
++ update
+
+```java {12-16}
+    /**
+     * 修改菜品
+     *
+     * @param dishDto
+     * @return
+     */
+    @PutMapping
+    public R<String> update(@RequestBody DishDto dishDto) {
+        log.info(dishDto.toString());
+        dishService.updateWithFlavor(dishDto);
+        //清理所有菜品缓存数据
+        //Set keys = redisTemplate.keys("dish_*");
+        //redisTemplate.delete(keys);
+        //清理某个分类下面的菜品缓存数据
+        String key="dish_"+dishDto.getCategoryId()+"_"+dishDto.getStatus();
+        redisTemplate.delete(key);
+
+        return R.success("修改菜品成功");
+
+    }
 ```
 
