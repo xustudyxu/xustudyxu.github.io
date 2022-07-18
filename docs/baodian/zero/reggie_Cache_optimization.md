@@ -291,3 +291,120 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 ```
 
+## Spring Cache 框架
+
+### Spring Cache介绍
+
+Spring cache是一个框架，实现了基于注解的缓存功能，只需要简单地加一个注解，就能实现缓存功能。
+
+Spring Cache提供了一层抽象，底层可以切换不同的cache实现。具体就是通过CacheManager接口来统一不同的缓存技术。
+
+CacheManager是Spring提供的各种缓存技术抽象接口。
+
+针对不同的缓存技术需要实现不同的CacheManager:
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.5u5hxiuqxo00.webp)
+
+### Spring Cache 常用注解
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.70nq6f8rvrc0.webp)
+
+在spring boot项目中，使用缓存技术只需在项目中导入相关缓存技术的依赖包，并在启动类上使用@EnableCaching开启缓存支持即可。
+
+例如，使用Redis作为缓存技术，只需要导入Spring data Redis的maven坐标即可。
+
+### Spring Cache使用方式
+
+在Spring Boot项目中使用Spring Cache的操作步骤(使用redis缓存技术);
+
+1、导入maven坐标
+
+- spring-boot-starter-data-redis、spring-boot-starter-cache
+
+2、配置application.yml
+
+```yaml
+spring:
+    cache:
+        redis:
+            time-to-live: 1800000#设置缓存有效期
+```
+
+3、在启动类上加入@EnableCaching注解，开启缓存注解功能
+
+4、在Controller的方法上加入@Cacheable、@CacheEvict等注解，进行缓存操作
+
+## 缓存套餐数据
+
+### 实现思路
+
+前面我们已经实现了移动端套餐查看功能，对应的服务端方法为SetmealController的list方法，此方法会根据前端提交的查询条件进行数据库查询操作。在高并发的情况下，频繁查询数据库会导致系统性能下降，服务端响应时间增长。现在需要对此方法进行缓存优化，提高系统的性能。
+
+具体的实现思路如下:
+
+1、导入Spring Cache和Redis相关maven坐标
+
+2、在application.yml中配置缓存数据的过期时间
+
+3、在启动类上加入@EnableCaching注解，开启缓存注解功能
+
+4、在SetmealController的list方法上加入@Cacheable注解
+
+5、在SetmealController的save和delete方法上加入CacheEvict注解
+
+### 代码改造
+
+在pom.xml文件中导入maven坐标:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
+</dependency>
+```
+
+在application.yml中配置缓存数据过期时间:
+
+```yaml
+cache:
+    redis:
+        time-to-live: 1800000 #设置缓存数据过期时间
+```
+
+在启动类@EnableCaching注解
+
+在list方法上添加注解，实现在redis里添加缓存：
+
+```java
+@Cacheable(value = "setmealCache",key = "#setmeal.categoryId+'_'+#setmeal.status")
+```
+
+在edit,save，delete方法上添加注解，清除缓存：
+
+```java
+@CacheEvict(value = "setmealCache",allEntries = true)
+```
+
++ 验证
+
+```sh
+127.0.0.1:6379> keys *
+1) "setmealCache::1413342269393674242_1"
+2) "dish_1397844391040167938_1"
+3) "dish_1397844263642378242_1"
+```
+
+经过测试，执行edit,save，delete方法后缓存能删掉
+
+```sh
+127.0.0.1:6379> keys *
+1) "dish_1397844263642378242_1"
+4) "dish_1397844391040167938_1"
+```
+
+::: warning
+
+要让R实现Serializable接口（序列化），注解才能生效
+
+:::
+
