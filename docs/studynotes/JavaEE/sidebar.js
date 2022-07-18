@@ -3,6 +3,7 @@ module.exports = [
     title:'Java 基础',
     collapsable: false,
     children:[
+    '/studynotes/JavaEE/java/Java_summary',
     '/studynotes/JavaEE/java/Arr_',
     '/studynotes/JavaEE/java/oop',
     '/studynotes/JavaEE/java/enum',
@@ -18,7 +19,7 @@ module.exports = [
     '/studynotes/JavaEE/java/jdbc',
     '/studynotes/JavaEE/java/RegExp',
     '/studynotes/JavaEE/java/Java8Newfeatures',
-    '/studynotes/JavaEE/java/Java_summary',
+    
       ]
   },{
     title:'Servlet',
