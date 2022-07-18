@@ -95,7 +95,7 @@ Elasticsearch 是分布式的。当文档创建、更新或删除时，新版本
 
 新版不使用**外部版本控制**的 url：`http://127.0.1:9200/shopping/_update/1001?if_seq_no=2&if_primary_term=1`
 
-使用**外部版本控制**的 url：`http://127.0.1:9200/shopping/_get/1001?version=6&version_type=external`，要求只要 url 的 version 大于 ES 的索引 _version 即可。如果等于 3，会报错。
+使用**外部版本控制**的 url：`http://127.0.1:9200/shopping/_doc/1001?version=6&version_type=external`，要求只要 url 的 version 大于 ES 的索引 _version 即可。如果等于 3，会报错。
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220707/image.4gbs1zr2p400.webp)
 
