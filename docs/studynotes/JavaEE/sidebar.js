@@ -18,6 +18,7 @@ module.exports = [
     '/studynotes/JavaEE/java/jdbc',
     '/studynotes/JavaEE/java/RegExp',
     '/studynotes/JavaEE/java/Java8Newfeatures',
+    '/studynotes/JavaEE/java/Java_summary',
       ]
   },{
     title:'Servlet',
