@@ -5,6 +5,7 @@ module.exports = [
     children:[
     '/studynotes/JavaEE/java/Java_summary',
     '/studynotes/JavaEE/java/Java_val',
+    '/studynotes/JavaEE/java/Java_operator',
     '/studynotes/JavaEE/java/Arr_',
     '/studynotes/JavaEE/java/oop',
     '/studynotes/JavaEE/java/enum',
