@@ -17,7 +17,7 @@ module.exports = [
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Conflict_problem_handling',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_Framework_integration',
       '/studynotes/middleware/ElasticSearch/ElasticSearch_optimization',
-      '/studynotes/middleware/ElasticSearch/ElasticSearch_Interview_questions',
+      '/studynotes/middleware/ElasticSearch/ElasticSearch_Interview_questions'
       
       
 
