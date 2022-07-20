@@ -22,7 +22,7 @@ jobs:
       uses: jenkey2011/vuepress-deploy@master
       env: # 设置环境变量
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-         注意替换为你的 Gitee 仓库地址，仓库名严格区分大小写，一般地址和仓库名一致，如果地址改了，仓库名不改，要以地址为准（地址仅需后缀，即 https://gitee.com/<username>/xxx 的 xxx 即可）
+        # 注意替换为你的 Gitee 仓库地址，仓库名严格区分大小写，一般地址和仓库名一致，如果地址改了，仓库名不改，要以地址为准（地址仅需后缀，即 https://gitee.com/<username>/xxx 的 xxx 即可）
         TARGET_REPO: xustudyxu/xustudyxu.github.io
          # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
         TARGET_BRANCH: gh-pages 
