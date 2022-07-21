@@ -575,7 +575,7 @@ public class Break01 {
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220721/image.570e6tkznbk0.webp)
 
-### 跳转控制语句-return
+## 跳转控制语句-return
 
 return 使用在方法，表示跳出所在的方法，在讲解方法的时候，会详细的介绍，这里我们简单的提一下。注意：如果 return 写在 main 方法，退出程序。
 
