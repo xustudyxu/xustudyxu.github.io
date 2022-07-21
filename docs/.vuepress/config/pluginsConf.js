@@ -69,9 +69,9 @@ module.exports = [
 //         globalUIComponents: ["GlobalTip"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
 //     }
 // ],
-  // ['ribbon'],//漂亮丝带
+  ['ribbon'],//漂亮丝带
   // ['dynamic-title'],//动态标题
-  // ['fulltext-search'],//全文搜索
+  ['fulltext-search'],//全文搜索
   ["plausible-analytics"],// plausible.io 添加分析
   ['@vuepress/active-header-links'],//页面滚动时自动激活侧边栏链接的插件
   // ['@vuepress/back-to-top'],//返回页首
