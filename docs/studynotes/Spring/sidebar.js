@@ -50,7 +50,7 @@ module.exports = [
           '/studynotes/Spring/SpringBoot2/yaml_',
           '/studynotes/Spring/SpringBoot2/Web_develop',
           '/studynotes/Spring/SpringBoot2/data_access',
-      
+          '/studynotes/Spring/SpringBoot2/SptingBoot_Junit5'
             ]
           }
 ]
