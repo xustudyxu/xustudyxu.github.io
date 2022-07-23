@@ -9,6 +9,8 @@ tags:
 ---
 # MQ的相关概念
 
+[学习视频地址](https://www.bilibili.com/video/BV1cb4y1o7zz?p=1&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
 [[toc]]
 
 ## 什么是MQ
