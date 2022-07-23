@@ -1,7 +1,7 @@
 ---
 title: MQ的相关概念
 date: 2022-07-23 16:10:40
-permalink: /pages/e645d9/
+permalink: /middleware/RabbitMQ/RabbitMQ_introduct
 categories:
   - RabbitMQ
 tags:

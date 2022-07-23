@@ -1,7 +1,7 @@
 ---
 title: RabbitMQ 介绍
 date: 2022-07-23 16:56:21
-permalink: /pages/b30631/
+permalink: /middleware/RabbitMQ/RabbitMQ_introduct
 categories:
   - RabbitMQ
 tags:

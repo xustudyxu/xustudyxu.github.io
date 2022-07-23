@@ -28,6 +28,7 @@ module.exports = [
     children:[
       '/studynotes/middleware/RabbitMQ/MQ_concept',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_introduct',
+      '/studynotes/middleware/RabbitMQ/RabbitMQ_install',
       
       
 
