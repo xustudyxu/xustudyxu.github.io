@@ -22,6 +22,15 @@ module.exports = [
       
 
     ]
+  },{
+    title:'消息对列-RabbitMQ',
+    collapsable: false,
+    children:[
+      '/studynotes/middleware/RabbitMQ/MQ_concept'
+      
+      
+
+    ]
   }
  
   
