@@ -1,12 +1,12 @@
----
 title: RabbitMQ 入门案例
 date: 2022-07-23 23:17:55
 permalink: /middleware/RabbitMQ/RabbitMQ_index
 categories:
+
   - RabbitMQ
 tags:
   - RabbitMQ
----
+
 # RabbitMQ 入门案例
 
 [[toc]]
@@ -327,7 +327,7 @@ public class Work01 {
 
 要开启多线程功能，首先启动该消息队列，然后如图开启多线程：
 
-![1658588553672](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1658588553672.png)
+![1658588553672](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220723/1658588553672.629xpapm6wg0.webp)
 
 两个工作队列都启动后
 
@@ -336,7 +336,35 @@ public class Work01 {
 + 创建一个生产者，发送消息进程
 
 ```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/7/23  23:07
+ * desc:生产者：可以发送大量的消息
+ */
+public class Task01 {
 
+    //队列名称
+    public static final String QUEUE_NAME="hello";
+
+    //发送大量消息
+    public static void main(String[] args) throws IOException, TimeoutException {
+
+        Channel channel = RabbitMQUtils.getChannel();
+        //队列的声明
+        channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+
+        //发送消息
+        //从控制台当中接受信息
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String message = scanner.next();
+            channel.basicPublish("",QUEUE_NAME,null,message.getBytes());
+            System.out.println("消息发送完成:"+message);
+        }
+    }
+    
+}
 ```
 
 + 结果演示

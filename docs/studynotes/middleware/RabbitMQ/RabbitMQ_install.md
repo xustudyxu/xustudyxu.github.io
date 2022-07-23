@@ -112,7 +112,7 @@ Eshell V10.3  (abort with ^G)
 
 出现这个错误的主要原因是没有`libcrypto.so.10(OPENSSL_1.0.2)(64bit)`依赖，我们去下载一个就可以了
 
-下载地址：[libcrypto.so.10(OPENSSL_1.0.2)(64bit)](https://rpmfind.net/linux/rpm2html/search.php?query=libcrypto.so.10(OPENSSL_1.0.2)(64bit)&submit=Search ...&system=&arch=)
+下载地址：[libcrypto.so.10(OPENSSL_1.0.2)(64bit)](https://rpmfind.net/linux/rpm2html/search.php?query=libcrypto.so.10%28OPENSSL_1.0.2%29%2864bit%29&submit=Search%20...&system=&arch=)
 
 滑到最下面，下载最后一个
 
