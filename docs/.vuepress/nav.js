@@ -40,7 +40,7 @@ module.exports = [{
     }, {
       text: '消息队列',
       items: [
-        { text: 'RabbitMQ', link: '' },
+        { text: 'RabbitMQ', link: '/pages/e645d9/' },
       ]
     },
     
