@@ -442,7 +442,7 @@ public class ReceiveLogsTopic01 {
 
 **消费者C2**
 
-```java
+```java {21,22}
 /**
  * @author frx
  * @version 1.0
