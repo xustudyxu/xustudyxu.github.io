@@ -30,6 +30,7 @@ module.exports = [
       '/studynotes/middleware/RabbitMQ/RabbitMQ_introduct',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_install',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_index',
+      '/studynotes/middleware/RabbitMQ/RabbitMQ_Message_responseAndrelease',
 
     ]
   }
