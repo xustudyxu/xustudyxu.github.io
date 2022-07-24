@@ -1,7 +1,7 @@
 ---
 title: RabbitMQ 消息应答与发布
 date: 2022-07-24 13:19:55
-permalink: /pages/e8f2f2/
+permalink: /middleware/RabbitMQ/RabbitMQ_Message_responseAndrelease
 categories:
   - RabbitMQ
 tags:
