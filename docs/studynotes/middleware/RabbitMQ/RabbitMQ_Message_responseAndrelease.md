@@ -185,7 +185,7 @@ public class Work03 {
 
 **消费者 2：**
 
-将 23 行代码的睡眠时间改为 10 秒：
+将 20 行代码的睡眠时间改为 10 秒：
 
 ```java
 SleepUtils.sleep(10);
