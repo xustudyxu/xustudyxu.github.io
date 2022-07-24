@@ -237,7 +237,7 @@ public class DirectLogs {
 
 **消费者1**
 
-```java {10-12}
+```java {15-17}
 /**
  * @author frx
  * @version 1.0
@@ -268,7 +268,7 @@ public class ReceiveLogsDirect01 {
 
 **消费者2**
 
-```java {10-11}
+```java {15-16}
 /**
  * @author frx
  * @version 1.0
