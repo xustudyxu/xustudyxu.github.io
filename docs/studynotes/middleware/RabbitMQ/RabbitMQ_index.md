@@ -1,11 +1,12 @@
+---
 title: RabbitMQ 入门案例
 date: 2022-07-23 23:17:55
 permalink: /middleware/RabbitMQ/RabbitMQ_index
 categories:
-
-  - RabbitMQ
+	- RabbitMQ
 tags:
-  - RabbitMQ
+	- RabbitMQ
+---
 
 # RabbitMQ 入门案例
 
