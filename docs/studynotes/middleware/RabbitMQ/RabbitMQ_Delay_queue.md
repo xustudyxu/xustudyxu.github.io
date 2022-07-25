@@ -361,7 +361,7 @@ public class SendMsgController {
 
 > **出现问题**:
 >
-> ![1658765665496](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1658765665496.png)
+> ![1658765665496](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/1658765665496.39yyrmljat80.webp)
 
 看起来似乎没什么问题，但是在最开始的时候，就介绍过如果使用在消息属性上设置 TTL 的方式，消息可能并不会按时「死亡」
 
