@@ -32,6 +32,7 @@ module.exports = [
       '/studynotes/middleware/RabbitMQ/RabbitMQ_index',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Message_responseAndrelease',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Exchanges',
+      '/studynotes/middleware/RabbitMQ/RabbitMQ_Dead_QUEUE',
 
     ]
   }
