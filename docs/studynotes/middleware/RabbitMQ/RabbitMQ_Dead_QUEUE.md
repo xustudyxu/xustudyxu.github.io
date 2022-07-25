@@ -339,7 +339,7 @@ public class Consumer01 {
             }
 
         };
-        //开启手动应答
+        //开启手动应答，也就是关闭手动应答
         channel.basicConsume(NORMAL_QUEUE,false,deliverCallback,consumerTag -> {});
     }
 

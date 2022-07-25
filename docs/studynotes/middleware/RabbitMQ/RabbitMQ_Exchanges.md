@@ -166,7 +166,7 @@ public class EmitLog {
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.5kb833agark0.webp)
 
-> 一个发送，多个介绍，发布/订阅模式
+> 一个发送，多个接受，发布/订阅模式
 
 ## Direct exchange
 
