@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ_Delay_queue
+title: RabbitMQ 延迟队列
 date: 2022-07-26 01:09:49
 permalink: /middleware/RabbitMQ/RabbitMQ_Delay_queue
 categories:
