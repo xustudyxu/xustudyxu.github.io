@@ -131,11 +131,11 @@ public class Consumer01 {
 
 **生产者未发送消息**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220725/image.350uebba15s0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/image.5ldx5kffws00.webp)
 
 **生产者发送了10条消息，此时正常消息队列有10条未消费消息**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220725/image.4waey6cev1c0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/image.4k5fjvtukpe0.webp)
 
 **时间过去10秒，正常队列里面的消息由于没有被消费，消息进入死信队列**
 
