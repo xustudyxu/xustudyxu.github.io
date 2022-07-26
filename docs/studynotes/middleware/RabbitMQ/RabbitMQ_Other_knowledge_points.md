@@ -82,9 +82,7 @@ channel.queueDeclare("hello", true, false, false, params);
 
 生产者发送十个消息，如果消息为 `info5`，则优先级是最高的，当消费者从队列获取消息的时候，优先获取 `info5` 消息
 
-### 非SpringBoot
-
-#### 生产者代码
+### 生产者代码
 
 ```java
 /**
@@ -117,7 +115,7 @@ public class PriorityProducer {
 }
 ```
 
-#### 消费者代码
+### 消费者代码
 
 ```java
 /**
@@ -160,65 +158,33 @@ info 5 的优先级为 10，优先级最高。消费者消费信息效果如图�
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/image.3vjjukfu3r00.webp)
 
-### 整合SpringBoot
+## 惰性队列
 
-仅需在声明队列的时候加上参数即可
+### 使用场景
 
-#### **配置类代码**
+RabbitMQ 从 3.6.0 版本开始引入了惰性队列的概念。惰性队列会尽可能的将消息存入磁盘中，而在消费者消费到相应的消息时才会被加载到内存中，它的一个重要的设计目标是能够支持更长的队列，即支持更多的消息存储。当消费者由于各种各样的原因(比如消费者下线、宕机亦或者是由于维护而关闭等)而致使长时间内不能消费消息造成堆积时，惰性队列就很有必要了。
 
-声明队列时，给队列设置优先级
+默认情况下，当生产者将消息发送到 RabbitMQ 的时候，队列中的消息会尽可能的存储在内存之中，这样可以更加快速的将消息发送给消费者。即使是持久化的消息，在被写入磁盘的同时也会在内存中驻留一份备份。当 RabbitMQ 需要释放内存的时候，会将内存中的消息换页至磁盘中，这个操作会耗费较长的时间，也会阻塞队列的操作，进而无法接收新的消息。虽然 RabbitMQ 的开发者们一直在升级相关的算法， 但是效果始终不太理想，尤其是在消息量特别大的时候。
 
-```java
-@Configuration
-public class QueueConfig {
+### 两种模式
 
-    //声明优先队列
-    @Bean("queue")
-    public Queue queue(){
-        Map<String,Object> args = new HashMap<>(3);
-        args.put("x-max-priority",10);
-        return QueueBuilder.durable("priority_queue").withArguments(args).build();
-    }
+队列具备两种模式：default 和 lazy。默认的为 default 模式，在 3.6.0 之前的版本无需做任何变更。lazy 模式即为惰性队列的模式，可以通过调用 `channel.queueDeclare` 方法的时候在参数中设置，也可以通过 Policy 的方式设置，如果一个队列同时使用这两种方式设置的话，那么 Policy 的方式具备更高的优先级。如果要通过声明的方式改变已有队列的模式的话，那么只能先删除队列，然后再重新声明一个新的。
 
-    //声明一个交换机
-    @Bean("exchange")
-    public DirectExchange exchange(){
-        return new DirectExchange("priority_exchange");
-    }
-
-    //交换机和优先级队列进行绑定
-    @Bean
-    public Binding queueBindingX(@Qualifier("queue") Queue queue,
-                                 @Qualifier("exchange") DirectExchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with("priority");
-    }
-}
-```
-
-#### 生成者Controller代码
-
-获取请求发来的消息，并给消息设置优先级
+在队列声明的时候可以通过 `x-queue-mode` 参数来设置队列的模式，取值为 default 和 lazy。下面示例中演示了一个惰性队列的声明细节：
 
 ```java
-@Slf4j
-@RestController
-@RequestMapping("/ttl")
-public class SendMsgController {
-    
-    @Autowired
-    private RabbitTemplate rabbitTemplate; 
-    
-	@GetMapping("sendExpirationMsg/{message}")
-    public void sendExpirationMsg(@PathVariable("message") String message){
-        rabbitTemplate.convertAndSend("X","XC",message,correlationData ->{
-            //设置消息的优先级
-            correlationData.getMessageProperties().setPriority(10);
-            return correlationData;
-        });
-        log.info("当前时间：{},发送一条信息给队列:{}", new Date(), message);
-    }
-}
+Map<String, Object> args = new HashMap<String, Object>();
+args.put("x-queue-mode", "lazy");
+channel.queueDeclare("myqueue", false, false, false, args);
 ```
 
-#### **消费者代码**
+也可以在 Web 页面添加队列时，选择 `Lazy mode`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/image.m9m0vrilbw0.webp)
+
+### 内存开销对比
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220726/image.18hc40o0ctcw.webp)
+
+在发送 1 百万条消息，每条消息大概占 1KB 的情况下，普通队列占用内存是 1.2GB，而惰性队列仅仅占用 1.5MB
 
