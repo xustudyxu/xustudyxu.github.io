@@ -35,6 +35,7 @@ module.exports = [
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Dead_QUEUE',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Delay_queue',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Release_confirmation_advanced',
+      '/studynotes/middleware/RabbitMQ/RabbitMQ_Other_knowledge_points'
 
     ]
   }
