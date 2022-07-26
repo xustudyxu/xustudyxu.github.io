@@ -34,6 +34,7 @@ module.exports = [
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Exchanges',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Dead_QUEUE',
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Delay_queue',
+      '/studynotes/middleware/RabbitMQ/RabbitMQ_Release_confirmation_advanced',
 
     ]
   }
