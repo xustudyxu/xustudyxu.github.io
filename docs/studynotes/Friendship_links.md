@@ -1,7 +1,7 @@
 ---
 title: 友情链接
 date: 2022-07-07 21:59:59
-permalink: /pages/f6054a/
+permalink: /pages/myfriends/
 categories:
   - 
 tags:
