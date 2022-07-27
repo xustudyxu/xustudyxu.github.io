@@ -38,6 +38,13 @@ module.exports = [
       '/studynotes/middleware/RabbitMQ/RabbitMQ_Other_knowledge_points'
 
     ]
+  },{
+    title:'服务器-Nginx',
+    collapsable: false,
+    children:[
+      '/studynotes/middleware/Nginx/Nginx_introduce',
+
+    ]
   }
  
   

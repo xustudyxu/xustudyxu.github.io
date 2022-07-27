@@ -42,6 +42,11 @@ module.exports = [{
       items: [
         { text: 'RabbitMQ', link: '/pages/e645d9/' },
       ]
+    }, {
+      text: '服务器',
+      items: [
+        { text: 'Nginx🌐', link: '/pages/9551ee/' },
+      ]
     },
     
   ]
