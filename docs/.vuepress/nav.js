@@ -117,23 +117,25 @@ module.exports = [{
 }, {
   text: '更多',
   items: [
-    { text: '友情链接', link: '/pages/f6054a/' }
+    { text: '友情链接', link: '/pages/myfriends/' }
   ]
 
-}
-  ,
-{
+},{
   text: '本站',
   items: [
-    { text: '分类', link: '/categories/' },
-    { text: '标签', link: '/tags/' },
-    { text: '归档', link: '/archives/' },
-  ]
-  ,
-  text: '其他',
-  items: [
-    { text: '关于', link: '/pages/9013e4/' }
+    {
+      text: '索引',
+      items: [
+        { text: '分类', link: '/categories/' },
+        { text: '标签', link: '/tags/' },
+        { text: '归档', link: '/archives/' },
+      ]}
+      ,{
+      text: '其他',
+      items: [
+        { text: '关于', link: '/pages/9013e4/' }
+      ]
+    }
   ]
 }
-
 ]
