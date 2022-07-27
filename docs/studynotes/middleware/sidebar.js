@@ -44,6 +44,7 @@ module.exports = [
     children:[
       '/studynotes/middleware/Nginx/Nginx_introduce',
       '/studynotes/middleware/Nginx/Nginx_install',
+      '/studynotes/middleware/Nginx/Nginx_Base_Use',
     ]
   }
  

@@ -1,3 +1,12 @@
+---
+title: Nginx 基本使用
+date: 2022-07-27 21:45:47
+permalink: /middleware/Nginx/Nginx_Base_Use
+categories:
+  - Nginx
+tags:
+  - Nginx
+---
 # Nginx 基本使用
 
 [[toc]]
