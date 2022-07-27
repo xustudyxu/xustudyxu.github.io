@@ -43,7 +43,7 @@ module.exports = [
     collapsable: false,
     children:[
       '/studynotes/middleware/Nginx/Nginx_introduce',
-
+      '/studynotes/middleware/Nginx/Nginx_install',
     ]
   }
  
