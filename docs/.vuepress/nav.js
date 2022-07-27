@@ -129,13 +129,11 @@ module.exports = [{
     { text: '标签', link: '/tags/' },
     { text: '归档', link: '/archives/' },
   ]
-},
-{
+  ,
   text: '其他',
   items: [
     { text: '关于', link: '/pages/9013e4/' }
-
   ]
-
 }
+
 ]
