@@ -1,5 +1,5 @@
 module.exports = [{
-  text: '导航栏', link: '/pages/f6054a/'
+  text: '导航🚀​', link: '/pages/f6054a/'
 
 }
   ,

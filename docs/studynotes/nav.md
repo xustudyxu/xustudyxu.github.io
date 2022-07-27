@@ -603,7 +603,7 @@ export default {
         },
         {
           cardSrc: "https://www.angularjs.net.cn/",
-          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.22thyx8y7fc0.webp",
+          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.4vqx3izkscg0.webp",
           cardName: "AngularJS",
           cardContent:
             "AngularJS是一款优秀的前端JS框架",
@@ -947,5 +947,3 @@ export default {
   },
 }
 </script>>
-
-
