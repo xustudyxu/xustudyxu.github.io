@@ -45,6 +45,7 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_introduce',
       '/studynotes/middleware/Nginx/Nginx_install',
       '/studynotes/middleware/Nginx/Nginx_Base_Use',
+      '/studynotes/middleware/Nginx/Nginx_Configuration_file',
     ]
   }
  
