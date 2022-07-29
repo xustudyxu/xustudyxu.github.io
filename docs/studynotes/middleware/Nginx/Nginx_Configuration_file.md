@@ -537,3 +537,4 @@ server {
 - location = /50x.html 就是 `http://server_name:listen/50x.html`，它会自动访问 `http://server_name:listen/html/50x.html`
 - root 代表资源目录指令
 - index 代表默认访问网页指令
+
