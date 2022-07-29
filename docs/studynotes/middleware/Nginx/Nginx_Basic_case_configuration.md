@@ -258,7 +258,7 @@ server{
 
 :::
 
-::: 无注解版
+::: tab 无注解版
 
 ```nginx
 server{
