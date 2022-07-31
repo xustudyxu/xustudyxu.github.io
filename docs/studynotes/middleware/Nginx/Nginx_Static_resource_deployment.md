@@ -1091,7 +1091,7 @@ add_header Cache-control s-maxage=<seconds>; # 秒
 - 设置 private 和正数的 max-age 时，后退时候不会访问服务器
 - 设置 no-cache 和正数的 max-age 时，后退时会访问服务器
 
-### Ngixn服务端缓存
+### Nginx服务端缓存
 
 在 Web 缓存的种类，我们提到了 Ngixn 服务端缓存，而上面仅仅介绍了在浏览器进行缓存，而因为 Ngixn 服务端缓存的内容比较多，所以前往 [Nginx - 缓存集成]() 进行学习。
 
