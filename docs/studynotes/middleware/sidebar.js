@@ -48,6 +48,7 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_Configuration_file',
       '/studynotes/middleware/Nginx/Nginx_Basic_case_configuration',
       '/studynotes/middleware/Nginx/Nginx_Static_resource_deployment',
+      '/studynotes/middleware/Nginx/NginxStatic_resource_access',
     ]
   }
  

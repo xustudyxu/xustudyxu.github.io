@@ -1,3 +1,12 @@
+---
+title: Nginx 静态资源访问
+date: 2022-08-01 19:15:28
+permalink: /middleware/Nginx/NginxStatic_resource_access
+categories:
+  - Nginx
+tags:
+  - Nginx
+---
 # Nginx 静态资源访问
 
 ::: 引言
