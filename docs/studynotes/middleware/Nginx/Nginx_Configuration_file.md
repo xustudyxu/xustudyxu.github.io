@@ -510,7 +510,7 @@ tail -f /usr/local/nginx/logs/my.log
 
 ## server块和location块
 
-server 块和 location 块都是我们要重点学习的内容，因为我们后面会对 Nginx 的功能进行详细讲解，所以该内容在静态资源部署和静态资源访问进行详细说明。
+server 块和 location 块都是我们要重点学习的内容，因为我们后面会对 Nginx 的功能进行详细讲解，所以该内容在[静态资源部署](/middleware/Nginx/Nginx_Static_resource_deployment/)和[静态资源访问](/middleware/Nginx/NginxStatic_resource_access/)进行详细说明。
 
 本次我们这是认识下 Nginx 默认给的 nginx.conf 中的相关内容，以及 server 块与 location 块在使用的时候需要注意的一些内容。
 
