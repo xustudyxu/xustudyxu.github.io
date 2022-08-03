@@ -50,6 +50,7 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_Static_resource_deployment',
       '/studynotes/middleware/Nginx/NginxStatic_resource_access',
       '/studynotes/middleware/Nginx/Nginx_Reverse_proxy',
+      '/studynotes/middleware/Nginx/Nginx_load_balancing',
     ]
   }
  
