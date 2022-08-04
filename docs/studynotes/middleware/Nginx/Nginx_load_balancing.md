@@ -385,3 +385,413 @@ server {
 }
 ```
 
+### 七层负载均衡策略
+
+介绍完 Nginx 负载均衡的相关指令后，我们已经能实现将用户的请求分发到不同的服务器上，那么除了采用默认的分配方式以外，我们还能采用什么样的负载算法？
+
+Nginx 的 upstream 支持如下六种方式的分配算法，分别是:
+
+| 算法名称   | 说明              |
+| ---------- | ----------------- |
+| 轮询       | 默认方式          |
+| weight     | 权重方式          |
+| ip_hash    | 依据 IP 分配方式  |
+| least_conn | 依据最少连接方式  |
+| url_hash   | 依据 URL 分配方式 |
+| fair       | 依据响应时间方式  |
+
+#### 轮询
+
+这是 `upstream` 模块负载均衡默认的策略。每个请求会按时间顺序逐个分配到不同的后端服务器。轮询不需要额外的配置。
+
+```nginx
+upstream backend{
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+#### weight加权[加权轮询]
+
+`weight` 指令用来设置服务器的权重，默认为 1，权重数据越大，被分配到请求的几率越大；该权重值，主要是针对实际工作环境中不同的后端服务器硬件配置进行调整的，所有此策略比较适合服务器的硬件配置差别比较大的情况。
+
+| 语法             | 默认值 | 位置     |
+| ---------------- | ------ | -------- |
+| weight=\<number> | 1      | upstream |
+
+- number 是大于 0 的数字
+
+```nginx {2-4}
+upstream backend{
+	server 192.168.200.146:9001 weight=10;
+	server 192.168.200.146:9002 weight=5;
+	server 192.168.200.146:9003 weight=3;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+#### ip_hash
+
+当对后端的多台动态应用服务器做负载均衡时，`ip_hash` 指令能够将某个客户端 IP 的请求通过哈希算法定位到同一台后端服务器上。
+
+这样，当来自某一个 IP 的用户在后端 Web 服务器 A 上登录后，在访问该站点的其他 URL，能保证其访问的还是后端 Web 服务器 A
+
+总结：哪个服务器曾经处理过请求，无论在哪里，相同的请求依然让该服务器处理
+
+| 语法     | 默认值 | 位置     |
+| -------- | ------ | -------- |
+| ip_hash; | —      | upstream |
+
+```nginx {2}
+upstream backend{
+	ip_hash;
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+需要额外多说一点的是使用 ip_hash 指令无法保证后端服务器的负载均衡，可能导致有些后端服务器接收到的请求多，有些后端服务器接收的请求少，而且设置后端服务器权重等方法将不起作用。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.7a0ysgphfxg0.webp)
+
+#### least_conn
+
+最少连接数，把请求转发给连接数较少的后端服务器。
+
+轮询算法是把请求平均的转发给各个后端，使它们的负载大致相同；但是，有些请求占用的时间很长，会导致其所在的后端负载较高。这种情况下，`least_conn` 这种方式就可以达到更好的负载均衡效果。
+
+```nginx {2}
+upstream backend{
+	least_conn;
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+此负载均衡策略适合请求处理时间长短不一造成服务器过载的情况。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.5vug3q9whrc0.webp)
+
+#### url_hash
+
+按访问 URL 的 hash 结果来分配请求，使每个 URL 定向到同一个后端服务器，要配合缓存命中来使用。
+
+当出现同一个资源多次请求，可能会到达不同的服务器上，导致不必要的多次下载，缓存命中率不高，以及一些资源时间的浪费时，使用 `url_hash`，可以使得同一个 URL（也就是同一个资源请求）会到达同一台服务器，一旦缓存住了资源，再此收到请求，就可以从缓存中读取。
+
+总结：发送相同的请求时，希望只有一个服务器处理该请求，使用 `uri_hash`。因为 URL 相同，则哈希值(hash)相同，那么哈希值对应的服务器也相同。
+
+```nginx {2}
+upstream backend{
+	hash &request_uri;
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+如图：文件系统有一个文件，目前只有 web 服务 1 和服务 3 获取了该文件，那么我们想要下载这个文件时，只能找服务 1 或服务 3，这时候就固定一个 URL，该 URL 不允许服务 2 进行处理，那么如何规定哪个服务处理呢？就用到 `url_hash`。
+
+它会根据 URL 计算处哈希值，由哈希值对应服务，所以固定下载文件的 URL，就固定了一个服务处理。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.utb83x535xc.webp)
+
+#### fair
+
+`fair` 指令采用的不是内建负载均衡使用的轮换的均衡算法，而是可以根据页面大小、加载时间长短智能的进行负载均衡。
+
+那么如何使用第三方模块的 fair 负载均衡策略？
+
+```nginx
+nupstream backend{
+	fair;
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+但是这样直接使用会报错，因为 fair 属于第三方模块实现的负载均衡。需要添加 `nginx-upstream-fair` 模块，如何添加对应的模块：
+
+1. 下载 `nginx-upstream-fair` 模块，下载地址如下：
+
+```sh
+https://github.com/gnosek/nginx-upstream-fair
+```
+
+2. 将下载的文件上传到服务器并进行解压缩
+
+```sh
+# 进入安装包目录
+cd /opt
+
+# 解压
+unzip nginx-upstream-fair-master.zip
+```
+
+3. 我的解压目录在 `/opt`，所以第 6 步记得指定好模块的路径。
+
+```sh
+mv nginx-upstream-fair-master fair
+```
+
+4. 将原有 `/usr/local/nginx/sbin/nginx` 进行备份
+
+```sh
+mv /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.backup
+```
+
+5. 查看 `configure arguments` 的配置信息，拷贝出来
+
+```sh
+nginx -V
+
+# 拷贝 configure arguments 后面的数据
+```
+
+6. 进入 Nginx 的安装目录，执行 make clean 清空之前编译的内容
+
+```sh
+cd /root/nginx/core/nginx-1.21.6
+
+make clean
+```
+
+7. 使用 configure 来配置参数，添加模块，记得加上第（4）步拷贝的配置信息
+
+```sh
+./configure --add-module=/opt/fair  # 记得添加 configure arguments 后的数据
+```
+
+8. 通过 make 模板进行编译
+
+```sh
+make
+```
+
+编译可能会出现如下错误，`ngx_http_upstream_srv_conf_t` 结构中缺少 `default_port`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.vj3xrayy84g.webp)
+
+解决方案：
+
+在 Nginx 的源码目录（安装包目录）中 `src/http/ngx_http_upstream.h`，找到 `ngx_http_upstream_srv_conf_s`，在模块中添加添加 `default_port` 属性
+
+```sh
+vim /opt/nginx/core/nginx-1.21.6/src/http/ngx_http_upstream.h
+```
+
+添加内容：
+
+```sh
+in_port_t	   default_port
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.1mcquncem2u8.webp)
+
+然后再进行 make。
+
+9. 将安装目录下的 objs 中的 nginx 拷贝到 sbin 目录
+
+```sh
+cd /opt/nginx/core/nginx-1.21.6/objs
+cp nginx /usr/local/nginx/sbin
+```
+
+10 .更新nginx
+
+```sh
+cd /opt/nginx/core/nginx-1.21.6
+make upgrade
+```
+
+上面介绍了 Nginx 常用的负载均衡的策略，有人说是 5 种，是把轮询和加权轮询归为一种，也有人说是 6 种。那么在咱们以后的开发中到底使用哪种，这个需要根据实际项目的应用场景来决定的。
+
+### 七层负载均衡案例
+
+#### 案例一：对所有请求实现一般轮询规则的负载均衡
+
+```nginx
+upstream backend{
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location / {
+		proxy_pass http://backend;
+	}
+}
+```
+
+#### 案例二：对所有请求实现加权轮询规则的负载均衡
+
+```nginx
+upstream backend{
+	server 192.168.200.146:9001 weight=7;
+	server 192.168.200.146:9002 weight=3;
+	server 192.168.200.146:9003 weight=5;
+}
+server {
+	listen 8083;
+	server_name localhost;
+	location /{
+		proxy_pass http://backend;
+	}
+}
+```
+
+处理请求概率：9001 端口 > 9003 端口 > 9002 端口
+
+#### 案例三：对特定资源实现负载均衡
+
+```nginx
+upstream videobackend{
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+}
+upstream filebackend{
+	server 192.168.200.146:9003;
+	server 192.168.200.146:9004;
+}
+server {
+	listen 8084;
+	server_name localhost;
+	location /video/ {
+		proxy_pass http://videobackend;
+	}
+	location /file/ {
+		proxy_pass http://filebackend;
+	}
+}
+```
+
+发送 `/video/` 请求会被 9001 和 9002 端口的服务器处理。
+
+发送 `/file/` 请求会被 9003 和 9004 端口的服务器处理。
+
+#### 案例四：对不同域名实现负载均衡
+
+```nginx
+upstream frxbackend{
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+}
+upstream bingbackend{
+	server 192.168.200.146:9003;
+	server 192.168.200.146:9004;
+}
+server {
+	listen	8085;
+	server_name www.frx.com;
+	location / {
+		proxy_pass http://frxbackend;
+	}
+}
+server {
+	listen	8086;
+	server_name www.bing.com;
+	location / {
+		proxy_pass http://bingbackend;
+	}
+}
+```
+
+`www.frx.com` 地址的请求由 9001 端口和 9002 端口处理。
+
+`www.bing.com` 地址的请求由 9003 端口和 9004 端口处理。
+
+#### 案例五：实现带有URL重写的负载均衡
+
+```nginx
+upstream backend{
+	server 192.168.200.146:9001;
+	server 192.168.200.146:9002;
+	server 192.168.200.146:9003;
+}
+server {
+	listen	80;
+	server_name localhost;
+	location /file/ {
+		rewrite ^(/file/.*) /server/$1 last;
+	}
+	location /server {
+		proxy_pass http://backend;
+	}
+}
+```
+
+将 `/file/xxx` 请求重写为 `/server/xxx`，然后触发 `location /server`，实现负载均衡。
+
+此时被负载均衡的服务器地址也会带有 `/server` 以及后面的参数，如 `192.168.200.146:9001/server/xxx`
+
+## 四层负载均衡
+
+Nginx 在 1.9 之后，增加了一个 stream 模块，用来实现四层协议的转发、代理、负载均衡等。stream 模块的用法跟 http 的用法类似，允许我们配置一组 TCP 或者 UDP 等协议的监听，然后通过 proxy_pass 来转发我们的请求，通过 upstream 添加多个后端服务，实现负载均衡。
+
+四层协议负载均衡的实现，一般都会用到 LVS、HAProxy、F5 等，要么很贵要么配置很麻烦，而 Nginx 的配置相对来说更简单，更能快速完成工作。
+
+### 添加stream模块的支持
+
+Nginx 默认是没有编译这个模块的，需要使用到 stream 模块，那么需要在编译的时候加上 `--with-stream`。
+
+完成添加 `--with-stream` 的实现步骤：
+
+- 将原有 `/usr/local/nginx/sbin/nginx` 进行备份
+- 拷贝 `Nginx -V` 的 configure arguments 配置信息
+- 在 Nginx 的安装源码进行配置指定对应模块：`./configure --with-stream 加上一步拷贝的configure arguments 配置`
+- 通过 make 模板进行编译
+- 将 objs 下面的 nginx 移动到 `/usr/local/nginx/sbin` 下
+- 在源码目录下执行 `make upgrade` 进行升级，这个可以实现不停机添加新模块的功能
+
+添加模块的详细步骤我已经在 [七层负载均衡策略-fail 指令]()、[静态资源部署-Nginx 模块添加](/middleware/Nginx/Nginx_Static_resource_deployment/#nginx模块添加)、[反向代理-添加ssl支持](/middleware/Nginx/Nginx_Reverse_proxy/#添加ssl支持) 描述过，而你只需要替换模块名字罢了。
+
+### 四层负载均衡指令
+
+如果不想在 http 模块使用负载均衡，可以在 steam 模块使用。
+
