@@ -795,3 +795,167 @@ Nginx 默认是没有编译这个模块的，需要使用到 stream 模块，那
 
 如果不想在 http 模块使用负载均衡，可以在 steam 模块使用。
 
+#### stream指令
+
+该指令提供在其中指定流服务器指令的配置文件上下文。和 http 模块同级。
+
+| 语法           | 默认值 | 位置 |
+| -------------- | ------ | ---- |
+| stream { ... } | —      | main |
+
+如：
+
+```nginx
+http {
+    server {
+        listen 80;
+        # ......
+    }
+}
+stream {
+    upstream backend{
+        server 192.168.200.146:6379;
+        server 192.168.200.146:6378;
+    }
+    server {
+        listen 81;
+        proxy_pass backend;
+    }
+}
+```
+
+#### upstream指令
+
+该指令和七层负载均衡的 upstream 指令是类似的。
+
+### 四层负载均衡的案例
+
+准备两台服务器，这里称为 A 和 B。服务器 A 的 IP 为 `192.168.200.146`，服务器 B 的IP 为 `192.168.200.133`，服务器 A 存放 Redis 和 Tomcat，服务器 B 作为负载均衡器，对服务器 A 的端口进行负载均衡处理。
+
+#### 需求分析
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.6yak0csdt880.webp)
+
+#### Redis 配置
+
+准备 Redis 服务器,在服务器 A 上准备两个 Redis，端口分别是 6379、6378。
+
+1. 上传 redis 的安装包 `redis-4.0.14.tar.gz`，这里上传目录是 `/opt`
+2. 将安装包进行解压缩
+
+```sh
+tar -zxf redis-4.0.14.tar.gz
+```
+
+3. 进入redis的安装包
+
+```sh
+cd redis-4.0.14
+```
+
+4. 使用 make 和 install 进行编译和安装，这里的安装路径是 `/usr/local/redis/redis01`
+
+```sh
+make PREFIX=/usr/local/redis/redis01 install
+```
+
+5. 拷贝 redis 配置文件 `redis.conf` 到 `/usr/local/redis/redis01/bin` 目录中，因为安装后，目录并没有 redis.conf
+
+```sh
+cp /opt/redis-4.0.14/redis.conf	/usr/local/redis/redis01/bin
+```
+
+6. 修改 redis.conf 配置文件，注意：不是添加内容，是修改内容，要自己搜索 bind、port 和 daemonize 进行修改
+
+```sh
+bind 0.0.0.0   # 允许任意地址访问
+port  6379      # redis 的端口
+daemonize yes   # 后台启动 redis
+```
+
+7. 将 redis01 复制一份为 redis02
+
+```sh
+cd /usr/local/redis
+cp -r redis01 redis02
+```
+
+8. 将 redis02 文件夹中的 redis.conf 进行修改，注意：不是添加内容，是修改内容，要自己搜索 bind、port 和 daemonize 进行修改
+
+```sh
+bind 0.0.0.0   # 允许任意地址访问
+port  6378      # redis 的端口
+daemonize yes   # 后台启动 redis
+```
+
+9. 分别启动，即可获取两个 Redis 并查看
+
+```sh
+ps -ef | grep redis
+```
+
+使用 Nginx 将请求分发到不同的 Redis 服务器上。
+
+安装 Redis 并验证能启动成功后，在另一台服务器 B `192.168.200.133` 的 Nginx 配置文件添加如下内容：（确保安装了 steam 模块）
+
+```nginx
+stream {
+    upstream redisbackend{
+        server 192.168.200.146:6379;   # 服务器 B 的 6379 端口
+        server 192.168.200.146:6378;   # 服务器 B 的 6378 端口
+    }
+    server {
+        listen 81;
+        proxy_pass redisbackend;
+    }
+}
+```
+
+此时利用 redis-cli 连接测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.cbee2u83yhs.webp)
+
+服务器 B 通过负载均衡连接到了服务器 A 的 Redis，只是不知道连接的是 6378 还是 6379 端口，可以在 Redis 添加不一样的数据来测试，这里不演示了。
+
+#### Tomcat 配置
+
+准备 Tomcat 服务器 到服务器 A
+
+1. 上传 tomcat 的安装包，`apache-tomcat-8.5.56.tar.gz`
+2. 将安装包进行解压缩
+
+```sh
+tar -zxf apache-tomcat-8.5.56.tar.gz
+```
+
+3. 进入 tomcat 的 bin 目录，启动 tomcat
+
+```sh
+cd apache-tomcat-8.5.56/bin
+./startup
+```
+
+服务器 B 的配置文件 nginx.conf 配置如下：
+
+```nginx
+stream {
+    upstream redisbackend {
+        server 192.168.200.146:6379;    # 服务器 B 的 6379 端口
+        server 192.168.200.146:6378;    # 服务器 B 的 6378 端口
+    }
+    upstream tomcatbackend {
+        server 192.168.200.146:8080;   # 服务器 B 的 8080 端口
+    }
+    server {
+        listen  81;
+        proxy_pass redisbackend; # redis 的负载均衡
+    }
+    server {
+        listen	82;
+        proxy_pass tomcatbackend;  # tomcat 的负载均衡
+    }
+}
+```
+
+访问服务器 B 的地址进行测试：`192.168.200.133:82`。
+
