@@ -46,7 +46,7 @@ tags:
 
 ## 负载均衡常用处理方式
 
-先说明，我们常用的是 [四/七层负载均衡](/middleware/Nginx/Nginx_load_balancing/#四/七层负载均衡) 方式，前面两个方式可以了解。
+先说明，我们常用的是 [四/七层负载均衡](/middleware/Nginx/Nginx_load_balancing/#四-七层负载均衡) 方式，前面两个方式可以了解。
 
 ### 用户手动选择
 
