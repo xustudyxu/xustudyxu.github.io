@@ -262,7 +262,7 @@ http{
 
 :::
 
-::: tip 无注释版
+::: tab 无注释版
 
 ```nginx
 http{
