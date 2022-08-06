@@ -19,8 +19,8 @@ tags:
 
 步骤分析:
 
-- 在服务器 A 上准备 Tomcat 环境，并在 Tomcat 上部署一个 Web 项目。这步骤在 [环境准备(Tomcat)]()
-- 在服务器 B 上准备 Nginx 环境，使用 Nginx 接收请求，并把请求分发到 Tomcat 上。这步骤在 [环境准备(Nginx)]()
+- 在服务器 A 上准备 Tomcat 环境，并在 Tomcat 上部署一个 Web 项目。这步骤在 [环境准备(Tomcat)](/middleware/Nginx/Nginx_Deployment_and_cluster/#环境准备-tomcat)
+- 在服务器 B 上准备 Nginx 环境，使用 Nginx 接收请求，并把请求分发到 Tomcat 上。这步骤在 [环境准备(Nginx)](/middleware/Nginx/Nginx_Deployment_and_cluster/#环境准备-nginx)
 
 ### 环境准备(Tomcat)
 
