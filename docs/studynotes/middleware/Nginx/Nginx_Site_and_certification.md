@@ -262,10 +262,9 @@ htpasswd -v /usr/local/nginx/conf/htpasswd username   # 验证用户名和密码
 可以查看生成的文件内容
 
 ```sh
-vim /usr/local/nginx/conf/htpasswd
+[root@master conf]# cat /usr/local/nginx/conf/htpasswd
+frx:$apr1$wDXdSh0O$yR66Agylnta9zupO7cD3k.
 ```
-
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220806/image.4p7vw0rjjrc0.webp)
 
 + 浏览器访问 `192.168.91.200/download`![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220806/image.1j6bwl4jr2g0.webp)
 
