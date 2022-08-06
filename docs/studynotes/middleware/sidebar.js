@@ -53,6 +53,7 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_load_balancing',
       '/studynotes/middleware/Nginx/Nginx_Cache_integration',
       '/studynotes/middleware/Nginx/Nginx_Deployment_and_cluster',
+      '/studynotes/middleware/Nginx/Nginx_Site_and_certification',
     ]
   }
  
