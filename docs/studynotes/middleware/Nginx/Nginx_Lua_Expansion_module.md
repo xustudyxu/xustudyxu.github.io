@@ -1509,7 +1509,7 @@ location /testMysql {
         
         -- 连接redis
         local rd = redis:new()
-        ok,err = rd:connect("192.168.199.27",6379)
+        ok,err = rd:connect("192.168.91.200",6379)
         
         if not ok then
             ngx.say("failed to connect to redis:",err)
