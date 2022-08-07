@@ -1,7 +1,7 @@
 ---
 title: Nginx Lua扩展模块
 date: 2022-08-07 16:57:34
-permalink: /middleware/Nginx/Nginx_Lua_learn
+permalink: /middleware/Nginx/Nginx_Lua_Expansion_module
 categories:
   - Nginx
 tags:
