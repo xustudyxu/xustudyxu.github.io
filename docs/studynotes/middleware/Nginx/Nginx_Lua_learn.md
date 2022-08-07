@@ -934,13 +934,14 @@ arr = {"TOME","JERRY","ROWS",x="JACK","LUCY"}
 
 ```lua
 > arr = {"TOM","JERRY","ROWS",x="JACK","LUCY"}
-> for i,v in ipairs(arr) do
+> for i,v in pairs(arr) do
 >>      print(i,v)
 >> end
 1       TOM
 2       JERRY
 3       ROWS
 4       LUCY
+x       JACK
 ```
 
 这只是简单的 Lua 学习，完整、系统的学习后面我会更新。

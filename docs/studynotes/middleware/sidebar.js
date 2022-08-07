@@ -55,6 +55,7 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_Deployment_and_cluster',
       '/studynotes/middleware/Nginx/Nginx_Site_and_certification',
       '/studynotes/middleware/Nginx/Nginx_Lua_learn',
+      '/studynotes/middleware/Nginx/Nginx_Lua_Expansion_module',
     ]
   }
  
