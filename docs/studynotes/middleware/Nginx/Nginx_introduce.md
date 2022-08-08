@@ -9,6 +9,8 @@ tags:
 ---
 # Nginx 介绍
 
+[学习视频地址](https://www.bilibili.com/video/BV1ov41187bq?spm_id_from=333.337.search-card.all.click&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
 [[toc]]
 
 ## Nginx是什么

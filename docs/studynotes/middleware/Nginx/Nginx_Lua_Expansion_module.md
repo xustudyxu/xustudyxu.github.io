@@ -510,7 +510,7 @@ main post: 73
 
 语法：`ngx.exit(status)`。
 
-`status` 参数可以是 `ngx.OK`，`ngx.ERROR` 等等 [HTTP 状态常量](/middleware/Nginx/Nginx_Lua_Expansion_module#http-状态常量)
+`status` 参数可以是 `ngx.OK`，`ngx.ERROR` 等等 [HTTP 状态常量](/middleware/Nginx/Nginx_Lua_Expansion_module/#http-状态常量)
 
 ```lua
 ngx.status = ngx.HTTP_GONE
@@ -619,7 +619,7 @@ value = ngx.req.get_method
 
 ### ngx.req.set_method
 
-用 `method_id` 参数的值改写当前请求的 HTTP 请求方法。当前仅支持 [HTTP 请求方法](/middleware/Nginx/Nginx_Lua_Expansion_module#http-请求方法) 中定义的数值常量。
+用 `method_id` 参数的值改写当前请求的 HTTP 请求方法。当前仅支持 [HTTP 请求方法](/middleware/Nginx/Nginx_Lua_Expansion_module/#http-方法常量) 中定义的数值常量。
 
 语法：`ngx.req.set_method(method_id)`。
 

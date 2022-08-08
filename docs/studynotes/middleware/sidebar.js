@@ -57,6 +57,13 @@ module.exports = [
       '/studynotes/middleware/Nginx/Nginx_Lua_learn',
       '/studynotes/middleware/Nginx/Nginx_Lua_Expansion_module',
     ]
+  },{
+    title:'服务框架-Dubbo',
+    collapsable: false,
+    children:[
+      '/studynotes/middleware/Dubbo/Dubbo_summary',
+      
+    ]
   }
  
   
