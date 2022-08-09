@@ -47,7 +47,12 @@ module.exports = [{
       items: [
         { text: 'Nginx🌐', link: '/pages/9551ee/' },
       ]
-    },
+    }, {
+      text: '服务框架',
+      items: [
+        { text: 'Dubbo', link: '/pages/48771f/' },
+      ]
+    }
 
   ]
 }, {
