@@ -56,7 +56,7 @@ tags:
 
 怎样为我们的正在增长中的应用程序按需扩容呢？当启动了第三个节点，我们的集群将会拥有三个节点的集群: 为了分散负载而对分片进行重新分配
 
-![image-20211116192843487](https://fastly.jsdelivr.net/gh/Kele-Bingtang/static/img/ElasticSearch/20211116192844.png)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220810/image.6m818aw0snk0.webp)
 
 通过 elasticsearch-head 插件查看集群情况
 

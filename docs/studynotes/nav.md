@@ -642,14 +642,14 @@ export default {
         },
         {
           cardSrc: "https://d3js.org/",
-          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.1rrpd5grflog.webp",
+          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.22thyx8y7fc0.webp",
           cardName: "D3",
           cardContent:
             "用动态图形显示数据的JavaScript库",
         },
         {
           cardSrc: "https://threejs.org/",
-          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.223lpnxey4qo.webp",
+          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220810/image.60r3awque2o0.webp",
           cardName: "ThreeJs",
           cardContent:
             "运行在浏览器中的3D 引擎",
@@ -762,14 +762,14 @@ export default {
         },
         {
           cardSrc: "http://apps.eky.hk/css-triangle-generator/",
-          cardImgSrc: "https://cdn.staticaly.com/gh/Kele-Bingtang/static/img/tools/20220105015906.png",
+          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.4lxex8o6z1i.webp",
           cardName: "CSS riangle",
           cardContent:
             "帮你快速用 css 做出三角形",
         },
         {
           cardSrc: "http://www.cssarrowplease.com/",
-          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220727/image.4lxex8o6z1i.webp",
+          cardImgSrc: "https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220810/image.5ee1sv9n2ig0.webp",
           cardName: "CSS Arrow",
           cardContent:
             "帮你做对话框三角的",

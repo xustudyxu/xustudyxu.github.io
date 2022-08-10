@@ -461,7 +461,7 @@ VRRP 部分可以包含以下四个子模块：
 3. garp_group
 4. vrrp_instance
 
-我们会用到第一个（[vrrp_script]()）和第四个（[vrrp_instance]()）。
+我们会用到第一个（[vrrp_script](/middleware/Nginx/Nginx_Deployment_and_cluster/#vrrp-script)）和第四个（[vrrp_instance](/middleware/Nginx/Nginx_Deployment_and_cluster/#vrrp-instance)）。
 
 ### vrrp_instance
 

@@ -63,7 +63,7 @@ module.exports = [
     children:[
       '/studynotes/middleware/Dubbo/Dubbo_summary',
       '/studynotes/middleware/Dubbo/Dubbo_Geting_start',
-      
+      '/studynotes/middleware/Dubbo/Dubbo_Advanced_features',
     ]
   }
  
