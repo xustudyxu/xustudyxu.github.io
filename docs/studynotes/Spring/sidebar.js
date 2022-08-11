@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title:'Spring5 基础',
+    title:'Spring5-基础',
     collapsable: false,
     children:[
     '/studynotes/Spring/Spring5/Spring01',
@@ -13,7 +13,7 @@ module.exports = [
 
       ]
     },{
-      title:'SpringMVC 基础',
+      title:'SpringMVC-基础',
       collapsable: false,
       children:[
       '/studynotes/Spring/SpringMVC/01',
@@ -33,7 +33,7 @@ module.exports = [
   
         ]
       },{
-        title:'SpringBoot2 基础',
+        title:'SpringBoot2-基础',
         collapsable: false,
         children:[
         '/studynotes/Spring/SpringBoot2/Spring_SpringBoot',
@@ -44,7 +44,7 @@ module.exports = [
           ]
         },
         {
-          title:'SpringBoot2 核心功能',
+          title:'SpringBoot2-核心功能',
           collapsable: false,
           children:[
           '/studynotes/Spring/SpringBoot2/yaml_',
@@ -52,5 +52,12 @@ module.exports = [
           '/studynotes/Spring/SpringBoot2/data_access',
           '/studynotes/Spring/SpringBoot2/SptingBoot_Junit5'
             ]
-          }
+          },
+          {
+            title:'SpringCloud-微服务架构',
+            collapsable: false,
+            children:[
+            '/studynotes/Spring/SpringCloud/Microservice_theory',
+              ]
+            }
 ]

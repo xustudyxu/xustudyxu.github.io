@@ -28,6 +28,7 @@ module.exports = [{
     { text: 'Spring5', link: '/pages/462a90/' },
     { text: 'SpringMVC', link: '/pages/2e990c/' },
     { text: 'SpringBoot2', link: '/pages/0d4af0/' },
+    { text: 'SpringCloud', link: '/pages/870083/' },
   ]
 }, {
   text: '中间件',
