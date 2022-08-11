@@ -13,15 +13,20 @@ tags:
 
 每天学习一点点，才能不断进步。
 
-## 关于学习
+## 关于学习编程
 
 + 学习环境
   + 我是一名在校大三学生:school:，大数据专业，但是想做Java后端开发。
   + 学校比较差一些，但是我能坚持下去学习。
     +  我要做到我认为我能做到的最好。
-+ 目标
-  + ”脱贫，脱贫，脱贫“。
-  + 让我和我的家人都过上更好的生活。努力！奋斗！
++ 目前技术栈
+  + 熟悉Linux操作系统，了解Shell,Lua脚本编写。
+  + 熟悉Maven,Git,Apifox,postman,Kibana等工具的使用。
+  + 熟悉JavaSE,Java正则表达式的编写，JDBC，Java8新特性，Servlet，过滤器以及监听器。
+  + 非关系数据库:Redis[持久化，主从复制，哨兵模式，分布式锁，缓存问题]，MongoDB[索引，整合Java]，HBase,MySQL[索引，事务，表类型和存储引擎]。熟悉MyBatis框架，MyBatis-Plus框架。
+  + Spring生态:Spring Framework,Spring MVC,Spring Boot。
+  + 中间件:ElasticSearch[Java整合，冲突问题解决，高级查询]，RabbitMQ[消息应答与发布，死信队列，延迟队列]，Nginx[反向代理，负载均衡，缓存集成]，Dubbo[多版本，负载均衡，集群容错，服务降级]。
+  + 微服务:正在学习。。。
 + **古人云：”三人行，必有我师焉”。**
   + 由于自己才疏学浅，难免会有纰漏，假如你发现了错误的地方，还望留言帮助我指出来,我会对其加以修正。
   + 感谢您的阅读。
@@ -41,7 +46,7 @@ wx:frxcat
 
 ::: tab 接下来
 
-自主开发SSM项目
+学习微服务SpringCloud
 
 :::
 
