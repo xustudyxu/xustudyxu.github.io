@@ -280,7 +280,7 @@ org.apache.dubbo.remoting.TimeoutException: Waiting server-side response timeout
 @Reference(timeout = 1) //远程注入
 ```
 
-::
+:::
 
 ### 修改UserController
 
