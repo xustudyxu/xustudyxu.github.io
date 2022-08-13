@@ -1,5 +1,5 @@
 ---
-title: SpringCloud 入门案例
+title: SpringCloud 初步构建
 date: 2022-08-11 22:31:09
 permalink: /Spring/SpringCloud/SpringCloud_Getting_start
 categories:
