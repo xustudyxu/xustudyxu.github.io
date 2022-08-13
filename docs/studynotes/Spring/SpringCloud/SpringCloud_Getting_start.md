@@ -247,24 +247,6 @@ IDEA右侧旁的Maven插件有`Toggle ' Skip Tests' Mode`按钮，这样maven可
     <artifactId>cloud-provider-payment8001</artifactId>
 
     <dependencies>
-        <!--包含了sleuth+zipkin-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
-        <!--eureka-client-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
-        <!--
-        <dependency>
-            <groupId>com.atguigu.springcloud</groupId>
-            <artifactId>cloud-api-commons</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

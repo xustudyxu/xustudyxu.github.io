@@ -306,7 +306,17 @@ public class MybatisAutoConfiguration{}
 public class MybatisProperties
 ```
 
-可以修改配置文件中 mybatis 开始的所有；#配置mybatis规则mybatis:#  config-location: classpath:mybatis/mybatis-config.xml  mapper-locations: classpath:mybatis/mapper/*.xml  configuration:    map-underscore-to-camel-case: true
+可以修改配置文件中 mybatis 开始的所有；
+
+#配置mybatis规则mybatis:
+
+config-location: classpath:mybatis/mybatis-config.xml  
+
+mapper-locations: classpath:mybatis/mapper/*.xml  
+
+configuration:    
+
+map-underscore-to-camel-case: true
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>

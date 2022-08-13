@@ -23,7 +23,7 @@ tags:
   + 熟悉Linux操作系统，了解Shell,Lua脚本编写。
   + 熟悉Maven,Git,Apifox,postman,Kibana等工具的使用。
   + 熟悉JavaSE,Java正则表达式的编写，JDBC，Java8新特性，Servlet，过滤器以及监听器。
-  + 非关系数据库:Redis[持久化，主从复制，哨兵模式，分布式锁，缓存问题]，MongoDB[索引，整合Java]，HBase,MySQL[索引，事务，表类型和存储引擎]。熟悉MyBatis框架，MyBatis-Plus框架。
+  + 非关系数据库:Redis[持久化，主从复制，哨兵模式，分布式锁，缓存问题]，MongoDB[索引，整合Java]，HBase。关系数据库:MySQL[索引，事务，表类型和存储引擎]。熟悉MyBatis框架，MyBatis-Plus框架。
   + Spring生态:Spring Framework,Spring MVC,Spring Boot。
   + 中间件:ElasticSearch[Java整合，冲突问题解决，高级查询]，RabbitMQ[消息应答与发布，死信队列，延迟队列]，Nginx[反向代理，负载均衡，缓存集成]，Dubbo[多版本，负载均衡，集群容错，服务降级]。
   + 微服务:正在学习。。。

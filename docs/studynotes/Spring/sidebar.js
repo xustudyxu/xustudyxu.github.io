@@ -59,6 +59,7 @@ module.exports = [
     children: [
       '/studynotes/Spring/SpringCloud/Microservice_theory',
       '/studynotes/Spring/SpringCloud/SpringCloud_Getting_start',
+      '/studynotes/Spring/SpringCloud/Eureka_',
     ]
   }
 ]
