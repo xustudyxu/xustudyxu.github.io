@@ -307,7 +307,7 @@ public class OrderMain80
 
 ## Eureka集群环境构建
 
-创建cloud-eureka-server7002工程，过程参考[EurekaServer服务端安装]()
+创建cloud-eureka-server7002工程，过程参考[EurekaServer服务端安装](/Spring/SpringCloud/Eureka_/#eurekaserver服务端安装)
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220814/image.6yctjdoyzgc0.webp)
 

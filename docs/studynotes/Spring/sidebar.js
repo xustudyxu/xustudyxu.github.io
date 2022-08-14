@@ -60,6 +60,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/Microservice_theory',
       '/studynotes/Spring/SpringCloud/SpringCloud_Getting_start',
       '/studynotes/Spring/SpringCloud/Eureka_',
+      '/studynotes/Spring/SpringCloud/ZooKeeper_',
     ]
   }
 ]
