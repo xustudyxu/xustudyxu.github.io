@@ -21,7 +21,7 @@ tags:
     +  我要做到我认为我能做到的最好。
 + 目前技术栈
   + 熟悉Linux操作系统，了解Shell,Lua脚本编写。
-  + 熟悉Maven,Git,Apifox,postman,Kibana等工具的使用。
+  + 熟悉Maven,Git,Apifox,postman,Kibana,Lombok,Junit等工具的使用。
   + 熟悉JavaSE,Java正则表达式的编写，JDBC，Java8新特性，Servlet，过滤器以及监听器。
   + 非关系数据库:Redis[持久化，主从复制，哨兵模式，分布式锁，缓存问题]，MongoDB[索引，整合Java]，HBase。关系数据库:MySQL[索引，事务，表类型和存储引擎]。熟悉MyBatis框架，MyBatis-Plus框架。
   + Spring生态:Spring Framework,Spring MVC,Spring Boot。
