@@ -1,5 +1,5 @@
 ---
-title: ZooKeeper 服务注册中心
+title: ZooKeeper 服务注册与发现
 date: 2022-08-14 22:16:34
 permalink: /Spring/SpringCloud/ZooKeeper_
 categories:
