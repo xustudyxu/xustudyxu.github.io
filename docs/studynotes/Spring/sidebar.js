@@ -17,7 +17,7 @@ module.exports = [
     collapsable: false,
     children: [
       '/studynotes/Spring/SpringMVC/01',
-      '/studynotes/Spring/SpringMVC/RequestMapping_',
+      '/studynotes/Spring/SpringMVC/@RequestMapping_',
       '/studynotes/Spring/SpringMVC/Get_request_parameters',
       '/studynotes/Spring/SpringMVC/Domain_objects_share_data',
       '/studynotes/Spring/SpringMVC/SpringMVC_View',
