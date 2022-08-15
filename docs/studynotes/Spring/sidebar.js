@@ -62,6 +62,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/Eureka_',
       '/studynotes/Spring/SpringCloud/ZooKeeper_',
       '/studynotes/Spring/SpringCloud/Consul_',
+      '/studynotes/Spring/SpringCloud/Ribbon_',
     ]
   }
 ]

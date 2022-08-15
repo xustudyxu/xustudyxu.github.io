@@ -9,6 +9,8 @@ tags:
 ---
 # 微服务架构理论入门
 
+[学习视频地址](https://www.bilibili.com/video/BV18E411x7eT?p=1&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
 [[toc]]
 
 ## 什么是微服务
