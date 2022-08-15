@@ -1,5 +1,5 @@
 ---
-title: @RequestMapping注解
+title: RequestMapping注解
 date: 2022-01-16 19:09:40
 permalink: /pages/b0f942/
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - SpringMVC
 ---
-# @RequestMapping注解
+# RequestMapping注解
 
 [[toc]]
 
