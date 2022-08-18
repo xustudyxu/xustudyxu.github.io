@@ -1,5 +1,5 @@
 ---
-title: Hystrix 服务降级|熔断|限流|实时监控
+title: Hystrix 服务降级|熔断|限流
 date: 2022-08-17 23:26:57
 permalink: /Spring/SpringCloud/Hystrix_
 categories:
