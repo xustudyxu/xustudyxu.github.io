@@ -247,7 +247,7 @@ success的方法 - [http://localhost:8001/payment/hystrix/ok/1](http://localhost
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220818/image.3fzl480bxq20.webp)
 
-每次调用耗费5秒钟 - [http://localhost:8001/payment/hystrix/timeout/1](http://localhost:8001/payment/hystrix/timeout/1)
+每次调用耗费3秒钟 - [http://localhost:8001/payment/hystrix/timeout/1](http://localhost:8001/payment/hystrix/timeout/1)
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220818/image.11b5wbupqofk.webp)
 
