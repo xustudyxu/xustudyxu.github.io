@@ -469,7 +469,7 @@ public class OrderHystrixController {
 
 —旦调用服务方法失败并抛出了错误信息后，会自动调用@HystrixCommand标注好的fallbackMethod调用类中的指定方法
 
-```java {13-14,27,29}
+```java {12-14,27-29}
 @Service
 public class PaymentService {
 
