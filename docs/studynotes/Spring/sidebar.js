@@ -66,6 +66,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/OpenFeign_',
       '/studynotes/Spring/SpringCloud/Hystrix_',
       '/studynotes/Spring/SpringCloud/GateWay_',
+      '/studynotes/Spring/SpringCloud/Config_And_BUS',
     ]
   }
 ]
