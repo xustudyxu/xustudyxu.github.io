@@ -31,7 +31,7 @@ zookeeper是一个分布式协调工具，可以实现注册中心功能
 
 zookeeper服务器取代Eureka服务器，zk作为服务注册中心
 
-+ [CentOS安装ZooKeeper步骤](/Dubbo/Dubbo_Geting_start/#zookeeper安装)
++ [CentOS安装ZooKeeper步骤](/middleware/Dubbo/Dubbo_Geting_start/#zookeeper安装)
 
 ```sh
 [root@master ~]# cd /opt/zookeeper/apache-zookeeper-3.5.6-bin/bin/

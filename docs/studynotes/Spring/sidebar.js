@@ -67,6 +67,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/Hystrix_',
       '/studynotes/Spring/SpringCloud/GateWay_',
       '/studynotes/Spring/SpringCloud/Config_And_BUS',
+      '/studynotes/Spring/SpringCloud/Stream_',
     ]
   }
 ]
