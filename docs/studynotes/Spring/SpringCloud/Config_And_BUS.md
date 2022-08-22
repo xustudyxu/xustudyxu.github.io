@@ -904,7 +904,7 @@ management:
 
 - [http://localhost:3366/configlnfo](http://localhost:3366/configlnfo)
 
-![1661102449228](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1661102449228.png)
+![1661102449228](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220822/1661102449228.190io4tjo7y.webp)
 
 通知总结
 
