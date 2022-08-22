@@ -68,6 +68,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/GateWay_',
       '/studynotes/Spring/SpringCloud/Config_And_BUS',
       '/studynotes/Spring/SpringCloud/Stream_',
+      '/studynotes/Spring/SpringCloud/Sleuth_',
     ]
   }
 ]
