@@ -69,6 +69,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/Config_And_BUS',
       '/studynotes/Spring/SpringCloud/Stream_',
       '/studynotes/Spring/SpringCloud/Sleuth_',
+      '/studynotes/Spring/SpringCloud/SpringCloud_Alibaba_introduction',
     ]
   }
 ]
