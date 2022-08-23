@@ -98,7 +98,7 @@ POM
 
 YML
 
-```yaml {6,11}
+```yaml {6-11}
 
 spring:
   application:
