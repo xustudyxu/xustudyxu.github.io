@@ -76,6 +76,7 @@ module.exports = [
     collapsable: false,
     children: [
       '/studynotes/Spring/SpringCloud/SpringCloud_Alibaba_introduction',
+      '/studynotes/Spring/SpringCloud/Nacos_',
     ]
   }
 ]
