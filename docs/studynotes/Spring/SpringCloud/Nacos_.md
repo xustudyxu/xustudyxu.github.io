@@ -195,7 +195,7 @@ public class PaymentController {
 
 - nacos控制台
 
-![1661334507137](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1661334507137.png)
+![1661334507137](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661334507137.5qur0ovy3600.webp)
 
 - nacos服务注册中心+服务提供者9001都OK了
 
