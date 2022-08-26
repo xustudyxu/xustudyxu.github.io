@@ -19,7 +19,7 @@ tags:
   bgColor: '#CBEAFA'
 - name:  Young Kbt blog
   desc: 朝圣的使徒，正在走向编程的至高殿堂！
-  avatar: https://cdn.staticaly.com/gh/Kele-Bingtang/static/user/avatar2.png
+  avatar: https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/user/avatar2.png
   link: https://notes.youngkbt.cn/
   bgColor: '#CBEAFA'
 - name:  Java 全栈知识体系

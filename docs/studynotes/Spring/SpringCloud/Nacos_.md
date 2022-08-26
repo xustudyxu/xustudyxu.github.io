@@ -1063,9 +1063,8 @@ root       2824   1977  0 21:47 pts/0    00:00:00 grep --color=auto nginx
 ```
 
 - 测试通过nginx，访问nacos - [http://192.168.91.200:1111/nacos/#/login](http://192.168.91.200:1111/nacos/#/login)
-- 新建一个配置测试
 
-![1661484342465](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1661484342465.png)
+![1661484342465](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661484342465.2x6n9yc3nvg0.webp)
 
 + 新建一个配置测试
 
@@ -1110,7 +1109,7 @@ management:
 - 启动微服务cloudalibaba-provider-payment9002
 - 访问nacos，查看注册结果
 
-![1661485514866](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1661485514866.png)
+![1661485514866](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661485514866.5gpg606b9d80.webp)
 
 + 注册成功
 
