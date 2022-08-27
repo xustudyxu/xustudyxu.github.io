@@ -862,10 +862,10 @@ org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAuto
             return EMPTY_ENTRY;
         } else {
             AnnotationAttributes attributes = this.getAttributes(annotationMetadata);
-            List<String> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);
-            configurations = this.removeDuplicates(configurations);
+            List<String> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);//获取所有候选的配置
+            configurations = this.removeDuplicates(configurations);//先移除一些重复的
             Set<String> exclusions = this.getExclusions(annotationMetadata, attributes);
-            this.checkExcludedClasses(configurations, exclusions);
+            this.checkExcludedClasses(configurations, exclusions);//排除一些东西
             configurations.removeAll(exclusions);
             configurations = this.getConfigurationClassFilter().filter(configurations);
             this.fireAutoConfigurationImportEvents(configurations, exclusions);
@@ -896,7 +896,7 @@ org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAuto
             return result;
         } else {
             try {
-                Enumeration<URL> urls = classLoader != null ? classLoader.getResources("META-INF/spring.factories") : ClassLoader.getSystemResources("META-INF/spring.factories");
+                Enumeration<URL> urls = classLoader != null ? classLoader.getResources("META-INF/spring.factories") : ClassLoader.getSystemResources("META-INF/spring.factories");//获取资源文件
                 LinkedMultiValueMap result = new LinkedMultiValueMap();
 
                 while(urls.hasMoreElements()) {
@@ -936,10 +936,120 @@ org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAuto
 1. 虽然我们127个场景自动配置启动的时候默认全部加载。
 2. 按照条件装配规则(@Conditional)，最终会按需配置。
 
+> 比如：导入相关的包，相关的包中有类，`@ConditionalOnClass`只有这些类，这些自动配置类才能生效
+
+```java
+package org.springframework.boot.autoconfigure.aop;
+
+import org.aspectj.weaver.Advice;//爆红，没有代入相关的包
+
+import org.springframework.aop.config.AopConfigUtils;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnProperty(prefix = "spring.aop", name = "auto", havingValue = "true", matchIfMissing = true)//如果是true开启，没有配置，默认配置也是true，开启,生效
+public class AopAutoConfiguration {
+
+	@Configuration(proxyBeanMethods = false)
+	@ConditionalOnClass(Advice.class)//有这个类才生效 爆红 ,所以下面这个静态类不生效
+	static class AspectJAutoProxyingConfiguration {
+
+		@Configuration(proxyBeanMethods = false)
+		@EnableAspectJAutoProxy(proxyTargetClass = false)
+		@ConditionalOnProperty(prefix = "spring.aop", name = "proxy-target-class", havingValue = "false",
+				matchIfMissing = false)
+		static class JdkDynamicAutoProxyConfiguration {
+
+		}
+
+		@Configuration(proxyBeanMethods = false)
+		@EnableAspectJAutoProxy(proxyTargetClass = true)
+		@ConditionalOnProperty(prefix = "spring.aop", name = "proxy-target-class", havingValue = "true",
+				matchIfMissing = true)
+		static class CglibAutoProxyConfiguration {
+
+		}
+
+	}
+	//生效
+	@Configuration(proxyBeanMethods = false)
+	@ConditionalOnMissingClass("org.aspectj.weaver.Advice")//没有这个类的时候，生效
+	@ConditionalOnProperty(prefix = "spring.aop", name = "proxy-target-class", havingValue = "true",
+			matchIfMissing = true)//默认开启
+	static class ClassProxyingConfiguration {
+		//有接口，又实现类 ，就能开启AOP，默认jdk动态代理
+		ClassProxyingConfiguration(BeanFactory beanFactory) {
+			if (beanFactory instanceof BeanDefinitionRegistry) {
+				BeanDefinitionRegistry registry = (BeanDefinitionRegistry) beanFactory;
+				AopConfigUtils.registerAutoProxyCreatorIfNecessary(registry);
+				AopConfigUtils.forceAutoProxyCreatorToUseClassProxying(registry);
+			}
+		}
+
+	}
+
+}
+```
+
+### 分析DispatcherServletAutoConfiguration
+
+```java
+@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)//优先配置
+@Configuration(proxyBeanMethods = false)//配置类
+@ConditionalOnWebApplication(type = Type.SERVLET)//判断是否是servlet应用，是否SERVLET类型
+@ConditionalOnClass(DispatcherServlet.class)//有这个类才生效
+@AutoConfigureAfter(ServletWebServerFactoryAutoConfiguration.class)//ServletWebServerFactoryAutoConfiguration配置完后才生效
+public class DispatcherServletAutoConfiguration {
+    
+    public static final String DEFAULT_DISPATCHER_SERVLET_BEAN_NAME = "dispatcherServlet";
+    
+    public static final String DEFAULT_DISPATCHER_SERVLET_REGISTRATION_BEAN_NAME = "dispatcherServletRegistration";
+
+    
+    @Configuration(proxyBeanMethods = false)//配置类
+	@Conditional(DefaultDispatcherServletCondition.class)//默认生效
+	@ConditionalOnClass(ServletRegistration.class)//有这个类才生效，导入web开发场景就生效了
+	@EnableConfigurationProperties(WebMvcProperties.class)//与这个类配置绑定
+	protected static class DispatcherServletConfiguration {
+
+        //注册组件
+		@Bean(name = DEFAULT_DISPATCHER_SERVLET_BEAN_NAME)//dispatcherServlet
+		public DispatcherServlet dispatcherServlet(WebMvcProperties webMvcProperties) {
+			DispatcherServlet dispatcherServlet = new DispatcherServlet();
+			dispatcherServlet.setDispatchOptionsRequest(webMvcProperties.isDispatchOptionsRequest());
+			dispatcherServlet.setDispatchTraceRequest(webMvcProperties.isDispatchTraceRequest());
+			dispatcherServlet.setThrowExceptionIfNoHandlerFound(webMvcProperties.isThrowExceptionIfNoHandlerFound());
+			dispatcherServlet.setPublishEvents(webMvcProperties.isPublishRequestHandledEvents());
+			dispatcherServlet.setEnableLoggingRequestDetails(webMvcProperties.isLogRequestDetails());
+			return dispatcherServlet;
+		}
+        //默认配文件上传解析器
+        @Bean
+		@ConditionalOnBean(MultipartResolver.class)
+		@ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
+		public MultipartResolver multipartResolver(MultipartResolver resolver) {
+			// Detect if the user has created a MultipartResolver but named it incorrectly
+			return resolver;
+		}
+
+}
+```
+
+```java
+@ConfigurationProperties(prefix = "spring.mvc")//与配置文件spring.mvc进行绑定 
+public class WebMvcProperties {}//配置属性被这个类封装
+```
+
 ### 修改默认配置
 
 ```java
- 		@Bean
+///给容器中加入了文件上传解析器；		
+		@Bean
 		@ConditionalOnBean(MultipartResolver.class)  //容器中有这个类型组件
 		@ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) //容器中没有这个名字 multipartResolver 的组件
 		public MultipartResolver multipartResolver(MultipartResolver resolver) {
@@ -948,7 +1058,7 @@ org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAuto
 			// Detect if the user has created a MultipartResolver but named it incorrectly
 			return resolver;
 		}
-//给容器中加入了文件上传解析器；
+
 ```
 
 SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了，以用户的优先
@@ -1143,3 +1253,4 @@ public class SpringbootHelloworldApplication {
 }
 ```
 
+​	
