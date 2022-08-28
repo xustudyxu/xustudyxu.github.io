@@ -567,3 +567,336 @@ jmeter
 
 开启jmeter后，直接高并发发送请求，多次调用达到我们的配置条件了。断路器开启(保险丝跳闸)，微服务不可用了，不再报错error而是服务降级了。
 
+## Sentinel热点key(上)
+
+**基本介绍**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.48v9ncqzdz00.webp)
+
+**官网**
+
+[官方文档](https://github.com/alibaba/Sentinel/wiki/热点参数限流)
+
+> 何为热点？热点即经常访问的数据。很多时候我们希望统计某个热点数据中访问频次最高的 Top K 数据，并对其访问进行限制。比如：
+>
+> - 商品 ID 为参数，统计一段时间内最常购买的商品 ID 并进行限制
+> - 用户 ID 为参数，针对一段时间内频繁访问的用户 ID 进行限制
+>
+> 热点参数限流会统计传入参数中的热点参数，并根据配置的限流阈值与模式，对包含热点参数的资源调用进行限流。热点参数限流可以看做是一种特殊的流量控制，仅对包含热点参数的资源调用生效。
+>
+> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.jnvgtfj7xww.webp)
+>
+> Sentinel 利用 LRU 策略统计最近最常访问的热点参数，结合令牌桶算法来进行参数级别的流控。热点参数限流支持集群模式。
+>
+> [link](https://github.com/alibaba/Sentinel/wiki/热点参数限流#overview)
+
+承上启下复习start
+
+兜底方法，分为系统默认和客户自定义，两种
+
+之前的case，限流出问题后，都是用sentinel系统默认的提示: Blocked by Sentinel (flow limiting)
+
+我们能不能自定？类似hystrix，某个方法出问题了，就找对应的兜底降级方法?
+
+结论 - 从**@HystrixCommand到@SentinelResource**
+
+**代码**
+
+com.alibaba.csp.sentinel.slots.block.BlockException
+
+```java
+@RestController
+@Slf4j
+public class FlowLimitController{
+
+    ...
+   
+	@GetMapping("/testHotKey")
+    @SentinelResource(value = "testHotKey",blockHandler/*兜底方法*/ = "deal_testHotKey")
+    public String testHostKey(@RequestParam(value = "p1",required = false)String p1,
+                              @RequestParam(value = "p2",required = false)String p2){
+        return "-------------testHotKey";
+    }
+
+    @GetMapping
+    public String deal_testHotKey(String p1, String p2, BlockException exception){
+        return "-------------deal_testHotKey,o(╥﹏╥)o";//sentinel系统默认的提示：Blocked by Sentinel (flow limiting)
+    }
+}
+```
+
+**配置**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.1q4q36pkaeao.webp)
+
+一
+
+- `@SentinelResource(value = "testHotKey")`
+- 异常打到了前台用户界面看到，不友好
+
+二
+
+- `@SentinelResource(value = "testHotKey", blockHandler = "dealHandler_testHotKey")`
+- 方法testHotKey里面第一个参数只要QPS超过每秒1次，马上降级处理
+- 异常用了我们自己定义的兜底方法
+
+**测试**
+
+- error
+  - [http://localhost:8401/testHotKey?p1=abc](http://localhost:8401/testHotKey?p1=abc)
+  - [http://localhost:8401/testHotKey?p1=abc&p2=33](http://localhost:8401/testHotKey?p1=abc&p2=33)
+
++ right
+  + [http://localhost:8401/testHotKey?p2=abc](http://localhost:8401/testHotKey?p2=abc)
+
+## Sentinel热点key(下)
+
+上述案例演示了第一个参数p1，当QPS超过1秒1次点击后马上被限流。
+
+**参数例外项**
+
+- 普通 - 超过1秒钟一个后，达到阈值1后马上被限流
+- **我们期望p1参数当它是某个特殊值时，它的限流值和平时不一样**
+- 特例 - 假如当p1的值等于5时，它的阈值可以达到200
+
+**配置**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.65m5scosrpw0.webp)
+
+**测试**
+
+- right - [http://localhost:8401/testHotKey?p1=5](http://localhost:8401/testHotKey?p1=5)
+
+![QQ22918914922917714320220828143803](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143803.3ae8743igh60.gif)
+
+- error - [http://localhost:8401/testHotKey?p1=3](http://localhost:8401/testHotKey?p1=3)
+
+![QQ22918914922917714320220828143535](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143535.4sp17j0poq20.gif)
+
+- 当p1等于5的时候，阈值变为200
+- 当p1不等于5的时候，阈值就是平常的1
+
+**前提条件** - 热点参数的注意点，参数必须是基本类型或者String
+
+**其它**
+
+在方法体抛异常
+
+```java
+@RestController
+@Slf4j
+public class FlowLimitController{
+
+    ...
+   
+	@GetMapping("/testHotKey")
+    @SentinelResource(value = "testHotKey",blockHandler/*兜底方法*/ = "deal_testHotKey")
+    public String testHostKey(@RequestParam(value = "p1",required = false)String p1,
+                              @RequestParam(value = "p2",required = false)String p2){
+        int a = 10/0;
+        return "-------------testHotKey";
+    }
+
+    @GetMapping
+    public String deal_testHotKey(String p1, String p2, BlockException exception){
+        return "-------------deal_testHotKey,o(╥﹏╥)o";//sentinel系统默认的提示：Blocked by Sentinel (flow limiting)
+    }
+}
+```
+
+将会抛出Spring Boot 2的默认异常页面，而不是兜底方法。
+
++ @SentinelResource - 处理的是sentinel控制台配置的违规情况，有blockHandler方法配置的兜底处理;
+
++ RuntimeException `int age = 10/0`，这个是java运行时报出的运行时异常RunTimeException，@SentinelResource不管
+
+总结 - @SentinelResource主管配置出错，运行出错该走异常走异常
+
+## Sentinel系统规则
+
+[官方文档](https://github.com/alibaba/Sentinel/wiki/系统自适应限流)
+
+> Sentinel 系统自适应限流从**整体维度**对应用入口流量进行控制，结合应用的 Load、CPU 使用率、总体平均 RT、入口 QPS 和并发线程数等几个维度的监控指标，通过自适应的流控策略，让系统的入口流量和系统的负载达到一个平衡，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。[link](https://github.com/alibaba/Sentinel/wiki/%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E9%99%90%E6%B5%81)
+
+> **系统规则**
+>
+> 系统保护规则是从应用级别的入口流量进行控制，从单台机器的 load、CPU 使用率、平均 RT、入口 QPS 和并发线程数等几个维度监控应用指标，让系统尽可能跑在最大吞吐量的同时保证系统整体的稳定性。
+>
+> 系统保护规则是应用整体维度的，而不是资源维度的，并且**仅对入口流量生效**。入口流量指的是进入应用的流量（`EntryType.IN`），比如 Web 服务或 Dubbo 服务端接收的请求，都属于入口流量。
+>
+> 系统规则支持以下的模式:
+>
+> + Load 自适应（仅对 Linux/Unix-like 机器生效）：系统的 load1 作为启发指标，进行自适应系统保护。当系统 load1 超过设定的启发值，且系统当前的并发线程数超过估算的系统容量时才会触发系统保护（BBR 阶段）。系统容量由系统的 `maxQps * minRt` 估算得出。设定参考值一般是 `CPU cores * 2.5`。
+> + **CPU usage**（1.5.0+ 版本）：当系统 CPU 使用率超过阈值即触发系统保护（取值范围 0.0-1.0），比较灵敏。
+> + **平均 RT**：当单台机器上所有入口流量的平均 RT 达到阈值即触发系统保护，单位是毫秒。
+> + **并发线程数**：当单台机器上所有入口流量的并发线程数达到阈值即触发系统保护。
+> + **入口 QPS**：当单台机器上所有入口流量的 QPS 达到阈值即触发系统保护。
+>
+> [link](https://github.com/alibaba/Sentinel/wiki/%E7%B3%BB%E7%BB%9F%E8%87%AA%E9%80%82%E5%BA%94%E9%99%90%E6%B5%81#%E7%B3%BB%E7%BB%9F%E8%A7%84%E5%88%99)
+
+## SentinelResource配置(上)
+
+*按资源名称限流 + 后续处理*
+
+**启动Nacos成功**
+
+**启动Sentinel成功**
+
+**Module - cloudalibaba-sentinel-service8401**
+
+```java
+@RestController
+public class RateLimitController {
+
+    @GetMapping("/byResource")
+    @SentinelResource(value = "byResource",blockHandler = "handleException")
+    public CommonResult byResource(){
+        return new CommonResult(200,"按资源名称限流测试OK",new Payment(2020L,"serial001"));
+    }
+
+    public CommonResult handleException(BlockException exception){
+        return new CommonResult(444,exception.getClass().getCanonicalName()+"\t服务不可用");
+    }
+}
+```
+
+**配置流控规则**
+
+配置步骤
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.7g67qp5jzig0.webp)
+
+图形配置和代码关系
+
+表示1秒钟内查询次数大于1，就跑到我们自定义的处流，限流
+
+**测试**:[http://localhost:8401/byResource](http://localhost:8401/byResource)
+
+1秒钟点击1下，OK
+
+超过上述，疯狂点击，返回了自己定义的限流处理信息，限流发生
+
+```json
+{"code":444, "message":"com.alibaba.csp.sentinel.slots.block.flow.FlowException\t 服务不可用", "data":null}
+```
+
+**额外问题**
+
+此时关闭问服务8401 -> Sentinel控制台，流控规则消失了
+
+---
+
+*按照Url地址限流 + 后续处理*
+
+**通过访问的URL来限流，会返回Sentinel自带默认的限流处理信息**
+
+**业务类RateLimitController**
+
+```java
+@RestController
+public class RateLimitController {
+    ...
+        
+	@GetMapping("/rateLimit/byUrl")
+    @SentinelResource(value = "byUrl")
+    public CommonResult byUrl(){
+        return new CommonResult(200,"按url限流测试OK",new Payment(2020L,"serial002"));
+    }
+}
+```
+
+**Sentinel控制台配置**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.6cb3ofi255o0.webp)
+
+**测试**
+
+- 快速点击[http://localhost:8401/rateLimit/byUrl](http://localhost:8401/rateLimit/byUrl)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.6rbdgxikqxo0.webp)
+
+- 结果 - 会返回Sentinel自带的限流处理结果 Blocked by Sentinel (flow limiting)
+
+**上面兜底方案面临的问题**
+
+1. 系统默认的，没有体现我们自己的业务要求。
+2. 依照现有条件，我们自定义的处理方法又和业务代码耦合在一块，不直观。
+3. 每个业务方法都添加—个兜底的，那代码膨胀加剧。
+4. 全局统—的处理方法没有体现。
+
+## SentinelResource配置(中)
+
+客户自定义限流处理逻辑
+
+自定义限流处理类 - 创建CustomerBlockHandler类用于自定义限流处理逻辑
+
+```java
+public class CustomerBlockHandler {
+
+    public static CommonResult handlerException1(BlockException exception){
+        return new CommonResult(4444,"按客户自定义,global handlerException----1");
+    }
+
+    public static CommonResult handlerException2(BlockException exception){
+        return new CommonResult(4444,"按客户自定义,global handlerException----1");
+    }
+}
+```
+
+RateLimitController
+
+```java
+@RestController
+public class RateLimitController {
+    
+    ...
+	@GetMapping("/rateLimit/customerBlockHandler")
+    @SentinelResource(value = "customerBlockHandler",
+        blockHandlerClass = CustomerBlockHandler.class,
+        blockHandler = "handlerException2")
+    public CommonResult customerBlockHandler(){
+        return new CommonResult(200,"按客户自定义",new Payment(2020L,"serial003"));
+    }
+}
+```
+
+Sentinel控制台配置
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.2fetseirolog.webp)
+
+启动微服务后先调用一次 - [http://localhost:8401/rateLimit/customerBlockHandler](http://localhost:8401/rateLimit/customerBlockHandler)。
+
+然后，多次快速刷新[http://localhost:8401/rateLimit/customerBlockHandler](http://localhost:8401/rateLimit/customerBlockHandler)。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220828/image.6ierww0guuc0.webp)
+
+刷新后，我们自定义兜底方法的字符串信息就返回到前端。
+
+## SentinelResource配置(下)
+
+> **@SentinelResource 注解**
+>
+> > 注意：注解方式埋点不支持 private 方法。
+>
+> `@SentinelResource` 用于定义资源，并提供可选的异常处理和 fallback 配置项。 `@SentinelResource` 注解包含以下属性：
+>
+> + `value`：资源名称，必需项（不能为空）
+> + `entryType`：entry 类型，可选项（默认为 `EntryType.OUT`）
+> + `blockHandler` / `blockHandlerClass`: `blockHandler` 对应处理 `BlockException` 的函数名称，可选项。`blockHandler` 函数访问范围需要是 `public`，返回类型需要与原方法相匹配，参数类型需要和原方法相匹配并且最后加一个额外的参数，类型为 BlockException。blockHandler 函数默认需要和原方法在同一个类中。若希望使用其他类的函数，则可以指定 `blockHandlerClass` 为对应的类的 `Class` 对象，注意对应的函数必需为 static 函数，否则无法解析。
+> + `fallback` /`fallbackClass`：fallback 函数名称，可选项，用于在抛出异常的时候提供 fallback 处理逻辑。fallback 函数可以针对所有类型的异常（除了`exceptionsToIgnore`里面排除掉的异常类型）进行处理。fallback 函数签名和位置要求：
+>   + 返回值类型必须与原函数返回值类型一致；
+>   + 方法参数列表需要和原函数一致，或者可以额外多一个 `Throwable` 类型的参数用于接收对应的异常。
+>   + fallback 函数默认需要和原方法在同一个类中。若希望使用其他类的函数，则可以指定 `fallbackClass` 为对应的类的 `Class` 对象，注意对应的函数必需为 static 函数，否则无法解析。
+> + `defaultFallback`（since 1.6.0）：默认的 fallback 函数名称，可选项，通常用于通用的 fallback 逻辑（即可以用于很多服务或方法）。默认 fallback 函数可以针对所有类型的异常（除了`exceptionsToIgnore`里面排除掉的异常类型）进行处理。若同时配置了 fallback 和 defaultFallback，则只有 fallback 会生效。defaultFallback 函数签名要求
+>   + 返回值类型必须与原函数返回值类型一致；
+>   + 方法参数列表需要为空，或者可以额外多一个 `Throwable` 类型的参数用于接收对应的异常。
+>   + defaultFallback 函数默认需要和原方法在同一个类中。若希望使用其他类的函数，则可以指定 `fallbackClass` 为对应的类的 `Class` 对象，注意对应的函数必需为 static 函数，否则无法解析。
+> + `exceptionsToIgnore`（since 1.6.0）：用于指定哪些异常被排除掉，不会计入异常统计中，也不会进入 fallback 逻辑中，而是会原样抛出。
+>
+> [link](https://github.com/alibaba/Sentinel/wiki/注解支持#sentinelresource-注解)
+
+Sentinel主要有三个核心Api：
+
+1. SphU定义资源
+2. Tracer定义统计
+3. ContextUtil定义了上下文
