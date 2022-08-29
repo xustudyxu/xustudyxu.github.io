@@ -72,7 +72,7 @@ module.exports = [
     ]
   },
   {
-    title: 'SpringCloud Aliabba',
+    title: 'SpringCloud Alibaba',
     collapsable: false,
     children: [
       '/studynotes/Spring/SpringCloud/SpringCloud_Alibaba_introduction',
