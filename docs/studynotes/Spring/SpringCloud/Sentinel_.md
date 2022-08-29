@@ -424,7 +424,7 @@ public class FlowLimitController {
 }
 ```
 
-- Postman模拟并发密集访问testA。具体操作参考[Sentinel流控-关联]()
+- Postman模拟并发密集访问testA。具体操作参考[Sentinel流控-关联](/Spring/SpringCloud/Sentinel_/#sentinel流控-关联)
 - 后台结果
 
 ```java
