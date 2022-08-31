@@ -78,6 +78,7 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/SpringCloud_Alibaba_introduction',
       '/studynotes/Spring/SpringCloud/Nacos_',
       '/studynotes/Spring/SpringCloud/Sentinel_',
+      '/studynotes/Spring/SpringCloud/Seata_',
     ]
   }
 ]
