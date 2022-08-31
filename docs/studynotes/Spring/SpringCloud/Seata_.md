@@ -100,3 +100,50 @@ service {
     max.ollbackretry.timeout= "-1"
 }
 ```
+
+store模块
+
+```nginx
+## transaction log store
+store {
+	## store mode: file, db
+	## 改成db
+	mode = "db"
+	
+	## file store
+	file {
+		dir = "sessionStore"
+		
+		# branch session size, if exceeded first try compress lockkey, still exceeded throws exceptions
+		max-branch-session-size = 16384
+		# globe session size, if exceeded throws exceptions
+		max-global-session-size = 512
+		# file buffer size, if exceeded allocate new buffer
+		file-write-buffer-cache-size = 16384
+		# when recover batch read size
+		session.reload.read_size= 100
+		# async, sync
+		flush-disk-mode = async
+	}
+
+	# database store
+	db {
+		## the implement of javax.sql.DataSource, such as DruidDataSource(druid)/BasicDataSource(dbcp) etc.
+		datasource = "dbcp"
+		## mysql/oracle/h2/oceanbase etc.
+		## 配置数据源
+		db-type = "mysql"
+		driver-class-name = "com.mysql.jdbc.Driver"
+		url = "jdbc:mysql://127.0.0.1:3306/seata"
+		user = "root"
+		password = "你自己密码"
+		min-conn= 1
+		max-conn = 3
+		global.table = "global_table"
+		branch.table = "branch_table"
+		lock-table = "lock_table"
+		query-limit = 100
+	}
+}
+```
+
