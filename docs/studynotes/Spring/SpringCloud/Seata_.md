@@ -1390,6 +1390,8 @@ public class OrderServiceImpl implements OrderService {
 
 下单 - [http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100](http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100)
 
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.2onfssgxrt80.webp)
+
 数据库情况
 
 还是模拟AccountServiceImpl添加超时，下单后数据库数据并没有任何改变，记录都添加不进来，**达到出异常，数据库回滚的效果**。
