@@ -103,7 +103,7 @@ service {
 
 store模块
 
-```nginx {5,33}
+```nginx {5,32,33}
 ## transaction log store
 store {
 	## store mode: file, db
@@ -214,7 +214,7 @@ CREATE TABLE `lock_table`
 
 修改seata-server-0.9.0\seata\conf目录下的registry.conf配置文件
 
-```nginx
+```nginx{4,8}
 registry {
   # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa
   # 改用为nacos
@@ -1357,7 +1357,9 @@ SELECT * FROM t_account;
 
 ---
 
-**超时异常，加了@GlobalTransactional**
+为了更清楚的看到，我把数据库数据清空。
+
+超时异常，加了@GlobalTransactional**
 
 用@GlobalTransactional标注OrderServiceImpl的create()方法。
 
@@ -1390,11 +1392,31 @@ public class OrderServiceImpl implements OrderService {
 
 下单 - [http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100](http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.2onfssgxrt80.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.5ruzgxtsx9k0.webp)
 
 数据库情况
 
+```sql
+SELECT * FROM t_order;
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.1qtc9j1zh5og.webp)
+
+```sql
+SELECT * FROM t_storage;
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.39kalvkrafu0.webp)
+
+```sql
+SELECT * FROM t_account;
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220902/image.5jemsfuxnww0.webp)
+
 还是模拟AccountServiceImpl添加超时，下单后数据库数据并没有任何改变，记录都添加不进来，**达到出异常，数据库回滚的效果**。
+
+
 
 
 
