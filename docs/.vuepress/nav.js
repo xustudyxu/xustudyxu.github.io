@@ -106,12 +106,22 @@ module.exports = [{
 {
   text: '工具',
   items: [
-    { text: 'Linux', link: '/pages/99e9dc/' },
-    { text: 'Maven', link: '/pages/45eca1/' },
-    { text: 'Git', link: '/pages/34892c/' },
+    {
+      text: '部署',
+      items: [
+        { text: 'Linux', link: '/pages/99e9dc/' },
+        { text: 'Docker', link: '/pages/45eca1/' },
+      ]
+    }
+    , {
+      text: '管理',
+      items: [
+        { text: 'Maven', link: '/pages/45eca1/' },
+        { text: 'Git', link: '/pages/34892c/' },
+      ]
+    },
   ]
 },
-
 {
   text: '面试',
   items: [
@@ -126,7 +136,7 @@ module.exports = [{
     { text: '友情链接', link: '/pages/myfriends/' }
   ]
 
-},{
+}, {
   text: '本站',
   items: [
     {
@@ -135,8 +145,9 @@ module.exports = [{
         { text: '分类', link: '/categories/' },
         { text: '标签', link: '/tags/' },
         { text: '归档', link: '/archives/' },
-      ]}
-      ,{
+      ]
+    }
+    , {
       text: '其他',
       items: [
         { text: '关于', link: '/pages/9013e4/' }

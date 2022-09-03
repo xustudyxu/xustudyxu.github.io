@@ -25,12 +25,17 @@ module.exports = [
     '/studynotes/project-management/Linux/20',
     '/studynotes/project-management/Linux/21',
     '/studynotes/project-management/Linux/22',
-    
-    
-
 
       ]
-    }, {
+    }
+    , {
+      title:'Docker',
+      collapsable: false,
+      children:[
+      '/studynotes/project-management/Docker/Docker_introduction',
+
+        ]
+      }, {
       title:'Maven',
       collapsable: false,
       children:[
