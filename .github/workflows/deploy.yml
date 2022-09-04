@@ -1,31 +1,31 @@
-name: Build And Deploy
+# name: Build And Deploy
 
-#在 master 分支发生 push 事件时触发
-on:
-  push:
-    branches:
-      - master
-env: # 设置环境变量
-  TZ: Asia/Shanghai # 时区（设置时区可使页面中的 最近更新时间 使用时区时间）
-# 工作流
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest ## 运行在最新虚拟机环境ubuntu
-    steps:
-      - name: Checkout
-        uses: actions/checkout@main ## 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: Build and Deploy
-        uses: jenkey2011/vuepress-deploy@master
-        env: # 设置环境变量
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # 注意替换为你的 Gitee 仓库地址，仓库名严格区分大小写，一般地址和仓库名一致，如果地址改了，仓库名不改，要以地址为准（地址仅需后缀，即 https://gitee.com/<username>/xxx 的 xxx 即可）
-          TARGET_REPO:
-            xustudyxu/xustudyxu.github.io
-            # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
-          TARGET_BRANCH: gh-pages
-          BUILD_SCRIPT: npm install && npm run build
-          BUILD_DIR: docs/.vuepress/dist/
-          CNAME: docs.frxcat.fun
+# #在 master 分支发生 push 事件时触发
+# on:
+#   push:
+#     branches:
+#       - master
+# env: # 设置环境变量
+#   TZ: Asia/Shanghai # 时区（设置时区可使页面中的 最近更新时间 使用时区时间）
+# # 工作流
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest ## 运行在最新虚拟机环境ubuntu
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@main ## 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。
+#         with:
+#           persist-credentials: false
+#           fetch-depth: 0
+#       - name: Build and Deploy
+#         uses: jenkey2011/vuepress-deploy@master
+#         env: # 设置环境变量
+#           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#           # 注意替换为你的 Gitee 仓库地址，仓库名严格区分大小写，一般地址和仓库名一致，如果地址改了，仓库名不改，要以地址为准（地址仅需后缀，即 https://gitee.com/<username>/xxx 的 xxx 即可）
+#           TARGET_REPO:
+#             xustudyxu/xustudyxu.github.io
+#             # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
+#           TARGET_BRANCH: gh-pages
+#           BUILD_SCRIPT: npm install && npm run build
+#           BUILD_DIR: docs/.vuepress/dist/
+#           CNAME: docs.frxcat.fun
