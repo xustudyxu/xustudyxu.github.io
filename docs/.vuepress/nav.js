@@ -110,7 +110,7 @@ module.exports = [{
       text: '部署',
       items: [
         { text: 'Linux', link: '/pages/99e9dc/' },
-        { text: 'Docker', link: '/pages/45eca1/' },
+        { text: 'Docker', link: '/pages/90cc29/' },
       ]
     }
     , {
