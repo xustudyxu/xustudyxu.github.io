@@ -14,12 +14,12 @@ module.exports = [
 //     }
 // ],
   [{ 'seo': { /* options */ }}],
-  [
-    '@vuepress/google-analytics',
-    {
-      'ga': 'G-896N66VNVW' // UA-00000000-0
-    }
-  ],
+  // [
+  //   '@vuepress/google-analytics',
+  //   {
+  //     'ga': 'G-896N66VNVW' // UA-00000000-0
+  //   }
+  // ],
   [ 'tabs' ],//选项卡
   [
     "meting",
