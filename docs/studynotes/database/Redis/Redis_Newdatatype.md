@@ -180,7 +180,7 @@ pfcount hll1   # 结果 2，因为 redis 重复了
 
 pfadd hll2 "oracle" "mysql"
 pfmerge hll3 hll1 hll2
-pfcount hll3  # 结果 4，因为 hll1 与 hll2 合并的结果给 hll3
+pfcount hll3  # 结果 3，因为 hll1 与 hll2 合并的结果给 hll3
 ```
 
 ## Geospatial
