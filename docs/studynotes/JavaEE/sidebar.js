@@ -24,7 +24,15 @@ module.exports = [
     '/studynotes/JavaEE/java/Java8Newfeatures',
     
       ]
-  },{
+  }
+  ,{
+    title:'HTML',
+    collapsable: false,
+    children:[
+    '/studynotes/JavaEE/JavaWeb/HTML',
+
+      ]
+    },{
     title:'Servlet',
     collapsable: false,
     children:[
