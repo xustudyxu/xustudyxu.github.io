@@ -8,7 +8,7 @@ bannerBg: https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220905/
 
 <ClientOnly>
   <WebInfo />
-
+ <IndexBigImg />
 </ClientOnly>
 
 
