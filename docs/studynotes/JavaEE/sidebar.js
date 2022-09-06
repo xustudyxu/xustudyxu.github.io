@@ -25,6 +25,7 @@ module.exports = [
     
       ]
   }
+  
   ,{
     title:'HTML',
     collapsable: false,
@@ -32,7 +33,14 @@ module.exports = [
     '/studynotes/JavaEE/JavaWeb/HTML',
 
       ]
-    },{
+    },,{
+      title:'CSS',
+      collapsable: false,
+      children:[
+      '/studynotes/JavaEE/JavaWeb/CSS',
+  
+        ]
+      },{
     title:'Servlet',
     collapsable: false,
     children:[
