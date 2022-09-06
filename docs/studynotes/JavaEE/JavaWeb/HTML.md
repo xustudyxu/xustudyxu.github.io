@@ -7,6 +7,7 @@ categories:
 tags:
   - JavaWeb
 ---
+
 # HTML
 
 [[toc]]
@@ -696,3 +697,162 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 1. 方便代码的阅读和维护
 2. 同时让浏览器可以很好地解析，从而更好分析其中的内容 
 3. 使用语义化标签会具有更好地搜索引擎优化。
+
+## HTML列表
+
+### 无序列表
+
+无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。
+
+无序列表使用 \<ul> 标签
+
+\<ul> 是 unordered list 的缩写，表示无序列表。默认情况下，无序列表的每一项都使用实心圆符号表示；它有一个属性type，type属性值有disc（实心圆默认）、circle（空心圆）、square（实心正方形）、none（取消前缀）。
+
+
+比如：我们把type="square"
+
++ 语法
+
+```html
+<ul>
+<li>Coffee</li>
+<li>Milk</li>
+</ul>
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <!-- 无序列表-ul-li 
+        注意:ul里只能嵌套li,li里面可以包裹任何内容-->
+
+        <li>包子</li>
+        <li>胡辣汤</li>
+        <li>油条</li>
+        <li>小米粥</li>
+    </ul>
+
+    <ul>
+        <li>小米粥
+            <ul>
+                <li>大米粥
+                    <ul>
+                        <li>八宝粥</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.1rnyo1hwzysg.webp)
+
+### 有序列表
+
+同样，有序列表也是一列项目，列表项目使用数字进行标记。 有序列表始于 <ol> 标签。每个列表项始于 <li> 标签。
+
+列表项使用数字来标记。
+
+\<ol>:order list的缩写，表示有序列表。它为列表的每一项进行编号，默认的type类型是数字，且从数字1开始。它有两个属性：type和start。
+
++ type有五个属性值：1、a、A、i、I(罗马数字)，表示列表前缀的格式；
+
++ start：属性值位，表示从type类型的第几个数字开始。比如当你选的type=“a”，start=“2”，表示选择的是大写字母类型，从第二个字母B开始充当列表前缀。
+
+一般\<ol>与\<li>配合使用，不建议在<ol>中使用除了<li>之外的标签。
+
+```html
+<ol>
+<li>Coffee</li>
+<li>Milk</li>
+</ol>
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 有序列表 ol li -->
+    <ol type="I">
+        <li>美</li>
+        <li>好</li>
+        <li>的</li>
+        <li>一</li>
+        <li>天</li>
+    </ol>
+
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.6013i2k3vo80.webp)
+
+### 自定义序列表
+
+自定义列表不仅仅是一列项目，而是项目及其注释的组合。
+
+自定义列表以 \<dl> 标签开始。每个自定义列表项以 \<dt> 开始。每个自定义列表项的定义以 \<dd> 开始。
+
+\<dl>：definition list的缩写，表示定义列表。\<dl>\</dl>里面只能包含\<dt>和\<dd>。
+
+
+\<dt>：定义标题。\<dt>和\<dd>个数没有限制，通常是一个\<dt>对应多个\<dd>。
+
+\<dd>：definition description 的缩写，定义描述。定义描述一般是对定义标题的解释说明；但是自定义列表没有前缀，但有缩进。
+
++ 语法
+
+```html
+<dl>
+<dt>Coffee</dt>
+<dd>- black hot drink</dd>
+<dt>Milk</dt>
+<dd>- white cold drink</dd>
+</dl>
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dl dt dd :自定义列表-->
+    <dl>
+        <dt>html标签</dt>       
+        <dd>html</dd>
+        <dd>head</dd>
+        <dd>body</dd>
+        <dd>a</dd>
+    </dl>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.6hj62aqf7os0.webp)
