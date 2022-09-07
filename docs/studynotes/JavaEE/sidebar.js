@@ -33,7 +33,7 @@ module.exports = [
     '/studynotes/JavaEE/JavaWeb/HTML',
 
       ]
-    },,{
+    },{
       title:'CSS',
       collapsable: false,
       children:[
