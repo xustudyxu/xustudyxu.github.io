@@ -161,7 +161,7 @@ HTML 的全称为 **超文本标记语言（Hyper Text Markup Language）**
 
 元素（Element）：由开始标签、闭合标签以及标签之间的内容组成。
 
-<img src="E:/QQ/课件/课件/课件/media/image-20220512144243567.png" alt="image-20220512144243567" style="zoom: 33%;" />
+![image-20220512144243567](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220907/image-20220512144243567.5f3nfbvh51s0.webp)
 
 ## HTML 属性
 
