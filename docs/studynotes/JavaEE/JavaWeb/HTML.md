@@ -1,13 +1,12 @@
 ---
 title: HTML
 date: 2022-09-05 22:42:22
-permalink: /pages/b11670/
+permalink: /pages/5cda88/
 categories:
   - JavaWeb
 tags:
   - JavaWeb
 ---
-
 # HTML
 
 [[toc]]
