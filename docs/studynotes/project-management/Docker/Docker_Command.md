@@ -160,7 +160,7 @@ ubuntu/mysql                    MySQL open source fast, stable, multi-thread… 
 circleci/mysql                  MySQL is a widely used, open-source relation…   27
 google/mysql                    MySQL server for Google Compute Engine          21                   [OK]
 rapidfort/mysql                 RapidFort optimized, hardened image for MySQL   13
-bitnami/mysqld-exporter                                                         3
+bitnami/mysqld-er                                                         3
 ibmcom/mysql-s390x              Docker image for mysql-s390x                    2
 vitess/mysqlctld                vitess/mysqlctld                                1                    [OK]
 newrelic/mysql-plugin           New Relic Plugin for monitoring MySQL databa…   1                    [OK]
@@ -870,18 +870,20 @@ docker top <容器 id | 容器名>
 
 ```sh
 # 执行命令
-docker ps
+[root@master ~]# docker ps
 
 # 返回结果
-CONTAINER ID   IMAGE           COMMAND             CREATED       STATUS       PORTS                                       NAMES
-1365f332be6b   tomcat:8.5.73   "catalina.sh run"   3 hours ago   Up 2 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
+CONTAINER ID   IMAGE     COMMAND             CREATED          STATUS          PORTS      NAMES
+0c6e3fc4a28d   tomcat    "catalina.sh run"   11 seconds ago   Up 10 seconds   8080/tcp   tomcat01
+5d3f5ce66c6f   ubuntu    "/bin/bash"         46 minutes ago   Up 46 minutes              nifty_brown
 
 # 查看进程
-docker top 1365f332be6b
+[root@master ~]# docker top 0c6e3fc4a28d
 
 # 返回结果
 UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
-root                91412               91393               0                   00:12               ?                   00:00:02            /opt/java/openjdk/bin/java -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/tomcat -Dcatalina.home=/usr/local/tomcat -Djava.io.tmpdir=/usr/local/tomcat/temp org.apache.catalina.startup.Bootstrap start
+root                8573                8554                7                   23:20               ?                   00:00:02            /usr/local/openjdk-11/bin/java -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/tomcat -Dcatalina.home=/usr/local/tomcat -Djava.io.tmpdir=/usr/local/tomcat/temp org.apache.catalina.startup.Bootstrap start
+
 ```
 
 可以查看容器的一些进程信息，如 UID，已经运行时间等。
@@ -918,9 +920,12 @@ docker inspect 1365f332be6b
 # 返回结果（部分内容）
 [
     {
-        "Id": "1365f332be6b57943dfbfc1ececddac3a2b3c6ad12a17313a427041e27a2c044",
-        "Created": "2021-11-19T15:20:53.580488665Z",
+        "Id": "70983c5ab3c77ce3bbc8c341e3debc866e5c797bdf6d18cbfb89fa0def4e79cb",
+        "Created": "2022-09-08T15:26:42.214308916Z",
         "Path": "catalina.sh",
+        "Args": [
+            "run"
+        ],
         "State": {
             "Status": "running",
             "Running": true,
@@ -928,24 +933,31 @@ docker inspect 1365f332be6b
             "Restarting": false,
             "OOMKilled": false,
             "Dead": false,
-            "Pid": 91412,
-            "StartedAt": "2021-11-19T16:12:04.272096418Z",
-            "FinishedAt": "2021-11-19T16:06:04.102664522Z"
+            "Pid": 8842,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-09-08T15:26:42.504365515Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
         },
-		"NetworkSettings": {
-            "Ports": {
-                "8080/tcp": [
-                    {
-                        "HostIp": "0.0.0.0",
-                        "HostPort": "8080"
-                    },
-                    {
-                        "HostIp": "::",
-                        "HostPort": "8080"
-                    }
-                ]
-            },
-	}
+			"Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "88ffcfc688e0d2e932751871441b70c7cc7ebf3b44aa4d087879328e97a7587f",
+                    "EndpointID": "a18572b17e13c83d569c771694b26c4c0240a4963b9631c381ae26e019a190c5",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
 ]
 ```
 
@@ -1064,10 +1076,8 @@ docker start 1365f332be6b
 
 - 第二种命令：`docker exec`，格式为：`docker exec [options] <容器 id> <容器使用的终端窗口>`
 
-  
-
   ```sh
-  docker exec [options] <容器 id> <容器使用的终端窗口>
+docker exec [options] <容器 id> <容器使用的终端窗口>
   
   # 以交互模式运行容器，通常与 -t 一起使用
   docker exec -i <容器 id> <容器使用的终端窗口>
@@ -1078,7 +1088,7 @@ docker start 1365f332be6b
   # 建议一起使用
   docker exec -it <容器 id> <容器使用的终端窗口>
   ```
-
+  
   `-i`：以交互模式运行容器，通常与 -t 一起使用
 
   `-t`：分配一个伪终端，如 shell窗口、base 窗口
@@ -1086,7 +1096,7 @@ docker start 1365f332be6b
   > **进入 Tomcat 容器内部**
 
   ```sh
-  # 执行命令
+# 执行命令
   docker exec -it 1365f332be6b bash
   
   # 进入容器内部，查看容器内部
@@ -1103,7 +1113,7 @@ docker start 1365f332be6b
   CONTAINER ID   IMAGE           COMMAND             CREATED          STATUS          PORTS                                       NAMES
   1365f332be6b   tomcat:8.5.73   "catalina.sh run"   51 minutes ago   Up 26 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
   ```
-
+  
   第 6 行是不是很熟悉，就是 Tomcat 的根目录，这就是 Tomcat 容器的根目录。
 
   `exit` 退出容器后，Docker 不会停止运行容器
@@ -1165,3 +1175,71 @@ activemq  containerd  dump.rdb  jdk  mysql  README.md  redis  rh  tomcat 杂文.
 容器 id 可以用容器名替换。
 
 ### 宿主机文件 > 容器
+
+将宿主机的文件拷贝到容器里命令格式：`docker cp <宿主机文件 | 目录> <容器 id:容器路径>`
+
+```sh
+docker cp <宿主机文件 | 目录> <容器 id:容器路径>
+```
+
+> **将宿主机的 杂文.txt 文件拷贝到 Tomcat 容器里**
+
+杂文.txt 文件在 /opt 目录下
+
+```sh
+cd /opt
+ls
+
+# 返回结果
+activemq  containerd  dump.rdb  jdk  mysql  README.md  redis  rh  tomcat 杂文.txt
+```
+
+Tomcat 容器的 id是 1365f332be6b，拷贝到的路径是 /usr/local/tomcat/
+
+```sh
+docker cp 杂文.txt 1365f332be6b:/usr/local/tomcat/
+
+# 进入容器
+docker exec -it 1365f332be6b bash
+
+# 查看当前路径内容
+oot@1365f332be6b:/usr/local/tomcat# ls
+
+# 返回结果
+bin           conf             lib      logs            NOTICE     RELEASE-NOTES  temp     webapps.dist  杂文.txt
+BUILDING.txt  CONTRIBUTING.md  LICENSE  native-jni-lib  README.md  RUNNING.txt    webapps  work
+```
+
+### 容器导入/导出
+
++ 导入和导出容器
+
++ export 导出容器的内容留作为一个tar归档文件[对应import命令]
+
++ import 从tar包中的内容创建一个新的文件系统再导入为镜像[对应export]
+
++ 命令
+
+```sh
+docker export 容器ID > 文件名.tar
+```
+
++ 案例
+
+```sh
+[root@master ~]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND             CREATED             STATUS             PORTS                                         NAMES
+70983c5ab3c7   tomcat    "catalina.sh run"   35 minutes ago      Up 18 minutes      0.0.0.0:49154->8080/tcp, :::49154->8080/tcp   tomcat01
+5d3f5ce66c6f   ubuntu    "/bin/bash"         About an hour ago   Up About an hour                                                 nifty_brown
+[root@master ~]# docker export 70983c5ab3c7 > abcd.tar
+[root@master ~]# ls
+          anaconda-ks.cfg  BUILDING.txt  initial-setup-ks.cfg  nodes-6379.conf  公共  视频  文档  音乐
+abcd.tar  appendonly.aof   dump.rdb      lua_demo              postfile         模板  图片  下载  桌面
+
+# 删除
+docker rm -f 70983c5ab3c7
+
+# 从tar包中的内容创建一个新的文件系统再导入为镜像
+cat abcd.tar | docker import - frx01/tomcat01:8.5
+```
+
