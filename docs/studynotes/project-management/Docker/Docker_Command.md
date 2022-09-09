@@ -1096,19 +1096,21 @@ docker exec [options] <容器 id> <容器使用的终端窗口>
   > **进入 Tomcat 容器内部**
 
   ```sh
+  
+  ```
 # 执行命令
   docker exec -it 1365f332be6b bash
-  
+
   # 进入容器内部，查看容器内部
   root@1365f332be6b:/usr/local/tomcat# ls
   bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  native-jni-lib  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  webapps.dist  work
-  
+
   # 从容器内部退出
   root@1365f332be6b:/usr/local/tomcat# exit
-  
+
   # 查看容器是否停止运行
   docker ps
-  
+
   # 返回结果
   CONTAINER ID   IMAGE           COMMAND             CREATED          STATUS          PORTS                                       NAMES
   1365f332be6b   tomcat:8.5.73   "catalina.sh run"   51 minutes ago   Up 26 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
@@ -1132,9 +1134,9 @@ docker exec [options] <容器 id> <容器使用的终端窗口>
 
 将容器的文件拷贝到宿主机里命令格式：`docker cp <容器 id:容器路径> <宿主机目录路径>`
 
-```sh
+​```sh
 docker cp <容器 id:容器路径> <宿主机目录路径>
-```
+  ```
 
 > **将 Tomcat 容器里的 README.md 文件拷贝到宿主机容器**
 
@@ -1222,6 +1224,10 @@ BUILDING.txt  CONTRIBUTING.md  LICENSE  native-jni-lib  README.md  RUNNING.txt  
 
 ```sh
 docker export 容器ID > 文件名.tar
+```
+
+```sh
+cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号
 ```
 
 + 案例

@@ -34,6 +34,7 @@ module.exports = [
       children:[
       '/studynotes/project-management/Docker/Docker_introduction',
       '/studynotes/project-management/Docker/Docker_install',
+      '/studynotes/project-management/Docker/Docker_Command',
         ]
       }, {
       title:'Maven',
