@@ -38,6 +38,7 @@ module.exports = [
       collapsable: false,
       children:[
       '/studynotes/JavaEE/JavaWeb/CSS',
+      '/studynotes/JavaEE/JavaWeb/CSS-02',
   
         ]
       },{

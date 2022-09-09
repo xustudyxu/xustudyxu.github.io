@@ -560,6 +560,51 @@ a:active 必须位于 a:hover 之后，这样才能生效！
 >
 > a:link会对拥有a标签的属性href=""，即拥有实际链接地址的a对象发生效果
 
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 未访问的链接 */
+        a:link{
+            color: yellow;
+        }
+
+        /* 已访问的链接 */
+        a:visited{
+            color:aqua;
+        }
+        /* 鼠标放上去 */
+        a:hover{
+         color: darkmagenta;
+        }
+        /* 鼠标点着不放 */
+        a:active{
+            color:blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="#">百度</a>
+    <a href="https://www.baidu.com"></a>
+    <div class="box">div元素</div>
+    <!-- 注意点：
+    在 CSS 定义中，a:hover 必须位于 a:link 和 a:visited 之后，这样才能生效！    
+    a:active 必须位于 a:hover 之后，这样才能生效！ -->
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2bzcqaje7i68.webp)
+
 ## CSS外观属性
 
 ### color：文本颜色
@@ -584,8 +629,47 @@ a:active 必须位于 a:hover 之后，这样才能生效！
 /* a 是alpha透明的意思,取值范围 0~1之间  */
 color: rgba(r,g,b,a)    
 color: rgba(0,0,0,0.3)  
-
 ```
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            color: red;
+        }
+        .main{
+            color: #000;
+            color: #fff;
+        }
+        .warp{
+            color:#ff0000;
+            color: rgb(100, 200, 200);
+            color: rgb(0, 0, 0);
+        }
+        .al{
+            
+            color:rgba(100,200,200,0.5)
+        }
+    </style>
+</head>
+<body>
+    <div class="con">2013年，习近平总书记提出了共建“一带一路”重大倡议，如今，高质量共建“一带一路”，不仅为各国开拓出一条通向共同繁荣的机遇之路。</div>
+    <div class="main">越来越多不沿边不靠海的内陆省份，正在从开放末梢转身开放最前沿。</div>
+    <div class="warp">在西安国际港站，8台龙门吊正在同时吊装来自世界各地的集装箱。每天，从这里出发和抵达的中欧班列“长安号”有十余列，联通省内外20多座城市和45个“一带一路”沿线国家和地区。</div>
+    <div class="al">西安国际港站值班站长 李沛：你看这个箱子是从德国来的，现在的国际港，你看货场上现在这么多集装箱，五花八门，五颜六色，是从全世界各地来国际港的。</div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.4kre0thpepo0.webp)
 
 ### line-height：行间距
 
@@ -607,6 +691,76 @@ color: rgba(0,0,0,0.3)
 >
 > 一般项目中的页面的行高设置比字号大7~8像素左右就可以了, 比如当前使用14像素的字号，行高设为24像素左右合适。
 
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 500px;
+            /* 边框 */
+            border: 1px solid red;
+            /* 行高，行间距 */
+            line-height: 30px;
+        }
+        .box {
+            width: 200px;
+            height: 50px;
+            border: 1px solid blue;
+            /* 设置盒子一样的高度，文本会垂直居中 */
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>习近平总书记在内陆省份考察调研期间，多次强调内陆省份要主动积极融入共建“一带一路”，把独特的区位优势更好转化为开放发展优势，以开放促改革、促发展。</div>
+    <div class="box">今天是美好的一天</div>
+</body>
+</html>
+```
+
++ css
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 500px;
+            /* 边框 */
+            border: 1px solid red;
+            /* 行高，行间距 */
+            line-height: 30px;
+        }
+        .box {
+            width: 200px;
+            height: 50px;
+            border: 1px solid blue;
+            /* 设置盒子一样的高度，文本会垂直居中 */
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>习近平总书记在内陆省份考察调研期间，多次强调内陆省份要主动积极融入共建“一带一路”，把独特的区位优势更好转化为开放发展优势，以开放促改革、促发展。</div>
+    <div class="box">今天是美好的一天</div>
+</body>
+</html>
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.6t70okfows00.webp)
+
 ### text-align：水平对齐方式
 
 | 属性名 | text-align                                                   |
@@ -620,9 +774,76 @@ color: rgba(0,0,0,0.3)
 - **right：**内容右对齐。
 - **justify：**内容两端对齐，但对于强制打断的行（被打断的这一行）及最后一行（包括仅有一行文本的情况，因为它既是第一行也是最后一行）不做处理。
 
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 100px;
+            /* 水平对齐方式：
+            左对齐 默认
+            text-align: left;
+            右对齐
+            text-align: right;
+            居中对齐 
+            text-align: center;
+            */
+            text-align: center;
+            line-height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">大家好</div>
+</body>
+
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2ybibul5gk40.webp)
+
 ### text-indent:首行缩进
 
 text-indent属性用于设置首行文本的缩进，其属性值可为不同单位的数值、em字符宽度的倍数、或相对于浏览器窗口宽度的百分比%，允许使用负值, 建议使用em作为设置单位。
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            /* 首行缩进 */
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        你好
+    </p>
+    <p>
+        您好
+    </p>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.4fz2sgh66fi0.webp)
 
 ### text-decoration：文本修饰
 
@@ -638,6 +859,41 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 - **underline：**指定文字的装饰是下划线
 - **overline：**指定文字的装饰是上划线
 - **line-through：**指定文字的装饰是贯穿线
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 不要文本修饰 */
+            text-decoration: none;
+        }
+        div {
+            /* 下划线 */
+            text-decoration: underline;
+            /* 上划线 */
+            text-decoration: overline;
+            /* 删除线 */
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="">中秋节</a>
+    <div>吃月饼</div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2zs378pysjq0.webp)
 
 ### letter-spacing：字符间距
 
@@ -665,13 +921,50 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 - **normal：**默认间隔
 - **length：**用长度值指定间隔。可以为负值。
 
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            /* 字符间距(中英文，字母都起作用) */
+            /* letter-spacing: 30px; */
+
+            /* 空格会认定为一个单词 */
+            word-spacing: 30px;
+        }
+
+        div {
+            word-spacing: 30px;
+        }
+
+        p {
+            letter-spacing: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>关于我们 about us</h2>
+    <div>Hello,Nice to meet you</div>
+    <p>大家好</p>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.sgj8hyr4mlc.webp)
+
 ### 文字阴影(CSS3)
 
 可以给文字添加阴影效果
 
 ```css
 text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
-
 ```
 
 | 值         | 描述                             |
@@ -683,10 +976,39 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
 
 - 前两项是必须写的。  后两项可以选写。
 
-- ```css
-  /* 多重阴影 */
-  text-shadow: -5px 0px cyan, 5px 0px red;
-  ```
+
+```css
+/* 多重阴影 */
+text-shadow: -5px 0px cyan, 5px 0px red;
+```
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            font-size: 30px;
+
+            /* 水平距离，垂直距离，模糊距离，阴影的颜色 */
+            /* 正值向右移动，赋值向左移动 */
+            text-shadow: 10px 5px 0px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">你好</div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.6ymo0cf4ux00.webp)
 
 ## CSS书写规范
 
@@ -698,7 +1020,7 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
 
 示例：
 
-```
+```css
 /* good */
 .username{
    color:red;
@@ -717,7 +1039,7 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
 
 示例：
 
-```
+```css
 /* good */
 .selector{
     margin: 0;
@@ -733,7 +1055,7 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
 
 示例：
 
-```
+```css
 /* good */
 .selector {
     margin: 0;
