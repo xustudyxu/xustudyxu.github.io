@@ -1232,20 +1232,23 @@ cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号
 
 + 案例
 
-```sh
+```sh {5,14}
 [root@master ~]# docker ps -a
 CONTAINER ID   IMAGE     COMMAND             CREATED             STATUS             PORTS                                         NAMES
 70983c5ab3c7   tomcat    "catalina.sh run"   35 minutes ago      Up 18 minutes      0.0.0.0:49154->8080/tcp, :::49154->8080/tcp   tomcat01
 5d3f5ce66c6f   ubuntu    "/bin/bash"         About an hour ago   Up About an hour                                                 nifty_brown
-[root@master ~]# docker export 70983c5ab3c7 > abcd.tar
+[root@master ~]# docker export 70983c5ab3c7 > ABCD.tar
 [root@master ~]# ls
           anaconda-ks.cfg  BUILDING.txt  initial-setup-ks.cfg  nodes-6379.conf  公共  视频  文档  音乐
-abcd.tar  appendonly.aof   dump.rdb      lua_demo              postfile         模板  图片  下载  桌面
+ABCD.tar  appendonly.aof   dump.rdb      lua_demo              postfile         模板  图片  下载  桌面
 
 # 删除
-docker rm -f 70983c5ab3c7
+docker rm -f tomcat01
 
 # 从tar包中的内容创建一个新的文件系统再导入为镜像
-cat abcd.tar | docker import - frx01/tomcat01:8.5
+[root@frx01 ~]# cat ABCD.tar | docker import - frx01/tomcat02:8.5.27
+sha256:bc554c9488cc1b4ff0649eaeb9cd6fa0ffc763f4a48a6796499fc05cb37eaf6b
 ```
+
+
 
