@@ -1095,28 +1095,26 @@ docker exec [options] <容器 id> <容器使用的终端窗口>
 
   > **进入 Tomcat 容器内部**
 
-  ```sh
-  
-  ```
-# 执行命令
+  ```sh {1,9}
+  # 执行命令
   docker exec -it 1365f332be6b bash
-
+  
   # 进入容器内部，查看容器内部
   root@1365f332be6b:/usr/local/tomcat# ls
   bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  native-jni-lib  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  webapps.dist  work
-
+  
   # 从容器内部退出
   root@1365f332be6b:/usr/local/tomcat# exit
-
+  
   # 查看容器是否停止运行
   docker ps
-
+  
   # 返回结果
   CONTAINER ID   IMAGE           COMMAND             CREATED          STATUS          PORTS                                       NAMES
   1365f332be6b   tomcat:8.5.73   "catalina.sh run"   51 minutes ago   Up 26 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
   ```
-  
-  第 6 行是不是很熟悉，就是 Tomcat 的根目录，这就是 Tomcat 容器的根目录。
+
+- 第 6 行是不是很熟悉，就是 Tomcat 的根目录，这就是 Tomcat 容器的根目录。
 
   `exit` 退出容器后，Docker 不会停止运行容器
 
@@ -1125,56 +1123,6 @@ docker exec [options] <容器 id> <容器使用的终端窗口>
 使用 `docker attach` 进入容器后，exit 退出来便容器也停止运行了。而 `docker exec` 则不会这样操作导致停止运行容器。
 
 推荐使用 `docker exec` 命令，因为该命令退出容器终端，不会导致容器的停止。
-
-## Docker容器高级命令
-
-如果你是初学者，那么建议高级命令只需要看前两个，后面的高级命令涉及其他 Docker 知识，建议学完 Docker 再来看后面的几个高级命令。
-
-### 容器文件 > 宿主机
-
-将容器的文件拷贝到宿主机里命令格式：`docker cp <容器 id:容器路径> <宿主机目录路径>`
-
-​```sh
-docker cp <容器 id:容器路径> <宿主机目录路径>
-  ```
-
-> **将 Tomcat 容器里的 README.md 文件拷贝到宿主机容器**
-
-先进入 Tomcat 容器，获取 README.md 的路径
-
-```sh
-# 执行命令
-docker ps
-
-# 返回结果
-CONTAINER ID   IMAGE           COMMAND             CREATED        STATUS          PORTS                                       NAMES
-1365f332be6b   tomcat:8.5.73   "catalina.sh run"   13 hours ago   Up 14 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
-
-# 进入容器
-docker exec -it 1365f332be6b bash
-
-# 查看当前路径内容
-root@1365f332be6b:/usr/local/tomcat# ls
-
-# 找到 README.md
-bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  native-jni-lib  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  webapps.dist  work
-```
-
-退出容器，容器内不支持 docker 命令，在外部使用命令：
-
-```sh {2}
-# 拷贝出去
-docker cp 1365f332be6b:/usr/local/tomcat/README.md /opt/README.md
-
-# 进入目录
-cd /opt
-ls
-
-# 返回结果
-activemq  containerd  dump.rdb  jdk  mysql  README.md  redis  rh  tomcat 杂文.txt
-```
-
-容器 id 可以用容器名替换。
 
 ### 宿主机文件 > 容器
 
@@ -1250,5 +1198,71 @@ docker rm -f tomcat01
 sha256:bc554c9488cc1b4ff0649eaeb9cd6fa0ffc763f4a48a6796499fc05cb37eaf6b
 ```
 
+## 常用命令总结
 
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220911/image.33l1vukec220.webp)
 
+| 命令    | 官方说明                                                     | 解释                                                         |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| attach  | Attach local standard input, output, and error streams to a running container | 当前 shell 下 attach 连接指定运行镜像                        |
+| build   | Build an image from a Dockerfile                             | 通过 Dockerfile 定制镜像                                     |
+| commit  | Create a new image from a container's changes                | 提交当前容器为新的镜像                                       |
+| cp      | Copy files/folders between a container and the local filesystem | 从容器中拷贝指定文件或者目录到宿主机中                       |
+| create  | Create a new container                                       | 创建一个新的容器，同 run，但不启动容器                       |
+| diff    | Inspect changes to files or directories on a container's filesystem | 查看 docker 容器变化                                         |
+| events  | Get real time events from the server                         | 从 docker 服务获取容 器实时事件                              |
+| exec    | Run a command in a running container                         | 在已存在的容器上运行命令                                     |
+| export  | Export a container's filesystem as a tar archive             | 导出容器的内 容流作为一个 tar 归档文件[对应 import ]         |
+| history | Show the history of an image                                 | 展示一个镜像形成历史                                         |
+| images  | List images                                                  | 列出系统当前镜像                                             |
+| import  | Import the contents from a tarball to create a filesystem image | 从 tar包中的内容创建一个新的文件系统映像[对应export]         |
+| info    | Display system-wide information                              | 显示系统相关信息                                             |
+| inspect | Return low-level information on Docker objects               | 查看容器详细信息                                             |
+| kill    | Kill one or more running containers                          | 杀掉 指定 docker 容器                                        |
+| load    | Load an image from a tar archive or STDIN                    | 从一个 tar 包中加载一 个镜像[对应 save]                      |
+| login   | Log in to a Docker registry                                  | 登陆一个 docker 源服务器                                     |
+| logout  | Log out from a Docker registry                               | 从当前 Docker registry 退出                                  |
+| logs    | Fetch the logs of a container                                | 输出当前容器日志信息                                         |
+| pause   | Pause all processes within one or more containers            | 暂停容器                                                     |
+| port    | List port mappings or a specific mapping for the container   | 查看映射端口对应的容器内部源端口                             |
+| ps      | List containers                                              | 列出容器列表                                                 |
+| pull    | Pull an image or a repository from a registry                | 从docker镜像源服务器拉取指定镜像或者库镜像                   |
+| push    | Push an image or a repository to a registry                  | 推送指定镜像或者库镜像至docker源服务器                       |
+| rename  | Rename a container                                           | 给一个容器改名                                               |
+| restart | Restart one or more containers                               | 重启运行的容器                                               |
+| rm      | Remove one or more containers                                | 移除一个或者多个容器                                         |
+| rmi     | Remove one or more images                                    | 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或 -f 强制删除] |
+| run     | Run a command in a new container                             | 创建一个新的容器并运行 一个命令                              |
+| save    | Save one or more images to a tar archive (streamed to STDOUT by default) | 保存一个镜像为一个 tar 包[对应 load]                         |
+| search  | Search the Docker Hub for images                             | 在 docker hub 中搜 索镜像                                    |
+| start   | Start one or more stopped containers                         | 启动容器                                                     |
+| stats   | Display a live stream of container(s) resource usage statistics | 显示容器资源使用统计信息的实时信息                           |
+| stop    | Stop one or more running containers                          | 停止容器                                                     |
+| tag     | Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE        | 给源中镜像打标签                                             |
+| top     | Display the running processes of a container                 | 查看容器中运行的进程信 息                                    |
+| unpause | Unpause all processes within one or more containers          | 取消暂停容器                                                 |
+| update  | Update configuration of one or more containers               | 更新容器配置                                                 |
+| version | Show the Docker version information                          | 查看 docker 版本号                                           |
+| wait    | Block until one or more containers stop, then print their exit codes | 截取容器停止时的退出状态值                                   |
+
+## 总结图片
+
+如果觉得内容过于繁多或者复杂，这里提供图片形式的命令
+
+来源：[https://www.bilibili.com/video/BV1ZT4y1K75K](https://www.bilibili.com/video/BV1ZT4y1K75K)
+
+### 镜像命令图片
+
+![image-20211120172453603](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172455.png)
+
+![image-20211120172716950](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172720.png)
+
+### 容器命令图片
+
+![image-20211120172301522](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172307.png)
+
+![image-20211120172319882](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172327.png)
+
+![image-20211120172737409](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172738.png)
+
+![image-20211120172743635](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172745.png)
