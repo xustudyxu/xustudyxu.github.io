@@ -538,7 +538,7 @@ id选择器 好比人的身份证号码，  全中国是唯一的， 不得重�
 
 ### 链接伪类选择器
 
-```css
+```html
 /* 未访问的链接 */
 :link   
  /* 已访问的链接 */
@@ -560,7 +560,7 @@ a:active 必须位于 a:hover 之后，这样才能生效！
 >
 > a:link会对拥有a标签的属性href=""，即拥有实际链接地址的a对象发生效果
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -631,7 +631,7 @@ color: rgba(r,g,b,a)
 color: rgba(0,0,0,0.3)  
 ```
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -691,7 +691,7 @@ color: rgba(0,0,0,0.3)
 >
 > 一般项目中的页面的行高设置比字号大7~8像素左右就可以了, 比如当前使用14像素的字号，行高设为24像素左右合适。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -726,7 +726,7 @@ color: rgba(0,0,0,0.3)
 
 + css
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -774,7 +774,7 @@ color: rgba(0,0,0,0.3)
 - **right：**内容右对齐。
 - **justify：**内容两端对齐，但对于强制打断的行（被打断的这一行）及最后一行（包括仅有一行文本的情况，因为它既是第一行也是最后一行）不做处理。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -815,7 +815,7 @@ color: rgba(0,0,0,0.3)
 
 text-indent属性用于设置首行文本的缩进，其属性值可为不同单位的数值、em字符宽度的倍数、或相对于浏览器窗口宽度的百分比%，允许使用负值, 建议使用em作为设置单位。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -860,7 +860,7 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 - **overline：**指定文字的装饰是上划线
 - **line-through：**指定文字的装饰是贯穿线
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -921,7 +921,7 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 - **normal：**默认间隔
 - **length：**用长度值指定间隔。可以为负值。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -982,7 +982,7 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
 text-shadow: -5px 0px cyan, 5px 0px red;
 ```
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

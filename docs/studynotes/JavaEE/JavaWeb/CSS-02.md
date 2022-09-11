@@ -23,7 +23,7 @@ tags:
 
 >并集选择器和的意思，只要逗号隔开的，所有选择器都会执行后面样式。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +73,7 @@ tags:
 
 ![image-20220513220452691](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image-20220513220452691.5ro6vwhu8so0.webp)
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,7 +120,7 @@ tags:
 
 > 这里的子指的是亲儿子不包含孙子,重孙子之类。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,7 +204,7 @@ tags:
 
     > 我们网页的标签非常多，在不同地方会用到不同类型的选择器，以便更好的完成我们的网页。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -331,7 +331,7 @@ tags:
 
 （2）宽度，高度，行高、外边距以及内边距都可以控制。
 
-```css
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
