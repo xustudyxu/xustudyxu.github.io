@@ -1,5 +1,5 @@
 ---
-title: Docker_images_principle
+title: Docker 镜像原理
 date: 2022-09-11 17:25:45
 permalink: /project-management/Docker/Docker_images_principle
 categories:
