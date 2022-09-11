@@ -35,6 +35,7 @@ module.exports = [
       '/studynotes/project-management/Docker/Docker_introduction',
       '/studynotes/project-management/Docker/Docker_install',
       '/studynotes/project-management/Docker/Docker_Command',
+      '/studynotes/project-management/Docker/Docker_images_principle',
         ]
       }, {
       title:'Maven',
