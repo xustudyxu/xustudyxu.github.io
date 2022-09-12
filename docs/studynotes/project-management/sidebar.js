@@ -58,8 +58,6 @@ module.exports = [
         '/studynotes/project-management/Git/Git_idea',
         '/studynotes/project-management/Git/GitHub_idea',
         '/studynotes/project-management/Git/GitLab_',
-    
-    
           ]
         }
   
