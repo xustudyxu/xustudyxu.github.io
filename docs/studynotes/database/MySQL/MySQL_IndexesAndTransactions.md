@@ -1,5 +1,5 @@
 ---
-title: MySQL 索引与实务
+title: MySQL 索引与事务
 date: 2022-09-13 21:54:17
 permalink: /database/MySQL/MySQL_IndexesAndTransactions
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - MySQL
 ---
-# MySQL 索引与实务
+# MySQL 索引与事务
 
 [[toc]]
 
