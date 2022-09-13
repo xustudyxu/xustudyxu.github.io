@@ -4,6 +4,13 @@ module.exports = [
     collapsable: false,
     children:[
     '/studynotes/database/MySQL/MySQL',
+    '/studynotes/database/MySQL/MySQL-CRUD',
+    '/studynotes/database/MySQL/MySQL-function',
+    '/studynotes/database/MySQL/MySQ-ManyTableQuery',
+    '/studynotes/database/MySQL/MySQL-ConstraintsAndSelf-growth',
+    '/studynotes/database/MySQL/MySQL_IndexesAndTransactions',
+    '/studynotes/database/MySQL/MySQL_Table_type_storage_engine',
+    '/studynotes/database/MySQL/MySQL_View_Manage',
       ]
   },{
     title:'NoSQL 数据库概论',

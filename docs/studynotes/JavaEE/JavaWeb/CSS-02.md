@@ -384,8 +384,8 @@ tags:
 
 ### 总结-块级元素和行内元素分别有哪些？
 
-1）行内元素有：a b span img input select strong（强调的语气）
-2）块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p table form
+1. 行内元素有：a b span img input select strong（强调的语气）
+2. 块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p table form
 
 
 ### 标签显示模式转换 display
@@ -413,6 +413,60 @@ tags:
     background-color: rgb(255, 0, 0);
     background-color: #ff0000;
 }
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 200px;
+            height: 300px;
+            /* 预定义 */
+            /* background-color: red; */
+            /* 十六进制 */
+            /* background-color: #fff; */
+            background-color: red;
+            background-color: rgba(255,0,0,0.5);
+        }
+        /* 背景图片 */
+        .box {
+            width: 800px;
+            height: 1000px;
+            border: 1px solid red;
+            background-image: url(images/01.png);
+            /* 背景重复方式 */
+            /* 只在水平位置显示 */
+            /* background-repeat: repeat-x; */
+            background-repeat: no-repeat;
+            /* 背景的位置 */
+            /* 水平 垂直 */
+            /* 右下 */
+            background-position: right bottom;
+            /* 中间 */
+            background-position: center center;
+            /* 像素值 */
+            background-position: 50px 50px;
+            /* 水平 垂直 */
+            background-position: 50% 30%;
+            /* 如果只设置一个值，另外一个值是50% 居中的 */
+            background-position: right;
+
+
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+    <div class="box">哈哈</div>
+    <div class="con"></div>
+</html>
 ```
 
 ### 背景图片
@@ -532,6 +586,42 @@ CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（�
     background: #00ff00 url("index.png") no-repeat fixed center;
 }
 ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            /* 1.测量元素的宽和高 */
+            width: 62px;
+            height: 58px;
+            border: 1px solid red;
+            /* 2.引入图片 */
+            /* background-image: url(images/01.png);
+            background-repeat: -181px; */
+            /* 3.设置图片的位置，测量后将测量值的值设置 */
+
+            /* 如果只设置一个值 */
+            /* 颜色，图片，背景重复方式，位置 */
+            background: red url(images/01.png) no-repeat 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+    <div class="con"></div>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image.1f4su0daopj4.webp)
+
 ## 背景透明(CSS3)
 
 CSS3支持背景半透明的写法语法格式是:
@@ -562,7 +652,7 @@ background-size: 300px 100px;
 /* background-size: contain; */
 /* background-size: cover; */
 ```
-> 注意:background-size属性一定要写在background属性后面。
+> 注意:`background-size`属性一定要写在`background`属性后面。
 
 ## 背景总结
 
@@ -579,7 +669,13 @@ background-size: 300px 100px;
 ## 导航案例
 
 ```        html
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>		
         a {
             width: 150px;
@@ -607,6 +703,10 @@ background-size: 300px 100px;
     <a href="#">联系我们</a>
 </body>
 ```
+
++ 鼠标放在业务介绍
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image.4cko362ezv0.webp)
 
 # list-style 属性
 
@@ -649,6 +749,42 @@ ul
 | :---- | :------------------- |
 | *URL* | 图像的路径。         |
 | none  | 默认。无图形被显示。 |
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul元素上有小圆点 */
+        ul {
+            /* 去掉小圆点 */
+            list-style-type: none;
+            /* list-style-type: ; */
+            /* list-style-type: disc; 默认实心圆 */
+            /* list-style-type: circle; 空心圆 */
+            list-style-type: square;
+            /* 小圆点位置 */
+            list-style-position: inside;
+
+            list-style-image: url(../../CSS/HomeWork/images/sq.png);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>元素</li>
+    </ul>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image.7fu6ni53s5c.webp)
 
 # CSS 三大特性
 

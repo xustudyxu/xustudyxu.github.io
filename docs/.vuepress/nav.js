@@ -83,7 +83,7 @@ module.exports = [{
     {
       text: 'SQL 数据库',
       items: [
-        { text: 'MySQL', link: '/pages/e0de1d/' }
+        { text: 'MySQL', link: '/pages/e72480/' }
       ]
     },
     {
