@@ -129,7 +129,7 @@ discovery.seed_hosts: ["localhost:9301", "localhost:9302"]
 discovery.zen.fd.ping_timeout: 1m
 discovery.zen.fd.ping_retries: 5
 #集群内的可以被选为主节点的节点列表
-cluster.initial_master_nodes: ["node-1001", "node-10022","node-1003"]
+cluster.initial_master_nodes: ["node-1001", "node-1002","node-1003"]
 #跨域配置
 #action.destructive_requires_name: true
 http.cors.enabled: true
