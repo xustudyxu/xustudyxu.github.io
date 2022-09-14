@@ -1,3 +1,12 @@
+---
+title: 本地镜像发布到阿里云
+date: 2022-09-14 23:27:23
+permalink: /project-management/Docker/Local_images_are_published_to_Alibaba_Cloud
+categories:
+  - Docker
+tags:
+  - Docker
+---
 # 本地镜像发布到阿里云
 
 [[toc]]

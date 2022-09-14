@@ -36,6 +36,7 @@ module.exports = [
       '/studynotes/project-management/Docker/Docker_install',
       '/studynotes/project-management/Docker/Docker_Command',
       '/studynotes/project-management/Docker/Docker_images_principle',
+      '/studynotes/project-management/Docker/Local_images_are_published_to_Alibaba_Cloud',
         ]
       }, {
       title:'Maven',
