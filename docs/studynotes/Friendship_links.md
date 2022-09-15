@@ -46,7 +46,7 @@ tags:
 ```yaml
 name: xustudyxu
 desc: 一起学习编程!
-avatar: https://cdn.jsdelivr.net/gh/xustudyxu/imagehosting@master/20220423/01.3d9wrma6qlq0.webp
+avatar: https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp
 link: https://frxcat.fun/
 bgColor: '#CBEAFA'
 ```
