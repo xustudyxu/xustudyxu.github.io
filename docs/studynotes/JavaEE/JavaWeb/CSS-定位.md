@@ -1,7 +1,7 @@
 ---
 title: CSS-定位(position)
 date: 2022-09-16 21:50:41
-permalink: /JavaEE/JavaWeb/CSS-浮动
+permalink: /JavaEE/JavaWeb/CSS-定位
 categories:
   - JavaWeb
 tags:
