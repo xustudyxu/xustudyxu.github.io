@@ -40,6 +40,8 @@ module.exports = [
       '/studynotes/JavaEE/JavaWeb/CSS',
       '/studynotes/JavaEE/JavaWeb/CSS-02',
       '/studynotes/JavaEE/JavaWeb/CSS-03',
+      '/studynotes/JavaEE/JavaWeb/CSS-浮动',
+      '/studynotes/JavaEE/JavaWeb/CSS-定位',
   
         ]
       },{
