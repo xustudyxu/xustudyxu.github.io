@@ -1057,38 +1057,38 @@ docker start 1365f332be6b
 
 - 第一种命令：`docker attach`
 
-  ```sh
-  # 执行命令
-  docker ps
-  
-  # 返回结果
-  CONTAINER ID   IMAGE           COMMAND             CREATED          STATUS          PORTS                                       NAMES
-  1365f332be6b   tomcat:8.5.73   "catalina.sh run"   42 minutes ago   Up 20 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
-  
-  # 进入容器内
-  docker attach 1365f332be6b
-  
-  # 退出
-  exit
-  ```
+```sh
+# 执行命令
+docker ps
+
+# 返回结果
+CONTAINER ID   IMAGE           COMMAND             CREATED          STATUS          PORTS                                       NAMES
+1365f332be6b   tomcat:8.5.73   "catalina.sh run"   42 minutes ago   Up 20 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat01
+
+# 进入容器内
+docker attach 1365f332be6b
+
+# 退出
+exit
+```
 
   可以看出，该命令进入容器后，如果退出容器，容器自动结束运行。
 
 - 第二种命令：`docker exec`，格式为：`docker exec [options] <容器 id> <容器使用的终端窗口>`
 
-  ```sh
+```sh
 docker exec [options] <容器 id> <容器使用的终端窗口>
-  
-  # 以交互模式运行容器，通常与 -t 一起使用
-  docker exec -i <容器 id> <容器使用的终端窗口>
-  
-  # 分配一个伪终端，如 shell窗口、base 窗口
-  docker exec -t <容器 id> <容器使用的终端窗口>
-  
-  # 建议一起使用
-  docker exec -it <容器 id> <容器使用的终端窗口>
-  ```
-  
+
+# 以交互模式运行容器，通常与 -t 一起使用
+docker exec -i <容器 id> <容器使用的终端窗口>
+
+#分配一个伪终端，如 shell窗口、base 窗口
+docker exec -t <容器 id> <容器使用的终端窗口>
+
+#建议一起使用
+docker exec -it <容器 id> <容器使用的终端窗口>
+```
+
   `-i`：以交互模式运行容器，通常与 -t 一起使用
 
   `-t`：分配一个伪终端，如 shell窗口、base 窗口
@@ -1101,11 +1101,11 @@ docker exec [options] <容器 id> <容器使用的终端窗口>
   
   # 进入容器内部，查看容器内部
   root@1365f332be6b:/usr/local/tomcat# ls
-  bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  native-jni-lib  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  webapps.dist  work
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  native-jni-lib  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  webapps.dist  work
   
-  # 从容器内部退出
+# 从容器内部退出
   root@1365f332be6b:/usr/local/tomcat# exit
-  
+
   # 查看容器是否停止运行
   docker ps
   
