@@ -1,13 +1,15 @@
 ---
 title: CSS-定位(position)
 date: 2022-09-16 21:50:41
-permalink: /JavaEE/JavaWeb/CSS-定位
+permalink: /JavaEE/JavaWeb/CSS-position
 categories:
   - JavaWeb
 tags:
   - JavaWeb
 ---
 # CSS-定位(position)
+
+[[toc]]
 
 如果说浮动， 关键在一个 “浮” 字上面， 那么,定位关键在于一个 “位” 上。
 

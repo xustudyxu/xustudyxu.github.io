@@ -1,13 +1,15 @@
 ---
 title: CSS-浮动(float)
 date: 2022-09-16 21:42:52
-permalink: /JavaEE/JavaWeb/CSS-浮动
+permalink: /JavaEE/JavaWeb/CSS-float
 categories:
   - JavaWeb
 tags:
   - JavaWeb
 ---
 # CSS-浮动(float)
+
+[[toc]]
 
 ## CSS 布局的三种机制
 
