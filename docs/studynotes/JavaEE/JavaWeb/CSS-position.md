@@ -80,6 +80,58 @@ position属性的常用值
 
 如果说浮动的主要目的是 让多个块级元素一行显示，那么定位的主要价值就是移动位置， 让盒子到我们想要的位置上去。
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 600px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        .father div {
+            width: 100px;
+            height: 100px;
+        }
+        .son1 {
+            background-color: yellow;
+        }
+        .son2 {
+            background-color: red;
+            /* 相对定位 */
+            /* 相对于原来自己的位置进行移动,原来的位置仍然占位 */
+            position: relative;
+            /* 边偏移  2个方向配合即可*/
+
+            
+            left: 100px;
+            top: 50px;
+        }
+        .son3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">son1</div>
+        <div class="son2">son2</div>
+        <div class="son3">son3</div>
+    </div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.6133ran2i9g0.webp)
+
 ## 绝对定位absolute (拼爹型)
 
 当position属性的取值为absolute时，可以将元素的定位模式设置为绝对定位。
@@ -110,6 +162,62 @@ position属性的常用值
 >父盒子布局时，需要占有位置，因此父亲只能是 相对定位. 
 >
 >这就是子绝父相的由来。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            width: 600px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        .father div {
+            width: 100px;
+            height: 100px;
+        }
+        .son1 {
+            background-color: yellow;
+        }
+        .son2 {
+            background-color: red;
+            /* 绝对定位 */
+            /* 绝对定位，完全脱标，脱离标准流，不占位置 */
+            position: absolute;
+            /* 边偏移  2个方向配合即可*/
+
+            
+            left: 100px;
+            top: 0px;
+        }
+        .son3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">son1</div>
+        <div class="son2">son2</div>
+        <div class="son3">son3</div>
+    </div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.1ied7kxdm268.webp)
 
 ## 定位的扩展
 

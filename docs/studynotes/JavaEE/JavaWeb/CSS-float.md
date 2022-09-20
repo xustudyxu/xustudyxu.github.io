@@ -59,6 +59,47 @@ tags:
 
 浮动脱离标准流，不占位置，会影响标准流。浮动只有左右浮动。
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            /* display: inline-block; */
+            /* 浮动 */
+            /* 1。使元素在一行内显示,使用浮动 */
+            float: left;
+            /* 浮动的元素的display属性是block */
+        }
+        .con1 {
+            background-color: red;
+        }
+        .con2 {
+            background-color: blue;
+        }
+        .con3 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="con1"></div>
+    <div class="con2"></div>
+    <div class="con3"></div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.48fey9w1jlg0.webp)
+
 ### 浮动的元素的对齐
 
 浮动首先创建包含块的概念（包裹）,总是找理它最近的父级元素,但是不会超出内边距的范围。 
@@ -151,4 +192,72 @@ zoom : normal | number
   设置或检索对象的缩放比例。设置或更改一个已被呈递的对象的此属性值将导致环绕对象的内容重新流动。
   
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.父级元素因为子集元素浮动的问题导致高度为0 */
+        .main {
+            border: 1px solid red;
+            /* height: 300px; */
+            background-color: #fff;
+        }
 
+        .con1,.con2,.con3 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #666;
+        }
+        .main .con1 {
+            background-color: blue;
+        }
+        .main .con2 {
+            background-color: green;
+        }
+        .main .con3 {
+            background-color: red;
+        }
+        /* 清除浮动 */
+        /* 给浮动元素的父元素设置清除浮动 */
+        .clearfix::after {
+            content: '.';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .he {
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="main clearfix">
+        <div class="con1">
+            con1
+        </div>
+        <div class="con2">
+            con2
+        </div>
+        <div class="con3">
+            con3
+        </div>
+        <!-- 不好 -->
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+    <div class="he"></div>
+</body>
+</html>
+```
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.ut0lbzkrms0.webp)

@@ -42,6 +42,8 @@ module.exports = [
       '/studynotes/JavaEE/JavaWeb/CSS-03',
       '/studynotes/JavaEE/JavaWeb/CSS-float',
       '/studynotes/JavaEE/JavaWeb/CSS-position',
+      '/studynotes/JavaEE/JavaWeb/CSS3_New_features',
+      '/studynotes/JavaEE/JavaWeb/CSS2D3D',
   
         ]
       },{
