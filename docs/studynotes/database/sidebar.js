@@ -12,7 +12,17 @@ module.exports = [
     '/studynotes/database/MySQL/MySQL_Table_type_storage_engine',
     '/studynotes/database/MySQL/MySQL_View_Manage',
       ]
-  },{
+  },
+  {
+    title:'MySQL-进阶',
+    collapsable: false,
+    children:[
+    '/studynotes/database/MySQL/MySQL_Storage_Engine',
+
+
+      ]
+    },
+  {
     title:'NoSQL 数据库概论',
     collapsable: false,
     children:[
