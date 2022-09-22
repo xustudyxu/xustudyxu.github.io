@@ -18,8 +18,7 @@ module.exports = [
     collapsable: false,
     children:[
     '/studynotes/database/MySQL/MySQL_Storage_Engine',
-
-
+    '/studynotes/database/MySQL/MySQL_Advanced_index',
       ]
     },
   {

@@ -1,3 +1,12 @@
+---
+title: MySQL 索引
+date: 2022-09-22 17:46:57
+permalink: /database/MySQL/MySQL_Advanced_index
+categories:
+  - MySQL
+tags:
+  - MySQL
+---
 # MySQL 索引
 
 [[toc]]
