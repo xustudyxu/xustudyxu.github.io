@@ -223,3 +223,65 @@ B-Tree，B树是一种**多路**衡查找树，相对于二叉树，B树每个�
 + 一旦节点存储的key数量到达5，就会裂变，中间元素向上分裂。
 + 在B树中，非叶子节点和叶子节点都会存放数据。
 
+### B+Tree
+
+B+Tree是B-Tree的变种，我们以一颗最大度数（max-degree）为4（4阶）的b+tree为例，来看一下其结构示意图：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.19jn04aoruqo.webp)
+
+我们可以看到，两部分：
+
++ 绿色框框起来的部分，是索引部分，仅仅起到索引数据的作用，不存储数据。
++ 红色框框起来的部分，是数据存储部分，在其叶子节点中要存储具体的数据。
+
+我们可以通过一个数据结构可视化的网站来简单演示一下。[B+ Tree Visualization (usfca.edu)](https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.3ejefb0tmlk0.webp)
+
+插入一组数据： 100 65 169 368 900 556 780 35 215 1200 234 888 158 90 1000 88 120 268 250 。然后观察一些数据插入过程中，节点的变化情况。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.4sdwnp6ytp40.webp)
+
+最终我们看到，B+Tree 与 B-Tree相比，主要有以下三点区别：
+
++ 所有的数据都会出现在叶子节点。
++ 叶子节点形成一个单向链表。
++ 非叶子节点仅仅起到索引数据作用，具体的数据都是在叶子节点存放的。
+
+上述我们所看到的结构是标准的B+Tree的数据结构，接下来，我们再来看看MySQL中优化之后的B+Tree。
+
+MySQL索引数据结构对经典的B+Tree进行了优化。在原B+Tree的基础上，增加一个指向相邻叶子节点的链表指针，就形成了带有顺序指针的B+Tree，提高区间访问的性能，利于排序。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.75isnx49mkw0.webp)
+
+### Hash
+
+MySQL中除了支持B+Tree索引，还支持一种索引类型---Hash索引。
+
+1. 结构
+
+哈希索引就是采用一定的hash算法，将键值换算成新的hash值，映射到对应的槽位上，然后存储在hash表中。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.4np8kvtyma00.webp)
+
+如果两个(或多个)键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可以通过链表来解决。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.1emkfrpfv50.webp)
+
+2. 特点
+
++ Hash索引只能用于对等比较(=，in)，不支持范围查询（between，>，< ，...）
++ 无法利用索引完成排序操作
++ 查询效率高，通常(不存在hash冲突的情况)只需要一次检索就可以了，效率通常要高于B+tree索引
+
+3. 存储引擎支持
+
+在MySQL中，支持hash索引的是Memory存储引擎。 而InnoDB中具有自适应hash功能，hash索引是
+InnoDB存储引擎根据B+Tree索引在指定条件下自动构建的。
+
+> 思考题： **为什么InnoDB存储引擎选择使用B+tree索引结构**?
+>
+> 1. 相对于二叉树，层级更少，搜索效率高；
+> 2. 对于B-tree，无论是叶子节点还是非叶子节点，都会保存数据，这样导致一页中存储的键值减少，指针跟着减少，要同样保存大量数据，只能增加树的高度，导致性能降低；
+> 3. 相对Hash索引，B+tree支持范围匹配及排序操作；
+
