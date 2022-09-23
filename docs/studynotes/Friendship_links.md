@@ -37,6 +37,11 @@ tags:
   avatar: https://xiaolong-oss-cdn.oss-cn-guangzhou.aliyuncs.com/myblog/images/logo.jpg
   link: https://blog.xiaolong0418.com/
   bgColor: '#CBEAFA'
+- name: 20岁了人生还没目的
+  desc: 魔方、航拍、IoT
+  avatar: http://blog.isherryforever.ink/upload/2022/05/%E5%A4%B4%E5%83%8F-ff5f9601fcf34717a297c40f32467a7d.jpg
+  link: http://blog.isherryforever.ink/
+  bgColor: '#CBEAFA'
 ```
 
 :::
