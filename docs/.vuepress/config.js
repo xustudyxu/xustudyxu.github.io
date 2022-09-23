@@ -26,7 +26,7 @@ module.exports = {
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }],
     ['link', { rel: 'stylesheet', href: '//at.alicdn.com/t/font_3114978_qe0b39no76.css' }],
-    ['meta', { name: 'baidu-site-verification', content: 'code-6jCxKHSOqx' }],
+    ['meta', { name: 'baidu-site-verification', content: 'code-5aMKYEt9fV' }],
 
 
 
