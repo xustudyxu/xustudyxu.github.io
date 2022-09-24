@@ -42,6 +42,11 @@ tags:
   avatar: http://blog.isherryforever.ink/upload/2022/05/%E5%A4%B4%E5%83%8F-ff5f9601fcf34717a297c40f32467a7d.jpg
   link: http://blog.isherryforever.ink/
   bgColor: '#CBEAFA'
+- name: 七鳄の学习格
+  desc: 如果世界多了精彩，每一位都是创造者，大家都是你的观众
+  avatar: https://blog.gmcj0816.top/img/SeriousWission_TouXiangPic.jpg
+  link: https://blog.gmcj0816.top/
+  bgColor: '#CBEAFA'
 ```
 
 :::
