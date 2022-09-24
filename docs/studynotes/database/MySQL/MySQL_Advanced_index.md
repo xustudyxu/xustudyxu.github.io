@@ -1391,7 +1391,7 @@ mysql> explain select * from tb_user force index(idx_user_pro) where profession 
 
 ### 覆盖索引
 
-尽量使用覆盖索引，减少select *。 那么什么是覆盖索引呢？ 覆盖索引是指 查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到 。
+尽量使用覆盖索引，减少select *。 那么什么是覆盖索引呢？ 覆盖索引是指<mark>查询使用了索引，并且需要返回的列，在该索引中已经全部能够找到</mark> 。
 
 接下来，我们来看一组SQL的执行计划，看看执行计划的差别，然后再来具体做一个解析。
 
@@ -1411,7 +1411,7 @@ drop index idx_email on tb_user;
 
 + 查看上述SQL执行计划
 
-```sql {5,13,21,29},
+```sql {5,13,21,29}
 mysql> explain select id, profession from tb_user where profession = '软件工程' and age = 31 and status = '0' ;
 +----+-------------+---------+------------+------+-----------------------------------+----------------------+---------+-------------------+------+----------+--------------------------+
 | id | select_type | table   | partitions | type | possible_keys                     | key                  | key_len | ref               | rows | filtered | Extra                    |
@@ -1486,7 +1486,148 @@ D. 执行SQL：selet id,name,gender from tb_user where name = 'Arm';
 >
 > `select id,username,password from tb_user where username = 'itcast';`
 >
-> 答案: 针对于 username, password建立联合索引, sql为: `create indexidx_user_name_pass on tb_user(username,password);`
+> 答案: 针对于 username, password建立联合索引, sql为: `create index idx_user_name_pass on tb_user(username,password);`
 >
 > 这样可以避免上述的SQL语句，在查询的过程中，出现回表查询。
+
+###  前缀索引
+
+当字段类型为字符串（varchar，text，longtext等）时，有时候需要索引很长的字符串，这会让索引变得很大，查询时，浪费大量的磁盘IO， 影响查询效率。此时可以只将字符串的一部分前缀，建立索引，这样可以大大节约索引空间，从而提高索引效率。
+
+1. 语法
+
+```sql
+create index idx_xxxx on table_name(column(n));
+```
+
+示例:
+
+为tb_user表的email字段，建立长度为5的前缀索引。
+
+```sql
+create index idx_email_5 on tb_user(email(5));
+```
+
+```sql {12}
+mysql> show index from tb_user;
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table   | Non_unique | Key_name             | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| tb_user |          0 | PRIMARY              |            1 | id          | A         |          23 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          0 | idx_user_phone       |            1 | phone       | A         |          24 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_name        |            1 | name        | A         |          24 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            1 | profession  | A         |          16 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            2 | age         | A         |          22 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            3 | status      | A         |          24 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro         |            1 | profession  | A         |          16 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_email_5          |            1 | email       | A         |          23 |        5 |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+8 rows in set (0.03 sec)
+```
+
+2. 前缀长度
+
+可以根据索引的选择性来决定，而选择性是指不重复的索引值（基数）和数据表的记录总数的比值，索引选择性越高则查询效率越高， 唯一索引的选择性是1，这是最好的索引选择性，性能也是最好的。
+
+```sql
+select count(distinct email) / count(*) from tb_user;
+select count(distinct substring(email,1,5)) / count(*) from tb_user;
+```
+
+3. 前缀索引的查询流程
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.6pmpxlo2yiw0.webp)
+
+### 单列索引与联合索引
+
+单列索引：即一个索引只包含单个列。
+
+联合索引：即一个索引包含了多个列。
+
+我们先来看看 tb_user 表中目前的索引情况:
+
+```sql
+mysql> show index from tb_user;
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table   | Non_unique | Key_name             | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| tb_user |          0 | PRIMARY              |            1 | id          | A         |          23 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          0 | idx_user_phone       |            1 | phone       | A         |          24 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_name        |            1 | name        | A         |          24 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            1 | profession  | A         |          16 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            2 | age         | A         |          22 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro_age_sta |            3 | status      | A         |          24 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_user_pro         |            1 | profession  | A         |          16 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| tb_user |          1 | idx_email_5          |            1 | email       | A         |          23 |        5 |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++---------+------------+----------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+8 rows in set (0.00 sec)
+```
+
+在查询出来的索引中，既有单列索引，又有联合索引。
+
+接下来，我们来执行一条SQL语句，看看其执行计划：
+
+```sql {1,13}
+mysql> select * from tb_user where phone = '17799990010' and name = '韩信';
++----+--------+-------------+-------------------+-----------------------------+------+--------+--------+---------------------+
+| id | name   | phone       | email             | profession                  | age  | gender | status | createtime          |
++----+--------+-------------+-------------------+-----------------------------+------+--------+--------+---------------------+
+| 11 | 韩信   | 17799990010 | hanxin520@163.com | 无机非金属材料工程          |   27 | 1      | 0      | 2001-06-12 00:00:00 |
++----+--------+-------------+-------------------+-----------------------------+------+--------+--------+---------------------+
+1 row in set (0.02 sec)
+
+mysql> explain select * from tb_user where phone = '17799990010' and name = '韩信';
++----+-------------+---------+------------+-------+------------------------------+----------------+---------+-------+------+----------+-------+
+| id | select_type | table   | partitions | type  | possible_keys                | key            | key_len | ref   | rows | filtered | Extra |
++----+-------------+---------+------------+-------+------------------------------+----------------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | tb_user | NULL       | const | idx_user_phone,idx_user_name | idx_user_phone | 46      | const |    1 |   100.00 | NULL  |
++----+-------------+---------+------------+-------+------------------------------+----------------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+```
+
+通过上述执行计划我们可以看出来，在and连接的两个字段 phone、name上都是有单列索引的，但是最终mysql只会选择一个索引，也就是说，只能走一个字段的索引，此时是会回表查询的。
+
+紧接着，我们再来创建一个phone和name字段的联合索引来查询一下执行计划。
+
+```sql
+create unique index idx_user_phone_name on tb_user(phone,name);
+```
+
+```sql {5}
+mysql> explain select * from tb_user where phone = '17799990010' and name = '韩信';
++----+-------------+---------+------------+-------+--------------------------------------------------+----------------+---------+-------+------+----------+-------+
+| id | select_type | table   | partitions | type  | possible_keys                                    | key            | key_len | ref   | rows | filtered | Extra |
++----+-------------+---------+------------+-------+--------------------------------------------------+----------------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | tb_user | NULL       | const | idx_user_phone,idx_user_phone_name,idx_user_name | idx_user_phone | 46      | const |    1 |   100.00 | NULL  |
++----+-------------+---------+------------+-------+--------------------------------------------------+----------------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+```
+
+```sql {5}
+mysql> explain select * from tb_user use index(idx_user_name) where phone = '17799990010' and name = '韩信';
++----+-------------+---------+------------+------+---------------+---------------+---------+-------+------+----------+-------------+
+| id | select_type | table   | partitions | type | possible_keys | key           | key_len | ref   | rows | filtered | Extra       |
++----+-------------+---------+------------+------+---------------+---------------+---------+-------+------+----------+-------------+
+|  1 | SIMPLE      | tb_user | NULL       | ref  | idx_user_name | idx_user_name | 202     | const |    1 |     5.00 | Using where |
++----+-------------+---------+------------+------+---------------+---------------+---------+-------+------+----------+-------------+
+1 row in set, 1 warning (0.00 sec)
+```
+
+此时，查询时，就走了联合索引，而在联合索引中包含 phone、name的信息，在叶子节点下挂的是对应的主键id，所以查询是无需回表查询的。
+
+> 在业务场景中，如果存在多个查询条件，考虑针对于查询字段建立索引时，建议建立联合索引，而非单列索引。
+
+如果查询使用的是联合索引，具体的结构示意图如下：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.137p0h70od40.webp)
+
+## 索引设计原则
+
+1. 针对于数据量较大，且查询比较频繁的表建立索引。
+2. 针对于常作为查询条件（where）、排序（order by）、分组（group by）操作的字段建立索引。
+3. 尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。
+4. 如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。
+5.  尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空间，避免回表，提高查询效率。
+6. 要控制索引的数量，索引并不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。
+7. 如果索引列不能存储NULL值，请在创建表时使用NOT NULL约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。
 
