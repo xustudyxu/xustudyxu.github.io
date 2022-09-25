@@ -179,7 +179,7 @@ mysql> select count(*) from tb_user;
 
     会再次开启一个页，写入新的页中吗？
 
-    ![1664072028289](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1664072028289.png)
+    ![1664072028289](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/1664072028289.49gc7sajqfs0.webp)
 
     不会。因为，索引结构的叶子节点是有顺序的。按照顺序，应该存储在47之后。
 
