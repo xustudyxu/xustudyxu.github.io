@@ -1,3 +1,12 @@
+---
+title: MySQL SQL优化
+date: 2022-09-25 15:18:16
+permalink: /database/MySQL/MYSQL_SQL_optimization
+categories:
+  - MySQL
+tags:
+  - MySQL
+---
 # MySQL SQL优化
 
 [[toc]]
