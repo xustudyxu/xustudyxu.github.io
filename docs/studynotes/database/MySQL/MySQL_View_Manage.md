@@ -122,7 +122,7 @@ SELECT  * FROM emp_view03
 
 ![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/67.png)
 
-!![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
+![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
 
 ### 创建用户
 
