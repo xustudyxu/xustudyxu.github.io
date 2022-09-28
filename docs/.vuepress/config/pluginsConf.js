@@ -57,6 +57,20 @@ module.exports = [
     },
   ],
   [
+    "smplayer",
+    {
+      bilibili: {
+        page: 1,
+        danmaku: !0,
+        allowfullscreen: "allowfullscreen",
+        sandbox:
+          "allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups",
+        width: "100%",
+        height: [9 / 16, 70],
+      },
+    },
+  ],
+  [
     {
         name: 'custom-plugins',//代码块皮肤,页面信息，评论
         globalUIComponents: ["BlockToggle","PageInfo","Aplayer","Twikoo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles

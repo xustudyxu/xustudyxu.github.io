@@ -270,6 +270,101 @@ SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA = 'xxx'; -- 查�
 SHOW CREATE PROCEDURE 存储过程名称 ; -- 查询某个存储过程的定义
 ```
 
+4. 删除
+
+```sql
+DROP PROCEDURE [ IF EXISTS ] 存储过程名称 ；
+```
+
+::: tip 注意:
+
+在命令行中，执行创建存储过程的SQL时，需要通过关键字 delimiter 指定SQL语句的结束符。
+
+:::
+
++ 演示案例
+
+```sql
+-- 存储过程基本语法
+-- 创建
+create procedure p1()
+begin
+	select count(*) from student;
+end;
+-- 调用
+call p1()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 + 美女姐姐：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220928/image.68yoi8b4b740.webp)

@@ -625,3 +625,6 @@ update course set name = 'SpringBoot' where name = 'PHP' ;
 当我们开启多个事务，在执行上述的SQL时，我们发现行锁升级为了表锁。 导致该update语句的性能大大降低。
 
 > <mark>InnoDB的行锁是针对索引加的锁，不是针对记录加的锁 ，并且该索引不能失效，否则会从行锁升级为表锁 </mark>。也就是说我这边事务没有提交的话，其他关于这个表的update都不会执行成功，导致该update语句的性能大大降低。
+
+<Bilibili bvid="BV1KW4y1e73i" />
+

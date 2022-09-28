@@ -28,6 +28,7 @@
     "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-meilisearch": "^0.12.1",
     "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-smplayer": "1",
     "vuepress-plugin-tabs": "^0.3.0",
     "vuepress-plugin-toolbar": "^1.0.1"
   },
