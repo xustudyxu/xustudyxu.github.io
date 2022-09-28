@@ -270,6 +270,6 @@ SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA = 'xxx'; -- 查�
 SHOW CREATE PROCEDURE 存储过程名称 ; -- 查询某个存储过程的定义
 ```
 
- <video controls weight="200px" height="300px">
-        <source src="images/gxg.mp4">
-    </video>
++ 美女姐姐：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220928/image.68yoi8b4b740.webp)
