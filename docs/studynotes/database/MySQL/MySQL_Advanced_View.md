@@ -1,5 +1,5 @@
 ---
-title: MySQL 视图
+title: MySQL 视图/存储过程/触发器
 date: 2022-09-25 17:19:33
 permalink: /database/MySQL/MySQL_Advanced_View
 categories:
@@ -250,3 +250,26 @@ select * from tb_stu_course_view;
 
 1. 创建
 
+```sql
+CREATE PROCEDURE 存储过程名称 ([ 参数列表 ])
+BEGIN
+	-- SQL语句
+END ;
+```
+
+2. 调用
+
+```sql
+CALL 名称 ([ 参数 ]);
+```
+
+3.  查看
+
+```sql
+SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA = 'xxx'; -- 查询指定数据库的存储过程及状态信息
+SHOW CREATE PROCEDURE 存储过程名称 ; -- 查询某个存储过程的定义
+```
+
+ <video controls weight="200px" height="300px">
+        <source src="images/gxg.mp4">
+    </video>
