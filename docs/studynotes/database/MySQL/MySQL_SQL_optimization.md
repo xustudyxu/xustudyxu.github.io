@@ -581,7 +581,7 @@ mysql> explain select u.* from tb_user u,(select id from tb_user order by id lim
 ## count 优化
 
 ```sql
- seect count(*) from tb_user;
+ select count(*) from tb_user;
 ```
 
 在之前的测试中，我们发现，如果数据量很大，在执行count操作时，是非常耗时的。
@@ -629,4 +629,3 @@ update course set name = 'SpringBoot' where name = 'PHP' ;
 + 美女姐姐
 
 <iframe src="//player.bilibili.com/player.html?aid=943606954&bvid=BV1KW4y1e73i&cid=846199596&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="400px" weight="600px"> </iframe>
-
