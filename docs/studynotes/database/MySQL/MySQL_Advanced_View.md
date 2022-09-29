@@ -278,7 +278,7 @@ DROP PROCEDURE [ IF EXISTS ] 存储过程名称 ；
 
 ::: tip 注意:
 
-在命令行中，执行创建存储过程的SQL时，需要通过关键字 delimiter 指定SQL语句的结束符。
+在命令行中，执行创建存储过程的SQL时，需要通过关键字 `delimiter` 指定SQL语句的结束符。
 
 :::
 
@@ -293,6 +293,118 @@ begin
 end;
 -- 调用
 call p1()
+
+-- 查看
+select * from information_schema.ROUTINES where ROUTINE_SCHEMA = 'MySQL_Advanced';
+
+show create procedure p1;
+
+-- 删除
+drop procedure if exists p1;
+```
+
+### 变量
+
+在MySQL中变量分为三种类型: 系统变量、用户定义变量、局部变量。
+
+#### 系统变量
+
+系统变量 是MySQL服务器提供，不是用户定义的，属于服务器层面。分为全局变量（`GLOBAL`）、会话变量（`SESSION`）。
+
+1. 查看系统变量
+
+```sql
+SHOW [ SESSION | GLOBAL ] VARIABLES ;               -- 查看所有系统变量
+SHOW [ SESSION | GLOBAL ] VARIABLES LIKE '......';  -- 可以通过LIKE模糊匹配方式查找变量
+SELECT @@[SESSION | GLOBAL] 系统变量名;               -- 查看指定变量的值
+```
+
+2. 设置系统变量
+
+```sql
+SET [ SESSION | GLOBAL ] 系统变量名 = 值 ;
+SET @@[SESSION | GLOBAL]系统变量名 = 值 ;
+```
+
+::: tip 注意:
+
+如果没有指定`SESSION/GLOBAL`，默认是`SESSION`，会话变量。
+
+mysql服务重新启动之后，所设置的全局参数会失效，要想不失效，可以在 `/etc/my.cnf `中配置。
+
++ 全局变量(GLOBAL): 全局变量针对于所有的会话。
++ 会话变量(SESSION): 会话变量针对于单个会话，在另外一个会话窗口就不生效了。
+
+:::
+
+演示案例：
+
+```sql {10,14}
+-- 查看全局系统变量
+SHOW GLOBAL VARIABLES;
+SHOW SESSION VARIABLES;
+
+-- 查看事务提交的开关
+SHOW SESSION VARIABLES LIKE 'auto%';
+
+-- 查看指定变量
+SELECT @@SESSION.autocommit;
+SET SESSION autocommit=0;
+INSERT INTO student VALUES(18,"小红",18);
+SELECT * from student;
+-- 只有手动提交事务后，其他的会话才能查询到小红这条记录
+COMMIT;
+```
+
+#### 用户定义变量
+
+用户定义变量 是用户根据需要自己定义的变量，用户变量不用提前声明，在用的时候直接用 "@变量名" 使用就可以。其<mark>作用域为当前连接</mark>。
+
+1. 赋值
+
+方式一:
+
+```sql
+SET @var_name = expr [, @var_name = expr] ... ;
+SET @var_name := expr [, @var_name := expr] ... ;
+```
+
+赋值时，可以使用` =` ，也可以使用` :=` ,推荐使用`:=`。
+
+方式二:
+
+```sql
+SELECT @var_name := expr [, @var_name := expr] ... ;
+SELECT 字段名 INTO @var_name FROM 表名;
+```
+
+2. 使用
+
+```sql
+SELECT @var_name ;
+```
+
+::: tip 注意:
+
+用户定义的变量无需对其进行声明或初始化，只不过获取到的值为NULL。
+
+:::
+
+演示案例:
+
+```sql
+-- 用户变量
+SET @myname = 'xustudyxu';
+set @myage := 21;
+set @mygender := '男',@myhobby := 'java';
+
+select @mycolor := 'red';
+SELECT COUNT(*) into @mycount from student;
+
+-- 使用
+SELECT @myname,@myage,@mygender;
+
+SELECT @mycolor,@mycount;
 ```
 
 
@@ -349,22 +461,5 @@ call p1()
 
 
 
-+ 美女姐姐：
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220928/image.68yoi8b4b740.webp)
