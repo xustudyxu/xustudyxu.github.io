@@ -993,3 +993,154 @@ select fun1(50);
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220930/image.47h1umf49aa0.webp)
 
+## 触发器
+
+### 介绍
+
+触发器是与表有关的数据库对象，指在`insert/update/delete`之前(`BEFORE`)或之后(`AFTER`)，触发并执行触发器中定义的SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性, 日志记录 , 数据校验等操作 。
+
+使用别名`OLD`和`NEW`来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。现在触发器还只支持行级触发，不支持语句级触发。
+
+| 触发器类型      | NEW和OLD                                                |
+| --------------- | ------------------------------------------------------- |
+| INSERT 型触发器 | NEW 表示将要或者已经新增的数据                          |
+| UPDATE 型触发器 | OLD 表示修改之前的数据 , NEW 表示将要或已经修改后的数据 |
+| DELETE 型触发器 | OLD 表示将要或者已经删除的数据                          |
+
+### 语法
+
+1. 创建
+
+```sql
+CREATE TRIGGER trigger_name
+BEFORE/AFTER INSERT/UPDATE/DELETE
+ON tbl_name FOR EACH ROW -- 行级触发器
+BEGIN
+	trigger_stmt ;
+END;
+```
+
+2. 查看
+
+```sql
+SHOW TRIGGERS;
+```
+
+3. 删除
+
+```sql
+DROP TRIGGER [schema_name.]trigger_name ; -- 如果没有指定 schema_name，默认为当前数据库 。
+```
+
+### 案例
+
+通过触发器记录 tb_user 表的数据变更日志，将变更日志插入到日志表user_logs中, 包含增加,修改 , 删除 ;
+
+表结构准备:
+
+```sql
+-- 准备工作 : 日志表 user_logs
+create table user_logs(
+id int(11) not null auto_increment,
+	operation varchar(20) not null comment '操作类型, insert/update/delete',
+	operate_time datetime not null comment '操作时间',
+	operate_id int(11) not null comment '操作的ID',
+	operate_params varchar(500) comment '操作参数',
+	primary key(`id`)
+)engine=innodb default charset=utf8;
+```
+
+A. 插入数据触发器
+
+```sql
+create trigger tb_user_insert_trigger
+		after insert on tb_user for each row
+begin
+		insert into user_logs(id, operation, operate_time, operate_id, operate_params) values
+		(null,'insert',now(),new.id,concat('插入的数据内容为:id=',new.id,',name=',new.name,',phone=',new.phone,',email=',new.email,',profession=',new.profession));
+end
+
+```
+
+测试
+
+```sql
+--查看
+show triggers;
+
+
+-- 插入数据到tb_user表
+insert into tb_user(id, name, phone, email, profession, age, gender, status, createtime) VALUES (null,'三皇子','18809091212','erhuangzi@163.com','软件工程',23,'1','1',now());
+```
+
+测试完毕之后，检查日志表中的数据是否可以正常插入，以及插入数据的正确性。
+
+B. 修改数据触发器
+
+```sql
+--修改数据的触发器
+create trigger tb_user_update_trigger
+		after update on tb_user for each row
+begin
+		insert into user_logs(id, operation, operate_time, operate_id, operate_params) values
+		(null,'update',now(),new.id,concat('更新之前的数据内容为:id=',old.id,',name=',old.name,',phone=',old.phone,',email=',old.email,',profession=',old.profession,
+		'| 更新之后的数据内容为:id=',new.id,',name=',new.name,',phone=',new.phone,',email=',new.email,',profession=',new.profession));
+end
+```
+
+测试：
+
+```sql
+show triggers;
+
+-- 更新
+update tb_user set profession = '会计' where id = 23;
+update tb_user set profession = '会计' where id <= 5;
+```
+
+测试完毕之后，检查日志表中的数据是否可以正常插入，以及插入数据的正确性。
+
+C. 删除数据触发器
+
+```sql
+--删除数据的触发器
+create trigger tb_user_delete_trigger
+		after delete on tb_user for each row
+begin
+		insert into user_logs(id, operation, operate_time, operate_id, operate_params) values
+		(null,'delete',now(),old.id,concat('删除之前的数据内容为:id=',old.id,',name=',old.name,',phone=',old.phone,',email=',old.email,',profession=',old.profession));
+end
+```
+
+测试:
+
+```sql
+ --查看
+show triggers;
+
+delete from tb_user where id = 24;
+```
+
+测试完毕之后，检查日志表中的数据是否可以正常插入，以及插入数据的正确性。
+
+::: details 
+
+user_logs表中的数据:
+
+```sql
+1	insert	2022-10-01 15:01:31	25	插入的数据内容为:id=25,name=三皇子,phone=18809091212,email=erhuangzi@163.com,profession=软件工程
+2	update	2022-10-01 15:11:10	23	更新之前的数据内容为:id=23,name=后羿,phone=17799990022,email=altycj2000@139.com,profession=城市园林| 更新之后的数据内容为:id=23,name=后羿,phone=17799990022,email=altycj2000@139.com,profession=会计
+3	update	2022-10-01 15:11:10	1	更新之前的数据内容为:id=1,name=吕布,phone=17799990000,email=lvbu666@163.com,profession=软件工程| 更新之后的数据内容为:id=1,name=吕布,phone=17799990000,email=lvbu666@163.com,profession=会计
+4	update	2022-10-01 15:11:10	2	更新之前的数据内容为:id=2,name=曹操,phone=17799990001,email=caocao666@qq.com,profession=通讯工程| 更新之后的数据内容为:id=2,name=曹操,phone=17799990001,email=caocao666@qq.com,profession=会计
+5	update	2022-10-01 15:11:10	3	更新之前的数据内容为:id=3,name=赵云,phone=17799990002,email=17799990@139.com,profession=英语| 更新之后的数据内容为:id=3,name=赵云,phone=17799990002,email=17799990@139.com,profession=会计
+6	update	2022-10-01 15:11:10	4	更新之前的数据内容为:id=4,name=孙悟空,phone=17799990003,email=17799990@sina.com,profession=工程造价| 更新之后的数据内容为:id=4,name=孙悟空,phone=17799990003,email=17799990@sina.com,profession=会计
+7	update	2022-10-01 15:11:10	5	更新之前的数据内容为:id=5,name=花木兰,phone=17799990004,email=19980729@sina.com,profession=软件工程| 更新之后的数据内容为:id=5,name=花木兰,phone=17799990004,email=19980729@sina.com,profession=会计
+8	update	2022-10-01 15:12:47	1	更新之前的数据内容为:id=1,name=吕布,phone=17799990000,email=lvbu666@163.com,profession=会计| 更新之后的数据内容为:id=1,name=吕布,phone=17799990000,email=lvbu666@163.com,profession=会计
+9	update	2022-10-01 15:12:47	2	更新之前的数据内容为:id=2,name=曹操,phone=17799990001,email=caocao666@qq.com,profession=会计| 更新之后的数据内容为:id=2,name=曹操,phone=17799990001,email=caocao666@qq.com,profession=会计
+10	update	2022-10-01 15:12:47	3	更新之前的数据内容为:id=3,name=赵云,phone=17799990002,email=17799990@139.com,profession=会计| 更新之后的数据内容为:id=3,name=赵云,phone=17799990002,email=17799990@139.com,profession=会计
+11	update	2022-10-01 15:12:47	4	更新之前的数据内容为:id=4,name=孙悟空,phone=17799990003,email=17799990@sina.com,profession=会计| 更新之后的数据内容为:id=4,name=孙悟空,phone=17799990003,email=17799990@sina.com,profession=会计
+12	update	2022-10-01 15:12:47	5	更新之前的数据内容为:id=5,name=花木兰,phone=17799990004,email=19980729@sina.com,profession=会计| 更新之后的数据内容为:id=5,name=花木兰,phone=17799990004,email=19980729@sina.com,profession=会计
+13	delete	2022-10-01 15:47:46	24	删除之前的数据内容为:id=24,name=姜子牙,phone=17799990023,email=37483844@qq.com,profession=工程造价
+```
+
+:::
