@@ -410,7 +410,7 @@ mysql> select * from stu;
 
  示例演示
 
-A. 索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为间隙锁 。
+A. **索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为**间隙锁 。
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221002/image.2bg1yvv9ouzo.webp)
 
