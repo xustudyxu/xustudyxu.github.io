@@ -23,6 +23,7 @@ module.exports = [
     '/studynotes/database/MySQL/MySQL_Advanced_View',
     '/studynotes/database/MySQL/MySQL_lock',
     '/studynotes/database/MySQL/MySQL_InnoDB_engine',
+    '/studynotes/database/MySQL/MySQL_Advanced_manager',
       ]
     },
   {
