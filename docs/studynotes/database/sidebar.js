@@ -25,7 +25,13 @@ module.exports = [
     '/studynotes/database/MySQL/MySQL_InnoDB_engine',
     '/studynotes/database/MySQL/MySQL_Advanced_manager',
       ]
-    },
+    },{
+      title:'MySQL-运维',
+      collapsable: false,
+      children:[
+      '/studynotes/database/MySQL/MySQL_journal',
+        ]
+      },
   {
     title:'NoSQL 数据库概论',
     collapsable: false,
