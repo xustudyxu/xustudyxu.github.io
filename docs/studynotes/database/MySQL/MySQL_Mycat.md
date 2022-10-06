@@ -175,3 +175,261 @@ rm -rf mysql-connector-java-5.1.35.jar
 
 + 将下载好的驱动包通过XFTP工具上传到Linux系统的/usr/local/mycat/lib/目录。
 
+### 概念介绍
+
+在MyCat的整体结构中，分为两个部分：上面的逻辑结构、下面的物理结构。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.4u4c01j1h1u0.webp)
+
+在MyCat的逻辑结构主要负责逻辑库、逻辑表、分片规则、分片节点等逻辑结构的处理，而具体的数据存储还是在物理结构，也就是数据库服务器中存储的。
+
+在后面讲解MyCat入门以及MyCat分片时，还会讲到上面所提到的概念。
+
+## MyCat入门
+
+### 需求
+
+由于 tb_order 表中数据量很大，磁盘IO及容量都到达了瓶颈，现在需要对 tb_order 表进行数据分片，分为三个数据节点，每一个节点主机位于不同的服务器上, 具体的结构，参考下图：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.ua40csdhxxc.webp)
+
+### 环境准备
+
+准备3台服务器：
+
++ 192.168.91.166：MyCat中间件服务器，同时也是第一个分片服务器。
++ 192.168.91.167：第二个分片服务器。
++ 192.168.91.168：第三个分片服务器。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
+
+并且在上述3台数据库中创建数据库 db01 。
+
+### 配置
+
+1. schema.xml
+
+在schema.xml中配置逻辑库、逻辑表、数据节点、节点主机等相关信息。具体的配置如下：
+
+```xml {12,16,20}
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+    <schema name="DB01" checkSQLschema="true" sqlMaxLimit="100">
+        <table name="TB_ORDER" dataNode="dn1,dn2,dn3" rule="auto-sharding-long"/>
+    </schema>
+    <dataNode name="dn1" dataHost="dhost1" database="db01"/>
+    <dataNode name="dn2" dataHost="dhost2" database="db01"/>
+    <dataNode name="dn3" dataHost="dhost3" database="db01"/>
+    <dataHost name="dhost1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="master" url="jdbc:mysql://192.168.91.166:3306?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8" user="root" password="123456"/>
+    </dataHost>
+    <dataHost name="dhost2" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="master" url="jdbc:mysql://192.168.91.167:3306?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8" user="root" password="123456"/>
+    </dataHost>
+    <dataHost name="dhost3" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="jdbc" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="master" url="jdbc:mysql://192.168.91.168:3306?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8" user="root" password="123456"/>
+    </dataHost>
+</mycat:schema>
+```
+
+2. server.xml
+
+需要在server.xml中配置用户名、密码，以及用户的访问权限信息，具体的配置如下：
+
+```xml {2-3,14-15}
+<user name="root" defaultAccount="true">
+	<property name="password">123456</property>
+	<property name="schemas">DB01</property>
+	<!-- 表级 DML 权限设置 -->
+	<!--
+	<privileges check="true">
+		<schema name="DB01" dml="0110" >
+			<table name="TB_ORDER" dml="1110"></table>
+		</schema>
+	</privileges>
+	-->
+</user>
+<user name="user">
+	<property name="password">123456</property>
+	<property name="schemas">DB01</property>
+	<property name="readOnly">true</property>
+</user>
+```
+
+上述的配置表示，定义了两个用户 root 和 user ，这两个用户都可以访问 DB01 这个逻辑库，访问密码都是123456，但是root用户访问DB01逻辑库，既可以读，又可以写，但是 user用户访问DB01逻辑库是只读的。
+
+::: details
+
+```xml
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE mycat:server SYSTEM "server.dtd">
+<mycat:server xmlns:mycat="http://io.mycat/">
+	<system>
+	<property name="nonePasswordLogin">0</property> 
+	<property name="useHandshakeV10">1</property>
+	<property name="useSqlStat">0</property>  
+	<property name="useGlobleTableCheck">0</property>  
+		<property name="sqlExecuteTimeout">300</property>  
+		<property name="sequnceHandlerType">2</property>
+		<property name="sequnceHandlerPattern">(?:(\s*next\s+value\s+for\s*MYCATSEQ_(\w+))(,|\)|\s)*)+</property>
+	<property name="subqueryRelationshipCheck">false</property> 
+    
+		<property name="processorBufferPoolType">0</property>
+		<property name="handleDistributedTransactions">0</property>
+
+		<property name="useOffHeapForMerge">0</property>
+
+        <property name="memoryPageSize">64k</property>
+
+		<property name="spillsFileBufferSize">1k</property>
+
+		<property name="useStreamOutput">0</property>
+
+		<property name="systemReserveMemorySize">384m</property>
+
+
+		<property name="useZKSwitch">false</property>
+		<property name="strictTxIsolation">false</property>
+		
+		<property name="useZKSwitch">true</property>
+		
+	</system>
+	
+	<user name="root" defaultAccount="true">
+		<property name="password">123456</property>
+		<property name="schemas">DB01</property>
+	</user>
+
+	<user name="user">
+		<property name="password">123456</property>
+		<property name="schemas">DB01</property>
+		<property name="readOnly">true</property>
+	</user>
+
+</mycat:server>
+```
+
+:::
+
+### 测试
+
+#### 启动
+
+配置完毕后，先启动涉及到的3台分片服务器，然后启动MyCat服务器。切换到Mycat的安装目录，执行如下指令，启动Mycat：
+
+```sh
+#启动
+bin/mycat start
+#停止
+bin/mycat stop
+```
+
+Mycat启动之后，占用端口号 8066。
+
+启动完毕之后，可以查看logs目录下的启动日志，查看Mycat是否启动完成。
+
+```sh
+[root@MySQL-Master mycat]# tail -10 logs/wrapper.log
+STATUS | wrapper  | 2022/10/06 23:08:01 | TERM trapped.  Shutting down.
+STATUS | wrapper  | 2022/10/06 23:08:03 | <-- Wrapper Stopped
+STATUS | wrapper  | 2022/10/06 23:08:08 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2022/10/06 23:08:08 | Launching a JVM...
+INFO   | jvm 1    | 2022/10/06 23:08:08 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=64M; support was removed in 8.0
+INFO   | jvm 1    | 2022/10/06 23:08:08 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2022/10/06 23:08:08 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2022/10/06 23:08:08 |
+INFO   | jvm 1    | 2022/10/06 23:08:09 | Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+INFO   | jvm 1    | 2022/10/06 23:08:11 | MyCAT Server startup successfully. see logs in logs/mycat.log
+```
+
+#### 测试
+
+1. 连接MyCat
+
+通过如下指令，就可以连接并登陆MyCat。
+
+```sh
+mysql -h 192.168.91.166 -P 8066 -u root -p 123456
+```
+
+```sh {5}
+[root@MySQL-Master ~]# mysql -h 192.168.91.166 -P 8066 -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.6.29-mycat-1.6.7.3-release-20190828215749 MyCat Server (OpenCloudDB)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+
+我们看到我们是通过MySQL的指令来连接的MyCat，因为MyCat在底层实际上是模拟了MySQL的协议。
+
+2. 数据测试
+
+然后就可以在MyCat中来创建表，并往表结构中插入数据，查看数据在MySQL中的分布情况。
+
+```sql
+CREATE TABLE TB_ORDER (
+	id BIGINT(20) NOT NULL,
+    title VARCHAR(100) NOT NULL ,
+	PRIMARY KEY (id)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 ;
+INSERT INTO TB_ORDER(id,title) VALUES(1,'goods1');
+INSERT INTO TB_ORDER(id,title) VALUES(2,'goods2');
+INSERT INTO TB_ORDER(id,title) VALUES(3,'goods3');
+
+INSERT INTO TB_ORDER(id,title) VALUES(1,'goods1');
+INSERT INTO TB_ORDER(id,title) VALUES(2,'goods2');
+INSERT INTO TB_ORDER(id,title) VALUES(3,'goods3');
+INSERT INTO TB_ORDER(id,title) VALUES(5000000,'goods5000000');
+INSERT INTO TB_ORDER(id,title) VALUES(10000000,'goods10000000');
+INSERT INTO TB_ORDER(id,title) VALUES(10000001,'goods10000001');
+INSERT INTO TB_ORDER(id,title) VALUES(15000000,'goods15000000');
+INSERT INTO TB_ORDER(id,title) VALUES(15000001,'goods15000001');
+```
+
+```sql
+mysql> INSERT INTO TB_ORDER(id,title) VALUES(5000000,'goods5000000');
+Query OK, 1 row affected (0.00 sec)
+ OK!
+
+mysql> INSERT INTO TB_ORDER(id,title) VALUES(10000000,'goods10000000');
+Query OK, 1 row affected (0.03 sec)
+ OK!
+
+mysql> INSERT INTO TB_ORDER(id,title) VALUES(10000001,'goods10000001');
+Query OK, 1 row affected (0.00 sec)
+ OK!
+
+mysql> INSERT INTO TB_ORDER(id,title) VALUES(15000000,'goods15000000');
+Query OK, 1 row affected (0.00 sec)
+ OK!
+
+mysql> INSERT INTO TB_ORDER(id,title) VALUES(15000001,'goods15000001');
+ERROR 1064 (HY000): can't find any valid datanode :TB_ORDER -> ID -> 1500                                                                              0001
+```
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.ws7ewrq0r74.webp)
+
+经过测试，我们发现，在往 TB_ORDER 表中插入数据时：
+
++ 如果id的值在1-500w之间，数据将会存储在第一个分片数据库中。
++ 如果id的值在500w-1000w之间，数据将会存储在第二个分片数据库中。
++ 如果id的值在1000w-1500w之间，数据将会存储在第三个分片数据库中。
+
++ 如果id的值超出1500w，在插入数据时，将会报错。
+
+为什么会出现这种现象，数据到底落在哪一个分片服务器到底是如何决定的呢？ 这是由逻辑表配置时的一个参数 rule 决定的，而这个参数配置的就是分片规则，关于分片规则的配置，在后面会详细讲解。
+
