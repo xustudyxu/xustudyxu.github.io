@@ -31,6 +31,7 @@ module.exports = [
       children:[
       '/studynotes/database/MySQL/MySQL_journal',
       '/studynotes/database/MySQL/MySQL_Master_slave_replication',
+      '/studynotes/database/MySQL/MySQL_Mycat',
         ]
       },
   {
