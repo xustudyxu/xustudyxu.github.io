@@ -1330,3 +1330,268 @@ insert into tb_longhash (id,name,firstChar) values(9,'两匹狼','L');
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.ff5mre73nyg.webp)
 
+#### 字符串hash解析算法
+
+1. 介绍
+
+截取字符串中的指定位置的子字符串, 进行hash算法， 算出分片。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.1411c2t3as8w.webp)
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 字符串hash解析算法 -->
+<table name="tb_strhash" dataNode="dn4,dn5" rule="sharding-by-stringhash" />
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml
+<tableRule name="sharding-by-stringhash">
+	<rule>
+		<columns>name</columns>
+		<algorithm>sharding-by-stringhash</algorithm>
+	</rule>
+</tableRule>
+
+<function name="sharding-by-stringhash" class="io.mycat.route.function.PartitionByString">
+	<property name="partitionLength">512</property> <!-- zero-based -->
+	<property name="partitionCount">2</property>
+	<property name="hashSlice">0:2</property>
+</function>
+```
+
+分片规则属性含义：
+
+| 属性            | 含义                                                         |
+| --------------- | ------------------------------------------------------------ |
+| columns         | 标识将要分片的表字段                                         |
+| algorithm       | 指定分片函数与function的对应关系                             |
+| class           | 指定该分片算法对应的类                                       |
+| partitionLength | hash求模基数 ; length*count=1024 (出于性能考虑)              |
+| partitionCount  | 分区数                                                       |
+| hashSlice       | hash运算位 , 根据子字符串的hash运算 ; 0 代表 str.length(), -1 代表 str.length()-1 , 大于0只代表数字自身 ; 可以理解为substring（start，end），start为0则只表示0 |
+
+示例说明：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.33voporiiua0.webp)
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+create table tb_strhash(
+	name varchar(20) primary key,
+	content varchar(100)
+)engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO tb_strhash (name,content) VALUES('T1001', UUID());
+INSERT INTO tb_strhash (name,content) VALUES('ROSE', UUID());
+INSERT INTO tb_strhash (name,content) VALUES('JERRY', UUID());
+INSERT INTO tb_strhash (name,content) VALUES('CRISTINA', UUID());
+INSERT INTO tb_strhash (name,content) VALUES('TOMCAT', UUID());
+```
+
++ 落在第一个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3jp3qk08m780.webp)
+
++ 落在第二个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.74vuqyhlg0g0.webp)
+
+
+
+#### 按天分片算法
+
+1. 介绍
+
+按照日期及对应的时间周期来分片。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.50ojqvfmqg40.webp)
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 按天分片 -->
+<table name="tb_datepart" dataNode="dn4,dn5,dn6" rule="sharding-by-date" />
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+<dataNode name="dn6" dataHost="dhost3" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml
+<tableRule name="sharding-by-date">
+	<rule>
+		<columns>create_time</columns>
+		<algorithm>sharding-by-date</algorithm>
+	</rule>
+</tableRule>
+
+<function name="sharding-by-date" class="io.mycat.route.function.PartitionByDate">
+	<property name="dateFormat">yyyy-MM-dd</property>
+	<property name="sBeginDate">2022-01-01</property>
+	<property name="sEndDate">2022-01-30</property>
+	<property name="sPartionDay">10</property>
+</function>
+<!--
+从开始时间开始，每10天为一个分片，到达结束时间之后，会重复开始分片插入
+配置表的 dataNode 的分片，必须和分片规则数量一致，例如 2022-01-01 到 2022-12-31 ，每
+10天一个分片，一共需要37个分片。
+-->
+```
+
+分片规则属性含义：
+
+| 属性        | 描述                                                         |
+| ----------- | ------------------------------------------------------------ |
+| columns     | 标识将要分片的表字段                                         |
+| algorithm   | 指定分片函数与function的对应关系                             |
+| class       | 指定该分片算法对应的类                                       |
+| dateFormat  | 日期格式                                                     |
+| sBeginDate  | 开始日期                                                     |
+| sEndDate    | 结束日期，如果配置了结束日期，则代码数据到达了这个日期的分片后，会重复从开始分片插入 |
+| sPartionDay | 分区天数，默认值 10 ，从开始日期算起，每个10天一个分区       |
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+create table tb_datepart(
+	id bigint not null comment 'ID' primary key,
+	name varchar(100) null comment '姓名',
+	create_time date null
+);
+
+insert into tb_datepart(id,name ,create_time) values(1,'Tom','2022-01-01');
+insert into tb_datepart(id,name ,create_time) values(2,'Cat','2022-01-10');
+insert into tb_datepart(id,name ,create_time) values(3,'Rose','2022-01-11');
+insert into tb_datepart(id,name ,create_time) values(4,'Coco','2022-01-20');
+insert into tb_datepart(id,name ,create_time) values(5,'Rose2','2022-01-21');
+insert into tb_datepart(id,name ,create_time) values(6,'Coco2','2022-01-30');
+insert into tb_datepart(id,name ,create_time) values(7,'Coco3','2022-01-31');
+```
+
++ 落在第一个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2cna3e8l6r6s.webp)
+
++ 落在第二个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.34yd67vhx20.webp)
+
++ 落在第三个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.5yrlul3ej500.webp)
+
+#### 自然月分片
+
+1. 介绍
+
+使用场景为按照月份来分片, 每个自然月为一个分片。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.v7vud32s8q8.webp)
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 按自然月分片 -->
+<table name="tb_monthpart" dataNode="dn4,dn5,dn6" rule="sharding-by-month" />
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+<dataNode name="dn6" dataHost="dhost3" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml
+<tableRule name="sharding-by-month">
+	<rule>
+		<columns>create_time</columns>
+		<algorithm>partbymonth</algorithm>
+	</rule>
+</tableRule>
+<function name="partbymonth" class="io.mycat.route.function.PartitionByMonth">
+	<property name="dateFormat">yyyy-MM-dd</property>
+	<property name="sBeginDate">2022-01-01</property>
+	<property name="sEndDate">2022-03-31</property>
+</function>
+<!--
+从开始时间开始，一个月为一个分片，到达结束时间之后，会重复开始分片插入
+配置表的 dataNode 的分片，必须和分片规则数量一致，例如 2022-01-01 到 2022-12-31 ，一
+共需要12个分片。
+-->
+```
+
+分片规则属性含义：
+
+| 属性       | 描述                                                         |
+| ---------- | ------------------------------------------------------------ |
+| columns    | 标识将要分片的表字段                                         |
+| algorithm  | 指定分片函数与function的对应关系                             |
+| class      | 指定该分片算法对应的类                                       |
+| dateFormat | 日期格式                                                     |
+| sBeginDate | 开始日期                                                     |
+| sEndDate   | 结束日期，如果配置了结束日期，则代码数据到达了这个日期的分片后，会重复从开始分片插入 |
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+create table tb_monthpart(
+	id bigint not null comment 'ID' primary key,
+	name varchar(100) null comment '姓名',
+	create_time date null
+);
+
+insert into tb_monthpart(id,name ,create_time) values(1,'Tom','2022-01-01');
+insert into tb_monthpart(id,name ,create_time) values(2,'Cat','2022-01-10');
+insert into tb_monthpart(id,name ,create_time) values(3,'Rose','2022-01-31');
+insert into tb_monthpart(id,name ,create_time) values(4,'Coco','2022-02-20');
+insert into tb_monthpart(id,name ,create_time) values(5,'Rose2','2022-02-25');
+insert into tb_monthpart(id,name ,create_time) values(6,'Coco2','2022-03-10');
+insert into tb_monthpart(id,name ,create_time) values(7,'Coco3','2022-03-31');
+insert into tb_monthpart(id,name ,create_time) values(8,'Coco4','2022-04-10');
+insert into tb_monthpart(id,name ,create_time) values(9,'Coco5','2022-04-30');
+```
+
++ 落在第一个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.13bxfozcsluo.webp)
+
++ 落在第二个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4jg4kd1m7xy0.webp)
+
++ 落在第三个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7aqkeyrrllc0.webp)
