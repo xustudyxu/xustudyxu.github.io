@@ -1034,3 +1034,299 @@ INSERT INTO tb_order (id, money, content) VALUES ('b978840f-6fc4-11ec-b831-482ae
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7imfspx6ztw0.webp)
 
+#### 枚举分片
+
+1. 介绍
+
+通过在配置文件中配置可能的枚举值, 指定数据分布到不同数据节点上, 本规则适用于按照省份、性别、状态拆分数据等业务 。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4dk47hdfxyg.webp)
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 枚举 -->
+<table name="tb_user" dataNode="dn4,dn5,dn6" rule="sharding-by-intfile-enumstatus"/>
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+<dataNode name="dn6" dataHost="dhost3" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml {17}
+<tableRule name="sharding-by-intfile">
+	<rule>
+		<columns>sharding_id</columns>
+		<algorithm>hash-int</algorithm>
+	</rule>
+</tableRule>
+
+<!-- 自己增加 tableRule -->
+<tableRule name="sharding-by-intfile-enumstatus">
+	<rule>
+		<columns>status</columns>
+		<algorithm>hash-int</algorithm>
+	</rule>
+</tableRule>
+
+<function name="hash-int" class="io.mycat.route.function.PartitionByFileMap">
+	<property name="defaultNode">2</property>
+	<property name="mapFile">partition-hash-int.txt</property>
+</function>
+```
+
+partition-hash-int.txt ，内容如下 :
+
+```properties
+1=0
+2=1
+3=2
+```
+
+分片规则属性含义：
+
+| 属性        | 描述                                                         |
+| ----------- | ------------------------------------------------------------ |
+| columns     | 标识将要分片的表字段                                         |
+| algorithm   | 指定分片函数与function的对应关系                             |
+| class       | 指定该分片算法对应的类                                       |
+| mapFile     | 对应的外部配置文件                                           |
+| type        | 默认值为0 ; 0 表示Integer , 1 表示String                     |
+| defaultNode | 默认节点 ; 小于0 标识不设置默认节点 , 大于等于0代表设置默认节点 ;默认节点的所用:枚举分片时,如果碰到不识别的枚举值, 就让它路由到默认节点 ; 如果没有默认值,碰到不识别的则报错 。 |
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+CREATE TABLE tb_user (
+	id bigint(20) NOT NULL COMMENT 'ID',
+	username varchar(200) DEFAULT NULL COMMENT '姓名',
+	status int(2) DEFAULT '1' COMMENT '1: 未启用, 2: 已启用, 3: 已关闭',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+insert into tb_user (id,username ,status) values(1,'Tom',1);
+insert into tb_user (id,username ,status) values(2,'Cat',2);
+insert into tb_user (id,username ,status) values(3,'Rose',3);
+insert into tb_user (id,username ,status) values(4,'Coco',2);
+insert into tb_user (id,username ,status) values(5,'Lily',1);
+insert into tb_user (id,username ,status) values(6,'Tom',1);
+insert into tb_user (id,username ,status) values(7,'Cat',2);
+insert into tb_user (id,username ,status) values(8,'Rose',3);
+insert into tb_user (id,username ,status) values(9,'Coco',2);
+insert into tb_user (id,username ,status) values(10,'Lily',1);
+```
+
++ 落在第一个节点上的数据:
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.17gie79vh5ts.webp)
+
++ 落在第二个节点上的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7da8j9pxgnc0.webp)
+
++ 落在第三个节点上的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6q6bbvk0ng00.webp)
+
+#### 应用指定算法
+
+1. 介绍
+
+运行阶段由应用自主决定路由到那个分片 , 直接根据**字符子串（必须是数字）**计算分片号。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.746naypw2ks0.webp)
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 应用指定算法 -->
+<table name="tb_app" dataNode="dn4,dn5,dn6" rule="sharding-by-substring" />
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+<dataNode name="dn6" dataHost="dhost3" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml
+<tableRule name="sharding-by-substring">
+	<rule>
+		<columns>id</columns>
+		<algorithm>sharding-by-substring</algorithm>
+	</rule>
+</tableRule>
+<function name="sharding-by-substring" class="io.mycat.route.function.PartitionDirectBySubString">
+	<property name="startIndex">0</property> <!-- zero-based -->
+	<property name="size">2</property>
+	<property name="partitionCount">3</property>
+	<property name="defaultPartition">0</property>
+</function>
+```
+
+分片规则属性含义：
+
+| 属性             | 描述                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| columns          | 标识将要分片的表字段                                         |
+| algorithm        | 指定分片函数与function的对应关系                             |
+| class            | 指定该分片算法对应的类                                       |
+| startIndex       | 字符子串起始索引                                             |
+| size             | 字符长度                                                     |
+| partitionCount   | 分区(分片)数量                                               |
+| defaultPartition | 默认分片(在分片数量定义时, 字符标示的分片编号不在分片数量内时,使用默认分片) |
+
+示例说明 :
+
+id=05-100000002 , 在此配置中代表根据id中从 startIndex=0，开始，截取siz=2位数字即05，05就是获取的分区，如果没找到对应的分片则默认分配到defaultPartition 。
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+CREATE TABLE tb_app (
+	id varchar(10) NOT NULL COMMENT 'ID',
+	name varchar(200) DEFAULT NULL COMMENT '名称',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+insert into tb_app (id,name) values('0000001','Testx00001');
+insert into tb_app (id,name) values('0100001','Test100001');
+insert into tb_app (id,name) values('0100002','Test200001');
+insert into tb_app (id,name) values('0200001','Test300001');
+insert into tb_app (id,name) values('0200002','TesT400001');
+```
+
++ 落在第一个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6tjx1f8e42k0.webp)
+
++ 落在第二个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.1elp5tme6q00.webp)
+
++ 落在第三个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.5rnej23vqjc0.webp)
+
+#### 固定分片hash算法
+
+1. 介绍
+
+该算法类似于十进制的求模运算，但是为二进制的操作，例如，**取 id 的二进制低 10 位 与1111111111 进行位 & 运算**，位与运算最小值为0000000000，最大值为1111111111，转换为十进制，也就是位于0-1023之间。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3i5dfnwak5k0.webp)
+
+特点：
+
++ 如果是求模，连续的值，分别分配到各个不同的分片；但是此算法会将连续的值可能分配到相同的分片，降低事务处理的难度。
++ 可以均匀分配，也可以非均匀分配。
++ 分片字段必须为数字类型。
+
+2. 配置
+
+schema.xml中逻辑表配置：
+
+```xml
+<!-- 固定分片hash算法 -->
+<table name="tb_longhash" dataNode="dn4,dn5,dn6" rule="sharding-by-long-hash" />
+```
+
+schema.xml中数据节点配置：
+
+```xml
+<dataNode name="dn4" dataHost="dhost1" database="itcast" />
+<dataNode name="dn5" dataHost="dhost2" database="itcast" />
+<dataNode name="dn6" dataHost="dhost3" database="itcast" />
+```
+
+rule.xml中分片规则配置：
+
+```xml
+<tableRule name="sharding-by-long-hash">
+	<rule>
+		<columns>id</columns>
+		<algorithm>sharding-by-long-hash</algorithm>
+	</rule>
+</tableRule>
+
+<!-- 分片总长度为1024，count与length数组长度必须一致； -->
+<function name="sharding-by-long-hash" class="io.mycat.route.function.PartitionByLong">
+	<property name="partitionCount">2,1</property>
+	<property name="partitionLength">256,512</property>
+</function>
+```
+
+分片规则属性含义：
+
+| 属性            | 描述                             |
+| --------------- | -------------------------------- |
+| columns         | 标识将要分片的表字段名           |
+| algorithm       | 指定分片函数与function的对应关系 |
+| class           | 指定该分片算法对应的类           |
+| partitionCount  | 分片个数列表                     |
+| partitionLength | 分片范围列表                     |
+
+约束 :
+
+1. 分片长度 : 默认最大2^10 , 为 1024 ;
+2. count, length的数组长度必须是一致的 ;
+
+以上分为三个分区:`0-255`,`256-511`,`512-1023`
+
+示例说明 :
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.44nxfttnckg0.webp)
+
+3. 测试
+
+配置完毕后，重新启动MyCat，然后在mycat的命令行中，执行如下SQL创建表、并插入数据，查看数据分布情况。
+
+```sql
+CREATE TABLE tb_longhash (
+	id int(11) NOT NULL COMMENT 'ID',
+	name varchar(200) DEFAULT NULL COMMENT '名称',
+	firstChar char(1) COMMENT '首字母',
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+insert into tb_longhash (id,name,firstChar) values(1,'七匹狼','Q');
+insert into tb_longhash (id,name,firstChar) values(2,'八匹狼','B');
+insert into tb_longhash (id,name,firstChar) values(3,'九匹狼','J');
+insert into tb_longhash (id,name,firstChar) values(4,'十匹狼','S');
+insert into tb_longhash (id,name,firstChar) values(5,'六匹狼','L');
+insert into tb_longhash (id,name,firstChar) values(6,'五匹狼','W');
+insert into tb_longhash (id,name,firstChar) values(7,'四匹狼','S');
+insert into tb_longhash (id,name,firstChar) values(8,'三匹狼','S');
+insert into tb_longhash (id,name,firstChar) values(9,'两匹狼','L');
+```
+
++ 落在第一个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6y7lo58984s0.webp)
+
++ 落在第二个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.mr8j1av72pc.webp)
+
++ 落在第三个节点的数据
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.ff5mre73nyg.webp)
+
