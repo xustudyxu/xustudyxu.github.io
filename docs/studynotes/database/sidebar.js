@@ -32,6 +32,7 @@ module.exports = [
       '/studynotes/database/MySQL/MySQL_journal',
       '/studynotes/database/MySQL/MySQL_Master_slave_replication',
       '/studynotes/database/MySQL/MySQL_Mycat',
+      '/studynotes/database/MySQL/MySQL_Read_write_separation',
         ]
       },
   {

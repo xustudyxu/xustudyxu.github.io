@@ -129,6 +129,12 @@ systemctl restart mysqld
 
 3. 登录mysql，设置主库配置
 
+::: warning 注意
+
+这里的binlog.000004，663一定要与master二进制日志坐标保持一致。
+
+:::
+
 ```sh
 CHANGE REPLICATION SOURCE TO SOURCE_HOST='192.168.91.166', SOURCE_USER='itcast', SOURCE_PASSWORD='Root@123456', SOURCE_LOG_FILE='binlog.000004', SOURCE_LOG_POS=663;
 ```
