@@ -27,7 +27,7 @@ Linux的版本为CentOS7
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220922/image.7b1siexp8yw0.webp)
 
-4. 加压tar文件
+4. 解压tar文件
 
 ```sh
 cd /opt/mysql8.0
