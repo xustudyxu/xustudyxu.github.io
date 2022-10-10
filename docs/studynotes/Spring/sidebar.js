@@ -80,5 +80,12 @@ module.exports = [
       '/studynotes/Spring/SpringCloud/Sentinel_',
       '/studynotes/Spring/SpringCloud/Seata_',
     ]
+  },
+  {
+    title: 'Spring Security',
+    collapsable: false,
+    children: [
+      '/studynotes/Spring/SpringSecurity/SpringSecurity_summary',
+    ]
   }
 ]
