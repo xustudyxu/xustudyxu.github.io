@@ -55,6 +55,8 @@ a {
   color #64acff
   font-weight bold
 
+.custom-block.tip,.custom-block.warning, .custom-block.danger
+  border-radius: 0.4rem
 
 
 // 解决目录页和标题冲突问题，新版已经解决，这里是旧版的j（2022-4-16）
@@ -119,6 +121,8 @@ a {
     border-left .25rem solid #e95f59
     padding 10px 16px
     opacity 1
+    border-radius: 0.2rem
+
   // 选中代码块的颜色
   pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
   code[class*="language-"]::selection, code[class*="language-"] ::selection {
@@ -137,6 +141,12 @@ a {
   // ::: details 的边框
   .custom-block.details
     border solid 1px #ddd
+
+  //修改左侧目录背景颜色
+  a.sidebar-link.active {
+      color: #08a55e;
+      background: #dbf0e5;
+  }
 
 // 深色模式
 .theme-mode-dark
@@ -196,7 +206,7 @@ a {
     background-color rgba(25,25,49,0.53)
   .custom-block.danger
     color #ff4545
-    .custom-block-title
+  .custom-block-title
       color #ff4545
   .custom-block.note
     color #28a1de
