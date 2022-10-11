@@ -166,7 +166,7 @@ SHARED_WRITE），之间是兼容的。
 
 当执行SELECT语句时，添加的是元数据共享锁（SHARED_READ），会阻塞元数据排他锁（EXCLUSIVE），之间是互斥的。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221002/image.4dte0pekulc0.webp)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221011/image.394qjn5ovva0.webp)
 
 我们可以通过下面的SQL，来查看数据库中的元数据锁的情况：
 

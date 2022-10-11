@@ -114,7 +114,7 @@ HTML 的全称为 **超文本标记语言（Hyper Text Markup Language）**
 
 ## 完整的文档结构
 
-![image-20220512144243567](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220905/image-20220512144243567.nq6wbis648g.webp)
+![image-20220512145132232](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221011/image-20220512145132232.2x2ly0rd1mw0.webp)
 
 **文档结构说明：**
 
