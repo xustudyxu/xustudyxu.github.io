@@ -1264,7 +1264,7 @@ SELECT * FROM t_order;
 SELECT * FROM t_storage;
 ```
 
-![1662055682518](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1662055682518.png)
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221012/image.5aeajach9ls0.webp)
 
 ```sql
 SELECT * FROM t_account;
