@@ -86,6 +86,7 @@ module.exports = [
     collapsable: false,
     children: [
       '/studynotes/Spring/SpringSecurity/SpringSecurity_summary',
+      '/studynotes/Spring/SpringSecurity/SpringSecurity_Getting_start',
     ]
   }
 ]
