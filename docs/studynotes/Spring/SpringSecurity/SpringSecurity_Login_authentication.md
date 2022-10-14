@@ -829,3 +829,105 @@ public class MapperTest {
 }
 ```
 
+#### 核心代码实现
+
+创建一个类实现UserDetailsService接口，重写其中的方法。更加用户名从数据库中查询用户信息
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/10/14  21:45
+ */
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        //查询用户信息
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getUserName,username);
+        User user = userMapper.selectOne(queryWrapper);
+        //如果没有查询到用户,就抛出异常
+        if(Objects.isNull(user)){
+            throw new RuntimeException("用户名或者密码错误");
+        }
+
+        //把数据封装成userDetails返回
+        return new LoginUser(user   );
+    }
+}
+```
+
+因为UserDetailsService方法的返回值是UserDetails类型，所以需要定义一个类，实现该接口，把用户信息封在其中。
+
+```java {30,35,40,45,50,55}
+package com.frx01.security.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.io.Serializable;
+import java.util.Collection;
+
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/10/14  21:51
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class LoginUser implements UserDetails {
+
+    private User user;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUserName();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}
+```
+
+> 注意：如果要测试，需要往用户表中写入用户数据，并且如果你想让用户的密码是明文存储，需要在密码前加{noop}。例如：
+>
+> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221014/image.5cygdn2z4380.webp)
+>
+> 这样登陆的时候就可以用frx作为用户名，1234作为密码来登陆了。
+
