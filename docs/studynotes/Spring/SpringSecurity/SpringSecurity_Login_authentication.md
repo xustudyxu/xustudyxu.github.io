@@ -719,13 +719,13 @@ public class User implements Serializable {
 }
 ```
 
-## 实现
+### 具体实现
 
-### 数据库校验用户
+#### 数据库校验用户
 
 ​	从之前的分析我们可以知道，我们可以自定义一个UserDetailsService,让SpringSecurity使用我们的UserDetailsService。我们自己的UserDetailsService可以从数据库中查询用户名和密码。
 
-#### 准备工作
+##### 准备工作
 
 ​	我们先创建一个用户表， 建表语句如下：
 
@@ -822,7 +822,7 @@ public class MapperTest {
     private UserMapper userMapper;
 
     @Test
-    public void textUserMapper(){
+    public void testUserMapper(){
         List<User> users = userMapper.selectList(null);
         users.forEach(System.out::println);
     }
@@ -930,4 +930,328 @@ public class LoginUser implements UserDetails {
 > ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221014/image.5cygdn2z4380.webp)
 >
 > 这样登陆的时候就可以用frx作为用户名，1234作为密码来登陆了。
+
+#### 密码加密存储
+
+实际项目中我们不会把密码明文存储在数据库中。
+
+​	默认使用的PasswordEncoder要求数据库中的密码格式为：{id}password 。它会根据id去判断密码的加密方式。但是我们一般不会采用这种方式。所以就需要替换PasswordEncoder。
+
+​	我们一般使用SpringSecurity为我们提供的BCryptPasswordEncoder。
+
+​	我们只需要使用把BCryptPasswordEncoder对象注入Spring容器中，SpringSecurity就会使用该PasswordEncoder来进行密码校验。
+
+​	我们可以定义一个SpringSecurity的配置类，SpringSecurity要求这个配置类要继承WebSecurityConfigurerAdapter。
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/10/15  8:32
+ */
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+#### 登陆接口
+
+接下我们需要自定义登陆接口，然后让SpringSecurity对这个接口放行,让用户访问这个接口的时候不用登录也能访问。
+
+​	在接口中我们通过AuthenticationManager的authenticate方法来进行用户认证,所以需要在SecurityConfig中配置把AuthenticationManager注入容器。
+
+​	认证成功的话要生成一个jwt，放入响应中返回。并且为了让用户下回请求时能通过jwt识别出具体的是哪个用户，我们需要把用户信息存入redis，可以把用户id作为key。
+
++ Controller
+
+```java
+@RestController
+public class LoginController {
+
+    @Autowired
+    private LoginService loginService;
+
+    @PostMapping("/user/login")
+    public ResponseResult login(@RequestBody User user){
+        //登录
+        return loginService.login(user);
+    }
+}
+```
+
++ 配置类
+
+```java
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                //关闭csrf
+                .csrf().disable()
+                //不通过Session获取SecurityContext
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
+                // 对于登录接口 允许匿名访问
+                .antMatchers("/user/login").anonymous()
+                // 除上面外的所有请求全部需要鉴权认证
+                .anyRequest().authenticated();
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+}
+```
+
++ impl
+
+```java
+@Service
+public class LoginServiceImpl implements LoginService {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Override
+    public ResponseResult login(User user) {
+
+        //AuthenticationManager authenticate进行用户认证
+        UsernamePasswordAuthenticationToken authentication =
+                new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
+        Authentication authenticate = authenticationManager.authenticate(authentication);
+
+        //如果认证没通过，给用户对应的提示
+        if(Objects.isNull(authenticate)){
+            throw new RuntimeException("登录失败");
+        }
+
+        //如果认证通过了，使用userId生成一个jwt，jwt存入ResponseResult进行返回
+        LoginUser loginUser = (LoginUser)authenticate.getPrincipal();
+        String userId = loginUser.getUser().getId().toString();
+        String jwt = JwtUtil.createJWT(userId);
+
+        Map<String, String> map = new HashMap<>();
+        map.put("jwt",jwt);
+        //把完整的用户信息存入Redis,userId作为key
+        redisCache.setCacheObject("login:"+userId,loginUser);
+        return new ResponseResult(200,"登陆成功",map);
+    }
+}
+```
+
++ 配置Redis
+
+```yaml {7,8}
+  datasource:
+    url: jdbc:mysql://localhost:3306/SpringSecurity?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: hsp
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.91.166
+    password: mima
+server:
+  port: 8888
+```
+
++ 测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221015/image.uknakclvumo.webp)
+
+#### 认证过滤器
+
+我们需要自定义一个过滤器，这个过滤器会去获取请求头中的token，对token进行解析取出其中的userid。
+
+使用userid去redis中获取对应的LoginUser对象。
+
+然后封装Authentication对象存入SecurityContextHolder
+
+```java
+@Component
+public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+        //获取Token
+        String token = request.getHeader("token");
+        if(!StringUtils.hasText(token)){
+            //放行
+            filterChain.doFilter(request,response);
+            return;
+        }
+
+        //解析Token
+        String userId;
+        try {
+            Claims claims = JwtUtil.parseJWT(token);
+            userId = claims.getSubject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("token非法");
+        }
+
+        //从redis中获取用户信息
+        String redisKey = "login:" + userId;
+        LoginUser loginUser = redisCache.getCacheObject(redisKey);
+        if(Objects.isNull(loginUser)){
+            throw new RuntimeException("用户未登录");
+        }
+
+        //存入SecurityContextHolder
+        UsernamePasswordAuthenticationToken authenticationToken =
+                new UsernamePasswordAuthenticationToken(loginUser,null,null);
+        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+
+        //放行
+        filterChain.doFilter(request,response);
+    }
+}
+```
+
++ 配置类
+
+```java {27}
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                //关闭csrf
+                .csrf().disable()
+                //不通过Session获取SecurityContext
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
+                // 对于登录接口 允许匿名访问
+                .antMatchers("/user/login").anonymous()
+                // 除上面外的所有请求全部需要鉴权认证
+                .anyRequest().authenticated();
+
+        //把token校验过滤器添加到过滤器链中
+        http.addFilterBefore(jwtAuthenticationTokenFilter,UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+}
+```
+
++ 携带Token测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221015/image.16ujbostnqb.webp)
+
+#### 退出登录
+
+我们只需要定义一个登陆接口，然后获取SecurityContextHolder中的认证信息，删除redis中对应的数据即可。
+
++ Service
+
+```jade
+public interface LoginService {
+
+    ResponseResult login(User user);
+
+    ResponseResult logout();
+}
+```
+
++ impl
+
+```java
+@Service
+public class LoginServiceImpl implements LoginService {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Override
+    public ResponseResult login(User user) {
+
+        //AuthenticationManager authenticate进行用户认证
+        UsernamePasswordAuthenticationToken authentication =
+                new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
+        Authentication authenticate = authenticationManager.authenticate(authentication);
+
+        //如果认证没通过，给用户对应的提示
+        if(Objects.isNull(authenticate)){
+            throw new RuntimeException("登录失败");
+        }
+
+        //如果认证通过了，使用userId生成一个jwt，jwt存入ResponseResult进行返回
+        LoginUser loginUser = (LoginUser)authenticate.getPrincipal();
+        String userId = loginUser.getUser().getId().toString();
+        String jwt = JwtUtil.createJWT(userId);
+
+        Map<String, String> map = new HashMap<>();
+        map.put("jwt",jwt);
+        //把完整的用户信息存入Redis,userId作为key
+        redisCache.setCacheObject("login:"+userId,loginUser);
+        return new ResponseResult(200,"登陆成功",map);
+    }
+
+    @Override
+    public ResponseResult logout() {
+
+        //获取SecurityContextHolder中的用户id
+        UsernamePasswordAuthenticationToken authentication =
+                (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        Long userId = loginUser.getUser().getId();
+
+        //删除redis中的值
+        redisCache.deleteObject("login:"+userId);
+        return new ResponseResult(200,"注销成功");
+    }
+}
+```
+
++ Controller
+
+```java
+        @RequestMapping("/user/logout")
+        public ResponseResult logout(){
+            return loginService.logout();
+        }
+```
+
++ 携带token测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221015/image.zdqvsvjb1ww.webp)
 
