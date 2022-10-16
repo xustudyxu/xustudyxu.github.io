@@ -55,3 +55,115 @@ public class HelloController {
 }
 ```
 
+### 封装权限测试
+
+我们前面在写UserDetailsServiceImpl的时候说过，在查询出用户后还要获取对应的权限信息，封装到UserDetails中返回。
+
+​	我们先直接把权限信息写死封装到UserDetails中进行测试。
+
+​	我们之前定义了UserDetails的实现类LoginUser，想要让其能封装权限信息就要对其进行修改。
+
+```java {9-20,31-37}
+@Data
+@NoArgsConstructor
+public class LoginUser implements UserDetails {
+
+    private User user;
+
+    private List<String> permissions;
+
+    public LoginUser(User user, List<String> permissions) {
+        this.user = user;
+        this.permissions = permissions;
+    }
+    @JSONField(serialize = false)
+    private List<SimpleGrantedAuthority> authorities;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+
+        if(authorities!=null){
+            return authorities;
+        }
+
+        //把permissions中String类型的权限信息封装成它的实现类SimpleGrantedAuthority对象
+
+        /*authorities = new ArrayList<>();
+        for (String permission : permissions) {
+            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(permission);
+            newList.add(authority);
+        }
+        return newList;*/
+
+        authorities =
+                permissions.stream()
+                        .map(SimpleGrantedAuthority::new)
+                        .collect(Collectors.toList());
+        return authorities;
+
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUserName();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+}
+```
+
+​		LoginUser修改完后我们就可以在UserDetailsServiceImpl中去把权限信息封装到LoginUser中了。我们写死权限进行测试，后面我们再从数据库中查询权限信息。
+
+```java {20}
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        //查询用户信息
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getUserName,username);
+        User user = userMapper.selectOne(queryWrapper);
+        //如果没有查询到用户,就抛出异常
+        if(Objects.isNull(user)){
+            throw new RuntimeException("用户名或者密码错误");
+        }
+
+        //TODO 查询对应的权限信息
+        List<String> list = new ArrayList<>(Arrays.asList("test","admin"));
+
+        //把数据封装成userDetails返回
+        return new LoginUser(user,list);
+    }
+}
+```
+
++ 先登录用户获得token，携带token测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221016/image.2hewii1ui1k0.webp)
