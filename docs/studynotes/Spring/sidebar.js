@@ -88,6 +88,7 @@ module.exports = [
       '/studynotes/Spring/SpringSecurity/SpringSecurity_summary',
       '/studynotes/Spring/SpringSecurity/SpringSecurity_Getting_start',
       '/studynotes/Spring/SpringSecurity/SpringSecurity_Login_authentication',
+      '/studynotes/Spring/SpringSecurity/SpringSecurity_authorize',
     ]
   }
 ]
