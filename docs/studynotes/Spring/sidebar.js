@@ -90,6 +90,7 @@ module.exports = [
       '/studynotes/Spring/SpringSecurity/SpringSecurity_Login_authentication',
       '/studynotes/Spring/SpringSecurity/SpringSecurity_authorize',
       '/studynotes/Spring/SpringSecurity/SpringSecurity_Cross_domain',
+      '/studynotes/Spring/SpringSecurity/SpringSecurity_smallProblem',
     ]
   }
 ]
