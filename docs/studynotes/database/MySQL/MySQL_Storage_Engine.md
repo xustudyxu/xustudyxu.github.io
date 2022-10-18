@@ -9,6 +9,8 @@ tags:
 ---
 # MySQL 存储引擎
 
+[学习视频地址](https://www.bilibili.com/video/BV1Kr4y1i7ru?p=58&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
 [[toc]]
 
 ## MySQL 体系结构

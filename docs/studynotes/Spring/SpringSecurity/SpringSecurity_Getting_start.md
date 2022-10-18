@@ -9,6 +9,8 @@ tags:
 ---
 # SpringSecurity 入门案例
 
+[学习视频地址](https://www.bilibili.com/video/BV1mm4y1X7Hc?p=1)
+
 [[toc]]
 
 ## 创建SpringBoot工程
