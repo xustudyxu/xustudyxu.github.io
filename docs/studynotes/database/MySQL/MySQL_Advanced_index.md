@@ -916,8 +916,7 @@ explain select * from tb_user where profession = '软件工程' and age > 30 and
 ```
 
 ```sql {5}
-mysql> explain select * from tb_user where profession = '软件工程' and age > 30 and status
-    -> = '0';
+mysql> explain select * from tb_user where profession = '软件工程' and age > 30 and status = '0';
 +----+-------------+---------+------------+-------+----------------------+----------------------+---------+------+------+----------+-----------------------+
 | id | select_type | table   | partitions | type  | possible_keys        | key                  | key_len | ref  | rows | filtered | Extra                 |
 +----+-------------+---------+------------+-------+----------------------+----------------------+---------+------+------+----------+-----------------------+
