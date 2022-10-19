@@ -32,7 +32,7 @@ module.exports = [
     title:'高级宝典',
     collapsable: false,
     children:[
-    '/baodian/high/bd2',
+    '/baodian/high/SYT/SYT_project_introduct',
     ]
   }
   

@@ -130,7 +130,7 @@ module.exports = [{
   items: [
     { text: '力扣算法题', link: '/pages/40ee62/' },
     { text: '初级开发篇', link: '/pages/39558d/' },
-    { text: '中高进阶篇', link: '/pages/41f848/' },
+    { text: '中高进阶篇', link: '/pages/47c622/' },
 
   ]
 }, {
