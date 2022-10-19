@@ -1,5 +1,5 @@
 ---
-title: Spring Security 遗留小问题
+title: SpringSecurity 遗留小问题
 date: 2022-10-17 22:59:28
 permalink: /Spring/SpringSecurity/SpringSecurity_smallProblem
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - SpringSecurity
 ---
-# Spring Security 遗留小问题
+# SpringSecurity 遗留小问题
 
 [[toc]]
 

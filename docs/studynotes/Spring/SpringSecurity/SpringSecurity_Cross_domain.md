@@ -1,5 +1,5 @@
 ---
-title: Spring Security 跨域
+title: SpringSecurity 跨域
 date: 2022-10-17 21:00:42
 permalink: /Spring/SpringSecurity/SpringSecurity_Cross_domain
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - SpringSecurity
 ---
-# Spring Security 跨域
+# SpringSecurity 跨域
 
 [[toc]]
 

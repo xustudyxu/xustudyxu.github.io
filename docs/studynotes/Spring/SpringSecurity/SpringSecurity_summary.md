@@ -1,5 +1,5 @@
 ---
-title: Spring Security 概述
+title: SpringSecurity 概述
 date: 2022-10-10 22:49:20
 permalink: /pages/66babb/
 categories:
