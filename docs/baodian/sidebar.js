@@ -35,6 +35,7 @@ module.exports = [
     '/baodian/high/SYT/SYT_project_introduct',
     '/baodian/high/SYT/SYT_build_environment',
     '/baodian/high/SYT/SYT_HospitalSet',
+    '/baodian/high/SYT/SYT_front',
     ]
   }
   
