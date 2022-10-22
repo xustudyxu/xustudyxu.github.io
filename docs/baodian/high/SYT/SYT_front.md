@@ -436,3 +436,207 @@ vue.min.js
 
 axios.min.js
 
+```vue
+    <div id="app">
+        <table>
+            <tr v-for="user in userList">
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="vue.min.js"></script>
+    <script src="axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userList:[]
+            },
+            created(){ //在页面渲染之前执行
+                //调用方法，得到返回值json数据
+                this.getList()
+
+            },
+            methods:{
+                getList() {
+                    //使用axios方式ajax请求
+                    axios.get("user.json")
+                        .then(response => {
+                            //console.log(response)
+                           this.userList = response.data.data.items
+                           console.log(this.userList)
+                        }) //请求成功
+                        .catch(error => {
+                            console.log(error)
+                        }) //请求失败
+                }
+            }
+        })
+    </script>
+```
+
+## element-ui
+
+element-ui 是饿了么前端出品的基于 Vue.js的 后台组件库，方便程序员进行页面快速布局和构建
+
+官网： [https://element.eleme.cn/#/zh-CN](https://element.eleme.cn/#/zh-CN)
+
+具体ui组件我们在项目中学习
+
+## Node.js
+
+### Node.js的概念
+
+#### JavaScript引擎
+
+浏览器的内核包括两部分核心：
+
+DOM渲染引擎
+
+JavaScript解析引擎
+
+Chrome浏览器内置V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。
+
+#### 什么是Node.js
+
+脱离浏览器环境也可以运行JavaScript，只要有JavaScript引擎就可以。
+
+Node.js是一个基于Chrome V8引擎的JavaScript运行环境：即Node.js内置了Chrome的V8 引擎，可以在Node.js环境中直接运行JavaScript程序。
+
+在Node.js中写JavaScript和在Chrome浏览器中写JavaScript基本没有什么不一样。哪里不一样呢？
+
+Node.js没有浏览器API，即document，window的等。
+
+加了许多Node.js 专属API，例如文件系统，进程，http功能。
+
+#### Node.js有什么用
+
+如果你想开发类似JavaWeb的简单的后端程序，那么学习Node.js是一个非常好的选择。
+
+如果你想部署一些高性能的服务，那么学习Node.js也是一个非常好的选择。
+
+通常他会被用来作一个BFF层，即 Backend For Frontend（服务于前端的后端），通俗的说是一个专门用于为前端业务提供数据的后端程序
+
+### BFF
+
+#### BFF 解决什么问题
+
+一个前端页面向 Service A、Service B 以及 Service C发送请求，不同的微服务返回的值用于渲染页面中不同的组件。此时，每次访问该页面都需要发送 3 个请求。我们需要一个服务来聚合Service
+A、Service B 以及 Service C响应的数据，这个服务层叫做BFF。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.5c7h4orpgds0.webp)
+
+手机、平板端、PC机等用户终端都需要向每个Service，例如Service A发送请求。对于同一个功能，不同的终端需要的数据格式和内容会有不同。此时 Service A 的一个接口，不能同时满足三个客户端的不同需求。我们可以在Service A中开发三个接口，也可以增加一个数据裁剪服务，将数据按照不同终端的不同要求进行裁剪，这个服务层叫做BFF。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.15d6p2dti74w.webp)
+
+BFF层的作用是让前端有能力自由组装后台数据，减少大量的业务沟通成本，加快业务的迭代速度。
+
+无论是数据聚合还是数据剪裁，这类程序的特点是不需要太强大的服务器运算能力，但是对程序的灵活性有较高的要求，这两个特点都正好和Node.js的优势相吻合。
+
+#### 什么是BFF
+
+用户体验适配器
+
+### 安装
+
+#### 下载
+
+官网：[https://nodejs.org/en/](https://nodejs.org/en/)
+
+中文网：[http://nodejs.cn/](http://nodejs.cn/)
+
+LTS：长期支持版本
+
+Current：最新版
+
+#### 安装
+
+双击安装 node-v10.14.2-x64.msi
+
+#### 查看版本
+
+```sh
+Node -v
+```
+
+#### 控制台查询
+
+创建 01.js
+
+```javascript
+console.log('Hello Node.js')
+```
+
+打开命令行终端：Ctrl + Shift + y
+
+进入到程序所在的目录，输入
+
+```sh
+node 01.js
+```
+
+#### 服务器端应用开发（了解）
+
+创建 02-server-app.js
+
+```javascript
+//引入http模块
+const http = require('http');
+//创建服务器
+http.createServer(function (request, response) {
+// 发送 HTTP 头部 
+// HTTP 状态值: 200 : OK
+// 内容类型: text/plain
+response.writeHead(200, {'Content-Type': 'text/html'});
+// 发送响应数据 "Hello World"
+response.end('<h1>Hello Node.js Server</h1>');
+}).listen(8888);
+// 终端打印如下信息
+console.log('Server running at http://127.0.0.1:8888/');
+```
+
+运行服务器程序
+
+```sh
+node 02-server-app.js
+```
+
+服务器启动成功后，在浏览器中输入：[http://localhost:8888/](http://localhost:8888/) 查看webserver成功运行，并输出html页面
+
+停止服务：ctrl + c
+
+## NPM 包管理器
+
+### 简介
+
+什么是NPM
+
+NPM全称Node Package Manager，是Node.js包管理工具，是全球最大的模块生态系统，里面所有的模块都是开源免费的；也是Node.js的包管理工具，相当于前端的Maven 。
+
+```sh
+#在命令提示符输入 npm -v 可查看当前npm版本
+npm-v
+```
+
+### 使用npm管理项目
+
+创建npm_pro文件夹
+
+#### 项目初始化
+
+```sh
+#建立一个空文件夹，在命令提示符进入该文件夹  执行命令初始化
+npm init
+#按照提示输入相关信息，如果是用默认值则直接回车即可。
+#name: 项目名称
+#version: 项目版本号
+#description: 项目描述
+#keywords: {Array}关键词，便于用户搜索到我们的项目
+#最后会生成package.json文件，这个是包的配置文件，相当于maven的pom.xml
+#我们之后也可以根据需要进行修改。
+#如果想直接生成 package.json 文件，那么可以使用命令
+npm init -y
+```
+
