@@ -640,3 +640,79 @@ npm init
 npm init -y
 ```
 
+#### 修改npm镜像
+
+NPM官方的管理的包都是从 http://npmjs.com下载的，但是这个网站在国内速度很慢。
+
+这里推荐使用淘宝 NPM 镜像 http://npm.taobao.org/ ，淘宝 NPM 镜像是一个完整 npmjs.com 镜像，同步频率目前为 10分钟一次，以保证尽量与官方服务同步。
+
+**设置镜像地址：**
+
+```sh
+#经过下面的配置，以后所有的 npm install 都会经过淘宝的镜像地址下载
+npm config set registry https://registry.npm.taobao.org 
+#查看npm配置信息
+npm config list
+```
+
+#### npm install命令的使用
+
+基本命令
+
+```sh
+#使用 npm install 安装依赖包的最新版，
+#模块安装的位置：项目目录\node_modules
+#同时package.json 文件中，依赖包会被添加到dependencies节点下，类似maven中的 <dependencies>
+#默认参数：--save  简写  -S  将当前依赖保存在dependencies节点下
+npm install jquery
+```
+
+下载特定版本的依赖
+
+```sh
+#如果安装时想指定特定的版本
+npm install jquery@2.1.x
+```
+
+下载开发依赖
+
+```sh
+#devDependencies节点：开发时的依赖包，项目打包到生产环境的时候不包含的依赖
+#使用 -D参数将依赖添加到devDependencies节点
+npm install --save-dev eslint
+#或简写
+npm i -D eslint
+```
+
+下载全局依赖
+
+```sh
+#全局安装
+#Node.js全局安装的npm包和工具的位置：用户目录\AppData\Roaming\npm\node_modules
+#一些命令行工具常使用全局安装的方式
+npm install --global webpack
+#或简写
+npm install -g webpack
+```
+
+根据依赖下载安装包
+
+```sh
+#npm管理的项目在备份和传输的时候一般不携带node_modules文件夹
+#安装会自动在项目目录下添加 package-lock.json文件，这个文件帮助锁定安装包的版本
+npm install #根据package.json中的配置下载依赖，初始化项目
+```
+
+### 其他命令
+
+```sh
+#更新包（更新到最新版本）
+npm update 包名
+#全局更新
+npm update -g 包名
+#卸载包
+npm uninstall 包名
+#全局卸载
+npm uninstall -g 包名
+```
+
