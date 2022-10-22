@@ -703,7 +703,7 @@ npm install -g webpack
 npm install #根据package.json中的配置下载依赖，初始化项目
 ```
 
-### 其他命令
+#### 其他命令
 
 ```sh
 #更新包（更新到最新版本）
