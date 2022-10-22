@@ -186,3 +186,253 @@ ES6相对之前的版本语法更严格，新增了面向对象的很多特性�
         console.log(f4(4,5))
 ```
 
+## Vue 入门
+
+### Vue.js 是什么
+
+在为 AngularJS 工作之后，Vue 的作者尤雨溪开发出了这一框架。他声称自己的思路是提取 Angular 中为自己所喜欢的部分，构建出一款相当轻量的框架。Vue 最早发布于 2014 年 2 月。作者在 Hacker News、Echo JS 与 Reddit 的 javascript 版块发布了最早的版本。一天之内，Vue 就登上了这三个网站的首页。Vue 是 Github 上最受欢迎的开源项目之一。同时，在 JavaScript 框架/函数库中，Vue 所获得的星标数已超过 React，并高于 Backbone.js、Angular 2、jQuery 等项目。
+
+Vue.js 是一款流行的 JavaScript 前端框架，目的是简化 Web 开发。Vue 所关注的核心是 MVC 模式中的视图层，同时，它也能方便地获取数据更新，实现视图与模型的交互。
+
+官方网站：[https://cn.vuejs.org](https://cn.vuejs.org)
+
+```vue
+    <script src="./vue.min.js"></script>
+    <div id="app">
+        <!-- 插值表达式 -->
+        {{message}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'hello vue'
+            }
+        })
+    </script>
+```
+
+这就是声明式渲染：Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统
+
+这里的核心思想就是没有繁琐的DOM操作，例如jQuery中，我们需要先找到div节点，获取到DOM对象，然后进行一系列的节点操作
+
+```javascript
+data: {
+	message: 'Hello Vue!'
+}
+```
+
+### 创建代码片段
+
+文件 =>  首选项 => 用户片段 => 新建全局代码片段文件：
+
+vue-html.code-snippets
+
+```vue
+{
+	"vue htm": {
+		"scope": "html",
+		"prefix": "vuehtml",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"",
+			"<head>",
+			"    <meta charset=\"UTF-8\">",
+			"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">",
+			"    <title>Document</title>",
+			"</head>",
+			"",
+			"<body>",
+			"    <div id=\"app\">",
+			"",
+			"    </div>",
+			"    <script src=\"vue.min.js\"></script>",
+			"    <script>",
+			"        new Vue({",
+			"            el: '#app',",
+			"            data: {",
+			"                $1",
+			"            }",
+			"        })",
+			"    </script>",
+			"</body>",
+			"",
+			"</html>",
+		],
+		"description": "my vue template in html"
+	}
+}
+```
+
+### 基本语法
+
+#### 基本数据渲染和指令
+
+```vue
+    <div id="app">
+        <div v-bind:style="msg">单向绑定</div>
+        <div :style="msg">单向绑定1</div>
+    </div>
+    <script src="./vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'color:green;'
+            }
+        })
+    </script>
+```
+
+你看到的 v-bind 特性被称为指令。指令带有前缀 v- 
+
+除了使用插值表达式{{}}进行数据渲染，也可以使用 v-bind指令，它的简写冒号（:）
+
+```html
+<div v-bind:style="msg">单向绑定</div>
+<div :style="msg">单向绑定</div>
+```
+
+#### 双向数据绑定
+
+```vue
+    <div id="app">
+        {{keyword}}
+        <br>
+        <input type="text" :value="keyword">
+        <br>
+        <input type="text" v-model="keyword">
+        
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                keyword: '尚硅谷'
+            }
+        })
+    </script>
+```
+
+什么是双向数据绑定？
+
+当数据发生变化的时候，视图也会跟着发生变化
+
+数据模型发生了改变，会直接显示在页面上
+
+当视图发生变化的时候，数据也会跟着同步变化
+
+用户在页面上的修改，会自动同步到数据模型中去
+
+#### 事件
+
+使用 v-on 进行数件处理，v-on:click 表示处理鼠标点击事件，事件调用的方法定义在 vue 对象声明的 methods 节点中
+
+```vue
+    <div id="app">
+        <button v-on:click="show()">事件绑定</button>
+        <button @click="show()">事件绑定2</button>
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                keyword: '尚硅谷'
+            },
+            methods: {
+                show() {
+                    console.log("show...")
+                }
+            }
+        })
+    </script>
+```
+
+#### 条件渲染
+
+```vue
+    <div id="app">
+        <input type="checkbox" v-model="ok"/>
+        <br>
+        <div v-if="ok">选中了</div>
+        <div v-else>没有选中</div>
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                ok: false
+            }
+        })
+    </script>
+```
+
+#### 列表渲染
+
+```vue
+    <div id="app">
+        <div v-for="user in userlist">
+            {{user.name}} -- {{user.age}}
+        </div>
+        <div v-for="(user,index) in userlist">
+           {{index}} -- {{user.name}} -- {{user.age}}
+        </div>
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userlist:[
+                    {"name":"lucy","age":20},
+                    {"name":"mary","age":30}
+                ]
+            }
+        })
+    </script>
+```
+
+#### 实例生命周期
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.3dj5z3jft2w0.webp)
+
+```vue
+    <div id="app">
+        {{msg}}
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello'
+            },
+            created() { //在页面渲染之前执行
+                debugger
+                console.log('created...')
+            },
+            mounted() { //在页面渲染之后执行
+                debugger
+                console.log('mounted...')
+            }
+        })
+    </script>
+```
+
+## axios
+
+### axios的作用
+
+axios是独立于vue的一个项目，可以用于浏览器和node.js中发送ajax请求
+
+### 复制 js 资源
+
+vue.min.js
+
+axios.min.js
+
