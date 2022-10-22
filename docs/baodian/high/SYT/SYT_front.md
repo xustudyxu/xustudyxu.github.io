@@ -716,3 +716,311 @@ npm uninstall 包名
 npm uninstall -g 包名
 ```
 
+## 模块化
+
+### 模块化简介
+
+随着网站逐渐变成"互联网应用程序"，嵌入网页的Javascript代码越来越庞大，越来越复杂。
+
+Javascript模块化编程，已经成为一个迫切的需求。理想情况下，开发者只需要实现核心的业务逻辑，其他都可以加载别人已经写好的模块。
+
+### 模块化规范
+
+CommonJS模块化规范（基于ES6语法之前）
+
+ES6模块化规范（使用ES6语法）
+
+### ES6模块化规范
+
+创建modularization_pro文件夹
+
+#### 导出模块
+
+创建src/01.js 文件
+
+```javascript
+export default {
+    getList() {
+        console.log('获取讲师列表')
+    },
+    save() {
+        console.log('保存讲师')
+    }
+}
+```
+
+#### 导入模块
+
+创建src/02.js 文件
+
+```javascript
+import teacher from"./01.js"
+teacher.getList()
+teacher.save()
+```
+
+**ES6使用 export 和 import 来导出、导入模块。**
+
+#### 运行程序
+
+```sh
+node ./02.js
+```
+
+**注意：这时的程序无法运行的，因为ES6的模块化无法在Node.js中执行，需要用Babel编辑成ES5后再执行。**
+
+### 使用Babel转码 
+
+ES6的某些高级语法在浏览器环境甚至是Node.js环境中无法执行。
+
+Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行执行。
+
+这意味着，你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持。
+
+#### 安装
+
+Babel提供babel-cli工具，用于命令行转码。它的安装命令如下：
+
+```sh
+npm install -g babel-cli
+#查看是否安装成功
+babel --version
+```
+
+#### 初始化项目
+
+在module_demo目录下初始化项目
+
+```sh
+npm init -y
+```
+
+#### 配置.babelrc
+
+Babel的配置文件是.babelrc，存放在项目的根目录下，该文件用来设置转码规则和插件，presets字段设定转码规则
+
+```json
+{
+    "presets": ["es2015"],
+    "plugins": []
+}
+```
+
+#### 安装转码器
+
+在module_deom目录中安装
+
+```sh
+npm install -D babel-preset-es2015
+```
+
+#### 转码
+
+```sh
+# 整个目录转码
+# --out-dir 或 -d 参数指定输出目录
+babel src -d dist
+```
+
+#### 运行程序
+
+```sh
+node dist/02.js
+```
+
+### 更多的方式
+
+ES6模块化规范还有一些其他的语法格式，常见的另一种写法如下：
+
+src/01.js：
+
+```javascript
+export function getList() {
+	console.log('获取讲师列表2')
+}
+export function save() {
+	console.log('保存讲师2')
+}
+```
+
+src/02.js
+
+```javascript
+import {getList, save} from"./01.js"
+getList()
+save()
+```
+
+## Webpack
+
+### 什么是Webpack
+
+Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
+
+从图中我们可以看出，Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求。 
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.3kccadmrrhs0.webp)
+
+## WebPack 安装
+
+### 全局安装
+
+```sh
+npm install -g webpack webpack-cli
+或
+npm install -g webpack
+npm install -g webpack-cli
+```
+
+### 安装后查看版本号
+
+```sh
+webpack -v
+```
+
+#### src下创建01.js
+
+```javascript
+exports.info=function (str) {
+    document.write(str)
+}
+```
+
+#### src下创建02.js
+
+```javascript
+exports.add=function (a, b) {
+    returna+b
+}
+```
+
+#### src下创建main.js
+
+```javascript
+const a = require('./01.js')
+const b = require('./02.js')
+common.info('Hello world!'+utils.add(100, 200))
+```
+
+### JS 打包
+
+#### 创建配置文件
+
+webpack_pro目录下创建配置文件webpack.config.js
+
+以下配置的意思是：
+
+读取当前项目目录下src文件夹中的main.js（入口文件）内容，分析资源依赖，把相关的js文件打包
+
+打包后的文件放入当前目录的dist文件夹下
+
+打包后的js文件名为bundle.js
+
+```javascript
+const path =require("path") //Node.js内置模块
+module.exports= {
+	entry: './src/main.js', //配置入口文件
+	output: {
+        path: path.resolve(__dirname, './dist'), //输出路径，__dirname：当前文件所在路径
+        filename: 'bundle.js'//输出文件
+    }
+}
+```
+
+#### 执行编译命令
+
+```sh
+webpack --mode=development
+#执行后查看bundle.js 里面包含了上面两个js文件的内容并进行了代码打包
+```
+
+也可以配置项目的npm运行命令，修改package.json文件
+
+```json
+"scripts": {
+	//...,
+	"dev": "webpack --mode=development",
+	"prod": "webpack --mode=production"
+ }
+```
+
+运行npm命令执行打包
+
+```sh
+npm run dev #开发打包
+或
+npm run prod #生产打包
+```
+
+#### 创建入口页面
+
+webpack_pro目录下创建index.html，引用bundle.js
+
+```html
+<script src="dist/bundle.js"></script>
+```
+
+#### 测试
+
+浏览器中查看index.html
+
+### CSS打包
+
+#### 安装插件
+
+Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。
+
+Loader 可以理解为是模块和资源的转换器。
+
+首先我们需要安装相关Loader插件，css-loader 是将 css 装载到 javascript；style-loader 是让 javascript 认识css
+
+```sh
+npm install -D style-loader css-loader 
+```
+
+#### 修改webpack.config.js
+
+```javascript
+const path = require("path"); //Node.js内置模块
+module.exports= {
+	//...,
+	output:{
+	//其他配置
+    },
+	module: {
+	rules: [  
+            {  
+				test: /\.css$/,    //打包规则应用到以css结尾的文件上
+				use: ['style-loader', 'css-loader']
+            }  
+        ]  
+    }
+}
+```
+
+#### 在src文件夹创建style.css
+
+```css
+body{
+	background: pink;
+}
+```
+
+#### 修改main.js 
+
+在第一行引入style.css
+
+```javascript
+require('./style.css')
+```
+
+#### 运行编译命令
+
+```sh
+npm run dev
+```
+
+#### 测试
+
+浏览器中查看index.html，看看背景是不是变成粉色啦？
+
