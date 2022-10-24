@@ -812,7 +812,7 @@ INSERT INTO tb_log (id, model_name, model_value, return_value, return_class, ope
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.13jlx80w8ocg.webp)
 
-> 取模，id%(节点总数),结果为0落在第一个节点。结果为1落在第二个节点。结果为3落在第三个节点。
+> 取模，id%(节点总数),结果为0落在第一个节点。结果为1落在第二个节点。结果为2落在第三个节点。
 
 ### 分片规则
 
