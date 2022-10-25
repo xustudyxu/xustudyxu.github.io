@@ -37,6 +37,7 @@ module.exports = [
     '/baodian/high/SYT/SYT_HospitalSet',
     '/baodian/high/SYT/SYT_front',
     '/baodian/high/SYT/SYT_dataDict',
+    '/baodian/high/SYT/SYT_MongoDB',
     ]
   }
   

@@ -722,5 +722,34 @@ spring.redis.lettuce.pool.min-idle=0
 "[\"java.util.ArrayList\",[[\"com.frx01.yygh.model.cmn.Dict\",{\"id\":86,\"createTime\":[\"java.util.Date\",\"2019-06-10 02:43:35\"],\"updateTime\":[\"java.util.Date\",1592898228000],\"isDeleted\":0,\"param\":[\"java.util.HashMap\",{}],\"parentId\":1,\"name\":\"\xe7\x9c\x81\",\"value\":\"86\",\"dictCode\":\"Province\",\"hasChildren\":true}],[\"com.frx01.yygh.model.cmn.Dict\",{\"id\":10000,\"createTime\":[\"java.util.Date\",\"2019-06-10 02:43:32\"],\"updateTime\":[\"java.util.Date\",1592191604000],\"isDeleted\":0,\"param\":[\"java.util.HashMap\",{}],\"parentId\":1,\"name\":\"\xe5\x8c\xbb\xe9\x99\xa2\xe7\xad\x89\xe7\xba\xa7\",\"value\":null,\"dictCode\":\"Hostype\",\"hasChildren\":true}],[\"com.frx01.yygh.model.cmn.Dict\",{\"id\":20000,\"createTime\":[\"java.util.Date\",\"2019-06-10 02:43:32\"],\"updateTime\":[\"java.util.Date\",1592290377000],\"isDeleted\":0,\"param\":[\"java.util.HashMap\",{}],\"parentId\":1,\"name\":\"\xe8\xaf\x81\xe4\xbb\xb6\xe7\xb1\xbb\xe5\x9e\x8b\",\"value\":\"20000\",\"dictCode\":\"CertificatesType\",\"hasChildren\":true}],[\"com.frx01.yygh.model.cmn.Dict\",{\"id\":30000,\"createTime\":[\"java.util.Date\",\"2019-06-10 02:43:32\"],\"updateTime\":[\"java.util.Date\",1591608399000],\"isDeleted\":0,\"param\":[\"java.util.HashMap\",{}],\"parentId\":1,\"name\":\"\xe5\xad\xa6\xe5\x8e\x86\",\"value\":\"30000\",\"dictCode\":\"Education\",\"hasChildren\":true}],[\"com.frx01.yygh.model.cmn.Dict\",{\"id\":99100,\"createTime\":[\"java.util.Date\",\"2019-06-11 02:39:11\"],\"updateTime\":[\"java.util.Date\",1591608399000],\"isDeleted\":0,\"param\":[\"java.util.HashMap\",{}],\"parentId\":1,\"name\":\"\xe6\xb0\x91\xe6\x97\x8f\",\"value\":\"99100\",\"dictCode\":\"Nation\",\"hasChildren\":true}]]]"
 ```
 
+## 配置Nginx
 
+由于我们后端有很多服务模块，每个模块都有对应的访问路径与端口，为了提供统一的api接口，所以使用nginx作为反向代理服务器；
+
+反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器IP地址
+
+1. 下载安装Nginx(Windows版)
+2. 配置nginx
+
+```nginx
+server {
+        listen       9001;
+        server_name  localhost;
+
+	location ~ /hosp/ {           
+	    proxy_pass http://localhost:8201;
+	}
+	location ~ /cmn/ {           
+	    proxy_pass http://localhost:8202;
+	}
+}
+```
+
+1，调整/config/dev.env.js中的BASE_API
+
+BASE_API: 'http://localhost:9001'
+
+说明：
+
+1、后续我们会使用Spring Cloud Gateway网关，将替代nginx网关
 
