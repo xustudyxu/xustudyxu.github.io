@@ -38,6 +38,7 @@ module.exports = [
     '/baodian/high/SYT/SYT_front',
     '/baodian/high/SYT/SYT_dataDict',
     '/baodian/high/SYT/SYT_MongoDB',
+    '/baodian/high/SYT/SYT_dataInterface',
     ]
   }
   
