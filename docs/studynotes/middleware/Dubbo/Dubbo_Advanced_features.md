@@ -146,8 +146,10 @@ B区域：主要包含了生产者、消费者一些基本信息
 
 我们需要打开我们的生产者配置文件加入下面配置
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220810/image.3g5lcdtp67i0.webp)
-
+```xml
+<!-- 元数据配置 -->
+<dubbo:metadata-report address="zookeeper://192.168.91.200:2181" />
+```
 #### 服务测试
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220810/image.242ecsvjjvgg.webp)
