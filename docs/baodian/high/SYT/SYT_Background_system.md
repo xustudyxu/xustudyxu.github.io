@@ -435,3 +435,143 @@ page为1，limit为3，测试
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221027/image.1qrrju9o3e2o.webp)
 
+### 添加数据字典显示接口
+
+#### 编写 Controller 
+
+根据dicode查询下层节点
+
+```java
+    //根据dictCode获取下级节点
+    @ApiOperation(value = "根据dictCode获取下级节点")
+    @GetMapping("/findByDictCode/{dictCode}")
+    public Result findByDictCode(@PathVariable String dictCode) {
+        List<Dict> list = dictService.findByDictCode(dictCode);
+        return Result.ok(list);
+
+    }
+```
+
+#### 编写 Service
+
+Service
+
+```java
+    //根据dictCode获取下级节点
+    List<Dict> findByDictCode(String dictCode);
+```
+
+ServiceImpl
+
+```java
+    @Override
+    public List<Dict> findByDictCode(String dictCode) {
+
+        //根据dictCode获取对应的Id
+        Dict dict = this.getDictByDictCode(dictCode);
+        //根据Id获取下层的子节点
+        List<Dict> childData = this.findChildData(dict.getId());
+        return childData;
+    }
+```
+
++ 测试，[使用Swagger测试](http://localhost:8202/swagger-ui.html#!/dict45controller/findByDictCodeUsingGET)
+
++ 传入参数Province
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221029/image.iji51w7w6a0.webp)
+
+### 更新医院上线状态
+
+#### 添加service接口
+
+在HospitalService类添加接口
+
+```java
+    //更新医院的上线状态
+    void updateStatus(String id, Integer status);
+```
+
+HospitalServiceImpl类实现
+
+```java
+    @Override
+    public void updateStatus(String id, Integer status) {
+        //根据id查询医院信息
+        Hospital hospital = hospitalRepository.findById(id).get();
+        //设置修改的值
+        hospital.setStatus(status);
+        hospital.setUpdateTime(new Date());
+        hospitalRepository.save(hospital);
+
+    }
+```
+
+#### 添加controller方法
+
+```java
+    //更新医院的上线状态
+    @ApiOperation(value = "更新医院的上线状态")
+    @GetMapping("/updateHospStatus/{id}/{status}")
+    public Result updateHospStatus(@PathVariable String id,
+                                   @PathVariable Integer status){
+        hospitalService.updateStatus(id,status);
+        return Result.ok();
+
+    }
+```
+
++ 测试，将协和医院上线
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221029/image.4dwu329mego0.webp)
+
++ 结果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221029/image.54kgrs6bsxs0.webp)
+
+### 医院详情
+
+#### 添加 service 接口
+
+在HospitalService类添加接口
+
+```java
+    //医院的详情信息
+    Map<String,Object> getHospById(String id);
+```
+
+HospitalServiceImpl类实现
+
+```java
+    @Override
+    public Map<String,Object> getHospById(String id) {
+        Map<String, Object> map = new HashMap<>();
+        Hospital hospital = this.setHospitalHosType(hospitalRepository.findById(id).get());
+        //医院的基本信息 包含医院的等级
+        map.put("hospital",hospital);
+        map.put("bookingRule",hospital.getBookingRule());
+        //不需要重复返回
+        hospital.setBookingRule(null);
+        return map;
+
+    }
+```
+
+#### 添加 controller 方法
+
+```java
+    //医院的详情信息
+    @ApiOperation(value = "医院的详情信息")
+    @GetMapping("/showHospDetail/{id}")
+    public Result showHospDetail(@PathVariable String id){
+        Map<String, Object> hospMap = hospitalService.getHospById(id);
+        return Result.ok(hospMap);
+    }
+```
+
++ 测试,点击北京协和医院的查看按钮
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221029/image.4c6hp8muepc.webp)
+
