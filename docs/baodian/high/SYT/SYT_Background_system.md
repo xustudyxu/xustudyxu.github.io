@@ -575,3 +575,352 @@ HospitalServiceImpl类实现
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221029/image.4c6hp8muepc.webp)
 
+## 医院排班
+
+### 医院效果
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221030/image.309t8zbdkiu0.webp)
+
+排班分成三部分显示：
+
+1. 科室信息（大科室与小科室树形展示）
+2. 排班日期，分页显示，根据上传排班数据聚合统计产生
+3. 排班日期对应的就诊医生信息
+
+### 接口分析
+
+1. 科室数据使用Element-ui el-tree组件渲染展示，需要将医院上传的科室数据封装成两层父子级数据；
+2. 聚合所有排班数据，按日期分页展示，并统计号源数据展示；
+3. 根据排班日期获取排班详情数据；
+
+### 实现分析
+
+虽然是一个页面展示所有内容，但是页面相对复杂，我们分步骤实现
+
+1. 先实现左侧科室树形展示；
+2. 其次排班日期分页展示
+3. 最后根据排班日期获取排班详情数据
+
+## 排班管理实现
+
+### 科室列表
+
+#### 添加 service 接口以及实现
+
+在DepartmentService类添加接口
+
+```java
+    //根据医院的编号，查询医院科室的列表
+    List<DepartmentVo> findDeptTree(String hoscode);
+```
+
+在DepartmentServiceImpl类实现接口
+
+```java
+    //根据医院的编号，查询医院科室的列表
+    @Override
+    public List<DepartmentVo> findDeptTree(String hoscode) {
+
+        //创建List集合，用于最终数据封装
+        List<DepartmentVo> result = new ArrayList<>();
+
+        //根据医院编号，查询医院所有的科室的信息
+        Department departmentQuery = new Department();
+        departmentQuery.setHoscode(hoscode);
+        Example<Department> example = Example.of(departmentQuery);
+        List<Department> departmentList = departmentRepository.findAll(example);
+
+        //根据大科室编号 bigcode 分组，获取大科室里面下级子科室
+        Map<String, List<Department>> departmentMap =
+                departmentList.stream().collect(Collectors.groupingBy(Department::getBigcode));
+        //遍历map集合
+        for(Map.Entry<String,List<Department>> entry : departmentMap.entrySet()){
+            //大科室编号
+            String bigCode = entry.getKey();
+            //大科室编号对应的全部数据
+            List<Department> departmentList1 = entry.getValue();
+
+            //封装大科室
+            DepartmentVo departmentVo1 = new DepartmentVo();
+            departmentVo1.setDepcode(bigCode);
+            departmentVo1.setDepname(departmentList1.get(0).getBigname());
+
+            //封装小科室
+            List<DepartmentVo> children = new ArrayList<>();
+            for (Department department : departmentList1) {
+                DepartmentVo departmentVo2 = new DepartmentVo();
+                departmentVo2.setDepcode(department.getDepcode());
+                departmentVo2.setDepname(department.getDepname());
+                //封装到list集合
+                children.add(departmentVo2);
+            }
+
+            //把小科室list集合放到大科室的children里面去
+            departmentVo1.setChildren(children);
+
+            //放到最终的result里面去
+            result.add(departmentVo1);
+        }
+        //返回结果
+        return result;
+    }
+```
+
+#### 添加 Controller 接口
+
+```java
+    //根据医院的编号，查询医院科室的列表
+    @ApiOperation(value = "查询医院科室的列表")
+    @GetMapping("/getDeptList/{hoscode}")
+    public Result getDeptList(@PathVariable String hoscode){
+
+       List<DepartmentVo> list = departmentService.findDeptTree(hoscode);
+       return Result.ok(list);
+    }
+```
+
++ 使用Swagger测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221030/image.5qzo98b1wx80.webp)
+
+### 排班日期分页列表
+
+#### 添加service接口与实现
+
+在ScheduleService类添加接口
+
+```java
+    //根据 医院编号和科室编号 查询排班规则数据
+    Map<String, Object> getRlueSchedule(long page, long limit, String hoscode, String depcode);
+```
+
+在ScheduleServiceImpl类实现接口
+
+```java
+    @Autowired
+    private ScheduleRepository scheduleRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @Autowired
+    private HospitalService hospitalService;
+    //根据 医院编号和科室编号 查询排班规则数据
+    @Override
+    public Map<String, Object> getRlueSchedule(long page, long limit, String hoscode, String depcode) {
+
+        //1.根据医院编号 和 科室编号 查询
+        Criteria criteria = Criteria.where("hoscode").is(hoscode).and("depcode").is(depcode);
+
+        //2.根据工作日期wordDate进行分组
+        Aggregation aggregation = Aggregation.newAggregation(
+                Aggregation.match(criteria),//匹配条件
+                Aggregation.group("workDate") //分组字段
+                        .first("workDate").as("workDate")
+                        //3.统计号源数量
+                        .count().as("docCount")
+                        .sum("reservedNumber").as("reservedNumber")
+                        .sum("availableNumber").as("availableNumber"),
+                //排序
+                Aggregation.sort(Sort.Direction.DESC, "workDate"),
+                //4.实现分页
+                Aggregation.skip((page - 1) * limit),
+                Aggregation.limit(limit)
+
+        );
+
+        //调用方法 最终执行
+        AggregationResults<BookingScheduleRuleVo> aggResults =
+                mongoTemplate.aggregate(aggregation, Schedule.class, BookingScheduleRuleVo.class);
+        List<BookingScheduleRuleVo> bookingScheduleRuleVoList = aggResults.getMappedResults();
+
+        //分组查询之后总的记录数
+        Aggregation totalAgg = Aggregation.newAggregation(
+                Aggregation.match(criteria),
+                Aggregation.group("workDate")
+        );
+        AggregationResults<BookingScheduleRuleVo> totalAggResults =
+                mongoTemplate.aggregate(totalAgg, Schedule.class, BookingScheduleRuleVo.class);
+        int total = totalAggResults.getMappedResults().size();
+
+        //把日期对应的星期获取
+        for (BookingScheduleRuleVo bookingScheduleRuleVo : bookingScheduleRuleVoList) {
+            Date workDate = bookingScheduleRuleVo.getWorkDate();
+            String dayOfWeek = this.getDayOfWeek(new DateTime(workDate));
+            bookingScheduleRuleVo.setDayOfWeek(dayOfWeek);
+        }
+
+        //设置最终数据，返回
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("bookingScheduleRuleVoList",bookingScheduleRuleVoList);
+        result.put("total",total);
+
+        //获取医院名称
+        String hosName = hospitalService.getHospName(hoscode);
+        //其他基础数据
+        HashMap<String, String> baseMap = new HashMap<>();
+        baseMap.put("hosname",hosName);
+        result.put("baseMap",baseMap);
+        return result;
+    }
+
+    /**
+     * 根据日期获取周几数据
+     *
+     * @param dateTime
+     * @return
+     */
+    private String getDayOfWeek(DateTime dateTime) {
+        String dayOfWeek = "";
+        switch (dateTime.getDayOfWeek()) {
+            case DateTimeConstants.SUNDAY:
+                dayOfWeek = "周日";
+                break;
+            case DateTimeConstants.MONDAY:
+                dayOfWeek = "周一";
+                break;
+            case DateTimeConstants.TUESDAY:
+                dayOfWeek = "周二";
+                break;
+            case DateTimeConstants.WEDNESDAY:
+                dayOfWeek = "周三";
+                break;
+            case DateTimeConstants.THURSDAY:
+                dayOfWeek = "周四";
+                break;
+            case DateTimeConstants.FRIDAY:
+                dayOfWeek = "周五";
+                break;
+            case DateTimeConstants.SATURDAY:
+                dayOfWeek = "周六";
+            default:
+                break;
+        }
+        return dayOfWeek;
+    }
+```
+
+#### 添加根据医院编号获取医院名称接口
+
+在HospitalService类添加接口
+
+```java
+    //根据医院编号，获取医院名称
+    String getHospName(String hoscode);
+```
+
+在HospitalServiceImpl类实现接口
+
+```java
+    //获取医院名称
+    @Override
+    public String getHospName(String hoscode) {
+        Hospital hospital = hospitalRepository.getHospitalByHoscode(hoscode);
+        if(hospital!=null){
+            return hospital.getHosname();
+        }
+        return null;
+    }
+```
+
+#### 添加 Controller 接口
+
+```java
+    //根据 医院编号和科室编号 查询排班规则数据
+    @ApiOperation(value = "查询排班规则数据")
+    @GetMapping("/getScheduleRule/{page}/{limit}/{hoscode}/{depcode}")
+    public Result getScheduleRule(@PathVariable long page,
+                                  @PathVariable long limit,
+                                  @PathVariable String hoscode,
+                                  @PathVariable String depcode){
+        Map<String,Object> map = scheduleService.getRlueSchedule(page,limit,hoscode,depcode);
+        return Result.ok(map);
+    }
+```
+
++ 使用Swagger测试接口
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221030/image.4j1cuzgsmum0.webp)
+
+### 根据排班日期获取排班详情列表
+
+#### 添加repository接口
+
+在ScheduleRepository类添加接口
+
+```java
+    //根据医院编号、科室编号和工作日期，查询排班详细信息
+    List<Schedule> findScheduleByHoscodeAndDepcodeAndWorkDate(String hoscode, String depcode, Date dateTime);
+```
+
+在ScheduleServiceImpl类实现接口
+
+```java
+    //根据医院编号、科室编号和工作日期，查询排班详细信息
+    @Override
+    public List<Schedule> getDetailSchedule(String hoscode, String depcode, String workDate) {
+        List<Schedule> scheduleList =
+                scheduleRepository.findScheduleByHoscodeAndDepcodeAndWorkDate(hoscode,depcode,new DateTime(workDate).toDate());
+        //把得到list集合遍历，设置其他值，医院名称，科室名称，日期对应星期
+        scheduleList.stream().forEach(item -> {
+            this.packageSchedule(item);
+        });
+        return scheduleList;
+    }
+
+    //封装排班的详情里面其他的值  医院名称，科室名称，日期对应星期
+    private void packageSchedule(Schedule schedule) {
+        //设置医院的名称 根据医院编号 得到医院名称
+        schedule.getParam().put("hosname",hospitalService.getHospName(schedule.getHoscode()));
+        //设置科室名称
+        schedule.getParam().put("depname",departmentService.getDepName(schedule.getHoscode(),schedule.getDepcode()));
+        //设置日期对应星期
+        schedule.getParam().put("dayOfWeek",this.getDayOfWeek(new DateTime(schedule.getWorkDate())));
+
+    }
+```
+
+#### 添加根据部门编码获取部门名称
+
+1. 在DepartmentService类添加接口
+
+```java
+    //根据科室的编号 医院的编号 查询科室的名称
+    String getDepName(String hoscode, String depcode);
+```
+
+2. 在DepartmentService类添加接口实现
+
+```java
+    @Override
+    public String getDepName(String hoscode, String depcode) {
+        Department departemnt =
+                departmentRepository.getDepartemntByHoscodeAndDepcode(hoscode, depcode);
+        if(departemnt != null){
+            return departemnt.getDepname();
+        }
+        return null;
+    }
+```
+
+#### 添加controller
+
+```java
+    //根据医院编号、科室编号和工作日期，查询排班详细信息
+    @ApiOperation(value = "查询排班详细信息")
+    @GetMapping("getScheduleDetail/{hoscode}/{depcode}/{workDate}")
+    public Result getScheduleDetail( @PathVariable String hoscode,
+                                     @PathVariable String depcode,
+                                     @PathVariable String workDate){
+        List<Schedule> list = scheduleService.getDetailSchedule(hoscode,depcode,workDate);
+        return Result.ok(list);
+    }
+```
+
++ 使用swagger测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221030/image.76qbfalaxsg0.webp)
+
++ 前端访问
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221030/image.5wrmo6d5dxk0.webp)
