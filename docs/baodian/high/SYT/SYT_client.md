@@ -189,7 +189,7 @@ public class HospApiController {
     private HospitalService hospitalService;
 
     @ApiOperation(value = "查询医院的列表功能")
-    @GetMapping("findHospList/{page}/{limit}")
+    @GetMapping("/findHospList/{page}/{limit}")
     public Result findHospList(@PathVariable Integer page,
                                @PathVariable Integer limit,
                                HospitalQueryVo hospitalQueryVo){
@@ -198,6 +198,10 @@ public class HospApiController {
     }
 }
 ```
+
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221101/image.4hjw33z4s0i0.webp)
 
 ### 根据医院名称关键字搜索医院列表
 
@@ -233,12 +237,16 @@ public class HospApiController {
 
 ```java
     @ApiOperation(value = "根据医院名称查询")
-    @GetMapping("/findByHosName/{h0osname}")
-    public Result findByHosName(@PathVariable String hosname){
+    @GetMapping("/findByHosname/{hosname}")
+    public Result findByHosname(@PathVariable String hosname){
         List<Hospital> hospitalList = hospitalService.findByName(hosname);
         return Result.ok(hospitalList);
     }
 ```
+
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221101/image.snmgfhouhe8.webp)
 
 ## 医院详情
 
@@ -286,11 +294,15 @@ public class HospApiController {
     }
 
     @ApiOperation(value = "根据医院编号获取医院预约挂号信息")
-    @GetMapping("/findHospDetail/{hoscode}")
+    @GetMapping("/{hoscode}")
     public Result findHospDetail(@PathVariable String hoscode){
         Map<String,Object> map = hospitalService.item(hoscode);
         return Result.ok(map);
     }
 }
 ```
+
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221101/image.571kq8wga280.webp)
 
