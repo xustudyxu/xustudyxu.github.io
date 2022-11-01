@@ -66,7 +66,11 @@ name、description、author（必须修改这里，否则项目无法安装）
 
 ### 修改nuxt.config.js
 
-修改title: '{{ name }}'、content: '{{escape description }}'
+修改
+
+```javascript
+title: '{{ name }}'、content: '{{escape description }}'
+```
 
 这里的设置最后会显示在页面标题栏和meta数据中
 
