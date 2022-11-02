@@ -41,7 +41,8 @@ module.exports = [
     '/baodian/high/SYT/SYT_dataInterface',
     '/baodian/high/SYT/SYT_Background_system',
     '/baodian/high/SYT/SYT_gateway',
-    '/baodian/high/SYT/SYT_client'
+    '/baodian/high/SYT/SYT_client',
+    '/baodian/high/SYT/SYT_phoneLogin',
     ]
   }
   
