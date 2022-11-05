@@ -43,6 +43,7 @@ module.exports = [
     '/baodian/high/SYT/SYT_gateway',
     '/baodian/high/SYT/SYT_client',
     '/baodian/high/SYT/SYT_phoneLogin',
+    '/baodian/high/SYT/SYT_wechatLogin'
     ]
   }
   
