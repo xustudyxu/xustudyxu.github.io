@@ -185,7 +185,11 @@ public class UserConfig {
             throw  new YyghException(ResultCodeEnum.PARAM_ERROR);
         }
 
-        //TODO 3.判断收验证码和输入的验证码是否一致
+        //3.判断收验证码和输入的验证码是否一致
+        String redisCode = redisTemplate.opsForValue().get(phone);
+        if(!code.equals(redisCode)){
+            throw new YyghException(ResultCodeEnum.CODE_ERROR);
+        }
 
         //4.判断是否是第一次登录:根据手机号查询表，如果不存在，就是第一次登录
         QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
