@@ -76,8 +76,8 @@ spring.jackson.time-zone=GMT+8
 spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 
 aliyun.oss.endpoint=oss-cn-beijing.aliyuncs.com
-aliyun.oss.accessKeyId=LTAI5tPcTiq8WZ2qzisnQnjb
-aliyun.oss.secret=JlUoZaupyMCZL1GCMMWNAENjHssKgO
+aliyun.oss.accessKeyId=LTAI5tPcTiq8WZ2q********
+aliyun.oss.secret=JlUoZaupyMCZL1GCMMWNAEN****
 aliyun.oss.bucket=gili-file-oos
 ```
 
