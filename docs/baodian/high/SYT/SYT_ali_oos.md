@@ -369,3 +369,167 @@ public class AuthContextHolder {
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.sp766qzoc0w.webp)
 
+### 就诊人管理
+
+ ### 需求分析
+
+预约下单需要选择就诊人，因此我们要实现就诊人管理，前端就诊人管理其实就是要实现一个完整的增删改查
+
+### api 接口
+
+#### 引入依赖
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.frx01</groupId>
+        <artifactId>service_cmn_client</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
+#### 添加 Mapper
+
+添加com.frx01.user.mapper.PatientMapper
+
+```java
+public interface PatientMapper extends BaseMapper<Patient> {
+}
+```
+
+#### 添加 service 接口及实现类
+
+1. 添加PatientService接口
+
+```java
+public interface PatientService extends IService<Patient> {
+
+    //创建就诊人的信息
+    List<Patient> findAllUserId(Long userId);
+
+    //根据id就诊人信息
+    Patient getPatientId(Long id);
+}
+```
+
+2. 添加接口实现类
+
+```java
+@Service
+public class PatientServiceImpl extends ServiceImpl<PatientMapper,Patient> implements PatientService {
+
+    @Autowired
+    private DictFeignClient dictFeignClient;
+
+    //获取就诊人方法
+    @Override
+    public List<Patient> findAllUserId(Long userId) {
+        //根据userid查询所有就诊人信息列表
+        QueryWrapper<Patient> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("userId",userId);
+        List<Patient> patientList = baseMapper.selectList(queryWrapper);
+        //通过远程调用，的到编码相关内容，查询数据字典表内容
+        patientList.stream().forEach(item -> {
+            //其他参数的封装
+            this.packPatient(item);
+        });
+        return patientList;
+    }
+
+    //根据id就诊人信息
+    @Override
+    public Patient getPatientId(Long id) {
+        Patient patient = baseMapper.selectById(id);
+        return this.packPatient(patient);
+    }
+
+    //Patient对象里面其他参数的封装
+    private Patient packPatient(Patient patient) {
+        //根据证件编码，获取证件的具体值
+        String certificatesTypeString =
+                dictFeignClient.getName(DictEnum.CERTIFICATES_TYPE.getDictCode(), patient.getCertificatesType());
+        //联系人证件类型
+        String contactsCertificatesTypeString =
+                dictFeignClient.getName(DictEnum.CERTIFICATES_TYPE.getDictCode(),patient.getContactsCertificatesType());
+        //省
+        String provinceString = dictFeignClient.getName(patient.getProvinceCode());
+        //市
+        String cityString = dictFeignClient.getName(patient.getCityCode());
+        //区
+        String districtString = dictFeignClient.getName(patient.getDistrictCode());
+        patient.getParam().put("certificatesTypeString", certificatesTypeString);
+        patient.getParam().put("contactsCertificatesTypeString", contactsCertificatesTypeString);
+        patient.getParam().put("provinceString", provinceString);
+        patient.getParam().put("cityString", cityString);
+        patient.getParam().put("districtString", districtString);
+        patient.getParam().put("fullAddress", provinceString + cityString + districtString + patient.getAddress());
+
+        return patient;
+    }
+}
+```
+
+#### 添加 Controller
+
+```java
+@RestController
+@RequestMapping("/api/user/patient")
+public class PatientApiController {
+
+    @Autowired
+    private PatientService patientService;
+
+    //获取就诊人的接口
+    @GetMapping("/auth/findAll")
+    public Result findAll(HttpServletRequest request){
+        //获取当前登录用户id
+        Long userId = AuthContextHolder.getUserId(request);
+        List<Patient> list = patientService.findAllUserId(userId);
+        return Result.ok(list);
+    }
+
+    //添加就诊人
+    @PostMapping("/auth/save")
+    public Result savePatient(@RequestBody Patient patient,HttpServletRequest request){
+        //获取当前登录用户的id
+        Long userId = AuthContextHolder.getUserId(request);
+        patient.setUserId(userId);
+        patientService.save(patient);
+        return Result.ok();
+    }
+
+    //根据id获取就诊人的信息
+    @GetMapping("/auth/get/{id}")
+    public Result getPatient(@PathVariable Long id){
+        Patient patient = patientService.getPatientId(id);
+        return Result.ok(patient);
+    }
+
+    //修改就诊人
+    @PostMapping("/auth/update")
+    public Result updatePatient(@RequestBody Patient patient){
+        patientService.updateById(patient);
+        return Result.ok();
+    }
+
+    //删除就诊人的信息
+    @DeleteMapping("/auth/remove")
+    public Result removePatient(@PathVariable Long id){
+        patientService.removeById(id);
+        return Result.ok();
+    }
+}
+```
+
++ 前端测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.1o2du7gg70ps.webp)
+
++ 数据库
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.13zqoh4afws.webp)
+
++ 查看就诊人信息
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.6f1dan2mvtg0.webp)
