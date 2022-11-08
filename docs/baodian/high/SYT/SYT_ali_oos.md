@@ -533,3 +533,96 @@ public class PatientApiController {
 + 查看就诊人信息
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.6f1dan2mvtg0.webp)
+
+## 平台用户管理
+
+前面我们做了用户登录、用户认证与就诊人，现在我们需要把这些信息在我们的平台管理系统做一个统一管理
+
+操作模块︰serxice-user
+
+### 用户列表
+
+### 添加 mapper
+
+1. 在UserInfoService添加接口
+
+```java
+    //用户列表接口（条件查询带分页）
+    IPage<UserInfo> selectPage(Page<UserInfo> userInfoPage, UserInfoQueryVo userInfoQueryVo);
+```
+
+2. 在UserInfoServiceImpl类添加实现
+
+```java
+    //用户列表接口（条件查询带分页）
+    @Override
+    public IPage<UserInfo> selectPage(Page<UserInfo> userInfoPage, UserInfoQueryVo userInfoQueryVo) {
+        //UserInfoQueryVo获取条件值
+        String name = userInfoQueryVo.getKeyword();//用户的名称
+        Integer status = userInfoQueryVo.getStatus();//用户状态
+        Integer authStatus = userInfoQueryVo.getAuthStatus();//认证转态
+        String createTimeBegin = userInfoQueryVo.getCreateTimeBegin();//开始时间
+        String createTimeEnd = userInfoQueryVo.getCreateTimeEnd();//结束时间
+        //对条件值进行非空的判断
+        QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+        if(!StringUtils.isEmpty(name)){
+            queryWrapper.like("name",name);
+        }
+        if(!StringUtils.isEmpty(status)){
+            queryWrapper.eq("status",status);
+        }
+        if(!StringUtils.isEmpty(authStatus)){
+            queryWrapper.eq("auth_status",authStatus);
+        }
+        if(!StringUtils.isEmpty(createTimeBegin)){
+            queryWrapper.ge("create_time",createTimeBegin);
+        }
+        if(!StringUtils.isEmpty(createTimeEnd)){
+            queryWrapper.le("create_time",createTimeEnd);
+        }
+        //调用mapper的方法
+        Page<UserInfo> pages = baseMapper.selectPage(userInfoPage, queryWrapper);
+        //编号变成对应的值封装
+        pages.getRecords().stream().forEach(item -> {
+            this.packageUserInfo(item);
+        });
+        return pages;
+    }
+
+    //编号变成对应的值的封装
+    private UserInfo packageUserInfo(UserInfo userInfo) {
+        //处理认证状态的编码
+        userInfo.getParam().put("authStatusString",AuthStatusEnum.getStatusNameByStatus(userInfo.getAuthStatus()));
+        //处理用户状态 0 1
+        String statusString = userInfo.getStatus().intValue() == 0 ? "锁定" : "正常";
+        userInfo.getParam().put("statusString",statusString);
+        return userInfo;
+
+    }
+```
+
+### 添加 Controller 接口
+
+添加UserController类
+
+```java
+@RestController
+@RequestMapping("/admin/user")
+public class UserInfoController {
+
+    @Autowired
+    private UserInfoService userInfoService;
+
+    //用户列表接口（条件查询带分页）
+    @GetMapping("/{page}/{limit}")
+    public Result list(@PathVariable Long page,
+                       @PathVariable Long limit,
+                       UserInfoQueryVo userInfoQueryVo){
+        Page<UserInfo> userInfoPage = new Page<>(page,limit);
+        IPage<UserInfo> pageModule = userInfoService.selectPage(userInfoPage,userInfoQueryVo);
+        return Result.ok(pageModule);
+
+    }
+}
+```
+
