@@ -626,3 +626,148 @@ public class UserInfoController {
 }
 ```
 
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.6aeyquad0dg0.webp)
+
+## 锁定
+
+### 添加 service 接口与实现
+
+1. 在UserInfoService类添加接口
+
+```java
+    /**
+     * desc:用户锁定
+     * @param userId
+     * @param status 0：锁定 1：正常
+     */
+    void lock(Long userId,Integer status);
+```
+
+2. 在UserInfoServiceImpl类添加实现
+
+```java
+    //用户锁定
+    @Override
+    public void lock(Long userId, Integer status) {
+        if(status.intValue()==0||status.intValue()==1){
+            UserInfo userInfo = baseMapper.selectById(userId);
+            userInfo.setStatus(status);
+            baseMapper.updateById(userInfo);
+        }
+    }
+```
+
+### 添加 Controller 接口
+
+```java
+    //用户锁定
+    @GetMapping("/lock/{userId}/{status}")
+    public Result lock(@PathVariable Long userId,@PathVariable Integer status){
+        userInfoService.lock(userId,status);
+        return Result.ok();
+    }
+```
+
++ 测试锁定用户
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.3mp7tno8k440.webp)
+
+## 详情
+
+### 添加 service 接口与实现
+
+1. 在UserInfoService类添加接口
+
+```java
+    /**
+     * 根据用户的Id获取用户的详情信息
+     * @param userId
+     * @return
+     */
+    Map<String, Object> show(Long userId);
+```
+
+2. 在 UserInfoServiceImpl类添加实现
+
+```java
+    //用户详情
+    @Override
+    public Map<String, Object> show(Long userId) {
+
+        Map<String, Object> map = new HashMap<>();
+
+        //根据userId查询用户的基本信息
+        UserInfo userInfo = this.packageUserInfo(baseMapper.selectById(userId));
+        map.put("userInfo",userInfo);
+        //根据userid查询就诊人的信息
+        List<Patient> patientList = patientService.findAllUserId(userId);
+        map.put("patientList",patientList);
+        return map;
+    }
+```
+
+### 添加 Controller 接口
+
+```java
+    //用户详情
+    @GetMapping("/show/{userId}")
+    public Result show(@PathVariable Long userId){
+        Map<String,Object> map = userInfoService.show(userId);
+        return Result.ok(map);
+    }
+```
+
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.5rjrdjrq7m40.webp)
+
+## 用户认证审批功能
+
+### 添加 service 接口与实现
+
+1. 在UserInfoService类添加接口
+
+```java
+    /**
+     * 认证审批
+     * @param userId
+     * @param authStatus
+     */
+    void approval(Long userId, Integer authStatus);
+```
+
+2. 在 UserInfoServiceImpl类添加实现
+
+```java
+    //认证审批 2代表审核通过 -1代表审核不通过
+    @Override
+    public void approval(Long userId, Integer authStatus) {
+        if(authStatus.intValue()==2||authStatus.intValue()==-1){
+            UserInfo userInfo = baseMapper.selectById(userId);
+            userInfo.setStatus(authStatus);
+            baseMapper.updateById(userInfo);
+        }
+    }
+```
+
+### 添加 Controller 接口
+
+```java
+    //认证审批接口
+    @GetMapping("/approval/{userId}/{authStatus}")
+    public Result approval(@PathVariable Long userId,@PathVariable Integer authStatus){
+        userInfoService.approval(userId,authStatus);
+        return Result.ok();
+    }
+```
+
++ 前端访问测试
+
+![1668008829184](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1668008829184.png)
+
++ 点击通过
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.4esxnq1jzva0.webp)
+
