@@ -1226,3 +1226,132 @@ spring.rabbitmq.password=guest
 2022-11-13 08:48:29.593  INFO 7572 --- [erListUpdater-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: service-hosp.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
 ```
 
+## 订单详情功能
+
+### 添加 servcie 接口以及实现类
+
+1. 在OrderInfoService类添加接口
+
+```java
+    //根据订单的id查询订单详情
+    OrderInfo getOrder(String orderId);
+```
+
+2. 在OrderInfoServiceImpl类添加接口实现
+
+```java
+    //根据订单id查询订单详情
+    @Override
+    public OrderInfo getOrder(String orderId) {
+        OrderInfo orderInfo = baseMapper.selectById(orderId);
+        return this.packOrderInfo(orderInfo);
+    }
+
+    private OrderInfo packOrderInfo(OrderInfo orderInfo){
+        orderInfo.getParam().put("orderStatusString",OrderStatusEnum.getStatusNameByStatus(orderInfo.getOrderStatus()));
+        return orderInfo;
+    }
+```
+
+### 添加 Controller
+
+```java
+    //根据订单的id查询订单详情
+    @GetMapping("/auth/getOrders/{orderId}")
+    public Result getOrders(@PathVariable String orderId){
+        OrderInfo orderInfo = orderService.getOrder(orderId);
+        return Result.ok(orderInfo);
+    }
+```
+
++ 前端测试访问
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221113/image.3sxtal5zwou0.webp)
+
+## 订单列表功能
+
+### 添加 service 接口以及实现
+
+1. 在 OrderInfoSerice 接口及实现类
+
+```java
+    //订单列表（条件查询带分页）
+    IPage<OrderInfo> selectPage(Page<OrderInfo> pageParam, OrderQueryVo orderQueryVo);
+```
+
+2. 在 OrderInfoServiceImpl 类添加接口实现
+
+```java
+    //订单列表（条件查询带分页）
+    @Override
+    public IPage<OrderInfo> selectPage(Page<OrderInfo> pageParam, OrderQueryVo orderQueryVo) {
+        //OrderQueryVo获取条件值
+        String name = orderQueryVo.getKeyword();//医院名称
+        String patientName = orderQueryVo.getPatientName();//就诊人的名称
+        String orderStatus = orderQueryVo.getOrderStatus();//订单的状态
+        String reserveDate = orderQueryVo.getReserveDate();//安排日期
+        String createTimeBegin = orderQueryVo.getCreateTimeBegin();//开始时间
+        String createTimeEnd = orderQueryVo.getCreateTimeEnd();//结束时间
+        //对条件值进行非空的判断
+        QueryWrapper<OrderInfo> queryWrapper = new QueryWrapper<>();
+        if(!StringUtils.isEmpty(name)){
+            queryWrapper.like("hosname",name);
+        }
+        if(!StringUtils.isEmpty(patientName)){
+            queryWrapper.eq("patient_name",patientName);
+        }
+        if(!StringUtils.isEmpty(orderStatus)){
+            queryWrapper.eq("order_status",orderStatus);
+        }
+        if(!StringUtils.isEmpty(reserveDate)){
+            queryWrapper.ge("reserce_date",reserveDate);
+        }
+        if(!StringUtils.isEmpty(createTimeBegin)){
+            queryWrapper.ge("create_time",createTimeBegin);
+        }
+        if(!StringUtils.isEmpty(createTimeEnd)){
+            queryWrapper.le("create_time",createTimeEnd);
+        }
+        //调用mapper的方法
+        Page<OrderInfo>  pages = baseMapper.selectPage(pageParam, queryWrapper);
+        pages.getRecords().stream().forEach(item -> {
+            this.packOrderInfo(item);
+        });
+        return pages;
+    }
+
+    private OrderInfo packOrderInfo(OrderInfo orderInfo){
+        orderInfo.getParam().put("orderStatusString",OrderStatusEnum.getStatusNameByStatus(orderInfo.getOrderStatus()));
+        return orderInfo;
+    }
+```
+
+### 添加 Controller 
+
+```java
+    //订单列表（条件查询带分页）
+    @GetMapping("/auth/{page}/{limit}")
+    public Result list(@PathVariable Long page,
+                       @PathVariable Long limit,
+                       OrderQueryVo orderQueryVo,
+                       HttpServletRequest request){
+        //设置当前用户的id值
+        orderQueryVo.setUserId(AuthContextHolder.getUserId(request));
+        Page<OrderInfo> pageParam = new Page<>(page, limit);
+        IPage<OrderInfo> pageModel = orderService.selectPage(pageParam,orderQueryVo);
+        return Result.ok(pageModel);
+    }
+
+    //获取订单状态
+    @GetMapping("/auth/getStatusList")
+    public Result getStatusList(){
+        return Result.ok(OrderStatusEnum.getStatusList());
+    }
+```
+
+说明：订单状态我们是封装到枚举中的，页面搜索需要一个下拉列表展示，所以我们通过接口返回页面
+
++ 前端访问测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221113/image.3ubxjqw0p840.webp)
+
