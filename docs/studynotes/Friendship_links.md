@@ -47,6 +47,10 @@ tags:
   avatar: https://blog.gmcj0816.top/img/SeriousWission_TouXiangPic.jpg
   link: https://blog.gmcj0816.top/
   bgColor: '#CBEAFA'
+- name: 老陈笔记
+  desc: 一点一滴都是进步
+  avatar: http://www.weblearn.fit/favicon.ico
+  link: http://www.weblearn.fit/
 ```
 
 :::
