@@ -1355,3 +1355,551 @@ spring.rabbitmq.password=guest
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221113/image.3ubxjqw0p840.webp)
 
+## 订单支付（生成二维码）
+
+### 微信支付介绍
+
+#### 微信扫码支付申请
+
+微信扫码支付是商户系统按微信支付协议生成支付二维码，用户再用微信“扫一扫”完成支付的模式。该模式适用于PC网站支付、实体店单品或订单支付、媒体广告支付等场景。
+
+申请步骤：（了解）
+
+**第一步：注册公众号（类型须为：服务号）**
+
+请根据营业执照类型选择以下主体注册：[个体工商户](http://kf.qq.com/faq/120911VrYVrA151009JB3i2Q.html)| [企业/公司](http://kf.qq.com/faq/120911VrYVrA151013MfYvYV.html)| [政府](http://kf.qq.com/faq/161220eaAJjE161220IJn6zU.html)| [媒体](http://kf.qq.com/faq/161220IFBJFv161220YnqAbQ.html)| [其他类型](http://kf.qq.com/faq/120911VrYVrA151013nYFZ7Z.html)。
+
+**第二步：认证公众号**
+
+公众号认证后才可申请微信支付，认证费：300元/年。
+
+**第三步：提交资料申请微信支付**
+
+登录公众平台，点击左侧菜单【微信支付】，开始填写资料等待审核，审核时间为1-5个工作日内。
+
+**第四步：开户成功，登录商户平台进行验证**
+
+资料审核通过后，请登录联系人邮箱查收商户号和密码，并登录商户平台填写财付通备付金打的小额资金数额，完成账户验证。
+
+**第五步：在线签署协议**
+
+本协议为线上电子协议，签署后方可进行交易及资金结算，签署完立即生效。
+
+#### 开发文档
+
+微信支付接口调用的整体思路：
+
+按API要求组装参数，以XML方式发送（POST）给微信支付接口（URL）,微信支付接口也是以XML方式给予响应。程序根据返回的结果（其中包括支付URL）生成二维码或判断订单状态。
+
+在线微信支付开发文档：
+
+https://pay.weixin.qq.com/wiki/doc/api/index.html
+
+1. appid：微信公众账号或开放平台APP的唯一标识
+2. mch_id：商户号  (配置文件中的partner)
+3. partnerkey：商户密钥
+4. sign:数字签名, 根据微信官方提供的密钥和一套算法生成的一个加密信息, 就是为了保证交易的安全性
+
+#### 微信支付SDK
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221115/image.775rxz9ipqs0.webp)
+
+添加依赖
+
+```xml
+        <dependency>
+            <groupId>com.github.wxpay</groupId>
+            <artifactId>wxpay-sdk</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+```
+
+我们主要会用到微信支付SDK的以下功能
+
+1. 获取随机字符串
+
+```java
+WXPayUtil.generateNonceStr()
+```
+
+2. MAP转换为XML字符串（自动添加签名）
+
+```java
+WXPayUtil.generateSignedXml(param, partnerkey)
+```
+
+3. XML字符串转换为MAP
+
+```java
+WXPayUtil.xmlToMap(result)
+```
+
+### 微信支付开发
+
+#### api 接口
+
+场景：用户扫描商户展示在各种场景的二维码进行支付
+
+使用案例：
+
+线下：家乐福超市、7-11便利店、上品折扣线下店等
+
+线上：大众点评网站、携程网站、唯品会、美丽说网站等
+
+开发模式：
+
+模式一：商户在后台给你生成二维码，用户打开扫一扫
+
+模式二：商户后台系统调用微信支付【[统一下单API](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)】生成预付交易，将接口返回的链接生成二维码，用户扫码后输入密码完成支付交易。注意：**该模式的预付单有效期为2小时，**过期后无法支付。
+
+微信支付：生成xml发送请求
+
+操作模块：service-order
+
+##### 引入依赖
+
+```xml
+<dependency>
+    <groupId>com.github.wxpay</groupId>
+    <artifactId>wxpay-sdk</artifactId>
+    <version>0.0.3</version>
+</dependency>
+```
+
+##### 添加配置
+
+在application.properties中添加商户信息
+
+```properties
+spring.redis.host=192.168.91.166
+spring.redis.port=6379
+spring.redis.database= 0
+spring.redis.password=mima
+spring.redis.timeout=1800000
+spring.redis.lettuce.pool.max-active=20
+spring.redis.lettuce.pool.max-wait=-1
+#最大阻塞等待时间(负数表示没限制)
+spring.redis.lettuce.pool.max-idle=5
+spring.redis.lettuce.pool.min-idle=0
+
+#关联的公众号appid
+weixin.pay.appid=wx74862e0dfcf69954
+#商户号
+weixin.pay.partner=1558950191
+#商户key
+weixin.pay.partnerkey=T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+```
+
+##### 引入工具类
+
+```java
+@Component
+public class ConstantPropertiesUtils implements InitializingBean {
+    
+    @Value("${weixin.appid}")
+    private String appid;
+
+    @Value("${weixin.partner}")
+    private String partner;
+
+    @Value("${weixin.partnerkey}")
+    private String partnerkey;
+
+    public static String APPID;
+    public static String PARTNER;
+    public static String PARTNERKEY;
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        APPID = appid;
+        PARTNER = partner;
+        PARTNERKEY = partnerkey;
+    }
+}
+```
+
+```java
+/**
+ * http请求客户端
+ */
+public class HttpClient {
+   private String url;
+   private Map<String, String> param;
+   private int statusCode;
+   private String content;
+   private String xmlParam;
+   private boolean isHttps;
+   private boolean isCert = false;
+   //证书密码 微信商户号（mch_id）
+   private String certPassword;
+   public boolean isHttps() {
+      return isHttps;
+   }
+   public void setHttps(boolean isHttps) {
+      this.isHttps = isHttps;
+   }
+   public boolean isCert() {
+      return isCert;
+   }
+   public void setCert(boolean cert) {
+      isCert = cert;
+   }
+   public String getXmlParam() {
+      return xmlParam;
+   }
+   public void setXmlParam(String xmlParam) {
+      this.xmlParam = xmlParam;
+   }
+   public HttpClient(String url, Map<String, String> param) {
+      this.url = url;
+      this.param = param;
+   }
+   public HttpClient(String url) {
+      this.url = url;
+   }
+   public String getCertPassword() {
+      return certPassword;
+   }
+   public void setCertPassword(String certPassword) {
+      this.certPassword = certPassword;
+   }
+   public void setParameter(Map<String, String> map) {
+      param = map;
+   }
+   public void addParameter(String key, String value) {
+      if (param == null)
+         param = new HashMap<String, String>();
+      param.put(key, value);
+   }
+   public void post() throws ClientProtocolException, IOException {
+      HttpPost http = new HttpPost(url);
+      setEntity(http);
+      execute(http);
+   }
+   public void put() throws ClientProtocolException, IOException {
+      HttpPut http = new HttpPut(url);
+      setEntity(http);
+      execute(http);
+   }
+   public void get() throws ClientProtocolException, IOException {
+      if (param != null) {
+         StringBuilder url = new StringBuilder(this.url);
+         boolean isFirst = true;
+         for (String key : param.keySet()) {
+            if (isFirst)
+               url.append("?");
+            else
+               url.append("&");
+            url.append(key).append("=").append(param.get(key));
+         }
+         this.url = url.toString();
+      }
+      HttpGet http = new HttpGet(url);
+      execute(http);
+   }
+   /**
+    * set http post,put param
+    */
+   private void setEntity(HttpEntityEnclosingRequestBase http) {
+      if (param != null) {
+         List<NameValuePair> nvps = new LinkedList<NameValuePair>();
+         for (String key : param.keySet())
+            nvps.add(new BasicNameValuePair(key, param.get(key))); // 参数
+         http.setEntity(new UrlEncodedFormEntity(nvps, Consts.UTF_8)); // 设置参数
+      }
+      if (xmlParam != null) {
+         http.setEntity(new StringEntity(xmlParam, Consts.UTF_8));
+      }
+   }
+   private void execute(HttpUriRequest http) throws ClientProtocolException,
+         IOException {
+      CloseableHttpClient httpClient = null;
+      try {
+         if (isHttps) {
+            if(isCert) {
+               //TODO 需要完善
+               FileInputStream inputStream = new FileInputStream(new File(""));
+               KeyStore keystore = KeyStore.getInstance("PKCS12");
+               char[] partnerId2charArray = certPassword.toCharArray();
+               keystore.load(inputStream, partnerId2charArray);
+               SSLContext sslContext = SSLContexts.custom().loadKeyMaterial(keystore, partnerId2charArray).build();
+               SSLConnectionSocketFactory sslsf =
+                     new SSLConnectionSocketFactory(sslContext,
+                           new String[] { "TLSv1" },
+                           null,
+                           SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+               httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+            } else {
+               SSLContext sslContext = new SSLContextBuilder()
+                     .loadTrustMaterial(null, new TrustStrategy() {
+                        // 信任所有
+                        public boolean isTrusted(X509Certificate[] chain,
+                                           String authType)
+                              throws CertificateException {
+                           return true;
+                        }
+                     }).build();
+               SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
+                     sslContext);
+               httpClient = HttpClients.custom().setSSLSocketFactory(sslsf)
+                     .build();
+            }
+         } else {
+            httpClient = HttpClients.createDefault();
+         }
+         CloseableHttpResponse response = httpClient.execute(http);
+         try {
+            if (response != null) {
+               if (response.getStatusLine() != null)
+                  statusCode = response.getStatusLine().getStatusCode();
+               HttpEntity entity = response.getEntity();
+               // 响应内容
+               content = EntityUtils.toString(entity, Consts.UTF_8);
+            }
+         } finally {
+            response.close();
+         }
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         httpClient.close();
+      }
+   }
+   public int getStatusCode() {
+      return statusCode;
+   }
+   public String getContent() throws ParseException, IOException {
+      return content;
+   }
+}
+```
+
+#### 添加交易记录接口
+
+##### 添加 Mapper
+
+```java
+public interface PaymentMapper extends BaseMapper<PaymentInfo> {
+}
+```
+
+##### 添加service接口与实现
+
+1. 添加PaymentService 类
+
+```java
+public interface PaymentService extends IService<PaymentInfo> {
+
+    //向支付记录表添加信息
+    void savePaymentInfo(OrderInfo orderInfo, Integer status);
+}
+```
+
+2. 添加PaymentServiceImpl实现类
+
+```java
+@Service
+public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, PaymentInfo> implements PaymentService {
+
+    //向支付记录表添加信息
+    @Override
+    public void savePaymentInfo(OrderInfo orderInfo, Integer status) {
+        //根据订单id和支付类型，查询支付记录表里面是否存在相同的订单
+        QueryWrapper<PaymentInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("order_id",orderInfo.getId());
+        queryWrapper.eq("payment_type",status);
+        Integer count = baseMapper.selectCount(queryWrapper);
+        if(count>0){
+            return;
+        }
+        //添加记录
+        PaymentInfo paymentInfo = new PaymentInfo();
+        paymentInfo.setCreateTime(new Date());
+        paymentInfo.setOrderId(orderInfo.getId());
+        paymentInfo.setPaymentType(status);
+        paymentInfo.setOutTradeNo(orderInfo.getOutTradeNo());
+        paymentInfo.setPaymentStatus(PaymentStatusEnum.UNPAID.getStatus());
+        String subject = new DateTime(orderInfo.getReserveDate()).toString("yyyy-MM-dd")+"|"+orderInfo.getHosname()+"|"+orderInfo.getDepname()+"|"+orderInfo.getTitle();
+        paymentInfo.setSubject(subject);
+        paymentInfo.setTotalAmount(orderInfo.getAmount());
+        baseMapper.insert(paymentInfo);
+
+    }
+}
+```
+
+#### 添加支付service接口与实现
+
+1. 添加com.frx01.yygh.order.service.WeixinService类
+
+```java
+public interface WeiXinService {
+
+    //生成微信支付扫描的二维码
+    Map createNative(Long orderId);
+}
+```
+
+2. 添加com.frx01.yygh.order.service.impl.WeixinServiceImpl类
+
+```java
+@Service
+public class WeiXinServiceImpl implements WeiXinService {
+
+    @Autowired
+    private OrderService orderService;
+
+    @Autowired
+    private PaymentService paymentService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    //生成微信支付扫描的二维码
+    @Override
+    public Map createNative(Long orderId) {
+        //1.根据orderId获取订单信息
+        OrderInfo orderInfo = orderService.getById(orderId);
+        //2.向支付记录表添加信息
+        paymentService.savePaymentInfo(orderInfo, PaymentTypeEnum.WEIXIN.getStatus());
+        try {
+            //从redis获取数据
+            Map payMap = (Map)redisTemplate.opsForValue().get(orderId.toString());
+            if(payMap!=null){
+                return payMap;
+            }
+            //3.设置参数，调用微信生成二维码的接口
+            //把参数转换成xml格式，使用商户key进行加密
+            Map paramMap = new HashMap();
+            paramMap.put("appid", ConstantPropertiesUtils.APPID);
+            paramMap.put("mch_id", ConstantPropertiesUtils.PARTNER);
+            paramMap.put("nonce_str", WXPayUtil.generateNonceStr());
+            String body = orderInfo.getReserveDate() + "就诊" + orderInfo.getDepname();
+            paramMap.put("body", body);
+            paramMap.put("out_trade_no", orderInfo.getOutTradeNo());
+            //paramMap.put("total_fee", order.getAmount().multiply(new BigDecimal("100")).longValue()+"");
+            paramMap.put("total_fee", "1");
+            paramMap.put("spbill_create_ip", "127.0.0.1");
+            paramMap.put("notify_url", "http://guli.shop/api/order/weixinPay/weixinNotify");
+            paramMap.put("trade_type", "NATIVE");
+            //4.调用微信生成二维码的接口
+            HttpClient client = new HttpClient("https://api.mch.weixin.qq.com/pay/unifiedorder");
+            //设置map参数
+            client.setXmlParam(WXPayUtil.generateSignedXml(paramMap, ConstantPropertiesUtils.PARTNERKEY));
+            client.setHttps(true);
+            client.post();
+            //5.返回相关的数据
+            String xml = client.getContent();
+            //转换成map集合
+            Map<String, String> resultMap = WXPayUtil.xmlToMap(xml);
+            System.out.println("resultMap=:" + resultMap);
+            //6.封装返回结果集
+            Map map = new HashMap<>();
+            map.put("orderId", orderId);
+            map.put("totalFee", orderInfo.getAmount());
+            map.put("resultCode", resultMap.get("result_code"));
+            map.put("codeUrl", resultMap.get("code_url"));//二维码地址
+
+            if(resultMap.get("result_code")!=null){
+                redisTemplate.opsForValue().set(orderId.toString(),map,120, TimeUnit.MINUTES);
+            }
+            return map;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
+```
+
+#### 添加 Controller 方法
+
+```java
+@Api(tags = "微信支付接口")
+@RestController
+@RequestMapping("/api/order/weixin")
+public class WeiXinController {
+
+    @Autowired
+    private WeiXinService weiXinService;
+
+    //生成微信支付扫描的二维码
+    @GetMapping("/createNative/{orderId}")
+    public Result createNative(@PathVariable Long orderId){
+        Map map = weiXinService.createNative(orderId);
+        return Result.ok(map);
+    }
+}
+```
+
++ 前端支付测试
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221115/image.29zrqdawt91c.webp)
+
+### 处理支付结果
+
+#### 添加 service 接口以及实现
+
+1. 在PaymentService类添加接口
+
+```java
+    //更新订单状态
+    void paySucess(String out_trade_no, Map<String, String> resultMap);
+```
+
+2. 在PaymentServiceImpl类添加实现
+
+```java
+    //更新订单状态
+    @Override
+    public void paySucess(String out_trade_no, Map<String, String> resultMap) {
+
+        //1.根据订单编号得到支付记录
+        QueryWrapper<PaymentInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("out_trade_no",out_trade_no);
+        queryWrapper.eq("payment_type", PaymentTypeEnum.WEIXIN.getStatus());
+        PaymentInfo paymentInfo = baseMapper.selectOne(queryWrapper);
+
+        //2.更新支付记录信息
+        paymentInfo.setPaymentStatus(PaymentStatusEnum.PAID.getStatus());
+        paymentInfo.setCallbackTime(new Date());
+        paymentInfo.setTradeNo(resultMap.get("transaction_id"));
+        paymentInfo.setCallbackContent(resultMap.toString());
+        baseMapper.updateById(paymentInfo);
+
+        //3.根据订单号得到订单信息
+        //4.更新订单信息
+        OrderInfo orderInfo = orderService.getById(paymentInfo.getOrderId());
+        orderInfo.setOrderStatus(OrderStatusEnum.PAID.getStatus());
+        orderService.updateById(orderInfo);
+
+        //5.调用医院接口，更新订单支付信息
+    }
+```
+
+#### 更新医院支付状态
+
+```java
+        //5.调用医院接口，更新订单支付信息
+        SignInfoVo signInfoVo = hospitalFeignClient.getSignInfoVo(orderInfo.getHoscode());
+        Map<String,Object> reqMap = new HashMap<>();
+        reqMap.put("hoscode",orderInfo.getHoscode());
+        reqMap.put("hosRecordId",orderInfo.getHosRecordId());
+        reqMap.put("timestamp", HttpRequestHelper.getTimestamp());
+        String sign = HttpRequestHelper.getSign(reqMap, signInfoVo.getSignKey());
+        reqMap.put("sign", sign);
+
+        JSONObject result
+                = HttpRequestHelper.sendRequest(reqMap, signInfoVo.getApiUrl() + "/order/updatePayStatus");
+```
+
++ 前端访问测试
+  + 查看控制台
+
+```java
+支付状态resultMap:{transaction_id=4200001670202211168362613899, nonce_str=mDMDU1ap2Lqlg9QR, trade_state=SUCCESS, bank_type=OTHERS, openid=oHwsHuL_t99-ri2ZsWbBVi4CNGXI, sign=6BB001DF5E713892D5D5142615D56718, return_msg=OK, fee_type=CNY, mch_id=1558950191, cash_fee=1, out_trade_no=16685284490991, cash_fee_type=CNY, appid=wx74862e0dfcf69954, total_fee=1, trade_state_desc=支付成功, trade_type=NATIVE, result_code=SUCCESS, attach=, time_end=20221116000748, is_subscribe=N, return_code=SUCCESS}
+```
+
++ 查看数据库
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221116/image.75ob63plui80.webp)
