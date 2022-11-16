@@ -1,4 +1,3 @@
----
 title: 尚医通-预约挂号
 date: 2022-11-11 20:23:07
 permalink: /high/SYT/SYT_yygh
@@ -6,7 +5,7 @@ categories:
   - 中高进阶篇
 tags:
   - 中高进阶篇
----
+
 # 尚医通-预约挂号
 
 [[toc]]
@@ -1903,3 +1902,258 @@ public class WeiXinController {
 + 查看数据库
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221116/image.75ob63plui80.webp)
+
+## 取消预约
+
+### 需求描述
+
+取消订单分两种情况：
+
+1. 未支付取消订单，直接通知医院更新取消预约状态
+2. 已支付取消订单，先退款给用户，然后通知医院更新取消预约状态
+
+### 开发微信退款接口
+
++ [参考文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_4)
+
+该接口需要使用证书，详情参考文档并下载证书
+
+#### 配置证书
+
+请下载的证书放在service-order模块/resources/cert文件夹下
+
+在application.properties文件配置证书路径
+
+```properties
+#退款证书
+weixin.cert=cert/apiclient_cert.p12
+```
+
+#### 添加获取支付记录接口
+
+退款我们是根据支付记录发起退款的
+
+1. 在PaymentService类添加接口
+
+```java
+    //获取支付记录
+    PaymentInfo getPaymentInfo(Long orderId,Integer paymentType);
+```
+
+2. 在PaymentServiceImpl类添加实现
+
+```java
+    //获取支付记录
+    @Override
+    public PaymentInfo getPaymentInfo(Long orderId, Integer paymentType) {
+        QueryWrapper<PaymentInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("order_id",orderId);
+        queryWrapper.eq("payment_type",paymentType);
+        PaymentInfo paymentInfo = baseMapper.selectOne(queryWrapper);
+        return paymentInfo;
+    }
+```
+
+#### 添加退款记录
+
+##### 添加 mapper
+
+```java
+public interface RefundInfoMapper extends BaseMapper<RefundInfo> {
+}
+```
+
+##### 添加service接口与实现
+
+1. 添加service接口
+
+```java
+public interface RefundInfoService extends IService<RefundInfo> {
+
+    //保存退款记录
+    RefundInfo saveRefundInfo(PaymentInfo paymentInfo);
+}
+```
+
+2. 添加service接口实现
+
+```java
+@Service
+public class RefundInfoServiceImpl extends ServiceImpl<RefundInfoMapper, RefundInfo> implements RefundInfoService {
+
+    //保存退款记录
+    @Override
+    public RefundInfo saveRefundInfo(PaymentInfo paymentInfo) {
+        //判断是否有重复数据添加
+        QueryWrapper<RefundInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("order_id",paymentInfo.getOrderId());
+        queryWrapper.eq("payment_type",paymentInfo.getPaymentType());
+        RefundInfo refundInfo = baseMapper.selectOne(queryWrapper);
+        if(refundInfo != null){//有相同数据
+            return refundInfo;
+        }
+        //添加记录
+        refundInfo = new RefundInfo();
+        refundInfo.setCreateTime(new Date());
+        refundInfo.setOrderId(paymentInfo.getOrderId());
+        refundInfo.setPaymentType(paymentInfo.getPaymentType());
+        refundInfo.setOutTradeNo(paymentInfo.getOutTradeNo());
+        refundInfo.setRefundStatus(RefundStatusEnum.UNREFUND.getStatus());
+        refundInfo.setSubject(paymentInfo.getSubject());
+        //paymentInfo.setSubject("test");
+        refundInfo.setTotalAmount(paymentInfo.getTotalAmount());
+        baseMapper.insert(refundInfo);
+        return refundInfo;
+    }
+}
+```
+
+#### 添加微信退款接口
+
+1. 在WeixinService添加接口
+
+```java
+    //退款
+    Boolean refund(Long orderId);
+```
+
+2. 在WeixinServiceImpl添加实现
+
+```java
+    //微信退款
+    @Override
+    public Boolean refund(Long orderId) {
+        try {
+            //获取支付记录相关信息
+            PaymentInfo paymentInfo = paymentService.getPaymentInfo(orderId, PaymentTypeEnum.WEIXIN.getStatus());
+            //添加信息到退款记录表
+            RefundInfo refundInfo = refundInfoService.saveRefundInfo(paymentInfo);
+            //判断当前订单数据是否已经退款
+            if(refundInfo.getRefundStatus().intValue()== RefundStatusEnum.REFUND.getStatus().intValue()){
+                return true;
+            }
+            //调用微信接口实现退款
+            //封装需要参数
+            Map<String,String> paramMap = new HashMap<>();
+            paramMap.put("appid",ConstantPropertiesUtils.APPID);       //公众账号ID
+            paramMap.put("mch_id",ConstantPropertiesUtils.PARTNER);   //商户编号
+            paramMap.put("nonce_str",WXPayUtil.generateNonceStr());
+            paramMap.put("transaction_id",paymentInfo.getTradeNo()); //微信订单号
+            paramMap.put("out_trade_no",paymentInfo.getOutTradeNo()); //商户订单编号
+            paramMap.put("out_refund_no","tk"+paymentInfo.getOutTradeNo()); //商户退款单号
+            //paramMap.put("total_fee",paymentInfoQuery.getTotalAmount().multiply(new BigDecimal("100")).longValue()+"");
+            //paramMap.put("refund_fee",paymentInfoQuery.getTotalAmount().multiply(new BigDecimal("100")).longValue()+"");
+            paramMap.put("total_fee","1");
+            paramMap.put("refund_fee","1");
+            String paramXml = WXPayUtil.generateSignedXml(paramMap,ConstantPropertiesUtils.PARTNERKEY);
+            //设置调用接口内容
+            HttpClient client = new HttpClient("https://api.mch.weixin.qq.com/secapi/pay/refund");
+            client.setXmlParam(paramXml);
+            client.setHttps(true);
+            //设置证书的信息
+            client.setCert(true);
+            client.setCertPassword(ConstantPropertiesUtils.PARTNER);
+            client.post();
+
+            //接受返回数据
+            String xml = client.getContent();
+            Map<String, String> resultMap = WXPayUtil.xmlToMap(xml);
+            if (null != resultMap && WXPayConstants.SUCCESS.equalsIgnoreCase(resultMap.get("result_code"))) {
+                refundInfo.setCallbackTime(new Date());
+                refundInfo.setTradeNo(resultMap.get("refund_id"));
+                refundInfo.setRefundStatus(RefundStatusEnum.REFUND.getStatus());
+                refundInfo.setCallbackContent(JSONObject.toJSONString(resultMap));
+                refundInfoService.updateById(refundInfo);
+                return true;
+            }
+            return false;
+    } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+```
+
+#### 完成取消预约
+
+##### 添加service接口与实现
+
+1. 在OrderService添加接口
+
+```java
+    //取消预约
+    boolean cancelOrder(Long orderId);
+```
+
+2. 在OrderServiceImpl添加实现
+
+```java
+    //取消预约
+    @Override
+    public boolean cancelOrder(Long orderId) {
+        //先获取订单的信息
+        OrderInfo orderInfo = baseMapper.selectById(orderId);
+        //判断是否可以取消
+        DateTime quitTime = new DateTime(orderInfo.getQuitTime());
+        if(quitTime.isBeforeNow()){
+            throw new YyghException(ResultCodeEnum.CANCEL_ORDER_NO);
+        }
+        //调用医院接口实现预约取消
+        SignInfoVo signInfoVo = hospitalFeignClient.getSignInfoVo(orderInfo.getHoscode());
+        if(null == signInfoVo) {
+            throw new YyghException(ResultCodeEnum.PARAM_ERROR);
+        }
+        Map<String, Object> reqMap = new HashMap<>();
+        reqMap.put("hoscode",orderInfo.getHoscode());
+        reqMap.put("hosRecordId",orderInfo.getHosRecordId());
+        reqMap.put("timestamp", HttpRequestHelper.getTimestamp());
+        String sign = HttpRequestHelper.getSign(reqMap, signInfoVo.getSignKey());
+        reqMap.put("sign", sign);
+
+        JSONObject result = HttpRequestHelper.sendRequest(reqMap, "http://localhost:9998/order/updateCancelStatus");
+        //根据医院接口返回的数据
+        if(result.getInteger("code")!=200){
+            throw new YyghException(result.getString("message"),ResultCodeEnum.FAIL.getCode());
+        } else {
+            //判断当前的订单是否可以取消
+            if(orderInfo.getOrderStatus().intValue() == OrderStatusEnum.PAID.getStatus().intValue()){
+                Boolean isRefund = weiXinService.refund(orderId);
+                if(!isRefund){
+                    throw new YyghException(ResultCodeEnum.CANCEL_ORDER_FAIL);
+                }
+                //更新订单的状态
+                orderInfo.setOrderStatus(OrderStatusEnum.CANCLE.getStatus());
+                baseMapper.updateById(orderInfo);
+
+                //发送mq更新预约数量
+                OrderMqVo orderMqVo = new OrderMqVo();
+                orderMqVo.setScheduleId(orderInfo.getScheduleId());
+                //短信提示
+                MsmVo msmVo = new MsmVo();
+                msmVo.setPhone(orderInfo.getPatientPhone());
+                msmVo.setTemplateCode("SMS_194640722");
+                String reserveDate = new DateTime(orderInfo.getReserveDate()).toString("yyyy-MM-dd") + (orderInfo.getReserveTime()==0 ? "上午": "下午");
+                Map<String,Object> param = new HashMap<String,Object>(){{
+                    put("title", orderInfo.getHosname()+"|"+orderInfo.getDepname()+"|"+orderInfo.getTitle());
+                    put("reserveDate", reserveDate);
+                    put("name", orderInfo.getPatientName());
+                }};
+                msmVo.setParam(param);
+                orderMqVo.setMsmVo(msmVo);
+                rabbitService.sendMessage(MqConst.EXCHANGE_DIRECT_ORDER, MqConst.ROUTING_ORDER, orderMqVo);
+            }
+            return true;
+        }
+```
+
+##### 添加 Controller 方法
+
+```java
+    //取消预约
+    @GetMapping("/auth/cancelOrder/{orderId}")
+    public Result cancelOrder(@PathVariable Long orderId){
+        boolean isOrder = orderService.cancelOrder(orderId);
+        return Result.ok(isOrder);
+    }
+```
+
