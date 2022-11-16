@@ -1,3 +1,4 @@
+---
 title: 尚医通-预约挂号
 date: 2022-11-11 20:23:07
 permalink: /high/SYT/SYT_yygh
@@ -5,6 +6,7 @@ categories:
   - 中高进阶篇
 tags:
   - 中高进阶篇
+---
 
 # 尚医通-预约挂号
 
