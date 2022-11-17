@@ -236,7 +236,7 @@ JetBrains Mono Medium Nerd Font Complete Mono
 
 + [Mono字体下载](https://m.fontke.com/font/65142314/download/)
 + 下载解压后，进入fonts下面的ttf目录，右键<mark>为所有用户安装</mark>。
-+ 修改字体
++ 在JSON配置文件修改字体
 
 ```sh
 "fontFace": "JetBrainsMono Nerd Font Mono"
@@ -245,4 +245,45 @@ JetBrains Mono Medium Nerd Font Complete Mono
 + 结果
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221117/image.5lssepe8uw00.webp)
+
+## 快捷键操作
+
+### 字体操作
+
+| 操作     | 快捷键         |
+| -------- | -------------- |
+| 字体变大 | `ctrl`+`+`     |
+| 字体变小 | `ctrl`+`-`     |
+| 查找     | `ctrl+shift+F` |
+| 复制     | `ctrl+c`       |
+| 粘贴     | `ctrl+v`       |
+
+### 选项卡操作
+
+| 操作                 | 快捷键             |
+| -------------------- | ------------------ |
+| 切换到选项卡[0-7]    | `ctrl+alt+[1-8]`   |
+| 切换到最后一个选项卡 | `ctrl+alt+9`       |
+| 上一个选项卡         | `ctrl+shift+tab`   |
+| 下一个选项卡         | `ctrl+tab`         |
+| 新建标签页[0-8]      | `ctrl+shift+[1-9]` |
+
+### 窗口操作
+
+| 操作                         | 快捷键                                                   |
+| ---------------------------- | -------------------------------------------------------- |
+| 切换全屏                     | `alt`+`enter`或者`F11`                                   |
+| 关闭窗口                     | `alt+F4`                                                 |
+| 新建窗口·                    | `ctrl+shift+n`                                           |
+| 调整窗口大小[上、下、左、右] | `alt+shilt+up/down/left/right`，用不了，没想好用什么替换 |
+
+### 焦点操作
+
+| 操作                       | 快捷键                                             |
+| -------------------------- | -------------------------------------------------- |
+| 向 上、下、左、右 移动焦点 | alt+`up/down/left/right`，用不了，没想好用什么替换 |
+| 向上、下翻一页             | `ctrl+shift+pgup/pddn`                             |
+| 向上、下滚动               | `ctrl+shift+up/down`                               |
+
++ 总结：快捷键是可以自己设置的，适合自己的，才是最好的。
 
