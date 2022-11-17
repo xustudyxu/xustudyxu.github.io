@@ -72,8 +72,11 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 2. 新建空配置文件，填入名称，命令行，启动目录，图标相关信息。
 
    > 名称：`Git Bash`
+   >
    > 命令行：`C:\Program Files\Git\bin\bash.exe`
+   >
    > 启动目录：`%USERPROFILE%`
+   >
    > 图标：`C:\Program Files\Git\mingw64\share\git\git-for-windows.ico`
 
 3. 填写成功，保存。
@@ -82,7 +85,7 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 
 4. 结果
 
-![1668684515274](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1668684515274.png)
+![1668684515274](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221117/1668684515274.1sf1gox63o8w.webp)
 
 + 使用测试
 
@@ -248,7 +251,9 @@ JetBrains Mono Medium Nerd Font Complete Mono
 
 ## 快捷键操作
 
-### 字体操作
+:::: tabs cache-lifetime="5" :options="{ useUrlFragment: false }"
+
+::: tab 字体操作
 
 | 操作     | 快捷键         |
 | -------- | -------------- |
@@ -258,7 +263,9 @@ JetBrains Mono Medium Nerd Font Complete Mono
 | 复制     | `ctrl+c`       |
 | 粘贴     | `ctrl+v`       |
 
-### 选项卡操作
+:::
+
+::: tab 选项卡操作
 
 | 操作                 | 快捷键             |
 | -------------------- | ------------------ |
@@ -268,7 +275,9 @@ JetBrains Mono Medium Nerd Font Complete Mono
 | 下一个选项卡         | `ctrl+tab`         |
 | 新建标签页[0-8]      | `ctrl+shift+[1-9]` |
 
-### 窗口操作
+:::
+
+::: tab 窗口操作
 
 | 操作                         | 快捷键                                                   |
 | ---------------------------- | -------------------------------------------------------- |
@@ -277,13 +286,18 @@ JetBrains Mono Medium Nerd Font Complete Mono
 | 新建窗口·                    | `ctrl+shift+n`                                           |
 | 调整窗口大小[上、下、左、右] | `alt+shilt+up/down/left/right`，用不了，没想好用什么替换 |
 
-### 焦点操作
+:::
+::: tab 焦点操作
 
 | 操作                       | 快捷键                                             |
 | -------------------------- | -------------------------------------------------- |
 | 向 上、下、左、右 移动焦点 | alt+`up/down/left/right`，用不了，没想好用什么替换 |
 | 向上、下翻一页             | `ctrl+shift+pgup/pddn`                             |
 | 向上、下滚动               | `ctrl+shift+up/down`                               |
+
+:::
+
+::::
 
 + 总结：快捷键是可以自己设置的，适合自己的，才是最好的。
 
