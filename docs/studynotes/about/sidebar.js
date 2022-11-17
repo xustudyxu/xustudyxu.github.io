@@ -6,6 +6,7 @@ module.exports = [
     '/studynotes/about/me',
     '/studynotes/about/vuepress-build',
     '/studynotes/about/github_skill',
+    '/studynotes/about/about_Windows_Terminal',
     '/@pages/archivesPage'
       ]
   }
