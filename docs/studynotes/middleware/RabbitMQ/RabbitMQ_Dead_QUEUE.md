@@ -103,7 +103,7 @@ public class Consumer01 {
         //正常的队列设置死信交换机
         arguments.put("x-dead-letter-exchange",DEAD_EXCHANGE);//图中红箭头
         //设置死信routingKey
-        arguments.put("x-dead-letter-routingKey","lisi");
+        arguments.put("x-dead-letter-routing-Key","lisi");
 
         channel.queueDeclare(NORMAL_QUEUE,false,false,false,arguments);
         /////////////////////////////////////////////////////////////////////////
@@ -233,7 +233,7 @@ public class Consumer01 {
         arguments.put("x-dead-letter-routing-key","lisi");
         //设置正常队列长度的限制，例如发送10个消息，6个为正常，4个为死信
         arguments.put("x-max-length",6);
-
+        
         channel.queueDeclare(NORMAL_QUEUE,false,false,false,arguments);
         /////////////////////////////////////////////////////////////////////////
         //声明死信队列
