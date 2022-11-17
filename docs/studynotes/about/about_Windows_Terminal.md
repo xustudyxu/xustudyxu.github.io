@@ -301,3 +301,8 @@ JetBrains Mono Medium Nerd Font Complete Mono
 
 + 总结：快捷键是可以自己设置的，适合自己的，才是最好的。
 
+## 参考文献
+
++ [https://github.com/microsoft/terminal](https://github.com/microsoft/terminal)
++ [https://www.bilibili.com/video/BV1Qa411T7Au/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=6aafd031757cd8c1dbbb98344fb3d363](https://www.bilibili.com/video/BV1Qa411T7Au/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
