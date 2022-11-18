@@ -145,7 +145,7 @@ git clone https://gitee.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my
 git clone https://gitee.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-找到plugins 在后面追加 逗号分割，逗号前后需要有间距，**注意：如果没有安装CentoS子系统等，可以使用Git Bash的vim命令**
+找到plugins 在后面追加 逗号分割，逗号前后需要有间距，**注意：如果没有安装CentOS子系统等，可以使用Git Bash的vim命令**
 
 ```sh
 vim ~/.zshrc 
@@ -175,7 +175,7 @@ source ~/.zshrc
 
 + 打开JSON配置文件，定位到Defaults里添加：
 
-1. 使用亚克力效果，acrylicOpacity值[越小越透明]
+1. 使用亚克力效果，opacity值[越小越透明]
 
 ```json
 "opacity": 2,
