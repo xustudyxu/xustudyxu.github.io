@@ -55,6 +55,52 @@ O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。 希尔排序
 
 ## 冒泡排序
 
+冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢"浮"到数列的顶端。
+
+作为最简单的排序算法之一，冒泡排序给我的感觉就像 Abandon 在单词书里出现的感觉一样，每次都在第一页第一位，所以最熟悉。冒泡排序还有一种优化算法，就是立一个 flag，当在一趟序列遍历中元素没有发生交换，则证明该序列已经有序。但这种改进对于提升性能来说并没有什么太大作用。
+
+1. **算法步骤**
+
+比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+
+对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。
+
+针对所有的元素重复以上的步骤，除了最后一个。
+
+持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+
+2. **动画演示**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221120/image.32lb5qdgm4q0.webp)
+
+3. 代码实现
+
+```java
+public class BubbleSort {
+    public static void main(String[] args) {
+        int[] sourceArr = {5,4,7,8,10,-2};
+        sort(sourceArr);
+        for (int i = 0; i < sourceArr.length; i++) {
+            System.out.println(sourceArr[i]);
+        }
+    }
+
+    public static void sort(int[] arr){
+        int temp = 0;
+        for (int i = 0; i < arr.length ; i++) {
+            for (int j = 0; j < arr.length-i-1; j++) {
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+g        }
+
+    }
+}
+```
+
 ## 插入排序
 
 插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
@@ -145,5 +191,57 @@ j=1;i=2;tmp=6;第二次进入while；while:j>0 && tmp<arr[0]:false -> false；j=
 
 > 插入排序算法简答一句话就是：从第二个元素到最后一个元素，从后面一个一个插入，插入的数和前面的数一个一个比较，如果它比右边数小，就插在这个右边数的前面。如果相等也插在后面（插在相等的数后面（why），因为后面的所有数要移动一位，插在相等的数前面，要移动后面的数加上相等的数，多移动一位）。
 
+## 希尔排序
 
+希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。
+
+希尔排序是基于插入排序的以下两点性质而提出改进方法的：
+
+- 插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；
+- 但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；
+
+希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录"基本有序"时，再对全体记录进行依次直接插入排序。
+
+1. **算法步骤**
+
+选择一个增量序列 t1，t2，……，tk，其中 ti > tj, tk = 1；
+
+按增量序列个数 k，对序列进行 k 趟排序；
+
+每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅
+
+增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
+
+2. **动画演示**
+
+![Sorting_shellsort_anim](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221120/Sorting_shellsort_anim.15pe8no2r54w.gif)
+
+3. **代码实现**
+
+```java
+public class ShellSort {
+    public static void main(String[] args) {
+        int sourceArray[] = new int[]{7,4,2,7,8,9,0,1};
+        sort(sourceArray);
+        for (int i = 0; i < sourceArray.length; i++) {
+            System.out.println(i);
+        }
+    }
+    public static void sort(int[] arr){
+        int length = arr.length;
+        int temp;
+        for (int step = length / 2;step >= 1; step /= 2){
+            for (int i = 0; i < length; i++) {
+                temp = arr[i];
+                int j = i - step;
+                while (j >= 0 && arr[j] > temp){
+                    arr[j+step] = arr[j];
+                    j -= step;
+                }
+                arr[j+step] = temp;
+            }
+        }
+    }
+}
+```
 
