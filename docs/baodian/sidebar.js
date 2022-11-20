@@ -1,5 +1,12 @@
 module.exports = [
   {
+    title:'十大排序算法',
+    collapsable: false,
+    children:[
+    '/baodian/zero/Sorting-algorithm',
+    ]
+  },
+  {
     title:'力扣算法题',
     collapsable: false,
     children:[
