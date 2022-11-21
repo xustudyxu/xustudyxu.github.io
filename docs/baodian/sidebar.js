@@ -7,6 +7,13 @@ module.exports = [
     ]
   },
   {
+    title:'面试题',
+    collapsable: false,
+    children:[
+    '/baodian/zero/Java_interview_questions',
+    ]
+  },
+  {
     title:'力扣算法题',
     collapsable: false,
     children:[
