@@ -76,3 +76,178 @@ public class com.frx01.interview.javase.Autoincrement {
 
 :::
 
+### 单例设计模式
+
++ 什么是Singleton：在Java中即指单例设计模式，它是软件开发中最常用的设计模式之一。
++ 单：唯一
++ 例：实例
++ 单例设计模式，即某个类在整个系统中只能有一个实例对象可被获取和使用的代码模式。
+
++ 例如:代表JVM运行环境的Runtime类。
+
+**要点**
+
++ 一是某个类只能有一个实例;
+  + 构造器私有化
++ 二是它必须自行创建这个实例;
+  + 含有一个该类的静态变量来保存这个唯一的实例
+
++ 三是它必须自行向整个系统提供这个实例;
+  + 对外提供获取该实例对象的方式:
+    + 直接暴露
+    + 用静态变量的 get 方法获取
+
+**几种常见形式**
+
+> + 饿汉式：直接创建对象，不存在线程安全问题
+>   + 直接实例化饿汉式（简洁直观)
+>   + 枚举式（最简洁)
+>   + 静态代码块饿汉式(适合复杂实例化)
+> + 懒汉式:延迟创建对象
+>   + 线程不安全（适用于单线程)
+>   + 线程安全（适用于多线程)
+>   + 静态内部类形式(适用于多线程)
+
+#### 饿汉式-直接式
+
+```java
+/**
+ * desc：
+ * 直接创建实例对象，不管你是否需要这个对象
+ * 1.把构造器私有化
+ * 2.自行创建，并且用静态变量保存
+ * 3.向外提供这个实例
+ * 4.强调这是一个单例，我们可以用final修饰
+ * */
+public class Singleton1 {
+
+    public static final Singleton1 INSTANCE = new Singleton1();
+
+    private Singleton1() {
+    }
+}
+```
+
++ 测试
+
+```java
+public class Singleton1Test {
+    public static void main(String[] args) {
+        Singleton1 s = Singleton1.INSTANCE;
+        System.out.println(s);//com.frx01.interview.javase.single.Singleton1@677327b6
+    }
+}
+```
+
+#### 饿汉式-枚举式
+
+```java
+/**
+ * desc：
+ * 枚举类型：表示该类型的对象有限几个
+ * 我们可以限定一个，就成了单例
+ */
+public enum Singleton2 {
+    INSTANCE
+}
+```
+
++ 测试
+
+```java
+public class Singleton2Test {
+    public static void main(String[] args) {
+        Singleton2 s = Singleton2.INSTANCE;
+        System.out.println(s);//INSTANCE
+    }
+}
+```
+
+#### 饿汉式-静态代码块
+
+```java
+public class Singleton3 {
+    public static final Singleton3 INSTANCE;
+    private String info;
+    static {
+        try {
+            Properties properties = new Properties();
+            properties.load(Singleton3.class.getClassLoader().getResourceAsStream("single.properties"));
+            INSTANCE = new Singleton3(properties.getProperty("info"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    private Singleton3(String info) {
+        this.info = info;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    @Override
+    public String toString() {
+        return "Singleton3{" +
+                "info='" + info + '\'' +
+                '}';
+    }
+}
+```
+
++ 测试
+
+```java
+public class Singleton3Test {
+    public static void main(String[] args) {
+        Singleton3 s = Singleton3.INSTANCE;
+        System.out.println(s);//Singleton3{info='Hello'}
+    }
+}
+```
+
+#### 懒汉式-延迟创建
+
+```java
+/**
+ * desc:
+ * 懒汉式：
+ *  延迟创建这个实例对象
+ *
+ *  1.构造器私有化
+ *  2.用一个静态变量保存这个唯一的实例
+ *  3.提供一个静态方法，获取这个实例对象
+ */
+public class Singleton4 {
+    private static Singleton4 instance;
+    private Singleton4(){
+
+    }
+    public static Singleton4 getInstance(){
+        if(instance == null){
+            instance = new Singleton4();
+        }
+        return instance;
+    }
+}
+```
+
++ 测试
+
+```java
+public class Singleton4Test {
+    public static void main(String[] args) {
+        Singleton4 s1 = Singleton4.getInstance();
+        Singleton4 s2 = Singleton4.getInstance();
+        System.out.println(s1 == s2);//true
+    }
+}
+```
+
+
+
