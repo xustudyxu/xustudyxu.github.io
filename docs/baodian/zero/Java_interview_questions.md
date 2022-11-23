@@ -339,3 +339,94 @@ public class Singleton6Test {
 }
 ```
 
+### 类初始化和实例初始化
+
+```java
+public class Father {
+    private int i = test();
+    private static int j = method();
+
+    static {
+        System.out.print("(1)");
+    }
+
+    Father(){
+        System.out.print("(2)");
+    }
+
+    {
+        System.out.print("(3)");
+    }
+
+    public int test(){
+        System.out.print("(4)");
+        return 1;
+    }
+
+    public static int method(){
+        System.out.print("(5)");
+        return 1;
+    }
+}
+```
+
+```java
+public class Son extends Father{
+    private int i = test();
+    private static int j = method();
+
+    static {
+        System.out.print("(6)");
+    }
+
+    Son() {
+        System.out.print("(7)");
+    }
+    {
+        System.out.print("(8)");
+    }
+    public int test(){
+        System.out.print("(9)");
+        return 1;
+    }
+    public static int method(){
+        System.out.print("(10)");
+        return 1;
+    }
+
+    public static void main(String[] args) {
+        Son s1 = new Son();
+        System.out.println();
+        Son s2 = new Son();
+    }
+
+}
+```
+
++ 结果
+
+```java
+(5)(1)(10)(6)(9)(3)(2)(9)(8)(7)
+(9)(3)(2)(9)(8)(7)
+Process finished with exit code 0
+```
+
+> 执行顺序：
+>
+> 	+ 父类的静态代码块和静态属性(优先级一样，按定义顺序执行)
+> + 子类的静态代码块和静态属性(优先级一样，按定义顺序执行)
+> + 父类的普通代码块和普通属性初始化(优先级一样,按定义顺序执行)
+> + 父类的构造器
+> + 子类的普通代码块和普通属性初始化(优先级一样，按定义顺序执行)
+> + 子类的构造方法
+
+#### 类初始化过程
+
+1. 一个类要创建实例需要先加载并初始化该类
+   + main方法所在的类需要先加载和初始化
+2. 一个子类要初始化需要先初始化父类
+3. 一个类初始化就是执行`<clinit>()`方法
+   + `<clinit>()`方法由静态类变量显示赋值代码和静态代码块组成
+   + 类变量显示赋值代码和静态代码块代码代码从上到下顺序执行
+   + `<clinit>`方法只执行一次
+
