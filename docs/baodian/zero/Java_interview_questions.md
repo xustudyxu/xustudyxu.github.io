@@ -200,6 +200,10 @@ public class Singleton3 {
 }
 ```
 
+```properties
+info=Hello
+```
+
 + 测试
 
 ```java
@@ -212,6 +216,8 @@ public class Singleton3Test {
 ```
 
 #### 懒汉式-延迟创建
+
+##### 线程不安全（适用于单线程）
 
 ```java
 /**
@@ -249,5 +255,87 @@ public class Singleton4Test {
 }
 ```
 
+##### 线程安全（适用于多线程）
 
+```java
+public class Singleton5 {
+    private static Singleton5 instance;
+    private Singleton5(){
+
+    }
+    public static Singleton5 getInstance(){
+        if(instance == null){
+            synchronized (Singleton5.class){
+                if(instance == null){
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    instance = new Singleton5();
+                }
+            }
+        }
+
+        return instance;
+    }
+}
+```
+
++ 测试
+
+```java
+public class Singleton5Test {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+        Callable<Singleton5> c = () -> Singleton5.getInstance();
+
+        ExecutorService es = Executors.newFixedThreadPool(2);
+        Future<Singleton5> f1 = es.submit(c);
+        Future<Singleton5> f2 = es.submit(c);
+
+        Singleton5 s1 = f1.get();
+        Singleton5 s2= f2.get();
+        System.out.println(s1 == s2);//true
+        System.out.println(s1);
+        System.out.println(s2);
+        
+        es.shutdown();
+
+    }
+}
+```
+
+##### 静态内部类形式（适用于多线程）
+
+```java
+/**
+ *  在内部类被加载和初始化时，才创建INSTANCE实例对象
+ *  静态内部类不会自动随着外部类的加载和初始化而初始化，它是单独去加载和初始化的
+ *  因此是在内部类加载和初始化时，创建的，因此是线程安全的
+ */
+public class Singleton6 {
+    private Singleton6() {
+
+    }
+    private static class Inner {
+        private static final Singleton6 INSTANCE = new Singleton6();
+    }
+    public static Singleton6 getInstance(){
+        return Inner.INSTANCE;
+    }
+}
+```
+
++ 测试
+
+```java
+public class Singleton6Test {
+    public static void main(String[] args) {
+        Singleton6 s1 = Singleton6.getInstance();
+        Singleton6 s2 = Singleton6.getInstance();
+        System.out.println(s1 == s2);//true
+    }
+}
+```
 
