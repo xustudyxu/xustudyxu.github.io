@@ -486,6 +486,8 @@ class MyData {
 }
 ```
 
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221128/image.4dcgbylblj00.webp)
+
 + 运行结果
 
 ```java
