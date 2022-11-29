@@ -71,7 +71,7 @@ O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。 希尔排序
 
 2. **动画演示**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221120/image.32lb5qdgm4q0.webp)
+![bubbleSort](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221129/bubbleSort.60l6mgy53080.gif)
 
 3. 代码实现
 
@@ -245,3 +245,6 @@ public class ShellSort {
 }
 ```
 
+## 参考资料
+
+[https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/10.radixSort.md](https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/10.radixSort.md)
