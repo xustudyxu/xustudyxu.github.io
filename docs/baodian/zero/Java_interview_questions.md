@@ -679,3 +679,125 @@ Process finished with exit code 0
 2. 局部变量与类变量重名
 
 在类变量前面加 “类名.”
+
+## SSM 面试题
+
+### Spring Bean 的作用域
+
+在 Spring 的配置文件中，给 bean 加上 scope 属性来指定 bean 的作用域如下：
+
++ singleton：唯一 bean 实例，Spring 中的 bean 默认都是单例的。
++ prototype：每次请求都会创建一个新的 bean 实例。
++ request： 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。
++ session：每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效。
++ global-session：全局session作用域，仅仅在基于portlet的web应用中才有意义，Spring5已经没有了。Portlet是能够生成语义代码(例如：HTML)片段的小型Java Web插件。它们基于portlet容器，可以像servlet一样处理HTTP请求。但是，与 servlet 不同，每个 portlet 都有不同的会话。
+
+### Spring 支持的常用数据库事务传播行为和事务的隔离级别？
+
+#### 事务的隔离级别
+
+TransactionDefinition 接口中定义了五个表示隔离级别的常量：
+
++ TransactionDefinition.ISOLATION_DEFAULT: 使用后端数据库默认的隔离级别，Mysql 默认采用的 REPEATABLE_READ隔离级别 Oracle 默认采用的 READ_COMMITTED隔离级别.
++ TransactionDefinition.ISOLATION_READ_UNCOMMITTED: 最低的隔离级别，允许读取尚未提交的数据变更，可能会导致脏读、幻读或不可重复读
++ TransactionDefinition.ISOLATION_READ_COMMITTED: 允许读取并发事务已经提交的数据，可以阻止脏读，但是幻读或不可重复读仍有可能发生
++ TransactionDefinition.ISOLATION_REPEATABLE_READ: 对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，可以阻止脏读和不可重复读，但幻读仍有可能发生。
++ TransactionDefinition.ISOLATION_SERIALIZABLE: 最高的隔离级别，完全服从ACID的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。
+
+#### 事务的传播行为
+
+支持当前事务的情况：
+
++ TransactionDefinition.PROPAGATION_REQUIRED： 如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。
++ TransactionDefinition.PROPAGATION_SUPPORTS： 如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。
++ TransactionDefinition.PROPAGATION_MANDATORY： 如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。（mandatory：强制性）
+
+不支持当前事务的情况：
+
++ TransactionDefinition.PROPAGATION_REQUIRES_NEW： 创建一个新的事务，如果当前存在事务，则把当前事务挂起。
++ TransactionDefinition.PROPAGATION_NOT_SUPPORTED： 以非事务方式运行，如果当前存在事务，则把当前事务挂起。
++ TransactionDefinition.PROPAGATION_NEVER： 以非事务方式运行，如果当前存在事务，则抛出异常。
+
+其他情况：
+
++ TransactionDefinition.PROPAGATION_NESTED： 如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于TransactionDefinition.PROPAGATION_REQUIRED。
+
+### Spring MVC 如果解决 POST 请求中文乱码问题？
+
+##### 1、解决 POST 请求中文乱码问题
+
+修改项目中web.xml文件
+
+```xml
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+```
+
+##### 2、解决 Get 请求中文乱码问题
+
+修改tomcat中server.xml文件
+
+```xml
+<Connector URIEncoding="UTF-8" port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
+
+### Spring MVC 的工作流程？
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221129/image.2w16yitcfoc0.webp)
+
+流程说明（重要）：
+1、客户端（浏览器）发送请求，直接请求到 **DispatcherServlet**。
+2、**DispatcherServlet** 根据请求信息调用 **HandlerMapping**，解析请求对应的 **Handler**。
+3、解析到对应的 **Handler**（也就是我们平常说的 **Controlle**r 控制器）后，开始由 **HandlerAdapter** 适配器处理。
+4、**HandlerAdapter** 会根据 Handler 来调用真正的处理器来处理请求，并处理相应的业务逻辑。
+5、处理器处理完业务后，会返回一个 **ModelAndView** 对象，**Model** 是返回的数据对象，**View** 是个逻辑上的 View。
+6、**ViewResolver** 会根据逻辑 **View** 查找实际的 **View**。
+7、**DispaterServlet** 把返回的 **Model** 传给 **View**（视图渲染）。
+8、把 **View** 返回给请求者（浏览器）
+
+### Mybatis 中当实体类中的属性名和表中的字段不一样，怎么解决？
+
+解决方案有三种如下：
+1、写 SQL 语句的时候 写别名
+2、在MyBatis的全局配置文件中开启驼峰命名规则，前提是符合驼峰命名规则
+
+```xml
+<!-- 开启驼峰命名规则，可以将数据库中下划线映射为驼峰命名
+	列如 last_name 可以映射为 lastName
+-->
+<setting name="mapUnderscoreToCameLCase" value="true" />
+```
+
+3. 在Mapper映射文件中使用 resultMap 自定义映射
+
+```xml
+<!-- 
+	自定义映射
+-->
+<resultMap type="com.atguigu.pojo.Employee" id="myMap">
+    <!-- 映射主键 -->
+	<id cloumn="id" property="id"/>
+    <!-- 映射其他列 -->
+    <result column="last_name" property="lastName" />
+    <result column="email" property="email" />
+    <result column="salary" property="salary" />
+    <result column="dept_id" property="deptId" />
+</resultMap>
+```
+
