@@ -801,3 +801,371 @@ TransactionDefinition 接口中定义了五个表示隔离级别的常量：
 </resultMap>
 ```
 
+## JavaSE 高级面试题
+
+### Linux 常用服务类相关命令
+
+#### 常用基本命令 - 进程类
+
+> Service ( centos6)
+
+注册在系统中的标准化程序
+
+有方便统一的管理方式(常用的方法)
+
+```sh
+service服务名start
+service服务名stop
+service服务名restart
+service服务名reload
+service服务名status
+
+#查看服务的方法 /etc/init.d/ 服务名
+#通过 chkconfig 命令设置自启动
+#查看服务 chkconfig -list l grepXXX
+
+chkconfig -level 5 服务名on
+```
+
+#### 运行级别 runlevel(centos6)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.24zaag4nrnmo.webp)
+
+> Linux系统有7种运行级别(runlevel): **常用的是级别3和5**
+
+运行级别0:系统停机状态，系统默认运行级别不能设为0，否则不能正常启动
+
+运行级别1:单用户工作状态，root权限，用于系统维护，禁止远程登陆
+
+运行级别2:多用户状态(没有NFS),不支持网络
+
+运行级别3:完全的多用户状态(有NFS),登陆后进入控制台命令行模式
+
+运行级别4:系统未使用，保留
+
+运行级别5: X11控制台，登陆后进入图形GUI模式
+
+运行级别6:系统正常关闭并重启，默认运行级别不能设为6,否则不能正常启动.
+
+> Systemctl ( centos7 )
+
+注册在系统中的标准化程序
+
+有方便统一的管理方式(常用的方法)
+
+```sh
+systemctl start 服务名(xxx.service
+systemct restart 服务名(xxxx.service)
+systemctl stop 服务名(xxxx.service)
+systemctl reload 服务名(xxxx.service)
+systemctl status 服务名(xxxx.service)
+
+#查看服务的方法 /usr/lib/systemd/system
+#查看服务的命令
+
+systemctl list-unit-files
+systemctl --type service
+
+#通过systemctl命令设置自启动
+
+自启动systemctl enable service_ _name
+不自启动systemctl disable service_ name
+```
+
+### git分支相关命令、实际引用
+
+#### 分支
+
+> 创建分支
+
+git branch <分支名>
+
+git branch -v 查看分支
+
+> 切换分支
+
+git checkout <分支名>
+
+一步完成: git checkout -b <分支名>
+
+> 合并分支
+
+先切换到主干 git checkout master
+
+git merge <分支名>
+
+> 删除分支
+
+先切换到主干 git checkout master
+
+git branch -D <分支名>
+
+### Git 工作流
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.35urzp3n7pk0.webp)
+
+### redis持久化有几种类型，他们的区别
+
+#### Redis 提供了 2 个不同形式的持久化方式
+
+RDB ( Redis DataBase)
+
+AOF (Append OF File)
+
+##### RDB
+
+在指定的时间间隔内将内存中的数据集快照写入磁盘，也就是行话讲的Snapshot快照，它恢复时是将快照文件直接读到内存里。
+
+> 备份是如何执行的
+
+Redis会单独创建(fork) -个子进程来进行持款化，铣将数据写入到一个临时文件中，待玖化过程都结束了,再用这个临时文件替换上次持久化好的文件。整个过程中，主进程是不进行任何I0操作的,这就确保了极高的性能如果需要进行大规模数据的恢复，肘于数据恢复的完整性不是非常敏感，那RDB方式要比AOF方式更加的高效。RDB的缺点是最后一次持久化后的数据可能丢失。
+
+rdb 的保存文件
+
+在 redis.conf 中配置文件名称 默认为 dump.rdb
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.4p22r73f2ei0.webp)
+
+rbd 文件的保存路径，也可以修改，默认为 Redis启动命令行所在目录下
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.4ye1aapes5w0.webp)
+
+> rdb 的备份
+
+先通过 config get dir 查询 rdb文件的目录
+
+将 *.rdb 的文件拷贝到别的地方
+
+> rdb 的恢复
+
+关闭 Redis
+
+先把备份文件拷贝到拷贝到工作目录下
+
+启动 Redis，备份数据会直接加载
+
+> rdb 的优点
+
+节省磁盘空间
+
+恢复速度快
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.cdkdm3zsc9c.webp)
+
+> rdb 的缺点
+
+虽然Redis在fork时使用了写时拷贝技术,但是如果数据庞大时还是比较消耗性能。
+
+在备份周期在一定间隔时间做一-次备份, 所以如果Rediq意外down掉的话，就会丢失最后一-次快照后的所有修改。
+
+##### AOF
+
+以日志的形式来记录每个写操作，将Redis执行过的所有写指令记录下来(读操作不记录)，只许追加文件但不可以改写文件，Redis启动之初会读取该文件重新构建数据，换言之，Redis重启的话就根据日志文件的内容将写指令从前到后执行一-次以完成数据的恢复工作。
+
+> Rewrite
+
+AOF采文件追加方式，文件会越来越大为避免出现此种情况,新增了重写机制,当AOF文件的大小超过所设定的阈值时,Redis就会启动AOF文件的内容压缩，只保留可以恢复数据的最小指令集可以使用命令bgrewriteaof.
+
+> Redis 如何实现重写？
+
+AOF文件持续增长而过大时，会fork出- 条新进程来将文件写(也是先写临时文件最后再rename)，遍历新进程的内存中数据，条记录有一条的Set语句。 写af文件的操作，并没有读取旧的aof文件，醍将整个内存中的数据库内容用命令的方式写了一个新的aof文件, 这点和快照有点类似。
+
+> 何时重写
+
+写虽然可以节约大量磁盘空间,减少恢复时间。但是每次重写还是有一定的负担的，因此设定Redis要满足一条件才会进行重写。
+
+```sh
+auto- aof- rewrite- percentage 100
+auto- aof- rewrite-min-size 64mb
+```
+
+統载入时或者上次重写完毕时, Redis会记录此时AOF大小,设为 base size ,如果Redis的AOF当前大小 >= base size + base_ size* 100% (默认)且当前大小 >=64mb (默认)的情况下， Redis会对AOF进行重写。
+
+> AOF 的优点
+
+备份机制更稳健，丢失数据概率更低。
+
+可读的日志文本，通过操作AOF稳健，可以处理误操作
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.6a6at8p0bg40.webp)
+
+> AOF的缺点
+
+比起RDB占用更多的磁盘空间。
+
+恢复备份速度要慢。
+
+每次读写都同步的话，有一定的性能压力。
+
+存在个别Bug，造成不能恢复。
+
+### Mysql什么时候建索引、什么时候不适合建索引
+
+#### 那些情况需要创建索引
+
+1. 主键自动建立唯 一 索引
+2. 频繁作为查询条件的字段应该创建索引
+3. 查询中与其它表关联的字段，外键关系建立索引
+4. 频繁更新的字段不适合创建索引，因为每次更新不单是更新了记录还会更新索引
+5. 单键组索引的选择问题，who? 在高并发下领向创建组合索引
+6. 意询中排序的字段，排序字段若通过索引法访问将大大提高排序速度
+7. 查询中统计或者分组字段
+
+#### 那些情况下不要建立索引
+
+1. 表记录太少
+   1. Why:提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE.
+2. 经常增删改的表
+   1. 因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件数据重复且分布平均的表字段，因此应该只为最经常查询和最经常排序的数据列建立索引。
+3. 注意，如果某个数据列包含许多重复的内容，为它建立索弓|就没有太大的实际效果。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.2fx53ug97s5c.webp)
+
+### JVM垃圾回收机制、GC发生在JVM哪部分，有几种GC，他们的算法是什么
+
+> GC 发生在JVM的堆里面
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.57x6kvovm6o0.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.3iyio39cvtm0.webp)
+
+## 项目面试题
+
+### redis 在项目中的使用场景
+
+| 数据类型 |                           使用场景                           |
+| :------: | :----------------------------------------------------------: |
+|  String  |     比如说，我想知道什么时候封锁一个 IP 地址 Incrby 命令     |
+|   Hash   | 存储用户信息[ id, name , age]<br/>Hset( key ,field, value)<br/>Hset( key ,id, 101)<br/>Hset( key ,name, admin)<br/>Hset( key ,age, 23)<br/>修改案例---------<br/>Hget(userKev,jd)+<br/>Hset(userKey,id,102)<br/>为什么不使用String类型来存储 String拿到对象值之后需要反序列化，我们只需要更改id name, age 没有意义反序列化<br/>Set(userKey;用信息的字符串)<br/>Get(userKey)<br/>不建议使用String 类型。<br/>————————————————<br/>版权声明：本文为CSDN博主「Evan Guo」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br/> |
+|   List   | 实现最新消息的排行，还可以利用 List 的 push 命令，将任务存在list集合<br/>中，同时使用另-个命令，将任务从集合中取出[ pop ]。。<br/>Redis - List 数据类型来模拟消息队列。[电商中的秒杀就可以采用这种方式<br/>来完成一个秒杀活动]。 |
+|   Set    | 特殊之处:可以自动排重。比如说微博中将每个人的好友存在集合( Set) 中，+<br/>这样求两个人的共通好友的操作。我们只需要求交集即可。 |
+|   Zset   | 以某一个条件为权重，进行排序。<br/>京东:商品详情的时候，都会有一个综合排名，还可以按照价格进行排名 |
+
+### Elasticsearch 与 solr 的区别
+
+背景：他们都是基于 Lucene 搜索服务器基础上开发，一款优秀的，高性能的企业级搜索服务器，【是因为他们都是基于分词技术构建的**倒排索引**的方式进行查询】
+
+开发语言：Java
+
+诞生时间：
+
+Solr：2004年诞生
+
+ES：2010年诞生
+
+ES 更新【功能越强大】
+
+新技术的出现，会弥补老技术的缺点，吸取老技术的优点
+
+区别：
+
+1. 当实时建立索引的时候，solr 会产生 io 阻塞，而 es 不会，es 查询性能要高于 solr
+
+2. 在不断动态添加数据的时候，solr 的检索效率会变得低下，而 es 没有什么变化
+
+3. Solr 利用 zookeeper 进行分布式管理，而 es 自带有分布式系统的管理功能，Solr 一般都要部署到 web 服务器上，比如 tomcat，启动 tomcat 的时候需要配置 tomcat 和 solr 的 关联 【 Solr 的本质，是一个动态的 web项目】
+
+4. Solr支持更多格式的数据 【xml、json、csv 】等，而 es 仅仅支持 json 文件格式
+
+5. Solr 是传统搜索应用的有利解决方案，但是 es 更加适用于新兴的是是搜索应用
+
+   单纯的对已有的数据进行检索， solr 效率更好，高于 es
+
+6. Solr 官网提供的功能更多哦，而 es 本身更加注重于核心功能，高级功能都有第三方插件完成
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.6xzx6ob6oy80.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.2qku9lveres.webp)
+
+Elasticsrarch ：集群图
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.41vhucnb8h20.webp)
+
+### 单点登录
+
+单点登录: 一处登录多处使用！
+
+前提：单点登录多使用在分布式系统中
+
+一处登录，处处运行
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.1wpj3rwzzdk0.webp)
+
+Demo:
+
+参观动物园流程
+
+检票员=认证中心模块
+
+1. 我直接带着大家进动物园，则会被检票员拦住【看我们是否有票】，没有【售票处买票】
+
+登录=买票
+
+2. 我去买票【带着票，带着大家一起准备进入动物园】 检票员check【有票】
+
+Token = piao
+
+3. 我们手中有票就可以任意观赏动物园的每处景点
+
+京东：单点登录，是将 token 放入到 cookie 中
+
+案例：将浏览器的 cookie 禁用，则在登录京东则失效，无论如何登录不了
+
+### 购物车实现过程
+
+购物车：
+
+1. 购物车跟用户的关系 ？
+   1. 一个用户必须对应一个购物车【一个用户不管买多少商品，都会存在属于自己的购物车中】
+   2. 单点登录一定要在购车前
+2. 跟购物车有关的操作有那些？
+
++  用户未登录状态
+  + 添加到什么地方，未登录将数据保存到什么地方？
+    + Redis —京东
+    + Cookie 自己开发项目的时候【如果浏览器禁用Cookie】
+
++  用户登录状态
+  +  Redis 缓存中 【读写速度快】
+  +  Hash: Hset(key,field,value)
+  +  Key:user:userId,cart
+  + Hset(key,skuId,value);
+  + 存在数据库中 【Oracle，mysql】
+    展示购物车
+
++  未登录状态显示
+  + 直接从 cookie 中 取得数据展示即可
+
++ 登录状态
+  +  用户一旦登录，必须显示数据库【redis】 + cookie 中的购物车的数据
+    + Cookie 中有三条记录
+    +  Redis 中有五条记录
+    + 真正展示的时候应该是八条记录
+
+### 消息队列在项目中的使用
+
+背景： 在分布式系统中如何处理高并发的
+
+由于在高并发的环境下，来不及同步处理用户发送的请求，则会导致请求发生阻塞，比如说，大量的 insert，update 之类的请求同时到达数据库 MySQL, 直接导致无数的行锁表锁，甚至会导致请求堆积过多，从而触发 too many connections ( 链接数太多 ) 错误，使用消息队列可以解决 【异步通信】
+
+> 1. 异步
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.4ama9fw92iw0.webp)
+
+> 2. 并行
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.5c91uhask1k0.webp)
+
+> 3. 排队
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.vim7uaybrkg.webp)
+
+消息队列在电商中的使用场景
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221130/image.7ecmyz4hhws0.webp)
+
+> 消息队列的弊端
+
+消息的不确定性： 延迟队列 和 轮询技术来解决问题即可！
+
+推荐大家使用 activemq ！ 环境都是 Java 适环境而定
+
