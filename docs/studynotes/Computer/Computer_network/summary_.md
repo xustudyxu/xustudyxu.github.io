@@ -304,9 +304,9 @@ IBA下又有两个工程部。
 >
 > 2. 电磁波的传播速率通常受到介质的影响
 >
->    1. 自由空间 3×10^8$m/s
->    2. 铜线 2.3×10^8$m/s
->    3. 光纤 2.0×10^8$m/s
+>    1. 自由空间 3×10^8^m/s
+>    2. 铜线 2.3×10^8^m/s
+>    3. 光纤 2.0×10^8^m/s
 >3. 在时延中，占据主导地位的时延通常随情况而改变。
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.6cwnyzdv8c80.webp)
@@ -396,7 +396,7 @@ OSI 没有成为实际上的标准主要有以下几点原因。
 
 具体过程请看
 
-[视频地址](https://www.bilibili.com/video/BV1c4411d7jb?p=9&share_source=copy_web){: .btn }
+[视频地址](https://www.bilibili.com/video/BV1c4411d7jb?p=9&share_source=copy_web)
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.6tyakg5btv80.webp)
 
