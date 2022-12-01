@@ -22,6 +22,15 @@ module.exports = [
   // ],
   [ 'tabs' ],//选项卡
   [
+    'vuepress-plugin-mathjax',
+    {
+      target: 'svg',
+      macros: {
+        '*': '\\times',
+      },
+    },
+  ],
+  [
     "meting",
     {
       // 这个 API 是不可用的，只是作为示例而已 https://music.163.com/playlist?id=2555412439&userid=1490434176

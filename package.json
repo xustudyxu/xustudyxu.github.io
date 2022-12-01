@@ -50,6 +50,7 @@
     "vuepress-plugin-flexsearch": "^0.3.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-meting": "^0.3.1",
     "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",

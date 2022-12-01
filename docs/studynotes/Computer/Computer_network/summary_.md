@@ -92,16 +92,7 @@ IBA下又有两个工程部。
 
 层次如下
 
-```mermaid
-graph TB
-source(ISOC)
-IAB(IAB)
-IEIF(IEIF)
-source-->IAB
-IAB-->IEIF
-IAB-->IRIF
-        
-```
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.2y1nv07len20.webp)
 
 制定因特网的正式标准需要经过下述3个阶段
 
@@ -217,6 +208,17 @@ IAB-->IRIF
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.4ujw2dq6va40.webp)
 
+## 计算机网络的定义
+
++ 计算机网络的精确定义并未统一
++ 计算机网络的最简单的定义是：一些<font color="red">互</font>相<font color="red">连</font>接的、<font color="red">自治</font>的计算机的<font color="red">集合</font>。
+  + 互联：是指计算机之间可以通过有线或无线方法进行数据通信；
+  + 自治：是指独立的计算机，它有自己的硬件和软件，可以单独运行使用；
+  + 集合：是指至少需要两台计算机；
++ 计算机网络较好的定义是：计算机网络主要是由一些<mark>通用的、可编程的硬件互联</mark>而成的，这些硬件并非专门用来实现某一特定目的（例如，传输数据或视频信号）。这些可编程的硬件能够用来<mark>传递多种不同类型的数据</mark>，并能<mark>支持广泛的和日益增长的应用</mark>。
+  + 计算机网络所连接的硬件，并不限于一般的计算机，而是包括了智能手机等智能硬件。
+  + 计算机网络并非专门用来传送数据，而是能够支持很多种的应用(包括今后可能出现的各种应用)。
+
 ## 计算机在我国网络中的发展
 
 我国规模最大的网络
@@ -255,7 +257,7 @@ IAB-->IRIF
 
 ## 计算机网络的性能
 
-### 计算机网络的性能指标 *
+### 计算机网络的性能指标 
 
 1. 速率
    - 是最重要的性能指标
