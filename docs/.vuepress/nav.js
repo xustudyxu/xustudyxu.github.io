@@ -1,8 +1,12 @@
 module.exports = [{
   text: '导航🚀​', link: '/pages/f6054a/'
 
-}
-  ,
+}, {
+    text: '计算机核心',
+    items: [
+      { text: '计算机网络', link: '/pages/39e2a1/' },
+    ]
+  }, 
 {
   text: 'Java',
   items: [

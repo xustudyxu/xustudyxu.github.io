@@ -7,6 +7,7 @@ module.exports = {
      '/studynotes/Spring/':require('../studynotes/Spring/sidebar'),
      '/studynotes/bigdata/':require('../studynotes/bigdata/sidebar'),
      '/studynotes/middleware/':require('../studynotes/middleware/sidebar'),
+     '/studynotes/Computer/':require('../studynotes/Computer/sidebar'),
      '/baodian/':require('../baodian/sidebar'),
      '/studynotes/about/':require('../studynotes/about/sidebar'),
 }	
