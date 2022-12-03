@@ -4,6 +4,7 @@ module.exports = [
     collapsable: false,
     children:[
     '/studynotes/Computer/Computer_network/summary_',
+    '/studynotes/Computer/Computer_network/physical_layer',
       ]
   }
   
