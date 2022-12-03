@@ -20,12 +20,6 @@ module.exports = [
   //     'ga': 'G-896N66VNVW' // UA-00000000-0
   //   }
   // ],
-  ["mdEnhance",{
-    // 启用下角标功能
-    sub: true,
-    // 启用上角标
-    sup: true,
-  },]
   [ 'tabs' ],//选项卡
   [
     'vuepress-plugin-mathjax',
