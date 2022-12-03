@@ -304,9 +304,9 @@ IBA下又有两个工程部。
 >
 > 2. 电磁波的传播速率通常受到介质的影响
 >
->    1. 自由空间 3×10^8^m/s
->    2. 铜线 2.3×10^8^m/s
->    3. 光纤 2.0×10^8^m/s
+>    1. 自由空间 3×10<sup>8</sup>m/s
+>    2. 铜线 2.3×10<sup>8</sup>m/s
+>    3. 光纤 2.0×10<sup>8</sup>m/s
 >3. 在时延中，占据主导地位的时延通常随情况而改变。
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.6cwnyzdv8c80.webp)
@@ -332,7 +332,7 @@ IBA下又有两个工程部。
 
 + 根据排队论，信道的利用率增大时，信道引起的时延也会增大。因此信道的**利用率并非越大越好**
 
-+ 用 D0 表示网络空闲时的时延，D 表示当前网络的时延，U 表示利用率。 D=D~0~/(1−U) 有如下所示的关系	
++ 用 D0 表示网络空闲时的时延，D 表示当前网络的时延，U 表示利用率。 D=D<sub>0</sub>/(1−U) 有如下所示的关系	
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221201/image.610n552gl640.webp)
 
