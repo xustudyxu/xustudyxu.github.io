@@ -209,3 +209,40 @@ tags:
 
 `停止-等待协议的信道利用率很低`，若出现超时重传，则信道利用率更低。
 
+ ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.7azffve52ng0.webp)
+
+**回退N帧协议GBN(Go-Back-N)**：在`流水线传输的基础上`，利用传输窗口，来限制发送方和连续发送分组个数。
+
++ 累计确认
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.5vyvmab29s00.webp)
+
++ 有差错情况
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.2sq1v7sfwri0.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.ctimc1nv8e8.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.7ldsem9vovs0.webp)
+
++ 可见,当通信线路质量不好时,回退N帧协议的信道利用率并不比停止=等待协议高。
+
++ 如果WT超过取值访问的上限。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.ikvrmhfa700.webp)
+
+**GBN协议的发送方和接收方**：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.3lihf88c39m0.webp)
+
+### 可靠传输的实现机制——选择重传SR协议
+
+**选择重传SR协议在 GBN 协议的基础上进行了改进**，它通过让发送方仅重传那些它怀疑在接收方出错（即丢失或受损）的分组而避免了不必要的重传。`选择重传协议只重传真正丢失的分组`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.3sc5gk02wig0.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.8ys4reqjl8o.webp)
+
+**SR协议的发送方和接收方**:
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.35qu7bunx8y0.webp)
