@@ -246,3 +246,382 @@ tags:
 **SR协议的发送方和接收方**:
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221205/image.35qu7bunx8y0.webp)
+
+## 点对点协议ppp
+
+**用户如何接入因特网呢？**
+⬇
+`点对点协议PPP(Point-to-Point Protocol)`是目前使用最广泛的点对点数据链路层协议。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.1y07am34jj40.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.576slkx3lg80.webp)
+
+### PPP协议的标准文档[RFC1661, RFC1662]
+
+![cee4cf3af7c84d5f98c2eaa83fdc7b97](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/cee4cf3af7c84d5f98c2eaa83fdc7b97.6rzsk5qze3w0.gif)
+
+### PPP协议提供标准方法的三部分构成
+
+> ★该方法是为在点对点链路传输各种协议数据报所提供的。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4pxvp0uheis0.webp)
+
+- 对各种协议数据报的封装方法（`封装成帧`）
+
+- 链路控制协议`LCP`
+
+  用于建立、配置以及测试数据链路的连接
+
+- 一套网络控制协议`NCPs`
+
+  其中的每一个协议支持不同的网络层协议
+
+帧格式：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.6z4e24h6ea80.webp)
+
+### PPP帧的透明传输
+
+- `1️⃣面向字节`的**异步链路**使用`字节填充法`（插入转义字符）
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.134qo9z0xqqo.webp)
+
+- `2️⃣面向比特`的**同步链路**使用`比特填充法`（零比特填充）
+
+### PPP协议的工作状态
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3audj5nrcgm0.webp)
+
+## 媒体接入控制MAC
+
+### 媒体接入控制的基本概念
+
++ **共享信道**着重考虑一个问题——`如何协调媒体接入控制MAC`(Medium Access Control)。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2mhukq83oiq0.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.280s01udv51c.webp)
+
+### 媒体接入控制——静态划分信道
+
+`1️⃣信道复用`
+
+**复用(Multiplexing)是通信技术中的一个重要概念**。`复用`就是通过**一条物理线路同时传输多路用户的**`信号`。
+
+当网络中传输媒体的传输容量大于多条单一信道传输的总通信量时,可利用复用技术在一条物理线路上建立多条通信信道来充分利用传输媒体的带宽。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4pu8jh6zvgy0.webp)
+
+`2️⃣频分复用FM`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4clh309v96y0.webp)
+
+频分复用的所有用户同时占用不同的频带资源并行通信。
+
+`3️⃣时分复用TDM`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4hv0n06v2360.webp)
+
+时分复用的所有用户在不同的时间占用同样的频带宽度。
+
+`4️⃣波分复用WDM`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2zy3fibqo2u0.webp)
+
+`5️⃣码分复用CDM`
+
+码分复用CDM是另一种共享信道的方法。实际上，由于该技术**主要用于多址接入**，人们更常用的名词是**码分多址CDMA(Code Division Multiple Access)**。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4njq2uc9hsa0.webp)
+
+码分复用的应用举例
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.72y53lr549s0.webp)
+
+### 媒体接入控制——动态接入控制——随机接入
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3sbnqicgt0s0.webp)
+
+`2️⃣CSMA/CD协议`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3ryygwizqa20.webp)
+
+**载波监听多址接入/碰检测CSMA/CD** (Carrier Sense Multiple Access/Collision Detection)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2hfsf1hqspk0.webp)
+
+`3️⃣争用期（碰撞窗口）`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.fato0k0tj8w.webp)
+
++ 主机最多经过2τ(即δ→0)的时长就可检测到本次发送是否遭受了碰撞
++ 因此，以太网的端到端往返传播时延2τ称为**争用期**或**碰撞窗口**。
++ 经过争用期这段时间还没有检测到碰撞，才能肯定这次发送不会发生碰撞。
++ 每一个主机在自己发送帧之后的一小段时间内，存在着遭遇碰撞的可能性。这一小段时间是不确定的。它取决于另一个发送帧的主机到本主机的距离，但不会超过总线的端到端往返传播时延，即一个争用期时间。
++ 显然，在以太网中发送帧的主机越多，端到端往返传播时延越大，发生碰撞的概率就越大。因此，**共享式以太网不能连接太多的主机，使用的总线也不能太长**。
+  + 10Mb/s以太网把争用期定为512比特发送时间，即51.2μs，因此其总线长度不能超过5120m，但考虑到其他一些因素，如
+    信号衰减等，以太网规定总线长度不能超过2500m。
+
+`4️⃣最小帧长`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.7coyvpsikng0.webp)
+
++ **以太网规定最小帧长为64字节**，即512比特(512比特时间即为争用期) ;如果要发送的数据非常少，那么必须加入一些填充字节,使帧长不小于64字节。
++ 以太网的**最小帧长确保了主机可在帧发送完成之前就检测到该帧的发送过程中是否遭遇了碰撞**;
++ 如果在争用期(共发送64字节)没有检测到碰撞，那么后续发送的数据就一定不会发生碰撞;
++ 如果在争用期内检测到碰撞，就立即中止发送，这时已经发送出去的数据一定小于64字节，因此凡长度小于64字节的帧都是由于碰撞而异常中止的无效帧。
++ **最小帧长** = 争用期 × 数据传输速率
++ **争用期** = 2 * 端到端距离 / 电磁波信号速率 = 2τ
+
+`5️⃣最大帧长`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2ucfvk7qe7m0.webp)
+
+`6️⃣截断二进制指数退避算法`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2ku6hgnv36g0.webp)
+
++ 若连续多次发生碰撞，就表明可能有较多的主机参与竞争信道。但使用上述退避算法可使重传需要推迟的平均时间随重传次数而增大(这也称为动态退避)，因而减小发生碰撞的概率，有利于整个系统的稳定。
+
++ 当**重传达16次仍不能成功**时，表明同时打算发送帧的主机太多，以至于连续发生碰撞,则丢弃该帧,并向高层报告。
+  
+
+:seven: 信道利用率
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.5uvvwzgdga00.webp)
+
+`8️⃣CSMA/CA协议`
+
++ 载波监听多址接入/碰撞避免 CSMA/CA(Carrier Sense Multiple Access/Collision Avoidance)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.67wrspg5uz40.webp)
+
+- 帧间间隔**IFS**
+  802.11标准规定,所有的站点必须在持续检测到信道空闲一段指定时间后才能发送帧,这段时间称为**帧间间隔IFS**。
+
+- CSMA/CA协议的**工作原理**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.1a5p0p1xf5z4.webp)
+
++ CSMA/CA协议的**退避算法**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.41q9z28x9p80.webp)
+
++ CSMA/CA协议的**信道预约和虚拟载波监听**
+
+  为了尽可能减少碰撞的概率和降低碰撞的影响,802.11标准允许要发送数据的站点对信道进行预约。
+
+> (1) 源站在发送数据帧之前先发送一个短的控制帧,称为请求发送RTS(Request To Send),它包括源地址、目的地址以及这次通信(包括相应的确认顿)所需的持续时间。
+>
+> (2) 若目的站正确收到源站发来的RTS帧,且媒体空闲,就发送一个响应控制帧,称为允许发送CTS(Clear To Send),它也包括这次通信所需的持续时间(从RTS帧中将此持续时间复制到CTS帧中)。
+>
+> (3) 源站收到CTS帧后,再等待一段时间SIFS后,就可发送其数据帧。
+>
+> (4) 若目的站正确收到了源站发来的数据帧,在等待时间SIFS后,就向源站发送确认帧ACK。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.5nksgswx7740.webp)
+
+除RTS帧和CTS帧会携带通信需要持续的时间，数据帧也能携带通信需要持续的时间，这称为`802.11的虚拟载波监听机制`。
+
+由于利用虚拟载波监听机制,站点只要监听到RTS帧、CTS帧或数据帧中的任何一个，就能知道信道被占用的持续时间，而不需要真正监听到信道上的信号，因此虚拟载波监听机制能减少隐蔽站带来的碰撞问题。
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3tt0yrz4oze0.webp)
+
+## MAC地址、IP地址以及ARP协议
+
+关于MAC地址、IP地址以及ARP协议的简要了解：
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3r7z7xwouy00.webp)
+
+### MAC地址
+
++ `MAC地址`是以太网的MAC子层所使用的地址;
++ 当多个主机连接在同一个广播信道上，要想实现两个主机之间的通信，则每个主机都必须有一个唯一的标识，即一个数据链路层地址；
++ 在每个主机发送的帧中必须携带标识发送主机和接收主机的地址。**由于这类地址是用于媒体接入控制MAC(Media Access Control)，因此这类地址被称为MAC地址**；
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4q6xt30pks80.webp)
+
++ **MAC地址**一般被固化在网卡(网络适配器)的电可擦可编程只读存储器EEPROM中，因此**MAC地址也被称为硬件地址;**
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.5fjzukxbzf40.webp)
+
++ **MAC地址**有时也被称为`物理地址`。
+
+> **★注意**：这并不意味着MAC地址属于网络体系结构中的物理层！
+
+- 严格来说，MAC地址是对网络上各接口的唯一标识，而不是对网络上各设备的唯一标识。
+
+- **IEEE局域网的MAC地址格式**
+
+  扩展的唯一标识符EUI-48
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.60h8u3rhnas0.webp)
+
++ `IEEE 802局域网的MAC地址发送顺序`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4kg8xf521dg.webp)
+
+字节发送顺序：第一字节----->第六字节
+
+字节内的比特发送顺序：b<sub>0</sub>------>b<sub>7</sub>
+
++ **MAC地址举例**
+  `1️⃣单播MAC地址举例`
+
+![e6b37ce1c7fe4b01a3a5d3bc5d84ba12](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/e6b37ce1c7fe4b01a3a5d3bc5d84ba12.gvxlfryy5qg.gif)
+
+​	2️⃣广播MAC地址举例
+
+![4e1eba82e4fd45c6b31ebd9795dd3418](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/4e1eba82e4fd45c6b31ebd9795dd3418.7jv1jtklmz40.gif)
+
+​	3️⃣多播MAC地址举例
+
+![1e0ac043b0b9401d9d08df150331da74](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/1e0ac043b0b9401d9d08df150331da74.6ldt0d1meec0.gif)
+
+###  IP地址
+
++ `IP地址`：指因特网(Internet)上的主机和路由器所使用的地址，**用于标识两部分信息**:
+  **1️⃣网络编号**：标识因特网上数以百万计的`网络口`。
+  **2️⃣主机编号**：标识同一网络上`不同主机`(或路由器各接口)。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.pbw3i034pds.webp)
+
++ 从**网络体系结构**看IP地址与MAC地址
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4ncqekurbxu0.webp)
+
++ **数据包转发过程中**`IP地址与MAC地址的变化情况`
+
+![1670322337085](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1670322337085.png)
+
+`1️⃣数据包转发过程中`**源IP地址和目的IP地址保持不变**；
+`2️⃣数据包转发过程中`**源MAC地址和目的MAC地址逐个链路(或逐个网络)改变**。
+
+### ARP协议
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.29ptpujc263o.webp)
+
++ 源主机在自己的ARP高速缓存表中查找目的主机的IP地址所对应的MAC地址，若找到了，则可以封装MAC帧进行发送;若找不到，则发送ARP请求(封装在广播MAC帧中);
++ 目的主机收到ARP请求后,将源主机的IP地址与MAC地址记录到自己的ARP高速缓存表中，然后给源主机发送ARP响应(封装在单播MAC帧中)，ARP响应中包含有目的主机的IP地址和MAC地址;
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4girqfa28jk0.webp)
+
+- 源主机收到ARP响应后，将目的主机的IP地址与MAC地址记录到自己的ARP高速缓存表中，然后就可以封装之前想发送的MAC帧并发送给目的主机;
+- **ARP的作用范围**：`逐段链路或逐个网络使用`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.7avaka3ovho0.webp)
+
+## 集线器与交换机的区别
+
+### 早期的总线型以太网
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.1ch3dtcee6g0.webp)
+
+### 使用双绞线和集线器HUB的星型以太网
+
+- 使用集线器的以太网在逻辑上仍然是**总线网**，使用`CSMA/CD协议`。
+- 集线器只工作在`物理层`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.2c0mtb78vhhc.webp)
+
+### 使用集线器HUB在物理层扩展以太网
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.og6pafcpips.webp)
+
+### 以太网交换机
+
+此时的前提条件：
+
+- 忽略ARP过程
+- 假设交换机的帧交换表已“学习好了”
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.4wf1jyolhau0.webp)
+
+### 对比集线器和交换机
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.7bfa4z898bo0.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.409l0fezxjw.webp)
+
+## 以太网交换机自学习和转发帧的流程
+
++ `以太网交换机工作在数据链路层`（也包括物理层）
+
++ **收到帧后进行登记**。登记的内容为帧的源MAC地址及进入交换机的接口号
+
++ 根据帧的目的MAC地址和交换机的帧交换表对帧进行转发，有以下三种情况:
+  1️⃣**明确转发**：交换机知道应当从哪个(或哪些)接口转发该帧(单播,多播,广播)
+  2️⃣**盲目转发**：交换机不知道应当从哪个端口转发帧,只能将其通过除进入交换机的接口外的其他所有接口转发(也称为泛洪)
+  3️⃣**明确丢弃**：交换机知道不应该转发该帧,将其丢弃
+
++ A->B
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.e4acryqdee0.webp)
+
++ B->A
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.6lldya62di00.webp)
+
++ E->A
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.45hdb38sy200.webp)
+
++ G->A
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.5bqjfxgvf480.webp)
+
+## 以太网交换机的生成树协议STP
+
+- **如何提高以太网的可靠性**?
+
+  `添加冗余链路`可以提高以太网的可靠性
+
+- 但是,冗余链路也会带来负面效应-形成网络环路
+
+- 网络环路会带来网络风暴等问题
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3ptd8qij5i80.webp)
+
+- **因此提出**的以太网交换机使用`生成树协议STP`(Spanning Tree Protocol)解决了这个问题，可以在增加冗余链路来提高网络可靠性的同时又避免网络环路带来的各种问题。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3999lqgjro80.webp)
+
+## 虚拟局域网VLAN
+
+### 虚拟局域网VLAN概述
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3r4mp82n1km0.webp)
+
+由于巨大的广播域会带来弊端，因此需要分割广播域，有以下两种方法：
+
+`1️⃣使用路由器隔离广播域`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3vxxdogckga0.webp)
+
+路由器的成本较高，因此虚拟局域网VLAN也就应运而生
+
+`2️⃣虚拟局域网VLAN(Virtual Local Area Network)`
+
+**VLAN**是一种将局域网内的设备划分成与物理位置无关的逻辑组的技术。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.1wd0xe7wl3fk.webp)
+
+### 虚拟局域网VLAN的实现机制
+
+`1️⃣IEEE 802.1Q帧`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.38tpjghaezq0.webp)
+
+::: tip 注意
+
+802.1Q帧是由交换机来处理的，而不是用户主机来处理的。
+
+:::
+
+`2️⃣交换机的端口`
+
+交换机的端口有三种类型：
+
+<font color="green">Access</font>、<font color="skyblue">Trunk</font>、<font color="orange">Hybrid</font>
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221206/image.3n5yf9ywmze0.webp)
