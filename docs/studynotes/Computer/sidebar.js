@@ -6,6 +6,7 @@ module.exports = [
     '/studynotes/Computer/Computer_network/summary_',
     '/studynotes/Computer/Computer_network/physical_layer',
     '/studynotes/Computer/Computer_network/data_link_layer',
+    '/studynotes/Computer/Computer_network/network_layer',
       ]
   }
   
