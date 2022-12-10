@@ -274,3 +274,306 @@ IP数据报的发送和转发过程包含以下两部分：主机发送IP数据�
 
 需要说明的是路由器的端口一般都具有输入和输出的功能。我们图中分别给出输入端口和输出端口，目的在于更好的演示路由器的基本工作过程，使同学们更容易理解。
 
+#### 路由信息协议RIP的基本工作原理
+
++ `路由信息协议RIP`(Routing Information Protocol)是内部网关协议IGP中最先得到广泛使用的协议之一，其相关标准文档为RFC 1058。
++ RIP要求自治系统AS内的每一个路由器都要维护从它自己到AS内其他每一个网络的距离记录。这是一组距离，称为`“距离向量D-V(Distance-Vector)"`。
+
++  **RIP使用**`跳数(Hop Count)`作为度量(Metric)来衡量**到达目的网络的距离**。
+  + 路由器到直连网络的距离定义**为1**。
+  + 路由器到非直连网络的距离定义为**所经过的路由器数加1**。
+  + 允许一条路径**最多只能包含15个路由器**。“距离”等于16时相当于不可达。因此, `RIP只适用于小型互联网`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.531bqld5a2g0.webp)
+
++  RIP认为好的路由就是“距离短”的路由，也就是`所通过路由器数量最少`的**路由**。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.3jz5as2nhyy0.webp)
+
++ RIP认为R1到R5的好路由是：R1->R4->R5
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.2a535av6zbok.webp)
+
++ RIP的基本工作过程
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.38vdstk4naw0.webp)
+
++ RIP的路由条目的更新规则
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.67cvrmfe6ns0.webp)
+
+> **RIP存在“坏消息传播得慢”的问题。**
+
+#### 开放最短路径优先OSPF的基本工作原理
+
++ `开放最短路径优先OSPF`(Open Shortest Path First).是为克服RIP的缺点在1989年开发出来的。
+  + “开放”表明OSPF协议不是受某一家厂商控制,而是公开发表的。
+  + “最短路径优先”是因为使用了Dijkstra提出的最短路径算法SPF。
+
++ **OSPF是基于链路状态的，而不像RIP那样是基于距离向量的。**
+
+> **OSPF**`采用SPF算法计算路由`，从算法上保证了不会产生路由环路。
+>
+> **OSPF不限制网络规模，更新效率高，收敛速度快。**
+
+##### 链路状态
+
+链路状态是指本路由器都和哪些路由器相邻,以及相应链路的“代价” (cost)“。
+
+- 代价”用来表示费用、距离、时延、带宽,等等。这些都由网络管理人员来决定。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5us1o83hgwo0.webp)
+
++  **OSPF相邻路由器之间**通过`交互问候(Hello)`分组，建立和维护邻居关系。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5kiiec41ehk0.webp)
+
+##### 链路状态通告LSA
+
++  使用OSPF的每个路由器都会产生`链路状态通告LSA`(Link State Advertisement)。 LSA中包含以下内容:
+  + 直连网络的链路状态信息
+  + 邻居路由器的链路状态信息
+
++ LSA被封装在链路状态更新分组LSU中,采用洪泛法发送。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.3bfg3k9g0eg0.webp)
+
++ 使用OSPF的各路由器**基于LSDB进行最短路径优先SPF计算**，构建出各自到达其他各路由器的最短路径，即构建各自的路由表。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.3cwwvftpn0q0.webp)
+
+##### OSPF的分组类型
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.1rrltox8mwqo.webp)
+
+##### OSPF的基本工作过程
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.4xzd4ikehxs0.webp)
+
+##### 邻居关系
+
++ OSPF在多点接入网络中路由器`邻居关系的建立`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5dznqk6dql8.webp)
+
+##### 区域
+
++ 为了使OSPF能够用于规模很大的网络，OSPF把一个自治系统再划分为若干个更小的范围，叫做`区域(Area)`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5gu6bdckrio0.webp)
+
+#### 边界网关协议BGP的基本工作原理
+
++ 因特网采用`分层次的路由选择协议`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.6lqltkysh7k0.webp)
+
++ `内部网关协议IGP`(例如路由信息协议RIP或开放最短路径优先OSPF)
+
+  + 设法使分组在一个自治系统内尽可能有效地从源网络传输到目的网络
+
+  + 无需考虑自治系统外部其他方面的策略
+
+    外部网关协议EGP(例如边界网关协议BGP)
+
+  + 在不同自治系统内,度量路由的“代价” (距离,带宽,费用等)可能不同。因此,对于自治系统之间的路由选择,使用“代价”作为度量来寻找最佳路由是不行的。
+    
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.2sg6ut5isz0.webp)
+
++ 在配置BGP时,每个自治系统的管理员要选择至少一个路由器作为该自治系统的“BGP发言人”
+
+  **BGP**适用于`多级结构的互联网`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.383m6zg11aa0.webp)
+
+##### BGP-4的四种报文
+
+`1️⃣OPEN(打开)报文`
+
+> **用来与相邻的另一个BGP发言人建立关系**，使通信初始化。
+
+`2️⃣UPDATE(更新)报文`
+
+> **用来通告某一路由的信息**，以及列出要撤销的多条路由。
+
+`3️⃣KEEPALIVE(保活)报文`
+
+> **用来周期性地证实邻站的连通性。**
+
+`4️⃣NOTIFICATION(通知)报文`
+
+> **用来发送检测到的差错。**
+
++ IP协议封装规则
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.2jxs9zp4h020.webp)
+
+### IPv4数据报的首部格式
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.4qv9clittsi0.webp)
+
+**1.首部长度**
+
+> **占4比特，表示IP数据报首部的长度**。该字段的取值以`4字节`为单位。最小十进制取值为5，表示IP数据报首部只有20字节固定部分;最大十进制取值为15，表示IP数据报首部包含20字节固定部分和最大40字节可变部分。
+
+**2.可选字段**
+
+> **长度从1个字节到40个字节不等**。`用来支持排错、测量及安全等措施`。可选字段增加了IP数据报的功能,但这同时也使得IP数据报的首部长度成为可变的。这就增加了每一个路由器处理IP数据报的开销。实际上可选字段很少被使用。
+
+**3.填充字段**
+
+> **确保首部长度为4字节的整数倍**。使用`全0`进行填充。
+
+**4.区分服务**
+
+> **占8比特，用来获得更好的服务。**
+
+**5.总长度**
+
+> **占16比特**，表示`IP数据报的总长度`(首部+数据载荷)。
+>
+> 最大取值为十进制的65535，以字节为单位。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.ptm56r0ehn4.webp)
+
+**6.标识**
+
+> **占16比特**，属于同一个数据报的各分片数据报应该具有相同的标识。
+>
+> IP软件维持一个计数器，每产生一个数据报，计数器值加1，并将此值赋给标识字段。
+
+**7.标志**
+
+> **占3比特**，`各比特含义如下`：
+>
+> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.1xqgdajia7c0.webp)
+
+**8.片偏移**
+
+> **占13比特**，指出分片数据报的`数据载荷部分偏移`其在原数据报的位置**有多少个单位**。
+>
+> 片偏移以8个字节为单位。
+
+**9.生存时间TTL**
+
+> **占8比特**，最初`以秒为单位`，**最大生存周期**为`255秒`；
+
+**10.协议**
+
+> **占8比特**，指明IPv4数据报的数据部分是`何种协议数据单元`。
+>
+> 常用的一些协议和相应的协议字段值如下。
+>
+> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.3rs9fh0g6xm0.webp)
+
+**11.首部检验和**
+
+> **占16比特**，用来`检测首部`在传输过程中是否出现差错。比CRC检验码简单，称为**因特网检验和**。
+
+**12.源IP地址和目的IP地址**
+
+> **各占32比特**，用来填写发送该IP数据报的源主机的IP地址和接收该IP数据报的目的主机的IP地址。
+
+### 网际控制报文协议ICMP
+
+#### 走进ICMP
+
++ `为了更有效地转发IP数据报和提高交付成功的机会`，在网际层使用了**网际控制报文协议ICMP(Internet Control Message Protocol)。**
++ 主机或路由器使用ICMP来发送差错报告报文和询问报文。
++ ICMP报文被封装在IP数据报中发送。
+
+#### ICMP差错报告报文的种类
+
+`1️⃣终点不可达`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.50cjalpkgi80.webp)
+
+`2️⃣源点抑制`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.54s1pqywwsg0.webp)
+
+`3️⃣时间超过`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.746qun774ok0.webp)
+
++ 另外，当终点在预先规定的时间内不能收到一个数据报的全部数据报片时就把已收到的数据报片都丢弃，也会向源点发送时间超过报文。
+
+`4️⃣参数问题`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.4jqgrex8ymi0.webp)
+
+`5️⃣改变路由（重定向）`
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.3nnaaiytnac0.webp)
+
++ **以下情况不应发送ICMP差错报告报文：**
+  + 对ICMP差错报告报文不再发送ICMP差错报告报文
+  + 对第一个分片的数据报片的所有后续数据报片都不发送ICMP差错报告报文
+  + 对具有多播地址的数据报都不发送ICMP差错报告报文
+  + 对具有特殊地址(如127.0.0.0或0.0.0.0)的数据报不发送ICMP差错报告报文
+
+**常用的ICMP询问报文有以下两种：**
+
+a.回答请求和回答
+
+b.时间戳请求和回答
+
+####  ICMP的应用
+
+`1️⃣分组网间探测PING`
+
+用来测试主机或路由器间的连通性
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.1ihbjy8iknr4.webp)
+
+`2️⃣跟踪路由traceroute`
+
+用来测试IP数据报从源主机到达目的主机主要经过哪些路由器
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5c7o7ylenas0.webp)
+
+### 虚拟专用网VPN与网络地址转换NAT
+
+#### 虚拟专用网VPN
+
++  利用公用的因特网作为本机构各专用网之间的通信载体，这样的专用网又称为`虚拟专用网`。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.77f88i6a8780.webp)
+
++ **根据具体用途有所不同**，可分为：`内联网VPN、外联网VPN、远程接入VPN`。
+
+`1️⃣内联网VPN`
+
+同一机构内不同部门的内部网络所构成的虚拟专用网VPN又称为内联网VPN。
+
+`2️⃣外联网VPN`
+
+有时一个机构的VPN需要有某些外部机构(通常就是合作伙伴)参加进来。这样的VPN就称为外联网VPN。
+
+`3️⃣远程接入VPN`
+
+在外地工作的员工需要访问公司内部的专用网络时,只要在任何地点接入到因特网,运行驻留在员工PC中的VPN软件，在员工的PC和公司的主机之间建立VPN隧道,即可访问专用网络中的资源。这种VPN称为远程接入VPN。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.74dmzaredns0.webp)
+
+#### 网络地址转换NAT
+
++ 虽然因特网采用了<mark>无分类编址方式</mark>来减缓IPv4地址空间耗尽的速度，但**由于因特网用户数目的激增**，特别是大量小型办公室网络和家庭网络接入因特网的需求不断增加，**IPv4地址空间**即将<mark>面临耗尽的危险仍然没有被解除</mark>。
+
++ 1994年提出了一种**网络地址转换NAT的方法**再次缓解了<mark>IPv4地址空间即将耗尽的问题</mark>。
+
+  NAT能使大量使用**内部专用地址**的**专用网络**用户共享少量外部全球地址来访问因特网上的主机和资源。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.18qzhvvvlxvk.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.1r0bxwhrjrgg.webp)
+
++ 用一个全球IP地址就可以使多个拥有本地地址的主机同时和因特网上的主机进行通信。这种将端口号和IP地址一起进行转换的技术叫作`网络地址与端口号转换NAPT`(Network Address and Port Translation)。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221210/image.5g0c9qkgacg0.webp)
+
+**★注意：对于一些P2P网络应用，需要外网主机主动与内网主机进行通信**，在通过NAT时会遇到问题，需要网络应用自己使用一些特殊的`NAT穿越技术`来解决问题。
+
+另外，由于**NAT**对外网屏蔽了内网主机的**网络地址**，能为内网的主机提供一定的`安全保护`。
+
