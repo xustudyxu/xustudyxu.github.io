@@ -682,6 +682,23 @@ Process finished with exit code 0
 
 ## SSM 面试题
 
+## Spring Bean 的生命周期
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221211/image.5j9pk2zyuc00.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221211/image.59wgy27nq740.webp)
+
+1. 解析xml配置或注解配置的类，得到`BeanDefinition`;
+2. 通过`BeanDefinition`**反射创建**`Bean`对象;
+3. 对Bean对象进行**属性填充**;
+4. 回调实现了`Aware`接口的方法，如`BeanNameAware`;
+5. 调用`BeanPostProcessor`的初始化前方法;
+6. 调用`init`初始化方法;
+7. 调用`BeanPostProcessor`的初始化后方法，此处会进行`AOP`;
+8. 将创建的`Bean`对象放入一个`Map`中;
+9. 业务使用`Bean`对象;
+10. Spring容器关闭时调用`DisposableBean`的`destory()`方法;
+
 ### Spring Bean 的作用域
 
 在 Spring 的配置文件中，给 bean 加上 scope 属性来指定 bean 的作用域如下：
