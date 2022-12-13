@@ -279,6 +279,21 @@ HTTP有两类报文：**请求报文和响应报文**。报文中的每一个字
 ### 知识拓展
 
 + `Cookie`提供了一种机制**使得万维网服务器能够“记住”用户**。而无需用户主动提供用户标识信息。也就是说，Cookie是一种对无状态的HTTP进行状态化的技术。
++ 使用Cookie在服务器上记录用户信息
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221213/image.2khh7v4w2qk0.webp)
 
 + 在万维网**加粗样式**中还可以使用`缓存机制`以提高**万维网的效率**。`万维网缓存`又称为**Web缓存**，可位于客户机，也可位于中间系统上，位于中间系统上的Web缓存又称为代理服务器。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221213/image.aea0gk75548.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221213/image.s2261236c5s.webp)
+
++ 原始服务器与代理服务器中的文件一致
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221213/image.7abspmxy0280.webp)
+
++ 原始服务器与代理服务器中的文件不一致
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221213/image.7dkdn3uqa2c0.webp)
 
