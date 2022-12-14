@@ -682,7 +682,7 @@ Process finished with exit code 0
 
 ## SSM 面试题
 
-## Spring Bean 的生命周期
+### Spring Bean 的生命周期
 
 ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221211/image.5j9pk2zyuc00.webp)
 
