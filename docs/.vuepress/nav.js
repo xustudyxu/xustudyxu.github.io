@@ -4,6 +4,7 @@ module.exports = [{
 }, {
     text: '计算机核心',
     items: [
+      { text: '数据结构', link: '/pages/db72cf/' },
       { text: '计算机网络', link: '/pages/39e2a1/' },
     ]
   }, 

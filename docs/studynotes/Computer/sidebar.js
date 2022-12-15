@@ -1,5 +1,11 @@
 module.exports = [
   {
+    title:'数据结构',
+    collapsable: false,
+    children:[
+    '/studynotes/Computer/dataStructure/Data_Structure_Introduction',
+      ]
+  },{
     title:'计算机网络',
     collapsable: false,
     children:[
@@ -11,5 +17,5 @@ module.exports = [
     '/studynotes/Computer/Computer_network/application_layer',
       ]
   }
-  
+
 ]
