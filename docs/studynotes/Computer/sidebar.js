@@ -4,6 +4,7 @@ module.exports = [
     collapsable: false,
     children:[
     '/studynotes/Computer/dataStructure/Data_Structure_Introduction',
+    '/studynotes/Computer/dataStructure/SparseArrAndQueue',
       ]
   },{
     title:'计算机网络',
