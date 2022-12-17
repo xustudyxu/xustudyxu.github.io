@@ -5,6 +5,7 @@ module.exports = [
     children:[
     '/studynotes/Computer/dataStructure/Data_Structure_Introduction',
     '/studynotes/Computer/dataStructure/SparseArrAndQueue',
+    '/studynotes/Computer/dataStructure/linkedlist',
       ]
   },{
     title:'计算机网络',
