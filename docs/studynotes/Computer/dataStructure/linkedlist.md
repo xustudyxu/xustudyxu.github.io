@@ -382,7 +382,6 @@ public class SingleLinkedListDemo {
 + 测试
 
 ```java
-准备插入的英雄的编号 2 已经存在，不能加入
 删除之前的链表情况：
 HeroNode{no=1, name='宋江', nickname='及时雨'}
 HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
@@ -392,6 +391,307 @@ HeroNode{no=4, name='林冲', nickname='豹子头'}
 HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
 HeroNode{no=3, name='吴用', nickname='智多星'}
 HeroNode{no=4, name='林冲', nickname='豹子头'}
+
+Process finished with exit code 0
+```
+
+## 单链表面试题
+
+单链表的常见面试题如下：
+
+1. 求单链表中有效节点的个数
+
+```java
+public class SingleLinkedListDemo {
+    public static void main(String[] args) {
+        //测试
+        //先创建节点
+        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+
+        //创建一个链表
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        //加入按照编号的顺序
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero4);
+
+        singleLinkedList.del(1);
+        singleLinkedList.del(4);
+        System.out.println("有效的节点个数为："+SingleLinkedList.getLength(singleLinkedList.getHead()));
+    }
+} 
+    //方法：获取到单链表的节点的个数(如果是带头结点的这种链表，需要不统计头结点)
+    /**
+     * @param head 链表的头结点
+     * @return 返回的就是有效节点的个数
+     */
+    public static int getLength(HeroNode head) {
+        if (head.next == null) { //空链表
+            return 0;
+        }
+        int length = 0;
+        //定义一个辅助的变量，这里我们没有统计头结点
+        HeroNode cur = head.next;
+        while (cur != null) {
+            length++;
+            cur = cur.next;//遍历
+        }
+        return length;
+    }
+
+    public HeroNode getHead() {
+        return head;
+    }
+```
+
++ 测试
+
+```java
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+有效的节点个数为：2
+
+Process finished with exit code 0
+```
+
+2. 查找单链表中的倒数第k个结点
+
+```java
+public class SingleLinkedListDemo {
+    public static void main(String[] args) {
+        //测试
+        //先创建节点
+        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+
+        //创建一个链表
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        //加入按照编号的顺序
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero4);
+
+        singleLinkedList.list();
+
+        System.out.println("有效的节点个数为：" + SingleLinkedList.getLength(singleLinkedList.getHead()));
+
+        //测试一下看看是否得到了倒数第K个节点
+        HeroNode result = SingleLinkedList.findLastIndexNode(singleLinkedList.getHead(), 1);
+        System.out.println("result:" + result);
+    }
+}
+    //查找单链表的倒数第k个节点【新浪面试题】
+    //思路
+    //1.编写一个方法，接受head节点，同时接受一个index
+    //2.index 表示是倒数第index个节点
+    //3.先把链表从头到尾遍历，得到链表的总的长度 getLength
+    //4.得到size后，我们从链表的第一个开始遍历(size-index)个，就可以得到
+    //5.如果找到了，则返回该节点，否则返回为null
+    public static HeroNode findLastIndexNode(HeroNode head, int index) {
+        //判断如果链表为空，返回null
+        if (head.next == null) {
+            return null;//没有找到
+        }
+        //第一次遍历得到链表的长度(节点个数)
+        int size = getLength(head);
+        //第二次遍历 size-index 位置，就是我们倒数的第k个节点
+        //先做一个index校验
+        if (index < 0 || index > size) {
+            return null;
+        }
+        //定义辅助变量，for循环定位到倒数的index
+        HeroNode current = head.next; //3 //size-1
+        for (int i = 0; i < size - index; i++) {
+            current = current.next;
+        }
+        return current;
+    }
+```
+
++ 测试
+
+```java
+HeroNode{no=1, name='宋江', nickname='及时雨'}
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+HeroNode{no=4, name='林冲', nickname='豹子头'}
+有效的节点个数为：4
+result:HeroNode{no=4, name='林冲', nickname='豹子头'}
+
+Process finished with exit code 0
+```
+
+3. 单链表的反转
+
+   思路解析图解
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221220/image.5za7su1gprk0.webp)
+
+```java
+public class SingleLinkedListDemo {
+    public static void main(String[] args) {
+        //测试
+        //先创建节点
+        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+
+        //创建一个链表
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        //加入按照编号的顺序
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero4);
+
+        //测试一下单链表的反转功能
+        System.out.println("原来链表的情况：");
+        singleLinkedList.list();
+        SingleLinkedList.reverseList(singleLinkedList.getHead());
+        System.out.println("反转过后的链表：");
+        singleLinkedList.list();
+
+    }
+}
+    //将单链表进行反转
+    public static void reverseList(HeroNode head) {
+        //如果当前链表为null,或者只有一个节点，就无需反转，直接返回
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+
+        //定义一个辅助的指针(变量)，帮助我们遍历原来的链表
+        HeroNode current = head.next;
+        HeroNode next = null;//指向当前节点[current]的下一个节点
+        HeroNode reverseHead = new HeroNode(0,"","");
+        //遍历原来的链表，每遍历一个节点，就将其取出，并放在新的链表 reverseHead 的最前端
+        while (current != null){
+            next = current.next;//先暂时保存当前节点的下一个节点，因为后面需要使用
+            current.next = reverseHead.next;//将current的下一个节点指向链表的最前端
+            reverseHead.next = current;//将current链接到新的链表上
+            current = next; //让current后移
+        }
+        //将head.next指向reverseHead.next，实现单链表的反转
+        head.next = reverseHead.next;
+        
+    }
+```
+
++ 测试
+
+```java
+原来链表的情况：
+HeroNode{no=1, name='宋江', nickname='及时雨'}
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+HeroNode{no=4, name='林冲', nickname='豹子头'}
+反转过后的链表：
+HeroNode{no=4, name='林冲', nickname='豹子头'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=1, name='宋江', nickname='及时雨'}
+
+Process finished with exit code 0
+```
+
+4. 从头到尾打印单链表
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221220/image.25cz064igv6o.webp)
+
+思考：
+
+1. 上面的题的要求就是逆序打印单链表.
+2. 方式1:先将单链表进行反转操作,然后再遍历即可，这样做的问题是破坏原来的单链表的一个结构
+3. 方式2:可以利用栈这个数据结构，将各个节点压入到栈中，然后利用栈的先进后出的特点，就实现了逆序打印对的结果
+
+举例演示栈的使用：
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/12/20  22:22
+ */
+public class TestStack {
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack<>();
+        //入栈
+        stack.add("Jack");
+        stack.add("Tom");
+        stack.add("Smith");
+
+        //取出
+        //出栈
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());//pop就是把栈顶的数据取出
+        } 
+    }
+}
+```
+
++ 结果
+
+```java
+Smith
+Tom
+Jack
+
+Process finished with exit code 0
+```
+
+```java
+public class SingleLinkedListDemo {
+    public static void main(String[] args) {
+        //测试
+        //先创建节点
+        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+
+        //创建一个链表
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        //加入按照编号的顺序
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero4);
+
+        //测试一下单链表的反转功能
+        System.out.println("原来链表的情况：");
+        singleLinkedList.list();
+        System.out.println("逆序打印的结果为，没有改变链表的结构：");
+        SingleLinkedList.reservePrint(singleLinkedList.getHead());
+
+    }
+}
+```
+
++ 测试结果
+
+```java
+原来链表的情况：
+HeroNode{no=1, name='宋江', nickname='及时雨'}
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+HeroNode{no=4, name='林冲', nickname='豹子头'}
+逆序打印的结果为：
+HeroNode{no=4, name='林冲', nickname='豹子头'}
+HeroNode{no=3, name='吴用', nickname='智多星'}
+HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
+HeroNode{no=1, name='宋江', nickname='及时雨'}
 
 Process finished with exit code 0
 ```
