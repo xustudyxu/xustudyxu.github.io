@@ -24,7 +24,12 @@ tags:
   + 感谢您的阅读。
 + 联系方式
 
-wx:frxcat
+  wx:frxcat
+
++ 已经部署的项目
+  + 个人博客：[https://frxcat.fun](https://frxcat.fun)
+  + 菩提阁外卖后台管理系统：[https://takeout.frxcat.fun](https://takeout.frxcat.fun)
+  + 个人下载站点：[https://download.frxcat.fun/](https://download.frxcat.fun/)
 
 ## 关于计划
 
