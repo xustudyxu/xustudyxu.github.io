@@ -1,0 +1,432 @@
+---
+title: 栈
+date: 2022-12-25 22:37:11
+permalink: /Computer/dataStructure/stack
+categories:
+  - 数据结构
+tags:
+  - 数据结构
+---
+# 栈
+
+[[toc]]
+
+## 栈的一个实际需求
+
+请输入一个表达式
+
+计算式:[7*2*2-5+1-5+3-3]点击计算【如下图】
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221224/image.vkonnxelp5s.webp)
+
+请问:计算机底层是如何运算得到结果的?注意不是简单的把算式列出运算,因为我们看这个算式7*2*2-5，但是计算机怎么理解这个算式的(对计算机而言，它接收到的就是一个字符串)，我们讨论的是这个问题。->**栈**
+
+## 栈的介绍
+
+1. 栈的英文为(stack)
+2. 栈是一个**先入后出(FILO-First In Last Out)**的有序列表。
+3. 栈(stack)是限制线性表中元素的插入和删除只能在线性表的同一端进行的一种特殊线性表。允许插入和删除的一端，为**变化的一端，称为栈顶(Top)**，另一端为**固定的一端，称为栈底(Bottom)**。
+4. 根据栈的定义可知，最先放入栈中元素在栈底，最后放入的元素在栈顶，而删除元素刚好相反，最后放入的元素最先删除，最先放入的元素最后删除
+5. 图解方式说明出栈(pop)和入栈(push)的概念
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221225/image.3hun2bxs54o0.webp)
+
+## 栈的应用场景
+
+1. 子程序的调用:在跳往子程序前，会先将下个指令的地址存到堆栈中，直到子程序执行完后再将地址取出，以回到原来的程序中。
+2. 处理递归调用:和子程序的调用类似，只是除了储存下一个指令的地址外，也将参数、区域变量等数据存入堆栈中。
+3. 表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。
+4. 二叉树的遍历。
+5. 图形的深度优先(depth 一 first)搜索法。
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221225/image.7882u26g3680.webp)
+
+### 代码实现
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/12/25  16:52
+ */
+public class ArrayStackDemo {
+    public static void main(String[] args) {
+        //测试
+        ArrayStack stack = new ArrayStack(4);
+        String key = "";
+        boolean loop = true;//控制是否退出菜单
+        Scanner scanner = new Scanner(System.in);
+        while (loop) {
+            System.out.println("show: 显示栈");
+            System.out.println("exit: 退出程序");
+            System.out.println("push: 表示添加数据到栈(入栈)");
+            System.out.println("pop: 表示从栈取出数据(出栈)");
+            System.out.println("请输入你的选择：");
+            key = scanner.next();
+            switch (key) {
+                case "show":
+                    stack.list();
+                    break;
+                case "push":
+                    System.out.println("请输入一个数：");
+                    int value = scanner.nextInt();
+                    stack.push(value);
+                    break;
+                case "pop":
+                    try {
+                        int res = stack.pop();
+                        System.out.printf("出栈的数据是 %d\n",res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case "exit":
+                    scanner.close();
+                    loop = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+        System.out.println("程序退出.........");
+    }
+}
+//定义一个类 表示栈
+class ArrayStack {
+    private int maxSize; //栈的大小
+    private int[] stack; //数组，数组模拟栈，数据就放在该数组中
+    private int top = -1;//top表示栈顶，初始化为-1
+
+    public ArrayStack(int maxSize) {
+        this.maxSize = maxSize;
+        stack = new int[this.maxSize];
+    }
+
+    //栈满
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    //栈空
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    //入栈-push
+    public void push(int value) {
+        //先判断栈是否满
+        if(isFull()) {
+            System.out.println("栈满");
+            return;
+        }
+        top++;
+        stack[top] = value;
+    }
+
+    //出栈-pop，将栈顶的数据返回
+    public int pop() {
+        //先判断栈是否空
+        if(isEmpty()) {
+            //抛出异常
+            throw new RuntimeException("栈空，没有数据~");
+        }
+        int value = stack[top];
+        top--;
+        return value;
+    }
+
+    //显示栈的情况，遍历栈，遍历时，需要从栈顶开始显示数据
+    public void list() {
+        if(isEmpty()) {
+            System.out.println("栈空，没有数据");
+            return;
+        }
+        for (int i = top; i >= 0 ; i--) {
+            System.out.printf("stack[%d]=%d\n",i,stack[i]);
+        }
+
+    }
+}
+```
+
++ 测试
+
+```java
+show: 显示栈
+exit: 退出程序
+push: 表示添加数据到栈(入栈)
+pop: 表示从栈取出数据(出栈)
+请输入你的选择：
+show
+栈空，没有数据
+请输入你的选择：
+push
+请输入一个数：
+10
+请输入你的选择：
+push
+请输入一个数：
+20
+请输入你的选择：
+push
+请输入一个数：
+30
+请输入你的选择：
+push
+请输入一个数：
+40
+请输入你的选择：
+push
+请输入一个数：
+50
+栈满
+请输入你的选择：
+show
+stack[3]=40
+stack[2]=30
+stack[1]=20
+stack[0]=10
+请输入你的选择：
+pop
+出栈的数据是 40
+请输入你的选择：
+pop
+出栈的数据是 30
+请输入你的选择：
+pop
+出栈的数据是 20
+请输入你的选择：
+pop
+出栈的数据是 10
+请输入你的选择：
+pop
+栈空，没有数据~
+请输入你的选择：
+show
+栈空，没有数据
+请输入你的选择：
+exit
+程序退出.........
+
+Process finished with exit code 0
+```
+
+## 栈实现综合计算器
+
++ 使用栈来实现综合计算器
+
+请输入一个表达式
+
+计算式：[7\*2*2-5+1-5+3-3] 点击计算
+
++ 思路分析
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221225/image.6qcincp50xs0.webp)
+
++ 代码实现，【1.先实现一位数的运算。2.扩展到多位数的运算】
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/12/25  20:43
+ */
+public class Calculator {
+    public static void main(String[] args) {
+
+        String expression = "93+26*66-29";
+        //创建两个栈，数栈和符号栈
+        ArrayStack2 numberStack = new ArrayStack2(10);
+        ArrayStack2 operStack = new ArrayStack2(10);
+        //定义需要的相关变量
+        int index = 0;//用于扫描
+        int num1 = 0;
+        int num2 = 0;
+        int oper = 0;
+        int res = 0;
+        char ch = ' ';//将每次扫描到的char保存到ch中
+        String keyNum = "";//用于拼接多位数的
+        //开始while语句循环的扫描expression
+        while (true) {
+            //依次得到expression中的每一个字符
+            ch = expression.substring(index, index + 1).charAt(0);
+            //判断
+            if (operStack.isOper(ch)) { //如果是运算符
+                //判断当前的符号栈是否为空
+                if (!operStack.isEmpty()) {
+                    //处理
+                    //如果符号栈有操作符，就进行比较，如果当前的操作符的优先级小于或者等于栈中的操作符，就需要从数栈中pop两个数，
+                    //再从符号栈中pop出一个符号，进行运算，将得到结果，入数栈，然后将当前的操作符入符号栈
+                    if (operStack.priority(ch) <= operStack.priority(operStack.peek())) {
+                        //pop出两个数
+                        num1 = numberStack.pop();
+                        num2 = numberStack.pop();
+                        oper = operStack.pop();
+                        res = numberStack.cal(num1, num2, oper);
+                        //把运算结果入数栈
+                        numberStack.push(res);
+                        //把当前的操作符入符号栈
+                        operStack.push(ch);
+                    } else {
+                        //如果当前的操作符的优先级大于栈中的操作符，就直接如符号栈
+                        operStack.push(ch);
+                    }
+                } else {
+                    //如果为空，直接入符号栈
+                    operStack.push(ch);
+                }
+            } else { //如果是数，则直接入数栈
+                //numberStack.push(ch - 48);//? "1+3" '1'==>1
+                //分析思路
+                //1.当处理多位数时，不能发现是一个数就立即入栈，因为它可能是多位数
+                //2.再处理数时，需要向expression表达式的index后面再看一位，如果是数就进行扫描，如果是符号才入栈
+                //3.因此我们需要定义一个变量（字符串），用于拼接
+
+                //处理多位数
+                keyNum += ch;
+
+                //如果ch已经是expression的最后一位
+                if (index == expression.length() - 1) {
+                    numberStack.push(Integer.parseInt(keyNum));
+                } else {
+
+                    //判断下一个字符是不是数字，就继续扫描，如果是运算符，入数栈
+                    //注意是看后一位，不是index++
+
+                    if (operStack.isOper(expression.substring(index + 1, index + 2).charAt(0))) {
+                        //如果后一位是运算符，则入栈
+                        numberStack.push(Integer.parseInt(keyNum));
+                        //重要
+                        keyNum = "";
+                    }
+                }
+            }
+            //让index + 1，并判断是否扫描到expression
+            index++;
+            if (index >= expression.length()) {
+                break;
+            }
+        }
+        //当表达式扫描完毕，就顺序的从数栈和符号栈中pop出相应的数和符号，并运行。
+        while (true) {
+            //如果符号栈为空，计算到最后的结果，数栈中只有一个数字【结果】
+            if (operStack.isEmpty()) {
+                break;
+            }
+            num1 = numberStack.pop();
+            num2 = numberStack.pop();
+            oper = operStack.pop();
+            res = numberStack.cal(num1, num2, oper);
+            numberStack.push(res);//入栈
+        }
+        System.out.printf("表达式是 %s = %d", expression, numberStack.pop());
+    }
+}
+
+//先创建一个栈
+class ArrayStack2 {
+    private int maxSize; //栈的大小
+    private int[] stack; //数组，数组模拟栈，数据就放在该数组中
+    private int top = -1;//top表示栈顶，初始化为-1
+
+    public ArrayStack2(int maxSize) {
+        this.maxSize = maxSize;
+        stack = new int[this.maxSize];
+    }
+
+    //栈满
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    //栈空
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    //入栈-push
+    public void push(int value) {
+        //先判断栈是否满
+        if (isFull()) {
+            System.out.println("栈满");
+            return;
+        }
+        top++;
+        stack[top] = value;
+    }
+
+    //出栈-pop，将栈顶的数据返回
+    public int pop() {
+        //先判断栈是否空
+        if (isEmpty()) {
+            //抛出异常
+            throw new RuntimeException("栈空，没有数据~");
+        }
+        int value = stack[top];
+        top--;
+        return value;
+    }
+
+    //显示栈的情况，遍历栈，遍历时，需要从栈顶开始显示数据
+    public void list() {
+        if (isEmpty()) {
+            System.out.println("栈空，没有数据");
+            return;
+        }
+        for (int i = top; i >= 0; i--) {
+            System.out.printf("stack[%d]=%d\n", i, stack[i]);
+        }
+
+    }
+
+    //返回运算符的优先级，优先级是程序员来确定的，优先级使用数字表示
+    //数字越大，则优先级越高
+    public int priority(int oper) {
+        if (oper == '*' || oper == '/') {
+            return 1;
+        } else if (oper == '+' || oper == '-') {
+            return 0;
+        } else {
+            return -1; //假定目前的表达式只有+,-,*,/
+        }
+    }
+
+    //判断是不是一个运算符
+    public boolean isOper(char val) {
+        return val == '+' || val == '-' || val == '*' || val == '/';
+    }
+
+    //计算方法
+    public int cal(int num1, int num2, int oper) {
+        int res = 0;//用于存放计算的结果
+        switch (oper) {
+            case '+':
+                res = num1 + num2;
+                break;
+            case '-':
+                res = num2 - num1;//注意顺序
+                break;
+            case '*':
+                res = num1 * num2;
+                break;
+            case '/':
+                res = num2 / num1;
+                break;
+        }
+        return res;
+    }
+
+    //增加方法，可以放回当前栈顶的值，但是不是真正的pop
+    public int peek() {
+        return stack[top];
+    }
+}
+```
+
++ 计算
+
+```java
+表达式是 93+26*66-29 = 1780
+Process finished with exit code 0
+```
+
