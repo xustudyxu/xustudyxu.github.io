@@ -1,7 +1,7 @@
-module.exports = [{
-  text: '导航🚀​', link: '/pages/f6054a/'
-
-}, {
+module.exports = [
+  {text: '首页​', link: '/'}, 
+  {text: '导航🚀​', link: '/pages/f6054a/'}, 
+  {
     text: '计算机核心',
     items: [
       { text: '数据结构', link: '/pages/db72cf/' },
