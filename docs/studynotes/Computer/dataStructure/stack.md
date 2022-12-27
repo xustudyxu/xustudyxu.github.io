@@ -487,7 +487,7 @@ Process finished with exit code 0
  * @author frx
  * @version 1.0
  * @date 2022/12/26  19:44
- * desc:后缀表达式求职
+ * desc:后缀表达式求值
  */
 public class PolandNotation {
     public static void main(String[] args) {
@@ -626,6 +626,379 @@ Process finished with exit code 0
 + 代码实现
 
 ```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/12/27  19:04
+ * desc:中缀转后缀表达式
+ */
+public class InfixToSuffix {
+    public static void main(String[] args) {
 
+        //完成将一个中缀表达式转换成后缀表达式
+        //说明
+        //1. 1+((2+3)×4)-5 ===>  1 2 3 + 4 × + 5 -
+        //2. 因为直接对字符串操作不方便，先将字符串 "1+((2+3)×4)-5" ===> 中缀的表达式List
+        //   即 "1+((2+3)×4)-5" ===> ArrayList [1,+,(,(,2,+,3,),×,4,),-,5]
+        //3. 将得到的中缀表达式对应的list ===> 后缀表达式对应的list
+        //   即 [1,+,(,(,2,+,3,),×,4,),-,5] ===> ArrayList [1,2,3,+,4,×,+,5,-]
+        //
+
+        String expression = "1+((2+3)×4)-5";
+        List<String> infixExpressionList = toInfixExpressionList(expression);
+        System.out.println("中缀表达式对应的List="+infixExpressionList);
+        List<String> parseSuffixExpressionList = parseSuffixExpressionList(infixExpressionList);
+        System.out.println("后缀表达式对应的List="+parseSuffixExpressionList);
+        System.out.println("计算的结果为："+calculate(parseSuffixExpressionList));
+    }
+
+    //方法：将中缀表达式转成对应的List
+    // s ===> "1+((2+3)×4)-5"
+    public static List<String> toInfixExpressionList(String s) {
+        //定义一个List，存放中缀表达式对应的数据
+        List<String> ls = new ArrayList<>();
+        int i = 0;//这是一个指针，用于遍历 中缀表达式字符串
+        String str; //多多位数做拼接工作
+        char c;// 每遍历到一个字符，放入到c
+        do {
+            //如果c是一个非数字，就需要加入到ls
+            if ((c = s.charAt(i)) < 48 || (c = s.charAt(i)) > 57) {
+                ls.add("" + c);
+                i++;
+            } else {  //如果是一个数
+                str = "";//先将str置成空串
+                while (i < s.length() && (c = s.charAt(i)) >= 48 && (c = s.charAt(i)) <= 57) {
+                    str += c;
+                    i++;
+                }
+                ls.add(str);
+            }
+        } while (i < s.length());
+        return ls;
+    }
+
+    //即 [1,+,(,(,2,+,3,),×,4,),-,5] ===> ArrayList [1,2,3,+,4,×,+,5,-]
+    public static List<String> parseSuffixExpressionList(List<String> ls) {
+        //定义两个栈
+        Stack<String> s1 = new Stack<>(); //符号栈
+        //说明：因为 s2 这个栈，在整个转换的过程中，没有pop操作，而且后面我们还需要逆序输出
+        //     因此比较麻烦，这里我们不使用stack，使用List<String> s2
+        List<String> s2 = new ArrayList<>();//存储中间结果的栈
+
+        //遍历ls
+        for (String item : ls) {
+            //如果是一个数，加入到s2
+            if (item.matches("\\d+")) {
+                s2.add(item);
+            } else if (item.equals("(")) {
+                s1.push(item);
+            } else if (item.equals(")")) {
+                // 如果是右括号“)”，则依次弹出sl栈顶的运算符，并压入s2，
+                // 直到遇到左括号为止，此时将这一对括号丢弃
+                while (!s1.peek().equals("(")) {
+                    s2.add(s1.pop());
+                }
+                s1.pop();//将 ( 弹出s1这个栈，消除小括号
+            } else {
+                //当item优先级小于等于s1栈顶运算符的优先级
+                //将sl栈顶的运算符弹出并压入到s2中
+                while (s1.size() != 0 && Operation.getValue(s1.peek()) >= Operation.getValue(item)) {
+                    s2.add(s1.pop());
+                }
+                //还需要将item压入栈中
+                s1.push(item);
+            }
+        }
+
+        //将s1中剩余的运算符依次弹出并加入s2
+        while (s1.size() != 0) {
+            s2.add(s1.pop());
+        }
+        return s2;//因为是存放到list中，因此按顺序输出就是后缀表达式对应的list
+    }
+    public static int calculate(List<String> list) {
+        //创建一个栈，只需要一个栈
+        Stack<String> stack = new Stack<>();
+        //遍历 list
+        for (String s : list) {
+            //这里使用正则表达式取出数
+            if (s.matches("\\d+")) { //匹配多位数
+                //入栈
+                stack.push(s);
+            } else {
+                //pop出两个数并运算，再入栈
+                int num2 = Integer.parseInt(stack.pop());
+                int num1 = Integer.parseInt(stack.pop());
+                int res = 0;
+                if (s.equals("+")) {
+                    res = num1 + num2;
+                } else if (s.equals("-")) {
+                    res = num1 - num2;
+                } else if (s.equals("×")) {
+                    res = num1 * num2;
+                } else if (s.equals("/")) {
+                    res = num1 / num2;
+                } else {
+                    throw new RuntimeException("运算符有误");
+                }
+                //把res入栈
+                stack.push(res + "");
+            }
+        }
+        //最后 留在stack中的数据 就是运算结果
+        return Integer.parseInt(stack.pop());
+    }
+}
+
+//编写一个类，可以返回一个运算符对应的优先级
+class Operation {
+    private static int ADD = 1;
+    private static int SUB = 1;
+    private static int MUL = 2;
+    private static int DIV = 2;
+
+    //写一个方法，返回对应的优先级数字
+    public static int getValue(String operation) {
+        int result = 0;
+        switch (operation) {
+            case "+":
+                result = ADD;
+                break;
+            case "-":
+                result = SUB;
+                break;
+            case "×":
+                result = MUL;
+                break;
+            case "/":
+                result = DIV;
+                break;
+            default:
+                System.out.println("不存在该运算符");
+                break;
+        }
+        return result;
+    }
+}
+```
+
++ 测试
+
+```java
+中缀表达式对应的List=[1, +, (, (, 2, +, 3, ), ×, 4, ), -, 5]
+不存在该运算符
+不存在该运算符
+后缀表达式对应的List=[1, 2, 3, +, 4, ×, +, 5, -]
+计算的结果为：16
+
+Process finished with exit code 0
+```
+
+## 逆波兰计算器完整版
+
+```java
+package com.atguigu.reversepolishcal;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
+import java.util.regex.Pattern;
+
+public class ReversePolishMultiCalc {
+
+    /**
+     * 匹配 + - * / ( ) 运算符
+     */
+    static final String SYMBOL = "\\+|-|\\*|/|\\(|\\)";
+
+    static final String LEFT = "(";
+    static final String RIGHT = ")";
+    static final String ADD = "+";
+    static final String MINUS= "-";
+    static final String TIMES = "*";
+    static final String DIVISION = "/";
+
+    /**
+     * 加減 + -
+     */
+    static final int LEVEL_01 = 1;
+    /**
+     * 乘除 * /
+     */
+    static final int LEVEL_02 = 2;
+
+    /**
+     * 括号
+     */
+    static final int LEVEL_HIGH = Integer.MAX_VALUE;
+
+
+    static Stack<String> stack = new Stack<>();
+    static List<String> data = Collections.synchronizedList(new ArrayList<String>());
+
+    /**
+     * 去除所有空白符
+     * @param s
+     * @return
+     */
+    public static String replaceAllBlank(String s ){
+        // \\s+ 匹配任何空白字符，包括空格、制表符、换页符等等, 等价于[ \f\n\r\t\v]
+        return s.replaceAll("\\s+","");
+    }
+
+    /**
+     * 判断是不是数字 int double long float
+     * @param s
+     * @return
+     */
+    public static boolean isNumber(String s){
+        Pattern pattern = Pattern.compile("^[-\\+]?[.\\d]*$");
+        return pattern.matcher(s).matches();
+    }
+
+    /**
+     * 判断是不是运算符
+     * @param s
+     * @return
+     */
+    public static boolean isSymbol(String s){
+        return s.matches(SYMBOL);
+    }
+
+    /**
+     * 匹配运算等级
+     * @param s
+     * @return
+     */
+    public static int calcLevel(String s){
+        if("+".equals(s) || "-".equals(s)){
+            return LEVEL_01;
+        } else if("*".equals(s) || "/".equals(s)){
+            return LEVEL_02;
+        }
+        return LEVEL_HIGH;
+    }
+
+    /**
+     * 匹配
+     * @param s
+     * @throws Exception
+     */
+    public static List<String> doMatch (String s) throws Exception{
+        if(s == null || "".equals(s.trim())) throw new RuntimeException("data is empty");
+        if(!isNumber(s.charAt(0)+"")) throw new RuntimeException("data illeagle,start not with a number");
+
+        s = replaceAllBlank(s);
+
+        String each;
+        int start = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if(isSymbol(s.charAt(i)+"")){
+                each = s.charAt(i)+"";
+                //栈为空，(操作符，或者 操作符优先级大于栈顶优先级 && 操作符优先级不是( )的优先级 及是 ) 不能直接入栈
+                if(stack.isEmpty() || LEFT.equals(each)
+                        || ((calcLevel(each) > calcLevel(stack.peek())) && calcLevel(each) < LEVEL_HIGH)){
+                    stack.push(each);
+                }else if( !stack.isEmpty() && calcLevel(each) <= calcLevel(stack.peek())){
+                    //栈非空，操作符优先级小于等于栈顶优先级时出栈入列，直到栈为空，或者遇到了(，最后操作符入栈
+                    while (!stack.isEmpty() && calcLevel(each) <= calcLevel(stack.peek()) ){
+                        if(calcLevel(stack.peek()) == LEVEL_HIGH){
+                            break;
+                        }
+                        data.add(stack.pop());
+                    }
+                    stack.push(each);
+                }else if(RIGHT.equals(each)){
+                    // ) 操作符，依次出栈入列直到空栈或者遇到了第一个)操作符，此时)出栈
+                    while (!stack.isEmpty() && LEVEL_HIGH >= calcLevel(stack.peek())){
+                        if(LEVEL_HIGH == calcLevel(stack.peek())){
+                            stack.pop();
+                            break;
+                        }
+                        data.add(stack.pop());
+                    }
+                }
+                start = i ;    //前一个运算符的位置
+            }else if( i == s.length()-1 || isSymbol(s.charAt(i+1)+"") ){
+                each = start == 0 ? s.substring(start,i+1) : s.substring(start+1,i+1);
+                if(isNumber(each)) {
+                    data.add(each);
+                    continue;
+                }
+                throw new RuntimeException("data not match number");
+            }
+        }
+        //如果栈里还有元素，此时元素需要依次出栈入列，可以想象栈里剩下栈顶为/，栈底为+，应该依次出栈入列，可以直接翻转整个stack 添加到队列
+        Collections.reverse(stack);
+        data.addAll(new ArrayList<>(stack));
+
+        System.out.println(data);
+        return data;
+    }
+
+    /**
+     * 算出结果
+     * @param list
+     * @return
+     */
+    public static Double doCalc(List<String> list){
+        Double d = 0d;
+        if(list == null || list.isEmpty()){
+            return null;
+        }
+        if (list.size() == 1){
+            System.out.println(list);
+            d = Double.valueOf(list.get(0));
+            return d;
+        }
+        ArrayList<String> list1 = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            list1.add(list.get(i));
+            if(isSymbol(list.get(i))){
+                Double d1 = doTheMath(list.get(i - 2), list.get(i - 1), list.get(i));
+                list1.remove(i);
+                list1.remove(i-1);
+                list1.set(i-2,d1+"");
+                list1.addAll(list.subList(i+1,list.size()));
+                break;
+            }
+        }
+        doCalc(list1);
+        return d;
+    }
+
+    /**
+     * 运算
+     * @param s1
+     * @param s2
+     * @param symbol
+     * @return
+     */
+    public static Double doTheMath(String s1,String s2,String symbol){
+        Double result ;
+        switch (symbol){
+            case ADD : result = Double.valueOf(s1) + Double.valueOf(s2); break;
+            case MINUS : result = Double.valueOf(s1) - Double.valueOf(s2); break;
+            case TIMES : result = Double.valueOf(s1) * Double.valueOf(s2); break;
+            case DIVISION : result = Double.valueOf(s1) / Double.valueOf(s2); break;
+            default : result = null;
+        }
+        return result;
+
+    }
+
+    public static void main(String[] args) {
+        //String math = "9+(3-1)*3+10/2";
+        String math = "12.8 + (2 - 3.55)*4+10/5.0";
+        try {
+            doCalc(doMatch(math));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}
 ```
 
