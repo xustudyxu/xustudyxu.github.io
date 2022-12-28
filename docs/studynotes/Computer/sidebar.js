@@ -1,12 +1,13 @@
 module.exports = [
   {
-    title:'数据结构',
+    title:'数据结构与算法',
     collapsable: false,
     children:[
     '/studynotes/Computer/dataStructure/Data_Structure_Introduction',
     '/studynotes/Computer/dataStructure/SparseArrAndQueue',
     '/studynotes/Computer/dataStructure/linkedlist',
     '/studynotes/Computer/dataStructure/stack',
+    '/studynotes/Computer/dataStructure/recursion',
       ]
   },{
     title:'计算机网络',
