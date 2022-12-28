@@ -51,6 +51,10 @@ tags:
   desc: 一点一滴都是进步
   avatar: http://www.weblearn.fit/favicon.ico
   link: http://www.weblearn.fit/
+- name: biaoblog - 个人博客
+  desc: 
+  avatar: http://biaoblog.run:3000/uploads/1653375680185.png
+  link: http://biaoblog.cn
 ```
 
 :::
