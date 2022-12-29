@@ -8,6 +8,7 @@ module.exports = [
     '/studynotes/Computer/dataStructure/linkedlist',
     '/studynotes/Computer/dataStructure/stack',
     '/studynotes/Computer/dataStructure/recursion',
+    '/studynotes/Computer/dataStructure/Sorting_algorithm',
       ]
   },{
     title:'计算机网络',
