@@ -191,3 +191,186 @@ for(x = 1;i <= n;x++) {
 2. 空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。有的算法需要占用的临时工作单元数与解决问题的规模n有关，它随着n的增大而增大，当n较大时，将占用较多的存储单元，例如快速排序和归并排序算法，基数排序就属于这种情况
 3. 在做算法分析时，主要讨论的是时间复杂度。**从用户使用体验上看，更看重的程序执行的速度**。一些缓存产品(`redis`, `memcache`)和算法(基数排序)**本质就是用空间换时间**.
 
+## 冒泡排序
+
+### 基本介绍
+
+冒泡排序(Bubble Sorting)的基本思想是:通过对待排序序列从前向后（从下标较小的元素开始〉,**依次比较相邻元素的值，若发现逆序则交换**，使值较大的元素逐渐从前移向后部，就象水底下的气泡一样逐渐向上冒。
+
+优化:
+
+因为排序的过程中，各元素不断接近自己的位置，**如果一趟比较下来没有进行过交换，就说明序列有序**，因此要在排序过程中设置一个标志 flag 判断元素是否进行过交换。从而减少不必要的比较。(这里说的优化，可以在冒泡排序写好后，在进行)
+
+### 演示冒泡过程的例子
+
+原始数组：3,9,-1,10,20
+
+第一趟排序
+
+(1) 3,9,-1,10,20 //如果相邻的元素逆序就交换
+
+(2) 3,-1,9,10,20
+
+(3) 3,-1,9,10,20
+
+(4) 3,-1,9,10,<font color='red'>20</font>
+
+第二趟排序
+
+(1) -1,3,9,10,<font color='red'>20</font>
+
+(2) -1,3,9,10,<font color='red'>20</font>
+
+(3) -1,3,9,<font color='red'>10</font>,<font color='red'>20</font>
+
+第三趟排序
+
+(1) -1,3,9,<font color='red'>10</font>,<font color='red'>20</font>
+
+(2) -1,3,<font color='red'>9</font>,<font color='red'>10</font>,<font color='red'>20</font>
+
+第四趟排序
+
+(2) -1,<font color='red'>3</font>,<font color='red'>9</font>,<font color='red'>10</font>,<font color='red'>20</font>
+
+小结上面的排序过程：
+
+1. 一共进行数组的**大小-1**次大的循环。
+2. 每一趟排序的次数在逐渐的减少。
+3. 如果我们发现在某趟排序中，没有发生一次交换，可以提前结束冒泡排序。这个就是优化。
+
+### 代码实现
+
+我们举一个具体的案例来说明冒泡法。我们将五个无序的数: 3,9,-1,10,-2使用冒泡排序法将其排成一个从小到大的有序数列。
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2022/12/30  20:22
+ * desc:冒泡排序
+ */
+public class BubbleSort {
+    public static void main(String[] args) {
+        int arr[] = {3, 9, -1, 10, -2};
+        System.out.println("排序前：");
+        System.out.println(Arrays.toString(arr));
+        bubbleSort(arr);
+        System.out.println("排序后：");
+        System.out.println(Arrays.toString(arr));
+
+        //测试一下冒泡排序的速度,给80000个数据
+        //创建要给80000个随机的数组
+        int[] array = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            array[i] = (int) (Math.random() * 8000000); //生成一个[0,8000000)数
+        }
+        Date date1 = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String startTime = dateFormat.format(date1);
+        System.out.println("排序前的时间=：" + startTime);
+
+        //测试冒泡排序
+        bubbleSort(array);
+        Date date2 = new Date();
+        String endTime = dateFormat.format(date2);
+        System.out.println("排序后的时间=：" + endTime);
+
+
+        //1.第一趟排序，就是将最大的数排在最后
+        /*int temp = 0; //临时变量
+        for (int i = 0; i < arr.length - 1; i++) {
+            //如果前面的数比后面的数大，刚交换
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        System.out.println("第一趟排序后的数组："); //[3, -1, 9, -2, 10]
+        System.out.println(Arrays.toString(arr));
+
+        // 第二趟排序，就是将最二大的数排在最后，比较次数减一，因为最大数已经确定
+        for (int i = 0; i < arr.length - 1 - 1; i++) {
+            //如果前面的数比后面的数大，刚交换
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        System.out.println("第二趟排序后的数组："); //[-1, 3, -2, 9, 10]
+        System.out.println(Arrays.toString(arr));
+
+        //第三趟排序，就是将第三大的数排在倒数第三位
+        for (int i = 0; i < arr.length - 1 - 2; i++) {
+            //如果前面的数比后面的数大，刚交换
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+
+        System.out.println("第三趟排序后的数组："); //[-1, -2, 3, 9, 10]
+        System.out.println(Arrays.toString(arr));
+
+        //第四趟排序，就是将第四大的数排在倒数第四位
+        for (int i = 0; i < arr.length - 1 - 3; i++) {
+            //如果前面的数比后面的数大，刚交换
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+
+        System.out.println("第四趟排序后的数组："); //[-2, -1, 3, 9, 10]
+        System.out.println(Arrays.toString(arr));*/
+
+    }
+
+    //不需要再进行第五趟排序
+    //发现这四次for循环只有length-数字 不一样 ---->总结 length-i-1
+    //封装到一个方法中
+    //冒泡排序时间复杂度为O(n^2)
+    //将冒泡排序封装到一个方法
+    public static void bubbleSort(int[] arr) {
+        int temp = 0;
+        boolean flag = false; //标识变量，表示是否进行过交换
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    flag = true;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            //System.out.println("第" + (i + 1) + "趟排序后的数组");
+            //System.out.println(Arrays.toString(arr));
+            if (!flag) { //在一趟排序中，一趟都没有交换过
+                break;
+            } else {
+                flag = false; //重置flag，进行下次判断
+            }
+        }
+    }
+}
+```
+
++ 结果
+
+```java
+排序前：
+[3, 9, -1, 10, -2]
+排序后：
+[-2, -1, 3, 9, 10]
+排序前的时间=：2022-12-30 21:30:36
+排序后的时间=：2022-12-30 21:30:46
+
+Process finished with exit code 0
+```
+
+## 选择排序
+
