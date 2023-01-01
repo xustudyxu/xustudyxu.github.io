@@ -512,10 +512,12 @@ public class InsertSort {
     public static void insertSort(int[] arr) {
         //第一轮 {101, 34, 119, 1} ==> {34, 101, 119, 1}
 
+        int insertValue = 0;
+        int insertIndex = 0;
         for (int i = 1; i < arr.length; i++) {
             //定义待插入的数
-            int insertValue = arr[i];
-            int insertIndex = i - 1; //即arr[i]的前面这个数的下标
+            insertValue = arr[i];
+            insertIndex = i - 1; //即arr[i]的前面这个数的下标
 
             //给insertValue 找到插入的位置
             //说明
