@@ -374,3 +374,201 @@ Process finished with exit code 0
 
 ## 选择排序
 
+### 基本介绍
+
+选择式排序也属于内部排序法，是从欲排序的数据中，按指定的规则选出某元素，再依规定交换位置后达到排序的目的。
+
+### 选择排序思想
+
+选择排序(select sorting)也是一种简单的排序方法。它的基本思想是:第一次从 arr[0]~arr[n-1]中选取最小值，与 arr[0]交换，第二次从 arr[1]~arr[n-1]中选取最小值，与 arr[1]交换，第三次从ar[2]~arr[n-1]中选取最小值，与ar[2]交换，…，第i次从 arr[i-1]~arr[n-1]中选取最小值，与arr[i-1]交换，…第n-1次从arr[n-2]~arr[n-1]中选取最小值，与arr[n-2]交换，总共通过n-1次，得到一个按排序码从小到大排列的有序序列。
+
+### 选择排序思路分析图
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230101/image.8xzrwz4gap8.webp)
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230101/image.89rs0ksf7dg.webp)
+
+### 选择排序应用实例
+
+有一群牛﹐颜值分别是10,34,1,19请使用选择排序从低到高进行排序[10,34,1,19]
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230101/image.3kav4be1t9s0.webp)
+
++ 代码实现
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2023/1/1  14:40
+ * desc:选择排序
+ */
+public class SelectSort {
+    public static void main(String[] args) {
+        int arr[] = {10, 34, 1, 19};
+        selectSort(arr);
+        System.out.println(Arrays.toString(arr));
+        //测试一下选择排序的速度,给80000个数据
+        //创建要给80000个随机的数组
+        int[] array = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            array[i] = (int) (Math.random() * 8000000); //生成一个[0,8000000)数
+        }
+        Date date1 = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String startTime = dateFormat.format(date1);
+        System.out.println("排序前的时间=：" + startTime);
+
+        selectSort(array);
+        Date date2 = new Date();
+        String endTime = dateFormat.format(date2);
+        System.out.println("排序后的时间=：" + endTime);
+    }
+
+    //选择排序
+    //每一轮排序都把最小的放到最前面，把最小的放在第0位，把第二小的放在第1位，把第三小的放在第2位...
+    //需要arr.length-1次排序
+    public static void selectSort(int[] arr) {
+
+        //使用逐步推导的方式
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            int min = arr[i];
+            for (int j = i + 1; j < arr.length; j++) {
+                if (min > arr[j]) {
+                    min = arr[j];
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                //将最小值，放在arr[i]，即交换
+                arr[minIndex] = arr[i];
+                arr[i] = min;
+            }
+        }
+
+    }
+}
+```
+
++ 结果
+
+```java
+[1, 10, 19, 34]
+排序前的时间=：2023-01-01 19:33:31
+排序后的时间=：2023-01-01 19:33:34
+
+Process finished with exit code 0
+```
+
+## 插入排序
+
+### 基本介绍
+
+插入式排序属于内部排序法，是对于欲排序的元素以插入的方式找寻该元素的适当位置，以达到排序的目的。
+
+### 插入排序思想
+
+插入排序(Insertion Sorting)的基本思想是:**把n个待排序的元素看成为一个有序表和一个无序表**，开始时有序表中只包含一个元素，无序表中包含有**n-1个元素**，排序过程中每次从无序表中取出第一个元素，把它的排序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。
+
+### 插入排序思路分析图
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230101/image.79h9urcp38c0.webp)
+
+### 选择排序应用案例
+
+有一群小牛，考试成绩分别是 101,34,119,1请从小到大排序
+
+```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2023/1/1  20:34
+ * desc:插入排序
+ */
+public class InsertSort {
+    public static void main(String[] args) {
+        int[] arr = {101, 34, 119, 1, 61, 89};
+        insertSort(arr);
+        System.out.println(Arrays.toString(arr));
+        //测试一下选择排序的速度,给80000个数据
+        //创建要给80000个随机的数组
+        int[] array = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            array[i] = (int) (Math.random() * 8000000); //生成一个[0,8000000)数
+        }
+        Date date1 = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String startTime = dateFormat.format(date1);
+        System.out.println("排序前的时间=：" + startTime);
+
+        insertSort(array);
+        Date date2 = new Date();
+        String endTime = dateFormat.format(date2);
+        System.out.println("排序后的时间=：" + endTime);
+    }
+
+    //插入排序
+    public static void insertSort(int[] arr) {
+        //第一轮 {101, 34, 119, 1} ==> {34, 101, 119, 1}
+
+        for (int i = 1; i < arr.length; i++) {
+            //定义待插入的数
+            int insertValue = arr[i];
+            int insertIndex = i - 1; //即arr[i]的前面这个数的下标
+
+            //给insertValue 找到插入的位置
+            //说明
+            //1.insertIndex >= 0 保证在给insertValue 找插入位置时，不越界
+            //2.insertValue < arr[insertIndex] 待插入的数，还没有找到插入的位置
+            //3.就需要将 arr[insertIndex] 值后移
+            while (insertIndex >= 0 && insertValue < arr[insertIndex]) {
+                arr[insertIndex + 1] = arr[insertIndex];
+                insertIndex--;
+            }
+            //直到插入的数不比前面的数小并且插入的索引大于等于0
+            //就退出while循环，说明插入的位置找到，insertIndex + 1
+            arr[insertIndex + 1] = insertValue;
+
+            //System.out.println("第" + i + "轮插入");
+            //System.out.println(Arrays.toString(arr));
+        }
+
+        //第2轮
+        /*insertValue = arr[2];
+        insertIndex= 2 - 1;
+        while (insertIndex >= 0 && insertValue < arr[insertIndex]) {
+            arr[insertIndex + 1] = arr[insertIndex];
+            insertIndex--;
+        }
+        //当退出while循环时，说明插入的位置找到，insertIndex + 1
+        arr[insertIndex + 1] = insertValue;
+        System.out.println("第二轮插入");
+        System.out.println(Arrays.toString(arr));
+
+        //第3轮
+        insertValue = arr[3];
+        insertIndex= 3 - 1;
+        while (insertIndex >= 0 && insertValue < arr[insertIndex]) {
+            arr[insertIndex + 1] = arr[insertIndex];
+            insertIndex--;
+        }
+        //当退出while循环时，说明插入的位置找到，insertIndex + 1
+        arr[insertIndex + 1] = insertValue;
+        System.out.println("第三轮插入");
+        System.out.println(Arrays.toString(arr));*/
+
+    }
+}
+```
+
++ 结果
+
+```java
+[1, 34, 61, 89, 101, 119]
+排序前的时间=：2023-01-01 22:38:48
+排序后的时间=：2023-01-01 22:38:49
+
+Process finished with exit code 0
+```
+
