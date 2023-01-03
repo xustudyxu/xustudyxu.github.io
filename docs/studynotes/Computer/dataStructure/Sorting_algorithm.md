@@ -620,6 +620,8 @@ Process finished with exit code 0
 
 希尔排序时，对有序序列在插入时**采用交换法**,并测试排序速度.
 
+希尔排序时，对有序序列在插入时**采用移动法**，并测试排序速度
+
 ```java
 /**
  * @author frx
@@ -638,12 +640,26 @@ public class ShellSort {
         Date date1 = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String startTime = dateFormat.format(date1);
-        System.out.println("排序前的时间=：" + startTime);
+        System.out.println("交换希尔排序前的时间=：" + startTime);
 
         shellSort(array);
         Date date2 = new Date();
         String endTime = dateFormat.format(date2);
-        System.out.println("排序后的时间=：" + endTime);
+        System.out.println("交换希尔排序后的时间=：" + endTime);
+
+        int[] array1 = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            array1[i] = (int) (Math.random() * 8000000); //生成一个[0,8000000)数
+        }
+
+        Date date3 = new Date();
+        String startTime2 = dateFormat.format(date3);
+        System.out.println("移动希尔排序前的时间=：" + startTime2);
+
+        shellSort2(array1);
+        Date date4 = new Date();
+        String endTime2 = dateFormat.format(date4);
+        System.out.println("移动希尔排序后的时间=：" + endTime2);
     }
 
     //使用逐步推导的方式来编写希尔排序
@@ -707,6 +723,23 @@ public class ShellSort {
         }
         System.out.println("希尔排序3轮后=" + Arrays.toString(arr));
     }
+
+    public static void shellSort2(int[] arr) {
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            //从gap个元素，逐个对其所在的组进行直接插入排序
+            for (int i = gap; i < arr.length; i++) {
+                int j = i;
+                int temp = arr[j];
+                while (j - gap >= 0 && temp < arr[j - gap]) {
+                    //移动
+                    arr[j] = arr[j - gap];
+                    j -= gap;
+                }
+                //当退出while后，就给temp找到插入的位置
+                arr[j] = temp;
+            }
+        }
+    }
 }
 ```
 
@@ -714,16 +747,42 @@ public class ShellSort {
 
 ```java
 [8, 9, 1, 7, 2, 3, 5, 4, 6, 0]
-排序前的时间=：2023-01-02 15:17:53
+交换希尔排序前的时间=：2023-01-03 13:24:20
 希尔排序1轮后=[3, 5, 1, 6, 0, 8, 9, 4, 7, 2]
 希尔排序2轮后=[0, 2, 1, 4, 3, 5, 7, 6, 9, 8]
 希尔排序3轮后=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-排序后的时间=：2023-01-02 15:17:58
+交换希尔排序后的时间=：2023-01-03 13:24:25
+移动希尔排序前的时间=：2023-01-03 13:24:25
+移动希尔排序后的时间=：2023-01-03 13:24:25
 
 Process finished with exit code 0
 ```
 
-希尔排序时，对有序序列在插入时**采用移动法**，并测试排序速度
+## 快速排序
+
+### 基本介绍
+
+快速排序(Quicksort）是对冒泡排序的一种改进。**基本思想**是:通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，**整个排序过程可以递归进行**，以此达到整个数据变成有序序列。
+
+### 快速排序法示意图
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230103/image.3pbuaawn67q0.webp)
 
 
+
+![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230103/image.6sfn9anplls0.webp)
+
+### 快速排序法应用案例
+
+要求:对[-9,78,0,23,-567,70]进行从小到大的排序，要求使用快速排序法。【测试8w 和 800w】
+
+说明[验证分析]:
+
+1. 如果取消左右递归，结果是 -9 -567 0 23 78 70
+2. 如果取消右递归,结果是 -567 -90 23 78 70
+3. 如果取消左递归,结果是 -9 -567 0 23 70 78
+
+```java
+
+```
 
