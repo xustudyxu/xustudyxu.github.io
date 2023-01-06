@@ -783,6 +783,42 @@ Process finished with exit code 0
 3. 如果取消左递归,结果是 -9 -567 0 23 70 78
 
 ```java
+/**
+ * @author frx
+ * @version 1.0
+ * @date 2023/1/3  16:39
+ * desc: 快速排序
+ */
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = {-9, 78, 0, 23, -567, 70};
+    }
 
+    public static void quickSort(int[] arr,int left ,int right) {
+
+        int l = left;//左边下标
+        int r= right;//右边下标
+        //pivot 中轴值
+        int pivot = arr[(left + right) / 2];
+        //while循环的目的是让比 pivot 值小的放到它的左边
+        //比 pivot 值大的放到右边
+        while (l < r) {
+
+            //在 pivot 的左边一直找，找到大于等于 pivot 的值，才推出
+            while (arr[l] < pivot) {
+                l += 1;
+            }
+            //在 pivot 的左边一直找，找到小于等于 pivot 的值，才推出
+            while (arr[r] > pivot) {
+                r -= 1;
+            }
+            if (l >= r) {
+                break;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    //TODO
+}
 ```
 
