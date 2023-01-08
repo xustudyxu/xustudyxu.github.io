@@ -881,3 +881,5 @@ public class QuickSort {
 Process finished with exit code 0
 ```
 
++ [容易理解的视频地址](https://www.bilibili.com/video/BV1Zt411o7Rn?p=21&vd_source=6aafd031757cd8c1dbbb98344fb3d363)
+
