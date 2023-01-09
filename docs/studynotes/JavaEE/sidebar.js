@@ -46,7 +46,16 @@ module.exports = [
       '/studynotes/JavaEE/JavaWeb/CSS2D3D',
   
         ]
-      },{
+      },
+      {
+        title:'JavaScript',
+        collapsable: false,
+        children:[
+        '/studynotes/JavaEE/JavaWeb/JavaScript',
+        '/studynotes/JavaEE/JavaWeb/JavaScript_variable',
+    
+          ]
+        },{
     title:'Servlet',
     collapsable: false,
     children:[
