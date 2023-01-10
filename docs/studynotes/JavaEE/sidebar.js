@@ -51,7 +51,7 @@ module.exports = [
         title:'JavaScript',
         collapsable: false,
         children:[
-        '/studynotes/JavaEE/JavaWeb/JavaScript',
+        '/studynotes/JavaEE/JavaWeb/JavaScript_',
         '/studynotes/JavaEE/JavaWeb/JavaScript_variable',
     
           ]
