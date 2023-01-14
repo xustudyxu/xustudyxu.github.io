@@ -1,13 +1,11 @@
 ---
-title: JavaScript_DataType
+title: JavaScript 数据类型
 date: 2023-01-14 23:26:04
-permalink: /pages/4baf44/
+permalink: /JavaEE/JavaWeb/JavaScript_DataType
 categories:
-  - studynotes
-  - JavaEE
   - JavaWeb
 tags:
-  - 
+  - JavaWeb
 ---
 # JavaScript 数据类型
 
