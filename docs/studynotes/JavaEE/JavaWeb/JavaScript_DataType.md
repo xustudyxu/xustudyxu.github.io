@@ -3,9 +3,9 @@ title: JavaScript 数据类型
 date: 2023-01-14 23:26:04
 permalink: /JavaEE/JavaWeb/JavaScript_DataType
 categories:
-  - JavaWeb
+  - JavaScript
 tags:
-  - JavaWeb
+  - JavaScript
 ---
 # JavaScript 数据类型
 
