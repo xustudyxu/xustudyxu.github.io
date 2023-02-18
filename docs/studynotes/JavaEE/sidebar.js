@@ -55,6 +55,7 @@ module.exports = [
         '/studynotes/JavaEE/JavaWeb/JavaScript_variable',
         '/studynotes/JavaEE/JavaWeb/JavaScript_DataType',
         '/studynotes/JavaEE/JavaWeb/JavaScript_OperatorsaAndStatements',
+        '/studynotes/JavaEE/JavaWeb/JavaScript_ForAndArr',
     
           ]
         },{
