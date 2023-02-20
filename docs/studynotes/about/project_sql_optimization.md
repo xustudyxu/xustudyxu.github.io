@@ -57,7 +57,14 @@ tags:
 
 + 此时经过MySQL命令`explain`查看这条SQL语句的执行计划
 
-```sql
-
+```sql {3,4}
+    id  select_type  table   partitions  type    possible_keys                               key              key_len  ref                     rows  filtered  Extra                               
+------  -----------  ------  ----------  ------  ------------------------------------------  ---------------  -------  --------------------  ------  --------  ------------------------------------
+     1  SIMPLE       a       (NULL)      range   idx_kj_xhdwdm,idx_fpkj_fpzt,idx_fpkj_kprq2  idx_fpkj_kprq2   4        (NULL)                  1164     56.20  Using index condition; Using where  
+     1  SIMPLE       b       (NULL)      eq_ref  idx_xt_smd_qysh                             idx_xt_smd_qysh  68       swgxpt_test.a.xhdwdm       1     10.00  Using index condition; Using where
 ```
+
+> 我们发现此条SQL语句使用到了`idx_fpkj_kprq2`和`idx_xt_smd_qysh`这两条索引，类型分别为`range`和`eq_ref`。
+
++ [Explain的使用以及每个字段的含义](/database/MySQL/MySQL_Advanced_index/#explain)
 
