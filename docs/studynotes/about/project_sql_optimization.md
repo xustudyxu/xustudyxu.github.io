@@ -3,9 +3,9 @@ title: 项目中的 SQL 优化
 date: 2023-02-19 22:15:49
 permalink: /about/project_sql_optimization
 categories:
-  - about
+  - 关于
 tags:
-  - about
+  - 关于
 ---
 # 项目中的 SQL 优化
 
