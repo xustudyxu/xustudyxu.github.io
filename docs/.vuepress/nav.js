@@ -143,7 +143,8 @@ module.exports = [
 }, {
   text: '更多',
   items: [
-    { text: '友情链接', link: '/pages/myfriends/' }
+    { text: '友情链接', link: '/pages/myfriends/' },
+    { text: '优秀博客文章', link: '/pages/bba350/'}
   ]
 
 }, {
