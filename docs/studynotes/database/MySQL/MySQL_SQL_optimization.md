@@ -626,6 +626,3 @@ update course set name = 'SpringBoot' where name = 'PHP' ;
 
 > <mark>InnoDB的行锁是针对索引加的锁，不是针对记录加的锁 ，并且该索引不能失效，否则会从行锁升级为表锁 </mark>。也就是说我这边事务没有提交的话，其他关于这个表的update都不会执行成功，导致该update语句的性能大大降低。
 
-+ 美女姐姐
-
-<iframe src="//player.bilibili.com/player.html?aid=943606954&bvid=BV1KW4y1e73i&cid=846199596&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="400px" weight="600px"> </iframe>
