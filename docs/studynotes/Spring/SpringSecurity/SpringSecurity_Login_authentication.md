@@ -858,7 +858,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         //把数据封装成userDetails返回
-        return new LoginUser(user   );
+        return new LoginUser(user);
     }
 }
 ```
@@ -888,10 +888,16 @@ import java.util.Collection;
 public class LoginUser implements UserDetails {
 
     private User user;
+    
+    public LoginUser(User user) {
+        this.user = user;
+    }
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
+    
 
     @Override
     public String getPassword() {
@@ -1180,7 +1186,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 + Service
 
-```jade
+```java
 public interface LoginService {
 
     ResponseResult login(User user);
