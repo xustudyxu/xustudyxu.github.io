@@ -17,15 +17,15 @@ tags:
 
 举例说明:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.6c40gigbzlg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.6c40gigbzlg0.webp)
 
 ## Java 诞生小故事
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.smfx0215pps.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.smfx0215pps.webp)
 
 ## Java 技术体系平台
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.18qe82ig8uow.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.18qe82ig8uow.webp)
 
 ## Java 重要特点
 
@@ -33,7 +33,7 @@ tags:
 2. Java 语言是健壮的。Java 的强类型机制、异常处理、垃圾的自动收集等是 Java 程序健壮性的重要保证
 3. Java 语言是**跨平台性的**。[即: 一个编译好的.class 文件可以在多个系统下运行，这种特性称为跨平台]
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.3wy9ddgjnhq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.3wy9ddgjnhq0.webp)
 
 4. Java 语言是解释型的[了解]
 
@@ -56,7 +56,7 @@ tags:
 
 ### Java 语言的特点：跨平台性
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.298ar88hqkcg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.298ar88hqkcg.webp)
 
 ### Java 核心机制-Java 虚拟机 [JVM java virtual machine]
 
@@ -68,7 +68,7 @@ tags:
 
 + 示意图
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.120nz47ipm1c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.120nz47ipm1c.webp)
 
 ## 什么是 JDK，JRE
 
@@ -138,9 +138,9 @@ tags:
 
 ### 运行原理示意图
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.4gl8ci3sme80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.4gl8ci3sme80.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.1j5cgh0dvjq8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.1j5cgh0dvjq8.webp)
 
 ### Java 开发注意事项和细节说明
 
@@ -164,7 +164,7 @@ tags:
 
 ## 如何快速掌握技术或知识点
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.5gb2mzwj7oo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.5gb2mzwj7oo0.webp)
 
 ## Java 转义字符
 
@@ -203,7 +203,7 @@ tags:
 
 ## Java代码规范
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.2cw545bgznwg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.2cw545bgznwg.webp)
 
 ## DOS 命令(了解)
 
@@ -211,11 +211,11 @@ tags:
 
 Dos： Disk Operating System 磁盘操作系统, 简单说一下 windows 的目录结构。[原理图]
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.22c2k24bikbk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.22c2k24bikbk.webp)
 
 ### 相关的知识补充: 相对路径， 绝对路径
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.3aju8sve1a00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.3aju8sve1a00.webp)
 
 ### 常用的 dos 命令
 

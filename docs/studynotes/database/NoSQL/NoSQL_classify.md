@@ -33,7 +33,7 @@ tags:
 | 缺点     | 无法存储结构化信息、条件查询效率较低        |
 | 使用者   | 百度云数据库（Redis）、Youtube（Memcached） |
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/01.png)
 
 ## 列族数据库
 
@@ -48,7 +48,7 @@ tags:
 | 缺点     | 功能较少、大部分都不支持强事务一致性     |
 | 使用者   | Facebook（Cassandra）、Yahoo！（HBase）  |
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/02.png)
 
 ## 文档型数据库
 
@@ -63,7 +63,7 @@ tags:
 | 缺点     | 缺乏统一的查询语法                               |
 | 使用者   | 百度云数据库（MongoDB）,SAP（MongoDB）           |
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql2/03.png)
 
 ## 图形数据库
 

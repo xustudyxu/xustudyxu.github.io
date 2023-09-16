@@ -17,15 +17,15 @@ tags:
 
 ### 页面效果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221023/image.53h2w1b8cbg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221023/image.53h2w1b8cbg0.webp)
 
 ### 表设计
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221023/image.6xtf8ezuqz40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221023/image.6xtf8ezuqz40.webp)
 
 ### 数据分析
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221023/image.3ywd7c5bvco0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221023/image.3ywd7c5bvco0.webp)
 
 parent_id：
 
@@ -119,7 +119,7 @@ public class ServiceCmnApplication {
 
 https://element.eleme.cn/#/zh-CN/component/table
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221023/image.1dqnzkb21g6.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221023/image.1dqnzkb21g6.webp)
 
 ### 数据字典列表接口
 
@@ -291,7 +291,7 @@ public class TestWrite {
 
 测试成功
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221024/image.6nc0ds4d8xo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221024/image.6nc0ds4d8xo0.webp)
 
 :::
 
@@ -489,11 +489,11 @@ public class DictListener extends AnalysisEventListener<DictEeVo> {
 
 + 测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221024/image.3onb27ilxv4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221024/image.3onb27ilxv4.webp)
 
 + 上传后，查询数据库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221024/image.3ptrf4k2amg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221024/image.3ptrf4k2amg0.webp)
 
 ## Spring Cache + Redis 缓存数据
 

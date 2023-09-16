@@ -27,7 +27,7 @@ Cloud全家桶中有个很重要的组件就是网关，在1.x版本中都是采
 
 但在2.x版本中，zuul的升级一直跳票，SpringCloud最后自己研发了一个网关替代Zuul，那就是SpringCloud Gateway—句话：gateway是原zuul1.x版的替代
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.73vmanwmamk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.73vmanwmamk0.webp)
 
 Gateway是在Spring生态系统之上构建的API网关服务，基于Spring 5，Spring Boot 2和Project Reactor等技术。
 
@@ -50,7 +50,7 @@ Spring Cloud Gateway的目标提供统一的路由方式且基于 Filter链的�
 
 **微服务架构中网关的位置**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.ardgdjmh40g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.ardgdjmh40g.webp)
 
 ## GateWay非阻塞异步模型
 
@@ -88,7 +88,7 @@ Servlet的生命周期？servlet由servlet container进行生命周期管理。
 + container运行时接受请求，并为每个请求分配一个线程（一般从线程池中获取空闲线程）然后调用service)；
 + container关闭时调用servlet destory()销毁servlet。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.6rtl8ngncmk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.6rtl8ngncmk0.webp)
 
 上述模式的**缺点**：
 
@@ -114,7 +114,7 @@ Spring WebFlux是Spring 5.0 引入的新的响应式框架，区别于Spring MVC
 2. Predicate(断言) - 参考的是Java8的java.util.function.Predicate，开发人员可以匹配HTTP请求中的所有内容(例如请求头或请求参数),如果请求与断言相匹配则进行路由；
 3. Filter(过滤) - 指的是Spring框架中GatewayFilter的实例,使用过滤器,可以在请求被路由前或者之后对请求进行修改。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.3aoykivbqx40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.3aoykivbqx40.webp)
 
 web请求，通过一些匹配条件，定位到真正的服务节点。并在这个转发过程的前后，进行一些精细化控制。
 
@@ -124,7 +124,7 @@ predicate就是我们的匹配条件；而fliter，就可以理解为一个无�
 
 [官网总结](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gateway-how-it-works)
 
-> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.4tkjiieszj00.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.4tkjiieszj00.webp)
 >
 > Clients make requests to Spring Cloud Gateway. If the Gateway Handler Mapping determines that a request matches a route, it is sent to the Gateway Web Handler. This handler runs the request through a filter chain that is specific to the request. The reason the filters are divided by the dotted line is that filters can run logic both before and after the proxy request is sent. All “pre” filter logic is executed. Then the proxy request is made. After the proxy request is made, the “post” filter logic is run. [link](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gateway-how-it-works)
 
@@ -289,11 +289,11 @@ eureka:
 
   + 添加网关前 - [http://localhost:8001/payment/get/1](http://localhost:8001/payment/get/1)
 
-  ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.ju6bt2cf84w.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.ju6bt2cf84w.webp)
 
   + 添加网关后 - [http://localhost:9527/payment/get/1](http://localhost:9527/payment/get/1)
 
-  ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.71br3536nu00.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.71br3536nu00.webp)
 
   + 两者访问成功，返回相同结果
 
@@ -350,7 +350,7 @@ public class GateWayConfig {
 
 浏览器输入[http://localhost:9527/guonei](http://localhost:9527/guonei)，返回http://news.baidu.com/guonei相同的页面。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.542g370e0zw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.542g370e0zw0.webp)
 
 ## GateWay配置动态路由
 
@@ -428,7 +428,7 @@ eureka:
 
   浏览器输入 - [http://localhost:9527/payment/lb](http://localhost:9527/payment/lb)
 
-  ![QQ22918914922917714320220820204231](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/QQ22918914922917714320220820204231.44rrojg3qyi0.gif)
+  ![QQ22918914922917714320220820204231](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/QQ22918914922917714320220820204231.44rrojg3qyi0.gif)
 
   结果:不停刷新页面，8001/8002两个端口切换。
 
@@ -547,9 +547,9 @@ curl http://localhost:9527/payment/lb
 curl http://localhost:9527/payment/lb --cookie "chocolate=chip"
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.1nmj50hw6jds.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.1nmj50hw6jds.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.3b3ttjav6uw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.3b3ttjav6uw0.webp)
 
 **The Header Route Predicate Factory**
 
@@ -569,7 +569,7 @@ spring:
 curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.dix5ffvzpfk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.dix5ffvzpfk.webp)
 
 其它的，举一反三。
 
@@ -654,4 +654,4 @@ public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
 - http://localhost:9527/payment/lb?uname=abc 
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220820/image.1stezk4kaoqo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220820/image.1stezk4kaoqo.webp)

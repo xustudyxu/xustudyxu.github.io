@@ -17,7 +17,7 @@ RabbitMQ 消息传递模型的核心思想是: **生产者生产的消息从不�
 
 相反，**生产者只能将消息发送到交换机(exchange)**，交换机工作的内容非常简单，一方面它接收来自生产者的消息，另一方面将它们推入队列。交换机必须确切知道如何处理收到的消息。是应该把这些消息放到特定队列还是说把他们到许多队列中还是说应该丢弃它们。这就的由交换机的类型来决定。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.54tzwxwrqco.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.54tzwxwrqco.webp)
 
 
 
@@ -47,7 +47,7 @@ channel.basicPublish("", TASK_QUEUE_NAME, null, message.getBytes("UTF-8"));
 
 第一个参数是交换机的名称。空字符串	表示默认或无名称交换机：消息能路由发送到队列中其实是由 routingKey(bindingkey) 绑定指定的 key
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.2nq1gc53kik.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.2nq1gc53kik.webp)
 
 ## 临时队列
 
@@ -61,15 +61,15 @@ channel.basicPublish("", TASK_QUEUE_NAME, null, message.getBytes("UTF-8"));
 String queueName = channel.queueDeclare().getQueue();
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.56c9qj8lnyo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.56c9qj8lnyo0.webp)
 
 ## 绑定bindings
 
 什么是 bingding 呢，binding 其实是 exchange 和 queue 之间的桥梁，它告诉我们 exchange 和那个队列进行了绑定关系。比如说下面这张图告诉我们的就是 X 与 Q1 和 Q2 进行了绑定
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.1ryp1eu9xtnk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.1ryp1eu9xtnk.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.2z1b1g3ou5e0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.2z1b1g3ou5e0.webp)
 
 ### Fanout实战
 
@@ -77,11 +77,11 @@ String queueName = channel.queueDeclare().getQueue();
 
 **图例**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.2mdbijsttri0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.2mdbijsttri0.webp)
 
 Logs 和临时队列的绑定关系如下图
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.4bl530c0ox20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.4bl530c0ox20.webp)
 
 ::: warning 注意
 
@@ -164,7 +164,7 @@ public class EmitLog {
 }
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.5kb833agark0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.5kb833agark0.webp)
 
 > 一个发送，多个接受，发布/订阅模式
 
@@ -180,7 +180,7 @@ public class EmitLog {
 
 上一节中的我们的日志系统将所有消息广播给所有消费者，对此我们想做一些改变，例如我们希望将日志消息写入磁盘的程序仅接收严重错误(errros)，而不存储哪些警告(warning)或信息(info)日志 消息避免浪费磁盘空间。Fanout 这种交换类型并不能给我们带来很大的灵活性-它只能进行无意识的广播，在这里我们将使用 direct 这种类型来进行替换，这种类型的工作方式是，消息只去到它绑定的 routingKey 队列中去。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.gi5bzb0sygo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.gi5bzb0sygo.webp)
 
 在上面这张图中，我们可以看到 X 绑定了两个队列，绑定类型是 direct。队列 Q1 绑定键为 orange， 队列 Q2 绑定键有两个：一个绑定键为 black，另一个绑定键为 green.
 
@@ -188,7 +188,7 @@ public class EmitLog {
 
 ### 多重绑定
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.6m5o5nqwvlw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.6m5o5nqwvlw0.webp)
 
 当然如果 exchange 的绑定类型是direct，**但是它绑定的多个队列的 key 如果都相同**，在这种情况下虽然绑定类型是 direct **但是它表现的就和 fanout 有点类似了**，就跟广播差不多，如上图所示。
 
@@ -196,11 +196,11 @@ public class EmitLog {
 
 关系：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.18f9o7wxc5uo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.18f9o7wxc5uo.webp)
 
 交换机：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.5x5pk7emz0k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.5x5pk7emz0k0.webp)
 
 C1 消费者：绑定 console 队列，routingKey 为 info、warning
 
@@ -299,7 +299,7 @@ public class ReceiveLogsDirect02 {
 
 + 让消费者1接收,结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.3fdmnb63j0o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.3fdmnb63j0o0.webp)
 
 ## Topics exchange
 
@@ -326,7 +326,7 @@ public class ReceiveLogsDirect02 {
 
 下图绑定关系如下
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.6a89pabmhtg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.6a89pabmhtg0.webp)
 
 - Q1-->绑定的是
   - 中间带 orange 带 3 个单词的字符串 `(*.orange.*)`
@@ -357,7 +357,7 @@ public class ReceiveLogsDirect02 {
 
 ### Topic实战
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.5kvwh1z1ixk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.5kvwh1z1ixk0.webp)
 
 生产多个消息到交换机，交换机按照通配符分配消息到不同的队列中，队列由消费者进行消费
 
@@ -480,4 +480,4 @@ public class ReceiveLogsTopic02 {
 
 + 测试结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220724/image.4xiiz5wc7cg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.4xiiz5wc7cg0.webp)

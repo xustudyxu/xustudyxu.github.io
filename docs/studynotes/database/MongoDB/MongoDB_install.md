@@ -21,7 +21,7 @@ MongoDB 提供了可用于 32 位和 64 位系统的预编译二进制包，你�
 
 MongoDB所有历史版本下载：http://dl.mongodb.org/dl/linux
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220624/image.4t8j23vtx1q0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.4t8j23vtx1q0.webp)
 
 根据上图所示下载 zip 包。
 
@@ -153,11 +153,11 @@ MongoDB javascript shell是一个基于javascript的解释器，故是支持js�
 
 + [Download Compass](https://www.mongodb.com/try/download/compass)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220624/image.6shws3jfdo40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.6shws3jfdo40.webp)
 
 在打开的界面中，输入主机地址，端口等相关信息，点击连接:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220624/image.tqf2dcd2x40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.tqf2dcd2x40.webp)
 
 点击connect
 
@@ -287,11 +287,11 @@ systemctl disable firewalld
 
 + compass工具
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220624/image.2ilca06qo3w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.2ilca06qo3w0.webp)
 
 + 连接，并查看数据库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220624/image.7jl3j3fi8b40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.7jl3j3fi8b40.webp)
 
 8. 停止关闭服务
 

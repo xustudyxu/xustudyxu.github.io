@@ -22,14 +22,14 @@ tags:
 数据库管理系统(Database Management System)是一种操纵和管理数据库的大型软件，用于建立、使用和维护数据库，简称DBMS。主要任务就是对外提供数据，对内
 要管理数据。
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/01.png)
 
 3. 数据处理方式：集中式VS分布式
 
 集中式数据库是指数据库中的数据**集中**存储在一台计算机上，数据的处理也集中
 在一台机器上完成。
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/02.png)
 
 分布式数据库是指利用高速计算机网络将<font color=##dd0000>物理上分散</font>的多个数据存储单元连接起来组成一个<font color=##dd0000>逻辑上统一</font>的数据库。
 
@@ -37,19 +37,19 @@ tags:
 
 2000年，Eric Brewer教授在PODC的研讨会上提出了一个猜想：在分布式的环境下设计和部署系统时。 有3个核心的系统需求：<font color=#dd00>  一致性（Consistency）、可用性（Availability）和分区容错性（Availability）</font>三者以一种特殊的关系存在，无法在一个分布式系统中被同时满足，并且最多只能满足其中两个
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/03.png)
 
 1. C:一致性（consistency）（强一致性）
 
 它是指任何一个读操作总是能够读到之前完成的写操作的结果。所有节点在<font color=#dd00>同一时间具有相同的数据</font>。
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/04.png)
 
 2. A:可用性（Availability）（高可用性）
 
 每个请求都能在<font color=#dd00>确定时间</font>内返回一个响应，无论请求是成功或失败。
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/05.png)
 
 3. P:分区容忍性（Partition Tolerance）
 
@@ -59,7 +59,7 @@ tags:
 
 2002年，Lynch与其他人证明了Brewer猜想，从而把CAP上升为一个定理
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/06.png)
 
 + 当处理CAP的问题时，可以有几个明显的选择
 
@@ -69,7 +69,7 @@ tags:
 
 设计原则：在C、A、P之中取舍
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/NoSQL/images/Nosql1/07.png)
 
 P是网络性质，CA是分布式系统性质，分区容忍性不是设计系统时可以选择的东西（因为无论如何，它都要发生，无法控制），CAP合理表述是：在一个允许网络发生故障的系统中，分布式系统该选择一致性C还是可用性A。
 

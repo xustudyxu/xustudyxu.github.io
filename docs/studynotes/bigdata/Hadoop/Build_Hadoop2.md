@@ -43,7 +43,7 @@ rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 yum repolist all | grep mysql
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.71pc948s4to0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.71pc948s4to0.webp)
 
 5. 安装MySQL
 
@@ -53,7 +53,7 @@ yum install -y mysql-community-server
 
 > 在安装的过程中出现了以下问题
 >
-> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.1x7958d9kc5c.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.1x7958d9kc5c.webp)
 >
 > 说xxx的公钥尚未安装
 >
@@ -111,7 +111,7 @@ mysql -u root -p
 
 > 可以看到...root@localhost:<---密码---->
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.2sasfja71cy0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.2sasfja71cy0.webp)
 
 > g?Uq#GAeM8YK 这就是我的临时密码
 
@@ -235,7 +235,7 @@ cd /opt/hive
 
 2. 使用XFTP链接linux系统,把hive的压缩包传输到Linux系统中
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.cyqhecn7obk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.cyqhecn7obk.webp)
 
 3. 解压hive目录
 
@@ -269,7 +269,7 @@ cd /opt/mysql-connector-java
 
 2. 使用XFTP传输到Linux系统
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.3t5ov4mzzq80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.3t5ov4mzzq80.webp)
 
 3. 解压驱动包,
 
@@ -316,7 +316,7 @@ vim hive-env.sh
 
 > 按Esc切换到一般模式,输入`:set nu`,显示行号
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.6wlpdoizcds0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.6wlpdoizcds0.webp)
 
 指定你的hadoop、Hive安装路径
 
@@ -430,7 +430,7 @@ hive
 
 + 主节点查看关于java线程状态
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220509/image.1nkuvjhkfv0g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220509/image.1nkuvjhkfv0g.webp)
 
 
 

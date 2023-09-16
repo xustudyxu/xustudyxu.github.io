@@ -42,7 +42,7 @@ tags:
   - 不再发布新版本
 - Cloud升级
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.5g6chrwarzs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.5g6chrwarzs0.webp)
 
 ## 父工程Project空间新建
 
@@ -224,7 +224,7 @@ IDEA右侧旁的Maven插件有`Toggle ' Skip Tests' Mode`按钮，这样maven可
 4. 主启动
 5. 业务类
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220812/image.5h53rvjfrko0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220812/image.5h53rvjfrko0.webp)
 
 创建cloud-provider-payment8001微服务提供者支付Module模块：
 
@@ -500,11 +500,11 @@ public class PaymentController {
 
 测试查询
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220812/image.3lj9rz5sq060.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220812/image.3lj9rz5sq060.webp)
 
 测试添加
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220812/image.a6hz6omj9g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220812/image.a6hz6omj9g0.webp)
 
 **7.小总结**
 
@@ -715,7 +715,7 @@ public class OrderController {
 
 - 浏览器 - http://localhost/consumer/payment/get/1
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220812/image.2nefvan9knc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220812/image.2nefvan9knc0.webp)
 
 **RestTemplate**
 

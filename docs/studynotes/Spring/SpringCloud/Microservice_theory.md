@@ -36,7 +36,7 @@ tags:
 
 满足哪些维度？支撑起这些维度的具体技术？
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.5xiba802gxk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.5xiba802gxk0.webp)
 
 - 服务调用
 - 服务降级
@@ -60,7 +60,7 @@ tags:
 
 猜猜SpringCloud这个大集合里有多少种技术?
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.5trf1evy40k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.5trf1evy40k0.webp)
 
 SpringCloud俨然已成为微服务开发的主流技术栈，在国内开发者社区非常火爆。
 
@@ -68,26 +68,26 @@ SpringCloud俨然已成为微服务开发的主流技术栈，在国内开发者
 
 京东的：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.66nh89zlo4g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.66nh89zlo4g0.webp)
 
 阿里的：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.1c0gbpf5dz0g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.1c0gbpf5dz0g.webp)
 
 京东物流的:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.3nswc4jqt9y0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.3nswc4jqt9y0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.5c06tilz2ts0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.5c06tilz2ts0.webp)
 
 ### **Spring Cloud技术栈**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.2n8xd65nnl80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.2n8xd65nnl80.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.2nmbg1j5kvc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.2nmbg1j5kvc0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.11br5z7b5rs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.11br5z7b5rs0.webp)
 
 ### 总结
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220811/image.1589gipapuf4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220811/image.1589gipapuf4.webp)

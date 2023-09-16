@@ -15,7 +15,7 @@ tags:
 
 ## MySQL 体系结构
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220921/image.281yja2r3g5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220921/image.281yja2r3g5c.webp)
 
 1. 连接层
 
@@ -49,7 +49,7 @@ TCP/IP的通信。主要完成一些类似于连接处理、授权认证、及�
 
 ## 存储引擎介绍
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220921/image.3mofgq8heem0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220921/image.3mofgq8heem0.webp)
 
 大家可能没有听说过存储引擎，但是一定听过引擎这个词，引擎就是发动机，是一个机器的核心组件。
 比如，对于舰载机、直升机、火箭来说，他们都有各自的引擎，是他们最为核心的组件。而我们在选择
@@ -77,7 +77,7 @@ CREATE TABLE 表名(
 SHOW ENGINES;
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220921/image.1x1cgtj77p7k.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220921/image.1x1cgtj77p7k.webp)
 
 + 创建表 my_myisam , 并指定MyISAM存储引擎
 
@@ -134,7 +134,7 @@ show variables like 'innodb_file_per_table';
 数据存放目录： `D:\DevelopTools\mysql-5.7.19-winx64\data` ， 这个目录下有很多文件
 夹，不同的文件夹代表不同的数据库，我们直接打开frx_db02文件夹。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220921/image.4kesau30czu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220921/image.4kesau30czu0.webp)
 
 可以看到里面有很多的ibd文件，每一个ibd文件就对应一张表，比如：我们有一张表 account，就有这样的一个account.ibd文件，而在这个ibd文件中不仅存放表结构、数据，还会存放该表对应的索引信息。 而该文件是基于二进制存储的，不能直接基于记事本打开，我们可以使用mysql提供的一个指令 ibd2sdi ，通过该指令就可以从ibd文件中提取sdi信息，而sdi数据字典信息中就包含该表的表结构。
 
@@ -146,7 +146,7 @@ ibd2sdi account.ibd
 
 4. 逻辑存储结构
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220921/image.4je97rm23p80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220921/image.4je97rm23p80.webp)
 
 + 表空间 : InnoDB存储引擎逻辑结构的最高层，ibd文件其实就是表空间文件，在表空间中可以包含多个Segment段。
 + 段 : 表空间是由各个段组成的， 常见的段有数据段、索引段、回滚段等。InnoDB中对于段的管理，都是引擎自身完成，不需要人为对其控制，一个段中包含多个区。

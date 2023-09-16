@@ -19,11 +19,11 @@ tags:
 
 1. 左右箭头压住图片：
 
-![image-20220514201510497](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514201510497.4z7o8mnm1sk0.webp)
+![image-20220514201510497](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514201510497.4z7o8mnm1sk0.webp)
 
 2.固定在窗口的广告
 
-![image-20220514201806384](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514201806384.j7fi2sgnkeg.webp)
+![image-20220514201806384](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514201806384.j7fi2sgnkeg.webp)
 
 ## 元素的定位属性
 
@@ -69,7 +69,7 @@ position属性的常用值
 
 对元素设置相对定位后，可以通过边偏移属性改变元素的位置，但是它在文档流中的位置仍然保留。如下图所示，即是一个相对定位的效果展示：
 
-![image-20220514193428435](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514193428435.3xyowwdfocq0.webp)
+![image-20220514193428435](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514193428435.3xyowwdfocq0.webp)
 
 注意：   
 
@@ -130,7 +130,7 @@ position属性的常用值
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.6133ran2i9g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.6133ran2i9g0.webp)
 
 ## 绝对定位absolute (拼爹型)
 
@@ -142,13 +142,13 @@ position属性的常用值
 
 若所有父元素都没有定位，以浏览器为准对齐(document文档)。
 
-![image-20220514194512742](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514194512742.3h1ldgotkek0.webp)
+![image-20220514194512742](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514194512742.3h1ldgotkek0.webp)
 
 ### 父级有定位
 
 绝对定位是将元素依据最近的已经定位（绝对、固定或相对定位）的父元素（祖先）进行定位。 
 
-![image-20220514194643551](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514194643551.kqgzpc76hdo.webp)
+![image-20220514194643551](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514194643551.kqgzpc76hdo.webp)
 
 ### 子绝父相
 
@@ -217,7 +217,7 @@ position属性的常用值
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.1ied7kxdm268.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.1ied7kxdm268.webp)
 
 ## 定位的扩展
 
@@ -227,7 +227,7 @@ position属性的常用值
 
 定位的盒子也可以水平或者垂直居中，有一个算法。
 
-![image-20220514200027548](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514200027548.5put7avqgck0.webp)
+![image-20220514200027548](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514200027548.5put7avqgck0.webp)
 
 1. 首先left 50%,top50%父盒子的一半大小。  
 
@@ -272,7 +272,7 @@ position属性的常用值
 
 当对多个元素同时设置定位时，定位元素之间有可能会发生重叠。
 
-![image-20220514200801604](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220916/image-20220514200801604.7i6vqf461e80.webp)
+![image-20220514200801604](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514200801604.7i6vqf461e80.webp)
 
 在CSS中，要想调整重叠定位元素的堆叠顺序，可以对定位元素应用z-index层叠等级属性，其取值可为正整数、负整数和0。
 

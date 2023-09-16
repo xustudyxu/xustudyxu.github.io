@@ -373,7 +373,7 @@ public class ListNode {
 
 **示例 1：**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221221/image.79b2jcwmtwc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221221/image.79b2jcwmtwc0.webp)
 
 ```java
 输入：l1 = [1,2,4], l2 = [1,3,4]
@@ -406,7 +406,7 @@ public class ListNode {
 
 我们可以如下递归地定义两个链表里的 `merge` 操作（忽略边界情况，比如空链表等）：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221221/image.4sbg1kc96a60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221221/image.4sbg1kc96a60.webp)
 
 
 也就是说，两个链表头部值较小的一个节点与剩下元素的 `merge` 操作结果合并。

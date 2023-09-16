@@ -83,21 +83,21 @@ public interface EmployeeMapper {
 
 + 增加结果
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/01.png)
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/02.png)
 
 + 修改结果
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/03.png)
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/04.png)
 
 + 测试删除
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/05.png)
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/06.png)
 
 ### 另外
 
@@ -109,7 +109,7 @@ public interface EmployeeMapper {
 
 + 测试返回值
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/07.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/07.png)
 
 ### insert-获取自增主键的值
 
@@ -129,7 +129,7 @@ public interface EmployeeMapper {
 
 + 获取自增主键id的值
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/08.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/03/08.png)
 
 官方文档:[insert、update、delete](https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#insert_update_and_delete)
 

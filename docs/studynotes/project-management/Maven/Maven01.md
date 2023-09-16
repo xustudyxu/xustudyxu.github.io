@@ -15,13 +15,13 @@ tags:
 
 + 下载地址:[Maven – Download Apache Maven](http://maven.apache.org/download.cgi)
 
-![00](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/00.png)
+![00](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/00.png)
 
 ## Maven 安装
 
 + Maven属于绿色版软件，解压即安装
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/01.png)
 
 ## Maven 环境变量配置
 
@@ -30,21 +30,21 @@ tags:
 
  新建系统变量
 
-![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/03.png)
 
 编辑系统Path变量，新建
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/04.png)
 
 + **测试环境配置结果**
 
-![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/09.png)
 
 ## Maven 基础概念
 
 ### 仓库
 
-![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/02.png)
 
 + **仓库：用于存储资源，包含各种jar包**
 + 仓库分类:
@@ -59,7 +59,7 @@ tags:
 
 ### 坐标
 
-![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/05.png)
 
 + 什么是坐标?
 
@@ -195,19 +195,19 @@ tags:
   + <font color=#DC4040 size=4 face="黑体">mvn clean</font>                  **#清理**
   + <font color=#DC4040 size=4 face="黑体">mvn test</font>                    **#测试**
 
-![06](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/06.png)
 
 > 测试完之后，target里面有个文件夹surefire-reports里面有两个文件，一个text，还有一个xml文件，是target提供的测试报告。
 
 - <font color=#DC4040 size=4 face="黑体">mvn package</font>             **#打包**
 
-![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/07.png)
 
 > 打包里面会先进行编译，然后测试程序的编译，执行test，测试结果输出，最后执行打包指令。(保证正确性)
 
 - <font color=#DC4040 size=4 face="黑体">mvn install</font>             **#安装到本地仓库**
 
-![08](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/08.png)
 
 > groupId决定了一层目录，项目名称又决定了一层目录，版本号又决定了一层目录
 
@@ -239,11 +239,11 @@ DarchetypeArtifactId=maven-archetype-webapp -Dversion=0.0.1-snapshot -
 DinteractiveMode=false
 ```
 
-![10](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/10.png)
+![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/10.png)
 
 + web工程与java工程的区别
 
-![11](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/11.png)
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/11.png)
 
 ## 第一个Maven项目(IDEA生成)
 
@@ -251,26 +251,26 @@ DinteractiveMode=false
 
 **新建一个空白项目，找到File->Settings->Maven,修改Maven_home path、User setting file和Local respository。**
 
-![12](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/12.png)
 
 ### 手工创建Java项目
 
 1. **新建Module,选择右侧的Maven,点击Next，可以指定工程位置，然后GroupId起名称,Artifacted工程名称，Next,Finish.**
 
 
-![13](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/13.png)
+![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/13.png)
 
 2. **选中main中的java,点击蓝色的Sources，选中resources,点击灰色的Resources,选中test,右键，new Floder...,选中test中的java,点击绿色的Tests，选中resources,点击红绿三角的Test Resorces，OK。**
 
-![14](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/14.png)
+![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/14.png)
 
 + test
 
-![15](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/15.png)
+![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/15.png)
 
 + 也可以
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/16.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/16.png)
 
 > 好处：可以打断点，添加一个运行，就可以进行调试
 
@@ -278,17 +278,17 @@ DinteractiveMode=false
 
 + 使用模板创建Java工程(搜索quick start)
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/17.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/17.png)
 
 ### 原型创建Web项目
 
 + 使用模板创建Web工程(搜索Webapp)
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/18.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/18.png)
 
 + 搞定
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/19.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/19.png)
 
 ### 插件
 
@@ -311,9 +311,9 @@ DinteractiveMode=false
 
 ```
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/21.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/21.png)
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/20.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/20.png)
 
 > 换了个端口 访问成功了
 
@@ -397,7 +397,7 @@ DinteractiveMode=false
   + **直接依赖:在当前项目中通过依赖配置建立的依赖关系**
   + **间接依赖:被资源的资源如果依赖其他资源，当前项目间接依赖其他资源**
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/22.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/22.png)
 
 > 比如，把项目三作为一个资源配置到项目二 注意:**不考虑依赖范围，项目二就可以使用项目三中所有的依赖**
 
@@ -422,7 +422,7 @@ DinteractiveMode=false
 
 > 根据某一个项目为根，对它所依赖的资源进行深度标注，比如说直接依赖，称为1度资源
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/23.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/23.png)
 
 ### 可选依赖
 
@@ -499,7 +499,7 @@ DinteractiveMode=false
 
 + 带有依赖范围的资源在进行传递时，作用范围将受到影响
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/24.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/24.png)
 
 > 例如：项目一依赖项目二的资源，把项目一看成直接依赖，项目一的依赖范围为compile;项目二看成间接依赖,项目二的mybaits依赖范围为runtime.最后在项目一中依赖生成的mybatis依赖范围为runtime
 
@@ -511,7 +511,7 @@ DinteractiveMode=false
 
 + **Maven构建生命周期描述的是一次构建过程经历了多少个事件**
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/25.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/25.png)
 
 + Maven对项目构建的声明周期划分为3套
   + <font color=#DC4040 size=4 face="黑体">clean:清理工作</font>
@@ -526,11 +526,11 @@ DinteractiveMode=false
 
 ### default构建生命周期
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/26.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/26.png)
 
 + 注意，如果执行compile，会把compile上面的全部执行完，以此类推。
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/27.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/27.png)
 
 ### site构建生命周期
 
@@ -569,7 +569,7 @@ DinteractiveMode=false
 
 + install
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/30.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/30.png)
 
 > 安装到本地仓库，有两个jar包，一个是它本身的，另一个是maven-sources
 
@@ -581,7 +581,7 @@ DinteractiveMode=false
 
 > 这时安装到本地，有三个jar包,有两个jar包，一个是它本身的，另一个是maven-sources，还有一个是测试源代码
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/29.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/01/29.png)
 
 > 生命周期指的是运行的阶段，插件是为了支持生命周期那些事情；生命周期可以理解为几岁，插件可以理解为几岁干的那件事.
 

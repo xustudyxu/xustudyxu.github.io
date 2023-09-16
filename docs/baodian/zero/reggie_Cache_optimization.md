@@ -15,7 +15,7 @@ tags:
 
 ### 问题说明
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220716/image.70oaqxdpgbc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220716/image.70oaqxdpgbc.webp)
 
 **用户数量多，系统访问量大频繁访问数据库，系统性能下降，用户体验差**
 
@@ -23,7 +23,7 @@ tags:
 
 + https://github.com/xustudyxu/reggie_take_out
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220717/image.31tqmz4e17k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220717/image.31tqmz4e17k0.webp)
 
 ## 环境搭建
 
@@ -238,7 +238,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 + 测试
   + 18129035311是我登录的手机号，9294就是我的验证码，有效期五分钟，登陆成功后会清除缓存
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220717/image.s2nfir3wiuo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220717/image.s2nfir3wiuo.webp)
 
 2、改造DishController的save和update方法，加入清理缓存的逻辑
 
@@ -303,11 +303,11 @@ CacheManager是Spring提供的各种缓存技术抽象接口。
 
 针对不同的缓存技术需要实现不同的CacheManager:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.5u5hxiuqxo00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.5u5hxiuqxo00.webp)
 
 ### Spring Cache 常用注解
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220718/image.70nq6f8rvrc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220718/image.70nq6f8rvrc0.webp)
 
 在spring boot项目中，使用缓存技术只需在项目中导入相关缓存技术的依赖包，并在启动类上使用@EnableCaching开启缓存支持即可。
 

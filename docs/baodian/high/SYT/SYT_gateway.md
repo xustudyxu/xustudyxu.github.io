@@ -29,7 +29,7 @@ API网关出现的原因是微服务架构的出现，不同的微服务一般�
 Spring
 cloud gateway是spring官方基于Spring 5.0、Spring Boot2.0和Project Reactor等技术开发的网关，Spring Cloud Gateway旨在为微服务架构提供简单、有效和统一的API路由管理方式，Spring Cloud Gateway作为Spring Cloud生态系统中的网关，目标是替代Netflix Zuul，其不仅提供统一的路由方式，并且还基于Filer链的方式提供了网关基本的功能，例如：安全、监控/埋点、限流等。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221031/image.5jsm516p94g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221031/image.5jsm516p94g0.webp)
 
 ## 搭建server-gateway模块
 
@@ -180,4 +180,4 @@ public class CorsConfig {
 
 + 查看医院设置列表
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221031/image.533zg01shhs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221031/image.533zg01shhs0.webp)

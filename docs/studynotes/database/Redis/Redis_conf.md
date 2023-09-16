@@ -31,11 +31,11 @@ config get * # 获取全部的配置
 
 配置大小单位，开头定义了一些基本的度量单位，`只支持 bytes`，不支持 bit
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.2wldm940hu40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2wldm940hu40.webp)
 
 ## include
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.62lr2dieq8g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.62lr2dieq8g0.webp)
 
 类似 jsp 中的 include，可以通过 includes 包含，redis.conf 可以作为总文件，可以包含其他文件，即**多实例的情况可以把公用的配置文件提取出来**。
 
@@ -49,7 +49,7 @@ config get * # 获取全部的配置
 
 如果开启了 `protected-mode`，那么在没有设定 bind ip 且没有设密码的情况下，Redis 只允许接受本机的响应。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.dj0oyoiz5lc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.dj0oyoiz5lc.webp)
 
 ### tcp-backlog
 
@@ -59,13 +59,13 @@ config get * # 获取全部的配置
 
 注意 Linux 内核会将这个值减小到 `/proc/sys/net/core/somaxconn` 的值（128），所以需要确认增大 `/proc/sys/net/core/somaxconn` 和 `/proc/sys/net/ipv4/tcp_max_syn_backlog（128）` 两个值来达到想要的效果。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.12g81csqei5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.12g81csqei5c.webp)
 
 ### timeout
 
 一个空闲的客户端维持多少秒会关闭，0 表示关闭该功能。即永不关闭。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.6glvy8su6hk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6glvy8su6hk0.webp)
 
 ### tcp-keepalive
 
@@ -73,7 +73,7 @@ config get * # 获取全部的配置
 
 单位为秒，如果设置为 0，则不会进行 Keepalive 检测，建议设置成 60。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.6smxk5voaeg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6smxk5voaeg0.webp)
 
 ## GENERAL通用
 
@@ -81,13 +81,13 @@ config get * # 获取全部的配置
 
 是否为后台进程，设置为 yes 为守护进程，后台启动。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.58cxq6t657g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.58cxq6t657g0.webp)
 
 ### pidfile
 
 存放 pid 文件的位置，每个实例会产生一个不同的 pid 文件
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4r8ts2i60ce.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4r8ts2i60ce.webp)
 
 ###  loglevel
 
@@ -95,19 +95,19 @@ config get * # 获取全部的配置
 
 四个级别根据使用阶段来选择，生产环境选择 notice 或者 warning。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.5dr7ffokpp40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5dr7ffokpp40.webp)
 
 ### logfile
 
 日志文件名称
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.5rxjmoz5t5g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5rxjmoz5t5g0.webp)
 
 ### databases
 
 设定库的数量 默认 16，默认数据库为 0，可以使用 `SELECT <dbid>`命令在连接上指定数据库 id。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4yhdsttiv8k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4yhdsttiv8k0.webp)
 
 常用模板如下：
 
@@ -146,7 +146,7 @@ save 300 10
 save 60 10000
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.1240hsnunjls.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.1240hsnunjls.webp)
 
 RDB 配置：（内容太长，以代码显示）
 
@@ -164,7 +164,7 @@ dir ./ 	# dir 数据目录，数据库的写入会在这个目录。rdb、aof �
 
 ## REPLICATION主从复制
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.292e2mnfuyv4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.292e2mnfuyv4.webp)
 
 简单认识，后面详细说。
 
@@ -196,7 +196,7 @@ PONG
 requirepass "123456"
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4f1aycqioec0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4f1aycqioec0.webp)
 
 ## 客户端连接相关
 
@@ -206,7 +206,7 @@ requirepass "123456"
 
 默认情况下为 10000 个客户端，如果达到了此限制，redis 则会拒绝新的连接请求，并且向这些连接请求方发出 `max number of clients reached` 以作回应。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.65bq1oeq7t80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.65bq1oeq7t80.webp)
 
 ###  maxmemory
 
@@ -216,7 +216,7 @@ requirepass "123456"
 
 但是对于无内存申请的指令，仍然会正常响应，比如 GET 等。如果你的 redis 是主 redis（说明你的 redis 有从 redis），那么在设置内存使用上限时，需要在系统中留出一些内存空间给同步队列缓存，只有在你设置的是「不移除」的情况下，才不用考虑这个因素。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.18vbghy9nohs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.18vbghy9nohs.webp)
 
 ###  maxmemory-policy
 
@@ -231,7 +231,7 @@ requirepass "123456"
 
 redis 中的 **默认** 的过期策略是 `volatile-lru`。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.61m0c6j7l6g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.61m0c6j7l6g0.webp)
 
 命令设置方式
 
@@ -253,15 +253,15 @@ maxmemory-policy noeviction # 内存达到限制值的处理策略
 
 一般设置 3 到 7 的数字，数值越小样本越不准确，但性能消耗越小。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4k9gvtjhemm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4k9gvtjhemm0.webp)
 
 ## append only模式
 
 AOF 相关部分
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.1n579oynzb28.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.1n579oynzb28.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.4b9868dsuv20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.4b9868dsuv20.webp)
 
 ```shell
 appendfsync everysec 

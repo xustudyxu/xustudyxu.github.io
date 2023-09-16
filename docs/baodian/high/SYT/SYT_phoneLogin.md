@@ -13,7 +13,7 @@ tags:
 
 ## 登录效果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221102/image.38u79gt33ag0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221102/image.38u79gt33ag0.webp)
 
 ## 登录需求
 
@@ -243,7 +243,7 @@ JWT的原理
 
 一个JWT由三个部分组成：公共部分、私有部分、签名部分。最后由这三者组合进行base64编码得到JWT。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.7i5i3xvx2qo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.7i5i3xvx2qo0.webp)
 
 1. 公共部分
 
@@ -373,29 +373,29 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.6siayoihzng0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.6siayoihzng0.webp)
 
 ## 阿里云短信
 
 ### 阿里云短信介绍
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.7ktzx3qi9pk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.7ktzx3qi9pk0.webp)
 
 ### 开通阿里云短信服务
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.1ihwtkd6yjq8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.1ihwtkd6yjq8.webp)
 
 #### 添加签名管理与模板管理
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.1qutfqjz5r0g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.1qutfqjz5r0g.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.5drw8uw479w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.5drw8uw479w0.webp)
 
 注：审批通过后方可使用
 
 #### 获取用户AccessKey
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.2tvstjm4k1k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.2tvstjm4k1k0.webp)
 
 ## 搭建 service-msm 模块
 
@@ -612,7 +612,7 @@ public class MsmApiController {
 
 + 使用swagger测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.3zh1lb92zuc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.3zh1lb92zuc0.webp)
 
 + 控制台输出
 
@@ -622,7 +622,7 @@ public class MsmApiController {
 
 + 短信截屏
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221103/image.2mj4nm398to0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221103/image.2mj4nm398to0.webp)
 
 + 查看redis
 

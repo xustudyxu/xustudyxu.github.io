@@ -68,7 +68,7 @@ tags:
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.4paqoqpqjok0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.4paqoqpqjok0.webp)
 
 ```html
 <!DOCTYPE html>
@@ -102,7 +102,7 @@ tags:
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.21aunsmpmk5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.21aunsmpmk5c.webp)
 
 ## 内容追加伪元素（重点）
 
@@ -177,7 +177,7 @@ tags:
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.ab84h6zfu6w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.ab84h6zfu6w.webp)
 
 ## CSS3新增样式属性
 
@@ -196,7 +196,7 @@ background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 - direction:预定义方向（to bottom、to top、to right、to left、to bottom right，等等）。
 - 定义一个角度
 
-![linear](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/linear.4c9k66wsk3o0.webp)
+![linear](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/linear.4c9k66wsk3o0.webp)
 
 如果不设置direction,那么从头部开始的线性渐变，从红色开 始，转为黄色，再到蓝色：
 
@@ -272,7 +272,7 @@ background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.4re2dw75tde0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.4re2dw75tde0.webp)
 
 ### CSS3的opacity 属性(重点)
 
@@ -328,7 +328,7 @@ opacity: value|inherit;
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.6rdcd569uck0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.6rdcd569uck0.webp)
 
 ### CSS3的filter(滤镜) 属性
 
@@ -393,4 +393,4 @@ filter 属性定义了元素(通常是<img>)的可视效果
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.1cefoa0996ps.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.1cefoa0996ps.webp)

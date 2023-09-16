@@ -26,11 +26,11 @@ tags:
 
 选择：低频存储、公共读、不开通
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221107/image.2jj0kjwjl3o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221107/image.2jj0kjwjl3o0.webp)
 
 #### 上传默认头像
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221107/image.70vsuii4lug0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221107/image.70vsuii4lug0.webp)
 
 ### 如何使用
 
@@ -133,7 +133,7 @@ public class OssTest {
 
 + 测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221107/image.2gn1d2vleao0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221107/image.2gn1d2vleao0.webp)
 
 #### 封装 service 接口
 
@@ -258,7 +258,7 @@ public class FileApiController {
 
 + 使用Swagger测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.6r9sr9dsizw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.6r9sr9dsizw0.webp)
 
 ## 用户认证
 
@@ -363,11 +363,11 @@ public class AuthContextHolder {
 
 + 测试添加实名认证
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.1nphhdr8x468.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.1nphhdr8x468.webp)
 
 + 查询数据库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.sp766qzoc0w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.sp766qzoc0w.webp)
 
 ### 就诊人管理
 
@@ -524,15 +524,15 @@ public class PatientApiController {
 
 + 前端测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.1o2du7gg70ps.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.1o2du7gg70ps.webp)
 
 + 数据库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.13zqoh4afws.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.13zqoh4afws.webp)
 
 + 查看就诊人信息
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221108/image.6f1dan2mvtg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221108/image.6f1dan2mvtg0.webp)
 
 ## 平台用户管理
 
@@ -628,7 +628,7 @@ public class UserInfoController {
 
 + 前端访问测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.6aeyquad0dg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221109/image.6aeyquad0dg0.webp)
 
 ## 锁定
 
@@ -672,7 +672,7 @@ public class UserInfoController {
 
 + 测试锁定用户
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.3mp7tno8k440.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221109/image.3mp7tno8k440.webp)
 
 ## 详情
 
@@ -721,7 +721,7 @@ public class UserInfoController {
 
 + 前端访问测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.5rjrdjrq7m40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221109/image.5rjrdjrq7m40.webp)
 
 ## 用户认证审批功能
 
@@ -769,5 +769,5 @@ public class UserInfoController {
 
 + 点击通过
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221109/image.4esxnq1jzva0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221109/image.4esxnq1jzva0.webp)
 

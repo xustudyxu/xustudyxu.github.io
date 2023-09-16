@@ -50,7 +50,7 @@ CREATE TABLE `hospital_set` (
 ) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='医院设置表';
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.5v4gay33ivw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.5v4gay33ivw0.webp)
 
 | 字段名         | 含义                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -154,7 +154,7 @@ public class ServiceHospApplication {
 
 ### 引入实体类
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.5fcpjfrlh700.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.5fcpjfrlh700.webp)
 
 ### 添加mapper
 
@@ -306,7 +306,7 @@ public class Swagger2Config {
 
 + 访问[http://localhost:8201/swagger-ui.html](http://localhost:8201/swagger-ui.html)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.5pfnbi022aw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.5pfnbi022aw0.webp)
 
 ```java
 @Api("医院设置管理")
@@ -338,11 +338,11 @@ public class HospitalSetController {
 
 + 测试删除
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.6z5v87ol3gc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.6z5v87ol3gc0.webp)
 
 + 数据库中的表变化
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.70jzhdeh89k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.70jzhdeh89k0.webp)
 
 ## 统一返回结果定义
 
@@ -550,7 +550,7 @@ public class HospitalSetController {
 
 + swagger测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221021/image.77rxi1zmlqc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221021/image.77rxi1zmlqc0.webp)
 
 ### 添加医院设置
 
@@ -588,7 +588,7 @@ public class HospitalSetController {
 }
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221021/image.1cgzu5keo7ds.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221021/image.1cgzu5keo7ds.webp)
 
 ### 根据Id获取,修改,批量删除医院设置
 

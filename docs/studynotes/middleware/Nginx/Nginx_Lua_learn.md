@@ -43,7 +43,7 @@ Lua 在不同的系统中得到大量应用，场景的应用场景如下:
 
 Lua 的官网地址为：[https://www.lua.org](https://www.lua.org/)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220806/image.4tduh26e2b20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.4tduh26e2b20.webp)
 
 点击 download 可以找到对应版本的下载地址，我这里使用最新版 lua-5.4.4，其对应的资源链接地址为 `https://www.lua.org/ftp/lua-5.4.4.tar.gz`，也可以在 Linux 使用 wget 命令直接下载
 
@@ -74,7 +74,7 @@ make linux test
 
 如果在执行 `make linux test` 失败，报如下错误(如果没有,则编译安装):
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220806/image.3h3rcto261s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.3h3rcto261s0.webp)
 
 说明当前系统缺少 libreadline-dev 依赖包，需要通过命令来进行安装：
 

@@ -19,7 +19,7 @@ tags:
 
 最初所有的开发工作都是由后端工程师完成的，随着业务越来越繁杂，工作量变大，于是我们将项目中的可视化部分和一部分交互功能的开发工作剥离出来，形成了前端开发。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221021/image.6n3u679xbjw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221021/image.6n3u679xbjw0.webp)
 
 ### VSCode 安装和使用
 
@@ -399,7 +399,7 @@ vue-html.code-snippets
 
 #### 实例生命周期
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.3dj5z3jft2w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221022/image.3dj5z3jft2w0.webp)
 
 ```vue
     <div id="app">
@@ -525,11 +525,11 @@ Node.js没有浏览器API，即document，window的等。
 一个前端页面向 Service A、Service B 以及 Service C发送请求，不同的微服务返回的值用于渲染页面中不同的组件。此时，每次访问该页面都需要发送 3 个请求。我们需要一个服务来聚合Service
 A、Service B 以及 Service C响应的数据，这个服务层叫做BFF。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.5c7h4orpgds0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221022/image.5c7h4orpgds0.webp)
 
 手机、平板端、PC机等用户终端都需要向每个Service，例如Service A发送请求。对于同一个功能，不同的终端需要的数据格式和内容会有不同。此时 Service A 的一个接口，不能同时满足三个客户端的不同需求。我们可以在Service A中开发三个接口，也可以增加一个数据裁剪服务，将数据按照不同终端的不同要求进行裁剪，这个服务层叫做BFF。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.15d6p2dti74w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221022/image.15d6p2dti74w.webp)
 
 BFF层的作用是让前端有能力自由组装后台数据，减少大量的业务沟通成本，加快业务的迭代速度。
 
@@ -859,7 +859,7 @@ Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖�
 
 从图中我们可以看出，Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求。 
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221022/image.3kccadmrrhs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221022/image.3kccadmrrhs0.webp)
 
 ## WebPack 安装
 

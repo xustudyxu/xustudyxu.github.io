@@ -13,7 +13,7 @@ tags:
 
 ## 效果展示
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.105t4alndguo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.105t4alndguo.webp)
 
 ## 新增套餐
 
@@ -23,7 +23,7 @@ tags:
 
 后台系统中可以管理套餐信息，通过新增套餐功能来添加一个新的套餐，在添加套餐时需要选择当前套餐所属的套餐分类和包含的菜品，并且需要上传套餐对应的图片，在移动端会按照套餐分类来展示对应的套餐。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220512/image.vo164su4ghs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220512/image.vo164su4ghs.webp)
 
 ### 数据模型
 
@@ -31,7 +31,7 @@ tags:
 
 + setmeal 套餐表
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220512/image.28a173my4qo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220512/image.28a173my4qo0.webp)
 
 ### 代码开发
 
@@ -296,7 +296,7 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 系统中的套餐数据很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中都会以分页的方式来展示列表数据。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/image.6jjmynhlbps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6jjmynhlbps0.webp)
 
 ### 代码开发
 
@@ -309,7 +309,7 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 开发套餐信息分页查询功能，其实就是在服务端编写代码去处理前端页面发送的这2次请求即可。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.6ads7by1xew0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.6ads7by1xew0.webp)
 
 + 编写处理器
 
@@ -361,13 +361,13 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.2fnhpwqlgjms.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.2fnhpwqlgjms.webp)
 
 ## 修改套餐状态
 
 修改套餐状态为停售状态的
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.5z0kevipdxs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.5z0kevipdxs0.webp)
 
 + 编写处理器
 
@@ -391,7 +391,7 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 + 停售儿童套餐
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.5bbkn2xiwq40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.5bbkn2xiwq40.webp)
 
 ## 删除套餐
 
@@ -399,7 +399,7 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 套餐管理列表页面点击删除按钮，可以删除对应的套餐信息。也可以通过复选框选择多个套餐，点击批量删余按钮一次删除多个套餐。注意，对于状态为售卖中的套餐不能删除，需要先停售，然后才能删除。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.191bomvyw468.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.191bomvyw468.webp)
 
 #### 梳理交互过程
 
@@ -407,11 +407,11 @@ Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaul
 
 1. 删除单个套餐时，页面发送ajax请求，根据套餐id删除对应套餐
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.4c4car5bocw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.4c4car5bocw0.webp)
 
 2. 删除多个套餐时，页面发送ajax请求，根据提交的多个套餐id删除对应套餐
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220514/image.6tfafmf57to0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220514/image.6tfafmf57to0.webp)
 
 开发删除套餐功能，其实就是在服务端编写代码去处理前端页面发送的这2次请求即可。
 

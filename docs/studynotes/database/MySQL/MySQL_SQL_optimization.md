@@ -64,7 +64,7 @@ commit;
 
 如果一次性需要插入大批量数据(比如: 几百万的记录)，使用insert语句插入性能较低，此时可以使用MySQL数据库提供的load指令进行插入。操作如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.2q94zw84i5a0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.2q94zw84i5a0.webp)
 
 可以执行如下指令，将数据脚本文件中的数据加载到表结构中：
 
@@ -140,11 +140,11 @@ mysql> select count(*) from tb_user;
 
 在InnoDB存储引擎中，<mark>表数据都是根据主键顺序组织存放的</mark>，这种存储方式的表称为<font color='red'>索引组织表</font>(index organized table <font color='red'>IOT</font>)。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.1nzfhvlko0yo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.1nzfhvlko0yo.webp)
 
 行数据，都是存储在聚集索引的叶子节点上的。而我们之前也讲解过InnoDB的逻辑结构图：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.42vmqwqts7o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.42vmqwqts7o0.webp)
 
 在InnoDB引擎中，数据行是记录在逻辑结构 page 页中的，而每一个页的大小是固定的，默认16K。那也就意味着， 一个页中所存储的行也是有限的，如果插入的数据行row在该页存储不小，将会存储到下一个页中，页与页之间会通过指针连接。
 
@@ -156,47 +156,47 @@ mysql> select count(*) from tb_user;
 
   +  从磁盘中申请页， 主键顺序插入
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.2mzrpjtmsq60.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.2mzrpjtmsq60.webp)
 
   + 第一个页没有满，继续往第一页插入
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.3sbyd9ajo0e0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.3sbyd9ajo0e0.webp)
 
   + 当第一个也写满之后，再写入第二个页，页与页之间会通过指针连接
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.2jeoloyt0lg0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.2jeoloyt0lg0.webp)
 
   + 当第二页写满了，再往第三页写入
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.21wwoalnals0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.21wwoalnals0.webp)
 
 + 主键乱序插入效果
   +  加入1#,2#页都已经写满了，存放了如图所示的数据
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.161ls5kkpaak.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.161ls5kkpaak.webp)
 
   + 此时再插入id为50的记录，我们来看看会发生什么现象
 
     会再次开启一个页，写入新的页中吗？
 
-    ![1664072028289](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/1664072028289.49gc7sajqfs0.webp)
+    ![1664072028289](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/1664072028289.49gc7sajqfs0.webp)
 
     不会。因为，索引结构的叶子节点是有顺序的。按照顺序，应该存储在47之后。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.68r00p43ur00.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.68r00p43ur00.webp)
 
     但是47所在的1#页，已经写满了，存储不了50对应的数据了。 那么此时会开辟一个新的页 3#。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.70734ioznjs0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.70734ioznjs0.webp)
 
     但是并不会直接将50存入3#页，而是会将1#页后一半的数据，移动到3#页，然后在3#页，插入50。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.6gtdco36ox80.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.6gtdco36ox80.webp)
 
     移动数据，并插入id为50的数据之后，那么此时，这三个页之间的数据顺序是有问题的。 1#的下一个
     页，应该是3#， 3#的下一个页是2#。 所以，此时，需要重新设置链表指针。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.1pnhrkww2jeo.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.1pnhrkww2jeo.webp)
 
     上述的这种现象，称之为 "<mark>页分裂</mark>"，是比较耗费性能的操作。
 
@@ -204,26 +204,26 @@ mysql> select count(*) from tb_user;
 
   + 目前表中已有数据的索引结构(叶子节点)如下：
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.61avsft25j00.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.61avsft25j00.webp)
 
   + 当我们对已有数据进行删除时，具体的效果如下:
 
   + 当删除一行记录时，实际上记录并没有被物理删除，只是记录被标记（flaged）为删除并且它的空间变得允许被其他记录声明使用。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.10krx2cjv7a8.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.10krx2cjv7a8.webp)
 
   + 当我们继续删除2#的数据记录
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.6b93f932nak0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.6b93f932nak0.webp)
 
   + 当页中删除的记录达到 `MERGE_THRESHOLD`（默认为页的50%），InnoDB会开始寻找最靠近的页（前
     或后）看看是否可以将两个页合并以优化空间使用。
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.49climp01dg0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.49climp01dg0.webp)
 
   + 删除数据，并将<mark>页合并</mark>之后，再次插入新的数据21，则直接插入3#页
 
-    ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.4xoqamdsjic0.webp)
+    ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.4xoqamdsjic0.webp)
 
   + 这个里面所发生的合并页的这个现象，就称之为 "<mark>页合并</mark>"。
 
@@ -239,7 +239,7 @@ mysql> select count(*) from tb_user;
    3. 尽量不要使用`UUID做主键`或者是`其他自然主键`，如身份证号。
    4. 业务操作时，`避免对主键的修改`。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.591ujgvfhwo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.591ujgvfhwo0.webp)
 
 ## order by 优化
 
@@ -405,7 +405,7 @@ mysql> explain select id,age,phone from tb_user order by age asc , phone desc;
 
 因为创建索引时，如果未指定顺序，默认都是按照升序排序的，而查询时，一个升序，一个降序，此时就会出现Using filesort。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.2lmqg3ep6oc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.2lmqg3ep6oc0.webp)
 
 为了解决上述的问题，我们可以创建一个索引，这个联合索引中 age 升序排序，phone 倒序排序。
 
@@ -415,7 +415,7 @@ mysql> explain select id,age,phone from tb_user order by age asc , phone desc;
 create index idx_phone_age_ad on tb_user(age asc,phone desc);
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.2g0oppjnyg5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.2g0oppjnyg5c.webp)
 
 9. 然后再次执行如下SQL
 
@@ -435,9 +435,9 @@ mysql> explain select id,age,phone from tb_user order by age asc,phone desc;
 
 升序/降序联合索引结构图示:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.5oqjf35rqr40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.5oqjf35rqr40.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220925/image.6ohuvq08zqs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.6ohuvq08zqs0.webp)
 
 由上述的测试,我们得出`order by优化原则`:
 

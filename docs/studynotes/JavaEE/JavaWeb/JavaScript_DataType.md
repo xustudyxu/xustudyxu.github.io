@@ -135,7 +135,7 @@ alert(NaN); 		// NaN
 
 用来判断一个变量是否为非数字的类型，返回true 或者false
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20230114/image.4sjbmc896kg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230114/image.4sjbmc896kg0.webp)
 
 ```js
 var usrAge = 21;

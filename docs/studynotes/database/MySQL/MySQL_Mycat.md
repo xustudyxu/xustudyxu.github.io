@@ -15,7 +15,7 @@ tags:
 
 ### 问题分析
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.4ob3i6abfbe0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.4ob3i6abfbe0.webp)
 
 随着互联网及移动互联网的发展，应用系统的数据量也是成指数式增长，若采用单数据库进行数据存储，存在以下性能瓶颈：
 
@@ -24,7 +24,7 @@ tags:
 
 为了解决上述问题，我们需要对数据库进行分库分表处理。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.1coobo0w2m9s.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.1coobo0w2m9s.webp)
 
 分库分表的中心思想都是将数据分散存储，使得单一数据库/表的数据量变小来缓解单一数据库的性能问题，从而达到提升数据库性能的目的。
 
@@ -32,13 +32,13 @@ tags:
 
 分库分表的形式，主要是两种：垂直拆分和水平拆分。而拆分的粒度，一般又分为分库和分表，所以组成的拆分策略最终如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.1h7c6b96hrgg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.1h7c6b96hrgg.webp)
 
 ### 垂直拆分
 
 1. 垂直分库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.191pv8dg3pkw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.191pv8dg3pkw.webp)
 
 垂直分库：以表为依据，根据业务将不同表拆分到不同库中。
 
@@ -50,7 +50,7 @@ tags:
 
 2. 垂直分表
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.53kx4s5dobg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.53kx4s5dobg0.webp)
 
 垂直分表：以字段为依据，根据字段属性将不同字段拆分到不同表中。
 
@@ -64,7 +64,7 @@ tags:
 
 1. 水平分库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.5xzqp4zd4900.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.5xzqp4zd4900.webp)
 
 水平分库：以字段为依据，按照一定策略，将一个库的数据拆分到多个库中。
 
@@ -76,7 +76,7 @@ tags:
 
 2. 水平分表
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.6nde0aiacxc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.6nde0aiacxc0.webp)
 
 水平分表：以字段为依据，按照一定策略，将一个表的数据拆分到多个表中。
 
@@ -93,7 +93,7 @@ tags:
 + `shardingJDBC`：基于AOP原理，在应用程序中对本地执行的SQL进行拦截，解析、改写、路由处理。需要自行编码配置实现，只支持java语言，性能较高。
 + `MyCat`：数据库分库分表中间件，不用调整代码即可实现分库分表，支持多种语言，性能不及前者。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.138hdd539txc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.138hdd539txc.webp)
 
 本次课程，我们选择了是MyCat数据库中间件，通过MyCat中间件来完成分库分表操作。
 
@@ -105,7 +105,7 @@ Mycat是开源的、活跃的、基于Java语言编写的MySQL<mark>数据库中
 
 开发人员只需要连接MyCat即可，而具体底层用到几台数据库，每一台数据库服务器里面存储了什么数据，都无需关心。 具体的分库分表的策略，只需要在MyCat中配置即可。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.38jnz8if0080.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.38jnz8if0080.webp)
 
 优势：
 
@@ -179,7 +179,7 @@ rm -rf mysql-connector-java-5.1.35.jar
 
 在MyCat的整体结构中，分为两个部分：上面的逻辑结构、下面的物理结构。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.4u4c01j1h1u0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.4u4c01j1h1u0.webp)
 
 在MyCat的逻辑结构主要负责逻辑库、逻辑表、分片规则、分片节点等逻辑结构的处理，而具体的数据存储还是在物理结构，也就是数据库服务器中存储的。
 
@@ -191,7 +191,7 @@ rm -rf mysql-connector-java-5.1.35.jar
 
 由于 tb_order 表中数据量很大，磁盘IO及容量都到达了瓶颈，现在需要对 tb_order 表进行数据分片，分为三个数据节点，每一个节点主机位于不同的服务器上, 具体的结构，参考下图：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.ua40csdhxxc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.ua40csdhxxc.webp)
 
 ### 环境准备
 
@@ -201,7 +201,7 @@ rm -rf mysql-connector-java-5.1.35.jar
 + 192.168.91.167：第二个分片服务器。
 + 192.168.91.168：第三个分片服务器。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
 
 并且在上述3台数据库中创建数据库 db01 。
 
@@ -421,7 +421,7 @@ mysql> INSERT INTO TB_ORDER(id,title) VALUES(15000001,'goods15000001');
 ERROR 1064 (HY000): can't find any valid datanode :TB_ORDER -> ID -> 1500                                                                              0001
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.ws7ewrq0r74.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.ws7ewrq0r74.webp)
 
 经过测试，我们发现，在往 TB_ORDER 表中插入数据时：
 
@@ -439,7 +439,7 @@ ERROR 1064 (HY000): can't find any valid datanode :TB_ORDER -> ID -> 1500       
 
 schema.xml 作为MyCat中最重要的配置文件之一 , 涵盖了MyCat的逻辑库 、 逻辑表 、 分片规则、分片节点及数据源的配置。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.65frdsealqg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.65frdsealqg0.webp)
 
 主要包含以下三组标签：
 
@@ -451,7 +451,7 @@ schema.xml 作为MyCat中最重要的配置文件之一 , 涵盖了MyCat的逻�
 
 1. schema 定义逻辑库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6hbl4eu4vhg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6hbl4eu4vhg0.webp)
 
 schema 标签用于定义 MyCat实例中的逻辑库 , 一个MyCat实例中, 可以有多个逻辑库 , 可以通过 schema 标签来划分不同的逻辑库。MyCat中的逻辑库的概念，等同于MySQL中的database概念, 需要操作某个逻辑库下的表时, 也需要切换逻辑库(use xxx)。
 
@@ -463,7 +463,7 @@ schema 标签用于定义 MyCat实例中的逻辑库 , 一个MyCat实例中, 可
 
 2. schema 中的table定义逻辑表
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2h10pkmgofm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2h10pkmgofm0.webp)
 
 table 标签定义了MyCat中逻辑库schema下的逻辑表 , 所有需要拆分的表都需要在table标签中定义 。
 
@@ -478,7 +478,7 @@ table 标签定义了MyCat中逻辑库schema下的逻辑表 , 所有需要拆分
 
 #### datanode标签
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2inepx0kna00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2inepx0kna00.webp)
 
 核心属性：
 
@@ -488,7 +488,7 @@ table 标签定义了MyCat中逻辑库schema下的逻辑表 , 所有需要拆分
 
 ####  datahost标签
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.66ijzver5ps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.66ijzver5ps0.webp)
 
 该标签在MyCat逻辑库中作为底层标签存在, 直接定义了具体的数据库实例、读写分离、心跳语句。
 
@@ -504,7 +504,7 @@ table 标签定义了MyCat中逻辑库schema下的逻辑表 , 所有需要拆分
 
 rule.xml中定义所有拆分表的规则, 在使用过程中可以灵活的使用分片算法, 或者对同一个分片算法使用不同的参数, 它让分片过程可配置化。主要包含两类标签：`tableRule`、`Function`。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.5827cwb8ll80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.5827cwb8ll80.webp)
 
 ### server.xml
 
@@ -512,7 +512,7 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 1. system标签
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2kz3pv4070k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2kz3pv4070k0.webp)
 
 主要配置MyCat中的系统配置信息，对应的系统配置项及其含义，如下：
 
@@ -545,7 +545,7 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 配置MyCat中的用户、访问密码，以及用户针对于逻辑库、逻辑表的权限信息，具体的权限描述方式及配置说明如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.229bb33essyo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.229bb33essyo.webp)
 
 在测试权限操作时，我们只需要将 privileges 标签的注释放开。 在 privileges 下的schema标签中配置的dml属性配置的是逻辑库的权限。 在privileges的schema下的table标签的dml属性中配置逻辑表的权限。
 
@@ -557,17 +557,17 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 在业务系统中, 涉及以下表结构 ,但是由于用户与订单每天都会产生大量的数据, 单台服务器的数据存储及处理能力是有限的, 可以对数据库表进行拆分, 原有的数据库表如下。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2d38c3y9gmxw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2d38c3y9gmxw.webp)
 
 现在考虑将其进行垂直分库操作，将商品相关的表拆分到一个数据库服务器，订单表拆分的一个数据库服务器，用户及省市区表拆分到一个服务器。最终结构如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4fsvh3kja580.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.4fsvh3kja580.webp)
 
 #### 准备
 
 准备三台服务器，IP地址如图所示：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
 
 并且在192.168.91.166，192.168.91.167, 192.168.91.168上面创建数据库shopping。
 
@@ -652,7 +652,7 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 将表结构及对应的测试数据导入之后，可以检查一下各个数据库服务器中的表结构分布情况。 检查是否和我们准备工作中规划的服务器一致。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3lhavun9nr00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.3lhavun9nr00.webp)
 
 3. 查询用户的收件人及收件人地址信息(包含省、市、区)。
 
@@ -706,7 +706,7 @@ ERROR 1064 (HY000): invalid route in sql, multi tables found but datanode has no
 <table name="tb_areas_region" dataNode="dn1,dn2,dn3" primaryKey="id" type="global"/>
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.45b2g0wxs3e0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.45b2g0wxs3e0.webp)
 
 配置完毕后，重新启动MyCat。
 
@@ -725,7 +725,7 @@ source /root/shopping-insert.sql
 SELECT order_id , payment ,receiver, province , city , area FROM tb_order_master o, tb_areas_provinces p , tb_areas_city c , tb_areas_region r WHERE o.receiver_province = p.provinceid AND o.receiver_city = c.cityid AND o.receiver_region = r.areaid ;
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4v8svhi47au0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.4v8svhi47au0.webp)
 
 是可以正常执行成功的。
 
@@ -737,13 +737,13 @@ SELECT order_id , payment ,receiver, province , city , area FROM tb_order_master
 
 在业务系统中, 有一张表(日志表), 业务系统每天都会产生大量的日志数据 , 单台服务器的数据存储及处理能力是有限的, 可以对数据库表进行拆分。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3c1zu16xhcs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.3c1zu16xhcs0.webp)
 
 #### 准备
 
 准备三台服务器，具体的结构如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.18ehbfcmnzuo.webp)
 
 并且，在三台数据库服务器中分表创建一个数据库itcast。
 
@@ -810,7 +810,7 @@ INSERT INTO tb_log (id, model_name, model_value, return_value, return_class, ope
 INSERT INTO tb_log (id, model_name, model_value, return_value, return_class, operate_user, operate_time, param_and_value, operate_class, operate_method, cost_time，source)VALUES('6','user','find','success','java.lang.String','10001','2022-01-06 18:30:31','{\"age\":\"200\",\"name\":\"TomCat\",\"gender\":\"0\"}','cn.itcast.controller.UserController','find','29',2);
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.13jlx80w8ocg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.13jlx80w8ocg.webp)
 
 > 取模，id%(节点总数),结果为0落在第一个节点。结果为1落在第二个节点。结果为2落在第三个节点。
 
@@ -822,7 +822,7 @@ INSERT INTO tb_log (id, model_name, model_value, return_value, return_class, ope
 
 根据指定的字段及其配置的范围与数据节点的对应情况， 来决定该数据属于哪一个分片。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6h8j8it4uls0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6h8j8it4uls0.webp)
 
 2. 配置
 
@@ -887,7 +887,7 @@ rule.xml分片规则配置：
 
 根据指定的字段值与节点数量进行求模运算，根据运算结果， 来决定该数据属于哪一个分片。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2esh54i9z17o.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2esh54i9z17o.webp)
 
 2. 配置
 
@@ -941,7 +941,7 @@ rule.xml分片规则配置：
 
 所谓一致性哈希，相同的哈希因子计算值总是被划分到相同的分区表中，不会因为分区节点的增加而改变原来数据的分区位置，有效的解决了分布式数据的拓容问题。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4869amga7di0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.4869amga7di0.webp)
 
 2. 配置
 
@@ -1024,15 +1024,15 @@ INSERT INTO tb_order (id, money, content) VALUES ('b978840f-6fc4-11ec-b831-482ae
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3jkvbcq4k620.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.3jkvbcq4k620.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6s7kl8dahdc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6s7kl8dahdc0.webp)
 
 + 落在第三个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7imfspx6ztw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.7imfspx6ztw0.webp)
 
 #### 枚举分片
 
@@ -1040,7 +1040,7 @@ INSERT INTO tb_order (id, money, content) VALUES ('b978840f-6fc4-11ec-b831-482ae
 
 通过在配置文件中配置可能的枚举值, 指定数据分布到不同数据节点上, 本规则适用于按照省份、性别、状态拆分数据等业务 。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4dk47hdfxyg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.4dk47hdfxyg.webp)
 
 2. 配置
 
@@ -1128,15 +1128,15 @@ insert into tb_user (id,username ,status) values(10,'Lily',1);
 
 + 落在第一个节点上的数据:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.17gie79vh5ts.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.17gie79vh5ts.webp)
 
 + 落在第二个节点上的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7da8j9pxgnc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.7da8j9pxgnc0.webp)
 
 + 落在第三个节点上的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6q6bbvk0ng00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6q6bbvk0ng00.webp)
 
 #### 应用指定算法
 
@@ -1144,7 +1144,7 @@ insert into tb_user (id,username ,status) values(10,'Lily',1);
 
 运行阶段由应用自主决定路由到那个分片 , 直接根据**字符子串（必须是数字）**计算分片号。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.746naypw2ks0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.746naypw2ks0.webp)
 
 2. 配置
 
@@ -1216,15 +1216,15 @@ insert into tb_app (id,name) values('0200002','TesT400001');
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6tjx1f8e42k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6tjx1f8e42k0.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.1elp5tme6q00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.1elp5tme6q00.webp)
 
 + 落在第三个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.5rnej23vqjc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.5rnej23vqjc0.webp)
 
 #### 固定分片hash算法
 
@@ -1232,7 +1232,7 @@ insert into tb_app (id,name) values('0200002','TesT400001');
 
 该算法类似于十进制的求模运算，但是为二进制的操作，例如，**取 id 的二进制低 10 位 与1111111111 进行位 & 运算**，位与运算最小值为0000000000，最大值为1111111111，转换为十进制，也就是位于0-1023之间。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3i5dfnwak5k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.3i5dfnwak5k0.webp)
 
 特点：
 
@@ -1293,7 +1293,7 @@ rule.xml中分片规则配置：
 
 示例说明 :
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.44nxfttnckg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.44nxfttnckg0.webp)
 
 3. 测试
 
@@ -1320,15 +1320,15 @@ insert into tb_longhash (id,name,firstChar) values(9,'两匹狼','L');
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.6y7lo58984s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.6y7lo58984s0.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.mr8j1av72pc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.mr8j1av72pc.webp)
 
 + 落在第三个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.ff5mre73nyg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.ff5mre73nyg.webp)
 
 #### 字符串hash解析算法
 
@@ -1336,7 +1336,7 @@ insert into tb_longhash (id,name,firstChar) values(9,'两匹狼','L');
 
 截取字符串中的指定位置的子字符串, 进行hash算法， 算出分片。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.1411c2t3as8w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.1411c2t3as8w.webp)
 
 2. 配置
 
@@ -1384,7 +1384,7 @@ rule.xml中分片规则配置：
 
 示例说明：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.33voporiiua0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.33voporiiua0.webp)
 
 3. 测试
 
@@ -1405,11 +1405,11 @@ INSERT INTO tb_strhash (name,content) VALUES('TOMCAT', UUID());
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.3jp3qk08m780.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.3jp3qk08m780.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.74vuqyhlg0g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.74vuqyhlg0g0.webp)
 
 
 
@@ -1419,7 +1419,7 @@ INSERT INTO tb_strhash (name,content) VALUES('TOMCAT', UUID());
 
 按照日期及对应的时间周期来分片。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.50ojqvfmqg40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.50ojqvfmqg40.webp)
 
 2. 配置
 
@@ -1495,15 +1495,15 @@ insert into tb_datepart(id,name ,create_time) values(7,'Coco3','2022-01-31');
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.2cna3e8l6r6s.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.2cna3e8l6r6s.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.34yd67vhx20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.34yd67vhx20.webp)
 
 + 落在第三个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.5yrlul3ej500.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.5yrlul3ej500.webp)
 
 #### 自然月分片
 
@@ -1511,7 +1511,7 @@ insert into tb_datepart(id,name ,create_time) values(7,'Coco3','2022-01-31');
 
 使用场景为按照月份来分片, 每个自然月为一个分片。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.v7vud32s8q8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.v7vud32s8q8.webp)
 
 2. 配置
 
@@ -1586,21 +1586,21 @@ insert into tb_monthpart(id,name ,create_time) values(9,'Coco5','2022-04-30');
 
 + 落在第一个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.13bxfozcsluo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.13bxfozcsluo.webp)
 
 + 落在第二个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.4jg4kd1m7xy0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.4jg4kd1m7xy0.webp)
 
 + 落在第三个节点的数据
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221007/image.7aqkeyrrllc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221007/image.7aqkeyrrllc0.webp)
 
 ## MyCat 管理及监控
 
 ### MyCat 原理
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.35zsrprq9a20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.35zsrprq9a20.webp)
 
 在MyCat中，当执行一条SQL语句时，MyCat需要进行SQL解析、分片分析、路由分析、读写分离分析等操作，最终经过一系列的分析决定将当前的SQL语句到底路由到那几个(或哪一个)节点数据库，数据库将数据执行完毕后，如果有返回的结果，则将结果返回给MyCat，最终还需要在MyCat中进行结果合并、聚合处理、排序处理、分页处理等操作，最终再将结果返回给客户端。
 
@@ -1642,7 +1642,7 @@ Mycat-eye运行过程中需要依赖zookeeper，因此需要先安装zookeeper�
 
 1. zookeeper安装,上传安装包
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.21imoybp7ikg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.21imoybp7ikg.webp)
 
 2. 解压
 
@@ -1718,7 +1718,7 @@ zookeepr=localhost:2181 #进行修改
 
 11. 访问测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.6sek9hwltto0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.6sek9hwltto0.webp)
 
 #### 配置
 
@@ -1730,7 +1730,7 @@ zookeepr=localhost:2181 #进行修改
 
 2. 在Mycat监控界面配置服务地址
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.4rl95e9v6cu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.4rl95e9v6cu0.webp)
 
 #### 测试
 
@@ -1738,24 +1738,24 @@ zookeepr=localhost:2181 #进行修改
 
 A. 性能监控
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.4gexhlepcy20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.4gexhlepcy20.webp)
 
 B. 物理节点
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.2k3si3bnb080.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.2k3si3bnb080.webp)
 
 C. SQL统计
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.2t0ooymz6nc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.2t0ooymz6nc0.webp)
 
 D. SQL表分析
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.2p55uii5rky0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.2p55uii5rky0.webp)
 
 E. SQL监控
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.2y9xm4qtjek0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.2y9xm4qtjek0.webp)
 
 F. 高频SQL
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221008/image.4iszk5za3m00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.4iszk5za3m00.webp)

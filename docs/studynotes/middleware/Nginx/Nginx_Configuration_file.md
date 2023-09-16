@@ -197,7 +197,7 @@ location / {
 
 6. `nginx -s reload`重新加载后，测试启动访问
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.6dtnfz58zpo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.6dtnfz58zpo0.webp)
 
  页面会报 403 拒绝访问的错误。
 
@@ -228,7 +228,7 @@ location / {
 
 我们也能理解了配置文件的 `locaotion` 块的基本使用，root 对应着访问目录，index 对应着访问目录下的默认页面。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.6igjptnd6eo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.6igjptnd6eo0.webp)
 
 ### work process指令
 
@@ -310,7 +310,7 @@ root      12302  10615  0 21:14 pts/1    00:00:00 grep --color=auto nginx
 
 如图的小狗，如果只是一块「骨头」出现，则只需要唤醒一个小狗即可（开启 on），如果多个「骨头」如三个同时出现，那么唤醒三个小狗效率更高（此时需要设置 off）
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.118zwwf8v268.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.118zwwf8v268.webp)
 
 2. `multi_accept` 指令用来设置是否开启同时接收多个网络连接。默认开启。
 
@@ -399,9 +399,9 @@ location /get_json{
 }
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.1joqriwre9j4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.1joqriwre9j4.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.47ty7dkhzmi0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.47ty7dkhzmi0.webp)
 
 ### 自定义服务日志
 
@@ -457,7 +457,7 @@ tail -f /usr/local/nginx/logs/my.log
 
 浏览器访问一次 Nginx 的欢迎页面，回来看日志的输出，结果如图：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.5t1f8j2rclc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.5t1f8j2rclc0.webp)
 
 > **例子 2：输出内容加上访问机器的信息**
 
@@ -480,7 +480,7 @@ tail -f /usr/local/nginx/logs/my.log
 
 浏览器访问一次 Nginx 的欢迎页面，回来看日志的输出，结果如图：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220728/image.2rkljjc3tlk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.2rkljjc3tlk0.webp)
 
 ### 其他配置指令
 

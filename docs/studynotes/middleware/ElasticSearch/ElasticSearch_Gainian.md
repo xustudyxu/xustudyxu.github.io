@@ -87,7 +87,7 @@ mapping 是处理数据的方式和规则方面做一些限制，如：某个字
 
 作为用户，我们可以将请求发送到集群中的任何节点，包括主节点。每个节点都知道任意文档所处的位置，并且能够将我们的请求直接转发到存储我们所需文档的节点。无论我们将请求发送到哪个节点，它都能负责从各个包含我们所需文档的节点收集回数据，并将最终结果返回給客户端。Elasticsearch 对这一切的管理都是透明的。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220703/image.2zh9a4zqfz40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.2zh9a4zqfz40.webp)
 
 如图，有三个分片：P0、P1、P2，每个分片都有自己的副本，P0 副本是 R0、P1 副本是 R1、P2 副本是 R2，并且每个副本都不能和自己的分片在用一个节点里，防止因为节点出现意外，导致分片和其副本都无法使用。
 

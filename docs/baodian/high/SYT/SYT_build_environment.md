@@ -505,27 +505,27 @@ tags:
 打开项目并点击菜单栏上的【VCS】--》【Import into version control】--》【Create Git
 Repository】创建本地仓库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.1d1dlaen6f9c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.1d1dlaen6f9c.webp)
 
 在打开的【Create Git Repository】对话框内选择本地仓库的位置，这里我选择项目的根目录。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.1sfq9xcoai00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.1sfq9xcoai00.webp)
 
 右击项目点击【Git】--》【Add】，接着点击【Git】--》【Commit Directory】在打开的窗口中选择要上传到本地仓库的代码并添加注释后提交到本地仓库内。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.5arhiy66bkw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.5arhiy66bkw0.webp)
 
 右击项目点击【Git】--》【Manage Remotes...】窗口中添加码云的远程仓库。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.763v8cn6hf00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.763v8cn6hf00.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.3tqyixfwusg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.3tqyixfwusg0.webp)
 
 点击【OK】后接着输入码云的账号密码。
 
 上传代码到码云，右击项目点击【Git】--》【Repository】--》【Push...】在打开的【Push commits】内可以看到已提交到本地仓库的提交信息。点击【Push】按钮将本地仓库的代码上传到码云上，上传成功后就可以在码云上看到。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221020/image.3arbn7rmucq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221020/image.3arbn7rmucq0.webp)
 
 + [gitee项目地址](https://gitee.com/feng-rongxu/yygh_parent)
 

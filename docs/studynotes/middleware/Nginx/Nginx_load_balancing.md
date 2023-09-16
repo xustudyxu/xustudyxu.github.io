@@ -21,7 +21,7 @@ tags:
 
 早期的网站流量和业务功能都比较简单，单台服务器足以满足基本的需求，但是随着互联网的发展，业务流量越来越大并且业务逻辑也跟着越来越复杂，单台服务器的性能及单点故障问题就凸显出来了，因此需要多台服务器进行性能的水平扩展及避免单点故障出现。那么如何将不同用户的请求流量分发到不同的服务器上呢？这就需要负载均衡来处理。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.5kgql84ikx80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.5kgql84ikx80.webp)
 
 ## 负载均衡原理及处理流程
 
@@ -30,7 +30,7 @@ tags:
 - 纵向扩展是从单机的角度出发，通过增加系统的硬件处理能力来提升服务器的处理能力
 - 横向扩展是通过添加机器来满足大型网站服务的处理能力
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.1xwd1pm6du68.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.1xwd1pm6du68.webp)
 
 如上图，负载均衡涉及到两个重要的角色分别是「应用集群」和「负载均衡器」。
 
@@ -54,7 +54,7 @@ tags:
 
 如下图，用户点击不同的下载方式，就会跳转到不同的下载地址。这是主动式的负载均衡，我们无法控制用户的选择。如果用户全部点击第一个下载方式，那么服务器的压力将非常大。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.2auhoddxb2zo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.2auhoddxb2zo.webp)
 
 ### DNS轮询方式
 
@@ -64,11 +64,11 @@ DNS：域名系统（服务）协议（DNS）是一种分布式网络目录服�
 
 如下图：客户端如果想访问服务器集群，首先去 DNS 服务器获取我们曾经在 DNS 服务器保存的「记录表」，这个「记录表」将会把某个服务器的地址返回给客户端，客户端再根据这个地址，访问指定的服务器。这个「记录表」在开始期间需要我们去 DNS 服务器进行添加。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.b1m3qaeuxsk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.b1m3qaeuxsk.webp)
 
 「记录表」长什么样，如下图的主机记录 www。这是我为某一个域名添加的 IP 地址，用 2 台服务器来做负载均衡。其中两个记录值都绑定了 `www.nginx521.cn` 地址。(一个域名可以绑定多个IP地址)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.3drj9szeeus0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.3drj9szeeus0.webp)
 
 验证:
 
@@ -100,9 +100,9 @@ ipconfig/flushdns
 
 介绍四/七层负载均衡之前，我们先了解一个概念，OSI(open system interconnection)，叫开放式系统互联模型，这个是由国际标准化组织 ISO 指定的一个不基于具体机型、操作系统或公司的网络体系结构。该模型将网络通信的工作分为七层。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.5g3vvj5xa3g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.5g3vvj5xa3g0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.6uq265ihol80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.6uq265ihol80.webp)
 
 - 应用层：为应用程序提供网络服务。
 - 表示层：对数据进行格式化、编码、加密、压缩等操作
@@ -166,7 +166,7 @@ server 后的 name 就是 upstream 后的 name，两者保持一致。
 
 准备四台服务器，一台用来做负载均衡器，三台用来接收负载均衡器的请求。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220803/image.etsfgkwsxaw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220803/image.etsfgkwsxaw.webp)
 
 因为目前只有两台服务器，所以一台用来做负载均衡器，另外一台用来接收负载均衡器的请求。
 
@@ -474,7 +474,7 @@ server {
 
 需要额外多说一点的是使用 ip_hash 指令无法保证后端服务器的负载均衡，可能导致有些后端服务器接收到的请求多，有些后端服务器接收的请求少，而且设置后端服务器权重等方法将不起作用。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.7a0ysgphfxg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.7a0ysgphfxg0.webp)
 
 #### least_conn
 
@@ -500,7 +500,7 @@ server {
 
 此负载均衡策略适合请求处理时间长短不一造成服务器过载的情况。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.5vug3q9whrc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.5vug3q9whrc0.webp)
 
 #### url_hash
 
@@ -530,7 +530,7 @@ server {
 
 它会根据 URL 计算处哈希值，由哈希值对应服务，所以固定下载文件的 URL，就固定了一个服务处理。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.utb83x535xc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.utb83x535xc.webp)
 
 #### fair
 
@@ -614,7 +614,7 @@ make
 
 编译可能会出现如下错误，`ngx_http_upstream_srv_conf_t` 结构中缺少 `default_port`
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.vj3xrayy84g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.vj3xrayy84g.webp)
 
 解决方案：
 
@@ -630,7 +630,7 @@ vim /opt/nginx/core/nginx-1.21.6/src/http/ngx_http_upstream.h
 in_port_t	   default_port
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.1mcquncem2u8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.1mcquncem2u8.webp)
 
 然后再进行 make。
 
@@ -834,7 +834,7 @@ stream {
 
 #### 需求分析
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.6yak0csdt880.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.6yak0csdt880.webp)
 
 #### Redis 配置
 
@@ -913,7 +913,7 @@ stream {
 
 此时利用 redis-cli 连接测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220804/image.cbee2u83yhs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220804/image.cbee2u83yhs.webp)
 
 服务器 B 通过负载均衡连接到了服务器 A 的 Redis，只是不知道连接的是 6378 还是 6379 端口，可以在 Redis 添加不一样的数据来测试，这里不演示了。
 

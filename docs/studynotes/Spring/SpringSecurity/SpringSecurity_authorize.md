@@ -166,7 +166,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 + 先登录用户获得token，携带token测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221016/image.2hewii1ui1k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221016/image.2hewii1ui1k0.webp)
 
 ### 从数据库查询权限信息
 
@@ -174,7 +174,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 RBAC权限模型（Role-Based Access Control）即：基于角色的权限控制。这是目前最常被开发者使用也是相对易用、通用权限模型。
 
-![image-20211222110238165](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221017/image-20211222110238165.52d070vliig0.webp)
+![image-20211222110238165](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221017/image-20211222110238165.52d070vliig0.webp)
 
 #### 准备工作
 
@@ -439,7 +439,7 @@ public class HelloController {
 
 + 先登录用户获得token，携带token测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221017/image.2s9icshsz3a0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221017/image.2s9icshsz3a0.webp)
 
 #### 自定义失败处理
 
@@ -527,11 +527,11 @@ public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
 
 + 测试故意登录失败
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221017/image.2qivx8u6ham0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221017/image.2qivx8u6ham0.webp)
 
 + 测试授权异常
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221017/image.71rajx5nh6o.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221017/image.71rajx5nh6o.webp)
 
 
 

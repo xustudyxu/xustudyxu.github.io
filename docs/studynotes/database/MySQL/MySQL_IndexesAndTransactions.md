@@ -20,9 +20,9 @@ tags:
 
 ### 索引的原理
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/50.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/50.png)
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/51.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/51.png)
 
 1. <font color=#DC4040 size=4 face="黑体">没有索引为什么会慢?因为全表扫描.</font>
 2. <font color=#DC4040 size=4 face="黑体">使用索引为什么会快?形成一个索引的数据结构，比如二叉树</font>
@@ -33,11 +33,11 @@ tags:
 
 ### 索引的类型
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/52.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/52.png)
 
 ### 索引使用
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/53.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/53.png)
 
 5. **查询索引（三种方式）**
 
@@ -141,11 +141,11 @@ ALTER TABLE sportman ADD INDEX name_index(NAME)-- 方式二
 
 ### 小结：哪些列上适合使用索引
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/54.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/54.png)
 
 ## mysql事务
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/55.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/55.png)
 
 ### 什么是事务
 
@@ -153,7 +153,7 @@ ALTER TABLE sportman ADD INDEX name_index(NAME)-- 方式二
 
 ### 事务和锁
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/56.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/56.png)
 
 ```sql
 -- 事务的一个重要的概念和具体操作
@@ -194,7 +194,7 @@ COMMIT
 
 ### 事务细节讨论
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/57.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/57.png)
 
 ```sql
 -- 讨论事务细节
@@ -234,7 +234,7 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 ### 查看事务隔离级别
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/58.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/58.png)
 
 ### 事务隔离级别
 
@@ -251,7 +251,7 @@ ROLLBACK -- 表示直接回退到事务开始的状态
 
 ### 设置事务隔离级别
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/59.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/59.png)
 
 ```sql
 -- 演示mysql的事务隔离级别
@@ -296,11 +296,11 @@ SET GLOBAL TRANSACTION ISOLATION LEVEL [设置你想设置的级别]
 
 
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/60.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/60.png)
 
 **左边的事务没有提交，但是右边可以看到左边添加的100用户信息，这就是脏读**
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/61.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/61.png)
 
 **左边的事务经过修改和添加，但是提交了，右边依然可以看到修改和添加的信息，这就是不可重复度和幻读，因为左边的提交已经直接影响到了右边的操作。**
 

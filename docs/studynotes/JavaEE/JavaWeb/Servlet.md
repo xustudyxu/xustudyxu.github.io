@@ -25,11 +25,11 @@ Servlet 是和 HTTP 协议是紧密联系的，其可以处理 HTTP 协议相关
 1. 选择"File"->"New"->Project
 2. 设置项目的相关信息，选择"Next"
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/01.png)
 
-![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/02.png)
 
-![03](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/03.png)
 
 ## Servlet的实现
 
@@ -38,7 +38,7 @@ Servlet 是和 HTTP 协议是紧密联系的，其可以处理 HTTP 协议相关
 1.  点击 "src" —> "new" —> "package"，创建一个文件包
 2. 在包下面创建 Java 类文件，点击包名 —> "New" —> "Java Class"
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/04.png)
 
 ### 实现Servlet规范
 
@@ -140,17 +140,17 @@ public class Servlet01 extends HttpServlet {
 
 1. 设置项目的站点名（项目对外访问路径）
 
-![05](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/05.png)
 
-![06](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/06.png)
 
 2. 设置项目的Tomcat配置
 
-![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/07.png)
 
 3.  启动服务器
 
-![08](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/08.png)
+![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/08.png)
 
 ### 访问并查看结果
 
@@ -160,11 +160,11 @@ public class Servlet01 extends HttpServlet {
 
 + 页面效果
 
-![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/09.png)
 
 + 后台结果
 
-![10](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/10.png)
+![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/10.png)
 
 到这里我们的第一个 Servlet 就实现了！
 
@@ -375,7 +375,7 @@ Servlet 的生命周期，简单的概括这就分为四步：servlet 类加载-
 
 下面我们描述一下 Tomcat 与 Servlet 是如何工作的,看看下面的时序图：
 
-![11](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/11.png)
+![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/11.png)
 
 1. Web Client 向 Servlet 容器（Tomcat）发出 Http 请求
  2. Servlet 容器接收 Web Client 的请求

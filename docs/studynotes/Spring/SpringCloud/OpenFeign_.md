@@ -194,7 +194,7 @@ public class OrderFeignController {
 
 + [http://localhost:81/consumer/payment/get/1](http://localhost:81/consumer/payment/get/1)
 
-![QQ22918914922917714320220816235147](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220816/QQ22918914922917714320220816235147.2cgl1whlgoys.gif)
+![QQ22918914922917714320220816235147](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220816/QQ22918914922917714320220816235147.2cgl1whlgoys.gif)
 
 Feign自带负载均衡配置项
 
@@ -286,7 +286,7 @@ ribbon:
 
 + 重新访问
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220816/image.3e2gqggpype0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220816/image.3e2gqggpype0.webp)
 
 ## OpenFeign日志增强
 

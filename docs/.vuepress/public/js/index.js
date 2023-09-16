@@ -2,7 +2,7 @@
     'use strict';
     const DEST_LIST = [
       'cdn.jsdelivr.net',
-      'cdn.staticaly.com',
+      'cdn.jsdelivr.net',
       'gcore.jsdelivr.net',
       'testingcf.jsdelivr.net',
       'test1.jsdelivr.net'

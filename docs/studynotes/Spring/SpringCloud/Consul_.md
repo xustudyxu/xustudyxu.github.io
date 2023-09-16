@@ -79,7 +79,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
 
 浏览器输入 - http://localhost:8500/ - 打开Consul控制页。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.5dwbr6vcxb40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.5dwbr6vcxb40.webp)
 
 ## 服务提供者注册进Consul
 
@@ -208,11 +208,11 @@ public class PaymentController {
 
 - [http://localhost:8006/payment/consul](http://localhost:8006/payment/consul)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.1cgi418bn9gg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.1cgi418bn9gg.webp)
 
 - [http://localhost:8500](http://localhost:8500)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.5o6cr4jeom40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.5o6cr4jeom40.webp)
 
 ## 服务消费者注册进Consul
 
@@ -342,11 +342,11 @@ public class OrderConsulController {
 
   http://localhost:8500/ 主页会显示出consul，cloud-providerconsul-payment8006，cloud-consumerconsul-order80三服务。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.aof43930jgo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.aof43930jgo.webp)
 
 + 访问测试地址 - [http://localhost:81/consumer/payment/consul](http://localhost:81/consumer/payment/consul)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.4tnw181x9hu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.4tnw181x9hu0.webp)
 
 ## 三个注册中心异同点
 
@@ -362,7 +362,7 @@ CAP：
 - A：Availability (可用性)
 - P：Partition tolerance （分区容错性)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.94hpz9x1yb0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.94hpz9x1yb0.webp)
 
 **最多只能同时较好的满足两个**。
 
@@ -380,7 +380,7 @@ AP架构（Eureka）
 
 结论：违背了一致性C的要求，只满足可用性和分区容错，即AP
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.edjjxibsaag.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.edjjxibsaag.webp)
 
 CP架构（ZooKeeper/Consul）
 
@@ -388,6 +388,6 @@ CP架构（ZooKeeper/Consul）
 
 结论：违背了可用性A的要求，只满足一致性和分区容错，即CP。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220815/image.29aygpmd0wu8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.29aygpmd0wu8.webp)
 
 CP 与 AP 对立同一的矛盾关系。

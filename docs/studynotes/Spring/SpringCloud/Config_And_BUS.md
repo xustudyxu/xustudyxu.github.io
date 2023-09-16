@@ -21,7 +21,7 @@ SpringCloud提供了ConfigServer来解决这个问题，我们每一个微服务
 
 **是什么**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.780zm1qk7j80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.780zm1qk7j80.webp)
 
 SpringCloud Config为微服务架构中的微服务提供集中化的外部配置支持，配置服务器为各个不同微服务应用的所有环境提供了一个中心化的外部配置。
 
@@ -201,7 +201,7 @@ windows下修改hosts文件，增加映射
 - 浏览器防问 - [http://config-3344.com:3344/master/config-dev.yml](http://config-3344.com:3344/master/config-dev.yml)
 - 页面返回结果：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.20jh8d20lxb4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.20jh8d20lxb4.webp)
 
 配置读取规则
 
@@ -370,7 +370,7 @@ public class ConfigClientController {
 
   + [http://localhost:3355/configlnfo](http://localhost:3355/configlnfo)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.2hh9l2apgja0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.2hh9l2apgja0.webp)
 
 **成功实现了客户端3355访问SpringCloud Config3344通过GitHub获取配置信息可题随时而来**
 
@@ -379,11 +379,11 @@ public class ConfigClientController {
 - Linux运维修改GitHub上的配置文件内容做调整
 - 刷新3344，发现ConfigServer配置中心立刻响应
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.33cvo9016bm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.33cvo9016bm0.webp)
 
 - 刷新3355，发现ConfigClient客户端没有任何响应
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.2hh9l2apgja0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.2hh9l2apgja0.webp)
 
 - 3355没有变化除非自己重启或者重新加载
 - 难到每次运维修改配置文件，客户端都需要重启??噩梦
@@ -433,11 +433,11 @@ public class ConfigClientController {
 
 + http://config-3344.com:3344/master/config-dev.yml
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.6ckulqy33mg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.6ckulqy33mg0.webp)
 
 + [http://localhost:3355/configInfo](http://localhost:3355/configInfo)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.69kqiokyb900.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.69kqiokyb900.webp)
 
 3355改变没有??? **没有**，还需一步
 
@@ -455,7 +455,7 @@ curl -X POST "http://localhost:3355/actuator/refresh"
 
 3355改变没有??? **改了**。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220821/image.6u7coe9nn6c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220821/image.6u7coe9nn6c0.webp)
 
 成功实现了客户端3355刷新到最新配置内容，避免了服务重启
 
@@ -478,13 +478,13 @@ Spring Cloud Bus 配合Spring Cloud Config 使用可以实现配置的动态刷�
 
 Spring Cloud Bus是用来将分布式系统的节点与轻量级消息系统链接起来的框架，它<mark>整合了Java的事件处理机制和消息中间件的功能</mark>。Spring Clud Bus目前支持`RabbitMQ`和`Kafka`。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.2iol96ek0qg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.2iol96ek0qg0.webp)
 
 **能干嘛**
 
 Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.1oncuwtiquo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.1oncuwtiquo0.webp)
 
 **为何被称为总线**
 
@@ -517,7 +517,7 @@ rabbitmq-plugins enable rabbitmq_management
 - 访问地址查看是否安装成功：[http://localhost:15672/](http://localhost:15672/)
 - 输入账号密码并登录：guest guest
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.2mc1fnqmr1i0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.2mc1fnqmr1i0.webp)
 
 ## Bus动态刷新全局广播的设计思想和选型
 
@@ -660,11 +660,11 @@ public class ConfigClientController {
 
 1. 利用消息总线触发一个客户端/bus/refresh,而刷新所有客户端的配置
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.7ct3r6wajjw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.7ct3r6wajjw0.webp)
 
 2. 利用消息总线触发一个服务端ConfigServer的/bus/refresh端点，而刷新所有客户端的配置
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.5rziiyg4lyk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.5rziiyg4lyk0.webp)
 
 图二的架构显然更加适合，图—不适合的原因如下：
 
@@ -853,16 +853,16 @@ management:
 - 配置中心
   - [http://config-3344.com:3344/config-dev.yml](http://config-3344.com:3344/config-dev.yml)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.23kdoaxiyf6o.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.23kdoaxiyf6o.webp)
 
 - 客户端
 - [http://localhost:3355/configlnfo](http://localhost:3355/configlnfo)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.6hprk3uwzws0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.6hprk3uwzws0.webp)
 
   - [http://localhost:3366/configInfo](http://localhost:3366/configlnfo)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.moh9x7y9hts.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.moh9x7y9hts.webp)
 
   - 获取配置信息，发现都已经刷新了
 
@@ -895,18 +895,18 @@ management:
 
 - [http://config-3344.com:3344/config-dev.yml](http://config-3344.com:3344/config-dev.yml)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.65syde1wxr40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.65syde1wxr40.webp)
 
 - 客户端
 - [http://localhost:3355/configlnfo](http://localhost:3355/configlnfo)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.1rfw022lykkg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.1rfw022lykkg.webp)
 
 - [http://localhost:3366/configlnfo](http://localhost:3366/configlnfo)
 
-![1661102449228](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220822/1661102449228.190io4tjo7y.webp)
+![1661102449228](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/1661102449228.190io4tjo7y.webp)
 
 通知总结
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.4drpraucccq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.4drpraucccq0.webp)
 

@@ -36,9 +36,9 @@ tags:
 
 + Java 的集合类很多，主要分为两大类，如图
 
-![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/02.png)
 
-![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/03.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/03.png)
 
 + 代码演示：
 
@@ -145,9 +145,9 @@ public class CollectionMethod {
 2. **所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了lterator接口的对象,即可以返回一个迭代器。**
 3. **lterator仅用于遍历集合，Iterator本身并不存放对象。**
 
-![02](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/07.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/07.png)
 
-![07](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/08.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/08.png)
 
 + 代码演示:
 
@@ -245,7 +245,7 @@ class Book{
 
 ### Collection 接口遍历对象方式 2-for 循环增强
 
-![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/09.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/09.png)
 
 + 代码演示:
   
@@ -414,7 +414,7 @@ class Dog{
 
 ### List 接口基本介绍
 
-![09](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/11.png)
+![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/11.png)
 
 + 代码演示：
 
@@ -834,7 +834,7 @@ public class ArrayListSource {
 
 ### Vector 的基本介绍
 
-![16](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/16.png)
+![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/16.png)
 
 + 代码演示:
 
@@ -908,7 +908,7 @@ public class Vector_ {
 
 ## LinkedList 底层结构
 
-![17](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/17.png)
+![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/17.png)
 
 ### LinkedList 的全面说明
 
@@ -1121,7 +1121,7 @@ public class LinkedListCRUD {
 
 ### Set 接口基本介绍
 
-![17](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/19.png)
+![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/19.png)
 
 ### Set 接口的常用方法
 
@@ -1306,7 +1306,7 @@ class Dog{//定义了Dog类
 
 *HashMap*实现了*Map*接口，即允许放入`key`为`null`的元素，也允许插入`value`为`null`的元素；除该类未实现同步外，其余跟`Hashtable`大致相同；跟*TreeMap*不同，该容器不保证元素顺序，根据需要该容器可能会对元素重新哈希，元素的顺序也会被重新打散，因此不同时间迭代同一个*HashMap*的顺序可能会不同。 根据对冲突的处理方式不同，哈希表有两种实现方式，一种开放地址方式(Open addressing)，另一种是冲突链表方式(Separate chaining with linked lists)。**Java7 HashMap采用的是冲突链表方式**。
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/45.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/45.png)
 
 从上图容易看出，如果选择合适的哈希函数，`put()`和`get()`方法可以在常数时间内完成。但在对*HashMap*进行迭代时，需要遍历整个table以及后面跟的冲突链表。因此对于迭代比较频繁的场景，不宜将*HashMap*的初始大小设的过大。
 
@@ -1318,7 +1318,7 @@ class Dog{//定义了Dog类
 
 `get(Object key)`方法根据指定的`key`值返回对应的`value`，该方法调用了`getEntry(Object key)`得到相应的`entry`，然后返回`entry.getValue()`。因此`getEntry()`是算法的核心。 算法思想是首先通过`hash()`函数得到对应`bucket`的下标，然后依次遍历冲突链表，通过`key.equals(k)`方法来判断是否是要找的那个`entry`。
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/46.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/46.png)
 
 上图中`hash(k)&(table.length-1)`等价于`hash(k)%table.length`，原因是*HashMap*要求`table.length`必须是2的指数，因此`table.length-1`就是二进制低位全是1，跟`hash(k)`相与会将哈希值的高位全抹掉，剩下的就是余数了。
 
@@ -1343,7 +1343,7 @@ final Entry<K,V> getEntry(Object key) {
 
 `put(K key, V value)`方法是将指定的`key, value`对添加到`map`里。该方法首先会对`map`做一次查找，看是否包含该元组，如果已经包含则直接返回，查找过程类似于`getEntry()`方法；如果没有找到，则会通过`addEntry(int hash, K key, V value, int bucketIndex)`方法插入新的`entry`，插入方式为**头插法**。
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/47.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/47.png)
 
 ```java
 //addEntry()
@@ -1364,7 +1364,7 @@ void addEntry(int hash, K key, V value, int bucketIndex) {
 
 `remove(Object key)`的作用是删除`key`值对应的`entry`，该方法的具体逻辑是在`removeEntryForKey(Object key)`里实现的。`removeEntryForKey()`方法会首先找到`key`值对应的`entry`，然后删除该`entry`(修改链表的相应引用)。查找过程跟`getEntry()`过程类似。
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/48.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/48.png)
 
 ```java
 //removeEntryForKey()
@@ -1400,7 +1400,7 @@ Java8 对 HashMap 进行了一些修改，最大的不同就是利用了红黑�
 
 来一张图简单示意一下吧：
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/49.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/49.png)
 
 注意，上图是示意图，主要是描述结构，不会达到这个状态的，因为这么多数据的时候早就扩容了。
 
@@ -1857,7 +1857,7 @@ class MyDate{
 3. **LinkedHashSet根据元素的hashCode值来决定元素的存储位置，同时使用链表维护元素的次序(图)，这使得元素看起来是以插入顺序保存的。**
 4. **LinkedHashSet不允许添重复元素**
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/25.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/25.png)
 
 + 代码演示:
 
@@ -2133,7 +2133,7 @@ public class Map_ {
 
 ```
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/28.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/28.png)
 
 ### Map 接口常用方法
 
@@ -2422,7 +2422,7 @@ class Emp{
 
 ### HashMap 底层机制及源码剖析图
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/32.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/32.png)
 
 ### HashMap 底层机制及源码剖析
 
@@ -2620,7 +2620,7 @@ public class HashTableExercise {
 
 ### 基本介绍
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/34.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/34.png)
 
 ### 基本使用
 
@@ -2672,7 +2672,7 @@ public class Properties_ {
 
 ## 总结-开发中如何选择集合实现类(记住)
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/35.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/35.png)
 
 ## Collections 工具类
 
@@ -2683,11 +2683,11 @@ public class Properties_ {
 
 ### 排序操作：（均为 static 方法)
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/36.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/36.png)
 
 - 查找，替换：
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/37.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/37.png)
 
 - 代码演示：
 
@@ -2866,7 +2866,7 @@ public class TreeMap_ {
 
 ## 本章作业
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/38.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/38.png)
 
 ```java
 package com.study.homework;
@@ -2954,7 +2954,7 @@ class News{
 
 ```
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/39.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/39.png)
 
 ```java
 package com.study.homework;
@@ -3057,7 +3057,7 @@ class Car{
 }
 ```
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/40.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/40.png)
 
 ```java
 package com.study.homework;
@@ -3116,7 +3116,7 @@ public class Homework03 {
 
 ```
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/42.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/42.png)
 
 ```java
 package com.study.homework;
@@ -3150,7 +3150,7 @@ class Person implements Comparable{
 }
 ```
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/43.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/43.png)
 
 ```java
 package com.study.homework;
@@ -3220,7 +3220,7 @@ class Person{
 
 - 运行结果：
 
-![20](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/44.png)
+![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/jihe/44.png)
 
 ## 参考资料
 

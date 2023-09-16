@@ -48,7 +48,7 @@ tags:
 
 ## Elasticsearch索引文档的流程？
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220709/image.47wt00z13ku0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220709/image.47wt00z13ku0.webp)
 
 - 协调节点默认使用文档 ID 参与计算（也支持通过 routing），以便为路由提供合适的分片：
 
@@ -70,7 +70,7 @@ tags:
 
 ## Elasticsearch搜索的流程？
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220709/image.3cew6rbg7p40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220709/image.3cew6rbg7p40.webp)
 
 - 搜索被执行成一个两阶段过程，我们称之为 Query Then Fetch
 - 在初始查询阶段时，查询会广播到索引中每一个分片拷贝（主分片或者副本分片）。 每个分片在本地执行搜索并构建一个匹配文档的大小为 from + size 的优先队列。PS：在搜索的时候是会查询 Filesystem Cache 的，但是有部分数据还在 Memory Buffer，所以搜索是近实时的
@@ -126,7 +126,7 @@ elasticsearch-head 插件通过 Kibana 监控 Elasticsearch。你可以实时查
 
 常用字典数据结构如下所示：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220709/image.55v1evqnjvo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220709/image.55v1evqnjvo0.webp)
 
 字典树又称单词查找树，Trie 树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。
 

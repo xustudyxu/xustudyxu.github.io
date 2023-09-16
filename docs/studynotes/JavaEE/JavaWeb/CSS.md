@@ -145,7 +145,7 @@ span{
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.1408z637inpc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.1408z637inpc.webp)
 
 ## css使用方式总结
 
@@ -157,7 +157,7 @@ span{
 
 CSS 样式由一系列的规则集组成，规则集中有一条或多条样式声明。
 
-![image-20210322151922490](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image-20210322151922490.67aiow6q61s0.webp)
+![image-20210322151922490](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image-20210322151922490.67aiow6q61s0.webp)
 
 - 选择器通常是您需要改变样式的 HTML 元素。
 - 每条样式声明包含着一对属性名和属性值。
@@ -224,7 +224,7 @@ em单位有如下特点：
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.35uvj7onz3w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.35uvj7onz3w0.webp)
 
 ### font-family:字体
 
@@ -281,7 +281,7 @@ p{
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.3hfrt75xm700.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.3hfrt75xm700.webp)
 
 ### font-weight:字体粗细
 
@@ -334,7 +334,7 @@ font-weight属性用于定义字体的粗细，其可用属性值：normal、bol
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.3lr8wd0vxak0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.3lr8wd0vxak0.webp)
 
 ### font-style:字体风格
 
@@ -381,7 +381,7 @@ oblique：浏览器会显示倾斜的字体样式。
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.3c0wuao8bv40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.3c0wuao8bv40.webp)
 
 ### font:综合设置字体样式 (重点)
 
@@ -521,7 +521,7 @@ id选择器 好比人的身份证号码，  全中国是唯一的， 不得重�
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/image.6ek8ijm6t7o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.6ek8ijm6t7o0.webp)
 
 ### 总结-CSS的基本选择器
 
@@ -603,7 +603,7 @@ a:active 必须位于 a:hover 之后，这样才能生效！
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2bzcqaje7i68.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.2bzcqaje7i68.webp)
 
 ## CSS外观属性
 
@@ -669,7 +669,7 @@ color: rgba(0,0,0,0.3)
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.4kre0thpepo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.4kre0thpepo0.webp)
 
 ### line-height：行间距
 
@@ -685,7 +685,7 @@ color: rgba(0,0,0,0.3)
 - 数字：行高 = 数字 * 字体大小，例如，`line-height: 2;font-size: 16px;`，则行高等于：2 * 16px = 32px
 - 长度值：使用长度值设置行高，例如，`line-height: 32px`。
 
-![line-height](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220906/line-height.2ekeh4hnhhj4.webp)
+![line-height](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/line-height.2ekeh4hnhhj4.webp)
 
 > 基线（base line）并不是汉字文字的下端沿，而是英文字母“x”的下端沿。
 >
@@ -759,7 +759,7 @@ color: rgba(0,0,0,0.3)
 </html>
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.6t70okfows00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.6t70okfows00.webp)
 
 ### text-align：水平对齐方式
 
@@ -809,7 +809,7 @@ color: rgba(0,0,0,0.3)
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2ybibul5gk40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.2ybibul5gk40.webp)
 
 ### text-indent:首行缩进
 
@@ -843,7 +843,7 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.4fz2sgh66fi0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.4fz2sgh66fi0.webp)
 
 ### text-decoration：文本修饰
 
@@ -893,7 +893,7 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.2zs378pysjq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.2zs378pysjq0.webp)
 
 ### letter-spacing：字符间距
 
@@ -957,7 +957,7 @@ text-indent属性用于设置首行文本的缩进，其属性值可为不同单
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.sgj8hyr4mlc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.sgj8hyr4mlc.webp)
 
 ### 文字阴影(CSS3)
 
@@ -1008,7 +1008,7 @@ text-shadow: -5px 0px cyan, 5px 0px red;
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220909/image.6ymo0cf4ux00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.6ymo0cf4ux00.webp)
 
 ## CSS书写规范
 

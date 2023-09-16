@@ -15,7 +15,7 @@ tags:
 
 某头条的文章评论业务如下：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220626/image.77ioanbkj3k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220626/image.77ioanbkj3k0.webp)
 
 文章示例参考：早晨空腹喝水，是对还是错？https://www.toutiao.com/a6721476546088927748/
 
@@ -388,7 +388,7 @@ com.frx01.article.ArticleApplicationTests
 
 使用compass快速插入一条测试数据，数据的内容是对3号评论内容进行评论。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220626/image.59gip5txbns0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220626/image.59gip5txbns0.webp)
 
 执行测试，结果：
 
@@ -465,9 +465,9 @@ Process finished with exit code 0
 
 测试前:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220626/image.491df2bzkko0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220626/image.491df2bzkko0.webp)
 
 测试后:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220626/image.56w9b798ius0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220626/image.56w9b798ius0.webp)
 

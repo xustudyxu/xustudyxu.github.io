@@ -15,7 +15,7 @@ tags:
 
 ### 问题的引出(重点，难点)
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/40.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/40.png)
 
 ### 说明
 
@@ -23,7 +23,7 @@ tags:
 
 ### 多表查询练习
 
-![04](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/41.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/41.png)
 
 ```sql
 -- 多表查询

@@ -60,7 +60,7 @@ tags:
 
 - 结果页面
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.4i5gdhcivla0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.4i5gdhcivla0.webp)
 
 ## Nacos之服务提供者注册
 
@@ -191,11 +191,11 @@ public class PaymentController {
 
 - [http://localhost:9001/payment/nacos/1](http://localhost:9001/payment/nacos/1)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.66o61k206k00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.66o61k206k00.webp)
 
 - nacos控制台
 
-![1661334507137](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661334507137.5qur0ovy3600.webp)
+![1661334507137](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/1661334507137.5qur0ovy3600.webp)
 
 - nacos服务注册中心+服务提供者9001都OK了
 
@@ -205,21 +205,21 @@ public class PaymentController {
 - 9002其它步骤你懂的
 - 或者**取巧**不想新建重复体力劳动，可以利用IDEA功能，直接拷贝虚拟端口映射
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.3mzundrnfq00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.3mzundrnfq00.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.o3dvyjfk15c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.o3dvyjfk15c.webp)
 
 + [http://localhost:9011/payment/nacos/1](http://localhost:9011/payment/nacos/1)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.67mts1qd01w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.67mts1qd01w0.webp)
 
 + nacos控制台
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.3w15p0upay0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.3w15p0upay0.webp)
 
 + 新建cloudalibaba-provider-payment9002
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.15ljzsnlk480.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.15ljzsnlk480.webp)
 
 ## Nacos之服务消费者注册和负载
 
@@ -355,7 +355,7 @@ public class OrderNacosController {
 - 启动nacos控制台
 - [http://localhost:83/consumer/payment/nacos/1](http://localhost:83/consumer/payment/nacos/1)
 
-![QQ22918914922917714320220824204517](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/QQ22918914922917714320220824204517.158d055ketts.gif)
+![QQ22918914922917714320220824204517](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/QQ22918914922917714320220824204517.158d055ketts.gif)
 
 - 83访问9001/9002，轮询负载OK
 
@@ -363,17 +363,17 @@ public class OrderNacosController {
 
 **Nacos全景图**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.4hatbbv9zz4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.4hatbbv9zz4.webp)
 
 **Nacos和CAP**
 
 Nacos与其他注册中心特性对比
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.6zg3vithqws0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.6zg3vithqws0.webp)
 
 **Nacos服务发现实例模型**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/image.2pleq09bklk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.2pleq09bklk0.webp)
 
 **Nacos支持AP和CP模式的切换**
 
@@ -549,11 +549,11 @@ ${spring.application.name)}-${spring.profiles.active}.${spring.cloud.nacos.confi
 
 配置新增
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.4ssyzwcxh5o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.4ssyzwcxh5o0.webp)
 
 Nacos界面配置对应 - 设置DataId
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.5im2tpxeos00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.5im2tpxeos00.webp)
 
 ```yaml
 config:
@@ -562,7 +562,7 @@ config:
 
 配置小结
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.6qdb03c1it40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.6qdb03c1it40.webp)
 
 + 测试
 
@@ -570,7 +570,7 @@ config:
 - 运行cloud-config-nacos-client3377的主启动类
 - 调用接口查看配置信息 - [http://localhost:3377/config/info](http://localhost:3377/config/info)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.3dzpheksvm20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.3dzpheksvm20.webp)
 
 **自带动态刷新**
 
@@ -578,7 +578,7 @@ config:
 
 + 将version改为2
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.79gz7serx840.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.79gz7serx840.webp)
 
 ## Nacos之命名空间分组和DataID三者关系
 
@@ -600,9 +600,9 @@ config:
 
 Nacos的图形化管理界面
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.76s386tg3800.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.76s386tg3800.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.o6mv2ha8yls.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.o6mv2ha8yls.webp)
 
 **Namespace+Group+Data lD三者关系？为什么这么设计？**
 
@@ -612,7 +612,7 @@ Nacos的图形化管理界面
 
 2. 三者情况
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.6bvqpd9va3s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.6bvqpd9va3s0.webp)
 
 默认情况：Namespace=public，Group=DEFAULT_GROUP，默认Cluster是DEFAULT
 
@@ -631,21 +631,21 @@ Nacos的图形化管理界面
 
 + 新建dev配置DatalD
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.40mozznilxa0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.40mozznilxa0.webp)
 
 + 新建test配置DatalD
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.4cy2sw2mh9q0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.4cy2sw2mh9q0.webp)
 
 通过spring.profile.active属性就能进行多环境下配置文件的读取
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.1xrtzpe911z4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.1xrtzpe911z4.webp)
 
 **测试**
 
 - [http://localhost:3377/config/info](http://localhost:3377/config/info)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.4rda0znq9sw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.4rda0znq9sw0.webp)
 
 - 配置是什么就加载什么 test/dev
 
@@ -653,33 +653,33 @@ Nacos的图形化管理界面
 
 通过Group实现环境区分 - 新建Group
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.3av1ooy8gmy.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.3av1ooy8gmy.webp)
 
 在nacos图形界面控制台上面新建配置文件DatalD
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.4wgtctg0c0m0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.4wgtctg0c0m0.webp)
 
 bootstrap+application
 
 在config下增加一条group的配置即可。可配置为DEV_GROUP或TEST GROUP
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.66fekbqg4k00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.66fekbqg4k00.webp)
 
 ## Nacos之Namespace空间方案
 
 新建dev/test的Namespace
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.3o8cut4xnvq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.3o8cut4xnvq0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.iif5a0jkjpc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.iif5a0jkjpc.webp)
 
 回到服务管理-服务列表查看
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.7r2a3ibwem4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.7r2a3ibwem4.webp)
 
 按照域名配置填写
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.13e3f1v7rvao.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.13e3f1v7rvao.webp)
 
 YML
 
@@ -709,7 +709,7 @@ spring:
 
 + 测试访问[http://localhost:3377/config/info](http://localhost:3377/config/info)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.2rvq3f9rwqs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.2rvq3f9rwqs0.webp)
 
 ## Nacos集群_架构说明
 
@@ -727,11 +727,11 @@ spring:
 >
 > http://nacos.com:port/openAPI域名＋VIP模式，可读性好，而且换ip方便，推荐模式
 >
-> ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.79l43dr3wp80.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.79l43dr3wp80.webp)
 
 上图官网翻译，真实情况
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.16zo8yeotl5s.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.16zo8yeotl5s.webp)
 
 > 官网说明
 >
@@ -786,11 +786,11 @@ db.password=hsp
 
 启动Nacos，可以看到是个全新的空记录界面，以前是记录进derby。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.1pbry18pjosg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.1pbry18pjosg.webp)
 
 + 添加配置，查询MySQL数据库
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.1codosk59qxs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.1codosk59qxs.webp)
 
 ## Nacos之Linux版本安装
 
@@ -939,9 +939,9 @@ shutdown.cmd  shutdown.sh  startup.cmd  startup.sh
 
 修改内容
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.3vd5fzqvuuu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.3vd5fzqvuuu0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.3x80aqonafo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.3x80aqonafo0.webp)
 
 ```sh {1,10,11,18}
 while getopts ":m:f:s:p:" opt
@@ -966,7 +966,7 @@ nohup $JAVA -Dserver.port=${PORT} ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/st
 
 执行方式 - `startup.sh - p 端口号`
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220825/image.l45pdndezvk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220825/image.l45pdndezvk.webp)
 
 ## Nacos集群配置(下)
 
@@ -1041,7 +1041,7 @@ nohup $JAVA -Dserver.port=${PORT} ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/st
   - `./startup.sh - p 4444`
   - `./startup.sh - p 5555`
   
-  ![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/image.yezln9eghrk.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.yezln9eghrk.webp)
   
   - 查看nacos进程启动数`ps -ef | grep nacos | grep -v grep | wc -l`
 
@@ -1064,11 +1064,11 @@ root       2824   1977  0 21:47 pts/0    00:00:00 grep --color=auto nginx
 
 - 测试通过nginx，访问nacos - [http://192.168.91.200:1111/nacos/#/login](http://192.168.91.200:1111/nacos/#/login)
 
-![1661484342465](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661484342465.2x6n9yc3nvg0.webp)
+![1661484342465](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/1661484342465.2x6n9yc3nvg0.webp)
 
 + 新建一个配置测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/image.5u823eqyx3c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.5u823eqyx3c0.webp)
 
 + 新建后，可在linux服务器的mysql新插入一条记录
 
@@ -1109,11 +1109,11 @@ management:
 - 启动微服务cloudalibaba-provider-payment9002
 - 访问nacos，查看注册结果
 
-![1661485514866](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/1661485514866.5gpg606b9d80.webp)
+![1661485514866](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/1661485514866.5gpg606b9d80.webp)
 
 + 注册成功
 
 **高可用小总结**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220826/image.5d23j4rupes0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.5d23j4rupes0.webp)
 

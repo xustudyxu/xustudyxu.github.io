@@ -11,9 +11,9 @@ tags:
 
 ## 二进制与字符编码
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/01.png)
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/02.png)
 
 ```python
 """
@@ -48,18 +48,18 @@ print(ord('乘')) ##20056
 
 + 变量是内存中一个带标签的盒子
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/03.png)
 
 + 变量由三部分组成
   - <font color=#DC4040 size=4 face="黑体">标识:表示对象所存储的内存地址,使用内置函数id(obj)来获取</font>
   - <font color=#DC4040 size=4 face="黑体">类型:表示的是对象的数据类型,使用内置函数type(obj)来获取</font>
   - <font color=#DC4040 size=4 face="黑体">值:表示对象所存储的具体数据， 使用print(obj)可以将值进行打印输出</font>
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/04.png)
 
 + 当多次赋值后,变量名会指向新的空间
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/05.png)
 
 ## 数据类型
 
@@ -196,7 +196,7 @@ print(str4,type(str4))
 + 为什么需要数据类型的转换?
   + 将不同数据类型的数据拼接在一起
 
-![01](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/02/06.png)
 
 ```python
 """

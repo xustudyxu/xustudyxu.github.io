@@ -26,11 +26,11 @@ tags:
 + 高频次，热门访问的数据，降低数据库IO
 + 分布式架构，做session共享
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220610/image.vf65bnc1ctc.jpg)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220610/image.vf65bnc1ctc.jpg)
 
 ### **多样的数据结构存储持久化数据**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220610/image.1i2uh69ynf9c.jpg)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220610/image.1i2uh69ynf9c.jpg)
 
 ## Redis 安装
 
@@ -53,7 +53,7 @@ for Linux(`redis-6.2.1.tar.gz`)
 mkdir /opt/redis
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220610/image.3bkgvfqxogy0.jpg)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220610/image.3bkgvfqxogy0.jpg)
 
 + 安装C 语言的编译环境
 
@@ -248,4 +248,4 @@ Redis是单线程+多路IO复用技术
 
 （与Memcache三点不同: 支持多数据类型，支持持久化，单线程+多路IO复用）  
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting@master/20220610/image.3aetgolac1s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220610/image.3aetgolac1s0.webp)

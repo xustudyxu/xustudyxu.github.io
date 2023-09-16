@@ -27,7 +27,7 @@ MQ(message queue)，从字面意思上看，本质是个队列，FIFO 先入先�
 
    以电商应用为例，应用中有订单系统、库存系统、物流系统、支付系统。用户创建订单后，如果耦合调用库存系统、物流系统、支付系统，任何一个子系统出了故障，都会造成下单操作异常。当转变成基于消息队列的方式后，系统间调用的问题会减少很多，比如物流系统因为发生故障，需要几分钟来修复。在这几分钟的时间里，物流系统要处理的内存被缓存在消息队列中，用户的下单操作可以正常完成。当物流系统恢复后，继续处理订单信息即可，中单用户感受不到物流系统的故障，提升系统的可用性。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220723/image.1ddl4r0fiusg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.1ddl4r0fiusg.webp)
 
 ## MQ的分类
 

@@ -47,7 +47,7 @@ Mysql数据库安装完成后，自带了一下四个数据库，具体作用如
  mysql -u root -p MySQL_Advanced -e "select * from stu";
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221004/image.5qo92img9os0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221004/image.5qo92img9os0.webp)
 
 ### mysqladmin
 
@@ -478,4 +478,4 @@ Query OK, 0 rows affected (0.00 sec)
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20221004/image.2cmla4jxlpog.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221004/image.2cmla4jxlpog.webp)

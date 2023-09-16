@@ -76,13 +76,13 @@ controller层的代码是不可以直接写业务的，建议把它抽离到serv
 
 批量起售米饭和宫保鸡丁
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220714/image.4mlup2f5a080.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220714/image.4mlup2f5a080.webp)
 
 ## 菜品的批量删除
 
 前端发来的请求:
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.70vsudwh7eg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.70vsudwh7eg0.webp)
 
 在DishController中添加接口：
 
@@ -144,7 +144,7 @@ public R<String> delete(@RequestParam("ids") List<Long> ids){
 
 + 删除米饭和川菜
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4ovdplwu0880.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4ovdplwu0880.webp)
 
 ## 菜品删除逻辑优化
 
@@ -221,7 +221,7 @@ public R<String> delete(@RequestParam("ids") List<Long> ids){
 
 携带的参数是：stemealId
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.59qrcjycj2w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.59qrcjycj2w0.webp)
 
 SetmealController 中添加下面的代码：
 
@@ -275,37 +275,37 @@ public SetmealDto getDate(Long id) {
 
 测试：数据回显成功：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3xm6qfw5i7a0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.3xm6qfw5i7a0.webp)
 
 但是这样我们再点击添加菜品会发现，右边只展示菜品的价格并没有展示菜品对应的名称：
 
 **已选菜品中的菜品并没有展示对应的菜品名；**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.6jfi34l3wzo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.6jfi34l3wzo0.webp)
 
  修改后的运行情况展示：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.5hhiemeuiu40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.5hhiemeuiu40.webp)
 
 修改具体的前端代码：把backend/combo/add.html中的335行修改为下面的代码；
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2awgkjbwp3b4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2awgkjbwp3b4.webp)
 
  因为这里的item是代表dish对象，dish实体类是使用name作为菜品名称的；
 
 修改完成后，点击保存，我们发现前端发出一个put请求：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.7guc6xuids40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.7guc6xuids40.webp)
 
  携带的参数为：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3pwwuihfci00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.3pwwuihfci00.webp)
 
  根据前端传过来的数据和需要的返回值，我们就可以知道controller层方法的返回值和用什么参数来接收前端传给我们的数据；**注意这个套餐里面的菜品也要保存修改：需要把setealDish保存到seteal_dish表中；**
 
 击修改后的保存，后端会接收到下面的数据：发现setmealId == null，所以这里需要自己单独填充；
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4b3bhpf84d40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4b3bhpf84d40.webp)
 
 controller层代码：
 
@@ -343,17 +343,17 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 测试，将套餐名称改为豪华商务套餐：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2lkv3fqm6s00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2lkv3fqm6s00.webp)
 
 ## 后台按条件查看和展示客户订单
 
 点击订单明细，前端会发下面的请求：携带的数据是分页使查询用的；
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4q5gms8wmww0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4q5gms8wmww0.webp)
 
 先写个controller看能不能接收到前端传过来的参数：**发现只要参数和前端传过来的参数名对应就可以拿到参数的**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.6qez9emkw6s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.6qez9emkw6s0.webp)
 
 主要使用到mybatis-plus动态sql语句的生成：
 
@@ -386,7 +386,7 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
     }
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2dgx1psnb4e8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2dgx1psnb4e8.webp)
 
 但是如果你**想要这个username显示用户名的话**，那么有两种办法：
 
@@ -398,11 +398,11 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 修改ordei下的list,把72行的userName改成**consignee就行；**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3sf092gzvk60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.3sf092gzvk60.webp)
 
 测试效果：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.48iyk4xfsy60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.48iyk4xfsy60.webp)
 
 ## 手机端减少购物车中的菜品或者套餐数量
 
@@ -412,7 +412,7 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 携带参数可能是dish_id 也可能是 setmealId，所以我们需要实体类shoppingCart来接收;
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4wcvkecm2zk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4wcvkecm2zk0.webp)
 
 + 编写处理器
 
@@ -481,7 +481,7 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 前端发送请求
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.5j69hlb9mvw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.5j69hlb9mvw0.webp)
 
 在OrderController中添加下面的方法；
 
@@ -502,13 +502,13 @@ public R<String> edit(@RequestBody SetmealDto setmealDto){
 
 + 测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4t5vcofr2420.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4t5vcofr2420.webp)
 
 **其实这里还没有完善！！！下面继续完善代码；**
 
 通过order.html这个页面我们可以发现：前端还需要下面这些数据；所以我们后端要传给它。。。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2qvajx45xqk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2qvajx45xqk0.webp)
 
  分析前端代码: 这个item是从order.orderDetails里面 获取到的，但是orders实体类里面并没有orderDetails这个属性，而且数据库中这个order表里面也没有这个字段，所以这里我使用的是dto来封装数据给前端，这就需要使用到dto对象的分页查询了，，，，，而且离谱的是前端就是传了一个分页页面大小的数据，，，，所以我们只能从本地线程中获取用户id开始，，一路查询数据。。。。。
 
@@ -578,17 +578,17 @@ public class OrderDto extends Orders {
 
 + 测试下单
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2q6rx6wrefu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2q6rx6wrefu0.webp)
 
 + **点击去支付，然后点击去查看订单：**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4tnhur36c880.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4tnhur36c880.webp)
 
 ## 移动端的再来一单功能
 
 **由于这里没有写后台的确认订单功能，所以这里通过数据库修改订单状态来完成测试！**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.2jc4frrzf080.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.2jc4frrzf080.webp)
 
 在order.html中可以看见这样一段前端代码:
 
@@ -619,15 +619,15 @@ function orderAgainApi(data) {
 
 + 测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3m00dj9tmes0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.3m00dj9tmes0.webp)
 
 + 点击再来一单
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.40l7tsznnn60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.40l7tsznnn60.webp)
 
 并且购物车表中也有数据：
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.726dhlxuxos0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.726dhlxuxos0.webp)
 
 ## 移动端点击套餐图片查看套餐具体菜品
 
@@ -644,7 +644,7 @@ function dishListApi(data) {
 }
 ```
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.3wg8ouy1h8y0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.3wg8ouy1h8y0.webp)
 
 + 编写处理器
 
@@ -654,13 +654,13 @@ function dishListApi(data) {
 
 + 测试
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.1cgzu1p480hs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.1cgzu1p480hs.webp)
 
 ## 删除地址
 
 前端点击删除地址：然后发送删除请求到后端
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.7cqu84vwpow0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.7cqu84vwpow0.webp)
 
 在后端使用controller接收：
 
@@ -687,7 +687,7 @@ function dishListApi(data) {
 
 点击修改符号，发现回显信息已经写好了；
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.1q0zdzdz9ctc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.1q0zdzdz9ctc.webp)
 
 + 编写处理器
 
@@ -715,9 +715,9 @@ function dishListApi(data) {
 
 请求地址：http://localhost:8088/order
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.e884zpstk6o.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.e884zpstk6o.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.4916bv7pdda0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.4916bv7pdda0.webp)
 
 + 编写处理器
 
@@ -745,11 +745,11 @@ function dishListApi(data) {
 
 + 测试，派送6月6日的订单
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.5k9qwxvxiro0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.5k9qwxvxiro0.webp)
 
 ## 移动端登陆退出功能
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220715/image.77tlrb1jkb00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220715/image.77tlrb1jkb00.webp)
 
 + 编写处理器
 

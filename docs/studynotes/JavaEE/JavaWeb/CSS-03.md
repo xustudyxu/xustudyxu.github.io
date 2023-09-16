@@ -17,7 +17,7 @@ tags:
 
 其实就是把网页元素比如文字图片等等，放入盒子里面，然后利用CSS摆放盒子的过程，就是网页布局。
 
-![image-20220513233145379](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image-20220513233145379.75mc9uh3e3o0.webp)
+![image-20220513233145379](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image-20220513233145379.75mc9uh3e3o0.webp)
 
 ## 盒子模型（Box Model）
 
@@ -31,7 +31,7 @@ tags:
 
 首先，我们来看一张图，来体会下什么是盒子模型。
 
-![image-20210324160524683](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image-20210324160524683.2y5i3om1ho80.webp)
+![image-20210324160524683](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image-20210324160524683.2y5i3om1ho80.webp)
 
 > 1.所有的文档元素（标签）都会生成一个矩形框，它描述了一个文档元素在网页布局汇总所占的位置大小。
 >
@@ -39,7 +39,7 @@ tags:
 >
 > 拿水果来比喻帮助记忆:
 >
-> ![youzi](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/youzi.1ds5qzp5t9a8.webp)
+> ![youzi](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/youzi.1ds5qzp5t9a8.webp)
 
 ```html
 <!DOCTYPE html>
@@ -76,7 +76,7 @@ tags:
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image.175vkd6aw2ww.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image.175vkd6aw2ww.webp)
 
 ## 盒子边框（border）
 
@@ -150,7 +150,7 @@ border: 1px solid red;
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image.7botyzqu9740.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image.7botyzqu9740.webp)
 
 ### 圆角边框(CSS3)
 
@@ -179,7 +179,7 @@ border-radius: 左上角  右上角  右下角  左下角;
 
 演示例子风车：
 
-![fengche](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/fengche.7jv8my4biio0.webp)
+![fengche](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/fengche.7jv8my4biio0.webp)
 
 ```html
 <!DOCTYPE html>
@@ -253,7 +253,7 @@ padding-left:左内边距
 | 3个值    | padding：上边距 左右边距 下边距 比如 padding: 3px 5px 10px; 表示 上是3像素 左右是5像素 下是10像素 |
 | 4个值    | padding:上内边距 右内边距 下内边距 左内边距 比如: padding: 3px 5px 10px 15px; 表示 上3px 右是5px 下 10px 左15px 顺时针 |
 
-![image-20210709124751335](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/image-20210709124751335.1eixwqg5jnpc.webp)
+![image-20210709124751335](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image-20210709124751335.1eixwqg5jnpc.webp)
 
 ## 外边距（margin）
 
@@ -316,7 +316,7 @@ margin: 10px auto;  /* 盒子水平居中  左右margin 改为 auto 就阔以了
 
 当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。
 
-![www](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/www.1cdjrsaor1ls.webp)
+![www](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/www.1cdjrsaor1ls.webp)
 
 > 解决方案： 不要这样设置。
 
@@ -324,7 +324,7 @@ margin: 10px auto;  /* 盒子水平居中  左右margin 改为 auto 就阔以了
 
 对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者，即使父元素的上外边距为0，也会发生合并。
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220913/n.20m1e8bycov4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/n.20m1e8bycov4.webp)
 
 >解决方案：
 >

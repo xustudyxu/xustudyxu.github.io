@@ -44,7 +44,7 @@ transition: 要过渡的属性  花费时间  运动曲线  何时开始;
 
 运动曲线示意图：
 
-![1498445454760](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498445454760.13pt8ld549i8.webp)
+![1498445454760](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498445454760.13pt8ld549i8.webp)
 
 ```css
 div {
@@ -143,7 +143,7 @@ div:hover {
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.ny60ozd3e0g.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.ny60ozd3e0g.webp)
 
 ## 2D变形(CSS3) transform
 
@@ -155,7 +155,7 @@ transform是CSS3中具有颠覆性的特征之一，可以实现元素的位移�
 
 translate 移动平移的意思
 
-![1498443715586](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498443715586.6c4wd2f8ffg0.webp)
+![1498443715586](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498443715586.6c4wd2f8ffg0.webp)
 
 ```css
 translate(50px,50px);
@@ -314,7 +314,7 @@ translate(50px,50px);
 
 + 结果
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/image.44k371mnyag0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.44k371mnyag0.webp)
 
 #### 让定位的盒子水平居中
 
@@ -331,7 +331,7 @@ translate(50px,50px);
 ```
 ### 缩放 scale(x, y) （0~1）
 
-![1498444645795](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498444645795.694zd7xj9bo0.webp)
+![1498444645795](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498444645795.694zd7xj9bo0.webp)
 
 ```css
 transform:scale(0.8,1);
@@ -385,7 +385,7 @@ scaleY(y)元素仅垂直方向缩放（Y轴缩放）
 
 可以对元素进行旋转，正值为顺时针，负值为逆时针；
 
-![1498443651293](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498443651293.d5bzdfdnzkw.webp)
+![1498443651293](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498443651293.d5bzdfdnzkw.webp)
 
 ```css
 transform:rotate(45deg);
@@ -483,7 +483,7 @@ transform:rotate(45deg);
 
 ### transform-origin可以调整元素转换变形的原点
 
-![1498443912530](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498443912530.4w47mulwrtk0.webp)
+![1498443912530](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498443912530.4w47mulwrtk0.webp)
 ```css
 transform-origin: x-axis y-axis;
 ```
@@ -518,7 +518,7 @@ div{
 
 CSS3中的3D坐标系与上述的3D坐标系是有一定区别的，相当于其绕着X轴旋转了180度，如下图
 
-![1498459001951](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498459001951.3islzg9fepi0.webp)
+![1498459001951](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498459001951.3islzg9fepi0.webp)
 
 简单记住他们的坐标：
 
@@ -534,7 +534,7 @@ z 里面是负的， 外面是正的
 
  就是沿着 x 立体旋转.
 
-![1498445756802](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498445756802.7ammmkmssyk0.webp)
+![1498445756802](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498445756802.7ammmkmssyk0.webp)
 
 ```css
 img {
@@ -583,7 +583,7 @@ img:hover {
 
 沿着y轴进行旋转
 
-![1498446043198](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498446043198.4wkuotw2c480.webp)
+![1498446043198](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498446043198.4wkuotw2c480.webp)
 
 ```css
 img {
@@ -660,7 +660,7 @@ perspective 一般作为一个属性，设置给父元素，作用于所有3D转
 
 理解透视距离原理：
 
-![1498446715314](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498446715314.4uyyej6jgae0.webp)
+![1498446715314](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498446715314.4uyyej6jgae0.webp)
 
 ### 开门案例
 
@@ -739,7 +739,7 @@ transform-style: flat|preserve-3d;
 
 仅水平方向移动**（X轴移动）
 
-![1498459697576](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498459697576.6rw5ej26gug0.webp)
+![1498459697576](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498459697576.6rw5ej26gug0.webp)
 
 主要目的实现移动效果
 
@@ -747,7 +747,7 @@ transform-style: flat|preserve-3d;
 
 仅垂直方向移动（Y轴移动）
 
-![1498459770252](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498459770252.aibccmlei0c.webp)
+![1498459770252](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498459770252.aibccmlei0c.webp)
 
 ### translateZ(z)
 
@@ -825,7 +825,7 @@ transformZ的直观表现形式就是大小变化，实质是XY平面相对于�
 animation:动画名称 动画时间 运动曲线  何时开始  播放次数  是否反方向;
 ```
 
-![1498461096243](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/1498461096243.6wfp5npwzzs0.webp)
+![1498461096243](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/1498461096243.6wfp5npwzzs0.webp)
 
 
 常用属性写法
@@ -942,7 +942,7 @@ img {
 }
 ```
 
-![QQ22918914922917714320220920235056](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220920/QQ22918914922917714320220920235056.4z91v5xhlhg0.gif)
+![QQ22918914922917714320220920235056](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/QQ22918914922917714320220920235056.4z91v5xhlhg0.gif)
 
 
 

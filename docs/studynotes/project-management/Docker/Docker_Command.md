@@ -13,7 +13,7 @@ tags:
 
 ## Docker运行流程
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.6xr5pco2z9c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.6xr5pco2z9c0.webp)
 
 ## Docker帮助命令
 
@@ -116,11 +116,11 @@ hello-world   latest    feb5d9fea6a5   11 months ago   13.3kB
 
 > **Docker Hub 网页搜索镜像**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.2pl4371jjmc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.2pl4371jjmc0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.6yr72dghxoc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.6yr72dghxoc0.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.5fb8d91n1o40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.5fb8d91n1o40.webp)
 
 > **命令搜索镜像**
 
@@ -203,9 +203,9 @@ docker pull <镜像名:@DIGEST>
 
 > **查看摘要**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.6r4ofi9v9r80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.6r4ofi9v9r80.webp)
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.mo6n44962u8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.mo6n44962u8.webp)
 
 > **例子 1：通过「版本」下载 MySQL 的 latest 版本**
 
@@ -526,7 +526,7 @@ docker image inspect tomcat:8.5.73
 
 > **概念**
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220908/image.4ecsbpz8cro0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220908/image.4ecsbpz8cro0.webp)
 
 首先我们要知道，Docker 启动一个容器，这个容器与操作系统是隔离的，比如 Tomcat 容器的端口是 8080，操作系统的 IP 是 `http://192.168.199.27`，则访问 Tomcat 的界面 `http://192.168.199.27:8080` 是失败的，这就是容器的隔离效果。你访问的是操作系统的 8080 端口，不是容器的 8080 端口。所以 **我们在启动容器时要将容器的端口和操作系统的端口进行绑定（映射）**，这样，外界访问操作系统的端口，就会转发给容器的端口。
 
@@ -1200,7 +1200,7 @@ sha256:bc554c9488cc1b4ff0649eaeb9cd6fa0ffc763f4a48a6796499fc05cb37eaf6b
 
 ## 常用命令总结
 
-![image](https://cdn.staticaly.com/gh/xustudyxu/image-hosting1@master/20220911/image.33l1vukec220.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.33l1vukec220.webp)
 
 | 命令    | 官方说明                                                     | 解释                                                         |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1253,16 +1253,16 @@ sha256:bc554c9488cc1b4ff0649eaeb9cd6fa0ffc763f4a48a6796499fc05cb37eaf6b
 
 ### 镜像命令图片
 
-![image-20211120172453603](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172455.png)
+![image-20211120172453603](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172455.png)
 
-![image-20211120172716950](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172720.png)
+![image-20211120172716950](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172720.png)
 
 ### 容器命令图片
 
-![image-20211120172301522](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172307.png)
+![image-20211120172301522](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172307.png)
 
-![image-20211120172319882](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172327.png)
+![image-20211120172319882](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172327.png)
 
-![image-20211120172737409](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172738.png)
+![image-20211120172737409](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172738.png)
 
-![image-20211120172743635](https://cdn.staticaly.com/gh/Kele-Bingtang/static@master/img/Docker/20211120172745.png)
+![image-20211120172743635](https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/img/Docker/20211120172745.png)
