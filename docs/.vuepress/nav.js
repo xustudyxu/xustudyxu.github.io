@@ -22,6 +22,7 @@ module.exports = [
         { text: 'HTML', link: '/pages/5cda88/' },
         { text: 'CSS', link: '/pages/cea341/' },
         { text: 'JavaScript', link: '/pages/d893c0/' },
+        { text: 'Vue', link: '/pages/d893c0/' },
         { text: 'Servlet', link: '/pages/8f83ba/' },
         { text: 'MVC', link: '/pages/8bc1c4/' },
         { text: 'filter|listener', link: '/pages/f883e2/' },
