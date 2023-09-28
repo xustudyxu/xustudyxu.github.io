@@ -33,7 +33,7 @@ MongoDB支持在文档的单个字段上创建用户定义的升序/降序索引
 
 对于单个字段索引和排序操作，索引键的排序顺序（即升序或降序）并不重要，因为MongoDB可以在任何方向上遍历索引。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.5l8wdgg3kfg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.5l8wdgg3kfg0.webp)
 
 ### 复合索引
 
@@ -41,7 +41,7 @@ MongoDB还支持多个字段的用户定义索引，即复合索引（Compound I
 
 复合索引中列出的字段顺序具有重要意义。例如，如果复合索引由 { userid: 1, score: -1 } 组成，则索引首先按userid正序排序，然后在每个userid的值内，再在按score倒序排序。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.78a8t9ixshc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.78a8t9ixshc0.webp)
 
 ### 其他索引
 
@@ -185,7 +185,7 @@ options（更多选项）列表：
 
 compass查看:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.a25aczussy.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.a25aczussy.webp)
 
 #### 复合索引
 
@@ -236,7 +236,7 @@ compass查看:
 
 compass中：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.1at13xitxdpc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.1at13xitxdpc.webp)
 
 ### 索引的移除
 
@@ -341,7 +341,7 @@ db.collection.find(query,options).explain(options)
 
 关键点看： `"stage" : "COLLSCAN"`, 表示全集合扫描
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.3s2i2nqx02o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.3s2i2nqx02o0.webp)
 
 下面对userid建立索引
 
@@ -409,7 +409,7 @@ db.collection.find(query,options).explain(options)
 
 compass查看：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.1gncli23u55s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.1gncli23u55s.webp)
 
 ### 涵盖的扫描
 
@@ -417,7 +417,7 @@ Covered Queries
 
 当查询条件和查询的投影仅包含索引字段时，MongoDB直接从索引返回结果(不再去找集合)，而不扫描任何文档或将文档带入内存。 这些覆盖的查询可以非常有效。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.3ls8cdhjarg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.3ls8cdhjarg0.webp)
 
 【示例】
 
@@ -478,5 +478,5 @@ Covered Queries
 
 Compass中：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.1ebr55whcaao.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.1ebr55whcaao.webp)
 

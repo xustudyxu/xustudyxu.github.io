@@ -13,17 +13,17 @@ tags:
 
 ### 什么是文件
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/01.png)
 
 ### 文件流
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/02.png)
 
 ## 常用的文件操作
 
 ### 创建文件对象相关构造器和方法
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/03.png)
 
 + 代码演示：
 
@@ -90,7 +90,7 @@ public class FileCreate {
 
 ### 获取文件的相关信息
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/04.png)
 
 ### 应用案例演示 FileInformation.java
 
@@ -128,7 +128,7 @@ public class FileInformation {
 
 ### 目录的操作和文件删除
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/05.png)
 
 ### 应用案例演式
 
@@ -221,7 +221,7 @@ public class Directory {
 
 ### 流的分类
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/06.png)
 
 ## IO 流体系图-常用的类
 
@@ -229,11 +229,11 @@ public class Directory {
 
 1 . IO流体系图
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/07.png)
+![07](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/07.png)
 
 2. 文件VS流
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/08.png)
+![08](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/08.png)
 
 
 ### FileInputStream 应用实例
@@ -330,7 +330,7 @@ public class FileInputStream_ {
 
 ### FileOutputStream 介绍
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/09.png)
+![09](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/09.png)
 
 ### FileOutputStream 应用实例
 
@@ -457,7 +457,7 @@ public class FileCopy {
 
 ### FileReader 和 FileWriter 介绍
 
-![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/10.png)
+![10](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/10.png)
 
 ### FileReader 和 FileWriter 应用案例：
 
@@ -616,11 +616,11 @@ public class FileWriter_ {
 
 ### 基本介绍
 
-![11](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/11.png)
+![11](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/11.png)
 
 ### 节点流和处理流一览图
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/12.png)
+![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/12.png)
 
 ### 节点流和处理流的区别和联系
 
@@ -781,11 +781,11 @@ public class BufferedCopy_ {
 
 ### 处理流-BufferedInputStream 和 BufferedOutputStream
 
-![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/13.png)
+![13](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/13.png)
 
 ### 介绍 BufferedOutputStream
 
-![14](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/14.png)
+![14](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/14.png)
 
 + 代码演示：编程完成图片/音乐的拷贝	
 
@@ -859,7 +859,7 @@ public class BufferedCopy02 {
      + **Serializable    //这是一个标记接口,没有方法**
      + **Externalizable    //该接口有方法需要实现，因此我们一般实现上面的Serializable接口**
 
-![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/15.png)
+![15](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/15.png)
 
 ### 对象流介绍
 
@@ -867,7 +867,7 @@ public class BufferedCopy02 {
 + **ObjectOutputStream 提供 序列化功能** 
 + **ObjectInputStream 提供 反序列化功能**
 
-![16](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/16.png)
+![16](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/16.png)
 
 + 代码演示:
 
@@ -1031,17 +1031,17 @@ public class ObjectOutStream_ {
 
 ```
 
-![17](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/17.png)
+![17](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/17.png)
 
-![18](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/18.png)
+![18](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/18.png)
 
 ### 标准输入输出流
 
-![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/19.png)
+![19](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/19.png)
 
 ### 转换流-InputStreamReader 和 OutputStreamWriter
 
-![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/20.png)
+![20](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/20.png)
 
 + 代码演示：
 
@@ -1120,7 +1120,7 @@ public class OutputStreamWriter_ {
 
 ## 打印流-PrintStream 和 PrintWriter 
 
-![21](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/21.png)
+![21](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/21.png)
 
 + 代码演示:
 
@@ -1215,7 +1215,7 @@ public class PrintWriter_ {
 >
 > 2.使用Properties类可以方便实现
 
-![22](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/22.png)
+![22](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/22.png)
 
 + 代码演示: 传统方式
 
@@ -1253,7 +1253,7 @@ public class Properties01 {
 
 ### 基本介绍
 
-![23](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/23.png)
+![23](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/io/23.png)
 
 ### 应用案例
 

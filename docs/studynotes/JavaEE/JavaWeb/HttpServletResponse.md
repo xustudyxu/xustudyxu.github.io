@@ -159,7 +159,7 @@ public class Servlet02 extends HttpServlet {
 
 + 访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/03.png)
 
 **getOutputStream()字节乱码**
 
@@ -216,7 +216,7 @@ public class Servlet03 extends HttpServlet {
 
 + 访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/04.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/04.png)
 
 ::: tip
 
@@ -283,11 +283,11 @@ public class Servlet04 extends HttpServlet {
 
 + 访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/06.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/06.png)
 
 + 检查
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/05.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/05.png)
 
 ##  请求转发与重定向的区别
 
@@ -363,11 +363,11 @@ public class Servlet06 extends HttpServlet {
 
 + 请求转发访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/07.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/07.png)
 
 + 重定向访问URL
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/08.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/08.png)
 
 
 

@@ -245,11 +245,11 @@ public class PaymentController {
 
 success的方法 - [http://localhost:8001/payment/hystrix/ok/1](http://localhost:8001/payment/hystrix/ok/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.3fzl480bxq20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.3fzl480bxq20.webp)
 
 每次调用耗费3秒钟 - [http://localhost:8001/payment/hystrix/timeout/1](http://localhost:8001/payment/hystrix/timeout/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.11b5wbupqofk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.11b5wbupqofk.webp)
 
 上述module均OK
 
@@ -427,7 +427,7 @@ public class OrderHystrixController {
 
 + 访问[http://localhost:81/consumer/payment/hystrix/ok/1](http://localhost:81/consumer/payment/hystrix/ok/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.684c2mkdt4o.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.684c2mkdt4o.webp)
 
 7. 高并发测试
 
@@ -529,7 +529,7 @@ public class PaymentHystrixMain8001 {
 
 + [http://localhost:8001/payment/hystrix/timeout/1](http://localhost:8001/payment/hystrix/timeout/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.vgg8bktmvsw.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.vgg8bktmvsw.webp)
 
 ## Hystrix之服务降级订单侧fallback
 
@@ -605,7 +605,7 @@ public class OrderHystrixController {
 
 + 测试 [http://localhost:81/consumer/payment/hystrix/timeout/1](http://localhost:81/consumer/payment/hystrix/timeout/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.73z2czmcp2c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.73z2czmcp2c0.webp)
 
 ## Hystrix之全局服务降级DefaultProperties
 
@@ -659,7 +659,7 @@ public class OrderHystrixController {
 
 + 测试 [http://localhost:81/consumer/payment/hystrix/timeout/1](http://localhost:81/consumer/payment/hystrix/timeout/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.45t34hbzs9c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.45t34hbzs9c0.webp)
 
 ## Hystrix之通配服务降级FeignFallback
 
@@ -742,11 +742,11 @@ PaymentHystrixMain8001启动
 
 + [http://localhost:81/consumer/payment/hystrix/ok/1](http://localhost:81/consumer/payment/hystrix/ok/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.4l885zrrwmc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.4l885zrrwmc0.webp)
 
 + 故意关闭微服务8001，再次访问
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220818/image.48uhagvgpc80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220818/image.48uhagvgpc80.webp)
 
 客户端自己调用提示 - 此时服务端provider已经down了，但是我们做了服务降级处理，让客户端在服务端不可用时也会获得提示信息而不会挂起耗死服务器。
 
@@ -762,7 +762,7 @@ PaymentHystrixMain8001启动
 
 [Martin Fowler的相关论文](https://martinfowler.com/bliki/CircuitBreaker.html)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.1uqftpm75ri8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.1uqftpm75ri8.webp)
 
 ## Hystrix之服务熔断案例(上)
 
@@ -864,11 +864,11 @@ public class PaymentController {
 
 正确 - [http://localhost:8001/payment/circuit/1](http://localhost:8001/payment/circuit/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.3oqulij7oc8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.3oqulij7oc8.webp)
 
 错误 - [http://localhost:8001/payment/circuit/-1](http://localhost:8001/payment/circuit/-1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.304htzvukzu0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.304htzvukzu0.webp)
 
 多次错误，再来次正确，但错误得显示
 
@@ -880,7 +880,7 @@ public class PaymentController {
 
 [Martin Fowler的相关论文](https://martinfowler.com/bliki/CircuitBreaker.html)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.mtzs1kresfk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.mtzs1kresfk.webp)
 
 **熔断类型**
 
@@ -890,7 +890,7 @@ public class PaymentController {
 
 **官网断路器流程图**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.3y1ucd83bv20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.3y1ucd83bv20.webp)
 
 **官网步骤**
 
@@ -1047,7 +1047,7 @@ public String doSomething() {
 
 **官网图例**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.6wmsdhvkhyc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.6wmsdhvkhyc0.webp)
 
 步骤说明
 
@@ -1172,7 +1172,7 @@ public class HystrixDashboardMain9001 {
 
 浏览器输入[http://localhost:9001/hystrix](http://localhost:9001/hystrix)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.18mc8a651jo.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.18mc8a651jo.webp)
 
 ## Hystrix图形化Dashboard监控实战
 
@@ -1225,13 +1225,13 @@ public class PaymentHystrixMain8001 {
 + 测试通过
 + 先访问正确地址，再访问错误地址，再正确地址，会发现图示断路器都是慢慢放开的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.5ylp5yy7ym80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.5ylp5yy7ym80.webp)
 
 **如何看?**
 
 - 7色
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.4fh23x8szy00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.4fh23x8szy00.webp)
 
 - 1圈
 
@@ -1243,9 +1243,9 @@ public class PaymentHystrixMain8001 {
 
 曲线：用来记录2分钟内流量的相对变化，可以通过它来观察到流量的上升和下降趋势。
 
-- 整图说明![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.703qlrecqrc0.webp)
+- 整图说明![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.703qlrecqrc0.webp)
 
 - 整图说明2
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220819/image.luqrwab8ws0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220819/image.luqrwab8ws0.webp)
 

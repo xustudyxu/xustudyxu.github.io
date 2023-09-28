@@ -29,7 +29,7 @@ Nginx 即可以实现正向代理，也可以实现反向代理。
 
 先提需求：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.53oygoz19gc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.53oygoz19gc0.webp)
 
 1. 服务端的设置：
 
@@ -50,7 +50,7 @@ http {
 
 2. 使用客户端访问服务端：`http://192.168.200.133`，打开日志查看结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.16ifxal7swyk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.16ifxal7swyk.webp)
 
 3. 代理服务器设置：
 
@@ -68,11 +68,11 @@ server {
 
 4. 配置代理服务器的 IP(192.168.200.146)和 Nginx 配置监听的端口(82)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.3yx93qbazra0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.3yx93qbazra0.webp)
 
 5. 设置完成后，再次通过浏览器访问服务端
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.6litsat09000.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.6litsat09000.webp)
 
 通过对比，上下两次的日志记录，会发现虽然我们是客户端访问服务端，但是使用了代理，那么服务端能看到的只是代理发送过去的请求，这样就使用 Nginx 实现了正向代理的设置。
 
@@ -139,7 +139,7 @@ http {
 
 访问服务器 A，我们看到 Nginx 的欢迎界面其实是服务器 B 的 Nginx，可以在服务器 B 的 Nginx 欢迎页面添加新的内容：`I am 146`，再次访问服务器 A，效果如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.4ai1u3uxs940.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.4ai1u3uxs940.webp)
 
 **在编写 proxy_pass 的时候，后面的值要不要加 /?**
 
@@ -186,7 +186,7 @@ server{
 
 该指令可以更改 Nginx 服务器接收到的客户端请求的请求头信息，然后将新的请求头发送给代理的服务器。默认值是发送代理服务器的地址和 close。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.4bt7qzhbz1i0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.4bt7qzhbz1i0.webp)
 
 | 语法                                | 默认值                                                       | 位置                   |
 | ----------------------------------- | ------------------------------------------------------------ | ---------------------- |
@@ -222,7 +222,7 @@ server {
 
 访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.398ksbw6rv20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.398ksbw6rv20.webp)
 
 客户端访问的是服务器 A，服务器 A 会将请求转发给服务器 B，服务器 B 返回打印 TOM 的页面给服务器 A，服务器 A 最后返回给客户端。
 
@@ -243,7 +243,7 @@ server {
 - 首先在服务器 B 进行判断是否存在资源，不存在则返回自己的欢迎页面，即重定向到自己的欢迎页面地址并返回，此时浏览器的地址将会发生改变
 - 代理服务器 A 收到服务器 B 的欢迎页面和地址，但是我们不能直接返回给客户端，因为它会暴露服务器 B 的地址，这是重定向的原因
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.a4tptcx6lbk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.a4tptcx6lbk.webp)
 
 - 此时用到 `proxy_redirect` 指令，重置服务器 B 返回过来的『 Location 』和『 Refresh 』值，将两个值改为代理服务器 A 的某个地址
 - 因为改为了代理服务器 A 的某个地址，所以代理服务器 A 根据这个地址又去获取理服务器 B 的欢迎页面地址，返回给客户端
@@ -323,7 +323,7 @@ server {
 
 ## 反向代理实战
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.59ecpsonzxc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.59ecpsonzxc0.webp)
 
 服务器 1，2，3 存在两种情况
 
@@ -426,7 +426,7 @@ server {
 
 通过代理分开了客户端到应用程序服务器端的连接，实现了安全措施。在反向代理之前设置防火墙，仅留一个入口供代理服务器访问。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.3vhdv63nf9q0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.3vhdv63nf9q0.webp)
 
 ### 如何使用SSL对流量加密
 
@@ -585,29 +585,29 @@ openssl ciphers
 
 需要购买域名进行证书的绑定，否则证书无法使用。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.5p2qyl61ozc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.5p2qyl61ozc0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.5l7iqyudol00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.5l7iqyudol00.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.6ci6w9wu24g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.6ci6w9wu24g0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.4k9v2b9n6tm0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.4k9v2b9n6tm0.webp)
 
 接着在右边弹窗进行域名绑定，填完写域名和个人信息，进入到验证信息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.11wx9z7jit3k.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.11wx9z7jit3k.webp)
 
 点击验证，不成功则去自己的域名解析列表查看，如下，点击添加记录，进行配置，或者已经看到记录类型是 TXT，记录值和上图一样的，则说明成功。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.6qcpqete8ic0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.6qcpqete8ic0.webp)
 
 提交审核后，点击下载
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.28m5753glfy8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.28m5753glfy8.webp)
 
 下载 Nginx 服务器的证书
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.6kmq7nhonys0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.6kmq7nhonys0.webp)
 
 下载压缩包进行加压后，得到 .pem 证书和 .key 证书，把两个证书上传到 Linux，进行配置，往下看。
 
@@ -649,7 +649,7 @@ openssl req -new -key server.key -out server.csr
 # 这里注册你的基本信息，信息随便填写
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.2b4bgtawqb4.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.2b4bgtawqb4.webp)
 
 5. 备份 server.key
 
@@ -673,7 +673,7 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 8. 最后使用 `ll` 查看目录下是否生成相应的文件：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.3yl8ne2bkre0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.3yl8ne2bkre0.webp)
 
 ### SSL实例模板(通用)
 
@@ -734,7 +734,7 @@ server {
 
 Buffer 翻译过来是「缓冲」，Cache 翻译过来是「缓存」。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.6p7uoj5ab0k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.6p7uoj5ab0k0.webp)
 
 客户端通过代理服务器向被代理服务器获取数据后，代理服务器在获取的数据存储在缓存「瓶子」里，客户端再次获取相同资源时，直接从缓存「瓶子」里获取数据，不需要向被代理服务器获取数据，减轻压力。
 

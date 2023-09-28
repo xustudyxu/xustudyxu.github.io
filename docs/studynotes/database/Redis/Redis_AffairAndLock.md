@@ -66,7 +66,7 @@ discard
 > - Exec 后，Redis 会将之前的命令队列中的命令依次执行。
 > - 组队的过程中可以通过 discard 来放弃组队。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.5c4bp1qu8z00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.5c4bp1qu8z00.webp)
 
 ### 案例代码
 
@@ -101,27 +101,27 @@ OK
 
 + 组队中某个命令出现了报告错误(Multi 中)，执行时整个的所有队列都会被取消
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.70upunii4zs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.70upunii4zs0.webp)
 
 + 如果执行阶段(exec)某个命令报出了错误，则只有报错的命令不会被执行，而其他的命令都会执行，不会回滚
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.3ry9ng5dc660.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.3ry9ng5dc660.webp)
 
 ### 案例图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.6c5ajedxo0g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.6c5ajedxo0g0.webp)
 
 手动回滚
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.4h76tcpvthu0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.4h76tcpvthu0.webp)
 
 若在事务队列中存在命令性错误（类似于 java 编译性错误），则执行 EXEC 命令时，所有命令都不会执行
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.6pmk6x7zju.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.6pmk6x7zju.webp)
 
 若在事务队列中存在语法性错误（类似于 java 的 1/0 的运行时异常），则执行 EXEC 命令时，其他正确命令会被执行，错误命令抛出异常。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.5f7ho05k7900.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.5f7ho05k7900.webp)
 
 ### 事务冲突的问题
 
@@ -133,7 +133,7 @@ OK
 
 结果如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.43ckflvmbhe0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.43ckflvmbhe0.webp)
 
 那么如何解决呢？我们需要利用 Redis 的锁机制。
 
@@ -143,7 +143,7 @@ OK
 
 悲观锁(Pessimistic Lock)，顾名思义，就是很悲观，**认为这个世界是黑暗的**，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会 block 直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220617/image.75iw7f6y5os0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220617/image.75iw7f6y5os0.webp)
 
 ### 乐观锁
 
@@ -250,7 +250,7 @@ Redis 事务相关指令
 
 ## 秒杀案例
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.2wlkph5xpg80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220618/image.2wlkph5xpg80.webp)
 
 ```java
 public class SecKill_redis {
@@ -315,7 +315,7 @@ public class SecKill_redis {
 
 + 测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.547yl8y5a880.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220618/image.547yl8y5a880.webp)
 
 ```java
 ...
@@ -339,7 +339,7 @@ public class SecKill_redis {
 
 + 查看10位用户
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.6wfaz48644k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220618/image.6wfaz48644k0.webp)
 
 ### ab工具模拟并发
 
@@ -428,7 +428,7 @@ public class JedisPoolUtils {
 
 ### 超卖问题
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.5jvgxjzwyu40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220618/image.5jvgxjzwyu40.webp)
 
 + 通过事务解决超卖问题
 
@@ -529,7 +529,7 @@ public class SecKill_redis {
 
 ### 库存遗留问题
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.48v2k228eg80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220618/image.48v2k228eg80.webp)
 
 该版本利用 lua 语言，解决了库存遗留问题。
 

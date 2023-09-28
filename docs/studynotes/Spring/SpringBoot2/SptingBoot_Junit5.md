@@ -25,7 +25,7 @@ tags:
 
 **JUnit Vintage**: 由于JUint已经发展多年，为了照顾老的项目，JUnit Vintage提供了兼容JUnit4.x,Junit3.x的测试引擎。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.1yjlli5xi1wg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/image.1yjlli5xi1wg.webp)
 
 注意：
 
@@ -47,7 +47,7 @@ tags:
 </dependency>
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.4s499wxootm0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/image.4s499wxootm0.webp)
 
 ```xml
 <dependency>

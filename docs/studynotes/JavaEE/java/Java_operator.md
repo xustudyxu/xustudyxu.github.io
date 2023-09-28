@@ -30,7 +30,7 @@ tags:
 
 ### 算术运算符一览
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.2msab5zsfcs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.2msab5zsfcs0.webp)
 
 ### 案例演示
 
@@ -134,7 +134,7 @@ public class ArithmeticOperatorExercise01 {
 
 ### 关系运算符一览
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.4iijthj2cys0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.4iijthj2cys0.webp)
 
 ### 细节说明
 
@@ -155,7 +155,7 @@ public class ArithmeticOperatorExercise01 {
 1. 短路与 && ， 短路或 ||，取反！
 2. 逻辑与 &，逻辑或 |，^逻辑异或
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.4w8cidh7tz80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.4w8cidh7tz80.webp)
 
 + 说明逻辑运算规
 
@@ -202,7 +202,7 @@ public class ArithmeticOperatorExercise01 {
 
 + 练习题1
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.6um4drhoxow0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.6um4drhoxow0.webp)
 
 + 练习题2
 
@@ -256,7 +256,7 @@ a -= b; [等价 a = a-a;]
 2. 只有单目运算符、赋值运算符是从右向左运算的。
 3. 一览表, 不要背，使用多了，就熟悉了
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.3reo9834jdk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.3reo9834jdk0.webp)
 
 ## 键盘输入语句
 
@@ -335,11 +335,11 @@ public class Input {
 
 ### 二进制转换成十进制示例
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.3nudi8q1sy80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.3nudi8q1sy80.webp)
 
 ### 八进制转换成十进制示例
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.5xdvrrzdbrc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.5xdvrrzdbrc0.webp)
 
 ### 十六进制转换成十进制示例
 
@@ -355,7 +355,7 @@ public class Input {
 
 案例：请将 34 转成二进制 = 0B00100010
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.1zqfjki74kcg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.1zqfjki74kcg.webp)
 
 ### 十进制转换成八进制
 
@@ -363,7 +363,7 @@ public class Input {
 
 案例：请将 131 转成八进制 => 0203
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.3ik1ldbbpi20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.3ik1ldbbpi20.webp)
 
 ### 十进制转换成十六进制
 
@@ -371,7 +371,7 @@ public class Input {
 
 案例：请将 237 转成十六进制=> 0xED
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.6brb6wpkmxg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.6brb6wpkmxg0.webp)
 
 ### 二进制转换成八进制
 
@@ -431,7 +431,7 @@ public class BitOperation {
 
 1. java 中有 7 个位运算(&、|、^、~、>>、<<和>>>）
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.1lipps3lvc3k.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.1lipps3lvc3k.webp)
 
 2. 还有 3 个位运算符 >>、<< 和 >>> , 运算规则
 
@@ -447,9 +447,9 @@ public class BitOperation {
 
 ### 二进制在运算中的说明
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.5sxz66z6s0g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.5sxz66z6s0g0.webp)
 
 ## 原码、反码、补码
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220720/image.1215p5yuaa4g.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220720/image.1215p5yuaa4g.webp)
 

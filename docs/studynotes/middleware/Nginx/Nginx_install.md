@@ -17,17 +17,17 @@ Nginx 的官方网站为: [http://nginx.org](http://nginx.org/)
 
 打开源码可以看到如下的页面内容
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.4wlfyfbk53i0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.4wlfyfbk53i0.webp)
 
 Nginx 的官方下载网站为 [http://nginx.org/en/download.html](http://nginx.org/en/download.html)，当然你也可以之间在首页选中右边的 download 进入版本下载网页。在下载页面我们会看到如下内容：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.3e7olqaurau0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.3e7olqaurau0.webp)
 
 ## 获取Nginx源码
 
 [http://nginx.org/download/](http://nginx.org/download/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.3cu95u4zd440.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.3cu95u4zd440.webp)
 
 ## 准备服务器系统
 
@@ -57,7 +57,7 @@ ping www.baidu.com
 
 三种网络模式：桥接、主机、NAT，建议使用虚拟机使用 NAT 模式
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.4ga3snmdtsa0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.4ga3snmdtsa0.webp)
 
 NAT 模式下，只要主机有网络，则虚拟机也有网络。
 
@@ -92,7 +92,7 @@ SELinux status:                 disabled
 vim /etc/selinux/config
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.1063r7fk4lz4.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.1063r7fk4lz4.webp)
 
 ## Nginx环境安装
 
@@ -266,7 +266,7 @@ cd /usr/local/nginx/sbin
 
 访问自己 Linux 的 IP 地址，不需要加端口，如果看到如下图，代表成功
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.6xop32js8180.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.6xop32js8180.webp)
 
 ### yum安装
 
@@ -316,7 +316,7 @@ sudo yum install -y nginx
 yum list | grep nginx
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.36wvsdkk9zc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.36wvsdkk9zc0.webp)
 
 6. 使用 yum 进行安装
 
@@ -340,11 +340,11 @@ cd /usr/sbin
 ./nginx
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.38bsees6wz60.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.38bsees6wz60.webp)
 
 访问自己 Linux 的 IP 地址，不需要加端口，如果看到如下图，代表成功
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.6xop32js8180.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.6xop32js8180.webp)
 
 ### 源码简单安装和yum安装的差异
 
@@ -361,13 +361,13 @@ configure arguments: --prefix=/usr/local/nginx
 
 yum 安装的配置信息查看：（这里截取 1.16.1 版本的 图片）
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.os75hg8w3gg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.os75hg8w3gg.webp)
 
 可以看出 yum 安装的参数非常多，如果想源码简单安装也有这些参数，这涉及到源码复杂安装，往下看。
 
 执行 `tar -zxvf nginx-1.16.1.tar.gz` 对下载的资源进行解压缩后，进入压缩后的目录，可以看到如下结构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.320qb912jy00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.320qb912jy00.webp)
 
 内容解释：
 

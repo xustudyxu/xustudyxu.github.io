@@ -17,7 +17,7 @@ tags:
 
 排序算法可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。常见的内部排序算法有：插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序等。用一张图概括：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221118/image.6vxkxlptjxo0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221118/image.6vxkxlptjxo0.webp)
 
 > **插帽龟**，它很稳。（稳定性：稳定）
 >
@@ -27,7 +27,7 @@ tags:
 
 点击以下图片查看大图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221118/image.61f47p8bf2g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221118/image.61f47p8bf2g0.webp)
 
 ## 关于时间复杂度
 
@@ -71,7 +71,7 @@ O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。 希尔排序
 
 2. **动画演示**
 
-![bubbleSort](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221129/bubbleSort.60l6mgy53080.gif)
+![bubbleSort](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221129/bubbleSort.60l6mgy53080.gif)
 
 3. 代码实现
 
@@ -115,7 +115,7 @@ g        }
 
 2. **动图演示**
 
-![insertionSort](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221119/insertionSort.lre9a3i98xs.gif)
+![insertionSort](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221119/insertionSort.lre9a3i98xs.gif)
 
 3. **代码实现**
 
@@ -214,7 +214,7 @@ j=1;i=2;tmp=6;第二次进入while；while:j>0 && tmp<arr[0]:false -> false；j=
 
 2. **动画演示**
 
-![Sorting_shellsort_anim](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221120/Sorting_shellsort_anim.15pe8no2r54w.gif)
+![Sorting_shellsort_anim](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221120/Sorting_shellsort_anim.15pe8no2r54w.gif)
 
 3. **代码实现**
 

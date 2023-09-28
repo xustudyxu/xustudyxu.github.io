@@ -40,7 +40,7 @@ tags:
 + 对开发人员而言，核心sql还是需要自己优化
   + <font color="dd0000" >sql和java编码分开，功能边界清晰，一个专注业务、一个专注数据。</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/00/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/00/01.png)
 
 
 

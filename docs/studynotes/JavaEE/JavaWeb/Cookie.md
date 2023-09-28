@@ -55,7 +55,7 @@ public class Servlet01 extends HttpServlet {
 
 + <kbd>F12</kbd>查看
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/01.png)
 
 ##  Cookie的获取
 
@@ -108,7 +108,7 @@ public class Servlet02 extends HttpServlet {
 
 + 控制台
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/02.png)
 
 ## Cookie设置到期时间
 
@@ -181,7 +181,7 @@ public class Servlet03 extends HttpServlet {
 
 :::
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/03.png)
 
 ## Cookie的注意点
 
@@ -366,15 +366,15 @@ public class Servlet05 extends HttpServlet {
 
 + 访问URLhttp://localhost:8080/s05/ser05
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/04.png)
 
 + 访问URLhttp://localhost:8080/s05/ser02
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/05.png)
 
 + 访问URLhttp://localhost:8080/s03/ser05
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/04/06.png)
 
 ::: tip
 

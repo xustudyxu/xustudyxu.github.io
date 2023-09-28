@@ -1,11 +1,11 @@
 ((document) => {
     'use strict';
     const DEST_LIST = [
-      'cdn.jsdelivr.net',
-      'cdn.jsdelivr.net',
-      'gcore.jsdelivr.net',
-      'testingcf.jsdelivr.net',
-      'test1.jsdelivr.net'
+      'jsd.cdn.zzko.cn',
+      'jsd.cdn.zzko.cn',
+      'gcore.statically.io',
+      'testingcf.statically.io',
+      'test1.statically.io'
     ];
     const PREFIX = '//';
     const SOURCE = DEST_LIST[0];

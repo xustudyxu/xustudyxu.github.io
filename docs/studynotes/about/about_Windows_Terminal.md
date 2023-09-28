@@ -34,7 +34,7 @@ This is our preferred method.
 - 通过Microsoft Store下载。
 - 打开Microsoft Store，搜索Windows Terminal，下载安装
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.75c02xph0c00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.75c02xph0c00.webp)
 
 > 我的 Microsoft Store 打不开，没关系，我尝试下面这种方式。
 
@@ -47,13 +47,13 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 + [在github下载安装包](https://github.com/microsoft/terminal/releases) 
 + 找到下面的Assets
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.35fik8fdszc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.35fik8fdszc0.webp)
 
 + 选择对自己系统对应的版本下载。
 + 下载完成，双击安装。
 + 安装完成
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.253psurvnleo.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.253psurvnleo.webp)
 
 ## 基本设置
 
@@ -61,7 +61,7 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 
 ### 设置默认终端
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.3usroy7fze00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.3usroy7fze00.webp)
 
 ## Windows Terminal 集成 
 
@@ -81,21 +81,21 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 
 3. 填写成功，保存。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.2o3qv06z2ka0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.2o3qv06z2ka0.webp)
 
 4. 结果
 
-![1668684515274](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/1668684515274.1sf1gox63o8w.webp)
+![1668684515274](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/1668684515274.1sf1gox63o8w.webp)
 
 + 使用测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.1sxui2swkx28.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.1sxui2swkx28.webp)
 
 ### Anaconda3
 
 这次我们通过JSON文件配置:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.3t5hs4dwmro0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.3t5hs4dwmro0.webp)
 
 ```json
            {
@@ -108,11 +108,11 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.3hcx0luq4ag0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.3hcx0luq4ag0.webp)
 
 + 使用测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.1epxl2it5iww.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.1epxl2it5iww.webp)
 
 ### VScode
 
@@ -125,11 +125,11 @@ For users who are unable to install Windows Terminal from the Microsoft Store, r
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.7ga92rrz5es0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.7ga92rrz5es0.webp)
 
 + 使用测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.ymrmvk4zbxc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.ymrmvk4zbxc.webp)
 
 ### Zsh
 
@@ -227,7 +227,7 @@ source ~/.zshrc
 
 5. 重启Terminal，发现字体缺失
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.62gqagz6ae40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.62gqagz6ae40.webp)
 
 ### 字体缺失问题解决
 
@@ -247,7 +247,7 @@ JetBrains Mono Medium Nerd Font Complete Mono
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221117/image.5lssepe8uw00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221117/image.5lssepe8uw00.webp)
 
 ## 快捷键操作
 

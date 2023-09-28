@@ -17,7 +17,7 @@ tags:
 
 计算式:[7*2*2-5+1-5+3-3]点击计算【如下图】
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221224/image.vkonnxelp5s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221224/image.vkonnxelp5s.webp)
 
 请问:计算机底层是如何运算得到结果的?注意不是简单的把算式列出运算,因为我们看这个算式7*2*2-5，但是计算机怎么理解这个算式的(对计算机而言，它接收到的就是一个字符串)，我们讨论的是这个问题。->**栈**
 
@@ -29,7 +29,7 @@ tags:
 4. 根据栈的定义可知，最先放入栈中元素在栈底，最后放入的元素在栈顶，而删除元素刚好相反，最后放入的元素最先删除，最先放入的元素最后删除
 5. 图解方式说明出栈(pop)和入栈(push)的概念
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221225/image.3hun2bxs54o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221225/image.3hun2bxs54o0.webp)
 
 ## 栈的应用场景
 
@@ -39,7 +39,7 @@ tags:
 4. 二叉树的遍历。
 5. 图形的深度优先(depth 一 first)搜索法。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221225/image.7882u26g3680.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221225/image.7882u26g3680.webp)
 
 ### 代码实现
 
@@ -221,7 +221,7 @@ Process finished with exit code 0
 
 + 思路分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221225/image.6qcincp50xs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221225/image.6qcincp50xs0.webp)
 
 + 代码实现，【1.先实现一位数的运算。2.扩展到多位数的运算】
 
@@ -621,7 +621,7 @@ Process finished with exit code 0
 
 + 思路分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221226/image.80ikqbajhcc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221226/image.80ikqbajhcc.webp)
 
 + 代码实现
 

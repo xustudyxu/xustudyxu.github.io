@@ -27,11 +27,11 @@ RabbitMQ 是一个消息中间件：它接受并转发消息。你可以把它�
 
 ## RabbitMQ特性
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.dso2q1lbc5s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.dso2q1lbc5s.webp)
 
 ## 各个名词介绍
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.15tq7c46aeyk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.15tq7c46aeyk.webp)
 
 `Broker`：接收和分发消息的应用，RabbitMQ Server 就是 Message Broker
 

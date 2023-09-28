@@ -11,7 +11,7 @@ tags:
 
 [[toc]]
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/01.png)
 
 ## put
 
@@ -29,12 +29,12 @@ put  '表名','行键','列族:列限定符','单元格值',时间戳
   + 参数区分大小写，字符串使用单引号
   + 只能插入单个数据
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/02.png)
 
 + 描述:如果指定的单元格已经存在，则put操作为更新数据；
   + 单元格会保存指定VERSIONS=>n的多个版本数据
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/03.png)
 
 ## delete
 
@@ -48,7 +48,7 @@ delete  '表名','行键','列族<:列限定符>',<时间戳>
 
   + delete最小删除粒度为单元格，且不能跨列族删除
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/04.png)
 
 ::: warning 注意
 
@@ -70,7 +70,7 @@ get  '表名','行键',<'列族:列限定符',时间戳>
 >
 > get 'student','001',{COLUMN=>'Grades'}
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/05/05.png)
 
 > get 'student','001' ,{COLUMN=>'Grades',TIMERANGE => [1,2]}
 >

@@ -30,7 +30,7 @@ Git 易于学习，占地面积小，性能极快。 它具有廉价的本地库
 
 个人开发过渡到团队协作
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/01.png)
 
 ## 版本控制工具
 
@@ -45,7 +45,7 @@ Git 易于学习，占地面积小，性能极快。 它具有廉价的本地库
 事分两面，有好有坏。这么做显而易见的缺点是中央服务器的单点故障。如果服务器宕
 机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/02.png)
 
 + 分布式版本控制工具
 
@@ -58,17 +58,17 @@ Git 易于学习，占地面积小，性能极快。 它具有廉价的本地库
 1. 服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）
 2. 每个客户端保存的也都是整个完整的项目（包含历史记录，更加安全）
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/03.png)
 
 ## Git 简史
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/04.png)
 
 ## Git 工作机制
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/05.png)
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Git/images/01/06.png)
 
 ## Git 和代码托管中心
 

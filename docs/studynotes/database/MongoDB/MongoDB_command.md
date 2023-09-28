@@ -367,7 +367,7 @@ db.collection.update(
 
 参数:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220625/image.10xa3cnjv2kw.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220625/image.10xa3cnjv2kw.webp)
 
 > 提示：
 >

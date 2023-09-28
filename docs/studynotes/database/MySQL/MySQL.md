@@ -19,11 +19,11 @@ tags:
 2. <font color=#DC4040 size=4 face="黑体">一个数据库中可以创建多个表,以保存数据(信息)。</font>
 3. <font color=#DC4040 size=4 face="黑体">数据库管理系统(DBMS)、数据库和表的关系如图所示:示意图</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/01.png)
 
 ## 数据在数据库中的存储方式
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/02.png)
 
 ## SQL语句分类
 
@@ -34,7 +34,7 @@ tags:
 
 ## 创建数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/03.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/03.png)
 
 ```sql
 #演示数据库的操作
@@ -63,7 +63,7 @@ WHERE NAME='tom'
 
 ## 查看、删除数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/04.png)
 
 ```sql
 # 演示删除和查询数据库
@@ -82,7 +82,7 @@ DROP DATABASE frx_db01
 
 ## 备份恢复数据库
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/05.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/05.png)
 
 ```sql
 #练习：database03.sq1 备份hsp_db02 和 hsp_db03 库中的数据，并恢复
@@ -100,7 +100,7 @@ source d:\\bak.sql
 
 ## 创建表
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/06.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/06.png)
 
 ```sql
 #指令创建表
@@ -119,11 +119,11 @@ CREATE TABLE `USER`(
 
 ## Mysql 常用数据类型(列类型)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/07.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/07.png)
 
 ### 数值型(整数)的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/08.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/08.png)
 
 ```sql
 # 演示整形的使用 
@@ -180,7 +180,7 @@ SELECT * FROM t05 WHERE num = 1;
 
 ### 数值型(小数)的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/09.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/09.png)
 
 ```sql
 # 演示decimal类型、float、double使用
@@ -210,7 +210,7 @@ SELECT * FROM t08;
 
 ### 字符串的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/11.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/11.png)
 
 ```sql
 # 演示字符串类型的使用 char varchar
@@ -232,9 +232,9 @@ DROP TABLE t10;
 
 ### 字符串使用细节
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/12.png)
+![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/12.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/13.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/13.png)
 
 ```sql
 # 演示字符串的使用细节
@@ -258,7 +258,7 @@ SELECT * FROM t13;
 
 ### 日期类型的基本使用
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/14.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/14.png)
 
 ```sql
 # 演示时间相关的类型
@@ -278,7 +278,7 @@ INSERT INTO t14(birthday,job_time)
 
 ## 创建表练习
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/15.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/15.png)
 
 ```sql
 # 创建表的课堂练习
@@ -306,7 +306,7 @@ CREATE TABLE `emp`(
 
 ## 修改表-基本介绍
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/16.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/16.png)
 
 ## 修改表-课堂练习
 

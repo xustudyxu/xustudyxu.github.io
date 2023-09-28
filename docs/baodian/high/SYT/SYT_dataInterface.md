@@ -524,7 +524,7 @@ public class ApiController {
 
 + 查看mongoDB
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221026/image.3gui5mudwrs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221026/image.3gui5mudwrs0.webp)
 
 ## 图片 base64 编码
 
@@ -590,7 +590,7 @@ public class ApiController {
 
 + 重新添加JSON数据后，测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221026/image.3m645ffgfj40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221026/image.3m645ffgfj40.webp)
 
 ## 查询医院接口
 
@@ -648,7 +648,7 @@ public class ApiController {
 
 + 测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221026/image.fielw26z7ww.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221026/image.fielw26z7ww.webp)
 
 ## 上传科室接口
 
@@ -693,7 +693,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 说明：一个大科室下可以有多个小科室，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.4eq6ena01wu0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221027/image.4eq6ena01wu0.webp)
 
 #### 添加 service 接口
 
@@ -1081,7 +1081,7 @@ void save(Map<String, Object> paramMap);
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.19szr1my62m8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221027/image.19szr1my62m8.webp)
 
 ## 查询和删除科室接口
 
@@ -1219,7 +1219,7 @@ void save(Map<String, Object> paramMap);
 
 + 测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.1s2qdhzr270g.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221027/image.1s2qdhzr270g.webp)
 
 ## 上传医院排班接口
 
@@ -1464,5 +1464,5 @@ public interface ScheduleRepository extends MongoRepository<Schedule,String> {
 
 + 测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.1rs002ws61xc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221027/image.1rs002ws61xc.webp)
 

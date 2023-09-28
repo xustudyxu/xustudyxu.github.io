@@ -20,7 +20,7 @@ tags:
 
    第一步,引入相关的jar包
 
- ![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/01.png)
+ ![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/01.png)
 
    第二步，创建log4j2.xml配置文件
 
@@ -97,7 +97,7 @@ tags:
 
 第一步，引入Spring相关针对测试依赖
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/02.png)
 
 第二步，创建测试类，使用注解完成
 
@@ -126,7 +126,7 @@ public class JTest4 {
 
 第一步，引入JUnit5的jar包
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/06/03.png)
 
 第二步，创建测试类，使用注解完成
 

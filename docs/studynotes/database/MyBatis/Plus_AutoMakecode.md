@@ -73,7 +73,7 @@ Process finished with exit code 0
 
 + 查看文件生成结果
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/07/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/07/01.png)
 
 + 查看控制层
 

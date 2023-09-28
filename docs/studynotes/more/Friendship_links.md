@@ -14,12 +14,12 @@ tags:
 ```yaml
 - name: Evan's blog
   desc: 积跬步以至千里，致敬每个爱学习的你。
-  avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg
+  avatar: https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200103123203.jpg
   link: https://xugaoyi.com/
   bgColor: '#CBEAFA'
 - name:  Young Kbt blog
   desc: 朝圣的使徒，正在走向编程的至高殿堂！
-  avatar: https://cdn.jsdelivr.net/gh/Kele-Bingtang/static@master/user/avatar2.png
+  avatar: https://jsd.cdn.zzko.cn/gh/Kele-Bingtang/static@master/user/avatar2.png
   link: https://notes.youngkbt.cn/
   bgColor: '#CBEAFA'
 - name:  Java 全栈知识体系
@@ -29,7 +29,7 @@ tags:
   bgColor: '#CBEAFA'
 - name:  XPoet
   desc: 懒惰是程序员第一生产力
-  avatar: https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/common-use/avatar.jpg
+  avatar: https://jsd.cdn.zzko.cn/gh/XPoet/image-hosting@master/common-use/avatar.jpg
   link: https://xpoet.cn/
   bgColor: '#CBEAFA'
 - name:  浪里小白龙
@@ -64,7 +64,7 @@ tags:
 ```yaml
 name: xustudyxu
 desc: 一起学习编程!
-avatar: https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp
+avatar: https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp
 link: https://frxcat.fun/
 bgColor: '#CBEAFA'
 ```

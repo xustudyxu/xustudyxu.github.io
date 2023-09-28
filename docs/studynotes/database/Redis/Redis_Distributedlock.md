@@ -183,11 +183,11 @@ ab -n 1000 -c 100 http://192.168.1.113:8081/redisTest/testLock
 
 `192.168.1.113` 是本机的 IP，此时是 Linux 系统访问本机的 Spring Boot 项目。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.huhs4ur3gw8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220621/image.huhs4ur3gw8.webp)
 
 查看 redis 中 num 的值：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.18pery2i94w0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220621/image.18pery2i94w0.webp)
 
 可能出现的问题：setnx 刚好获取到锁，业务逻辑出现异常 Exception，导致锁无法释放，卡死。
 
@@ -200,7 +200,7 @@ ab -n 1000 -c 100 http://192.168.1.113:8081/redisTest/testLock
 - 首先想到通过 expire 设置过期时间（缺乏原子性：如果在 setnx 和 expire 之间出现异常，锁也无法释放）
 - 在 set 时指定过期时间（推荐）
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.3a33n6kntog0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220621/image.3a33n6kntog0.webp)
 
 ### 代码二（无唯一标识）
 
@@ -248,7 +248,7 @@ public class RedisLocked {
 
 ### 优化之UUID防误删
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220621/image.6phsp1292zk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220621/image.6phsp1292zk0.webp)
 
 ### 代码三（无原子性）
 

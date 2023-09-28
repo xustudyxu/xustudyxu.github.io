@@ -84,7 +84,7 @@ tags:
 
 查询 name 包含 `zhangsan2` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.1dsngyd08e8w.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.1dsngyd08e8w.webp)
 
 服务器响应结果：
 
@@ -139,7 +139,7 @@ tags:
 # {查询条件}：查询条件会根据类型的不同，写法也有差异
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3v37fdvz38c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.3v37fdvz38c0.webp)
 
 服务器相应结果:
 
@@ -260,7 +260,7 @@ multi_match 与 match 类似，不同的是它可以在多个字段中查询。
 
 查询 key 为 `name` 和 `nickname`，value 为 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5xj3n1s9wx40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.5xj3n1s9wx40.webp)
 
 服务端响应结果:
 
@@ -320,7 +320,7 @@ multi_match 与 match 类似，不同的是它可以在多个字段中查询。
 
 查询 key 为 `name`，value 为 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4yc9h5qwxjw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.4yc9h5qwxjw0.webp)
 
 服务端响应数据为:
 
@@ -378,7 +378,7 @@ Postman 中，向 ES 服务器发 `GET` 请求：`http://127.0.0.1:9200/student/
 
 查询 key 为 `name`，value 分别为 `zhangsan` 和 `lisi` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.2mm2zr5t7wc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.2mm2zr5t7wc0.webp)
 
 服务器响应结果:
 
@@ -451,7 +451,7 @@ Postman 中，向 ES 服务器发 `GET` 请求：`http://127.0.0.1:9200/student/
 
 只需要查询出 key 为 `name` 和 `nickname`，value 为 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.53llxxsh7b00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.53llxxsh7b00.webp)
 
 服务器响应结果:
 
@@ -515,7 +515,7 @@ includes 使用
 
 指定想要 key 为 `name` 和 `nickname`，value 为 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3c9rv27uwt60.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.3c9rv27uwt60.webp)
 
 服务器相应结果:
 
@@ -572,7 +572,7 @@ excludes 使用
 
 指定想要 key 不是 `name` 和 `nickname`，value 为 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6ouxlv0pntc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.6ouxlv0pntc.webp)
 
 服务器响应结果:
 
@@ -648,7 +648,7 @@ excludes 使用
 
 查询 name 必须为 `zhangsan`，age 不能是 40，sex 可以是男的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.56n3nj9nlis0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.56n3nj9nlis0.webp)
 
 服务端响应结果:
 
@@ -716,7 +716,7 @@ range 查询找出那些落在指定区间内的数字或者时间。range 查�
 
 查询年龄大于等于 30 小于等于 35 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.1ic04v5cc0hs.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.1ic04v5cc0hs.webp)
 
 服务端响应结果:
 
@@ -812,7 +812,7 @@ range 查询找出那些落在指定区间内的数字或者时间。range 查�
 
 模糊查询 name 带有 `zhangsan` 的数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5iqwiikkl640.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.5iqwiikkl640.webp)
 
 服务端响应结果:
 
@@ -891,7 +891,7 @@ range 查询找出那些落在指定区间内的数字或者时间。range 查�
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3gdyn4rsaok0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.3gdyn4rsaok0.webp)
 
 服务器响应结果:
 
@@ -969,7 +969,7 @@ range 查询找出那些落在指定区间内的数字或者时间。range 查�
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4ix7z98wcp40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.4ix7z98wcp40.webp)
 
 服务端响应结果:
 
@@ -1049,7 +1049,7 @@ range 查询找出那些落在指定区间内的数字或者时间。range 查�
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.2zrhxi8lkkc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.2zrhxi8lkkc0.webp)
 
 服务器响应结果:
 
@@ -1148,7 +1148,7 @@ sort 可以让我们按照不同的字段进行排序，并且通过 order 指�
 
 查询 name 有 `zhangsan` 的数据，并对年龄进行排序
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6aeh0nbybks0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.6aeh0nbybks0.webp)
 
 服务器响应:
 
@@ -1217,7 +1217,7 @@ sort 可以让我们按照不同的字段进行排序，并且通过 order 指�
 
 查询所有索引为 student 的数据，结果先按照年龄降序，然后按照相关性得分降序
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3ojs1fiynqg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.3ojs1fiynqg0.webp)
 
 服务器响应；
 
@@ -1345,7 +1345,7 @@ sort 可以让我们按照不同的字段进行排序，并且通过 order 指�
 
 如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.7exifzkoa340.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.7exifzkoa340.webp)
 
 Elasticsearch 可以对查询内容中的关键字部分，进行标签和样式(高亮)的设置。
 
@@ -1379,7 +1379,7 @@ Elasticsearch 可以对查询内容中的关键字部分，进行标签和样式
 
 分词查询 name 为 `zhangsan`，并给 `zhangsan` 高亮红色
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.7dhiu925vqw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.7dhiu925vqw0.webp)
 
 服务器响应结果:
 
@@ -1449,7 +1449,7 @@ size：每页显示多少条
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.7ily2k9vp580.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.7ily2k9vp580.webp)
 
 服务器响应结果:
 

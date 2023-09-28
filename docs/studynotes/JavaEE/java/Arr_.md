@@ -80,7 +80,7 @@ public class Array01 {
 
 ### 数组的使用
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/01.png)
 
 ```java
 public class Array02 {
@@ -128,7 +128,7 @@ public class Array02 {
 
 ### 使用方式 3-静态初始
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/02.png)
 
 ## 数组使用注意事项和细节
 
@@ -251,7 +251,7 @@ public class ArrayExercise02 {
 
    int[] arr2 =arr1;
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/03.png)
 
 ## 数组拷贝
 
@@ -421,7 +421,7 @@ public class ArrayAdd02 {
 }
 ```
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/04.png)
 
 ## 排序的介绍
 
@@ -443,7 +443,7 @@ public class ArrayAdd02 {
 
 下面我们举一个具体的案例来说明冒泡法。我们将五个无序：24,69,80,57,13 使用冒泡排序法将其排成一个从小到大的有序数列。
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/05.png)
 
 ```java
 public class BubbleSort {
@@ -606,7 +606,7 @@ public class SeqSearch {
 
 比如我们开发一个五子棋游戏，棋盘就是需要二维数组来表示。如图：
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/06.png)
 
 ##  二维数组的使用
 
@@ -695,7 +695,7 @@ public class TwoDimeensionalArray02 {
 }
 ```
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/07.png)
+![07](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/07.png)
 
 ### 使用方式 2: 动态初始化
 
@@ -709,7 +709,7 @@ public class TwoDimeensionalArray02 {
 
 ### 使用方式 3: 动态初始化-列数不确定
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/08.png)
+![08](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/08.png)
 
 ```java
 public class TwoDimeensionalArray03 {
@@ -759,7 +759,7 @@ public class TwoDimeensionalArray03 {
 
 比如:
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/09.png)
+![09](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/arr/09.png)
 
 + 解读
 

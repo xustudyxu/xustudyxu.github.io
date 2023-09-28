@@ -15,7 +15,7 @@ tags:
 
 1. SpringWebflux是Spring5添加新的模块，用于web开发的，功能和SpringMVC类似的，Webflux使用当前一种比较流行响应式编程出现的框架。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.3vx1gy1s2xg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.3vx1gy1s2xg0.webp)
 
 2. 使用传统 web 框架，比如 SpringMVC，这些基于 Servlet 容器，Webflux 是一种异步非阻塞的框架，异步非阻塞的框架在 Servlet3.1 以后才支持，核心**是基于 Reactor 的相关 API 实现的**。
 
@@ -28,7 +28,7 @@ tags:
    2. **函数式编程**：Spring5 框架基于 java8，Webflux 使用 Java8 函数式编程方式实现路由请求
 5. 与SpringMVC比较
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.3p0804bahdy0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.3p0804bahdy0.webp)
 
 + 两个框架都可以使用注解方式，都运行在 Tomet 等容器中
 + SpringMVC 采用命令式编程，Webflux 采用异步响应式编程

@@ -18,7 +18,7 @@ tags:
 
 在下图中，“ P” 是我们的生产者，“ C” 是我们的消费者。中间的框是一个队列 RabbitMQ 代表使用者保留的消息缓冲区
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.53zsdpm4hbk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.53zsdpm4hbk0.webp)
 
 ::: tip 注意
 
@@ -30,7 +30,7 @@ Java 进行连接的时候，需要 Linux 开放 5672 端口，否则会连接�
 
 步骤图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.5zalz3u39nk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.5zalz3u39nk0.webp)
 
 ### 添加依赖
 
@@ -135,7 +135,7 @@ public class Producer {
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.x5zo4wuta74.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.x5zo4wuta74.webp)
 
 消息队列名字和步骤 2 的信息根据自己的需求进行配置
 
@@ -253,7 +253,7 @@ Work Queues 是工作队列（又称任务队列）的主要思想是避免立�
 
 案例中生产者叫做 Task，一个消费者就是一个工作队列，启动两个工作队列消费消息，这个两个工作队列会以轮询的方式消费消息。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.3iwquz975vw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.3iwquz975vw0.webp)
 
 ### 轮询案例
 
@@ -328,11 +328,11 @@ public class Work01 {
 
 要开启多线程功能，首先启动该消息队列，然后如图开启多线程：
 
-![1658588553672](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/1658588553672.629xpapm6wg0.webp)
+![1658588553672](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/1658588553672.629xpapm6wg0.webp)
 
 两个工作队列都启动后
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.3fh698ujarc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.3fh698ujarc0.webp)
 
 + 创建一个生产者，发送消息进程
 
@@ -372,13 +372,13 @@ public class Task01 {
 
 通过程序执行发现生产者总共发送 4 个消息，消费者 first 和消费者 second 分别分得两个消息，并且是按照有序的一个接收一次消息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.13a9691kkkyo.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.13a9691kkkyo.webp)
 
 ## Web页面添加队列
 
 进入自己的 RabbitMQ Web 页面，点击 Queues 菜单
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.701dj3uqk400.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220723/image.701dj3uqk400.webp)
 
 1. 点击 `Queues` 菜单
 2. 点击 `Add a new queue`，弹出下拉菜单

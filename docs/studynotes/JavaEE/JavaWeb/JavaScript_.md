@@ -62,7 +62,7 @@ JavaScript： alert("你好"）
 
 翻译器可以将我们所编写的源代码转换为机器语言，这也被称为二进制化。 记住1和 0
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.5nt9b8tg64g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.5nt9b8tg64g0.webp)
 
 ### 编程语言和标记语言区别
 
@@ -81,9 +81,9 @@ JavaScript： alert("你好"）
 
 ### 计算机组成
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.2ybb8rjv55s0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.2ybb8rjv55s0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.qlvh3qkltq8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.qlvh3qkltq8.webp)
 
 ### 数据存储
 
@@ -107,7 +107,7 @@ bit < byte < kb <GB<TB<...
 
 ### 程序运行
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.2ppqoyy0k7o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.2ppqoyy0k7o0.webp)
 
 1. 打开某个程序时，先从硬盘中把程序的代码加载到内存中
 2. CPU执行内存中的代码
@@ -125,7 +125,7 @@ bit < byte < kb <GB<TB<...
 + 脚本语言:不需要编译，运行过程中由js解释器(js 引擎）逐行来进行解释并执行
 + 现在也可以基于Node.js技术进行服务器端编程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.4vg36ojq6bs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.4vg36ojq6bs0.webp)
 
 ### JavaScript 的作用
 
@@ -139,7 +139,7 @@ bit < byte < kb <GB<TB<...
 
 ### HTML/CSS/JS 的关系
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.5cubi5734gs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.5cubi5734gs0.webp)
 
 ### 浏览器执行JS简介
 
@@ -150,17 +150,17 @@ bit < byte < kb <GB<TB<...
 
 > 浏览器本身并不会执行JS代码，而是通过内置JavaScript引擎(解释器)来执行JS代码。JS引擎执行代码时逐行解释每一句源码(转换为机器语言)，然后由计算机去执行，所以JavaScript 语言归为脚本语言，会逐行解释执行.
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.41v3nyhyyf20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.41v3nyhyyf20.webp)
 
 ### JS 的组成
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.4st2jnqy8z60.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.4st2jnqy8z60.webp)
 
 #### ECMAScript
 
 **ECMAScript** 是由ECMA 国际（ 原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为 JavaScript 或 JScript，但实际上后两者是 ECMAScript 语言的实现和扩展。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.6dh59rqz0ik0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.6dh59rqz0ik0.webp)
 
 > ECMAScript: ECMAScript规定了JS的编程语法和基础核心知识，是所有浏览器厂商共同遵守的一套JS语法工业标准。
 

@@ -339,7 +339,7 @@ public class TestMulti {
 
 ### 随机验证码案例
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220615/image.3voo67if0pk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220615/image.3voo67if0pk0.webp)
 
 ```java
 public class PhoneCode {
@@ -502,7 +502,7 @@ public class TestRedisController {
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220616/image.27g75i8u709w.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220616/image.27g75i8u709w.webp)
 
 ### Redis配置类
 

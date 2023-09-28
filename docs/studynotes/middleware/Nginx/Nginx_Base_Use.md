@@ -11,7 +11,7 @@ tags:
 
 [[toc]]
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.7e2zl4ci9t40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.7e2zl4ci9t40.webp)
 
 ## 目录结构
 
@@ -48,7 +48,7 @@ client_body_temp fastcgi_temp proxy_temp scgi_temp
 
 ## 基本运行原理
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.5klrdamfdsg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.5klrdamfdsg0.webp)
 
 ## 启动停止命令
 
@@ -92,7 +92,7 @@ root       3567   3483  0 13:54 pts/1    00:00:00 grep --color=auto nginx
 
 Nginx 的进程模型，我们可以通过下图来说明下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.2i4zuw23isa0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220728/image.2i4zuw23isa0.webp)
 
 我们现在作为管理员，只需要通过给 master 进程发送信号就可以来控制 Nginx，这个时候我们需要有两个前提条件，一个是要操作的 master 进程，一个是 给 master 进程的信号。
 
@@ -202,7 +202,7 @@ kill -USR2 `cat /usr/local/nginx/logs/nginx.pid`
 kill -QUIT `cat /usr/local/nginx/logs/nginx.pid.oldbin`
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.5dgklob27do0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220728/image.5dgklob27do0.webp)
 
 6. 发送 WINCH 信号给 master 进程,让 master 进程控制不让所有的 worker 进程在接收新的请求了，请求处理完后关闭 worker 进程。注意 master 进程不会被关闭掉
 
@@ -454,7 +454,7 @@ cp nginx /usr/local/nginx/sbin
 make upgrade
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220728/image.2hpc905f42a0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220728/image.2hpc905f42a0.webp)
 
 第四步：查看是否更新成功
 

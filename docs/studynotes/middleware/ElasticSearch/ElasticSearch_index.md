@@ -19,7 +19,7 @@ Elasticsearch 的官方地址：https://www.elastic.co/cn/
 
 Elasticsearch 最新的版本是 7.11.2（截止 2021.3.10），我们选择 7.8.0 版本（最新版本半年前的版本）
 
-下载地址：https://www.elastic.co/cn/downloads/past-releases#elasticsearch![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220628/image.27e4pq25bt34.webp)
+下载地址：https://www.elastic.co/cn/downloads/past-releases#elasticsearch![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220628/image.27e4pq25bt34.webp)
 
 Elasticsearch 分为 Linux 和 Windows 版本，基于我们主要学习的是 Elasticsearch 的 Java客户端的使用，所以课程中使用的是安装较为简便的 Windows 版本。
 
@@ -27,7 +27,7 @@ Elasticsearch 分为 Linux 和 Windows 版本，基于我们主要学习的是 E
 
 Windows 版的 Elasticsearch 的安装很简单，解压即安装完毕，解压后的 Elasticsearch 的目录结构如下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6oxm14d4fkc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.6oxm14d4fkc0.webp)
 
 | 目录     | 含义           |
 | -------- | -------------- |
@@ -41,13 +41,13 @@ Windows 版的 Elasticsearch 的安装很简单，解压即安装完毕，解压
 
 解压后，进入 bin 文件目录，点击 elasticsearch.bat 文件启动 ES 服务
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.20npni7unbi8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.20npni7unbi8.webp)
 
 > 注意:**9300** 端口为 Elasticsearch 集群间组件的通信端口，**9200** 端口为浏览器访问的 http协议 RESTful 端口。
 
 打开浏览器（推荐使用谷歌浏览器），输入地址：http://localhost:9200，测试结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3dkg1w533xq0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220629/image.3dkg1w533xq0.webp)
 
 ### 问题解决
 
@@ -82,7 +82,7 @@ mkdir elastic-stack
 
 将下载的 Linux 版本通过 `Xftp` 工具传输到 Linux 刚刚创建的目录下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.76xlq94tidk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/image.76xlq94tidk0.webp)
 
 在 Linux 里进入该目录，解压压缩包
 
@@ -235,7 +235,7 @@ Kibana 是一个免费且开放的用户界面，能够让你对 Elasticsearch �
 
 下载后进行解压，目录如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.3t3mfecg2ao0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220708/image.3t3mfecg2ao0.webp)
 
 进入 bin 目录，双击 `kibana.bat` 启动服务
 
@@ -264,5 +264,5 @@ i18n.locale: "zh-CN"
 
 进入根目录下的 bin 目录，执行 kibana.bat 文件即可启动
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.7duf733o8340.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220708/image.7duf733o8340.webp)
 

@@ -87,7 +87,7 @@ ad5ee6156b1c        registry                             "/entrypoint.sh /etc…
 docker inspect 3302e930a1a8
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220918/image.4qmas1zt8z20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220918/image.4qmas1zt8z20.webp)
 
 > **例子 2：测试容器和宿主机之间数据共享**
 
@@ -726,7 +726,7 @@ test2.txt  test.txt
 
 :::
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220918/image.2zbxvbh9y2s0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220918/image.2zbxvbh9y2s0.webp)
 
 容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止。 存储在本机的文件则会一直保留。
 

@@ -31,11 +31,11 @@ tags:
 
 - 盒子一行显示
 
-  ![image-20220514085450141](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514085450141.676dtb8py3o0.webp)
+  ![image-20220514085450141](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220916/image-20220514085450141.676dtb8py3o0.webp)
 
 - 盒子的左右对齐
 
-![image-20220514090444248](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514090444248.36k6its0iye0.webp)
+![image-20220514090444248](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220916/image-20220514090444248.36k6its0iye0.webp)
 
 ## 什么是浮动？
 
@@ -98,19 +98,19 @@ tags:
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.48fey9w1jlg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220920/image.48fey9w1jlg0.webp)
 
 ### 浮动的元素的对齐
 
 浮动首先创建包含块的概念（包裹）,总是找理它最近的父级元素,但是不会超出内边距的范围。 
 
- ![image-20220514125808356](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514125808356.4rjdssm1jme0.webp) 
+ ![image-20220514125808356](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220916/image-20220514125808356.4rjdssm1jme0.webp) 
 
 ### 浮动的元素排列位置
 
 浮动的元素排列位置，跟上一个元素（块级）有关系。如果上一个元素有浮动，则A元素顶部会和上一个元素的顶部对齐；如果上一个元素是标准流，则A元素的顶部会和上一个元素的底部对齐。
 
- ![image-20220514131532201](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514131532201.618ww8qj0yo0.webp)
+ ![image-20220514131532201](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220916/image-20220514131532201.618ww8qj0yo0.webp)
 
 >总结:
 >
@@ -134,7 +134,7 @@ tags:
 
 清除浮动主要为了解决父级元素因为子级浮动引起内部高度为0的问题。
 
-![image-20220514133526396](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220916/image-20220514133526396.7bpf8nhfszk0.webp)
+![image-20220514133526396](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220916/image-20220514133526396.7bpf8nhfszk0.webp)
 
 ## 清除浮动的方法
 
@@ -260,4 +260,4 @@ zoom : normal | number
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220920/image.ut0lbzkrms0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220920/image.ut0lbzkrms0.webp)

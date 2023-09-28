@@ -222,11 +222,11 @@ Process finished with exit code 0
 
 ## 缓存原理图示
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/01.png)
 
 ## 第三方缓存整合原理
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/02.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/02.png)
 
 + EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点，是Hibernate中默认的CacheProvider。
 + MyBatis定义了Cache接口方便我们进行自定义扩展。

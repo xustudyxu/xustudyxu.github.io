@@ -17,15 +17,15 @@ tags:
 
 之前笔记中所了解到的`物理层、数据链路层以及网络层`它们共同解决了**将主机通过异构网络互联起来**所面临的问题，实现了`主机到主机的通信`。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.4ilb2phz3je0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.4ilb2phz3je0.webp)
 
 + 但实际上在计算机网络中进行通信的`真正实体`是位于**通信两端主机中的进程**。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.6wvqy2nspr80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.6wvqy2nspr80.webp)
 
 + 如何为运行在不同主机上的应用进程提供直接的通信服务是**运输层的任务**，运输层协议又称为`端到端协议`。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.7g99mpe66fk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.7g99mpe66fk0.webp)
 
 运输层向高层用户屏蔽了下面网络核心的细节(如网络拓扑、所采用的路由选择协议等)，它使应用进程看见的就好像是在两个运输层实体之间有`一条端到端的逻辑通信信道`。
 
@@ -33,7 +33,7 @@ tags:
 
 + 根据**应用需求的不同**，因特网的运输层为应用层提供了`两种`不同的运输协议，即**面向连接的TCP和无连接的UDP**，这两种协议就是本章要讨论的主要内容。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.6503rz3nkow0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.6503rz3nkow0.webp)
 
 ### 运输层端口号、复用与分用的概念
 
@@ -56,21 +56,21 @@ tags:
 
 + **发送方**的`复用`和**接收方**的`分用`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.3kewg9zvtcq0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.3kewg9zvtcq0.webp)
 
 + **TCP/IP体系的应用层常用协议**所使用的`运输层熟知端口号`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.4r06l2f4lyg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.4r06l2f4lyg0.webp)
 
 ## UDP和TCP的对比
 
 + `UDP和TCP`是**TCP/IP体系结构运输层中**的**两个重要协议**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.1aja6sjf1wsg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.1aja6sjf1wsg.webp)
 
 + **对比总结**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.1mc21iy1ld4w.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.1mc21iy1ld4w.webp)
 
 ## TCP的流量控制
 
@@ -90,11 +90,11 @@ tags:
 
     
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.2data3orpc2s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.2data3orpc2s.webp)
 
 + TCP发送方收到接收方的零窗口通知后，应启动持续计时器。持续计时器超时后，向接收方发送零窗口探测报文。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.1383702862lc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.1383702862lc.webp)
 
 ## TCP的拥塞控制
 
@@ -104,7 +104,7 @@ tags:
 + 在计算机网络中的链路容量(即带宽)、交换结点中的缓存和处理机等，都是网络的资源。
 + 若出现拥塞而不进行控制，整个网络的吞吐量将随输入负荷的增大而下降。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.2rhjnsq8mt20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.2rhjnsq8mt20.webp)
 
 ### 拥塞窗口与状态变量
 
@@ -112,7 +112,7 @@ tags:
   - 拥塞窗口cwnd的维护原则：只要网络没有出现拥塞，拥塞窗口就再增大一些;但只要网络出现拥塞，拥塞窗口就减少一些。
   - 判断出现网络拥塞的依据：没有按时收到应当到达的确认报文(即发生超时重传)。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.295xorkv93i8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.295xorkv93i8.webp)
 
 + 发送方将`拥塞窗口`作为发送窗口swnd，即**swnd= cwnd**。
 + 维护一个慢开始门限`ssthresh状态变量`:
@@ -132,9 +132,9 @@ tags:
     + 这3个报文段不再消耗网络资源而是停留在接收方的接收缓存中;
     + 可见现在网络中不是堆积了报文段而是减少了3个报文段。因此可以适当把拥塞窗口扩大些。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.5ftqrwvw4n80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.5ftqrwvw4n80.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.434aom9plea0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.434aom9plea0.webp)
 
 ## TCP超时重传时间的选择
 
@@ -142,7 +142,7 @@ tags:
 
 + `超时重传时间的选择`是TCP最复杂的问题之一，**具体选择如下图：**
 
-![880226568890471292ea1bdb6c188c0e](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/880226568890471292ea1bdb6c188c0e.1jxi8wp7n1nk.gif)
+![880226568890471292ea1bdb6c188c0e](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/880226568890471292ea1bdb6c188c0e.1jxi8wp7n1nk.gif)
 
 + 不能直接使用某次测量得到的RTT样本来计算超时重传时间RTO。
 + 利用每次测量得到的RTT样本，计算加权平均往返时间RTTs(又称为平滑的往返时间)。
@@ -151,7 +151,7 @@ tags:
 
 + `RFC6298`建议使用下式计算**超时重传时间RTO**：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.2txkmk1fcsm0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.2txkmk1fcsm0.webp)
 
 ## TCP可靠传输的实现
 
@@ -159,7 +159,7 @@ tags:
 
 + **TCP**基于以`字节`为单位的**滑动窗口**来实现`可靠传输`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.58li4eiigd80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.58li4eiigd80.webp)
 
 + 虽然发送方的发送窗口是根据接收方的接收窗口设置的，但在同一时刻，发送方的发送窗口并不总是和接收方的接收窗口`一样大`。
 
@@ -189,7 +189,7 @@ TCP运输连接的建立和释放是每一次面向连接的通信中**必不可
 
 3️⃣释放TCP连接
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.7fj2qm9z79w0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.7fj2qm9z79w0.webp)
 
 TCP的`运输连接管理`就是使运输连接的建立和释放都能正常地进行。
 
@@ -205,13 +205,13 @@ TCP的`运输连接管理`就是使运输连接的建立和释放都能正常地
 
 + **TCP**使用`“三报文握手”`**建立连接**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.7fa4661rke40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.7fa4661rke40.webp)
 
 ### TCP的连接释放方式
 
 + **TCP**通过`“四报文挥手”`来**释放连接**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.4kfrr0peej20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.4kfrr0peej20.webp)
 
 + TCP保活计时器
   + TCP服务器进程每收到一次TCP客户进程的数据，就重新设置并启动**保活计时器**(2小时定时)。
@@ -223,7 +223,7 @@ TCP的`运输连接管理`就是使运输连接的建立和释放都能正常地
 
 + 为了实现`可靠传输`，**TCP**采用了`面向字节流`的方式。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.1yppdfx3tfgg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.1yppdfx3tfgg.webp)
 
 + 但TCP在发送数据时，是从发送缓存取出`一部分或全部字节`并给其添加一个首部使之成为TCP报文段后进行发送。
 
@@ -232,7 +232,7 @@ TCP的`运输连接管理`就是使运输连接的建立和释放都能正常地
 + 一个`TCP报文段`由**首部和数据载荷**两部分构成；
 + **TCP的全部功能**都体现在`它首部中各字段的作用`。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221212/image.42ojj4ffdko0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221212/image.42ojj4ffdko0.webp)
 
 > **按照图中从上到下，从左到右的顺序，各字段的相关介绍如下：**
 

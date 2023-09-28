@@ -9,7 +9,7 @@ tags:
 ---
 # 数据分析介绍
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/dataCleaning/images/00/01.gif)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/dataCleaning/images/00/01.gif)
 
 ## 什么是数据分析：
 

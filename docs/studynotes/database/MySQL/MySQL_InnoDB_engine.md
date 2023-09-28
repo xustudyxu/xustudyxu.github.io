@@ -15,7 +15,7 @@ tags:
 
 InnoDB的逻辑存储结构如下图所示:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.37t9zxcw8mo0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.37t9zxcw8mo0.webp)
 
 1. 表空间
 
@@ -48,11 +48,11 @@ InnoDB的逻辑存储结构如下图所示:
 
 MySQL5.5 版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发中使用非常广泛。下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构。
 
- ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2vd2i61zexs0.webp)
+ ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.2vd2i61zexs0.webp)
 
 ### 内存架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.34rhni2wc0g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.34rhni2wc0g0.webp)
 
 在左侧的内存结构中，主要分为这么四大块儿： Buffer Pool、Change Buffer、Adaptive Hash Index、Log Buffer。  下来介绍一下这四个部分。
 
@@ -92,7 +92,7 @@ Change Buffer的意义是什么呢?
 
 先来看一幅图，这个是二级索引的结构图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.uxn6zhbyoz4.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.uxn6zhbyoz4.webp)
 
 与聚集索引不同，二级索引通常是非唯一的，并且以相对随机的顺序插入二级索引。同样，删除和更新可能会影响索引树中不相邻的二级索引页，如果每一次都操作磁盘，会造成大量的磁盘IO。有了ChangeBuffer之后，我们可以在缓冲池中进行合并处理，减少磁盘IO。
 
@@ -136,7 +136,7 @@ mysql> show variables like 'innodb_flush_log_at_trx_commit';
 
 接下来，再来看看InnoDB体系结构的右边部分，也就是磁盘结构：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.4217fmn26w60.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.4217fmn26w60.webp)
 
 1. `System Tablespace`
 
@@ -174,7 +174,7 @@ mysql> show variables like 'innodb_file_per_table';
 
 那也就是说，我们每创建一个表，都会产生一个表空间文件，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.skv7c34jaxc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.skv7c34jaxc.webp)
 
 3. General Tablespaces
 
@@ -227,11 +227,11 @@ InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建�
 
 前面我们介绍了InnoDB的内存结构，以及磁盘结构，那么内存中我们所更新的数据，又是如何到磁盘中的呢？ 此时，就涉及到一组后台线程，接下来，就来介绍一些InnoDB中涉及到的后台线程。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.74r4lpc2x0k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.74r4lpc2x0k0.webp)
 
 ### 后台线程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2cliaf6k2q80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.2cliaf6k2q80.webp)
 
 在InnoDB的后台线程中，分为4类，分别是：Master Thread 、IO Thread、Purge Thread、Page Cleaner Thread。
 
@@ -256,7 +256,7 @@ InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建�
 show engine innodb status;
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.17ohijy1s8e8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.17ohijy1s8e8.webp)
 
 3. Purge Thread
 
@@ -283,11 +283,11 @@ show engine innodb status;
 
 那实际上，我们研究事务的原理，就是研究MySQL的InnoDB引擎是如何保证事务的这四大特性的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.sgj8ivm9ilc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.sgj8ivm9ilc.webp)
 
 而对于这四大特性，实际上分为两个部分。 其中的原子性、一致性、持久化，实际上是由InnoDB中的两份日志来保证的，一份是redo log日志，一份是undo log日志。 而持久性是通过数据库的锁，加上MVCC来保证的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.1oe3nog6lskg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.1oe3nog6lskg.webp)
 
 我们在讲解事务原理的时候，主要就是来研究一下redolog，undolog以及MVCC。
 
@@ -301,11 +301,11 @@ show engine innodb status;
 
 我们知道，在InnoDB引擎中的内存结构中，主要的内存区域就是缓冲池，在缓冲池中缓存了很多的数据页。 当我们在一个事务中，执行多个增删改的操作时，InnoDB引擎会先操作缓冲池中的数据，如果缓冲区没有对应的数据，会通过后台线程将磁盘中的数据加载出来，存放在缓冲区中，然后将缓冲池中的数据修改，修改后的数据页我们称为脏页。 而脏页则会在一定的时机，通过后台线程刷新到磁盘中，从而保证缓冲区与磁盘的数据一致。 而缓冲区的脏页数据并不是实时刷新的，而是一段时间之后将缓冲区的数据刷新到磁盘中，假如刷新到磁盘的过程出错了，而提示给用户事务提交成功，而数据却没有持久化下来，这就出现问题了，没有保证事务的持久性。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.5e3ez483uz40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.5e3ez483uz40.webp)
 
 那么，如何解决上述的问题呢？ 在InnoDB中提供了一份日志 redo log，接下来我们再来分析一下，通过redolog如何解决这个问题。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.774w1g3htkw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221002/image.774w1g3htkw0.webp)
 
 有了redolog之后，当对缓冲区的数据进行增删改之后，会首先将操作的数据页的变化，记录在redo log buffer中。在事务提交时，会将redo log buffer中的数据刷新到redo log磁盘文件中。过一段时间之后，如果刷新缓冲区的脏页到磁盘时，**发生错误，此时就可以借助于redo log进行数据恢复，这样就保证了事务的持久性。** 而如果脏页成功刷新到磁盘 或 或者涉及到的数据已经落盘，此时redolog就没有作用了，就可以删除了，所以存在的两个redolog文件是循环写的。
 
@@ -333,7 +333,7 @@ Undo log存储：undo log采用段的方式进行管理和记录，存放在前�
 
 测试:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.1b5mu1d22dsw.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.1b5mu1d22dsw.webp)
 
 在测试中我们可以看到，即使是在默认的RR隔离级别下，事务A中依然可以读取到事务B最新提交的内容，因为在查询语句后面加上了 `lock in share mode` 共享锁，此时是当前读操作。当然，当我们加排他锁的时候，也是当前读操作。
 
@@ -347,7 +347,7 @@ Undo log存储：undo log采用段的方式进行管理和记录，存放在前�
 
 测试:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.65137zosez40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.65137zosez40.webp)
 
 在测试中,我们看到即使事务B提交了数据,事务A中也查询不到。 原因就是因为普通的select是快照读，而在当前默认的RR隔离级别下，开启事务后第一个select语句才是快照读的地方，后面执行相同的select语句都是从快照中获取数据，可能不是当前的最新数据，这样也就保证了可重复读。
 
@@ -361,7 +361,7 @@ Undo log存储：undo log采用段的方式进行管理和记录，存放在前�
 
 #### 介绍
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.mio50nf02v4.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.mio50nf02v4.webp)
 
 当我们创建了上面的这张表，我们在查看表结构的时候，就可以显式的看到这三个字段。 实际上除了这三个字段以外，InnoDB还会自动的给我们添加三个隐藏字段及其含义分别是：
 
@@ -612,7 +612,7 @@ ibd2sdi employee.ibd
 
 有一张表原始数据为：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.5sk6wytkm0g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.5sk6wytkm0g0.webp)
 
 > `DB_TRX_ID` : 代表最近修改事务ID，记录插入这条记录或最后一次修改该记录的事务ID，是自增的。
 >
@@ -622,27 +622,27 @@ ibd2sdi employee.ibd
 
 A. 第一步
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.3wfqywf9k4m0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.3wfqywf9k4m0.webp)
 
 当事务2执行第一条修改语句时，会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.1u1x7170owxs.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.1u1x7170owxs.webp)
 
 B.第二步
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.38kcshyceru0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.38kcshyceru0.webp)
 
 当事务3执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.2daf3l5txk2s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.2daf3l5txk2s.webp)
 
 C. 第三步
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.h9irghbuqps.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.h9irghbuqps.webp)
 
 当事务4执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.6g4gjighpww0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.6g4gjighpww0.webp)
 
 > 最终我们发现，不同事务或相同事务对同一条记录进行修改，会导致该记录的undolog生成一条记录版本链表，链表的头部是最新的旧记录，链表尾部是最早的旧记录。
 
@@ -685,49 +685,49 @@ RC隔离级别下，在事务中**每一次**执行快照读时生成ReadView。
 
 在事务5中，查询了两次id为30的记录，由于隔离级别为Read Committed，所以每一次进行快照读都会生成一个ReadView，那么两次生成的ReadView如下。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.69r8gy3lzzs0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.69r8gy3lzzs0.webp)
 
 那么这两次快照读在获取数据时，就需要根据所生成的ReadView以及ReadView的版本链访问规则，到undolog版本链中匹配数据，最终决定此次快照读返回的数据。
 
 A. 先来看第一次快照读具体的读取过程：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.7183xn689lc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.7183xn689lc0.webp)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
 + 先匹配
 
-  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.2jlkqcuoqws0.webp)
+  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.2jlkqcuoqws0.webp)
 
   这条记录，这条记录对应的trx_id为4，也就是将4带入右侧的匹配规则中。 ①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条。
 
 + 再匹配第二条
 
-  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.4v08hgux3e20.webp)
+  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.4v08hgux3e20.webp)
 
   ，这条记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条。
 
 + 再匹配第三条
 
-  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.25ihi7grdwps.webp)
+  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.25ihi7grdwps.webp)
 
   ，这条记录对应的trx_id为2，也就是将2带入右侧的匹配规则中。①不满足 ②满足 终止匹配，此次快照读，返回的数据就是版本链中记录的这条数据。
 
 B. 再来看第二次快照读具体的读取过程:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.2jmuta10bpe0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.2jmuta10bpe0.webp)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
 + 先匹配
 
-  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.3k8w8135kka0.webp)
+  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.3k8w8135kka0.webp)
 
   这条记录，这条记录对应的trx_id为4，也就是将4带入右侧的匹配规则中。 ①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条。
 
 + 再匹配第二条
 
-  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.7ezhca3upa40.webp)
+  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.7ezhca3upa40.webp)
 
   ，这条记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②满足 。终止匹配，此次快照读，返回的数据就是版本链中记录的这条数据。
 
@@ -737,10 +737,10 @@ RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，�
 
 那MySQL是如何做到可重复读的呢? 我们简单分析一下就知道了
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.318gzfx50nm0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.318gzfx50nm0.webp)
 
 我们看到，在RR隔离级别下，只是在事务中**第一次**快照读时生成ReadView，后续都是复用该ReadView，那么既然ReadView都一样， ReadView的版本链匹配规则也一样， 那么最终快照读返回的结果也是一样的。
 
 所以呢，MVCC的实现原理就是通过 InnoDB表的隐藏字段、UndoLog 版本链、ReadView来实现的。而MVCC + 锁，则实现了事务的隔离性。 而一致性则是由redolog 与 undolog保证。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221003/image.28l27i8tw340.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221003/image.28l27i8tw340.webp)

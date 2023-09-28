@@ -14,11 +14,11 @@ tags:
 + Bug的由来
   + 世界上第一部万用计算机的进化版-马克2号(Mrrk ||)
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/01.png)
 
 + Debug
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/02.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/02.png)
 
 ### Bug的常见类型
 
@@ -94,7 +94,7 @@ tags:
   + 被动掉坑问题的解决方案
   + Python提供了异常处理机制,可以在异常出现时即时捕获，然后内部'消化',让程序继续运行
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/03.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/03.png)
 
 ```python
 """
@@ -112,7 +112,7 @@ except ZeroDivisionError:
 print('程序结束')
 ```
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/04.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/04.png)
 
 ```python
 """
@@ -160,7 +160,7 @@ else:
 
 + <font color=#DC4040 size=4 face="黑体">finally块无论是否发生异常都会被执行，能采用来释放try块中申请的资源</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/05.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/05.png)
 
 ```python
 """
@@ -232,5 +232,5 @@ except:
 
 ## PyCharm开发环境的调试
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/06.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/11/06.png)
 

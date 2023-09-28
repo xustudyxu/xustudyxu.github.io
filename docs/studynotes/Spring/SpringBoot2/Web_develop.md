@@ -99,7 +99,7 @@ https://www.webjars.org/
 
 访问地址：[http://localhost:8888/webjars/**jquery/3.5.1/jquery.js**](http://localhost:8080/webjars/jquery/3.5.1/jquery.js)   后面地址要按照依赖里面的包路径
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/01.png)
 
 ### 欢迎页支持
 
@@ -379,7 +379,7 @@ public class WebConfig {
 
 #### 请求映射原理
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/02.png)
 
 SpringMVC功能分析都从 org.springframework.web.servlet.DispatcherServlet->doDispatch()
 
@@ -422,11 +422,11 @@ SpringMVC功能分析都从 org.springframework.web.servlet.DispatcherServlet->d
     }
 ```
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/03.png)
 
 **RequestMappingHandlerMapping**:保存了所有@RequestMapping和handler的映射规则。
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/04.png)
 
 所有的请求映射都保存在HandlerMapping中
 
@@ -742,7 +742,7 @@ th:if="${not #lists.isEmpty(prod.comments)}">view</a>
 
 #### 属性优先级
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/05.png)
 
 ## thymeleaf使用
 
@@ -840,7 +840,7 @@ public class ViewTestController {
 
 + 测试结果
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/06.png)
 
 ## 构建后台管理项目
 
@@ -1123,15 +1123,15 @@ public class FormTestController {
 - 默认情况下，Spring Boot提供`/error`处理所有错误的映射
 - 对于机器客户端，它将生成JSON响应，其中包含错误，HTTP状态和异常消息的详细信息。对于浏览器客户端，响应一个“ whitelabel”错误视图，以HTML格式呈现相同的数据
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/07.png)
+![07](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/07.png)
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/08.png)
+![08](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/08.png)
 
 - **要对其进行自定义，添加**`View`**解析为**`error`
 - 要完全替换默认行为，可以实现 `ErrorController `并注册该类型的Bean定义，或添加`ErrorAttributes类型的组件`以使用现有机制但替换其内容。
 - error/下的4xx，5xx页面会被自动解析
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/09.png)
+![09](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/09.png)
 
 ## Web原生组件注入(Servlet、Filter、Listener)
 
@@ -1222,7 +1222,7 @@ public class MyServletContextListener implements ServletContextListener {
 - **通过** **ServletRegistrationBean**\<DispatcherServlet> 把 DispatcherServlet  配置进来。
 - 默认映射的是 / 路径
 
-![10](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/10.png)
+![10](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/05/10.png)
 
 Tomcat-Servlet；
 

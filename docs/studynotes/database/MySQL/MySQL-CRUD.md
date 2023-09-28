@@ -22,7 +22,7 @@ tags:
 
 ### 使用 INSERT 语句向表中插入数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/18.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/18.png)
 
 ```sql
 # 练习insert语句
@@ -91,7 +91,7 @@ SELECT * FROM goods2;
 
 ### 使用 update 语句修改表中数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/19.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/19.png)
 
 ### 基本使用
 
@@ -138,7 +138,7 @@ SELECT * FROM employee;
 
 ### 使用 delete 语句删除表中数据
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/21.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/21.png)
 
 ```sql
  -- delete 语句演示
@@ -167,7 +167,7 @@ SELECT * FROM employee;
 
 ### 基本语法
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/22.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/22.png)
 
 ### 注意事项 
 
@@ -221,11 +221,11 @@ SELECT DISTINCT `name`,english FROM student;
 
 ### 使用表达式对查询的列进行运算
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/23.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/23.png)
 
 ### 在 select 语句中可使用 as 语句
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/24.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/24.png)
 
 ### 练习
 
@@ -262,7 +262,7 @@ SELECT `math` AS`Math` FROM student
 
 ### 在 where 子句中经常使用的运算符
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/25.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/25.png)
 
 ### 使用 where 子句，进行过滤查询
 
@@ -321,7 +321,7 @@ SELECT * FROM student
 
 ### 使用 order by 子句排序查询结果
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/26.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/26.png)
 
 ```sql
 -- 演示order by使用

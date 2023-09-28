@@ -13,7 +13,7 @@ tags:
 
 ## CentOS Docker安装
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.3b1ygz3skt80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.3b1ygz3skt80.webp)
 
 **前提条件**
 
@@ -89,7 +89,7 @@ image 文件生成的容器实例，本身也是一个文件，称为镜像文�
 
 ## Docker平台架构图解(入门版)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.1dhfdk9cfh1c.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.1dhfdk9cfh1c.webp)
 
 ## Docker平台架构图解(架构版)
 
@@ -99,7 +99,7 @@ image 文件生成的容器实例，本身也是一个文件，称为镜像文�
 
 Docker 是一个 C/S 模式的架构，后端是一个松耦合架构，众多模块各司其职。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.6zaea6xum9k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.6zaea6xum9k0.webp)
 
 Docker运行的基本流程：
 
@@ -111,7 +111,7 @@ Docker运行的基本流程：
 6. 当需要限制Docker容器运行资源或执行用户指令等操作时，则通过Exec driver来完成。
 7. Libcontainer是一项独立的容器管理包，Network driver以及Exec driver都是通过Libcontainer来实现具体对容器进行的操作。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.7hh30r9dad40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.7hh30r9dad40.webp)
 
 ## 操作系统要求
 
@@ -583,7 +583,7 @@ sudo systemctl restart docker
 
 - 访问阿里云登录自己的账号查看 docker 镜像加速服务：[https://cr.console.aliyun.com/cn-shenzhen/instances/mirrors](https://cr.console.aliyun.com/cn-shenzhen/instances/mirrors)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.1zbgqzzakxeo.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.1zbgqzzakxeo.webp)
 
 操作步骤是统一的，不存在不同用户不同的操作步骤，我已经放到下面代码块：
 
@@ -679,7 +679,7 @@ For more examples and ideas, visit:
 
 + run干了什么？
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.4fq3ksgij3g.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.4fq3ksgij3g.webp)
 
 ## 为什么Docker会比VM虚拟机快
 
@@ -691,7 +691,7 @@ For more examples and ideas, visit:
 
 当新建一个容器时,docker不需要和虚拟机一样重新加载一个操作系统内核。进而避免引寻、加载操作系统内核返回等比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载OS,返回新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了返回过程,因此新建一个docker容器只需要几秒钟。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220904/image.4xh8wae98fk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220904/image.4xh8wae98fk0.webp)
 
 |            | Docker容器              | 虚拟机(VM)                  |
 | ---------- | ----------------------- | --------------------------- |

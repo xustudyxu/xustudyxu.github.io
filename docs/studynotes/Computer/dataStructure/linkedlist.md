@@ -15,7 +15,7 @@ tags:
 
 链表是有序的列表，但是它在内存中是存储如下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221217/image.5365fgj0d9o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221217/image.5365fgj0d9o0.webp)
 
 小结上图：
 
@@ -26,7 +26,7 @@ tags:
 
 + 单链表(带头结点）逻辑结构示意图如下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221217/image.4ouowij5k4o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221217/image.4ouowij5k4o0.webp)
 
 ## 单链表的应用案例
 
@@ -39,7 +39,7 @@ tags:
 
    思路分析示意图:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221217/image.7dp3scyrjcg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221217/image.7dp3scyrjcg0.webp)
 
 ```java
 /**
@@ -153,7 +153,7 @@ Process finished with exit code 0
 
 思路的分析示意图:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221217/image.30g0kf8igty0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221217/image.30g0kf8igty0.webp)
 
 ```java
 public class SingleLinkedListDemo {
@@ -311,7 +311,7 @@ Process finished with exit code 0
 
 思路分析的示意图:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221219/image.2k3w1s4fvx20.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221219/image.2k3w1s4fvx20.webp)
 
 从单链表中删除一个节点的思路：
 
@@ -534,7 +534,7 @@ Process finished with exit code 0
 
    思路解析图解
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221220/image.5za7su1gprk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221220/image.5za7su1gprk0.webp)
 
 ```java
 public class SingleLinkedListDemo {
@@ -607,7 +607,7 @@ Process finished with exit code 0
 
 4. 从头到尾打印单链表
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221220/image.25cz064igv6o.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221220/image.25cz064igv6o.webp)
 
 思考：
 
@@ -710,7 +710,7 @@ Process finished with exit code 0
 
   分析了双向链表如何完成遍历，添加，修改和删除的思路
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221221/image.55re9imtups0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221221/image.55re9imtups0.webp)
 
 **对上图说明**：
 
@@ -988,25 +988,25 @@ Josephu 问题为:设编号为1，2，… n的n个人围坐一圈，约定编号
 
 用一个不带头结点的循环链表来处理Josephu问题;先构成一个有n个结点的单循环链表，然后由k结点起从1开始计数，计到m时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从1开始计数，直到最后一个结点从链表中删除算法结束。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221222/image.7kioa2zqmsk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221222/image.7kioa2zqmsk0.webp)
 
 ## 单向环形链表介绍
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221222/image.2j8rx8a63v60.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221222/image.2j8rx8a63v60.webp)
 
 ## Josephu 问题
 
 + 约瑟夫问题的示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221222/image.5qtdeagwg0o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221222/image.5qtdeagwg0o0.webp)
 
 + 约瑟夫问题-创建环形链表的思路图解
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221222/image.5dwfaxxt6xk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221222/image.5dwfaxxt6xk0.webp)
 
 + 约瑟夫问题-小孩出圈的思路分析图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221222/image.57mg7hhknrg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221222/image.57mg7hhknrg0.webp)
 
 ## Josephu 问题的代码实现
 

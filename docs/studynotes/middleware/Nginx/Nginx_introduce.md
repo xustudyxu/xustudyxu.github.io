@@ -43,11 +43,11 @@ IMAP(Internet Mail Access Protocol)交互式邮件存取协议；
 
 4. 正向代理
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.5u72na7a9hc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.5u72na7a9hc0.webp)
 
 反向代理
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.3622anezbxi0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.3622anezbxi0.webp)
 
 正向代理的 Proxy 是多对一，反向代理的 Proxy 是一对多。
 
@@ -59,7 +59,7 @@ IMAP(Internet Mail Access Protocol)交互式邮件存取协议；
 
 我们先来看一组数据，我们先打开 Nginx 的官方网站 [http://nginx.org/](http://nginx.org/)，找到 Netcraft 公司公布的数据，对当前主流服务器产品进行介绍。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.6wcjq3k197c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.6wcjq3k197c0.webp)
 
 上面这张图展示了 2019 年全球主流 Web 服务器的市场情况，其中有 Apache、Microsoft-IIS、google Servers、Nginx、Tomcat 等，而我们在了解新事物的时候，往往习惯通过类比来帮助自己理解事物的概貌。可以看出绿色线的 nginx 在 2019 年已经领现全球了。
 
@@ -103,7 +103,7 @@ Nginx 的设计极具扩展性，它本身就是由很多模块组成，这些�
 
 Nginx 采用的是多进程模式运行，其中有一个 master 主进程和 N 多个 worker 进程，一个 master 管理多个 worker，worker 进程的数量我们可以手动设置，每个 worker 进程之间都是相互独立提供服务，并且 master 主进程可以在某一个 worker 进程出错时，快速去「拉起」新的 worker 进程提供服务。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.3wz8th685620.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.3wz8th685620.webp)
 
 ### 热部署(核心)
 
@@ -113,7 +113,7 @@ Nginx 采用的是多进程模式运行，其中有一个 master 主进程和 N 
 
 BSD 是一个开源的许可证，世界上的开源许可证有很多，现在比较流行的有六种分别是 GPL、BSD、MIT、Mozilla、Apache、LGPL。这六种的区别是什么，我们可以通过下面一张图来解释下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220727/image.771jinl18hw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220727/image.771jinl18hw0.webp)
 
 ## Nginx的功能特性及常用功能
 

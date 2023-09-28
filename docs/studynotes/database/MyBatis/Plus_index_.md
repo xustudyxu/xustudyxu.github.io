@@ -21,7 +21,7 @@ tags:
 
 :::
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/01/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/01/01.png)
 
 ## 特性
 
@@ -47,7 +47,7 @@ tags:
 
 ## 框架结构
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/01/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/01/02.png)
 
 ## 代码及文档地址
 

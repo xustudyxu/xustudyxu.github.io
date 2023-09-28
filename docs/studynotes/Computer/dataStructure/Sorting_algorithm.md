@@ -27,7 +27,7 @@ tags:
 
 3. 常见的排序算法分类
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.9b37yfk9i4k.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.9b37yfk9i4k.webp)
 
 ## 算法的时间复杂度
 
@@ -51,11 +51,11 @@ tags:
 
   比如计算.1-100所有数字之和，我们设计两种算法:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.3uh8ypaor540.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.3uh8ypaor540.webp)
 
 + 举例说明-忽略常数项
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.5o01wa08v6o0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.5o01wa08v6o0.webp)
 
 结论：
 
@@ -64,7 +64,7 @@ tags:
 
 + 举例说明-忽略低次项
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.6tbxx5o0b9g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.6tbxx5o0b9g0.webp)
 
 结论：
 
@@ -73,7 +73,7 @@ tags:
 
 + 举例说明-忽略系数
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.55qwjh9srbw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.55qwjh9srbw0.webp)
 
 结论：
 
@@ -101,7 +101,7 @@ tags:
 8. 指数阶 O(2<sup>2</sup>)
 
 常见的时间复杂度对应的图：
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.56b6r07jctw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.56b6r07jctw0.webp)
 
 **说明**：
 
@@ -133,7 +133,7 @@ while(i < n){
 
 **说明**:在while循环里面，每次都将 i 乘以 2 ，乘完之后，i 距离 n 就越来越近了。假设循环 x 次之后，i 就大于 2 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n ，那么x=logzn也就是说当循环 **log<sub>2</sub>n** 次以后，这个代码就结束了。因此这个代码的时间复杂度为: **O(log<sub>2</sub>n)**。**O(log<sub>2</sub>n)** 的这个2时间上是根据代码变化的，**i=i*3**，则是**O(log<sub>3</sub>n)**.
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221229/image.1k8xfm0sv1q8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221229/image.1k8xfm0sv1q8.webp)
 
 **线性阶 O(n)**
 
@@ -181,7 +181,7 @@ for(x = 1;i <= n;x++) {
 2. 最坏情况下的时间复杂度称最坏时间复杂度。**一般讨论的时间复杂度均是最坏情况下的时间复杂度**。这样做的原因是:最坏情况下的时间复杂度是算法在任何输入实例上运行时间的界限，这就保证了算法的运行时间不会比最坏情况更长。
 3. 平均时间复杂度和最坏时间复杂度是否一致，和算法有关(如图:)。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221118/image.6vxkxlptjxo0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221118/image.6vxkxlptjxo0.webp)
 
 ## 算法的空间复杂度简介
 
@@ -384,15 +384,15 @@ Process finished with exit code 0
 
 ### 选择排序思路分析图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230101/image.8xzrwz4gap8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230101/image.8xzrwz4gap8.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230101/image.89rs0ksf7dg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230101/image.89rs0ksf7dg.webp)
 
 ### 选择排序应用实例
 
 有一群牛﹐颜值分别是10,34,1,19请使用选择排序从低到高进行排序[10,34,1,19]
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230101/image.3kav4be1t9s0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230101/image.3kav4be1t9s0.webp)
 
 + 代码实现
 
@@ -473,7 +473,7 @@ Process finished with exit code 0
 
 ### 插入排序思路分析图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230101/image.79h9urcp38c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230101/image.79h9urcp38c0.webp)
 
 ### 选择排序应用案例
 
@@ -606,13 +606,13 @@ Process finished with exit code 0
 
 ### 希尔排序算法的示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230102/image.3j25to804980.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230102/image.3j25to804980.webp)
 
 经过上面的“宏观调控”，整个数组的有序化程度成果喜人。
 
 此时，仅仅需要对以上数列简单微调，无需大量移动操作即可完成整个数组的排序。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230102/image.4i8wfybo4x00.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230102/image.4i8wfybo4x00.webp)
 
 ### 希尔排序应用案例
 
@@ -766,11 +766,11 @@ Process finished with exit code 0
 
 ### 快速排序法示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230103/image.3pbuaawn67q0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230103/image.3pbuaawn67q0.webp)
 
 
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230103/image.6sfn9anplls0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230103/image.6sfn9anplls0.webp)
 
 ### 快速排序法应用案例
 

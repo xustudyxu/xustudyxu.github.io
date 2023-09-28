@@ -17,7 +17,7 @@ tags:
 
 通俗:变量是用于存放数据的**容器**。我们通过**变量名**获取数据，甚至数据可以修改。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.68pbrgf1z9s0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.68pbrgf1z9s0.webp)
 
 ## 变量在内存中的存储
 
@@ -25,7 +25,7 @@ tags:
 
 类似我们酒店的房间，一个房间就可以看做是一个变量。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230109/image.33s53urzbd80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230109/image.33s53urzbd80.webp)
 
 ## 变量的使用
 

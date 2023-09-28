@@ -29,7 +29,7 @@ tags:
 
 如果数据量比较少，确实可以这样做，比如：对于「如果账单一周内未支付则进行自动结算」这样的需求， 如果对于时间不是严格限制，而是宽松意义上的一周，那么每天晚上跑个定时任务检查一下所有未支付的账单，确实也是一个可行的方案。但对于数据量比较大，并且时效性较强的场景，如：「订单十分钟内未支付则关闭」，短期内未支付的订单数据可能会有很多，活动期间甚至会达到百万甚至千万级别，对这么庞大的数据量仍旧使用轮询的方式显然是不可取的，很可能在一秒内无法完成所有订单的检查，同时会给数据库带来很大压力，无法满足业务要求而且性能低下。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.21tyby27zrog.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.21tyby27zrog.webp)
 
 ## TTL的两种设置
 
@@ -144,7 +144,7 @@ public class RabbitmqSpringbootApplication {
 
 创建两个队列 QA 和 QB，两个队列的 TTL 分别设置为 10S 和 40S，然后再创建一个交换机 X 和死信交换机 Y，它们的类型都是 direct，创建一个死信队列 QD，它们的绑定关系如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.6ipia9redgw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.6ipia9redgw0.webp)
 
 原先配置队列信息，写在了生产者和消费者代码中，现在可写在配置类中，生产者只发消息，消费者只接受消息
 
@@ -269,7 +269,7 @@ public class SendMsgController {
 
 发起一个请求：[http://localhost:8888/ttl/sendMsg/嘻嘻嘻](http://localhost:8888/ttl/sendMsg/%E5%98%BB%E5%98%BB%E5%98%BB)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.2x90cjk4j3c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.2x90cjk4j3c0.webp)
 
 第一条消息在 10S 后变成了死信消息，然后被消费者消费掉，第二条消息在 40S 之后变成了死信消息， 然后被消费掉，这样一个延时队列就打造完成了。
 
@@ -279,7 +279,7 @@ public class SendMsgController {
 
 在这里新增了一个队列 QC，该队列不设置 TTL 时间，根据前端的请求确定 TTL 时间，绑定关系如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.267zky9xj8dc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.267zky9xj8dc.webp)
 
 ### **配置类代码**
 
@@ -361,7 +361,7 @@ public class SendMsgController {
 
 > **出现问题**:
 >
-> ![1658765665496](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/1658765665496.39yyrmljat80.webp)
+> ![1658765665496](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/1658765665496.39yyrmljat80.webp)
 
 看起来似乎没什么问题，但是在最开始的时候，就介绍过如果使用在消息属性上设置 TTL 的方式，消息可能并不会按时「死亡」
 
@@ -428,13 +428,13 @@ started 1 plugins.
 
 打开 Web 界面，查看交换机的新增功能列表，如果多出了如图所示，代表成功添加插件
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.3nqc69j0pws0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.3nqc69j0pws0.webp)
 
 ## 插件实战
 
 在这里新增了一个队列 delayed.queue，一个自定义交换机 delayed.exchange，绑定关系如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.1tla4z5g4yps.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.1tla4z5g4yps.webp)
 
 ### 配置类代码
 
@@ -540,7 +540,7 @@ public class DelayQueueConsumer {
 
 [http://localhost:8888/ttl/sendDelayMsg/hello2/2000](http://localhost:8888/ttl/sendDelayMsg/hello2/2000)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.17h77dwilchs.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.17h77dwilchs.webp)
 
 可以看到哪怕 hello1 需要20秒再进入延时队列，hello2 2 秒后直接进入延时队列，无需等待 hello1
 

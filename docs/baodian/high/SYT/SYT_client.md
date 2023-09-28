@@ -146,7 +146,7 @@ npm run dev
 
 访问项目：[http://localhost:3000/](http://localhost:3000/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221101/image.1d0vv96zt2ao.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221101/image.1d0vv96zt2ao.webp)
 
 ### NUXT 目录结构
 
@@ -205,7 +205,7 @@ public class HospApiController {
 
 + 前端访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221101/image.4hjw33z4s0i0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221101/image.4hjw33z4s0i0.webp)
 
 ### 根据医院名称关键字搜索医院列表
 
@@ -250,7 +250,7 @@ public class HospApiController {
 
 + 前端访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221101/image.snmgfhouhe8.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221101/image.snmgfhouhe8.webp)
 
 ## 医院详情
 
@@ -308,5 +308,5 @@ public class HospApiController {
 
 + 前端访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221101/image.571kq8wga280.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221101/image.571kq8wga280.webp)
 

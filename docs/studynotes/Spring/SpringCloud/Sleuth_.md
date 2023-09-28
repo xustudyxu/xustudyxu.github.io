@@ -17,9 +17,9 @@ tags:
 
 在微服务框架中，一个由客户端发起的请求在后端系统中会经过多个不同的的服务节点调用来协同产生最后的请求结果，每一个前段请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延时或错误都会引起整个请求最后的失败。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.5re5bq8z1fc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.5re5bq8z1fc0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.6ta641owfto0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.6ta641owfto0.webp)
 
 **是什么**
 
@@ -29,7 +29,7 @@ tags:
 
 **解决**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.7afjeo1qgkg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.7afjeo1qgkg0.webp)
 
 产品调库存，发送链路数据，谁调谁，zipkin就记录下来，以图形或网页的形式展现。
 
@@ -65,15 +65,15 @@ http://localhost:9411/zipkin/
 
 表示一请求链路，一条链路通过Trace ld唯一标识，Span标识发起的请求信息，各span通过parent id关联起来
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.6l5xfhx822k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.6l5xfhx822k0.webp)
 
 —条链路通过Trace ld唯一标识，Span标识发起的请求信息，各span通过parent id关联起来。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.122mvcbvbqsg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.122mvcbvbqsg.webp)
 
 整个链路的依赖关系如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.4sehxbkyiju0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.4sehxbkyiju0.webp)
 
 名词解释
 
@@ -179,9 +179,9 @@ spring:
 
 5. 打开浏览器访问: [http://localhost:9411](http://localhost:9411)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.7dtxh37vn600.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.7dtxh37vn600.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.72ph5v5byno0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.72ph5v5byno0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220823/image.2cfayzjw29hc.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220823/image.2cfayzjw29hc.webp)
 

@@ -15,7 +15,7 @@ tags:
 
 ### 基本介绍
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/62.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/62.png)
 
 ### 主要的存储引擎/表类型特点
 

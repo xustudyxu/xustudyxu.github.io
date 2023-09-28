@@ -31,11 +31,11 @@ tags:
 + 对象
   + <font color=#DC4040 size=4 face="黑体">100、99、520都是int类之下包含的相似的不同个例,这个个例专业数语称为实例或对象。</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/01.png)
 
 ## 类的创建
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/02.png)
+![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/02.png)
 
 ```python
 """
@@ -87,7 +87,7 @@ def drink():
 
 ## 对象的创建
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/03.png)
 
 ```python
 #创建Student对象
@@ -132,7 +132,7 @@ Student.method()
 
 + **Python是动态语言,在创建对象之后，可以动态地绑定属性和方法**
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/04.png)
 
 ```python
 stu1=Student('张三',20)
@@ -181,7 +181,7 @@ print(stu.__Student__age) #在类的外部可以通过 __Student__age 进行访�
 
 ### 继承
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/05.png)
 
 ```python
 """
@@ -413,7 +413,7 @@ print(lst.__len__()) #4
 print(len(stu1)) #2
 ```
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/06.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/06.png)
 
 ```python
 """
@@ -448,7 +448,7 @@ print('p1这个Person类的实例对象的id:{0}'.format(id(p1)))
 + 变量的赋值操作
   + <font color=#DC4040 size=4 face="黑体">只是形成两个变量,实际上还是指向同一个对象</font>
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/07.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/07.png)
 
 ```python
 """
@@ -476,7 +476,7 @@ print(cpu2,id(cpu2)) #<__main__.CPU object at 0x000002B9AE8BB8B0> 2996520597680
 - 浅拷贝
   - <font color=#DC4040 size=4 face="黑体">Python拷贝一般都是浅拷贝，拷贝时，对象包含的子对象内容不拷贝，因此，源对象与拷贝对象会引用同一个子对象</font>
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/08.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/08.png)
 
 ```python
 #(2)类有浅拷贝
@@ -495,9 +495,9 @@ print(computer2,computer2.cpu,computer2.disk)   #<__main__.Computer object at 0x
 + 深拷贝
   + <font color=#DC4040 size=4 face="黑体">使用copy模块的deepcopy函数,递归拷贝对象中包含的子对象,源对象和拷贝对象所有的子对象也不相同</font>
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/09.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/09.png)
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/10.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/12/10.png)
 
 ```python
 #深拷贝

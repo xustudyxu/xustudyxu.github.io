@@ -15,7 +15,7 @@ tags:
 
 ### 软件开发流程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7l1ry1mxw0g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/image.7l1ry1mxw0g0.webp)
 
 ### 角色分工
 
@@ -45,11 +45,11 @@ tags:
 
 + 系统管理后台
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2uyec76zuui0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.2uyec76zuui0.webp)
 
 + 移动端
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.77n7clzkmwk0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.77n7clzkmwk0.webp)
 
 ### 产品原型展示
 
@@ -59,11 +59,11 @@ tags:
 
 ### 技术选型
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.4cwspu3w36w0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.4cwspu3w36w0.webp)
 
 ### 功能架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.1pwy1wt8rusg.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.1pwy1wt8rusg.webp)
 
 ### 角色
 
@@ -73,7 +73,7 @@ tags:
 
 ### 项目功能
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.13lvg2jm9uww.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/image.13lvg2jm9uww.webp)
 
 ## 开发环境搭建
 
@@ -84,7 +84,7 @@ CREATE DATABASE reggie CHARACTER SET utf8 COLLATE utf8_bin
 #创建一个使用utf8字符集 校对规则 utf8_bin 区分大小
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2eelc0y98n8k.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.2eelc0y98n8k.webp)
 
 ::: warning 注意
 
@@ -110,7 +110,7 @@ CREATE DATABASE reggie CHARACTER SET utf8 COLLATE utf8_bin
 
 ### maven项目搭建
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.7fbe8u3ik5g0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.7fbe8u3ik5g0.webp)
 
 + 配置pom.xml文件
 
@@ -239,7 +239,7 @@ public class ReggieApplication {
 
 + 导入前后端静态资源
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.65evh4h3wz80.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220423/image.65evh4h3wz80.webp)
 
 + SpringBoot默认静态资源 called `/static` (or `/public` or `/resources` or `/META-INF/resources`
 + 设置静态资源访问路径
@@ -275,11 +275,11 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
 1. 页面原型展示
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.468u9up5a1i0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.468u9up5a1i0.webp)
 
 2. 登录页面展示(页面位置:项目/resources/backend/page/login/login.html)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.36h13663fcu0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.36h13663fcu0.webp)
 
 3. 查看
 
@@ -287,11 +287,11 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
    此时报404，是因为我们的后台系统还没有响应此请求的处理器，所以我们需要创建相关类来处理登录请求
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.4z63iq175o40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.4z63iq175o40.webp)
 
 4. 数据模型(employee表)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.6rid5252k1c0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.6rid5252k1c0.webp)
 
 ### 代码开发
 
@@ -416,7 +416,7 @@ public class R<T> {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.3w8d40vqvi40.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.3w8d40vqvi40.webp)
 
 4. 在Controller中创建登录方法
 
@@ -428,7 +428,7 @@ public class R<T> {
   + 查看员工状态，如果为已禁用状态，则返回员工已禁用结果登录
   + 成功，将员工id存入Session并返回登录成功结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220427/image.s541nyod1nk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220427/image.s541nyod1nk.webp)
 
 + 编写处理器
 
@@ -478,11 +478,11 @@ public class R<T> {
 
 员工登录成功后，页面跳转到后台系统首页面(backend/index.html)，此时会显示当前登录用户的姓名:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2zc4ydmy9uy0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/image.2zc4ydmy9uy0.webp)
 
 如果员工需要退出系统，直接点击右侧的退出按钮即可退出系统，退出系统后页面应跳转回登录页面
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.1c4zdmatrbog.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/image.1c4zdmatrbog.webp)
 
 ### 代码开发
 

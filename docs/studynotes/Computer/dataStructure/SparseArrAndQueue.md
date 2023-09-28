@@ -17,7 +17,7 @@ tags:
 
 + 编写的五子棋程序中，有存盘退出和续上盘的功能。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.zahwreqpwhs.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.zahwreqpwhs.webp)
 
 + 分析问题
 
@@ -34,7 +34,7 @@ tags:
 
 + 稀疏数组举例说明
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.804ea5g46m0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.804ea5g46m0.webp)
 
 ### 应用案例
 
@@ -42,7 +42,7 @@ tags:
 2. 把稀疏数组存盘，并且可以从新恢复原来的二维数组数
 3. 整体思路分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.6txpat47wxc0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.6txpat47wxc0.webp)
 
 ### 代码实现
 
@@ -211,7 +211,7 @@ Process finished with exit code 0
 
 银行排队的案例:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.sp030e86cvk.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.sp030e86cvk.webp)
 
 ### 队列介绍
 
@@ -219,14 +219,14 @@ Process finished with exit code 0
 2. 遵循**先入先出**的原则。即:**先存入队列的数据，要先取出。后存入的要后取出**
 3. 示意图:(使用数组模拟队列示意图)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.1hx1cfjail5s.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.1hx1cfjail5s.webp)
 
 ### 数组模拟队列思路
 
 + 队列本身是有序列表，若使用数组的结构来存储队列的数据，则队列数组的声明如下图，其中 maxSize是该队列的最大容量。
 + 因为队列的输出、输入是分别从前后端来处理，因此需要两个变量front 及 rear分别记录队列前后端的下标，front会随着数据输出而改变，而rear 则是随着数据输入而改变，如图所示:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221216/image.4stuwiabzyg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221216/image.4stuwiabzyg0.webp)
 
 + 当我们将数据存入队列时称为”addQueue”,addQueue的处理需要有两个步骤:思路分析
   1. 将尾指针往后移:rear+1，当front == rear【空】
@@ -435,7 +435,7 @@ Process finished with exit code 0
 2. `rear == front` [空]
 3. 分析示意图:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221217/image.4ncmuzcbeak0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221217/image.4ncmuzcbeak0.webp)
 
 思路如下：
 

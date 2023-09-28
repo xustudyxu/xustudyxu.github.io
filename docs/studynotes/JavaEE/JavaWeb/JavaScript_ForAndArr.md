@@ -170,11 +170,11 @@ tags:
 
 利用循环的知识来对比一个简单的天文知识，我们知道地球在自转的同时也在围绕太阳公转，如果把自转和公转都看成是循环的话，就相当于是循环中又嵌套了另一个循环。
 
-![universe](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/universe.5xhfdy5pj9w0.gif)
+![universe](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230218/universe.5xhfdy5pj9w0.gif)
 
 实际上 JavaScript 中任何一种循环语句都支持循环的嵌套，如下代码所示：
 
-![1647918261399](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/1647918261399.5jg3yrmopm40.jpg)
+![1647918261399](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230218/1647918261399.5jg3yrmopm40.jpg)
 
 ```html
 // 1. 外面的循环 记录第n天 
@@ -221,7 +221,7 @@ for (let i = 1; i <= 5; i++) {
 }
 ```
 
-![1647918678956](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/1647918678956.rnhjx3sca4g.jpg)
+![1647918678956](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230218/1647918678956.rnhjx3sca4g.jpg)
 
 ```js
     <script>
@@ -272,7 +272,7 @@ for (let i = 1; i <= 9; i++) {
 }
 ```
 
-![1647918734677](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/1647918734677.58fat37nwgw0.jpg)
+![1647918734677](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230218/1647918734677.58fat37nwgw0.jpg)
 
 ```html
 <!DOCTYPE html>
@@ -361,7 +361,7 @@ for (let i = 1; i <= 9; i++) {
 
 索引值实际是按着数据单元在数组中的位置依次排列的，注意是从` 0` 开始的，如下图所示：
 
-![array](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/array.1t4jjm6r023k.jpg)
+![array](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230218/array.1t4jjm6r023k.jpg)
 
 观察上图可以数据单元【小明】对应的索引值为【0】，数据单元【小红】对应的索引值为【2】
 

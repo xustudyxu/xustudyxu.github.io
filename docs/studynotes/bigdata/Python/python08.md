@@ -14,7 +14,7 @@ tags:
 + 元组
   + Python内置的数据结构之一，是一个**不可变序列**
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/01.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/01.png)
 
 + 不可变序列与可变序列
   - 不可变序列:**字符串、元组**
@@ -116,7 +116,7 @@ print('空元组',t4,t5)    #空元组 () ()
     + <font color=#DC4040 size=4 face="黑体">如果元组中对象本身不可变对象，则不能在引用其他对象</font>
     + <font color=#DC4040 size=4 face="黑体">如果元组中对象是可变对象，则可变对象的引用不允许改变，但数据可以改变</font>
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/02.png)
+![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/02.png)
 
 ```python
 """
@@ -179,7 +179,7 @@ for item in t:
   - 与列表、字典一样都属于**可变类型的序列**
   - **集合是没有value的字典**
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/03.png)
+![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/03.png)
 
 ## 集合的创建方式
 
@@ -317,7 +317,7 @@ print(s1.isdisjoint(s4)) #没有交集为True
 
 ## 集合的数学操作
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/04.png)
+![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/04.png)
 
 ```python
 """
@@ -356,7 +356,7 @@ print(s1^s2)
 
 + 用于生成集合的公式
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/05.png)
+![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/05.png)
 
 ```python
 """
@@ -376,5 +376,5 @@ print(s)  #{0, 1, 4, 9, 16, 25}
 
 ## 列表、字典、元组、集合总结
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/06.png)
+![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/08/06.png)
 

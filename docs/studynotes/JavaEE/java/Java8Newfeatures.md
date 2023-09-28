@@ -16,7 +16,7 @@ tags:
 - Java 8 (又称为jdk 1.8) 是Java 语言开发的一个主要版本。
 - Java 8 是oracle公司于2014年3月发布，可以看成是自Java 5 以来最具革命性的版本。Java 8为Java语言、编译器、类库、开发工具与JVM带来了大量新特性。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220710/image.2i66e6lbvhg0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220710/image.2i66e6lbvhg0.webp)
 
 ## Java8新特性的好处
 
@@ -248,7 +248,7 @@ public interface MyInterface {
 
 #### Java内置四大核心函数式接口
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220710/image.4p8dm1dmkaw0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220710/image.4p8dm1dmkaw0.webp)
 
 ```java {28,49}
 /**
@@ -321,7 +321,7 @@ public class LambdaTest2 {
 
 #### 其他函数式接口
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220710/image.5nfyrs4e38k0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220710/image.5nfyrs4e38k0.webp)
 
 ::: tip 使用总结
 
@@ -576,7 +576,7 @@ public class ConstructorRefTest {
 
 +  4.2 一旦执行终止操作，就执行中间操作链，并产生结果。之后，不会再被使用
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220711/image.216f5anz1qo0.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220711/image.216f5anz1qo0.webp)
 
 ### Stream实例化方式
 
@@ -988,9 +988,9 @@ public class StreamAPITest6 {
 >
 > `Collectors`实用类提供了很多静态方法，可以方便地创建常见收集器实例，具体方法与实例如下表：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220713/image.1dobi5og323k.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220713/image.1dobi5og323k.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220713/image.209xe7n0pqhs.webp)
+![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220713/image.209xe7n0pqhs.webp)
 
 ## Optional类
 
