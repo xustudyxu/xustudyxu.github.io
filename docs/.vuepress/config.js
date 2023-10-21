@@ -43,6 +43,7 @@ module.exports = {
     sidebarDepth: 0,
     lastUpdated: '上次更新',
     search: true,
+    rightMenuBar: true,
     searchMaxSuggestions: 6,
     // algolia: {
     //     apiKey: '685c8fc1740599abf382c782da3717a8',
