@@ -38,6 +38,7 @@
     "vuepress-plugin-flexsearch": "^0.3.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-meting": "^0.3.1",
     "vuepress-plugin-one-click-copy": "^1.0.6",
@@ -49,6 +50,7 @@
     "vuepress-plugin-seo": "^0.2.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-social-share": "^1.1.0",
+    "vuepress-plugin-tabs": "^0.3.0",
     "vuepress-theme-vdoing": "^1.10.4",
     "watchpack": "^2.3.1"
   },
@@ -62,5 +64,8 @@
   "bugs": {
     "url": "https://github.com/xustudyxu/xustudyxu.github.io/issues"
   },
-  "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme"
+  "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme",
+  "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^1.9.10"
+  }
 }

@@ -1714,6 +1714,14 @@
     "@vuepress/types" "1.9.10"
     "cross-spawn" "^6.0.5"
 
+"@vuepress/plugin-medium-zoom@^1.9.10":
+  "integrity" "sha512-/MsICWZ/mUTs+ZdqqA1AVtWAtNL5ksgnnGR2X24LnXaPJp+M1IB2ETcyNKh264YVODSrmVsS/Y+kbCRK0qKkdg=="
+  "resolved" "https://registry.npmmirror.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-1.9.10.tgz"
+  "version" "1.9.10"
+  dependencies:
+    "@vuepress/types" "1.9.10"
+    "medium-zoom" "^1.0.4"
+
 "@vuepress/plugin-nprogress@^1.2.0", "@vuepress/plugin-nprogress@^1.9.5", "@vuepress/plugin-nprogress@1.9.10":
   "integrity" "sha512-I1kkm6yWUQd7vwiV3lEDVpVP0Lr04K0zlczU502lDUa1RufSZ7vt+mlF5fOM28GqT+pKTEToWmm+VNT/R3qvMQ=="
   "resolved" "https://registry.npmmirror.com/@vuepress/plugin-nprogress/-/plugin-nprogress-1.9.10.tgz"
@@ -6535,6 +6543,16 @@
   "resolved" "https://registry.npmmirror.com/markdown-it-emoji/-/markdown-it-emoji-1.4.0.tgz"
   "version" "1.4.0"
 
+"markdown-it-img-lazy@^1.0.2":
+  "integrity" "sha512-H1wOixBCI8Jm9vxn5f5lsDsTdhG8HxLiC5eh5TjVe/Dv//zwAi/R5+WSpRYmQtyc1+RF1kS4cuLPt1wGid0xWA=="
+  "resolved" "https://registry.npmmirror.com/markdown-it-img-lazy/-/markdown-it-img-lazy-1.0.3.tgz"
+  "version" "1.0.3"
+
+"markdown-it-imsize@^2.0.1":
+  "integrity" "sha512-5SH90ademqcR8ifQCBXRCfIR4HGfZZOh5pO0j2TglulfSQH+SBXM4Iw/QlTUbSoUwVZArCYgECoMvktDS2kP3w=="
+  "resolved" "https://registry.npmmirror.com/markdown-it-imsize/-/markdown-it-imsize-2.0.1.tgz"
+  "version" "2.0.1"
+
 "markdown-it-table-of-contents@^0.4.0":
   "integrity" "sha512-TAIHTHPwa9+ltKvKPWulm/beozQU41Ab+FIefRaQV1NRnpzwcV9QOe6wXQS5WLivm5Q/nlo0rl6laGkMDZE7Gw=="
   "resolved" "https://registry.npmmirror.com/markdown-it-table-of-contents/-/markdown-it-table-of-contents-0.4.4.tgz"
@@ -6586,6 +6604,11 @@
   "integrity" "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ=="
   "resolved" "https://registry.npmmirror.com/media-typer/-/media-typer-0.3.0.tgz"
   "version" "0.3.0"
+
+"medium-zoom@^1.0.4":
+  "integrity" "sha512-CjFVuFq/IfrdqesAXfg+hzlDKu6A2n80ZIq0Kl9kWjoHh9j1N9Uvk5X0/MmN0hOfm5F9YBswlClhcwnmtwz7gA=="
+  "resolved" "https://registry.npmmirror.com/medium-zoom/-/medium-zoom-1.0.8.tgz"
+  "version" "1.0.8"
 
 "memory-fs@^0.4.1":
   "integrity" "sha512-cda4JKCxReDXFXRqOHPQscuIYg1PvxbE2S2GP45rnwfEK+vZaXC8C1OFvdHIbgw0DLzowXGVoxLaAmlgRy14GQ=="
@@ -9820,6 +9843,14 @@
   dependencies:
     "cross-spawn" "^6.0.5"
 
+"vuepress-plugin-img-lazy@^1.0.4":
+  "integrity" "sha512-4mMIy3vZzNZupFuohPKlOHGd0rNZEMEHEyN8b2M3j1yBANrkhGg1wNnpsdpe7ZnLdtVpxH3JQT7a3TDdxLLFmQ=="
+  "resolved" "https://registry.npmmirror.com/vuepress-plugin-img-lazy/-/vuepress-plugin-img-lazy-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "markdown-it-img-lazy" "^1.0.2"
+    "markdown-it-imsize" "^2.0.1"
+
 "vuepress-plugin-mathjax@^1.2.8":
   "integrity" "sha512-vtRyDsBviQJfMgHhjzsVY+Rnr4HyEnUCgCKof5FV2ZG+mVe+YECfhVAe1Zo24XkkYjS/FBMFLn/sz4s0p5iuuQ=="
   "resolved" "https://registry.npmmirror.com/vuepress-plugin-mathjax/-/vuepress-plugin-mathjax-1.2.8.tgz"
@@ -9900,6 +9931,11 @@
   dependencies:
     "deepmerge" "^4.2.2"
     "qrcode" "^1.5.1"
+
+"vuepress-plugin-tabs@^0.3.0":
+  "integrity" "sha512-jooDlcMdBqhXgIaF1awFSaOTM56mleP6bbCiGxyQxTZexfvCfDvZhNLGpyXqMQA50ZmNGmvLrK82YYb63k1jfA=="
+  "resolved" "https://registry.npmmirror.com/vuepress-plugin-tabs/-/vuepress-plugin-tabs-0.3.0.tgz"
+  "version" "0.3.0"
 
 "vuepress-theme-vdoing@^1.10.4":
   "integrity" "sha512-TpZ6wRaqRVyNfHNlNMIpWsQqcX2QUZWpMVSNYeepR3LRpq6qbz0dUN9fHlOoCyYFHGsWBSgYyxCSvFwoPk01/Q=="
