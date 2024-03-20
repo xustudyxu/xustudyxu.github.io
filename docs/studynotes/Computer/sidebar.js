@@ -21,6 +21,14 @@ module.exports = [
     '/studynotes/Computer/Computer_network/Transport_layer',
     '/studynotes/Computer/Computer_network/application_layer',
       ]
+  },{
+    title:'设计模式',
+    collapsable: false,
+    children:[
+    '/studynotes/Computer/DesignPatterns/DesignPatterns_GettingStart',
+    '/studynotes/Computer/DesignPatterns/Creator_Mode',
+    '/studynotes/Computer/DesignPatterns/Structural_mode',
+      ]
   }
 
 ]

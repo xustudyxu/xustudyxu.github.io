@@ -1,3 +1,12 @@
+---
+title: 设计模式入门
+date: 2023-12-30 23:22:14
+permalink: /pages/57297b/
+categories:
+  - 设计模式
+tags:
+  - 设计模式
+---
 # 设计模式入门
 
 [学习视频地址](https://www.bilibili.com/video/BV1Np4y1z7BU?p=1&vd_source=6aafd031757cd8c1dbbb98344fb3d363)

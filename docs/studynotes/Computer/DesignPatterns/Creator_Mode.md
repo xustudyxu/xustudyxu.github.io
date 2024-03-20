@@ -1,3 +1,12 @@
+---
+title: 创建者模式
+date: 2024-01-20 16:14:49
+permalink: /pages/9f3d5d/
+categories:
+  - 设计模式
+tags:
+  - 设计模式
+---
 # 创建者模式
 
 [[toc]]
