@@ -133,7 +133,7 @@ token 是实际存储到索引中的词条，<mark>也就是分析器分析后�
 }
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.2aq25x4os6v4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.2aq25x4os6v4.webp)
 
 ES 的默认分词器无法识别中文中测试、单词这样的词汇，而是简单的<mark>将每个字拆完分为一个词</mark>，看返回结果：
 
@@ -196,7 +196,7 @@ IK 中文分词器，下载地址为：https://github.com/medcl/elasticsearch-an
 - ik_max_word：会将文本做最细粒度的拆分
 - ik_smart：会将文本做最粗粒度的拆分
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.6u9bkj6mgig0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.6u9bkj6mgig0.webp)
 
 使用中文分词后的结果为：
 
@@ -232,7 +232,7 @@ ES 中也可以进行扩展词汇，首先查询
 }
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.1r04uie0istc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.1r04uie0istc.webp)
 
 仅仅可以得到每个字的分词结果
 
@@ -268,9 +268,9 @@ ES 中也可以进行扩展词汇，首先查询
 
 首先进入 ES 根目录中的 plugins 文件夹下的 ik 文件夹，进入 config 目录，创建 custom.dic 文件，写入艾欧尼亚。同时打开 IKAnalyzer.cfg.xml 文件，将新建的 custom.dic 配置其中，重启 ES 服务器。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.9gzwbn99es4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.9gzwbn99es4.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.5ivxalmak0w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.5ivxalmak0w0.webp)
 
 服务器响应结果:
 
@@ -359,7 +359,7 @@ ES 中也可以进行扩展词汇，首先查询
 }
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220706/image.3t129jxdbbe0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220706/image.3t129jxdbbe0.webp)
 
 下面的缩略结果展示出分析器正在正确地运行：
 

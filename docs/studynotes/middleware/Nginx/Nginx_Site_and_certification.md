@@ -19,7 +19,7 @@ tags:
 
 这个是大家去下载 Nginx 时经常访问的网站，该网站主要就是用来提供用户来下载相关资源的网站，就叫做下载网站。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.17v6jxd79kao.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.17v6jxd79kao.webp)
 
 如何制作一个下载站点：
 
@@ -156,13 +156,13 @@ root 指令后面必须是下载路径，因为我的下载路径是 `/opt/downl
 
 + 访问 `192.168.91.200/download`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.3gmq4emy84w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.3gmq4emy84w0.webp)
 
 + JSON和XML格式(一般不用这两种格式)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.6n5evv8oo5k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.6n5evv8oo5k0.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.kvsekaaiu40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.kvsekaaiu40.webp)
 
 ## Nginx用户认证模块
 
@@ -257,7 +257,7 @@ htpasswd -v /usr/local/nginx/conf/htpasswd username   # 验证用户名和密码
 
 - 我们创建一个 frx 的用户名，密码是 123456
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.5uqgyc41uuc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.5uqgyc41uuc0.webp)
 
 可以查看生成的文件内容
 
@@ -266,7 +266,7 @@ htpasswd -v /usr/local/nginx/conf/htpasswd username   # 验证用户名和密码
 frx:$apr1$wDXdSh0O$yR66Agylnta9zupO7cD3k.
 ```
 
-+ 浏览器访问 `192.168.91.200/download`![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220806/image.1j6bwl4jr2g0.webp)
++ 浏览器访问 `192.168.91.200/download`![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.1j6bwl4jr2g0.webp)
 
 上述方式虽然能实现用户名和密码的验证，但是大家也看到了，所有的用户名和密码信息都记录在文件里面，如果用户量过大的话，这种方式就显得有点麻烦了，这时候我们就得通过后台业务代码来进行用户权限的校验了。
 

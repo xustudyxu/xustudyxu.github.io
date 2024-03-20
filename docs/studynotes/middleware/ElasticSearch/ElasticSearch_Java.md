@@ -1027,7 +1027,7 @@ public class ESTermQuery {
 
 结果:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220701/image.7iu4a53cmrw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220701/image.7iu4a53cmrw0.webp)
 
 ## 聚合查询
 

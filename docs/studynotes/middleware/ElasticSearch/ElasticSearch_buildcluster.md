@@ -45,7 +45,7 @@ tags:
 
 1. 创建 elasticsearch-cluster 文件夹，在内部复制三个 elasticsearch 服务
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.2gxdjx5tkk80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.2gxdjx5tkk80.webp)
 
 2. 修改集群文件目录中每个节点的 config/elasticsearch.yml 配置文件
 
@@ -156,15 +156,15 @@ http.cors.allow-origin: "*"
 
 + **node-1001 节点**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.6rqqfxejph40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.6rqqfxejph40.webp)
 
 + **node-1002 节点**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.601al7uk88k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.601al7uk88k0.webp)
 
 + **node-1003 节点**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.1tldok7c7400.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.1tldok7c7400.webp)
 
 `statu`：当前集群在总体上是否工作正常，有三种颜色
 
@@ -178,11 +178,11 @@ http.cors.allow-origin: "*"
 
 向集群中的 node-7001 节点增加索引
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.6054tzdists0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.6054tzdists0.webp)
 
 在集群的node-1002节点查询刚刚添加的索引
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220703/image.3638txpbrai0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220703/image.3638txpbrai0.webp)
 
 ## Linux 集群
 

@@ -78,7 +78,7 @@ MongoDB中的`记录是一个文档`，它是一个`由字段和值对（field:v
 
 MySQL和MongoDB对比:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220624/image.64qge2j1t4o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220624/image.64qge2j1t4o0.webp)
 
 | SQL术语/概念 | MondoDB术语/概念 | 解释/说明                           |
 | ------------ | ---------------- | ----------------------------------- |

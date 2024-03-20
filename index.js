@@ -1,8 +1,8 @@
 ((document) => {
     'use strict';
     const DEST_LIST = [
-      'jsd.cdn.zzko.cn',
-      'jsd.cdn.zzko.cn',
+      'cdn.jsdelivr.net',
+      'cdn.jsdelivr.net',
       'gcore.statically.io',
       'testingcf.statically.io',
       'test1.statically.io'

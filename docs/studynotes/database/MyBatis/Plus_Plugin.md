@@ -97,7 +97,7 @@ com.baomidou.mybatisplus.extension.plugins.pagination.Page@459f703f
 Process finished with exit code 0
 ```
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/06/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/06/01.png)
 
 ## xml自定义分页
 

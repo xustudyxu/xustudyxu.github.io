@@ -30,7 +30,7 @@ C：Controller，控制层，指工程中的servlet，作用是接收请求和�
 2. 业务逻辑层（BLL）：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。
 3. 数据访问层（DAL）：该层所做事务直接操作数据库，针对数据的增添、删除、修改、更新、查找等。
 
-![07](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/01/07.png)
+![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/01/07.png)
 
 MVC的工作流程：
 用户通过视图层发送请求到服务器，在服务器中请求被Controller接收，Controller调用相应的Model层处理请求，处理完毕将结果返回到Controller，Controller再根据请求处理的结果找到相应的View视图，渲染数据后最终响应给浏览器
@@ -54,7 +54,7 @@ SpringMVC 是 Spring 为表述层开发提供的一整套完备的解决方案�
 
 ## SpringMVC内容
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/01/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/01/01.png)
 
 
 

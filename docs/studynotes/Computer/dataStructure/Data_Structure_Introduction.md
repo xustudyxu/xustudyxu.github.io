@@ -31,20 +31,20 @@ tags:
 
   请完成汉诺塔游戏的代码:要求:(1)将A塔的所有圆盘移动到C塔。并且规定，(2)小圆盘上不能放大圆盘，(3)在三根柱子之间一次只能移动一个圆盘
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.6cjdfqhykfk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.6cjdfqhykfk0.webp)
 
 + 八皇后问题
 
   八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出:在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即:任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。【92】=>分治算法
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.6mx54tr8fpo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.6mx54tr8fpo0.webp)
 
 + 马踏棋盘算法介绍和游戏演示
   1. 马踏棋盘算法也被称为骑士周游问题
   2. 将马随机放在国际象棋的8×8棋盘Board\[0\~7][0~7]的某个方格中，马按走棋规则(马走日字)进行移动。要求每个方格只进入一次，走遍棋盘上全部64个方格
   3. 会使用到**图的深度优化遍历算法(DFS)**+**贪心算法**优化
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.40adwy0xl060.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.40adwy0xl060.webp)
 
 ### 数据结构和算法的重要性
 
@@ -63,13 +63,13 @@ tags:
 
 看几个实际编程中遇到的问题
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.6m9ly6wyld80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.6m9ly6wyld80.webp)
 
 小结:需要使用到单链表数据结构
 
 ## 一个五子棋程序
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.3p17gh021v20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.3p17gh021v20.webp)
 
 如何判断游戏的输赢，并可以完成存盘退出和继续上局的功能
 
@@ -84,7 +84,7 @@ tags:
 
 ## 其它常见算法问题
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221215/image.6x4lyx2poog0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221215/image.6x4lyx2poog0.webp)
 
 1. 修路问题=→>最小生成树(加权值)【数据结构】＋普利姆算法
 2. 最短路径问题=→>图+弗洛伊德算法

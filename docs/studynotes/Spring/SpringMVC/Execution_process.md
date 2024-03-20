@@ -13,7 +13,7 @@ tags:
 
 + SpringMVC框架的工作原理图
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/06.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/06.png)
 
 ## SpringMVC常用组件                                          
 
@@ -45,7 +45,7 @@ tags:
 
 DispatcherServlet 本质上是一个 Servlet，所以天然的遵循 Servlet 的生命周期。所以宏观上是 Servlet 生命周期来进行调度。
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/01.png)
 
 ### 初始化WebApplicationContext
 
@@ -426,15 +426,15 @@ private void processDispatchResult(HttpServletRequest request, HttpServletRespon
   1. 再判断是否配置了mvc:default-servlet-handler
   2.  如果没配置，则控制台报映射查找不到，客户端展示404错误
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/02.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/02.png)
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/03.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/03.png)
 
 ​		如果有配置，则访问目标资源（一般为静态资源，如：JS,CSS,HTML），找不到客户端也会展示404错误
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/04.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/04.png)
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/05.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringMVC/images/11/05.png)
 
 + 存在则执行下面的流程
 

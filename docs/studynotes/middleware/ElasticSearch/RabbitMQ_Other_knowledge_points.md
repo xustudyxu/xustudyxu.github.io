@@ -53,7 +53,7 @@ MQ 消费者的幂等性的解决一般使用全局 ID 或者写个唯一标识�
 
 + Web页面添加
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.2xm08z870l40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.2xm08z870l40.webp)
 
 1. 进入 Web 页面，点击 Queue 菜单，然后点击 `Add a new queue`
 2. 点击下方的 `Maximum priority`
@@ -155,7 +155,7 @@ public class PriorityConsumer {
 
 info 5 的优先级为 10，优先级最高。消费者消费信息效果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.3vjjukfu3r00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.3vjjukfu3r00.webp)
 
 ## 惰性队列
 
@@ -179,11 +179,11 @@ channel.queueDeclare("myqueue", false, false, false, args);
 
 也可以在 Web 页面添加队列时，选择 `Lazy mode`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.m9m0vrilbw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.m9m0vrilbw0.webp)
 
 ### 内存开销对比
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.18hc40o0ctcw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.18hc40o0ctcw.webp)
 
 在发送 1 百万条消息，每条消息大概占 1KB 的情况下，普通队列占用内存是 1.2GB，而惰性队列仅仅占用 1.5MB
 

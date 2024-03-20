@@ -15,7 +15,7 @@ tags:
 
  看个实际应用场景，迷宫问题(回溯)，递归(Recursion)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/11.png)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/11.png)
 
 ## 递归的概念
 
@@ -29,7 +29,7 @@ tags:
 2. 阶乘问题
 3. 使用图解方式说明了递归的调用机制
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221228/image.3soy9snzr6g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221228/image.3soy9snzr6g0.webp)
 
 4. 代码演示
 
@@ -102,7 +102,7 @@ Process finished with exit code 0
 
 ### 迷宫问题
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/11.png)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/oop/11.png)
 
 ### 代码实现
 
@@ -230,7 +230,7 @@ Process finished with exit code 0
 
 八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出:在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即:**任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法**(92)。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221228/image.36gxjtykeni0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221228/image.36gxjtykeni0.webp)
 
 ### 八皇后问题算法思路分析
 
@@ -241,7 +241,7 @@ Process finished with exit code 0
 5. 然后回头继续第一个皇后放第二列，后面继续循环执行1,2,3,4的步骤
 6. 示意图:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221228/image.2u5943qb6500.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221228/image.2u5943qb6500.webp)
 
 ### 代码实现
 

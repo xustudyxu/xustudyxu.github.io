@@ -28,15 +28,15 @@ tags:
 }
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.16jfdcupu3j4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.16jfdcupu3j4.webp)
 
 集群状态：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.39fddcevg6y0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.39fddcevg6y0.webp)
 
 通过 elasticsearch-head 插件查看集群情况，所以我们的集群是一个有三个节点和一个索引的集群
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.5x9qw61rdm40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.5x9qw61rdm40.webp)
 
 我们可以发送请求到集群中的任一节点。每个节点都有能力处理任意请求。每个节点都知道集群中任一文档位置，所以可以直接将请求转发到需要的节点上。 在下面的例子中，将所有的请求发送到 Node 7001，我们将其称为<mark> 协调节点(coordinating node)</mark>。也可以理解为转发到其他节点的节点。
 
@@ -52,7 +52,7 @@ tags:
 
 新建、索引和删除请求都是`写`操作，必须在<mark>主分片</mark>上面完成写入操作之后<mark>才能被复制</mark>到相关的副本分片
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.170d25y17d1c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.170d25y17d1c.webp)
 
 写操作步骤顺序：
 
@@ -73,7 +73,7 @@ tags:
 
 我们可以从主分片或者从其它任意副本分片检索文档
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.2dxgk2rb01gk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.2dxgk2rb01gk.webp)
 
 读流程顺序步骤：
 
@@ -91,7 +91,7 @@ tags:
 
 部分更新一个文档，结合了之前的读和写流程：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.146qxbe8k3a8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.146qxbe8k3a8.webp)
 
 更新流程步骤顺序：
 
@@ -110,7 +110,7 @@ tags:
 
 `mget` 和 bulk API 的模式类似于单文档模式。区别在于协调节点<mark>知道</mark>每个文档存在于哪个分片中。它将整个多文档请求分解成「每个分片」的多文档请求，并且将这些请求并行转发到每个参与节点。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.1g8ofpwj2ta8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.1g8ofpwj2ta8.webp)
 
 用单个 `mget` 请求取回多个文档所需的步骤顺序:
 
@@ -123,7 +123,7 @@ tags:
 
 `bulk API` 允许在单个批量请求中执行多个创建、索引、删除和更新请求
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.59u3v9fkmg80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.59u3v9fkmg80.webp)
 
 `bulk API` 按执行步骤顺序：
 

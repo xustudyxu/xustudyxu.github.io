@@ -37,7 +37,7 @@ MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。
 
 MongoDB 将数据存储为一个文档，数据结构由键值(key=>value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221025/image.56kn1fjam4w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221025/image.56kn1fjam4w0.webp)
 
 ## MongoDB 特点
 
@@ -120,7 +120,7 @@ local   0.000GB
 
 通过下图实例，我们也可以更直观的的了解Mongo中的一些概念：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221025/image.7ek0tmy0ocg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221025/image.7ek0tmy0ocg0.webp)
 
 ### 数据库
 
@@ -294,7 +294,7 @@ _id组合
 
 Objectld是、id”的默认类型。Objectld使用12字节的存储空间，每个字节二位十六进制数字， 是一个24位的字符串
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221025/image.1jhk052h3v1c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221025/image.1jhk052h3v1c.webp)
 
 1. 时间戳：时间不断变化的
 
@@ -699,9 +699,9 @@ Spring Data提供了对mongodb数据访问的支持，我们只需要继承Mongo
 
 SpringData 方法定义规范
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221025/image.6hn7ec30qdg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221025/image.6hn7ec30qdg0.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221025/image.6l8hleta6pw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221025/image.6l8hleta6pw0.webp)
 
 1. 不是随便声明的，而需要符合一定的规范
 2. 查询方法以find | read | get开头

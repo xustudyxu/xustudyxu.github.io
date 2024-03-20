@@ -15,7 +15,7 @@ tags:
 
 ## Elasticsearch 是什么
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220628/image.3ztg7y6rqi00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220628/image.3ztg7y6rqi00.webp)
 
 The Elastic Stack, 包括 Elasticsearch、Kibana、Beats 和 Logstash（也称为 ELK Stack）。能够安全可靠地获取任何来源、任何格式的数据，然后实时地对数据进行搜索、分析和可视化。Elaticsearch，简称为 ES，ES 是一个**开源的高扩展的分布式全文搜索引擎**，是整个 Elastic Stack 技术栈的核心。它可以近乎实时的存储、检索数据；本身扩展性很好，可以扩展到上百台服务器，处理 PB 级别的数据。
 
@@ -46,7 +46,7 @@ Lucene 是 Apache 软件基金会 Jakarta 项目组的一个子项目，提供�
 
 在使用过程中，一般都会将 Elasticsearch 和 Solr 这两个软件对比，然后进行选型。这两个搜索引擎都是流行的，先进的的开源搜索引擎。它们都是围绕核心底层搜索库 - Lucene构建的 - 但它们又是不同的。像所有东西一样，每个都有其优点和缺点：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220628/image.6g36ghfm7100.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220628/image.6g36ghfm7100.webp)
 
 ## Elasticsearch Or Solr
 

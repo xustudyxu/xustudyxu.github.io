@@ -19,7 +19,7 @@ tags:
 
 并集选择器（css选择器分组）是各个选择器通过**逗号**连接而成的，任何形式的选择器（包括标签选择器、class类选择器，id选择器等），都可以作为并集选择器的一部分。如果某些选择器定义的样式完全相同，或部分相同，就可以利用并集选择器为它们定义相同的CSS样式。
 
-![image-20220513215703484](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image-20220513215703484.3daay7jx6ec0.webp)
+![image-20220513215703484](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image-20220513215703484.3daay7jx6ec0.webp)
 
 >并集选择器和的意思，只要逗号隔开的，所有选择器都会执行后面样式。
 
@@ -62,7 +62,7 @@ tags:
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image.i48pjr8lg3k.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.i48pjr8lg3k.webp)
 
 ### 后代选择器(重点)
 
@@ -71,7 +71,7 @@ tags:
 - 用来选择元素或元素组的**子孙后代**。
 - 其写法就是把外层标签写在前面，内层标签写在后面，中间用**空格**分隔，先写爷爷父亲，在写儿子孙子。
 
-![image-20220513220452691](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image-20220513220452691.5ro6vwhu8so0.webp)
+![image-20220513220452691](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image-20220513220452691.5ro6vwhu8so0.webp)
 
 ```html
 <!DOCTYPE html>
@@ -107,7 +107,7 @@ tags:
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image.4oni4x8u4pe0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.4oni4x8u4pe0.webp)
 
 ### 子元素选择器（重点）
 
@@ -116,7 +116,7 @@ tags:
 - 子元素选择器只能选择作为某元素**子元素(亲儿子)**的元素。
 - 其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个 `>` 进行连接
 
-![image-20220513221713248](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image-20220513221713248.5nd7isbh0p00.webp)
+![image-20220513221713248](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image-20220513221713248.5nd7isbh0p00.webp)
 
 > 这里的子指的是亲儿子不包含孙子,重孙子之类。
 
@@ -151,7 +151,7 @@ tags:
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image.1c1jbfvm5bwg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.1c1jbfvm5bwg.webp)
 
 ### 复合选择器总结
 
@@ -262,7 +262,7 @@ tags:
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image.3blqygk1kps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.3blqygk1kps0.webp)
 
 ## 标签显示模式（display）（重点）
 
@@ -372,7 +372,7 @@ tags:
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/image.oe7t07h9zvk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/image.oe7t07h9zvk.webp)
 
 ### 三种模式总结区别
 
@@ -541,7 +541,7 @@ tags:
 
 ### 为什么需要CSS精灵技术
 
-![sss](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220909/sss.5gmsgkgijj80.webp)
+![sss](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220909/sss.5gmsgkgijj80.webp)
 
 图所示为网页的请求原理图，当用户访问一个网站时，需要向服务器发送请求，网页上的每张图像都要经过一次请求才能展现给用户。
 
@@ -620,7 +620,7 @@ CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（�
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220913/image.1f4su0daopj4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image.1f4su0daopj4.webp)
 
 ## 背景透明(CSS3)
 
@@ -706,7 +706,7 @@ background-size: 300px 100px;
 
 + 鼠标放在业务介绍
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220913/image.4cko362ezv0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image.4cko362ezv0.webp)
 
 # list-style 属性
 
@@ -784,7 +784,7 @@ ul
 
 + 结果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220913/image.7fu6ni53s5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220913/image.7fu6ni53s5c.webp)
 
 # CSS 三大特性
 

@@ -53,7 +53,7 @@ Spring Cloud Stream为一些供应商的消息中间件产品提供了个性化�
 
 **标准MQ**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.49yr2p399aw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.49yr2p399aw0.webp)
 
 + 生产者/消费者之间靠消息媒介传递信息内容
 + 消息必须走特定的通道 - 消息通道 Message Channel
@@ -64,7 +64,7 @@ Spring Cloud Stream为一些供应商的消息中间件产品提供了个性化�
 
 比方说我们用到了RabbitMQ和Kafka，由于这两个消息中间件的架构上的不同，像RabbitMQ有exchange，kafka有Topic和Partitions分区。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.4rpahbt8qzo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.4rpahbt8qzo0.webp)
 
 这些中间件的差异性导致我们实际项目开发给我们造成了一定的困扰，我们如果用了两个消息队列的其中一种，后面的业务需求，我想往另外一种消息队列进行迁移，这时候无疑就是一个灾难性的，一大堆东西都要重新推倒重新做，因为它跟我们的系统耦合了，这时候Spring Cloud Stream给我们提供了—种解耦合的方式。
 
@@ -79,7 +79,7 @@ Spring Cloud Stream为一些供应商的消息中间件产品提供了个性化�
 - INPUT对应于消费者
 - OUTPUT对应于生产者
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.be4a4zivseo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.be4a4zivseo.webp)
 
 **Stream中的消息通信方式遵循了发布-订阅模式**
 
@@ -92,9 +92,9 @@ Topic主题进行广播
 
 **Spring Cloud Stream标准流程套路**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.20rnfxuan4n4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.20rnfxuan4n4.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.19ouvdp6wnog.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.19ouvdp6wnog.webp)
 
 + Binder - 很方便的连接中间件，屏蔽差异。
 
@@ -473,7 +473,7 @@ public class ReceiveMessageListenerController {
 
 比如在如下场景中，订单系统我们做集群部署，都会从RabbitMQ中获取订单信息，那如果一个订单同时被两个服务获取到，那么就会造成数据错误，我们得避免这种情况。这时我们就可以**使用Stream中的消息分组来解决**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220822/image.1j9z25exmu80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220822/image.1j9z25exmu80.webp)
 
 注意在Stream中处于同一个group中的多个消费者是竞争关系，就能够保证消息只会被其中一个应用消费一次。不同组是可以全面消费的(重复消费)。
 

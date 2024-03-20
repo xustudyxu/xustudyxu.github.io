@@ -167,13 +167,13 @@ mysql> select * from student;
 
 比如，v2视图是基于v1视图的，如果在v2视图创建的时候指定了检查选项为 cascaded，但是v1视图创建时<font color='red'>未</font>指定检查选项。 则在执行检查时，**不仅会检查v2，还会级联检查v2的关联视图v1**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220925/image.3w76kvmmjbw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.3w76kvmmjbw0.webp)
 
 2.  `LOCAL` 本地
 
 比如，v2视图是基于v1视图的，如果在v2视图创建的时候指定了检查选项为 local ，但是v1视图创建时<font color='red'>未</font>指定检查选项。 则在执行检查时，**只会检查v2，不会检查v2的关联视图v1**。如果**v1视图创建时指令检查选项，则会执行检查**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220925/image.5e3plxqvt3c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.5e3plxqvt3c0.webp)
 
 ## 视图的更新
 
@@ -197,7 +197,7 @@ create view stu_v_count as select count(*) from student;
 insert into stu_v_count values(10);
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220925/image.7bhqr4s554g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.7bhqr4s554g0.webp)
 
 ## 视图作用
 
@@ -238,7 +238,7 @@ select * from tb_stu_course_view;
 
 存储过程思想上很简单，就是数据库 SQL 语言层面的代码封装与重用。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220927/image.1atiu2xu65k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220927/image.1atiu2xu65k0.webp)
 
 特点:
 
@@ -845,11 +845,11 @@ call p11(40);
 
 上述的存储过程，最终我们在调用的过程中，会报错，之所以报错是因为上面的while循环中，并没有退出条件。当游标的数据集获取完毕之后，再次获取数据，就会报错，从而终止了程序的执行。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220930/image.546oifwx2qk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220930/image.546oifwx2qk0.webp)
 
 但是此时，tb_user_pro表结构及其数据都已经插入成功了，我们可以直接刷新表结构，检查表结构中的数据。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220930/image.6knpnt78wag0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220930/image.6knpnt78wag0.webp)
 
 上述的功能，虽然我们实现了，但是逻辑并不完善，而且程序执行完毕，获取不到数据，数据库还报错。 接下来，我们就需要来完成这个存储过程，并且解决这个问题。
 
@@ -991,7 +991,7 @@ select fun1(50);
 
 在mysql8.0版本中binlog默认是开启的，一旦开启了，mysql就要求在定义存储过程时，需要指定`characteristic`特性，否则就会报如下错误：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220930/image.47h1umf49aa0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220930/image.47h1umf49aa0.webp)
 
 ## 触发器
 

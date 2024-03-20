@@ -17,7 +17,7 @@ tags:
 
 + `应用层`是**计算机网络体系结构**的`最顶层`，是`设计和建立计算机网络`的**最终目的**，也是**计算机网络中发展最快的部分。**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.4nuumpggzvo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.4nuumpggzvo0.webp)
 
 - 早期基于文本的应用(电子邮件、远程登录、文件传输、新闻组)
 - **20世纪90年代**将因特网带入干家万户的`万维网www`
@@ -28,7 +28,7 @@ tags:
 
 + 在本章中，我们以一些经典的网络应用为例来学习`有关网络应用`的**原理、协议和实现方面的知识**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.2d1r61k8rrtw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.2d1r61k8rrtw.webp)
 
 - 万维网WWW
 - 域名系统DNS
@@ -44,17 +44,17 @@ tags:
 
 ### 客户/服务器方式（C/S方式）
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.5ojqu4ofg6o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.5ojqu4ofg6o0.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.3bkgvn4zv4q0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.3bkgvn4zv4q0.webp)
 
 
 
 ### 对等方式（P2P方式）
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.5noc2qwqwc40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.5noc2qwqwc40.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.37n2om7k3l80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.37n2om7k3l80.webp)
 
 ## 动态主机配置协议DHCP
 
@@ -64,25 +64,25 @@ tags:
 
   + `1️⃣DHCP的作用`
 
-  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.1ezoif9ovtz4.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.1ezoif9ovtz4.webp)
 
   + `2️⃣DHCP的工作过程`
 
-  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.8ggtfiprb2o.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.8ggtfiprb2o.webp)
 
-  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.6dxvvbw5vi80.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.6dxvvbw5vi80.webp)
 
-  ​	![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.o68or3x0j34.webp)
+  ​	![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.o68or3x0j34.webp)
 
-  ​	![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.1c97t2p1f4cg.webp)
+  ​	![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.1c97t2p1f4cg.webp)
 
-  ​	![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.o0tq8lhr5io.webp)
+  ​	![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.o0tq8lhr5io.webp)
 
   + `3️⃣DHCP中继代理`
 
-  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.7alcjqsa67w0.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.7alcjqsa67w0.webp)
 
-  ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.5vv1dj3lvnc0.webp)
+  ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.5vv1dj3lvnc0.webp)
 
 ### 知识拓展
 
@@ -110,7 +110,7 @@ tags:
 
 + `域名系统DNS`是**因特网使用的命名系统**，用来把便于**人们记忆的具有特定含义的主机名(例如www.abc.com)**，转换为便于机器处理的**IP地址**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.1wpj3sfwhcbk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.1wpj3sfwhcbk.webp)
 
 +  **因特网**采用`层次树状结构`的**域名结构**
 
@@ -118,7 +118,7 @@ tags:
 
 `1️⃣域名分类`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.6ewcilp4f5s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.6ewcilp4f5s0.webp)
 
 +  **顶级域名TLD**(Top Level Domain)**分为以下三类：**
   - 国家顶级域名nTLD
@@ -141,11 +141,11 @@ tags:
 
 `1️⃣递归查询`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.26xakpkgfxwk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.26xakpkgfxwk.webp)
 
 `2️⃣迭代查询`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.22vgv9hrcuqo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.22vgv9hrcuqo.webp)
 
 为了提高DNS的查询效率，并减轻根域名服务器的负荷和减少因特网上的DNS查询报文数量，在**域名服务器和主机**中广泛地使用了`高速缓存`。
 
@@ -172,7 +172,7 @@ tags:
 
 但是，是否使用TCP 20端口建立数据连接与传输模式有关，主动方式使用TCP 20端口被动方式由服务器和客户端自行协商决定。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.340486kfyhe0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.340486kfyhe0.webp)
 
 ## 电子邮件
 
@@ -182,19 +182,19 @@ tags:
 
 - `用户代理`是**用户与电子邮件系统的接口**，又称为电子邮件客户端软件。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.uc6g85vdjio.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.uc6g85vdjio.webp)
 
 + `邮件服务器`是**电子邮件系统的基础设施**。因特网上所有的ISP都有邮件服务器，其**功能是**`发送和接收邮件`，同时还要负责维护用户的邮箱。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.b55pt8tb5kw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.b55pt8tb5kw.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.2udfbnvbjhg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.2udfbnvbjhg0.webp)
 
 + `协议`包括**邮件发送协议**(例如`SMTP`)和**邮件读取协议**(例如`POP3`)。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.61hrx6irm6o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.61hrx6irm6o0.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.58onjwivojs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.58onjwivojs0.webp)
 
 ### 常用的邮件协议
 
@@ -203,25 +203,25 @@ tags:
   - 只能传送`ASCII码文本`
   - **用于用户代理向邮件服务器发送邮件以及邮件服务器之间的邮件发送**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.1bgnud39hp7k.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.1bgnud39hp7k.webp)
 
 + **为解决SMTP传送非ASCII码文本的问题**，**提出了**多用途因特网邮件扩展`MIME`。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.3iigvs4j8gi0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.3iigvs4j8gi0.webp)
 
 + **常用的邮件读取协议有以下两个：**
   - `邮局协议POP3`：**非常简单、功能有限的邮件读取协议**。用户只能以下载并删除方式或下载并保留方式从邮件服务器下载邮件到用户方计算机。不允许用户在邮件服务器上管理自己的邮件。
   - `因特网邮件访问协议IMAP`：**功能比POP3强大的邮件读取协议**。用户在自己的计算机上就可以操控邮件服务器中的邮箱，就像在本地操控一样，因此IMAP是一个联机协议。
   - `POP3和IMAP4`都采用基于**TCP连接的客户/服务器方式**。POP3使用端口110，IMAP4使用端口143。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.6dmrbh2bczo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.6dmrbh2bczo0.webp)
 
 ### 基于万维网的电子邮件
 
 + 通过浏览器登录(提供用户名和口令)邮件服务器万维网网站就可以撰写、收发、阅读和管理电子邮件。这种工作模式与IMAP很类似,不同的是用户计算机无需安装专门的用户代理程序,只需要使用通用的万维网浏览器。
 + 这种工作模式在**用户浏览器与邮件服务器网站之间**使用`HTTP协议`，而**邮件服务器之间**使用`SMTP协议`。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.4qzvy8nvavc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.4qzvy8nvavc0.webp)
 
 ## 万维网WWW
 
@@ -232,15 +232,15 @@ tags:
 
 **万维网**是欧洲粒子物理实验室的**Tim Berners-Lee**最初于1989年3月提出的。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.4en3zg77vws.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.4en3zg77vws.webp)
 
 **浏览器**最重要的部分是渲染引擎，也就是**浏览器内核，负责对网页内容进行解析和显示。**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.32bgotmwxiu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.32bgotmwxiu0.webp)
 
 + `万维网`使用**统一资源定位符URL**来指明因特网上任何种类“资源”的**位置**。**其一般形式为:<协议>://<主机>:<端口>/<路径>**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.2suz3oxy5p20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.2suz3oxy5p20.webp)
 
 ### 万维网文档
 
@@ -254,7 +254,7 @@ tags:
 
 + `超文本传输协议HTTP` (HyperText Transfer Protocol)**定义了浏览器**(即万维网客户进程)**怎样向万维网服务器请求万维网文档**，**以及万维网服务器怎样把万维网文档传送给**`浏览器`。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.1v0kxlpao9b4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.1v0kxlpao9b4.webp)
 
 + `HTTP/1.0`采用**非持续连接方式**。每次浏览器要请求一个文件都要与服务器建立TCP连接(80端口)，当收到响应后就立即关闭连接。
   + **每请求一个文档**就要有`两倍的RTT的开销`。
@@ -266,34 +266,34 @@ HTTP有两类报文：**请求报文和响应报文**。报文中的每一个字
 
 `1️⃣请求报文格式`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.ni0oupr3yio.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.ni0oupr3yio.webp)
 
 + HTTP请求报文支持以下方法
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.4mip9qhd8sg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.4mip9qhd8sg0.webp)
 
 `2️⃣响应报文格式`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.3jbbhbjmeoo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.3jbbhbjmeoo0.webp)
 
 ### 知识拓展
 
 + `Cookie`提供了一种机制**使得万维网服务器能够“记住”用户**。而无需用户主动提供用户标识信息。也就是说，Cookie是一种对无状态的HTTP进行状态化的技术。
 + 使用Cookie在服务器上记录用户信息
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.2khh7v4w2qk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.2khh7v4w2qk0.webp)
 
 + 在万维网**加粗样式**中还可以使用`缓存机制`以提高**万维网的效率**。`万维网缓存`又称为**Web缓存**，可位于客户机，也可位于中间系统上，位于中间系统上的Web缓存又称为代理服务器。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.aea0gk75548.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.aea0gk75548.webp)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.s2261236c5s.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.s2261236c5s.webp)
 
 + 原始服务器与代理服务器中的文件一致
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.7abspmxy0280.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.7abspmxy0280.webp)
 
 + 原始服务器与代理服务器中的文件不一致
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221213/image.7dkdn3uqa2c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221213/image.7dkdn3uqa2c0.webp)
 

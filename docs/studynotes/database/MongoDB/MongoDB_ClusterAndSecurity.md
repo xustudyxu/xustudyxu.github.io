@@ -46,7 +46,7 @@ MongoDB中的副本集（Replica Set）是一组维护相同数据集的mongod�
 些情况下，另一个mongod实例可能暂时认为自己也是主要的。主要记录其操作日志中的数据集的所有
 更改，即oplog。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/image.28iayc515les.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/image.28iayc515les.webp)
 
 辅助(副本)节点复制主节点的oplog并将操作应用于其数据集，以使辅助节点的数据集反映主节点的数据
 集。 如果主要人员不在，则符合条件的中学将举行选举以选出新的主要人员。
@@ -76,7 +76,7 @@ MongoDB中的副本集（Replica Set）是一组维护相同数据集的mongod�
 仲裁者（Arbiter）：不保留任何数据的副本，只具有投票选举作用。当然也可以将仲裁服务器维护为副
 本集的一部分，即副本成员同时也可以是仲裁者。也是一种从节点类型。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/image.4ff6racfmye0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/image.4ff6racfmye0.webp)
 
 关于仲裁者的额外说明：
 
@@ -98,7 +98,7 @@ MongoDB中的副本集（Replica Set）是一组维护相同数据集的mongod�
 
 一主一副本一仲裁
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/image.31yuyn1jm8g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/image.31yuyn1jm8g0.webp)
 
 ## 副本集的创建
 

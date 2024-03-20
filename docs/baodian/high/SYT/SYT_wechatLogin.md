@@ -19,7 +19,7 @@ tags:
 
 照片拥有者想要在云冲印服务上打印照片，云冲印服务需要访问云存储服务上的资源
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.3qbdx7nxkw80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.3qbdx7nxkw80.webp)
 
 #### 图例
 
@@ -29,11 +29,11 @@ tags:
 
 受保护的资源：照片
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.1i1db73t8sps.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.1i1db73t8sps.webp)
 
 #### 方式一：用户名密码复制
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.pvhhq53vjw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.pvhhq53vjw0.webp)
 
 用户将自己的"云存储"服务的用户名和密码，告诉"云冲印"，后者就可以读取用户的照片了。这样的做法有以下几个严重的缺点。
 
@@ -55,13 +55,13 @@ tags:
 
 适用于合作商或者授信的不同业务部门之间
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.2vz4ip6q3pm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.2vz4ip6q3pm0.webp)
 
 #### 方式三：颁发令牌
 
 接近OAuth2方式，需要考虑如何管理令牌、颁发令牌、吊销令牌，需要统一的协议，因此就有了OAuth2协议
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.2y79wpk9zuk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.2y79wpk9zuk0.webp)
 
 **令牌类比仆从钥匙**
 
@@ -69,7 +69,7 @@ tags:
 
 #### OAuth 主要角色
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.6rm0atekmmk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.6rm0atekmmk0.webp)
 
 ### OAuth2 的应用
 
@@ -79,11 +79,11 @@ tags:
 
 核心的技术不是用户名和密码，而是token，由AuthServer颁发token，用户使用token进行登录
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.4tqcnjq0zoc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.4tqcnjq0zoc0.webp)
 
 #### 社交登录
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.2pslhkildns0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.2pslhkildns0.webp)
 
 ## 微信登录介绍
 
@@ -113,7 +113,7 @@ ngrok的使用
 
 **获取access_token时序图**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.ffug23frnko.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.ffug23frnko.webp)
 
 第一步：请求CODE（生成授权URL）
 
@@ -129,7 +129,7 @@ ngrok的使用
 
 如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221105/image.2e58lcmi3ou8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221105/image.2e58lcmi3ou8.webp)
 
 因此我们的操作步骤为：
 

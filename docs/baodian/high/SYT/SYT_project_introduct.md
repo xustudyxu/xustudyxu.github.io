@@ -47,8 +47,8 @@ tags:
 
 ### 业务流程
 
-![尚医通业务流程](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221019/尚医通业务流程.2t4fe4nk0j00.webp)
+![尚医通业务流程](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221019/尚医通业务流程.2t4fe4nk0j00.webp)
 
 ### 服务架构
 
-![尚医通架构图](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221019/尚医通架构图.5fgnbt65jog0.webp)
+![尚医通架构图](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221019/尚医通架构图.5fgnbt65jog0.webp)

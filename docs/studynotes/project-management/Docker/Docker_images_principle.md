@@ -15,7 +15,7 @@ tags:
 
 镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.2eyaa1qewe80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.2eyaa1qewe80.webp)
 
 **镜像就是花卷，多个镜像组成一个完整的镜像**
 
@@ -27,7 +27,7 @@ Union 文件系统是一种分层，轻量级并且高性能的文件系统，�
 
 ## Docker 镜像原理 
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.44m96fv6jxo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.44m96fv6jxo0.webp)
 
 > **docker 的镜像实际上由一层一层的文件系统组成，这种层级的文件系统 UnionFS。**
 
@@ -44,7 +44,7 @@ centos              latest              5d0da3dc9764        12 months ago       
 tomcat              8.5.27              a92c139758db        4 years ago         558MB
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.n12zxx92lls.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.n12zxx92lls.webp)
 
 ### 为什么Docker镜像要采用这种分层结构呢
 
@@ -65,7 +65,7 @@ tomcat              8.5.27              a92c139758db        4 years ago         
 [root@frx01 ~]# docker inspect tomcat:8.5.27
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.6rx8e7zvbnc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.6rx8e7zvbnc0.webp)
 
 所有的 Docker 镜像都起始于一个基础镜像层，当进行修改或增加新的内容时，就会在当前镜像层之上，创建新的镜像层。
 
@@ -73,11 +73,11 @@ tomcat              8.5.27              a92c139758db        4 years ago         
 
 该镜像当前已经包含 3 个镜像层，如下图所示（这只是一个用于演示的很简单的例子）。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.4xklf0i3iy80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.4xklf0i3iy80.webp)
 
 在添加额外的镜像层的同时，镜像始终保持是当前所有镜像的组合，理解这一点非常重要。下图中举了一个简单的例子，每个镜像层包含 3 个文件，而镜像包含了来自两个镜像层的 6 个文件。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.7hlezkqhyrs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.7hlezkqhyrs0.webp)
 
 这种情况下，上层镜像层中的文件覆盖了底层镜像层中的文件。这样就使得文件的更新版本作为一个新镜像层添加到镜像当中。
 
@@ -89,11 +89,11 @@ Docker 在 Windows 上仅支持 windowsfilter 一种存储引擎，该引擎基�
 
 下图展示了与系统显示相同的三层镜像。所有镜像层堆叠并合并，对外提供统一的视图。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.2rka9swxxwg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.2rka9swxxwg.webp)
 
 ## 核心架构图
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.22vkerqfoi0w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.22vkerqfoi0w.webp)
 
 ## Docker镜像commit操作案例
 
@@ -153,5 +153,5 @@ Docker中的镜像分层，**支持通过扩展现有镜像，创建新的镜像
 
 :::
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220911/image.55hqvoufnsw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220911/image.55hqvoufnsw0.webp)
 

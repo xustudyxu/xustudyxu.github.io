@@ -19,7 +19,7 @@ tomcat 版本网址：[https://registry.hub.docker.com/_/tomcat](https://registr
 
 tomcat 有很多的版本分支，一个版本可能有多个分支，如 `8-jre` 代表 Tomcat 8 内置 jre8 的版本、 `8-jdk8` 代表 Tomcat 8 内置 jdk8 的版本等等。所以根据需求进行版本选择。（jdk 包括了 jre，但是相对而言比较大）
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220919/image.2ylgcekrxva0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220919/image.2ylgcekrxva0.webp)
 
 ### 安装修改
 
@@ -355,7 +355,7 @@ SHOW VARIABLES LIKE '%char%';
 
 如图则代表配置成功：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220919/image.2fc62z4b02vw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220919/image.2fc62z4b02vw.webp)
 
 + 外部查看 MySQL 日志（可选）
 
@@ -659,4 +659,4 @@ vim kibana.yml
 
 修改为 ES 的 IP 地址
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220919/image.4uzub0kmmoi0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220919/image.4uzub0kmmoi0.webp)

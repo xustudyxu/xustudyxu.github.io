@@ -30,47 +30,47 @@ tags:
 
 ## 界面设计
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/01.png)
 
 ## 功能实现-用户登录
 
-![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/02.png)
 
 ## 功能实现-拉取在线用户列表
 
-![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/03.png)
 
 ## 功能实现-无异常退出
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/04.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/04.png)
 
 ## 功能实现-私聊
 
-![05](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/05.png)
+![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/05.png)
 
-![06](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/06.png)
+![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/06.png)
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/07.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/07.png)
 
 ## 功能实现-群聊
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/08.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/08.png)
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/09.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/09.png)
 
 ## 功能实现-发文件
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/10.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/10.png)
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/11.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/11.png)
 
 ## 功能实现-服务器推送新闻
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/12.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/12.png)
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/13.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/13.png)
 
-![12](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/14.png)
+![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Users/14.png)
 
 ## 代码实现
 

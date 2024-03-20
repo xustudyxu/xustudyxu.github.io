@@ -67,7 +67,7 @@ http://www.nginx.org/user/1
 
 出现跨域问题会有什么效果？接下来通过一个需求来给大家演示下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.vlv6telsbb4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.vlv6telsbb4.webp)
 
 1.  Nginx 的 html 目录下新建一个 a.html
 
@@ -126,7 +126,7 @@ server{
 
 3. 通过浏览器测试访问
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.4md37urjzug0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.4md37urjzug0.webp)
 
 ### 解决方案
 
@@ -169,11 +169,11 @@ location /getUser {
 
 我们在 html 目录下准备一个页面 a.html，在页面上利用 img 标签引入这两个图片:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.614vk7i0kx80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.614vk7i0kx80.webp)
 
 访问：`http://192.168.200.133/a.html` 来查看效果
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.2m5u48xesf60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.2m5u48xesf60.webp)
 
 从上面的效果，可以看出来，下面的图片地址添加了防止盗链的功能，京东这边我们可以直接使用其图片。
 
@@ -181,7 +181,7 @@ location /getUser {
 
 了解防盗链的原理之前，我们得先学习一个 HTTP 的头信息 Referer，当浏览器向 Web 服务器发送请求的时候，一般都会带上 Referer，来告诉浏览器该网页是从哪个页面链接过来的。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.64vdmkvdywk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.64vdmkvdywk0.webp)
 
 后台服务器可以根据获取到的这个 Referer 信息来判断是否为自己信任的网站地址，如果是则放行继续访问，如果不是则可以返回 403（服务端拒绝访问）的状态信息。
 
@@ -189,7 +189,7 @@ location /getUser {
 
 在本地模拟上述的服务器效果图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.4hr6e3mrf440.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.4hr6e3mrf440.webp)
 
 Nginx 防盗链的具体实现：
 
@@ -300,7 +300,7 @@ server {
 
 访问 `https://192.168.200.133:8081:server`，返回结果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.6t618fip2fo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.6t618fip2fo0.webp)
 
 ### Rewrite常用全局变量
 
@@ -348,7 +348,7 @@ server {
 
 效果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.6s6hlgez73g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.6s6hlgez73g0.webp)
 
 > **可以把访问的信息记录在日志中**
 
@@ -375,7 +375,7 @@ http{
 
 然后查看日志，效果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220801/image.23y9h76w29b4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220801/image.23y9h76w29b4.webp)
 
 ### if指令
 
@@ -476,13 +476,13 @@ location /testbreak {
 
 效果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.2ok6tnbtnx20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.2ok6tnbtnx20.webp)
 
 带参数访问：`http://192.168.200.133:8081/testbreak/1`
 
 效果如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220802/image.1f6a03pxv4ow.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220802/image.1f6a03pxv4ow.webp)
 
 ### return指令
 

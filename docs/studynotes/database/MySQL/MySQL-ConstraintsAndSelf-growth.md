@@ -19,7 +19,7 @@ tags:
 
 ### primary key(主键)-基本使用
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/43.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/43.png)
 
 - 细节说明:
 
@@ -89,7 +89,7 @@ DESC t18
 
 ### not null和unique(唯一)
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/44.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/44.png)
 
 ```sql
 -- unique的使用
@@ -121,9 +121,9 @@ DESC t22
 
 ### foreign key(外键)
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/45.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/45.png)
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/46.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/46.png)
 
 ```sql
 -- 外键演示
@@ -164,7 +164,7 @@ DELETE FROM my_class
 
 ### check
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/47.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/47.png)
 
 ```sql
 -- 演示check的使用
@@ -186,7 +186,7 @@ SELECT * FROM t23
 
 ### 商店售货系统表设计案例
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/48.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/48.png)
 
 ```sql
 CREATE TABLE goods_(
@@ -221,7 +221,7 @@ CREATE TABLE purchase(
 
 ### 自增长基本介绍
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/49.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/49.png)
 
 ### 自增长使用细节
 

@@ -26,15 +26,15 @@ tags:
 
 在 **Postman** 发送 `PUT` 请求：http://127.0.0.1:7001/users
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.3psofat1d9s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.3psofat1d9s0.webp)
 
 我们的集群现在是拥有一个索引的单节点集群。所有 3 个主分片都被分配在 node - 1
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.4rxns2h7pou0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.4rxns2h7pou0.webp)
 
 通过 elasticsearch-head 插件查看集群情况
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.36xv8g0vwem0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.36xv8g0vwem0.webp)
 
 看到的 users 是刚才添加的索引
 
@@ -46,21 +46,21 @@ tags:
 
 如果启动了第二个节点，我们的集群将会拥有两个节点的集群: 所有主分片和副本分片都已被分配
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.531itmxgne40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.531itmxgne40.webp)
 
 通过 elasticsearch-head 插件查看集群情况
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.4634ol2saaq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.4634ol2saaq0.webp)
 
 ### 水平扩容
 
 怎样为我们的正在增长中的应用程序按需扩容呢？当启动了第三个节点，我们的集群将会拥有三个节点的集群: 为了分散负载而对分片进行重新分配
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220810/image.6m818aw0snk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.6m818aw0snk0.webp)
 
 通过 elasticsearch-head 插件查看集群情况
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.5102h28o7cw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.5102h28o7cw0.webp)
 
 > .geoip_databases 不用看，包括下面的图，它是自带的一个索引，我们探索的是 users 索引
 
@@ -82,15 +82,15 @@ Node 7001 和 Node 7002 上各有一个分片被迁移到了新的 Node 7003 节
 
 在 **Postman** 发送 `PUT` 请求：http://127.0.0.1:7001/users/_settings
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.2uixtlw05hm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.2uixtlw05hm0.webp)
 
 users 索引现在拥有 9 个分片：3 个主分片和 6 个副本分片。 这意味着我们可以将集群扩容到 9 个节点，每个节点上一个分片。相比原来 3 个节点时，集群搜索性能可以提升 3 倍。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.5o20s9oa7m40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.5o20s9oa7m40.webp)
 
 通过 elasticsearch-head 插件查看集群情况
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.zwr0ajp90hs.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.zwr0ajp90hs.webp)
 
 当然，如果只是在相同节点数目的集群上增加更多的副本分片并不能提高性能，因为每个分片从节点上获得的资源会变少。你需要增加更多的硬件资源来提升吞吐量。
 
@@ -100,15 +100,15 @@ users 索引现在拥有 9 个分片：3 个主分片和 6 个副本分片。 �
 
 没宕机前的集群状态：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.7je7eg9umew0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.7je7eg9umew0.webp)
 
 我们关闭第一个节点，这时集群的状态为：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.2g1o5pmuqa80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.2g1o5pmuqa80.webp)
 
 我们关闭的节点是一个主节点。而集群必须拥有一个主节点来保证正常工作，所以发生的第一件事情就是选举一个新的主节点：Node 7002。在我们关闭 Node 7001 的同时也失去了主分片 1 和 2，并且在缺失主分片的时候索引也不能正常工作。如果此时`立即`检查集群的状况，我们看到的状态将会为 red：不是所有主分片都在正常工作。但是`过一会`检查集群状态如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.522nzxdq7140.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.522nzxdq7140.webp)
 
 幸运的是，在其它节点上存在着这两个主分片的完整副本，所以新的主节点立即将这些分片在 Node 7002 和 Node 7003 上对应的`副本分片提升为主分片`，此时集群的状态将会为 yellow。这个提升主分片的过程是瞬间发生的，如同按下一个开关一般。
 
@@ -122,7 +122,7 @@ users 索引现在拥有 9 个分片：3 个主分片和 6 个副本分片。 �
 
 启动 Node 7001，重新查看集群状态：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220704/image.7k663i9g24w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220704/image.7k663i9g24w0.webp)
 
 只不过 Master 从 Node 7001 变成了 Node 7002。
 

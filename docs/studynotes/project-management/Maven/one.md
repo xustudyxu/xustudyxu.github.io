@@ -15,14 +15,14 @@ tags:
   - jar包不统一，jar包不兼容
   - 工程升级维护过程操作繁琐等
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/01.png)
 
 ## Maven是什么
 
 - <font color=#DC4040 size=4 face="黑体">**Maven的本质是一个项目管理工具，将项目开发和管理过程抽象成一个项目对象模型(POM)**</font>
 - <font color=#DC4040 size=4 face="黑体">**POM(Project Object Model):项目对象模型**</font>
 
-![02](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/02.png)
+![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/02.png)
 
 ## Maven的作用
 
@@ -30,7 +30,7 @@ tags:
 - **依赖管理:方便快捷的管理项目依赖的资源(jar包),避免资源间的版本冲突问题**
 - **统一开发结构:提供标准的、统一的项目结构**
 
-![03](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/03.png)
+![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Maven/images/00/03.png)
 
 
 

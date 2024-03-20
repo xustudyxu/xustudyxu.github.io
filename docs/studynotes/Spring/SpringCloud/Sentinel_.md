@@ -33,7 +33,7 @@ Sentinel 具有以下特征:
 
 Sentinel 的主要特性：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220826/image.6o17tpjuxww0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.6o17tpjuxww0.webp)
 
 [link](https://github.com/alibaba/Sentinel/wiki/%E4%BB%8B%E7%BB%8D#sentinel-%E6%98%AF%E4%BB%80%E4%B9%88)
 
@@ -54,7 +54,7 @@ Hystrix与Sentinel比较：
 
 + Sentinel生态
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220826/image.1b0m1x3sals0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.1b0m1x3sals0.webp)
 
 > sentinel
 > 英 [ˈsentɪnl] 美 [ˈsentɪnl]
@@ -102,7 +102,7 @@ Sentinel 分为两个部分：
   - [http://localhost:8080](http://localhost:8080)
   - 登录账号密码均为sentinel
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220826/image.6y6m807az4s0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220826/image.6y6m807az4s0.webp)
 
 ## Sentinel初始化监控
 
@@ -265,13 +265,13 @@ Sentinel采用的懒加载说明
 
 - 效果 - sentinel8080正在监控微服务8401
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.1x94hxj5ov4w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.1x94hxj5ov4w.webp)
 
 ## Sentinel流控规则简介
 
 基本介绍
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.3kvfyj3ozgo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.3kvfyj3ozgo0.webp)
 
 进一步解释说明：
 
@@ -300,7 +300,7 @@ Sentinel采用的懒加载说明
 
 表示1秒钟内查询1次就是OK，若超过次数1，就直接->快速失败，报默认错误
 
-![1661597646696](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/1661597646696.2p5k0wl2bii0.webp)
+![1661597646696](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/1661597646696.2p5k0wl2bii0.webp)
 
 **测试**
 
@@ -322,7 +322,7 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 
 线程数：当调用该API的线程数达到阈值的时候，进行限流。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.56askfjb2x00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.56askfjb2x00.webp)
 
 只能有一个线程访问
 
@@ -337,17 +337,17 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 
 当关联资源/testB的QPS阀值超过1时，就限流/testA的Rest访问地址，**当关联资源到阈值后限制配置好的资源名**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.6pj6bmtz4c80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.6pj6bmtz4c80.webp)
 
 **Postman模拟并发密集访问testB**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.77mpmp6l1v40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.77mpmp6l1v40.webp)
 
 访问testB成功
 
 + 浏览器访问A，发现A挂了
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.1dhix5vbmuv4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.1dhix5vbmuv4.webp)
 
 ## Sentinel流控-预热
 
@@ -357,7 +357,7 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 >
 > 通常冷启动的过程系统允许通过的 QPS 曲线如下图所示：
 >
-> ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.7jvfq5bcsp40.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.7jvfq5bcsp40.webp)
 >
 > [link](https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#warm-up)
 
@@ -371,7 +371,7 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 
 系统初始化的阀值为10/ 3约等于3,即阀值刚开始为3;然后过了5秒后阀值才慢慢升高恢复到10
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.318rm89qk0w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.318rm89qk0w0.webp)
 
 **测试**
 
@@ -387,7 +387,7 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 
 设置：/testA每秒1次请求，超过的话就排队等待，等待的超时时间为20000毫秒。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.r2ezbq3xheo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.r2ezbq3xheo.webp)
 
 > 匀速排队
 >
@@ -395,7 +395,7 @@ com.alibaba.csp.sentinel.slots.block.flow.controller.DefaultController
 >
 > 该方式的作用如下图所示：
 >
-> ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.3v2m5sm14y00.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.3v2m5sm14y00.webp)
 >
 > 这种方式主要用于处理间隔性突发的流量，例如消息队列。想象一下这样的场景，在某一秒有大量的请求到来，而接下来的几秒则处于空闲状态，我们希望系统能够在接下来的空闲期间逐渐处理这些请求，而不是在第一秒直接拒绝多余的请求。
 >
@@ -485,7 +485,7 @@ Sentinei的断路器是没有类似Hystrix半开状态的。(Sentinei 1.8.0 已�
 
 接下来讲解Sentinel 1.7.0的。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.1nmc1swgco68.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.1nmc1swgco68.webp)
 
 **测试**
 
@@ -511,11 +511,11 @@ public class FlowLimitController {
 
 配置
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.6pd9n2n3c4g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.6pd9n2n3c4g0.webp)
 
 jmeter压测
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.187hn49vgg80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.187hn49vgg80.webp)
 
 <mark>结论</mark>
 
@@ -555,11 +555,11 @@ public class FlowLimitController {
 
 配置
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.2fqu8qr6nim8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.2fqu8qr6nim8.webp)
 
 jmeter
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220827/image.1m84918wopts.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220827/image.1m84918wopts.webp)
 
 结论
 
@@ -571,7 +571,7 @@ jmeter
 
 **基本介绍**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.48v9ncqzdz00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.48v9ncqzdz00.webp)
 
 **官网**
 
@@ -584,7 +584,7 @@ jmeter
 >
 > 热点参数限流会统计传入参数中的热点参数，并根据配置的限流阈值与模式，对包含热点参数的资源调用进行限流。热点参数限流可以看做是一种特殊的流量控制，仅对包含热点参数的资源调用生效。
 >
-> ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.jnvgtfj7xww.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.jnvgtfj7xww.webp)
 >
 > Sentinel 利用 LRU 策略统计最近最常访问的热点参数，结合令牌桶算法来进行参数级别的流控。热点参数限流支持集群模式。
 >
@@ -627,7 +627,7 @@ public class FlowLimitController{
 
 **配置**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.1q4q36pkaeao.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.1q4q36pkaeao.webp)
 
 一
 
@@ -661,17 +661,17 @@ public class FlowLimitController{
 
 **配置**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.65m5scosrpw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.65m5scosrpw0.webp)
 
 **测试**
 
 - right - [http://localhost:8401/testHotKey?p1=5](http://localhost:8401/testHotKey?p1=5)
 
-![QQ22918914922917714320220828143803](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143803.3ae8743igh60.gif)
+![QQ22918914922917714320220828143803](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143803.3ae8743igh60.gif)
 
 - error - [http://localhost:8401/testHotKey?p1=3](http://localhost:8401/testHotKey?p1=3)
 
-![QQ22918914922917714320220828143535](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143535.4sp17j0poq20.gif)
+![QQ22918914922917714320220828143535](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/QQ22918914922917714320220828143535.4sp17j0poq20.gif)
 
 - 当p1等于5的时候，阈值变为200
 - 当p1不等于5的时候，阈值就是平常的1
@@ -764,7 +764,7 @@ public class RateLimitController {
 
 配置步骤
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.7g67qp5jzig0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.7g67qp5jzig0.webp)
 
 图形配置和代码关系
 
@@ -807,13 +807,13 @@ public class RateLimitController {
 
 **Sentinel控制台配置**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.6cb3ofi255o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.6cb3ofi255o0.webp)
 
 **测试**
 
 - 快速点击[http://localhost:8401/rateLimit/byUrl](http://localhost:8401/rateLimit/byUrl)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.6rbdgxikqxo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.6rbdgxikqxo0.webp)
 
 - 结果 - 会返回Sentinel自带的限流处理结果 Blocked by Sentinel (flow limiting)
 
@@ -862,13 +862,13 @@ public class RateLimitController {
 
 Sentinel控制台配置
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.2fetseirolog.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.2fetseirolog.webp)
 
 启动微服务后先调用一次 - [http://localhost:8401/rateLimit/customerBlockHandler](http://localhost:8401/rateLimit/customerBlockHandler)。
 
 然后，多次快速刷新[http://localhost:8401/rateLimit/customerBlockHandler](http://localhost:8401/rateLimit/customerBlockHandler)。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220828/image.6ierww0guuc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220828/image.6ierww0guuc0.webp)
 
 刷新后，我们自定义兜底方法的字符串信息就返回到前端。
 
@@ -979,7 +979,7 @@ public class PaymentController {
 
 测试地址 - [http://localhost:9003/paymentSQL/1](http://localhost:9003/paymentSQL/1)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.25fj5vyffykg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.25fj5vyffykg.webp)
 
 **消费者84**
 
@@ -1214,7 +1214,7 @@ public class CircleBreakerController {
 
 页面返回结果：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.14s7o7pzawik.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.14s7o7pzawik.webp)
 
 ## Sentinel服务熔断只配置blockHandler
 
@@ -1258,11 +1258,11 @@ public class CircleBreakerController {
 }
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.r7qe8ck91f4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.r7qe8ck91f4.webp)
 
 测试地址 - [http://localhost:84/consumer/fallback/4](http://localhost:84/consumer/fallback/4),第一次访问页面报错，但是一秒内快速访问两次，结果:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.4lktw021rss0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.4lktw021rss0.webp)
 
 ## Sentinel服务熔断fallback和blockHandler都配置
 
@@ -1421,11 +1421,11 @@ public class OrderNacosMain84 {
 
 测试 - [http://localhost:84/consumer/paymentSQL/1](http://localhost:84/consumer/paymentSQL/1)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.4ptxwjfudfk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.4ptxwjfudfk0.webp)
 
 测试84调用9003，此时故意关闭9003微服务提供者，**84消费侧自动降级**，不会被耗死。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.1drrkjbpqig0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.1drrkjbpqig0.webp)
 
 一直是端口9004
 
@@ -1507,7 +1507,7 @@ feign:
 
 添加Nacos业务规则配置
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.4awbthpovfw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.4awbthpovfw0.webp)
 
 ```json
 [{
@@ -1531,15 +1531,15 @@ feign:
 
 启动8401后刷新sentinel发现业务规则有了
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.4kh8x1jx9k80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.4kh8x1jx9k80.webp)
 
 快速访问测试接口 - http://localhost:8401/rateLimit/byUrl - 页面返回`Blocked by Sentinel (flow limiting)`
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.j0jdehf5s5s.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.j0jdehf5s5s.webp)
 
 停止8401再看sentinel - 停机后发现流控规则没有了
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220829/image.5gwcanu3evs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220829/image.5gwcanu3evs0.webp)
 
 重新启动8401再看sentinel
 

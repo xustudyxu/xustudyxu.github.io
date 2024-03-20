@@ -70,7 +70,7 @@ touch /home/www/myweb/server1/logs/access.log
 
 准备相关文件，/homw/www 目录如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.2fjy4216srrw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.2fjy4216srrw.webp)
 
 因为 Nginx 自带配置文件的备份，即 nginx.conf.default，所以我们可以直接修改配置文件，但是如果你的配置文件曾经修改过，那么请进行备份。
 
@@ -341,23 +341,23 @@ firewall-cmd --reload
 
 8081 的 server1 的 location1：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.8hg9dg1p4z0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.8hg9dg1p4z0.webp)
 
 8081 的 server1 的 location2：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.2dphfquey6v4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.2dphfquey6v4.webp)
 
 8082 的 server2 的 location1：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.rfbc49fqpmo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.rfbc49fqpmo.webp)
 
 8082 的 server2 的 location2：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.1m80pe5hx1q8.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.1m80pe5hx1q8.webp)
 
 如果访问一个不存在的 404 请求：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220729/image.3fccke6ob8c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220729/image.3fccke6ob8c0.webp)
 
 日志也会打印，这里演示一个：
 

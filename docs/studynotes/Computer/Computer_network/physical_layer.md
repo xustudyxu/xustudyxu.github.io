@@ -44,32 +44,32 @@ tags:
 
 1. 双绞线
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.694l6v3vj5s0.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.694l6v3vj5s0.webp)
 
 2. 同轴电缆
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.1291a2a495og.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.1291a2a495og.webp)
 
 3. 光纤
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.5vqervoc2qg0.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.5vqervoc2qg0.webp)
 
    + 光在光纤中传输的基本原理
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.3hls1grtz9g0.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.3hls1grtz9g0.webp)
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.12rqru8cqtls.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.12rqru8cqtls.webp)
 
 4. 电力线
 
-   ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.1p7fzbzx3ezk.webp)
+   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.1p7fzbzx3ezk.webp)
 
 ### 非引导型传输媒体
 
 1. 无线电波
 2. 微波
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.fqktiaiu508.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.fqktiaiu508.webp)
 
 3. 红外线
 4. 可见光
@@ -84,15 +84,15 @@ tags:
    - 异步发送时，每个字节单独发送，且起始段与结束段有单独的标记。
 3. 单向通信/双向交替通信/双方同时通信(单工/半双工/全双工)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.36ld283rxom0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.36ld283rxom0.webp)
 
 ## 编码与调制
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.68hcn22uf880.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.68hcn22uf880.webp)
 
 ### 常见的基带调制编码方式
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.z6k4dfxm0io.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.z6k4dfxm0io.webp)
 
 - 不归零编码中存在时钟不一致的问题
 - 归零编码中存在浪费数据带宽的问题
@@ -101,11 +101,11 @@ tags:
 
 练习题：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.z2bp6646hps.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.z2bp6646hps.webp)
 
 ### 基本的调制方式
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.1gk02ylk9c0w.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.1gk02ylk9c0w.webp)
 
 不过有一个缺点，使用基本调制方式，一个码元只能包含一个比特信息。通常来说可以有混合调制的方式，也就是多个维度一起调制的方式。
 
@@ -113,7 +113,7 @@ tags:
 
 正交振幅调制 QAM
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.4tc9rfwo3l40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.4tc9rfwo3l40.webp)
 
 ## 信道的极限容量
 
@@ -153,7 +153,7 @@ tags:
    >
    > + 信噪比（dB）= *10 × log<sub>10</sub>(S/N)（dB）*
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.6u8tung63co0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.6u8tung63co0.webp)
 
 ## 信道的复用技术
 
@@ -161,14 +161,14 @@ tags:
 
 1. 频分复用
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.4hed19sa9cg.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.4hed19sa9cg.webp)
 
 每个用户划分出一个频段来就是频分复用。
 存在大量的带宽闲置的问题
 
 2. 时分复用(TDM)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.58cg0bzk2uw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.58cg0bzk2uw0.webp)
 
 - 所有用户被划分在了不同的时间帧中，每个用户周期出现。
 - 存在大量的限制
@@ -181,7 +181,7 @@ tags:
 
 波分复用就是光频拆分出来，通过一个光纤来传输多个信号。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.4jwgzkrt4nq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.4jwgzkrt4nq0.webp)
 
 ### 码分复用(CDMA)
 
@@ -193,10 +193,10 @@ tags:
 2. 每个码片中的所有的数字仅有 `1` 和 `-1`。
 
 3. 假设用户的码片信息为 S1,S2,…,Sn 的话，不同码片之间的内积为 0，即对于任意的 i,j 满足 i≠j 而言， S<sub>i</sub>⋅S<sub>j</sub> ÷ m=0 成立。
-4. 传输比特 1 ，则传输码片 S，否则传输码片的反码 ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.4qwjfif0uae0.webp)。
+4. 传输比特 1 ，则传输码片 S，否则传输码片的反码 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.4qwjfif0uae0.webp)。
 
-5. 我们发现 S⋅S=1,S⋅![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.4qwjfif0uae0.webp)=−1 ，而 S<sub>i</sub>⋅S<sub>j</sub>=0，那么在多个用户信息之间叠加的话，我们可以通过这种计算内积的方法把其他用户的内积给去除。
+5. 我们发现 S⋅S=1,S⋅![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.4qwjfif0uae0.webp)=−1 ，而 S<sub>i</sub>⋅S<sub>j</sub>=0，那么在多个用户信息之间叠加的话，我们可以通过这种计算内积的方法把其他用户的内积给去除。
 
 以书上的例子为例。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221203/image.7dobfgww0c00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221203/image.7dobfgww0c00.webp)

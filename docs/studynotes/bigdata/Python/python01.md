@@ -17,7 +17,7 @@ tags:
 
 + 我里面有一个你可以直接使用的函数叫print()，可以将你想展示的东东在IDLE或标准的控制台上显示
 
-![01](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/Python/images/01/01.png)
+![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/01/01.png)
 
 ### print()的函数的使用
 

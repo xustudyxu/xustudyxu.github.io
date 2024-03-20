@@ -61,7 +61,7 @@ Nginx是服务器负载均衡，客户端所有请求都会交给nginx，然后�
 
 总结：Ribbon其实就是一个软负载均衡的客户端组件，它可以和其他所需请求的客户端结合使用，和Eureka结合只是其中的一个实例。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220815/image.738a78r6ezs0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.738a78r6ezs0.webp)
 
 Ribbon在工作时分成两步：
 
@@ -111,13 +111,13 @@ getForEntity()：返回对象为ResponseEntity对象，包含了响应中的一�
 
 + 测试
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220815/image.5idpiwxwga40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.5idpiwxwga40.webp)
 
 ## Ribbon默认自带的负载规则
 
 lRule：根据特定算法中从服务列表中选取一个要访问的服务
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220815/image.7hadzarzyps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.7hadzarzyps0.webp)
 
 + RoundRobinRule 轮询
 + RandomRule 随机
@@ -173,7 +173,7 @@ public class OrderMain80 {
 + 开启cloud-eureka-server7001，cloud-consumer-order80，cloud-provider-payment8001，cloud-provider-payment8002
 + 浏览器-输入[http://localhost:81/consumer/payment/get/1](http://localhost:81/consumer/payment/get/1)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220815/image.295ji74h92v4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/image.295ji74h92v4.webp)
 
 
   返回结果中的serverPort在8001与8002两种间反复横跳。
@@ -426,5 +426,5 @@ public class OrderController {
 
 5. 测试 不停地刷新[http://localhost:81/consumer/payment/lb](http://localhost:81/consumer/payment/lb)，可以看到8001/8002交替出现。
 
-![QQ22918914922917714320220816013642](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220815/QQ22918914922917714320220816013642.2mrhybjr73g0.gif)
+![QQ22918914922917714320220816013642](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220815/QQ22918914922917714320220816013642.2mrhybjr73g0.gif)
 

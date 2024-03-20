@@ -21,11 +21,11 @@ Linux的版本为CentOS7
 
 + [地址](https://downloads.mysql.com/archives/community/)
 
-![image-20211031230239760](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image-20211031230239760.4lltc4efppk0.webp)
+![image-20211031230239760](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image-20211031230239760.4lltc4efppk0.webp)
 
 3. 下载完成后，上传MySQL安装包
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.7b1siexp8yw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.7b1siexp8yw0.webp)
 
 4. 解压tar文件
 
@@ -132,7 +132,7 @@ mysql -u root -p
 
 12. 使用Navicat远程连接MySQL
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.5trm4of7da80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.5trm4of7da80.webp)
 
 ## 索引介绍
 
@@ -140,7 +140,7 @@ mysql -u root -p
 特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据， 这样就可以在这些数据结构
 上实现高级查找算法，这种数据结构就是索引。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.4ceabfxp7o20.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.4ceabfxp7o20.webp)
 
 优缺点：
 
@@ -179,11 +179,11 @@ mysql -u root -p
 
 假如说MySQL的索引结构采用二叉树的数据结构，比较理想的结构如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.2x5ygpv62bc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.2x5ygpv62bc0.webp)
 
 如果主键是顺序插入的，则会形成一个单向链表，结构如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.11jj75v1pmvk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.11jj75v1pmvk.webp)
 
 所以，如果选择二叉树作为索引结构，会存在以下缺点：
 
@@ -192,7 +192,7 @@ mysql -u root -p
 
 此时大家可能会想到，我们可以选择红黑树，红黑树是一颗自平衡二叉树，那这样即使是顺序插入数据，最终形成的数据结构也是一颗平衡的二叉树,结构如下:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.3gnt45t33c80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.3gnt45t33c80.webp)
 
 但是，即使如此，由于红黑树也是一颗二叉树，所以也会存在一个缺点：
 
@@ -204,18 +204,18 @@ mysql -u root -p
 
 B-Tree，B树是一种**多路**衡查找树，相对于二叉树，B树每个节点可以有多个分支，即多叉。以一颗最大度数（max-degree）为5(5阶)的b-tree为例，那这个B树每个节点最多存储4个key，5个指针：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.502an5672xg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.502an5672xg0.webp)
 
 > 树的度数指的是一个节点的子节点个数。
 
 我们可以通过一个数据结构可视化的网站来简单演示一下。[B-Tree Visualization (usfca.edu)](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.3ejefb0tmlk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.3ejefb0tmlk0.webp)
 
 插入一组数据： 100 65 169 368 900 556 780 35 215 1200 234 888 158 90 1000 88
 120 268 250 。然后观察一些数据插入过程中，节点的变化情况。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.57f9fwicq8c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.57f9fwicq8c0.webp)
 
 特点：
 
@@ -227,7 +227,7 @@ B-Tree，B树是一种**多路**衡查找树，相对于二叉树，B树每个�
 
 B+Tree是B-Tree的变种，我们以一颗最大度数（max-degree）为4（4阶）的b+tree为例，来看一下其结构示意图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.19jn04aoruqo.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.19jn04aoruqo.webp)
 
 我们可以看到，两部分：
 
@@ -236,11 +236,11 @@ B+Tree是B-Tree的变种，我们以一颗最大度数（max-degree）为4（4�
 
 我们可以通过一个数据结构可视化的网站来简单演示一下。[B+ Tree Visualization (usfca.edu)](https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.3ejefb0tmlk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.3ejefb0tmlk0.webp)
 
 插入一组数据： 100 65 169 368 900 556 780 35 215 1200 234 888 158 90 1000 88 120 268 250 。然后观察一些数据插入过程中，节点的变化情况。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.4sdwnp6ytp40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.4sdwnp6ytp40.webp)
 
 最终我们看到，B+Tree 与 B-Tree相比，主要有以下三点区别：
 
@@ -252,7 +252,7 @@ B+Tree是B-Tree的变种，我们以一颗最大度数（max-degree）为4（4�
 
 MySQL索引数据结构对经典的B+Tree进行了优化。在原B+Tree的基础上，增加一个指向相邻叶子节点的链表指针，就形成了带有顺序指针的B+Tree，提高区间访问的性能，利于排序。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.75isnx49mkw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.75isnx49mkw0.webp)
 
 ### Hash
 
@@ -262,11 +262,11 @@ MySQL中除了支持B+Tree索引，还支持一种索引类型---Hash索引。
 
 哈希索引就是采用一定的hash算法，将键值换算成新的hash值，映射到对应的槽位上，然后存储在hash表中。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.4np8kvtyma00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.4np8kvtyma00.webp)
 
 如果两个(或多个)键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可以通过链表来解决。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220922/image.1emkfrpfv50.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220922/image.1emkfrpfv50.webp)
 
 2. 特点
 
@@ -314,14 +314,14 @@ InnoDB存储引擎根据B+Tree索引在指定条件下自动构建的。
 
 演示图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.1gn1yrumngio.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.1gn1yrumngio.webp)
 
 + 聚集索引的叶子节点下挂的是这一行的数据 。
 + 二级索引的叶子节点下挂的是该字段值对应的主键值。
 
 接下来，我们来分析一下，当我们执行如下的SQL语句时，具体的查找过程是什么样子的。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.6wtz50o3aps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.6wtz50o3aps0.webp)
 
 具体过程如下:
 
@@ -354,7 +354,7 @@ InnoDB存储引擎根据B+Tree索引在指定条件下自动构建的。
 >
 > + InnoDB主键索引的B+tree高度为多高呢?
 >
-> ![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.43mt337llam0.webp)
+> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.43mt337llam0.webp)
 >
 > 答：假设一行数据大小为1k，一页中可以存储16行这样的数据。InnoDB 的指针占用6个字节的空间，主键假设为bigint，占用字节数为8.
 > 可得公式：`n * 8 + (n + 1) * 6 = 16 * 1024`，其中 8 表示 bigint 占用的字节数，n 表示当前节点存储的key的数量，(n + 1) 表示指针数量（比key多一个）。算出n约为1170。
@@ -428,7 +428,7 @@ INSERT INTO tb_user (name, phone, email, profession, age, gender, status,createt
 
 表结构中插入的数据如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.2c74rg41jaas.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.2c74rg41jaas.webp)
 
 数据准备好了之后，接下来，我们就来完成如下需求：
 
@@ -462,7 +462,7 @@ CREATE INDEX idx_email ON tb_user(email);
 show index from tb_user;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.35xc5gst9wi0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.35xc5gst9wi0.webp)
 
 ## SQL 性能分析
 
@@ -476,7 +476,7 @@ MySQL 客户端连接成功后，通过 show [session|global] status 命令可�
 SHOW GLOBAL STATUS LIKE 'Com_______';
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.19b65pth8a00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.19b65pth8a00.webp)
 
 Com_delete: 删除次数
 
@@ -488,7 +488,7 @@ Com_update: 更新次数
 
 我们可以在当前数据库再执行几次查询操作，然后再次查看执行频次，看看 Com_select 参数会不会变化。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.6g270hk9wf80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.6g270hk9wf80.webp)
 
 > 通过上述指令，我们可以查看到当前数据库到底是以查询为主，还是以增删改为主，从而为数据库优化提供参考依据。 如果是以增删改为主，我们可以考虑不对其进行索引的优化。 如果是以查询为主，那么就要考虑对数据库的索引进行优化了。
 
@@ -733,7 +733,7 @@ Explain 执行计划中各个字段的含义:
 
 在讲解索引的使用原则之前，先通过一个简单的案例，来验证一下索引，看看是否能够通过索引来提升数据查询性能。在演示的时候，我们还是使用之前准备的一张表 tb_sku , 在这张表中准备了1000w的记录。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.3ujwo1rofe60.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.3ujwo1rofe60.webp)
 
 这张表中id为主键，有主键索引，而其他字段是没有建立索引的。 我们先来查询其中的一条记录，看
 看里面的字段情况，执行如下SQL：
@@ -742,7 +742,7 @@ Explain 执行计划中各个字段的含义:
 select * from tb_sku here id = 1\G;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.5pxymt5v6bc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.5pxymt5v6bc0.webp)
 
 可以看到即使有1000w的数据,根据id进行数据查询,性能依然很快，因为主键id是有索引的。 那么接下来，我们再来根据 sn 字段进行查询，执行如下SQL：
 
@@ -750,7 +750,7 @@ select * from tb_sku here id = 1\G;
 SELECT * FROM tb_sku WHERE sn = '100000003145001';
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.5d77uumxdec0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.5d77uumxdec0.webp)
 
 我们可以看到根据sn字段进行查询，查询返回了一条数据，结果耗时 20.78sec，就是因为sn没有索引，而造成查询效率很低。
 
@@ -762,7 +762,7 @@ SELECT * FROM tb_sku WHERE sn = '100000003145001';
 create index idx_sku_sn on tb_sku(sn) ;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.6ilv4sirfj80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.6ilv4sirfj80.webp)
 
 然后再次执行相同的SQL语句，再次查看SQL的耗时。
 
@@ -770,7 +770,7 @@ create index idx_sku_sn on tb_sku(sn) ;
 SELECT * FROM tb_sku WHERE sn = '100000003145001';
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.xt14skcxe7k.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.xt14skcxe7k.webp)
 
 我们明显会看到，sn字段建立了索引之后，查询性能大大提升。建立索引前后，查询耗时都不是一个数量级的。
 
@@ -1459,25 +1459,25 @@ mysql> explain select * from tb_user where profession = '软件工程' and age =
 
 A. 表结构及索引示意图:
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.klqugp2zs1o.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.klqugp2zs1o.webp)
 
 id是主键，是一个聚集索引。 name字段建立了普通索引，是一个二级索引（辅助索引）。
 
 B. 执行SQL : select * from tb_user where id = 2;
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.1ltqq3m3ctds.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.1ltqq3m3ctds.webp)
 
 根据id查询，直接走聚集索引查询，一次索引扫描，直接返回数据，性能高。
 
 C. 执行SQL：selet id,name from tb_user where name = 'Arm';
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.1ghxn35m2hxc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.1ghxn35m2hxc.webp)
 
 虽然是根据name字段查询，查询二级索引，但是由于查询返回在字段为 id，name，在name的二级索引中，这两个值都是可以直接获取到的，因为覆盖索引，所以不需要回表查询，性能高。
 
 D. 执行SQL：selet id,name,gender from tb_user where name = 'Arm';
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220924/image.4o7ct08gz180.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220924/image.4o7ct08gz180.webp)
 
 由于在name的二级索引中，不包含gender，所以，需要两次索引扫描，也就是需要回表查询，性能相对较差一点。
 
@@ -1537,7 +1537,7 @@ select count(distinct substring(email,1,5)) / count(*) from tb_user;
 
 3. 前缀索引的查询流程
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220925/image.6pmpxlo2yiw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.6pmpxlo2yiw0.webp)
 
 ### 单列索引与联合索引
 
@@ -1620,7 +1620,7 @@ mysql> explain select * from tb_user use index(idx_user_name) where phone = '177
 
 如果查询使用的是联合索引，具体的结构示意图如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220925/image.137p0h70od40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220925/image.137p0h70od40.webp)
 
 ## 索引设计原则
 

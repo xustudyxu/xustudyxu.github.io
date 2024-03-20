@@ -25,13 +25,13 @@ Elasticsearch 使用一种称为<mark>倒排索引</mark>的结构，它适用�
 
 所谓的<mark>正向索引</mark>，就是搜索引擎会将待搜索的文件都对应一个文件 ID，搜索时将这个 ID 和搜索关键字进行对应，形成 K-V 键值对，然后对关键字进行统计计数。就是通过搜索关键词找到对应的文件。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.spow3fyruxc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.spow3fyruxc.webp)
 
 但是互联网上收录在搜索引擎中的文档的数目是个天文数字，这样的索引结构根本无法满足实时返回排名结果的要求。
 
 所以，搜索引擎会将正向索引重新构建为倒排索引，即把文件 ID 对应到关键词的映射转换为关键词到文件ID的映射，每个关键词都对应着一系列的文件，这些文件中都出现这个关键词。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.1why5oxovrk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.1why5oxovrk0.webp)
 
 一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的文档列表。例如，假设我们有两个文档，每个文档的 content 域包含如下内容：
 
@@ -40,11 +40,11 @@ Elasticsearch 使用一种称为<mark>倒排索引</mark>的结构，它适用�
 
 为了创建倒排索引，我们首先将每个文档的 content 域拆分成单独的词（我们称它为词条或 `tokens` ），创建一个<mark>包含所有不重复词条</mark>的排序列表，然后列出每个词条出现在哪个文档。结果如下所示：（`X` 代表存在）
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.5vldzmxdlkw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.5vldzmxdlkw0.webp)
 
 现在，如果我们想搜索 `quick`、`brown` ，我们只需要查找包含每个词条的文档：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.5772inyfqt4.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.5772inyfqt4.webp)
 
 两个文档都匹配，但是第一个文档比第二个匹配度更高。如果我们使用仅计算匹配词条数量的简单相似性算法，那么我们可以说，对于我们查询的相关性来讲，第一个文档比第二个文档更佳。
 
@@ -64,7 +64,7 @@ Elasticsearch 使用一种称为<mark>倒排索引</mark>的结构，它适用�
 
 现在索引看上去像这样：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.1fl593287qrk.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.1fl593287qrk.webp)
 
 这还远远不够。我们搜索 `+Quick`、`+fox` 仍然会失败，因为在我们的索引中，已经没有 `Quick` 了。但是，如果我们对搜索的字符串使用与 content 域相同的标准化规则，会变成查询 `+quick` `+fox`，这样两个文档都会匹配！分词和标准化的过程称为<mark>分析</mark>。
 
@@ -116,13 +116,13 @@ Elasticsearch 使用一种称为<mark>倒排索引</mark>的结构，它适用�
 
 Elasticsearch 基于 Lucene，这个 java 库引入了<mark>按段搜索</mark>的概念。 每一段本身都是一个倒排索引，但索引在 Lucene 中除表示所有段的集合外，还增加了提交点的概念：一个列出了所有已知段的文件。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.1ca78zo9jedc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.1ca78zo9jedc.webp)
 
 <mark>按段搜索</mark>会以如下流程执行：
 
 1. 新文档被收集到内存索引缓存
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.2rwt32k2s6a0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.2rwt32k2s6a0.webp)
 
 1. 不时地，缓存被提交
    1. 一个新的段：一个追加的倒排索引被写入磁盘
@@ -131,7 +131,7 @@ Elasticsearch 基于 Lucene，这个 java 库引入了<mark>按段搜索</mark>�
 2. 新的段被开启，让它包含的文档可见以被搜索
 3. 内存缓存被清空，等待接收新的文档
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.4jiajnwyaum0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.4jiajnwyaum0.webp)
 
 当一个查询被触发，所有已知的段按顺序被查询。词项统计会对所有段的结果进行聚合，以保证每个词和每个文档的关联都被准确计算。 这种方式可以用相对较低的成本将新文档添加到索引。
 
@@ -149,7 +149,7 @@ Elasticsearch 基于 Lucene，这个 java 库引入了<mark>按段搜索</mark>�
 
 Lucene 允许新段被写入和打开，使其包含的文档在未进行一次完整提交时便对搜索可见。这种方式比进行一次提交代价要小得多，并且在不影响性能的前提下可以被频繁地执行。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.1i72wek5rb1c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.1i72wek5rb1c.webp)
 
 在 Elasticsearch 中，写入和打开一个新段的轻量的过程叫做 refresh 。默认情况下每个分片会每秒自动刷新一次。这就是为什么我们说 Elasticsearch 是近实时搜索: 文档的变化并不是立即对搜索可见，但会在一秒之内变为可见。这些行为可能会对新用户造成困惑: 他们检索了一个文档然后尝试搜索它，但却没有搜到。这个问题的解决办法是用 refresh API 执行一次手动刷新: `/users/_refresh`
 
@@ -186,7 +186,7 @@ PUT /users/_settings
 
 即使通过每秒刷新（refresh）实现了近实时搜索，我们仍然需要经常进行完整提交来确保能从失败中恢复。但在两次提交之间发生变化的文档怎么办？我们也不希望丢失掉这些数据。Elasticsearch 增加了一个 translog，或者叫事务日志，在每一次对 Elasticsearch 进行 操作时均进行了日志记录。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.2wqzo0d8lye0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.2wqzo0d8lye0.webp)
 
 原始的操作直接从内存（Memory）的 `index` 到磁盘（Disk）进行写入数据 `Segment`
 
@@ -196,7 +196,7 @@ PUT /users/_settings
 
 1. 一个文档被索引之后，就会被添加到内存缓冲区，并且追加到了 translog 日志
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.4cy2su25u8o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.4cy2su25u8o0.webp)
 
 2. 刷新（refresh）使分片每秒被刷新（refresh）一次：
 
@@ -204,11 +204,11 @@ PUT /users/_settings
 - 这个段被打开，使其可被搜索
 - 内存缓冲区被清空
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.3ylja6rewxk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.3ylja6rewxk0.webp)
 
 3. 这个进程继续工作，更多的文档被添加到内存缓冲区和追加到事务日志
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.4czulsx2el00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.4czulsx2el00.webp)
 
 4. 每隔一段时间，例如 translog 变得越来越大，索引被刷新（flush）；一个新的 translog 被创建，并且一个全量提交被执行
 
@@ -222,7 +222,7 @@ translog 提供所有还没有被刷到磁盘的操作的一个持久化纪录�
 
 translog 也被用来提供实时 CRUD。当你试着通过 ID 查询、更新、删除一个文档，它会在尝试从相应的段中检索之前，首先检查 translog 任何最近的变更。这意味着它总是能够实时地获取到文档的最新版本。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.2n6d7ac5vze0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.2n6d7ac5vze0.webp)
 
 执行一个提交并且截断 translog 的行为在 Elasticsearch 被称作一次 `flush` 分片每 30 分钟被自动刷新（flush），或者在 translog 太大的时候也会刷新。
 
@@ -247,13 +247,13 @@ Elasticsearch 通过在后台进行段合并来解决这个问题。小的段被
 - 当检索的时候，刷新（refresh）操作会创建新的段并将段打开以供搜索使用
 - 合并进程选择一小部分大小相似的段，并且在后台将它们合并到更大的段中。这并不会中断检索和搜索
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.7azx5r0frvo0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.7azx5r0frvo0.webp)
 
 - 一旦合并结束，老的段被删除
   - 新的段被刷新（flush）到了磁盘。 ** 写入一个包含新段且排除旧的和较小的段的新提交点
   - 新的段被打开用来搜索
   - 老的段被删除
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220705/image.rzljm90yps0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220705/image.rzljm90yps0.webp)
 
 合并大的段需要消耗大量的 I/O 和 CPU 资源，如果任其发展会影响搜索性能。Elasticsearch 在默认情况下会对合并流程进行资源限制，所以搜索仍然有足够的资源很好地执行。

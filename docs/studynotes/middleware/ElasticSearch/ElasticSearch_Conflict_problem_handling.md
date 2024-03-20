@@ -19,7 +19,7 @@ tags:
 
 但有时丢失了一个变更就是非常严重的。试想我们使用 Elasticsearch 存储我们网上商城商品库存的数量，每次我们卖一个商品的时候，我们在 Elasticsearch 中将库存数量减少。有一天，管理层决定做一次促销。突然地，我们一秒要卖好几个商品。假设有两个 Web 程序并行运行，每一个都同时处理所有商品的销售，如图：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220707/image.5svijy1ni6o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220707/image.5svijy1ni6o0.webp)
 
 从图中可以看出 Web_1 对 stock_count（数量）所做的更改已经丢失，因为 Web_2 不知道 Web_1 的 stock_count（数量）的操作已经过期，Web_2 的操作覆盖了 Web_1 的操作。结果会认为有库存只是减少一个商品，但是卖给顾客的商品却有两个，这后果非常严重。
 
@@ -49,7 +49,7 @@ Elasticsearch 是分布式的。当文档创建、更新或删除时，新版本
 
 假设 _version 版本号初始为 0，每次进行写操作都会加 1，当两个人同时操作时，其中一个人速度快，先操作完，导致版本号加 1，此时另一个人后操作完，发现版本已经加 1，则他的操作失败了。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220707/image.7a9q9nyktso0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220707/image.7a9q9nyktso0.webp)
 
 老的版本 ES 在写操作时可以指定版本，如：`http://127.0.1:9200/shopping/_update/1001?version=2`，如果 ES 的索引 _version 已经变成了 3，操作也会失败，所以保证 url 的 version 等于 ES 索引的 _version 版本号。当然 url 后面不指定 version，ES 索引也会自动获取 _version 号。
 
@@ -77,7 +77,7 @@ Elasticsearch 是分布式的。当文档创建、更新或删除时，新版本
 
 `if_seq_no` 和 `if_primary_term` 和 _version 版本号一样，创建数据时默认为 0，进行相应的操作递增，有些操作只会导致两者中的一个递增，所以有时候发现两个的值不一样。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220707/image.6vn56v4pots0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220707/image.6vn56v4pots0.webp)
 
 ## 外部系统版本控制
 
@@ -89,7 +89,7 @@ Elasticsearch 是分布式的。当文档创建、更新或删除时，新版本
 
 如图当前 _version 版本是 3
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220707/image.286vrnw7yv8k.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220707/image.286vrnw7yv8k.webp)
 
 旧版不使用**外部版本控制**的 url：`http://127.0.1:9200/shopping/_update/1001?version=3`，_version 只能等于 3。
 
@@ -97,7 +97,7 @@ Elasticsearch 是分布式的。当文档创建、更新或删除时，新版本
 
 使用**外部版本控制**的 url：`http://127.0.1:9200/shopping/_doc/1001?version=6&version_type=external`，要求只要 url 的 version 大于 ES 的索引 _version 即可。如果等于 3，会报错。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220707/image.4gbs1zr2p400.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220707/image.4gbs1zr2p400.webp)
 
 可以看出**外部版本控制**更加灵活，比如你不想写操作失败，完全可以在 url 里让 `version = 99999`，只要大于 ES 索引的 _version 即可实现写操作。
 

@@ -54,7 +54,7 @@ SELECT COUNT(`name`) FROM t15; -- 3
 
 ### sum
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/27.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/27.png)
 
 ```sql
 -- 演示sum函数的使用
@@ -84,7 +84,7 @@ SELECT AVG(chinese+math+english) FROM student;
 
 ### max/min
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/29.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/29.png)
 
 ```sql
 -- 演示max和min的使用
@@ -99,11 +99,11 @@ SELECT MAX(math),MIN(math)
 
 ### 使用 group by 子句对列进行分组 
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/30.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/30.png)
 
 ### 使用 having 子句对分组后的结果进行过滤
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/31.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/31.png)
 
 ```sql
 CREATE TABLE dept( /*部门表*/
@@ -197,7 +197,7 @@ SELECT AVG(sal) AS avg_sal,deptno
 
 ## 字符串相关函数
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/32.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/32.png)
 
 ```sql
 -- 演示字符串相关函数的使用
@@ -247,7 +247,7 @@ SELECT TRIM(' 韩顺平教育 ')FROM DUAL;
 
 ## 数学相关函数
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/33.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/33.png)
 
 ```sql
 -- 演示数学相关函数
@@ -291,11 +291,11 @@ SELECT RAND() FROM DUAL;
 
 ## 时间日期相关函数
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/34.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/34.png)
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/35.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/35.png)
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/36.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/36.png)
 
 ```sql
 -- 日期时间相关函数
@@ -421,7 +421,7 @@ SELECT *FROM mysql.user
 
 ## 流程控制函数
 
-![04](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/37.png)
+![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/37.png)
 
 ```sql
  #演示流程控制语句

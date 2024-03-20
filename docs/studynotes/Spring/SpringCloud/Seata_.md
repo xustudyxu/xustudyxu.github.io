@@ -20,7 +20,7 @@ tags:
 
 单体应用被拆分成微服务应用，原来的三个模块被拆分成三个独立的应用,分别使用三个独立的数据源，业务操作需要调用三三 个服务来完成。此时**每个服务内部的数据一致性由本地事务来保证， 但是全局的数据一致性问题没法保证**。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220831/image.4allg2qmxww0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220831/image.4allg2qmxww0.webp)
 
 一句话：**一次业务操作需要跨多个数据源或需要跨多个系统进行远程调用，就会产生分布式事务问题**。
 
@@ -53,7 +53,7 @@ Seata是一款开源的分布式事务解决方案，致力于在微服务架构
 4. TM向TC发起针对XID的全局提交或回滚决议；
 5. TC调度XID下管辖的全部分支事务完成提交或回滚请求。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220831/image.4jnpi8ows1o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220831/image.4jnpi8ows1o0.webp)
 
 ## Seata-Server安装
 
@@ -69,7 +69,7 @@ Seata是一款开源的分布式事务解决方案，致力于在微服务架构
 
 **SEATA 的分布式交易解决方案**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220831/image.79kbqiibjmw0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220831/image.79kbqiibjmw0.webp)
 
 我们只需要使用一个 `@GlobalTransactional` 注解在业务方法上:
 
@@ -246,7 +246,7 @@ seata-server.bat
 
 + 查看Nacos服务列表
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.7cs0ri0kbnk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.7cs0ri0kbnk0.webp)
 
 ## Seata业务数据库准备
 
@@ -1258,23 +1258,23 @@ Config配置（与seata-order-service2001模块大致相同）
 SELECT * FROM t_order;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.2b5f51i7f5zw.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.2b5f51i7f5zw.webp)
 
 ```sql
 SELECT * FROM t_storage;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221012/image.5aeajach9ls0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221012/image.5aeajach9ls0.webp)
 
 ```sql
 SELECT * FROM t_account;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.4w72fi0pycg0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.4w72fi0pycg0.webp)
 
 正常下单 - [http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100](http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.3n1fd5325y00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.3n1fd5325y00.webp)
 
 数据库正常下单后状况：
 
@@ -1282,19 +1282,19 @@ SELECT * FROM t_account;
 SELECT * FROM t_order;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.41l96vouw1c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.41l96vouw1c0.webp)
 
 ```sql
 SELECT * FROM t_storage;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.5vqwhtoqdnk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.5vqwhtoqdnk0.webp)
 
 ```sql
 SELECT * FROM t_account;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.1kn0bm8iik5c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.1kn0bm8iik5c.webp)
 
 ---
 
@@ -1338,19 +1338,19 @@ public class AccountServiceImpl implements AccountService {
 SELECT * FROM t_order;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.2l5vnjjun1e.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.2l5vnjjun1e.webp)
 
 ```sql
 SELECT * FROM t_storage;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.qpf2wazr99c.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.qpf2wazr99c.webp)
 
 ```sql
 SELECT * FROM t_account;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220901/image.706shnyil7g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220901/image.706shnyil7g0.webp)
 
 **故障情况**
 
@@ -1394,7 +1394,7 @@ public class OrderServiceImpl implements OrderService {
 
 下单 - [http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100](http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100)
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.5ruzgxtsx9k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.5ruzgxtsx9k0.webp)
 
 数据库情况
 
@@ -1402,19 +1402,19 @@ public class OrderServiceImpl implements OrderService {
 SELECT * FROM t_order;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.1qtc9j1zh5og.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.1qtc9j1zh5og.webp)
 
 ```sql
 SELECT * FROM t_storage;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.39kalvkrafu0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.39kalvkrafu0.webp)
 
 ```sql
 SELECT * FROM t_account;
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.5jemsfuxnww0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.5jemsfuxnww0.webp)
 
 还是模拟AccountServiceImpl添加超时，下单后数据库数据并没有任何改变，记录都添加不进来，**达到出异常，数据库回滚的效果**。
 
@@ -1426,7 +1426,7 @@ Simple Extensible Autonomous Transaction Architecture，简单可扩展自治事
 
 2020起始，用1.0以后的版本。Alina Gingertail
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.4kucd3b8uhk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.4kucd3b8uhk0.webp)
 
 分布式事务的执行流程
 
@@ -1466,13 +1466,13 @@ Simple Extensible Autonomous Transaction Architecture，简单可扩展自治事
 
 以上操作全部在一个数据库事务内完成, 这样保证了一阶段操作的原子性。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.3aepx5ztene0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.3aepx5ztene0.webp)
 
 - 二阶段提交
 
 二阶段如果顺利提交的话，因为"业务SQL"在一阶段已经提交至数据库，所以Seata框架只需将一阶段保存的快照数据和行锁删掉，完成数据清理即可。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.17voa04kq7ek.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.17voa04kq7ek.webp)
 
 + 二阶段回滚
 
@@ -1482,8 +1482,8 @@ Simple Extensible Autonomous Transaction Architecture，简单可扩展自治事
 
 如果两份数据完全一致就说明没有脏写， 可以还原业务数据，如果不一致就说明有脏写, 出现脏写就需要转人工处理。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.5faqn74q58k0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.5faqn74q58k0.webp)
 
 补充
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220902/image.4kxovt5nfhq0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220902/image.4kxovt5nfhq0.webp)

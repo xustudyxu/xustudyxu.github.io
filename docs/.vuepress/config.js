@@ -20,7 +20,7 @@ module.exports = {
     `],
     ['script', { src: 'https://fastly.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js' }],
     ['script', { href: './js/index.js', async: 'async' }],
-    ['link', { rel: 'icon', href: 'https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp' }],
+    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp' }],
     // ['link', { rel: 'stylesheet', href: './css/style.css' }],
     ['script', { charset: 'utf-8', href: './js/main.js' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
@@ -105,7 +105,7 @@ module.exports = {
     },
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp',
+      avatar: 'https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220627/mmexport1656324824543.124zxwkqyzlc.webp',
       name: 'xustudyxu',
       slogan: '一起学习编程!',
     },

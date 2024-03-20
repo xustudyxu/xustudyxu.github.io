@@ -35,7 +35,7 @@ tags:
 
 交换机类型是 direct，两个消费者，一个生产者，两个队列：消息队列和死信队列
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.691xh9mh3yk0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.691xh9mh3yk0.webp)
 
 ### 消息TTL过期
 
@@ -131,15 +131,15 @@ public class Consumer01 {
 
 **生产者未发送消息**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.5ldx5kffws00.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.5ldx5kffws00.webp)
 
 **生产者发送了10条消息，此时正常消息队列有10条未消费消息**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220726/image.4k5fjvtukpe0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.4k5fjvtukpe0.webp)
 
 **时间过去10秒，正常队列里面的消息由于没有被消费，消息进入死信队列**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.5g2svti1sec0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.5g2svti1sec0.webp)
 
 **消费者 C2 代码**
 
@@ -171,11 +171,11 @@ public class Consumer02 {
 
 **效果演示**
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.3a1tkaqx5jm0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.3a1tkaqx5jm0.webp)
 
 + 控制台
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.2qvoqd9bcdc0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.2qvoqd9bcdc0.webp)
 
 ### 死信最大长度
 
@@ -266,15 +266,15 @@ public class Consumer01 {
 
 + 启动消费者C1，创建出队列，然后停止该 C1 的运行，启动生产者
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.6nv41w7ky0o0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.6nv41w7ky0o0.webp)
 
 + 启动 C2 消费者
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.3mg5ph9jr020.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.3mg5ph9jr020.webp)
 
 + 控制台
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.664h3njwl6w0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.664h3njwl6w0.webp)
 
 ### 死信消息被拒
 
@@ -348,17 +348,17 @@ public class Consumer01 {
 
 + 开启消费者C1，创建出队列，然后停止该 C1 的运行，启动生产者
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.ncokzmns2t.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.ncokzmns2t.webp)
 
 + 启动消费者 C1 等待 10 秒之后，再启动消费者 C2
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.1xxchsmgsgdc.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.1xxchsmgsgdc.webp)
 
 + C1控制台
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.5zgbkg8gij80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.5zgbkg8gij80.webp)
 
 + C2控制台
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20220725/image.783con5n7f40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220725/image.783con5n7f40.webp)
 

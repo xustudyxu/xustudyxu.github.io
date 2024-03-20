@@ -17,7 +17,7 @@ tags:
 
 通过MyCat即可轻易实现上述功能，不仅可以支持MySQL，也可以支持Oracle和SQL Server。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221008/image.1lmgf0v18c74.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.1lmgf0v18c74.webp)
 
 ## 一主一从
 
@@ -25,7 +25,7 @@ tags:
 
 MySQL的主从复制，是基于二进制日志（binlog）实现的。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221008/image.5906a4hbtm80.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.5906a4hbtm80.webp)
 
 在 [主从复制](/database/MySQL/MySQL_Master_slave_replication/) 章节有详细说明。
 
@@ -79,7 +79,7 @@ MyCat控制后台数据库的读写分离和负载均衡由schema.xml文件datah
 
 上述配置的具体关联对应情况如下：
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221008/image.708uxi3603c0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.708uxi3603c0.webp)
 
 writeHost代表的是写操作对应的数据库，readHost代表的是读操作对应的数据库。 所以我们要想实现读写分离，就得配置writeHost关联的是主库，readHost关联的是从库。
 
@@ -125,7 +125,7 @@ bin/mycat start
 
 然后观察，在执行增删改操作时，对应的主库及从库的数据变化。 在执行查询操作时，检查主库及从库对应的数据变化。
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221008/image.61kc2y9660g0.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.61kc2y9660g0.webp)
 
 在数据库写入一条数据，发现主从节点都增加一条数据，其实这条数据是从主节点写入的，因为数据是由主机点同步到从节点。
 
@@ -441,5 +441,5 @@ mysql> select * from tb01 where id = 1;
 1 row in set (0.00 sec)
 ```
 
-![image](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20221008/image.6tk44n5jro40.webp)
+![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221008/image.6tk44n5jro40.webp)
 

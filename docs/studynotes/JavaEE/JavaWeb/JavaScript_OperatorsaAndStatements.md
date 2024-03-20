@@ -317,7 +317,7 @@ console.log(num)
 
 ### 表达式和语句
 
-![1671017800406](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230211/1671017800406.6c85cc1mdj40.jpg)
+![1671017800406](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230211/1671017800406.6c85cc1mdj40.jpg)
 
 ### 分支语句
 
@@ -778,7 +778,7 @@ for (; ;) {
 
 ## 综合案例-ATM存取款机
 
-![1671018781557](https://jsd.cdn.zzko.cn/gh/xustudyxu/image-hosting1@master/20230211/1671018781557.1zhv5s7bawow.jpg)
+![1671018781557](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230211/1671018781557.1zhv5s7bawow.jpg)
 
 分析：
 
