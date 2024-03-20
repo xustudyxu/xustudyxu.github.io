@@ -66,6 +66,7 @@
   "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme",
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.9.10",
+    "cache-loader": "^4.1.0",
     "vuepress": "^1.9.10"
   }
 }

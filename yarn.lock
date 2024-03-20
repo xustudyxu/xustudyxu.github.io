@@ -2792,6 +2792,18 @@
     "neo-async" "^2.6.1"
     "schema-utils" "^1.0.0"
 
+"cache-loader@^4.1.0":
+  "integrity" "sha512-ftOayxve0PwKzBF/GLsZNC9fJBXl8lkZE3TOsjkboHfVHVkL39iUEs1FO07A33mizmci5Dudt38UZrrYXDtbhw=="
+  "resolved" "https://registry.npmmirror.com/cache-loader/-/cache-loader-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "buffer-json" "^2.0.0"
+    "find-cache-dir" "^3.0.0"
+    "loader-utils" "^1.2.3"
+    "mkdirp" "^0.5.1"
+    "neo-async" "^2.6.1"
+    "schema-utils" "^2.0.0"
+
 "cacheable-request@^6.0.0":
   "integrity" "sha512-Oj3cAGPCqOZX7Rz64Uny2GYAZNliQSqfbePrgAQ1wKAihYmCUnraBtJtKcGR4xz7wF+LoJC+ssFZvv5BgF9Igg=="
   "resolved" "https://registry.npmmirror.com/cacheable-request/-/cacheable-request-6.1.0.tgz"
@@ -5040,7 +5052,7 @@
     "make-dir" "^2.0.0"
     "pkg-dir" "^3.0.0"
 
-"find-cache-dir@^3.3.1":
+"find-cache-dir@^3.0.0", "find-cache-dir@^3.3.1":
   "integrity" "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="
   "resolved" "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz"
   "version" "3.3.2"
@@ -6495,25 +6507,7 @@
     "json5" "^0.5.0"
     "object-assign" "^4.0.1"
 
-"loader-utils@^1.0.2":
-  "integrity" "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg=="
-  "resolved" "https://registry.npmmirror.com/loader-utils/-/loader-utils-1.4.2.tgz"
-  "version" "1.4.2"
-  dependencies:
-    "big.js" "^5.2.2"
-    "emojis-list" "^3.0.0"
-    "json5" "^1.0.1"
-
-"loader-utils@^1.1.0":
-  "integrity" "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg=="
-  "resolved" "https://registry.npmmirror.com/loader-utils/-/loader-utils-1.4.2.tgz"
-  "version" "1.4.2"
-  dependencies:
-    "big.js" "^5.2.2"
-    "emojis-list" "^3.0.0"
-    "json5" "^1.0.1"
-
-"loader-utils@^1.2.3":
+"loader-utils@^1.0.2", "loader-utils@^1.1.0", "loader-utils@^1.2.3":
   "integrity" "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg=="
   "resolved" "https://registry.npmmirror.com/loader-utils/-/loader-utils-1.4.2.tgz"
   "version" "1.4.2"
@@ -8626,7 +8620,7 @@
     "ajv-errors" "^1.0.0"
     "ajv-keywords" "^3.1.0"
 
-"schema-utils@^2.6.5":
+"schema-utils@^2.0.0", "schema-utils@^2.6.5":
   "integrity" "sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg=="
   "resolved" "https://registry.npmmirror.com/schema-utils/-/schema-utils-2.7.1.tgz"
   "version" "2.7.1"
