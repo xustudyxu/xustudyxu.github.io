@@ -24,7 +24,7 @@
     "countup.js": "^2.0.8",
     "mermaid": "^8.11.4",
     "moment": "^2.29.1",
-    "node": "^21.0.0",
+    "node": "^18.0.0",
     "vue-tabs-component": "^1.5.0",
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
