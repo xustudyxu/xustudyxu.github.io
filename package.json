@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "baiduPush": "node utils/baiduPush.js https://frxcat.fun && bash baiduPush.sh",
-    "deploy": "set NODE_OPTIONS=--openssl-legacy-provider && bash deploy.sh"
+    "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "",
@@ -17,27 +17,26 @@
     "@jamesives/github-pages-deploy-action": "^4.2.5",
     "@vssue/api-github-v4": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
-    "@vuepress/plugin-nprogress": "^1.9.5",
-    "@vuepress/plugin-pwa": "^1.9.5",
-    "busuanzi.pure.js": "^1.0.3",
     "caniuse-lite": "^1.0.30001296",
     "countup.js": "^2.0.8",
     "mermaid": "^8.11.4",
     "moment": "^2.29.1",
-    "node": "^18.0.0",
     "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-code-switcher": "^1.1.0",
+    "@vuepress/plugin-nprogress": "^1.9.5",
+    "@vuepress/plugin-pwa": "^1.9.5",
+    "busuanzi.pure.js": "^1.0.3",
+    "vuepress": "^1.9.7",
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-clean-urls": "^1.1.2",
-    "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-code-switcher": "^1.1.0",
     "vuepress-plugin-cursor-effects": "^1.1.2",
     "vuepress-plugin-dehydrate": "^1.1.5",
     "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-flexsearch": "^0.3.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-git-log": "^1.0.1",
-    "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-meting": "^0.3.1",
     "vuepress-plugin-one-click-copy": "^1.0.6",
@@ -49,7 +48,6 @@
     "vuepress-plugin-seo": "^0.2.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-social-share": "^1.1.0",
-    "vuepress-plugin-tabs": "^0.3.0",
     "vuepress-theme-vdoing": "^1.10.4",
     "watchpack": "^2.3.1"
   },
@@ -63,10 +61,5 @@
   "bugs": {
     "url": "https://github.com/xustudyxu/xustudyxu.github.io/issues"
   },
-  "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme",
-  "devDependencies": {
-    "@vuepress/plugin-medium-zoom": "^1.9.10",
-    "cache-loader": "^4.1.0",
-    "vuepress": "^1.9.10"
-  }
+  "homepage": "https://github.com/xustudyxu/xustudyxu.github.io#readme"
 }
