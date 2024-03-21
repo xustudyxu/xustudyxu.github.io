@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "dev": "npm run dev",
+    "build": "npm run build",
     "baiduPush": "node utils/baiduPush.js https://frxcat.fun && bash baiduPush.sh",
     "deploy": "bash deploy.sh"
   },
