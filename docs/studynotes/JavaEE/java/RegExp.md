@@ -962,3 +962,6 @@ public class Homework02 {
 - 中国邮政编码：`[1-9]\d{5}(?!\d)` (中国邮政编码为6位数字)
 - IP地址：`\d+\.\d+\.\d+\.\d+`(提取IP地址时有用)
 
+## 资源
+
+- [Cyrilex](https://extendsclass.com/regex-tester.html#java) - 一个在线工具，用于测试、调试和可视化正则表达式。
