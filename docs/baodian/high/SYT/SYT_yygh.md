@@ -16,7 +16,7 @@ tags:
 
 ### 需求分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221110/image.elwutkf0tgw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221110/image.elwutkf0tgw.webp)
 
 1. 接口分析
    1. 根据预约周期，展示可预约日期数据，按分页展示
@@ -240,7 +240,7 @@ tags:
 
 + 前端访问结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221111/image.f4tftfyowls.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221111/image.f4tftfyowls.webp)
 
 ## 预约确认
 
@@ -284,7 +284,7 @@ tags:
 
 + 前端访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221112/image.3bp70uuqkjq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221112/image.3bp70uuqkjq0.webp)
 
 ## 预约下单
 
@@ -294,7 +294,7 @@ tags:
 
 #### 订单表结构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221112/image.q58f24waf1s.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221112/image.q58f24waf1s.webp)
 
 #### 下单分析
 
@@ -769,7 +769,7 @@ docker run -d -p 5672:5672 -p 15672:15672 --name rabbitmq rabbitmq:management
 
 + 访问
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221112/image.14f0on7uwxog.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221112/image.14f0on7uwxog.webp)
 
 ### rabbit-util 模块封装
 
@@ -1267,7 +1267,7 @@ spring.rabbitmq.password=guest
 
 + 前端测试访问
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221113/image.3sxtal5zwou0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221113/image.3sxtal5zwou0.webp)
 
 ## 订单列表功能
 
@@ -1354,7 +1354,7 @@ spring.rabbitmq.password=guest
 
 + 前端访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221113/image.3ubxjqw0p840.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221113/image.3ubxjqw0p840.webp)
 
 ## 订单支付（生成二维码）
 
@@ -1403,7 +1403,7 @@ https://pay.weixin.qq.com/wiki/doc/api/index.html
 
 #### 微信支付SDK
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221115/image.775rxz9ipqs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221115/image.775rxz9ipqs0.webp)
 
 添加依赖
 
@@ -1835,7 +1835,7 @@ public class WeiXinController {
 
 + 前端支付测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221115/image.29zrqdawt91c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221115/image.29zrqdawt91c.webp)
 
 ### 处理支付结果
 
@@ -1903,7 +1903,7 @@ public class WeiXinController {
 
 + 查看数据库
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221116/image.75ob63plui80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221116/image.75ob63plui80.webp)
 
 ## 取消预约
 

@@ -17,7 +17,7 @@ tags:
 + 有了类的特点，就可以调用类中的方法
 + 如图：
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/01.png)
 
 ### 包装类和基本数据的转换
 
@@ -58,7 +58,7 @@ public class Integer01 {
 
 ### 课堂测试题
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/02.png)
 
 + 代码演示：
 
@@ -212,7 +212,7 @@ public class WrapperExercise03 {
 
 ### String 类的理解和创建对象
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/03.png)
 
 + 代码演示：
 
@@ -247,7 +247,7 @@ public class String01 {
 
 ### 两种创建 String 对象的区别
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/04.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/04.png)
 
 ### 课堂测试题
 
@@ -276,7 +276,7 @@ public class StringExercise03 {
 
 ### 说明
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/05.png)
+![05](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/05.png)
 
 ### 经典题
 
@@ -347,7 +347,7 @@ public class StringExercise08 {
 
 ### 说明
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/09.png)
+![09](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/09.png)
 
 ### String 类的常见方法一览
 
@@ -454,7 +454,7 @@ public class StringMethod02 {
 
 ### 基本介绍
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/12.png)
+![12](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/12.png)
 
 + 代码演示：
 
@@ -631,7 +631,7 @@ public class StringBuilder01 {
 
 ### StringBuilder 常用方法
 
-![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/13.png)
+![13](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/13.png)
 
 ### String、StringBuffer和StringBuilder 的比较
 
@@ -706,7 +706,7 @@ Math 类包含用于执行基本数学运算的方法，如初等指数、对数
 
 ### 方法一览(均为静态方法)
 
-![15](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/15.png)
+![15](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/15.png)
 
 ### Math 类常见方法应用案例
 
@@ -1111,7 +1111,7 @@ public class BigDecimal_ {
 
 ### 第一代日期类
 
-![19](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/19.png)
+![19](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/19.png)
 
 + 代码演示：
 
@@ -1156,7 +1156,7 @@ public class Date01 {
 
 ### 第二代日期类
 
-![20](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/20.png)
+![20](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/20.png)
 
 + 代码演示：
 
@@ -1197,7 +1197,7 @@ public class Calendar_ {
 
 ### 第三代日期类
 
-![21](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/21.png)
+![21](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/21.png)
 
 + 代码演示：
 
@@ -1515,5 +1515,5 @@ public class Homework04 {
 }
 ```
 
-![23](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/23.png)
+![23](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/CYlei/23.png)
 

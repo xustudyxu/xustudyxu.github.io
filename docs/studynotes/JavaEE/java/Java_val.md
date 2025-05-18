@@ -19,7 +19,7 @@ tags:
 
 ### 简单的原理示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.6k21to8w6g00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.6k21to8w6g00.webp)
 
 ## 变(变化)量(值)的介绍
 
@@ -104,7 +104,7 @@ public class ValDetail {
 
 每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.2j6ph9f6gi00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.2j6ph9f6gi00.webp)
 
 Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。
 
@@ -182,11 +182,11 @@ Java语言提供了八种基本类型。六种数字类型（四个整数型，�
 
 Java 的整数类型就是用于存放整数值的，比如 12 , 30, 3456 等等
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.2yc01u79rto0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.2yc01u79rto0.webp)
 
 ### 整型的使用细节
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.63ma5hep1ko0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.63ma5hep1ko0.webp)
 
 ## 浮点类型
 
@@ -194,7 +194,7 @@ Java 的整数类型就是用于存放整数值的，比如 12 , 30, 3456 等等
 
 Java 的浮点类型可以表示一个小数，比如 123.4 ，7.8 ，0.12等等
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.379hid4vy680.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.379hid4vy680.webp)
 
 ### 说明一下
 
@@ -203,13 +203,13 @@ Java 的浮点类型可以表示一个小数，比如 123.4 ，7.8 ，0.12等等
 
 ### 浮点型使用细节
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.3f1m6yperx80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.3f1m6yperx80.webp)
 
 ## Java API 文档
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.41f8ynsxu4u0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.41f8ynsxu4u0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.6wkiug3vzuc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.6wkiug3vzuc0.webp)
 
 ## 字符类型(char)
 
@@ -219,7 +219,7 @@ Java 的浮点类型可以表示一个小数，比如 123.4 ，7.8 ，0.12等等
 
 ### 字符类型使用细节
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.3k7ileywj4a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.3k7ileywj4a0.webp)
 
 ```java
 public class CharDetail {
@@ -242,7 +242,7 @@ public class CharDetail {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.6x7yhh0j68s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.6x7yhh0j68s0.webp)
 
 ### ASCII码(了解)
 
@@ -257,14 +257,14 @@ public class CharDetail {
 
 ### 布尔类型：boolean
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.7aabjc22mcw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.7aabjc22mcw0.webp)
 
 ## 基本数据类型转换
 
 ### 自动类型转换
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.3xu5usy5bo40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.3xu5usy5bo40.webp)
 
 ### 自动类型转换注意和细节
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220719/image.3vikegsio0g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220719/image.3vikegsio0g0.webp)

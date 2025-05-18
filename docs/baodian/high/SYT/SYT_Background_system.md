@@ -19,11 +19,11 @@ tags:
 
 1. 列表
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.26a20uns1grk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.26a20uns1grk.webp)
 
 2. 详情
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.2l9fwv8udho0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.2l9fwv8udho0.webp)
 
 ## 注册中心与服务调用
 
@@ -57,7 +57,7 @@ Nacos 可以与 Spring, Spring Boot, Spring Cloud 集成，并能代替 Spring C
 
 + 通过 Nacos Server 和 spring-cloud-starter-alibaba-nacos-discovery 实现服务的注册与发现。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.463pyd91m060.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.463pyd91m060.webp)
 
 #### Nacos 下载与安装
 
@@ -101,7 +101,7 @@ public class ServiceHospApplication {
 
 service-cmn注册过程和service-hosp相同（省略）
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.7a0rpc61wfw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.7a0rpc61wfw0.webp)
 
 ## 医院管理实现
 
@@ -167,7 +167,7 @@ public class HospitalController {
 
 通过学习数据字典我们知道，根据上级编码与value值可以获取对应的数据字典名称，如果value值能够保持唯一（不一定唯一），我们也可以直接通过value值获取数据字典名称，目前省市区三级数据我们使用的是国家统计局的数据，数据编码我们就是数据字典的id与value，所以value能够唯一确定一条数据字典，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.1jrsnijy1vmo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.1jrsnijy1vmo.webp)
 
 #### 添加service接口与实现
 
@@ -433,7 +433,7 @@ public class ServiceHospApplication {
 
 page为1，limit为3，测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221027/image.1qrrju9o3e2o.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221027/image.1qrrju9o3e2o.webp)
 
 ### 添加数据字典显示接口
 
@@ -481,7 +481,7 @@ ServiceImpl
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221029/image.iji51w7w6a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221029/image.iji51w7w6a0.webp)
 
 ### 更新医院上线状态
 
@@ -525,11 +525,11 @@ HospitalServiceImpl类实现
 
 + 测试，将协和医院上线
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221029/image.4dwu329mego0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221029/image.4dwu329mego0.webp)
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221029/image.54kgrs6bsxs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221029/image.54kgrs6bsxs0.webp)
 
 ### 医院详情
 
@@ -573,13 +573,13 @@ HospitalServiceImpl类实现
 
 + 测试,点击北京协和医院的查看按钮
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221029/image.4c6hp8muepc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221029/image.4c6hp8muepc.webp)
 
 ## 医院排班
 
 ### 医院效果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221030/image.309t8zbdkiu0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221030/image.309t8zbdkiu0.webp)
 
 排班分成三部分显示：
 
@@ -681,7 +681,7 @@ HospitalServiceImpl类实现
 
 + 使用Swagger测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221030/image.5qzo98b1wx80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221030/image.5qzo98b1wx80.webp)
 
 ### 排班日期分页列表
 
@@ -840,7 +840,7 @@ HospitalServiceImpl类实现
 
 + 使用Swagger测试接口
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221030/image.4j1cuzgsmum0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221030/image.4j1cuzgsmum0.webp)
 
 ### 根据排班日期获取排班详情列表
 
@@ -919,8 +919,8 @@ HospitalServiceImpl类实现
 
 + 使用swagger测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221030/image.76qbfalaxsg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221030/image.76qbfalaxsg0.webp)
 
 + 前端访问
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221030/image.5wrmo6d5dxk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221030/image.5wrmo6d5dxk0.webp)

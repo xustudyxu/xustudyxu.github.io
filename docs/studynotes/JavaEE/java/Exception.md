@@ -67,7 +67,7 @@ public class Exception01 {
 
 ### 异常体系图
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/01.png)
 
 ### 异常体系图的小结
 
@@ -206,15 +206,15 @@ public class Exception02 {
 
 ### 示意图
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/02.png)
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/03.png)
 
 ## try-catch 异常处理
 
 ### try-catch 方式处理异常说明 
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/04.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/04.png)
 
 ### try-catch 方式处理异常-快速入门
 
@@ -253,7 +253,7 @@ public class Exception01 {
 
 ### try-catch 方式处理异常-注意事项
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/05.png)
+![05](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/05.png)
 
 + 代码演示：
 
@@ -464,7 +464,7 @@ public class Throws01 {
 
 ### 注意事项和使用细节
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/06.png)
+![06](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/06.png)
 
 + 代码演示：
 
@@ -538,7 +538,7 @@ class Son extends Father{
 
 ### 自定义异常的步骤
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/07.png)
+![07](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/java/images/Exception/07.png)
 
 + 代码演示：
 

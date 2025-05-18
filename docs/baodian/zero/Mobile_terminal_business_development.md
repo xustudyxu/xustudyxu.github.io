@@ -17,13 +17,13 @@ tags:
 
 地址簿，指的是移动端消费者用户的地址信息，用户登录成功后可以维护自己的地址信息。同一个用户可以有多个地址信息，但是只能有一个**默认地址**。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.sttrnfhslnk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220601/image.sttrnfhslnk.webp)
 
 ### 数据模型
 
 用户的地址信息会存储在address_book表，即地址簿表中。具体表结构如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.7fz82c69h1c0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220601/image.7fz82c69h1c0.webp)
 
 ### 开发用户地址簿功能
 
@@ -245,11 +245,11 @@ public class AddressBookController {
 
 + 添加地址信息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.3egxsy4bhuw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220601/image.3egxsy4bhuw0.webp)
 
 + 数据库
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220601/image.78gg4mkvmss0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220601/image.78gg4mkvmss0.webp)
 
 ## 菜品展示
 
@@ -257,7 +257,7 @@ public class AddressBookController {
 
 用户登陆成功后跳转到系统首页面，在首页需要根据分类来显示菜品和套餐。如果菜品设置了口味信息，需要展示`选择规格`按钮，否则显示`+`按钮。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.ufiyqazbv80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220602/image.ufiyqazbv80.webp)
 
 ### 代码开发
 
@@ -272,7 +272,7 @@ public class AddressBookController {
 
 注意:首页加载完成后还发送了一次ajax请求用于加载购物车数据，此处可以将这次请求的地址暂时修改一下，从静态json文件获取数据，等后续开发购物车功能时再修改回来，如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.214ufi4n3tk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220602/image.214ufi4n3tk0.webp)
 
 #### 修改DishController中的list处理器
 
@@ -327,7 +327,7 @@ public class AddressBookController {
 
 > 经过测试，分类菜品的信息都能够正常显示，但是套餐菜品信息报404错误
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220602/image.5776rt9eybs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220602/image.5776rt9eybs0.webp)
 
 + 编写处理器
 
@@ -357,12 +357,12 @@ public class AddressBookController {
 移动端用户可以将菜品或者套餐添加到购物车。对于菜品来说，如果设置了口味信息，则需要选择规格后才能
 加入购物车;对于套餐来说，可以直接点击`+`将当前套餐加入购物车。在购物车中可以修改菜品和套餐的数量，也可以清空购物车。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220604/image.45vudgknce40.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220604/image.45vudgknce40.jpg)
 
 ### 数据模型
 
 购物车对应的数据表为shopping_cart表，具体表结构如下:
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220604/image.24wto0mg195s.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220604/image.24wto0mg195s.jpg)
 
 ### 代码开发
 
@@ -556,7 +556,7 @@ public class ShoppingCartController {
 
 移动端用户将菜品或者套餐加入购物车后，可以点击购物车中的`去结算`按钮，页面跳转到订单确认页面，点击`去支付`按钮则完成下单操作。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.a6w5jrs5vnc.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220606/image.a6w5jrs5vnc.jpg)
 
 ### 数据模型
 
@@ -566,11 +566,11 @@ public class ShoppingCartController {
 
 订单表的具体表结构如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.5v5c7a427140.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220606/image.5v5c7a427140.jpg)
 
 + order_detail:订单明细表
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.5zjgzw9dbh00.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220606/image.5zjgzw9dbh00.jpg)
 
 ### 代码开发
 
@@ -869,5 +869,5 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
 
 + 点商务B套餐+全家福
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220606/image.297eup4ywfok.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220606/image.297eup4ywfok.jpg)
 

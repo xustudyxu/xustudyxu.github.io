@@ -15,7 +15,7 @@ tags:
 
 缓存就是数据交换的缓冲区（称作：Cache），当用户要获取数据的时候，会先从缓存中去查询获取数据，如果缓存中有就会直接返回给用户，如果缓存中没有，则会发请求从服务器重新查询数据，将数据返回给用户的同时将数据放入缓存，下次用户就会直接从缓存中获取数据。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.371wkgon7280.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.371wkgon7280.webp)
 
 缓存其实在很多场景中都有用到，比如：
 
@@ -38,7 +38,7 @@ tags:
 - 数据的不一致
 - 增加成本
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.2itt4ge9erq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.2itt4ge9erq0.webp)
 
 在 [静态资源部署 - 缓存配置](/middleware/Nginx/Nginx_Static_resource_deployment/#静态资源缓存配置) 的时候，我们学习了如何在浏览器进行缓存，而本内容学习的是 Nginx。
 
@@ -48,7 +48,7 @@ Nginx 作为 Web 服务器，Nginx 作为 Web 缓存服务器，它介于客户�
 
 Nginx 是从 0.7.48 版开始提供缓存功能。Nginx 是基于 Proxy Store 来实现的，**其原理是把 URL 及相关组合当做 Key，在使用 MD5 算法对 Key 进行哈希化，得到硬盘上对应的哈希目录路径，从而将缓存内容保存在该目录中**。它可以支持任意 URL 连接，同时也支持 404/301/302 这样的非200 状态码。Nginx 即可以支持对指定 URL 或者状态码设置过期时间，也可以使用 purge 命令来手动清除指定 URL 的缓存。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.5rf186zoffg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.5rf186zoffg0.webp)
 
 ## 缓存设置相关指令
 
@@ -191,7 +191,7 @@ proxy_cache_valid any 1m;      # 对所有响应状态码的URL都设置 1 分�
 
 ### 需求分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.4ye8ddxwbng0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.4ye8ddxwbng0.webp)
 
 ### 步骤实现
 
@@ -297,13 +297,13 @@ http{
 
 第一次访问 `192.168.200.113:8080/jquery.js`，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.3p1azxp6cdy0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.3p1azxp6cdy0.webp)
 
 因为第一次访问时，正在缓存，所以返回的请求头 MISS 是没有缓存成功。
 
 第二次访问 `192.168.200.113:8080/jquery.js`，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.73w7kaxo8r00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.73w7kaxo8r00.webp)
 
 HIT 代表成功缓存。
 
@@ -481,7 +481,7 @@ server {
 
 访问 `192.168.200.133:8081?nocache=999&comment=777`，然后去日志查看结果，如图所示：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220805/image.695kmtpob840.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220805/image.695kmtpob840.webp)
 
 以后访问的某一个资源如果不想缓存，在 URL 后面加入三个变量中的任意一个或多个即可，只要它们不为空或 0。
 

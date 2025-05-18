@@ -270,11 +270,11 @@ public class Servlet03 extends HttpServlet {
 
 - 请求转发到jsp页面
 
-![12](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/12.png)
+![12](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/12.png)
 
 - 请求转发到html页面
 
-![13](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/13.png)
+![13](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/02/13.png)
 
 ## request作用域
 
@@ -370,9 +370,9 @@ public class Servlet05 extends HttpServlet {
 
 - 控制台
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/01.png)
 
 - 访问URL
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Servlet/images/03/02.png)
 

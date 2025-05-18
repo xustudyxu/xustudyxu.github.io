@@ -35,7 +35,7 @@ A. 我们一起先来分析一下不加全局锁，可能存在的问题。
 
 假设在数据库中存在这样三张表: tb_stock 库存表，tb_order 订单表，tb_orderlog 订单日志表。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221001/image.4ireueq20ec0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221001/image.4ireueq20ec0.webp)
 
 + 在进行数据备份时，先备份了tb_stock库存表。
 + 然后接下来，在业务系统中，执行了下单操作，扣减库存，生成订单（更新tb_stock表，插入tb_order表）。
@@ -49,7 +49,7 @@ A. 我们一起先来分析一下不加全局锁，可能存在的问题。
 
 B. 再来分析一下加了全局锁后的情况
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221001/image.4izhidiw1ti0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221001/image.4izhidiw1ti0.webp)
 
 对数据库进行进行逻辑备份之前，先对整个数据库加上全局锁，一旦加了全局锁之后，其他的DDL、DML全部都处于阻塞状态，但是可以执行DQL语句，也就是处于只读状态，而数据备份就是查询操作。那么数据在进行逻辑备份的过程中，数据库中的数据就是不会发生变化的，这样就保证了数据的一致性和完整性。
 
@@ -114,23 +114,23 @@ mysqldump --single-transaction -uroot –p123456 itcast > itcast.sql
 
 A. 读锁
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.22qu9jlh84w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.22qu9jlh84w0.webp)
 
 左侧为客户端一，对指定表加了读锁，不会影响右侧客户端二的读，但是会阻塞右侧客户端的写。
 
 测试:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221023/image.68kspc8r9rs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221023/image.68kspc8r9rs0.webp)
 
 B.写锁
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.69e8kif6xq40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.69e8kif6xq40.webp)
 
 左侧为客户端一，对指定表加了写锁，会阻塞右侧客户端的读和写。
 
 测试:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.67yjllpu1ok0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.67yjllpu1ok0.webp)
 
 ::: tip 结论
 
@@ -162,11 +162,11 @@ MDL加锁过程是系统自动控制，无需显式使用，在访问一张表�
 当执行SELECT、INSERT、UPDATE、DELETE等语句时，添加的是元数据共享锁（SHARED_READ /
 SHARED_WRITE），之间是兼容的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.ya2d7wavuvk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.ya2d7wavuvk.webp)
 
 当执行SELECT语句时，添加的是元数据共享锁（SHARED_READ），会阻塞元数据排他锁（EXCLUSIVE），之间是互斥的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221011/image.394qjn5ovva0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221011/image.394qjn5ovva0.webp)
 
 我们可以通过下面的SQL，来查看数据库中的元数据锁的情况：
 
@@ -226,17 +226,17 @@ mysql> select object_type,object_schema,object_name,lock_type,lock_duration from
 
 当客户端二，想对这张表加表锁时，会检查当前表是否有对应的行锁，如果没有，则添加表锁，此时就会从第一行数据，检查到最后一行数据，效率较低。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2ow7a20u3go0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.2ow7a20u3go0.webp)
 
 有了意向锁之后 :
 
 客户端一，在执行DML操作时，会对涉及的行加行锁，同时也会对该表加上意向锁。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.3qyixden7980.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.3qyixden7980.webp)
 
 而其他客户端，在对这张表加表锁的时候，会根据该表上所加的意向锁来判定是否可以成功加表锁，而不用逐行判断行锁情况了。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.4kcp8w59518.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.4kcp8w59518.webp)
 
 2. 分类
 
@@ -255,11 +255,11 @@ select object_schema,object_name,index_name,lock_type,lock_mode,lock_data from p
 
 A. 意向共享锁与表读锁是兼容的
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.5th2uhlbios0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.5th2uhlbios0.webp)
 
 B. 意向排他锁与表读锁、写锁都是互斥的
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.1c5a0mcxhhsw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.1c5a0mcxhhsw.webp)
 
 ##  行级锁
 
@@ -271,15 +271,15 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
 
 + 行锁（Record Lock）：锁定单个行记录的锁，防止其他事务对此行进行update和delete。在RC、RR隔离级别下都支持。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.rtov5kk31cw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.rtov5kk31cw.webp)
 
 + 间隙锁（Gap Lock）：锁定索引记录间隙（不含该记录），确保索引记录间隙不变，防止其他事务在这个间隙进行insert，产生幻读。在RR隔离级别下都支持。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.24mdbeh7vt4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.24mdbeh7vt4.webp)
 
 + 临键锁（Next-Key Lock）：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.4swt8pe4slc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.4swt8pe4slc0.webp)
 
 
 
@@ -295,7 +295,7 @@ InnoDB实现了以下两种类型的行锁：
 
 两种行锁的兼容情况如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.4mxrlvwh3940.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.4mxrlvwh3940.webp)
 
 常见的SQL语句，在执行时，所加的行锁如下：
 
@@ -343,21 +343,21 @@ INSERT INTO `stu` VALUES (25, 'luci', 25);
 
 A. **普通的select语句，执行时，不会加锁**。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.6dggge8wtr00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.6dggge8wtr00.webp)
 
 B. select...lock in share mode，加共享锁，**共享锁与共享锁之间兼容**。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.5xvi9xjut140.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.5xvi9xjut140.webp)
 
 共享锁与排他锁之间互斥。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2z0m89b3tw40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.2z0m89b3tw40.webp)
 
 客户端一获取的是id为1这行的共享锁，客户端二是可以获取id为3这行的排它锁的，因为不是同一行数据。 而如果客户端二想获取id为1这行的排他锁，会处于阻塞状态，以为共享锁与排他锁之间互斥。
 
 C. **排它锁与排他锁之间互斥**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.1fsq73p1a7vk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.1fsq73p1a7vk.webp)
 
 当客户端一，执行update语句，会为id为1的记录加排他锁； 客户端二，如果也执行update语句更新id为1的数据，也要为id为1的数据加排他锁，但是客户端二会处于阻塞状态，因为排他锁之间是互斥的。 直到客户端一，把事务提交了，才会把这一行的行锁释放，此时客户端二，解除阻塞。
 
@@ -382,7 +382,7 @@ mysql> select * from stu;
 
 我们在两个客户端中执行如下操作:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.7iii0c906200.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.7iii0c906200.webp)
 
 在客户端一中，开启事务，并执行update语句，更新name为Lily的数据，也就是id为19的记录 。然后在客户端二中更新id为3的记录，却不能直接执行，会处于阻塞状态，为什么呢？
 
@@ -390,7 +390,7 @@ mysql> select * from stu;
 
 接下来，我们再针对name字段建立索引，索引建立之后，再次做一个测试：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.9mwkzbcpctc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.9mwkzbcpctc.webp)
 
 此时我们可以看到，客户端一，开启事务，然后依然是根据name进行更新。而客户端二，在更新id为3的数据时，更新成功，并未进入阻塞状态。 这样就说明，我们根据索引字段进行更新操作，就可以避免行锁升级为表锁的情况。
 
@@ -412,7 +412,7 @@ mysql> select * from stu;
 
 A. **索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为**间隙锁 。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2bg1yvv9ouzo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.2bg1yvv9ouzo.webp)
 
 B. 索引上的等值查询(非唯一普通索引)，向右遍历时最后一个值不满足查询需求时，next-key lock 退化为间隙锁。 
 
@@ -420,13 +420,13 @@ B. 索引上的等值查询(非唯一普通索引)，向右遍历时最后一个
 
 我们知道InnoDB的B+树索引，叶子节点是有序的双向链表。 假如，我们要根据这个二级索引查询值为18的数据，并加上共享锁，我们是只锁定18这一行就可以了吗？ 并不是，因为是非唯一索引，这个结构中可能有多个18的存在，所以，在加锁时会继续往后找，找到一个不满足条件的值（当前案例中也就是29）。此时会对18加临键锁，并对29之前的间隙加锁。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.2hj4xorarn40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.2hj4xorarn40.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.56pgq9ibofk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.56pgq9ibofk0.webp)
 
 C. 索引上的范围查询(唯一索引)--会访问到不满足条件的第一个值为止。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.6sdod08g3tc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221002/image.6sdod08g3tc0.webp)
 
 查询的条件为id>=19，并添加共享锁。 此时我们可以根据数据库表中现有的数据，将数据分为三个部分：
 

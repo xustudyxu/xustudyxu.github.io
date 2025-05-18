@@ -17,7 +17,7 @@ tags:
 
 在默认情况下，用户请求数据时，会先在缓存(Redis)中查找，若没找到即缓存未命中，再在数据库中进行查找，数量少可能问题不大，可是一旦大量的请求数据（例如秒杀场景）缓存都没有命中的话，就会全部转移到数据库上，造成数据库极大的压力，就有可能导致数据库崩溃。网络安全中也有人恶意使用这种手段进行攻击被称为洪水攻击。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.tv1o07ohouo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.tv1o07ohouo.webp)
 
 一个一定不存在缓存及查询不到的数据，由于缓存是不命中时被动写的，并且出于容错考虑，如果从存储层查不到数据则不写入缓存，这将导致这个不存在的数据每次请求都要到存储层去查询，失去了缓存的意义。
 
@@ -31,13 +31,13 @@ tags:
 
 对所有可能查询的参数以 Hash 的形式存储，以便快速确定是否存在这个值，在控制层先进行拦截校验，校验不通过直接打回，减轻了存储系统的压力。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.59npgmymwi40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.59npgmymwi40.webp)
 
 `缓存空值`
 
 如果一个查询返回的数据为空（不管是数据是否不存在），我们仍然把这个空结果（null）进行缓存，用于处理后续这个请求，设置空结果的过期时间会很短，最长不超过五分钟。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.5bym3pk8yrs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.5bym3pk8yrs0.webp)
 
 这样做有一个缺陷：存储空对象也需要空间，大量的空对象会耗费一定的空间，存储效率并不高。解决这个缺陷的方式就是设置较短过期时间
 
@@ -57,7 +57,7 @@ tags:
 
 相较于缓存穿透，缓存击穿的目的性更强，一个存在的 key，在缓存过期的一刻，同时有大量的请求，这些请求都会击穿到 DB，造成瞬时 DB 请求量大、压力骤增。这就是缓存被击穿，只是针对其中某个 key 的缓存不可用而导致击穿，但是其他的 key 依然可以使用缓存响应。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.9mwkv7dapdk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.9mwkv7dapdk.webp)
 
 比如热搜排行上，一个热点新闻被同时大量访问就可能导致缓存击穿。
 
@@ -74,7 +74,7 @@ tags:
 - 当操作返回成功时，再进行 load db 的操作，并回设缓存，最后删除 mutex key
 - 当操作返回失败，证明有线程在 load db，当前线程睡眠一段时间再重试整个 get 缓存的方法
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.6mzwdoxfni00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.6mzwdoxfni00.webp)
 
 ## 缓存雪崩
 
@@ -86,7 +86,7 @@ tags:
 
 产生雪崩的原因之一，比如在写本文的时候，马上就要到双十二零点，很快就会迎来一波抢购，这波商品时间比较集中的放入了缓存，假设缓存一个小时。那么到了凌晨一点钟的时候，这批商品的缓存就都过期了。而对这批商品的访问查询，都落到了数据库上，对于数据库而言，就会产生周期性的压力波峰。于是所有的请求都会达到存储层，存储层的调用量会暴增，造成存储层也会挂掉的情况。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220620/image.64idq3l1rj40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220620/image.64idq3l1rj40.webp)
 
 其实集中过期，倒不是非常致命，比较致命的缓存雪崩，是缓存服务器某个节点宕机或断网。因为自然 形成的缓存雪崩，一定是在某个时间段集中创建缓存，这个时候，数据库也是可以顶住压力的。无非就是对数据库产生周期性的压力而已。而缓存服务节点的宕机，对数据库服务器造成的压力是不可预知的，很有可能瞬间就把数据库压垮。
 

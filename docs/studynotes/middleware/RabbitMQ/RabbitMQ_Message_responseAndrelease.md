@@ -67,13 +67,13 @@ basicRecover(boolean requeue);
 
 - false 同上面相比只会应答 tag=8 的消息 5,6,7 这三个消息依然不会被确认收到消息应答
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.3vspi8fu4v20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.3vspi8fu4v20.webp)
 
 ### 消息自动重新入队
 
 如果消费者由于某些原因失去连接(其通道已关闭，连接已关闭或 TCP 连接丢失)，导致消息未发送 ACK 确认，RabbitMQ 将了解到消息未完全处理，并将对其重新排队。如果此时其他消费者可以处理，它将很快将其重新分发给另一个消费者。这样，即使某个消费者偶尔死亡，也可以确保不会丢失任何消息。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.4hplocbhsdk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.4hplocbhsdk0.webp)
 
 ### 手动应答案例
 
@@ -195,13 +195,13 @@ SleepUtils.sleep(10);
 
 正常情况下消息生产者发送两个消息， first 和 second 分别接收到消息并进行处理
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.lggsifrqz8w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.lggsifrqz8w.webp)
 
 当发送者发送消息 DD 到队列，此时是 second 来消费该消息，但是由于它处理时间较长，在还未处理完时间里停止运行，也就是说 second 还没有执行到 ack 代码的时候，second 被停掉了，此时会看到消息被 first 接收到了，说明消息 DD 被重新入队，然后分配给能处理消息的 first 处理了
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.3mng0kiqphi0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.3mng0kiqphi0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.7418cd7x0u80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.7418cd7x0u80.webp)
 
 ## RabbitMQ持久化
 
@@ -247,9 +247,9 @@ public class Task02 {
 
 不然就会出现如下错误：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.4nf70nwh0j60.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.4nf70nwh0j60.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.5tlb9m3bfh00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.5tlb9m3bfh00.webp)
 
 ### 消息持久化
 
@@ -336,7 +336,7 @@ public class Work03 {
 
 开启成功，会看到如下结果：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.lhxynhnktlc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.lhxynhnktlc.webp)
 
 不公平分发思想：如果一个工作队列还没有处理完或者没有应答签收一个消息，则不拒绝 RabbitMQ 分配新的消息到该工作队列。此时 RabbitMQ 会优先分配给其他已经处理完消息或者空闲的工作队列。如果所有的消费者都没有完成手上任务，队列还在不停的添加新任务，队列有可能就会遇到队列被撑满的情况，这个时候就只能添加新的 worker (工作队列)或者改变其他存储任务的策略。
 
@@ -344,7 +344,7 @@ public class Work03 {
 
 生产者生产多个消息，两个消费者的消费时间不同，则消费消息的次数也不同
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.6t9vh6pv6f40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.6t9vh6pv6f40.webp)
 
 ## 预取值分发
 
@@ -360,7 +360,7 @@ public class Work03 {
 
 预取值为 1 是最保守的。当然这将使吞吐量变得很低，特别是消费者连接延迟很严重的情况下，特别是在消费者连接等待时间较长的环境 中。对于大多数应用来说，稍微高一点的值将是最佳的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.2anljpf3y134.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.2anljpf3y134.webp)
 
 ```java {31-33}
 public class Work03 {
@@ -413,7 +413,7 @@ public class Work03 {
 
 设置了预取值为 4。生产者发送 5 条消息到 MQ 中
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.6m3okmfsfrs.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.6m3okmfsfrs.webp)
 
 ## 发布确认
 
@@ -532,7 +532,7 @@ public class ConfirmMessage2 {
 
 异步确认虽然编程逻辑比上两个要复杂，但是性价比最高，无论是可靠性还是效率都很好，利用了回调函数来达到消息可靠性传递的，这个中间件也是通过函数回调来保证是否投递成功，下面详细讲解异步确认是怎么实现的。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220724/image.73gul8cwoq00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220724/image.73gul8cwoq00.webp)
 
 添加回调函数，在回调函数里进行确认发布
 

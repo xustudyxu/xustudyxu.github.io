@@ -24,7 +24,7 @@ tags:
 
 计算机网络有若干的**结点**(node)和连接这些结点的**链路**(link)组成。如下图所示，就是一个典型的具有四个节点，三条链路组成的网络。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.71pfsychem00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.71pfsychem00.webp)
 
 通常情况下，我们可以使用一片云来表示一段网路，这样的好处是不需要关注网络内部的细节。
 
@@ -75,7 +75,7 @@ tags:
 
 如下所示，是三层ISP的结构。不过由于现在的网络规模过大，三层已经很难描述如今的网络结构了。另外，如果一个用户接入因特网，那么这个人也可以成为一个 ISP。所以这个图仅仅是一个示意图。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.2dd9wbnq6rvo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.2dd9wbnq6rvo.webp)
 
 ### 因特网的标准化工作
 
@@ -92,7 +92,7 @@ IBA下又有两个工程部。
 
 层次如下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.2y1nv07len20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.2y1nv07len20.webp)
 
 制定因特网的正式标准需要经过下述3个阶段
 
@@ -112,7 +112,7 @@ IBA下又有两个工程部。
    1. 由大量网络和连接这些网络的路由器组成
    2. 主要为**边缘部分提供服务**的
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.78edp15qf8c0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.78edp15qf8c0.webp)
 
 ### 互联网的边缘部分
 
@@ -172,7 +172,7 @@ IBA下又有两个工程部。
 
 在如今通常采用交换机将这些电话互相连接起来。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.xlg6y53p7og.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.xlg6y53p7og.webp)
 
 从通信的角度来看，**交换** (switching)就是按照某种方式动态的分配传输线路的资源。
 
@@ -182,17 +182,17 @@ IBA下又有两个工程部。
 2. 通话 (一直占用资源)
 3. 释放连接 (归还通信资源)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.22n742c0xxog.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.22n742c0xxog.webp)
 
 #### 分组交换
 
 一段信息通常会被分成多条信息。每条都是一段报文。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.5zo3lqc19h00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.5zo3lqc19h00.webp)
 
 如图中所示一条报文包含首部和数据。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.6fzqebudc5k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.6fzqebudc5k0.webp)
 
 如上图。由于到达目的地的**路线可能不一致**，因此首部中一般还会包含有顺序等。
 
@@ -206,7 +206,7 @@ IBA下又有两个工程部。
 
 #### 对比
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.4ujw2dq6va40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.4ujw2dq6va40.webp)
 
 ## 计算机网络的定义
 
@@ -263,7 +263,7 @@ IBA下又有两个工程部。
    - 是最重要的性能指标
    - 存储的单位是二进制千，传输速率是十进制千，需要注意。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.3847gmp6i7a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.3847gmp6i7a0.webp)
 
 2. 带宽
 
@@ -286,7 +286,7 @@ IBA下又有两个工程部。
      + 传播时延 : 信号在传输线线路上传输的时间
      + 处理时延 : 信号在路由器上处理的时间
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.70hiv6my3uc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.70hiv6my3uc0.webp)
 
 计算方式如下
 
@@ -309,7 +309,7 @@ IBA下又有两个工程部。
 >    3. 光纤 2.0×10<sup>8</sup>m/s
 >3. 在时延中，占据主导地位的时延通常随情况而改变。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.6cwnyzdv8c80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.6cwnyzdv8c80.webp)
 
 5. 时延带宽积
 
@@ -321,7 +321,7 @@ IBA下又有两个工程部。
 
 6. 往返时间
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.5szjw39pa940.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.5szjw39pa940.webp)
 
 往返时间 **RTT**(**R**ound-**T**rip **T**ime) 是指从出发点发出分组信号，直到出发点收到终点的确认收到为止。
 
@@ -334,7 +334,7 @@ IBA下又有两个工程部。
 
 + 用 D0 表示网络空闲时的时延，D 表示当前网络的时延，U 表示利用率。 D=D<sub>0</sub>/(1−U) 有如下所示的关系	
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.610n552gl640.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.610n552gl640.webp)
 
 + 
   + 当网络的利用率达到50%时，时延就要加倍;
@@ -367,7 +367,7 @@ IBA下又有两个工程部。
 
 ### 常见的计算机网络体系结构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.73s2oua2nsk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.73s2oua2nsk0.webp)
 
 - 1977年 ISO 提出 **OSI/RM** (Open System Internection Reference Model)，简称为 OSI
 - TCP/IP 由于使用广泛，成为了实际上的网络标准
@@ -379,7 +379,7 @@ OSI 没有成为实际上的标准主要有以下几点原因。
 3. OSI 制定的周期太长
 4. OIS 层次划分不合理，有很多功能重复的地方。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.23btaeh92log.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.23btaeh92log.webp)
 
 通常用于教学时，网络结构层需要重新划分为**数据链路层**和**物理层**
 
@@ -402,7 +402,7 @@ OSI 没有成为实际上的标准主要有以下几点原因。
 5. 应用层
    - 通过应用进程的交互来完成特定的网络应用
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.1j7pj8vbm81s.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.1j7pj8vbm81s.webp)
 
 ### 计算机网络体系结构分层思想举例
 
@@ -410,11 +410,11 @@ OSI 没有成为实际上的标准主要有以下几点原因。
 
 [视频地址](https://www.bilibili.com/video/BV1c4411d7jb?p=9&share_source=copy_web)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.6tyakg5btv80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.6tyakg5btv80.webp)
 
 传输的过程自顶向下，逐层添加数据。自下向顶逐层解包。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.6zm0k6xjvfc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.6zm0k6xjvfc0.webp)
 
 ### 计算机网络中的相关术语
 
@@ -424,7 +424,7 @@ OSI 没有成为实际上的标准主要有以下几点原因。
    
 2. 协议
    
-   ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221202/image.qdst3f2qk40.webp)
+   ![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221202/image.qdst3f2qk40.webp)
    
    - 协议是指两个对等实体进行逻辑通信的规则的集合
    - 逻辑通信实际中并不存在，只是假设的一种通信
@@ -433,7 +433,7 @@ OSI 没有成为实际上的标准主要有以下几点原因。
      - 语义 定义双方需要完成的的操作
      - 同步 定义收发双方的时序关系
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221202/image.2wbmp47a8u20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221202/image.2wbmp47a8u20.webp)
 
 3. 服务
    + 在协议的控制下，两个对等实体间的通信使得本层能够向上一层提供服务
@@ -449,4 +449,4 @@ OSI 没有成为实际上的标准主要有以下几点原因。
    4. 服务数据单元SDU **同意系统内，层与层之间交换的数据包** 成为服务数据单元。
    5. 多个 SDU 可以合并为一个 PDU ；一个 SDU 也可以划分为几个 PDU
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221201/image.6ukjo5tcdsc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221201/image.6ukjo5tcdsc0.webp)

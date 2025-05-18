@@ -39,9 +39,9 @@ tags:
 4. 判断登录状态，如果已登录，则直接放行
 5. 如果未登录则返回未登录结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.kf1svgdigpo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.kf1svgdigpo.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.h9118ipujl4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.h9118ipujl4.webp)
 
 ```java
 /**
@@ -120,7 +120,7 @@ public class LoginCheckFilter implements Filter {
 
 - 测试未登录直接访问index页面
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.3m6lv9yahcy0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.3m6lv9yahcy0.webp)
 
 ## 新增员工
 
@@ -128,17 +128,17 @@ public class LoginCheckFilter implements Filter {
 
 后台系统中可以管理员工信息，通过新增员工来添加后台系统用户。点击[添加员工]按钮跳转到新增页面，如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.7ob0wlo3spc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.7ob0wlo3spc.webp)
 
 ### 数据模型
 
 新增员工，其实就是将我们新增页面录入的员工数据插入到employee表。需要注意，employee表中对username字段加入了唯一约束，因为username是员工的登录账号，必须是唯一的
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.v139523rze8.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.v139523rze8.webp)
 
 employee表中的status字段已经设置了默认值1，表示状态正常。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.32fegy1e7ys0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.32fegy1e7ys0.webp)
 
 ### 代码开发
 
@@ -148,9 +148,9 @@ employee表中的status字段已经设置了默认值1，表示状态正常。
 2. 服务端Controller接收页面提交的数据并调用Service将数据进行保存
 3. Service调用Mapper操作数据库，保存数据
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.x2n5bomhveo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.x2n5bomhveo.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.74bo2v369180.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.74bo2v369180.webp)
 
 - 编写处理器
 
@@ -196,7 +196,7 @@ JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6da4076d] will not be managed 
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a83e3ef]
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2hzz2pq29680.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.2hzz2pq29680.webp)
 
 ### 全局异常捕获
 
@@ -249,7 +249,7 @@ public class GlobalExceptionHandler {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.2whfttupru80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.2whfttupru80.webp)
 
 ### 小结
 
@@ -261,7 +261,7 @@ public class GlobalExceptionHandler {
 
 :::
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6jzl7cma1wk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.6jzl7cma1wk0.webp)
 
 ## 员工信息分页显示
 
@@ -269,7 +269,7 @@ public class GlobalExceptionHandler {
 
 系统中的员工很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中都会以分页的方式来展示列表数据。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5c671konoi00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5c671konoi00.webp)
 
 ### 代码开发
 
@@ -281,9 +281,9 @@ public class GlobalExceptionHandler {
 4. Controller将查询到的分页数据响应给页面
 5. 页面接收到分页数据并通过ElementUl的Table组件展示到页面上
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.15qobcscm14w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.15qobcscm14w.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.f85ybkxqfgw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.f85ybkxqfgw.webp)
 
 - 配置分页插件
 
@@ -411,7 +411,7 @@ public class MyBatisPlusConfig {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6xpydt42gnk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6xpydt42gnk.webp)
 
 > 账号状态响应的是1，为什么页面显示正常？
 >
@@ -433,9 +433,9 @@ public class MyBatisPlusConfig {
 
 如果某个员工账号状态为正常，则按钮显示为“禁用”，如果员工账号状态为已禁用，则按钮显示为“启用”。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.68eldra6u100.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.68eldra6u100.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5xnc26ppcu40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5xnc26ppcu40.webp)
 
 ### 代码开发
 
@@ -470,11 +470,11 @@ public class MyBatisPlusConfig {
 2. 服务端Controller接收页面提交的数据并调用Service更新数据
 3. Service调用Mapper操作数据库
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1y3cpvdor0f4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1y3cpvdor0f4.webp)
 
 页面中的ajax请求是如何发送的呢
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7jmo8s9xyuo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7jmo8s9xyuo0.webp)
 
 - 编写处理器
 
@@ -500,11 +500,11 @@ public class MyBatisPlusConfig {
 >
 > 观察控制台输出的SQL：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1efldv8seqo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.1efldv8seqo0.webp)
 
 SQL执行的结果是更新的数据行数为0，仔细观察id的值，和数据库中对应记录的id值并不相同
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4xrs6cljb1s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4xrs6cljb1s0.webp)
 
 ### 代码修复
 
@@ -512,11 +512,11 @@ SQL执行的结果是更新的数据行数为0，仔细观察id的值，和数�
 
 分页查询时服务端响应给页面的数据中id的值为19位数字，类型为long
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.3vz7gcxpamo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.3vz7gcxpamo0.webp)
 
 页面中js处理long型数字只能精确到前16位，所以最终通过ajax请求提交给服务器的时候id变为了1520694192883232<font color=##dd0000>800</font>
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.b3dwlex8n2g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.b3dwlex8n2g.webp)
 
 前面我们已经发现了问题的原因，即js对long型数据进行处理时丢失精度，导致提交的id和数据库中的id不一致。
 
@@ -547,7 +547,7 @@ SQL执行的结果是更新的数据行数为0，仔细观察id的值，和数�
     }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6vo139weyz00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.6vo139weyz00.webp)
 
 ### 功能测试
 
@@ -558,7 +558,7 @@ SQL执行的结果是更新的数据行数为0，仔细观察id的值，和数�
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@299d2b9]
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.axkrn5nmpyg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.axkrn5nmpyg.webp)
 
 ## 编辑员工信息
 
@@ -566,7 +566,7 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 在员工管理列表页面点击编辑按钮，跳转到编辑页面，在编辑页面回显员工信息并进行修改，最后点击保存按钮完成编辑操作
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5pchvta5dms0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.5pchvta5dms0.webp)
 
 ### 代码开发
 
@@ -606,9 +606,9 @@ Closing non transactional SqlSession [org.apache.ibatis.session.defaults.Default
 
 将张三账号修改为Zhangsan
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4ue2x72kfy00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.4ue2x72kfy00.webp)
 
 - 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.20tbp6d3wvc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.20tbp6d3wvc0.webp)
 

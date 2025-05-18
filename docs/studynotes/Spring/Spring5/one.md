@@ -28,7 +28,7 @@ tags:
 
 + Spring5系统架构
 
-![00](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/00.png)
+![00](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Spring5/images/01/00.png)
 
 
 

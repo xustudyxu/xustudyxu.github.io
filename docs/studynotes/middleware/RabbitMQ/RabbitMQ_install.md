@@ -29,7 +29,7 @@ Linux 的 `CentOS 7.x` 版本。
 
 选择以 `noarch.rpm` 结尾的安装包
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.402esff13ek0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.402esff13ek0.webp)
 
 ### 下载Erlang
 
@@ -37,13 +37,13 @@ RabbitMQ 是采用 Erlang 语言开发的，所以系统环境必须提供 Erlan
 
 `Erlang` 和 `RabbitMQ` 版本对照：[点击跳转](https://www.rabbitmq.com/which-erlang.html)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.4lr4qyk601a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.4lr4qyk601a0.webp)
 
 这里安装的是 3.8.8 版本的 RabbitMQ，需要的 Erlang 版本依然是21.3。
 
 [Erlang 21.3下载地址](https://packagecloud.io/rabbitmq/erlang/packages/el/7/erlang-21.3.8.16-1.el7.x86_64.rpm)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.44zjpnbpbyo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.44zjpnbpbyo0.webp)
 
 ::: tip 版本选择
 
@@ -55,7 +55,7 @@ CentOs 8.x 版本需要e18。包括 Red Hat 8,modern Fedora 版本。
 
 最终下载的两个安装包，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.63s3aftotzs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.63s3aftotzs0.webp)
 
 ## 安装
 
@@ -71,7 +71,7 @@ mkdir /usr/local/rabbitmq
 
 利用 `xftp` 工具将两个 `.rpm` 文件传输到刚刚创建的文件夹里
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.6smxk7gp2ig0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.6smxk7gp2ig0.webp)
 
 ### 安装Erlang
 
@@ -108,7 +108,7 @@ Eshell V10.3  (abort with ^G)
 
 如果安装 Erlang 过程出现了如下问题：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.1urtg7o1ntfk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.1urtg7o1ntfk.webp)
 
 出现这个错误的主要原因是没有`libcrypto.so.10(OPENSSL_1.0.2)(64bit)`依赖，我们去下载一个就可以了
 
@@ -116,7 +116,7 @@ Eshell V10.3  (abort with ^G)
 
 滑到最下面，下载最后一个
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.mrtslwlzvg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.mrtslwlzvg0.webp)
 
 下载到本地后通过 `Xftp` 上传到 Linux 中，传输目录一致。接着使用命令安装
 
@@ -126,7 +126,7 @@ rpm -ivh openssl-libs-1.0.2k-19.el7.x86_64.rpm --force
 
 安装好这个后，再次安装 Erlang 即可成功
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.1or3k1972l6o.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.1or3k1972l6o.webp)
 
 ### 安装RabbitMQ
 
@@ -165,7 +165,7 @@ systemctl status rabbitmq-server
 
 启动 `RabbitMQ` 服务后，查看该服务状态，显示绿色的 `active` 则表示服务安装并启动成功
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.3vmzww3gk2k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.3vmzww3gk2k0.webp)
 
 其他指令：
 
@@ -202,7 +202,7 @@ systemctl restart rabbitmq-server
 
 通过 `http://ip:15672` 访问，ip 为 Linux 的 ip。`rabbitmq` 有一个默认的账号密码 `guest`，但是登录该账号密码会出现权限问题
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.1irradyf2v28.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.1irradyf2v28.webp)
 
 默认的账号密码仅限于本机 localhost 进行访问，所以需要添加一个远程登录的用户
 
@@ -228,7 +228,7 @@ rabbitmqctl set_permissions -p "/" y ".*" ".*" ".*"
 
 添加用户和权限后，再次访问 `http://ip:15672` 登录，输入添加好的用户名和密码，即可进入后台
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220723/image.4o5hgcxxknm0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220723/image.4o5hgcxxknm0.webp)
 
 其他指令：
 

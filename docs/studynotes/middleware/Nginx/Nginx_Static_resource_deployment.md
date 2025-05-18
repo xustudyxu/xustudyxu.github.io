@@ -75,7 +75,7 @@ server{
 
 此时访问 8080 端口，它会访问第二个 server，如果第二个 server 去掉 `default_server` ，则默认访问第一个 server。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220730/image.2e5c4uo1ghlw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220730/image.2e5c4uo1ghlw.webp)
 
 ### server_name指令
 
@@ -133,7 +133,7 @@ vim /etc/hosts
 
 + 访问测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220730/image.3nbv3p1703y0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220730/image.3nbv3p1703y0.webp)
 
 >  **配置方式二：使用通配符配置**
 
@@ -624,9 +624,9 @@ server {
 
 流程如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.24hrbukvg0lc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.24hrbukvg0lc.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.5l2efa1uqlo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.5l2efa1uqlo0.webp)
 
 ### tcp_nopush
 
@@ -644,7 +644,7 @@ server {
 | ------------------------ | --------------- | ---------------------- |
 | tcp_nodelay <on \| off>; | tcp_nodelay on; | http、server、location |
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.1iu7wmocw0ao.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.1iu7wmocw0ao.webp)
 
 `tcp_nopush` 就像大巴车，等所有旅客占满了座位，才开始发车到景点（客户端），而 `tcp_nodelay`，上来一个旅客，就马上发车到景点客户端）。
 
@@ -730,7 +730,7 @@ http{
 | ---------------------- | -------------- | ---------------------- |
 | gzip_vary <on \| off>; | gzip_vary off; | http、server、location |
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.4bsq0xpu9s20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.4bsq0xpu9s20.webp)
 
 + `gzip_buffers` 指令是用于处理请求压缩的缓冲区数量和大小
 
@@ -912,11 +912,11 @@ make upgrade
 
 准备好一个 jquery.js 文件，放在 html 目录下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.576ef03x00c0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.576ef03x00c0.webp)
 
 1. 直接访问 `http://192.168.91.200/jquery.js`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.2b8dhabn0cbo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.2b8dhabn0cbo.webp)
 
 2. 使用 Gzip 命令进行压缩
 
@@ -930,7 +930,7 @@ gzip jquery.js
 
 3. 再次访问 `http://192.168.91.200/jquery.js`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.4ivj1d091pg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.4ivj1d091pg.webp)
 
 可以看出 `Content-Length` 的大小已经变得非常小。
 
@@ -974,7 +974,7 @@ HTTP 协议中和页面缓存相关的字段，我们先来认识下：
 | Last-Modified | 请求资源最后修改时间                          |
 | ETag          | 请求变量的实体标签的当前值，比如文件的 MD5 值 |
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.209c4krjzgf4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.209c4krjzgf4.webp)
 
 1. 用户首次通过浏览器发送请求到服务端获取数据，客户端是没有对应的缓存，所以需要发送 request 请求来获取数据；
 2. 服务端接收到请求后，获取服务端的数据及服务端缓存的允许后，返回 200 的成功状态码并且在响应头上附上对应资源以及缓存信息；
@@ -1027,7 +1027,7 @@ location ~ .*\.(html|js|css|png|jpg|jpeg|gif)$ {
 
 查看开发者工具(F12)的 NetWork，如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220731/image.4x3yczk58lk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220731/image.4x3yczk58lk0.webp)
 
 315360000 折算下来正好是 10 年。
 

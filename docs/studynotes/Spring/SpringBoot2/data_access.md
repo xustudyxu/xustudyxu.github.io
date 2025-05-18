@@ -24,7 +24,7 @@ tags:
         </dependency>
 ```
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/01.png)
 
 数据库驱动？
 
@@ -287,7 +287,7 @@ SpringBoot官方的Starter：spring-boot-starter-*
         </dependency>
 ```
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/02.png)
 
 ### 配置模式
 
@@ -428,7 +428,7 @@ public class IndexController {
 
 + 测试
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/03.png)
 
 ### 混合模式
 

@@ -164,15 +164,15 @@ MyBatis Generator
 
 ### 执行MBG插件的generate目标
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/03.png)
 
 清新简洁版效果:
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/04.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/04.png)
 
 奢华尊享版效果:
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/05.png)
+![05](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MyBatis/images/04/05.png)
 
 + 测试
 

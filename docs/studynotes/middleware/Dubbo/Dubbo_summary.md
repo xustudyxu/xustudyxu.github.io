@@ -31,7 +31,7 @@ tags:
 
 + 传统项目与互联网项目
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.6h43q19yju80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.6h43q19yju80.webp)
 
 互联网项目特点：
 
@@ -73,19 +73,19 @@ tags:
 + 分布式：很多“人”一起，干不一样的事。这些不一样的事，合起来是一件大事。
   + 一个大的业务系统，拆分为小的业务模块，分别部署在不同的机器上。  
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.5nlh9xpsfnk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.5nlh9xpsfnk0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.1mdj7j037zmo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.1mdj7j037zmo.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.17s87ncjfoe8.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.17s87ncjfoe8.webp)
 
 ### 架构演进
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.20tbpa7hx21s.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.20tbpa7hx21s.webp)
 
 #### 单体架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.4x8kymw89lw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.4x8kymw89lw0.webp)
 
 优点：
 
@@ -101,7 +101,7 @@ tags:
 
 #### 垂直架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.i16tmg4jmk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.i16tmg4jmk0.webp)
 
 + 垂直架构是指将单体架构中的多个模块拆分为多个独立的项目。形成多个独立的单体架构。
 
@@ -119,7 +119,7 @@ tags:
 
 #### 分布式架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.50o93z8msc00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.50o93z8msc00.webp)
 
 + 分布式架构是指在垂直架构的基础上，将公共业务模块抽取出来，作为独立的服务，供其他调用者消费，以实现服务的共享和重用。
 + RPC： Remote Procedure Call 远程过程调用。有非常多的协议和技术来都实现了RPC的过程。比如：HTTP REST风格，Java RMI规范、WebService SOAP协议、Hession等等。
@@ -134,7 +134,7 @@ tags:
 
 #### SOA架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.7c0jsgrqdow0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.7c0jsgrqdow0.webp)
 
 + SOA：（Service-Oriented Architecture，面向服务的架构）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和契约联系起来。
 + ESB：(Enterparise Servce Bus) 企业服务总线，服务中介。主要是提供了一个服务于服务之间的交互。ESB 包含的功能如：负载均衡，流量控制，加密处理，服务的监控，异常处理，监控告急等等。
@@ -143,7 +143,7 @@ tags:
 
 #### 微服务架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.160pvm98fadc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.160pvm98fadc.webp)
 
 
 
@@ -166,7 +166,7 @@ tags:
 
 #### Dubbo 架构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
 
 **节点角色说明：**
 

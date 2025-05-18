@@ -49,7 +49,7 @@ Java中的代理按照代理类生成时机不同又分为静态代理和动态�
 
 如果要买火车票的话，需要去火车站买票，坐车到火车站，排队等一系列的操作，显然比较麻烦。而火车站在多个地方都有代售点，我们去代售点买票就方便很多了。这个例子其实就是典型的代理模式，火车站是目标对象，代售点是代理对象。类图如下：
 
-![静态代理](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20240121/静态代理.4tp2l43bc6g0.webp)
+![静态代理](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20240121/静态代理.4tp2l43bc6g0.webp)
 
 代码如下：
 

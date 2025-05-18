@@ -13,7 +13,7 @@ tags:
 
 ## wapper介绍
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/05/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MyBatis/Plus-images/05/01.png)
 
 + Wrapper ： 条件构造抽象类，最顶端父类
   + AbstractWrapper ： 用于查询条件封装，生成 sql 的 where 条件

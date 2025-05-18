@@ -33,7 +33,7 @@ Model View Controller 模型、视图、控制器
 
 ### 早些年
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.5danx0e3lhw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220423/image.5danx0e3lhw0.webp)
 
 用户直接访问控制层，控制层就可以直接操作数据库
 
@@ -59,7 +59,7 @@ MySQL Oracle SqlServer...
 
 ### 如今
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.4itz02rhe2g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220423/image.4itz02rhe2g0.webp)
 
 Model
 

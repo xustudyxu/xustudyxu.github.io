@@ -28,13 +28,13 @@ Postman 是一款强大的网页调试工具，提供功能强大的 Web API 和
 Postman 官网：https://www.getpostman.com
 Postman 下载：https://www.getpostman.com/apps
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6cidzgf2v7k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6cidzgf2v7k0.webp)
 
 ## 数据格式
 
 Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文档。为了方便大家理解，我们将 Elasticsearch 里存储文档数据和关系型数据库 MySQL 存储数据的概念进行一个类比ES 里的 Index 可以看做一个库，而 Types 相当于表，Documents 则相当于表的行。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6natuc863q80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6natuc863q80.webp)
 
 这里 Types 的概念已经被逐渐弱化，Elasticsearch 6.X 中，一个 index 下已经只能包含一个type，Elasticsearch 7.X 中, Type 的概念已经被删除了。
 
@@ -61,11 +61,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发 `PUT `请求 ：http://127.0.0.1:9200/shopping
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4f8730wucdc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.4f8730wucdc0.webp)
 
 请求后，服务器返回响应
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6bms4urzq180.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6bms4urzq180.webp)
 
 ```json
 {
@@ -82,11 +82,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发 `GET` 请求 ：http://127.0.0.1:9200/_cat/indices?v
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6upkg2f88pg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6upkg2f88pg0.webp)
 
 这里请求路径中的_cat 表示查看的意思，indices 表示索引，所以整体含义就是查看当前 ES服务器中的所有索引，就好像 MySQL 中的 show tables 的感觉，服务器响应结果如下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4oymop77yv40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.4oymop77yv40.webp)
 
 | 表头           | 含义                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -105,11 +105,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发 GET 请求 ：http://127.0.0.1:9200/shopping
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.2yn85a5vhvk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.2yn85a5vhvk0.webp)
 
 查看索引向 ES 服务器发送的请求路径和创建索引是一致的。但是 HTTP 方法不一致。这里可以体会一下 RESTful 的意义，请求后，服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6eiuvxqroag0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6eiuvxqroag0.webp)
 
 ```json
 {
@@ -136,19 +136,19 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发 DELETE 请求 ：http://127.0.0.1:9200/shopping
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4ywn8aly0p40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.4ywn8aly0p40.webp)
 
 结果:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.9j5vpyhfae4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.9j5vpyhfae4.webp)
 
 重新访问索引时，服务器返回响应：索引不存在
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.301qkvmr8g60.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.301qkvmr8g60.webp)
 
 结果:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5znlvihxoj40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.5znlvihxoj40.webp)
 
 ### 文档操作
 
@@ -167,13 +167,13 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5wglnskmpgs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.5wglnskmpgs0.webp)
 
 此处发送请求的方式必须为 `POST`，不能是` PUT`，否则会发生错误,
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.1ta5l39n7z7k.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.1ta5l39n7z7k.webp)
 
 ```json
 {
@@ -196,11 +196,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 如果想要`自定义唯一性标识`，需要在创建时指定：http://127.0.0.1:9200/shopping/_doc/1
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.58rsz7uqqt40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.58rsz7uqqt40.webp)
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.d2a3e2zo0bs.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.d2a3e2zo0bs.webp)
 
 > 此处需要注意：如果增加数据时明确数据主键，那么请求方式也可以为 PUT
 
@@ -210,11 +210,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发` GET `请求 ：http://127.0.0.1:9200/shopping/_doc/1
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5gnvg6vy2xw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.5gnvg6vy2xw0.webp)
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3aiusoqfb2o0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.3aiusoqfb2o0.webp)
 
 ```json
 {
@@ -253,11 +253,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.334ba6eupjy0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.334ba6eupjy0.webp)
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.cmq143r0no8.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.cmq143r0no8.webp)
 
 - 局部修改
 
@@ -267,11 +267,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.5qg2uu195m80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.5qg2uu195m80.webp)
 
 再次查看文档:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6m71s5usigw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6m71s5usigw0.webp)
 
 #### 删除文档-DELETE
 
@@ -279,11 +279,11 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发` DELETE `请求 ：http://127.0.0.1:9200/shopping/_doc/1
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.476ikbhzz5e0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.476ikbhzz5e0.webp)
 
 服务器响应结果如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.6y551su4g080.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.6y551su4g080.webp)
 
 ```json
 {
@@ -304,7 +304,7 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 删除后再查询当前文档信息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.3m13d7xdiqg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.3m13d7xdiqg0.webp)
 
 #### 条件删除文档-POST
 
@@ -377,7 +377,7 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 首先创建 stuednt 索引，向 ES 服务器发 `PUT` 请求：`http://127.0.0.1:9200/student`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.63rsnl20ypg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.63rsnl20ypg0.webp)
 
 在 Postman 中，向 ES 服务器发 `PUT` 请求：`http://127.0.0.1:9200/student/_mapping`
 
@@ -402,7 +402,7 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4ij534b6i0e0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.4ij534b6i0e0.webp)
 
 映射数据说明：
 
@@ -435,7 +435,7 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 
 在 Postman 中，向 ES 服务器发 `GET` 请求：`http://127.0.0.1:9200/student/_mapping`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.1ukxbj5ceqjk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.1ukxbj5ceqjk.webp)
 
 ### 索引映射关联-PUT
 
@@ -468,5 +468,5 @@ Elasticsearch 是面向文档型数据库，一条数据在这里就是一个文
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220629/image.4uc0hgnj0su0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220629/image.4uc0hgnj0su0.webp)
 

@@ -29,7 +29,7 @@ mkdir /opt/ZooKeeper
 
 + 使用XFTP工具将压缩包传输到Linux系统
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.1ps0tk51lz40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.1ps0tk51lz40.webp)
 
 + 将tar包解压到/opt/zookeeper目录下
 
@@ -63,7 +63,7 @@ mkdir /opt/zookeeper/zkdada
 vim /opt/zookeeper/apache-zooKeeper-3.5.6-bin/conf/zoo.cfg
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.4ywxv61udoc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.4ywxv61udoc0.webp)
 
 修改存储目录：dataDir=/opt/zookeeper/zkdata
 
@@ -118,7 +118,7 @@ Error contacting service. It is probably not running.
 
 ## 创建工程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.6b4kd65c3bs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.6b4kd65c3bs0.webp)
 
 ### 配置dubbo-web的pom.xml
 
@@ -432,13 +432,13 @@ public class UserController {
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.3rqhmd9khuk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.3rqhmd9khuk0.webp)
 
 > 目前此项目，仍然是单体项目
 
 ## Dubbo 引入
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.1m14kr1438qo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.1m14kr1438qo.webp)
 
 ### 服务提供者
 
@@ -676,4 +676,4 @@ public class UserController {
 
 + 访问[http://localhost:8000/user/sayHello.do](http://localhost:8000/user/sayHello.do)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220809/image.3rdamprn0mo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220809/image.3rdamprn0mo0.webp)

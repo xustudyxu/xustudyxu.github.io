@@ -289,9 +289,9 @@ public class HelloController {
 
 ## 单个拦截器执行流程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.2yt4trspxew0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220423/image.2yt4trspxew0.webp)
 
 ## 多个拦截器的执行流程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220423/image.3ukw3z3zmk60.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220423/image.3ukw3z3zmk60.webp)
 

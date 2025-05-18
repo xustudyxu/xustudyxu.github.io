@@ -11,7 +11,7 @@ tags:
 
 ## 内置函数range()
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/01.png)
 
 ```python
 """
@@ -47,7 +47,7 @@ print(range(1,101,1)) #[1...100]
 
 ## 循环结构
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/02.png)
 
 ```python
 """
@@ -65,7 +65,7 @@ while a<10:
 
 ### while循环的执行流程
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/03.png)
 
 ```python
 """
@@ -118,7 +118,7 @@ print('1-100的偶数和为:',sum)
 
 ### for-in循环
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/04.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/04.png)
 
 ```python
 """
@@ -166,7 +166,7 @@ for item in range(100,1000):
 
 ### 流程控制语句break
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/05.png)
+![05](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/05.png)
 
 ```python
 """
@@ -190,7 +190,7 @@ while a<3:
 
 ### 流程控制语句continue
 
-![06](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/06.png)
+![06](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/06.png)
 
 ```python
 """
@@ -215,7 +215,7 @@ for item in range(1,51):
 
 ### else语句
 
-![07](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/07.png)
+![07](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/07.png)
 
 ```python
 """
@@ -261,7 +261,7 @@ else:
 
 ### 嵌套循环
 
-![08](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/08.png)
+![08](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/08.png)
 
 ```python
 """
@@ -278,7 +278,7 @@ for i in range(1,10):  #行
 
 ### 二重循环中的break和continue
 
-![09](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/09.png)
+![09](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/05/09.png)
 
 ```python
 """

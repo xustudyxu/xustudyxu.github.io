@@ -13,7 +13,7 @@ tags:
 
 ## 简介
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221010/image.4w4wg4yh1i40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221010/image.4w4wg4yh1i40.webp)
 
 Spring 是非常流行和成功的 Java 应用开发框架，Spring Security 正是 Spring 家族中的成员。Spring Security 基于 Spring 框架，提供了一套 Web 应用安全性的完整解决方案。
 
@@ -52,7 +52,7 @@ Spring 技术栈的组成部分。其特点：
 
 ### Shiro
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221010/image.116fr50fds8w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221010/image.116fr50fds8w.webp)
 
 Apache 旗下的轻量级权限控制框架。其特点：
 
@@ -76,4 +76,4 @@ Spring Security 是 Spring 家族中的一个安全管理框架，实际上，�
 
 ## 模块划分
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221010/image.3b2cnga2p5e0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221010/image.3b2cnga2p5e0.webp)

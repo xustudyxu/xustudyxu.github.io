@@ -486,7 +486,7 @@ class MyData {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221128/image.4dcgbylblj00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221128/image.4dcgbylblj00.webp)
 
 + 运行结果
 
@@ -645,7 +645,7 @@ Process finished with exit code 0
 
 **分析如图**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221129/image.4yw1yt2bmr80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221129/image.4yw1yt2bmr80.webp)
 
 **局部变量与成员变量的区别**
 
@@ -684,9 +684,9 @@ Process finished with exit code 0
 
 ### Spring Bean 的生命周期
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221211/image.5j9pk2zyuc00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221211/image.5j9pk2zyuc00.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221211/image.59wgy27nq740.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221211/image.59wgy27nq740.webp)
 
 1. 解析xml配置或注解配置的类，得到`BeanDefinition`;
 2. 通过`BeanDefinition`**反射创建**`Bean`对象;
@@ -776,7 +776,7 @@ TransactionDefinition 接口中定义了五个表示隔离级别的常量：
 
 ### Spring MVC 的工作流程？
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221129/image.2w16yitcfoc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221129/image.2w16yitcfoc0.webp)
 
 流程说明（重要）：
 1、客户端（浏览器）发送请求，直接请求到 **DispatcherServlet**。
@@ -846,7 +846,7 @@ chkconfig -level 5 服务名on
 
 #### 运行级别 runlevel(centos6)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.24zaag4nrnmo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.24zaag4nrnmo.webp)
 
 > Linux系统有7种运行级别(runlevel): **常用的是级别3和5**
 
@@ -919,7 +919,7 @@ git branch -D <分支名>
 
 ### Git 工作流
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.35urzp3n7pk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.35urzp3n7pk0.webp)
 
 ### redis持久化有几种类型，他们的区别
 
@@ -940,11 +940,11 @@ Redis会单独创建(fork) -个子进程来进行持款化，铣将数据写入�
 rdb 的保存文件
 
 在 redis.conf 中配置文件名称 默认为 dump.rdb
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.4p22r73f2ei0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.4p22r73f2ei0.webp)
 
 rbd 文件的保存路径，也可以修改，默认为 Redis启动命令行所在目录下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.4ye1aapes5w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.4ye1aapes5w0.webp)
 
 > rdb 的备份
 
@@ -966,7 +966,7 @@ rbd 文件的保存路径，也可以修改，默认为 Redis启动命令行所�
 
 恢复速度快
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.cdkdm3zsc9c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.cdkdm3zsc9c.webp)
 
 > rdb 的缺点
 
@@ -1003,7 +1003,7 @@ auto- aof- rewrite-min-size 64mb
 
 可读的日志文本，通过操作AOF稳健，可以处理误操作
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.6a6at8p0bg40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.6a6at8p0bg40.webp)
 
 > AOF的缺点
 
@@ -1035,15 +1035,15 @@ auto- aof- rewrite-min-size 64mb
    1. 因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件数据重复且分布平均的表字段，因此应该只为最经常查询和最经常排序的数据列建立索引。
 3. 注意，如果某个数据列包含许多重复的内容，为它建立索弓|就没有太大的实际效果。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.2fx53ug97s5c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.2fx53ug97s5c.webp)
 
 ### JVM垃圾回收机制、GC发生在JVM哪部分，有几种GC，他们的算法是什么
 
 > GC 发生在JVM的堆里面
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.57x6kvovm6o0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.57x6kvovm6o0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.3iyio39cvtm0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.3iyio39cvtm0.webp)
 
 ## 项目面试题
 
@@ -1089,13 +1089,13 @@ ES 更新【功能越强大】
 
 6. Solr 官网提供的功能更多哦，而 es 本身更加注重于核心功能，高级功能都有第三方插件完成
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.6xzx6ob6oy80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.6xzx6ob6oy80.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.2qku9lveres.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.2qku9lveres.webp)
 
 Elasticsrarch ：集群图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.41vhucnb8h20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.41vhucnb8h20.webp)
 
 ### 单点登录
 
@@ -1105,7 +1105,7 @@ Elasticsrarch ：集群图
 
 一处登录，处处运行
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.1wpj3rwzzdk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.1wpj3rwzzdk0.webp)
 
 Demo:
 
@@ -1166,19 +1166,19 @@ Token = piao
 
 > 1. 异步
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.4ama9fw92iw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.4ama9fw92iw0.webp)
 
 > 2. 并行
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.5c91uhask1k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.5c91uhask1k0.webp)
 
 > 3. 排队
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.vim7uaybrkg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.vim7uaybrkg.webp)
 
 消息队列在电商中的使用场景
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221130/image.7ecmyz4hhws0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221130/image.7ecmyz4hhws0.webp)
 
 > 消息队列的弊端
 

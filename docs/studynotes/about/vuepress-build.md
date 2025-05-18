@@ -24,7 +24,7 @@ tags:
 
 #### 验证
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/about/images/build/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/about/images/build/01.png)
 
 > 环境安装成功了
 
@@ -142,7 +142,7 @@ Hexo 一直驱动着 Vue 的文档 —— 事实上，在把我们的主站从 H
   textColor: '#6854A1' # 可选，默认var(--textColor)
 - name: vuepress-theme-vdoing
   desc: 🚀一款简洁高效的VuePress 知识管理&博客 主题
-  avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200409124835.png
+  avatar: https://cdn.jsdmirror.com//gh/xugaoyi/image_store/blog/20200409124835.png
   link: https://doc.xugaoyi.com/
   bgColor: '#CBEAFA'
   textColor: '#6854A1'

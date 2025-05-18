@@ -25,7 +25,7 @@ tags:
   + **渐进式**：`Vue`可以自底向上逐层的应用，简单应用只需要一个轻量小巧的核心库，复杂应用可以引入各式各样的Vue插件
 + 作者：尤雨溪
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.6u1cgo3gfbg0.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.6u1cgo3gfbg0.jpg)
 
 ### Vue 特点
 
@@ -34,15 +34,15 @@ tags:
 3. 它本身只关注 UI，可以引入其它第三方库开发项目
 4. 采用**组件化**模式，提高代码复用率、且让代码更好维护
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.6086qdb6ztw0.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.6086qdb6ztw0.jpg)
 
 5. **声明式**编码，让编码人员无需直接操作DOM，提高开发效率
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.187vtzqdopek.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.187vtzqdopek.jpg)
 
 6. 使用**虚拟 DOM** 和 **Diff 算法**，尽量复用 `DOM` 节点
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.71l0av4cbac0.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.71l0av4cbac0.jpg)
 
 ### 与其他 JS 框架的关联
 
@@ -134,11 +134,11 @@ tags:
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.a868zxd2fkc.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.a868zxd2fkc.jpg)
 
 ### Vue DevTools
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image.3pf39pfbw0w0.jpg)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image.3pf39pfbw0w0.jpg)
 
 + 可以修改数据
 

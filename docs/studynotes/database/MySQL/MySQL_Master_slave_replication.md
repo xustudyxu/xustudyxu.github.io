@@ -17,7 +17,7 @@ tags:
 
 MySQL支持一台主库同时向多台从库进行复制， 从库同时也可以作为其他从服务器的主库，实现链状复制。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.24v1v6o3apb4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221006/image.24v1v6o3apb4.webp)
 
 MySQL 复制的优点主要包含以下三个方面：
 
@@ -29,7 +29,7 @@ MySQL 复制的优点主要包含以下三个方面：
 
 MySQL主从复制的核心就是 二进制日志，具体的过程如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.tj4re5i0yv4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221006/image.tj4re5i0yv4.webp)
 
 从上图来看，复制分成三步：
 
@@ -41,7 +41,7 @@ MySQL主从复制的核心就是 二进制日志，具体的过程如下：
 
 ### 准备
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.3mds0xiaekw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221006/image.3mds0xiaekw.webp)
 
 准备好两台服务器之后，在上述的两台服务器中分别安装好MySQL，并完成基础的初始化准备(安装、密码配置等操作)工作。 其中：
 
@@ -201,5 +201,5 @@ insert into tb_user(id,name,sex) values(null,'Tom', '1'),(null,'Trigger','0'),(n
 
 2. 在从库 192.168.91.167 中查询数据，验证主从是否同步
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221006/image.2jg288ijubc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221006/image.2jg288ijubc0.webp)
 

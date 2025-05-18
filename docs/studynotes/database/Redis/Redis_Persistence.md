@@ -40,19 +40,19 @@ Fork 的作用是复制一个与当前进程一样的进程。新进程的所有
 
 流程图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.kgx5hx0cyv4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.kgx5hx0cyv4.webp)
 
 **文件名**
 
 redis.conf 中默认的 RDB 配置文件名为 dump.rdb，可以修改文件名，但是一般默认就可以了,这个文件会放在redis启动目录中
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.3wieo8h4esc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.3wieo8h4esc0.webp)
 
 **文件路径**
 
 rdb 文件的保存路径，也可以修改。默认为 Redis 启动时命令行所在的目录下
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.7dryktwh2e00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.7dryktwh2e00.webp)
 
 **备份策略**
 
@@ -62,7 +62,7 @@ RDB 是整个内存的压缩过的 Snapshot，RDB 的数据结构，可以配置
 - 如果 100 个 key 发生改变（新增，删除，修改），则 5 分钟后备份一次
 - 如果 10000 个 key 发生改变（新增，删除，修改），则 1 分钟后备份一次
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.qw7nuxyozls.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.qw7nuxyozls.webp)
 
 格式：
 
@@ -134,7 +134,7 @@ cp /opt/dump.rdb /usr/local/bin/dump.rdb
 - 节省磁盘空间
 - 恢复速度快
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.64pgxyxrcas0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.64pgxyxrcas0.webp)
 
 缺点：
 
@@ -158,7 +158,7 @@ cp /opt/dump.rdb /usr/local/bin/dump.rdb
 
 （4）Redis 服务重启时，会重新 load 加载 AOF 文件中的写操作达到数据恢复的目的；
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.7dtmu6toxa80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.7dtmu6toxa80.webp)
 
 ### AOF开启
 
@@ -166,7 +166,7 @@ cp /opt/dump.rdb /usr/local/bin/dump.rdb
 
 AOF **默认不开启**，如果想开启，在 redis.conf 中配置文件里，将 `appendonly no` 改为 `appendonly yes`。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.7ig8h7innrk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.7ig8h7innrk0.webp)
 
 AOF 文件默认的保存路径，同 RDB 的路径一致，如果修改，可以在配置文件修改。
 
@@ -184,7 +184,7 @@ appendfsync everysec： 每秒同步，每秒记入日志一次，如果宕机�
 
 appendfsync no ：redis 不主动进行同步，把同步时机交给操作系统。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.1r1exeuk52qo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.1r1exeuk52qo.webp)
 
 > **AOF 启动/修复/恢复**
 
@@ -213,7 +213,7 @@ AOF 文件持续增长而过大时，会 fork 出一条新进程来将文件重�
 
 需要用到新的指令 `no-appendfsync-on-rewrite：`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.4mczo73f8tq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.4mczo73f8tq0.webp)
 
 如果 `no-appendfsync-on-rewrite` 改为 yes，代表不写入 AOF 文件，只写入缓存，用户请求不会阻塞，但是在这段时间如果宕机会丢失这段时间的缓存数据。（降低数据安全性，提高 性能）
 
@@ -227,7 +227,7 @@ Redis 会记录上次重写时的 AOF 大小，默认配置是当 AOF 文件大�
 
 触发条件需要用到 `auto-aof-rewrite-percentage` 和 `auto-aof-rewrite-min-size` 指令：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.cstsvqyigo8.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.cstsvqyigo8.webp)
 
 - `auto-aof-rewrite-percentage`：设置重写的基准值，文件达到 100% 时开始重写（文件是原来重写后文件的 2 倍时触发）
 - `auto-aof-rewrite-min-size`：设置重写的基准值，最小文件 64MB。达到这个值开始重写
@@ -245,7 +245,7 @@ Redis 会记录上次重写时的 AOF 大小，默认配置是当 AOF 文件大�
 - 主进程把 `aof_rewrite_buf` 中的数据写入到新的 AOF 文件。
 - 使用新的 AOF 文件覆盖旧的 AOF 文件，完成 AOF 重写
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.4lqce1ojkae0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.4lqce1ojkae0.webp)
 
 ### RDB优缺点
 
@@ -263,7 +263,7 @@ Redis 会记录上次重写时的 AOF 大小，默认配置是当 AOF 文件大�
 
 ## 两者总结
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220618/image.bgdt2y98ndc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220618/image.bgdt2y98ndc.webp)
 
 ### 用哪个好
 

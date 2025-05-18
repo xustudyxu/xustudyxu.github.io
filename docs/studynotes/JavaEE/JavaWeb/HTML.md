@@ -30,7 +30,7 @@ tags:
 
 **目前国内浏览器使用排行**
 
-![image-20220512140814180](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image-20220512140814180.2nx5d3jt3rc0.webp)
+![image-20220512140814180](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image-20220512140814180.2nx5d3jt3rc0.webp)
 
 ### 浏览器的组成部分
 
@@ -71,7 +71,7 @@ Web标准，使得Web开发更加容易。Web标准由万维网联盟（W3C）�
 
 简单理解，结构写到html文件中，表现写到css文件中，行为写到Javascript文件中。
 
-![hs](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/hs.17x8zr87u5uk.webp)
+![hs](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/hs.17x8zr87u5uk.webp)
 
 ## VSCode的基本使用
 
@@ -106,7 +106,7 @@ HTML 的全称为 **超文本标记语言（Hyper Text Markup Language）**
 
 组成文档结构的元素只有4个，这也是任何HTML文档都必须有的元素。
 
-![image-20220512145323821](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image-20220512145323821.6bqbqv7ngts0.webp)
+![image-20220512145323821](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image-20220512145323821.6bqbqv7ngts0.webp)
 
 - `<head>`元素提供了关于这篇文档的信息。
 - `<title>`定义页面标题。
@@ -114,7 +114,7 @@ HTML 的全称为 **超文本标记语言（Hyper Text Markup Language）**
 
 ## 完整的文档结构
 
-![image-20220512145132232](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221011/image-20220512145132232.2x2ly0rd1mw0.webp)
+![image-20220512145132232](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221011/image-20220512145132232.2x2ly0rd1mw0.webp)
 
 **文档结构说明：**
 
@@ -154,19 +154,19 @@ HTML 的全称为 **超文本标记语言（Hyper Text Markup Language）**
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.3srwly8udbs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.3srwly8udbs0.webp)
 
 ## HTML元素
 
 元素（Element）：由开始标签、闭合标签以及标签之间的内容组成。
 
-![image-20220512144243567](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220907/image-20220512144243567.5f3nfbvh51s0.webp)
+![image-20220512144243567](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220907/image-20220512144243567.5f3nfbvh51s0.webp)
 
 ## HTML 属性
 
 元素可以用属性进行配置。属性由属性名和属性值组成，例如：
 
-![image-20220512145606599](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image-20220512145606599.41m8mz7i5xk0.webp)
+![image-20220512145606599](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image-20220512145606599.41m8mz7i5xk0.webp)
 
 - 属性总是写在开始标签中。
 - 属性名和元素名之间要有一个空格。
@@ -225,7 +225,7 @@ HTML标签有很多，这里我们学习最为常用的，后面有些较少用�
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.6g1b3ze110w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.6g1b3ze110w0.webp)
 
 #### 段落标签
 
@@ -253,7 +253,7 @@ HTML标签有很多，这里我们学习最为常用的，后面有些较少用�
 </html>
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.2vcks3av0ly0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.2vcks3av0ly0.webp)
 
 #### 换行标签
 
@@ -281,7 +281,7 @@ HTML标签有很多，这里我们学习最为常用的，后面有些较少用�
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.2rhjnouml700.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.2rhjnouml700.webp)
 
 #### div标签
 
@@ -335,17 +335,17 @@ HTML标签有很多，这里我们学习最为常用的，后面有些较少用�
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.1oc4rgn7uls0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.1oc4rgn7uls0.webp)
 
 ### 排版标签总结
 
-![image-20220512151329222](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image-20220512151329222.6ujyeer7qb40.webp)
+![image-20220512151329222](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image-20220512151329222.6ujyeer7qb40.webp)
 
 ## 文本格式化标签(熟记)
 
 在网页中，有时需要为文字设置粗体、斜体或下划线效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。
 
-![image-20220512151423166](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image-20220512151423166.2z4cxdufhau0.webp)
+![image-20220512151423166](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image-20220512151423166.2z4cxdufhau0.webp)
 
 > 注意点: 
 > strong、em 、del 、ins 标签(推荐使用)有语义，起到加重语气的效果;
@@ -376,7 +376,7 @@ HTML标签有很多，这里我们学习最为常用的，后面有些较少用�
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.59v6v176q5k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.59v6v176q5k0.webp)
 
 ## 图像标签img (重点)
 
@@ -427,7 +427,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 - 运行结果:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.5cuf1m4vaco0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.5cuf1m4vaco0.webp)
 
 ## 链接标签(重点)
 
@@ -535,7 +535,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.58kprf4tkug0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.58kprf4tkug0.webp)
 
 ## 网页的icon图标
 
@@ -565,7 +565,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.61wg2v579680.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.61wg2v579680.webp)
 
 ## 使用特殊字符
 
@@ -614,7 +614,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 - 运行结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220905/image.54tmfe59jqo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220905/image.54tmfe59jqo0.webp)
 
 ## 注释标签
 
@@ -756,7 +756,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.1rnyo1hwzysg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220906/image.1rnyo1hwzysg.webp)
 
 ### 有序列表
 
@@ -804,7 +804,7 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.6013i2k3vo80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220906/image.6013i2k3vo80.webp)
 
 ### 自定义序列表
 
@@ -854,4 +854,4 @@ HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220906/image.6hj62aqf7os0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220906/image.6hj62aqf7os0.webp)

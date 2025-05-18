@@ -37,7 +37,7 @@ tags:
 
 目前一些前端组件库也提供了相应的上传组件，但是底层原理还是基于form表单的文件上传。例如ElementUI中提供的upload上传组件:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7c889w396l00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.7c889w396l00.webp)
 
 服务端要接收客户端页面上传的文件，通常都会使用Apache的两个组件:
 
@@ -71,7 +71,7 @@ public R<String> upload(MultipartFile file){
 
 可以直接使用资料中提供的上传页面，位置:资料/文件上传下载页面/upload.html
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.43g0hvzynem0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.43g0hvzynem0.webp)
 
 + 配置yml
 
@@ -177,7 +177,7 @@ public class CommonController {
 
 + 结果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.46mizk8tizq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/SpringBoot2/images/06/image.46mizk8tizq0.webp)
 
 ## 新增菜品
 
@@ -185,7 +185,7 @@ public class CommonController {
 
 后台系统中可以管理菜品信息，通过新增功能来添加一个新的菜品，在添加菜品时需要选择当前菜品所属的菜品分类，并且需要上传菜品图片，在移动端会按照菜品分类来展示对应的菜品信息。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.2382l0rlbmyo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.2382l0rlbmyo.webp)
 
 ### 数据模型
 
@@ -198,13 +198,13 @@ public class CommonController {
 
 菜品表dish:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5j6ur6bf6g00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.5j6ur6bf6g00.webp)
 
 #### 数据模型-dish_flavor
 
 口味表dish_flavor:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5vctlk83oyw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.5vctlk83oyw0.webp)
 
 ### 代码开发
 
@@ -307,7 +307,7 @@ public class DishController {
 
 开发新增菜品功能，其实就是在服务端编写代码去处理前端页面发送的这4次请求即可。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.2aa7gr2w151c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.2aa7gr2w151c.webp)
 
 + 编写处理器
 
@@ -333,21 +333,21 @@ public class DishController {
     }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5z3tdz9z8k80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.5z3tdz9z8k80.webp)
 
 #### 接受页面提交的数据
 
 + 填写信息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.5ojudi0jva40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.5ojudi0jva40.webp)
 
 + 保存
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.3piqep175940.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.3piqep175940.webp)
 
 > 2000是2000分钱
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.64ch1hrj61w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.64ch1hrj61w0.webp)
 
 #### 导入DTO
 
@@ -375,7 +375,7 @@ DTO,全程Data Transfer Object,即数据传输对象，一般用于展示层与�
 
 > 测试参数能否正确封装
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220510/image.1nawuzxpo0bk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220510/image.1nawuzxpo0bk.webp)
 
 #### 保存数据到菜品表和菜品口味表
 
@@ -446,15 +446,15 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 + 添加菜品
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.5logfon9p5k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220511/image.5logfon9p5k0.webp)
 
 + 查询数据库中的菜品表
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.6kgmfs3g40s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.6kgmfs3g40s0.webp)
 
 + 查询数据库中的口味表
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/image.5ssratixkhs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/image.5ssratixkhs0.webp)
 
 ## 菜品信息分页显示
 
@@ -463,7 +463,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 系统中的菜品数据很多的时候，如果在一个页面中全部展示出来会显得比较乱，不便于查看，所以一般的系统中
 心都会以分页的方式来展示列表数据。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.7epfrytxn800.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220511/image.7epfrytxn800.webp)
 
 ### 代码开发
 
@@ -526,7 +526,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 ### 功能测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.6em3uzq25tc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220511/image.6em3uzq25tc0.webp)
 
 ## 修改菜品
 
@@ -534,7 +534,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 在菜品管理列表页面点击修改按钮，跳转到修改菜品页面，在修改页面回显菜品相关信息并进行修改，最后点击确定按钮完成操作
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.3km37iui29a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220511/image.3km37iui29a0.webp)
 
 ### 代码开发
 
@@ -655,4 +655,4 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
 + 宫爆鸡丁价格修改为15
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220511/image.jthifi8ioo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220511/image.jthifi8ioo0.webp)

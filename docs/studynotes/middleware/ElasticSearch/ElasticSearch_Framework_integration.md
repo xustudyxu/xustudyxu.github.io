@@ -17,11 +17,11 @@ Spring Data 是一个用于简化数据库、非关系型数据库、索引库�
 
 Spring Data 的官网：https://spring.io/projects/spring-data
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.4kyks8co88e0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.4kyks8co88e0.webp)
 
 Spring Data 常用的功能模块如下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.4kgd0i31uq00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.4kgd0i31uq00.webp)
 
 ### Spring Data Elasticsearch介绍
 
@@ -29,7 +29,7 @@ Spring Data Elasticsearch 基于 spring data API 简化 Elasticsearch 操作，�
 
 官方网站: [https://spring.io/projects/spring-data-elasticsearch]()
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.5zeco8tnalw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.5zeco8tnalw0.webp)
 
 ### Spring Data Elasticsearch版本对比
 
@@ -37,7 +37,7 @@ Spring Data Elasticsearch 基于 spring data API 简化 Elasticsearch 操作，�
 
 版本对比以官网为主，查看地址：[https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#preface.versions]()
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.4riecmglz300.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.4riecmglz300.webp)
 
 我的elasticSearch版本是7.8.0，所以所有版本选择如下：
 
@@ -436,7 +436,7 @@ public class SpringDataESSearchTest {
 
 Spark Streaming 是 Spark core API 的扩展，支持实时数据流的处理，并且具有可扩展，高吞吐量，容错的特点。数据可以从许多来源获取，如 Kafka，Flume，Kinesis 或 TCP sockets，并且可以使用复杂的算法进行处理，这些算法使用诸如 map，reduce，join 和 window 等高级函数表示。最后，处理后的数据可以推送到文件系统，数据库等。实际上，您可以将 Spark 的机器学习和图形处理算法应用于数据流。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.q7eebpwqnls.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.q7eebpwqnls.webp)
 
 ### 框架搭建
 
@@ -547,7 +547,7 @@ object SparkStreamingESTest {
 
 ### Flink框架介绍
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220708/image.1towl1ndky9.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220708/image.1towl1ndky9.webp)
 
 Apache Spark 是一种基于内存的快速、通用、可扩展的大数据分析计算引擎。
 

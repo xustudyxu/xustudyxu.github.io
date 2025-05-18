@@ -63,7 +63,7 @@ cd LuaJIT-2.0.5
 make && make install
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.50moe87h8k00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.50moe87h8k00.webp)
 
 + 下载 `lua-nginx-module`
 
@@ -105,7 +105,7 @@ make && make install
 
 1. 如果启动 Nginx 出现如下错误:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.3mn8xd7igx20.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.3mn8xd7igx20.webp)
 
 解决方案：
 
@@ -117,7 +117,7 @@ make && make install
 
 2. 如果启动 Nginx 出现以下错误信息
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.6h5kw6afg4w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.6h5kw6afg4w0.webp)
 
 分析原因：因为 `lua-nginx-module` 是来自 OpenResty，错误中提示的 resty.core 是 OpenRestry 的核心模块，对其下的很多函数进行了优化等工作。以前的版本默认不会把该模块编译进去，所以需要使用的话，我们得手动安装，或者禁用就可以。但是最新的 `lua-nginx-module` 模块已经强制性安装了该模块，所以此处因为缺少 resty 模块导致的报错信息。
 
@@ -142,7 +142,7 @@ location /lua{
 
 配置成功后，启动 Nginx，通过浏览器进行访问，如果获取到如下结果，则证明安装成功。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.6dtqzlgzk5s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.6dtqzlgzk5s0.webp)
 
 ### 方式二
 
@@ -233,11 +233,11 @@ systemctl stop Nginx
 
 + 通过浏览器访问测试`192.168.91.200`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.502009iyfd00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.502009iyfd00.webp)
 
 + 通过浏览器访问测试`192.168.91.200/lua`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.4r1610qz44g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.4r1610qz44g0.webp)
 
 ### OpenResty卸载
 
@@ -272,7 +272,7 @@ rm -rf  此处跟查找出来的 Openresty 文件
 
 下图显示了执行指令的顺序。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.3xichpazdxy0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.3xichpazdxy0.webp)
 
 先来解释下 * 的作用
 
@@ -1091,11 +1091,11 @@ location /getByGender {
 
 访问测试：`http://192.168.91.200/getByGender?name=冯荣旭&gender=1`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.43wr3kwp3ag0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.43wr3kwp3ag0.webp)
 
 访问测试：`http://192.168.91.200/getByGender?name=冯荣旭`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.44pzvk2lzlk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.44pzvk2lzlk0.webp)
 
 ## ngx_lua操作Redis
 
@@ -1164,7 +1164,7 @@ location /redis {
 
 运行测试效果
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220807/image.4iflh85c7ma0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220807/image.4iflh85c7ma0.webp)
 
 + 查询redis
 

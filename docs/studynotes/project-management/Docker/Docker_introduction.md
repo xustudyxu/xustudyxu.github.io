@@ -13,7 +13,7 @@ tags:
 
 [[toc]]
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.4xkoym4mgts0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.4xkoym4mgts0.webp)
 
 ## 什么是虚拟化技术
 
@@ -71,7 +71,7 @@ tags:
 
 环境配置相当麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能从根本上解决问题，**软件可以带环境安装**？也就是说，<mark>安装的时候，把原始环境一模一样地复制过来。开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题</mark>。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.50gkmh7ylm40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.50gkmh7ylm40.webp)
 
 之前在服务器配置一个应用的运行环境，要安装各种软件，就拿尚硅谷电商项目的环境来说，Java/RabbitMQ/MySQL/JDBC驱动包等。安装和配置这些东西有多麻烦就不说了，它还不能跨平台。假如我们是在 Windows 上安装的这些环境，到了 Linux 又得重新装。况且就算不跨操作系统，换另一台同样操作系统的服务器，要**移植**应用也是非常麻烦的。
 
@@ -137,7 +137,7 @@ Docker 和容器技术为什么会这么火爆？说白了，就是因为它「�
 
 Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的APP（可以是一个WEB应用或数据库应用等等）及其运行环境能够做到“<mark>一次镜像，处处运行</mark>”。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.24ur8bklcyyo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.24ur8bklcyyo.webp)
 
 **Linux容器技术的出现就解决了这样一个问题，而 Docker 就是在它的基础上发展过来的**。将应用打成镜像，通过镜像成为运行在Docker容器上面的实例，而 Docker容器在任何操作系统上都是一致的，这就实现了跨平台、跨服务器。<mark>只需要一次配置好环境，换到别的机子上就可以一键部署好，大大简化了操作</mark>。
 
@@ -149,9 +149,9 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
 
 + 容器发展简史
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.21qlt9t32ebk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.21qlt9t32ebk.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.7cxtwgd9ems0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.7cxtwgd9ems0.webp)
 
 + 传统虚拟机技术
 
@@ -165,7 +165,7 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
 
 **传统虚拟机技术基于安装在主操作系统上的虚拟机管理系统(如:VirtualBox和VMWare等)，创建虚拟机(虚拟出各种硬件)，在虚拟机上安装从操作系统，在从操作系统中安装部署各种应用。**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.5qzk2axr1kg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.5qzk2axr1kg.webp)
 
 - 虚拟机的缺点：
 
@@ -183,7 +183,7 @@ Linux容器是与系统其他部分隔离开的一系列进程，从另一个镜
 
 <mark>Linux 容器不是模拟一个完整的操作系统</mark>而是对进程进行隔离。有了容器，就可以将软件运行所需的所有资源打包到一个隔离的容器中。**容器与虚拟机不同，不需要捆绑一整套操作系统**，只需要软件工作所需的库资源和设置。系统因此而变得高效轻量并保证部署在任何环境中的软件都能始终如一地运行。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.2k3leu2j7220.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.2k3leu2j7220.webp)
 
 **Docker容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统虚拟机则是在硬件层面实现虚拟化。与传统的虚拟机相比，Docker优势体现为启动速度快、占用体积小。**
 
@@ -191,7 +191,7 @@ Linux容器是与系统其他部分隔离开的一系列进程，从另一个镜
 
   关系:对比-指向**底层原理**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.grlmiuj89ig.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.grlmiuj89ig.webp)
 
 比较了 Docker 和传统虚拟化方式的不同之处：
 
@@ -229,27 +229,27 @@ Docker是<mark>内核级虚拟化</mark>，其不像传统的虚拟化技术一�
 
 ## Docker应用场景
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.14d1sdq1zk0w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.14d1sdq1zk0w.webp)
 
 + 哪些企业在使用
 
 + 新浪
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.y1hz6acpzgw.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.y1hz6acpzgw.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.wouw5m7r1bk.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.wouw5m7r1bk.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.5jk5akd0ka00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.5jk5akd0ka00.webp)
 
 + 美团
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.47bmw2u4u7g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.47bmw2u4u7g0.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.3uzygclvkhu0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.3uzygclvkhu0.webp)
 
 + 蘑菇街
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220903/image.7am4wi9y6vg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220903/image.7am4wi9y6vg0.webp)
 
 ## Docker去哪下
 

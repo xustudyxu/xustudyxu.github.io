@@ -24,7 +24,7 @@ Spring Cloud封装了Netflix 公司开发的Eureka模块来实现服务治理
 Eureka采用了CS的设计架构，Eureka Sever作为服务注册功能的服务器，它是服务注册中心。而系统中的其他微服务，使用Eureka的客户端连接到 Eureka Server并维持心跳连接。这样系统的维护人员就可以通过Eureka Server来监控系统中各个微服务是否正常运行。
 
 在服务注册与发现中，有一个注册中心。当服务器启动的时候，会把当前自己服务器的信息比如服务地址通讯地址等以别名方式注册到注册中心上。另一方(消费者服务提供者)，以该别名的方式去注册中心上获取到实际的服务通讯地址，然后再实现本地RPC调用RPC远程调用框架核心设计思想:在于注册中心，因为使用注册中心管理每个服务与服务之间的一个依赖关系(服务治理概念)。在任何RPC远程框架中，都会有一个注册中心存放服务地址相关信息(接口地址)
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220813/image.5e5dv8ys3mc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220813/image.5e5dv8ys3mc0.webp)
 
 **Eureka包含两个组件:Eureka Server和Eureka Client**
 
@@ -145,7 +145,7 @@ public class EurekaMain7001 {
 
 5.测试运行`EurekaMain7001`，浏览器输入`http://localhost:7001/`回车，会查看到Spring Eureka服务主页。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220813/image.6u9bkkovwc80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220813/image.6u9bkkovwc80.webp)
 
 ## 支付微服务8001入驻进EurekaServer
 
@@ -196,7 +196,7 @@ public class PaymentMain8001 {
 + 浏览器输入 - http://localhost:7001/ 主页内的Instances currently registered with Eureka会显示cloud-provider-payment8001的配置文件application.yml设置的应用名`cloud-payment-service`
   
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.4dmsitp0l9g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.4dmsitp0l9g0.webp)
 
 ```xml
 spring:
@@ -269,7 +269,7 @@ public class OrderMain80
 
 > 因为我的80端口被进程4占用了，我把80端口修改为81
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.4njizhxa1fg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.4njizhxa1fg0.webp)
 
 注意，application.yml配置中层次缩进和空格，两者不能少，否则，会抛出异常`Failed to bind properties under 'eureka.client.service-url' to java.util.Map <java.lang.String, java.lang.String>`。
 
@@ -277,7 +277,7 @@ public class OrderMain80
 
 1.Eureka集群原理说明
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.68sh6sha7jk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.68sh6sha7jk0.webp)
 
 服务注册：将服务信息注册进注册中心
 
@@ -309,7 +309,7 @@ public class OrderMain80
 
 创建cloud-eureka-server7002工程，过程参考[EurekaServer服务端安装](/Spring/SpringCloud/Eureka_/#eurekaserver服务端安装)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.6yctjdoyzgc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.6yctjdoyzgc0.webp)
 
 + 找到C:\Windows\System32\drivers\etc路径下的hosts文件，修改映射配置添加进hosts文件
 
@@ -358,11 +358,11 @@ eureka:
 
 + 访问:[http://eureka7001.com:7001/](http://eureka7001.com:7001/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.78r2yimub340.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.78r2yimub340.webp)
 
 + 访问:[http://eureka7002.com:7002/](http://eureka7002.com:7002/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.3kkbenq2jtq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.3kkbenq2jtq0.webp)
 
 ## 订单支付两微服务注册进Eureka集群
 
@@ -387,7 +387,7 @@ eureka:
   3. 再要启动消费者，80
   4. 浏览器输入 - [http://localhost:81/consumer/payment/get/1](http://localhost:81/consumer/payment/get/1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.3j7veuxdbc60.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.3j7veuxdbc60.webp)
 
 ## 支付微服务集群配置
 
@@ -474,15 +474,15 @@ ApplicationContextBean - 提前说一下Ribbon的负载均衡功能
 
 + 第一次
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.4pzy4oz41vy0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.4pzy4oz41vy0.webp)
 
 + 第二次
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.5o1q5hgjikg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.5o1q5hgjikg0.webp)
 
 + 第三次
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.2dzbwp40wpz4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.2dzbwp40wpz4.webp)
 
 结果：负载均衡效果达到，**8001/8002端口交替出现**
 
@@ -490,7 +490,7 @@ Ribbon和Eureka整合后Consumer可以直接调用服务而不用再关心地址
 
 <mark>相互注册，相互守望</mark>
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.1y7s8enxcq4g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.1y7s8enxcq4g.webp)
 
 ## actuator微服务信息完善
 
@@ -595,7 +595,7 @@ public class PaymentMain8001 {
 
 浏览器输出：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.s1rj2eu7u1c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.s1rj2eu7u1c.webp)
 
 后台输出：
 
@@ -628,7 +628,7 @@ EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NO
 
 默认情况下，如果EurekaServer在一定时间内没有接收到某个微服务实例的心跳，EurekaServer将会注销该实例(默认90秒)。但是当网络分区故障发生(延时、卡顿、拥挤)时，微服务与EurekaServer之间无法正常通信，以上行为可能变得非常危险了——因为微服务本身其实是健康的，此时本不应该注销这个微服务。Eureka通过“自我保护模式”来解决这个问题——当EurekaServer节点在短时间内丢失过多客户端时(可能发生了网络分区故障)，那么这个节点就会进入自我保护模式。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.23g8spa37tz4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.23g8spa37tz4.webp)
 
 自我保护机制∶默认情况下EurekaClient定时向EurekaServer端发送心跳包
 

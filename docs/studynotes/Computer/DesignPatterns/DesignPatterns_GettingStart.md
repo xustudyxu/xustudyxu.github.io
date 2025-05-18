@@ -72,7 +72,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，类使用包含类名、属性(field) 和方法(method) 且带有分割线的矩形来表示，比如下图表示一个Employee类，它包含 name,age 和 address 这3个属性，以及work()方法。 
 
-![Employee](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/Employee.2qm8gfjo6o40.jpg)
+![Employee](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/Employee.2qm8gfjo6o40.jpg)
 
 属性/方法名称前加的加号和减号表示了这个属性/方法的可见性，UML类图中表示可见性的符号有三种：
 
@@ -92,7 +92,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 **举个栗子：**
 
-![demo](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/demo.7j2ooqq63ag0.png)
+![demo](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/demo.7j2ooqq63ag0.png)
 
 上图Demo类定义了三个方法：
 
@@ -110,13 +110,13 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 1. **单向关联**
 
-![customer_address](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/customer_address.3esgjv1keuw0.webp)
+![customer_address](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/customer_address.3esgjv1keuw0.webp)
 
 在UML类图中单向关联用一个带箭头的实线表示。上图表示每个顾客都有一个地址，这通过让Customer类持有一个类型为Address的成员变量类实现。
 
 2. **双向关联**
 
-![customer_product](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/customer_product.b68px5fzlvc.webp)
+![customer_product](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/customer_product.b68px5fzlvc.webp)
 
 从上图中我们很容易看出，所谓的双向关联就是双方各自持有对方类型的成员变量。
 
@@ -124,7 +124,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 3. **自关联**
 
-![node](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/node.4a0165cvkk00.webp)
+![node](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/node.4a0165cvkk00.webp)
 
 自关联在UML类图中用一个带有箭头且指向自身的线表示。上图的意思就是Node类包含类型为Node的成员变量，也就是“自己包含自己”
 
@@ -136,7 +136,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，聚合关系可以用带空心菱形的实线来表示，菱形指向整体。下图所示是大学和教师的关系图：
 
-![image-20191229173422328](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image-20191229173422328.30dulf2ybho0.webp)
+![image-20191229173422328](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image-20191229173422328.30dulf2ybho0.webp)
 
 ##### 组合关系
 
@@ -146,7 +146,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，组合关系用带实心菱形的实线来表示，菱形指向整体。下图所示是头和嘴的关系图：
 
-![image-20191229173455149](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image-20191229173455149.2sasg6juxfq0.webp)
+![image-20191229173455149](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image-20191229173455149.2sasg6juxfq0.webp)
 
 ##### 依赖关系
 
@@ -154,7 +154,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，依赖关系使用带箭头的虚线来表示，箭头从使用类指向被依赖的类。下图所示是司机和汽车的关系图，司机驾驶汽车：
 
-![image-20191229173518926](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image-20191229173518926.2yatj3eoy5i0.webp)
+![image-20191229173518926](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image-20191229173518926.2yatj3eoy5i0.webp)
 
 ##### 继承关系
 
@@ -162,7 +162,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，泛化关系用带空心三角箭头的实线来表示，箭头从子类指向父类。在代码实现时，使用面向对象的继承机制来实现泛化关系。例如，Student 类和 Teacher 类都是 Person 类的子类，其类图如下图所示：
 
-![image-20191229173539838](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image-20191229173539838.3ltbco6pcoq0.webp)
+![image-20191229173539838](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image-20191229173539838.3ltbco6pcoq0.webp)
 
 ##### 实现关系
 
@@ -170,7 +170,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 在 UML 类图中，实现关系使用带空心三角箭头的虚线来表示，箭头从实现类指向接口。例如，汽车和船实现了交通工具，其类图如图 9 所示。
 
-![image-20191229173554296](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/image-20191229173554296.49wvqne4l6e0.webp)
+![image-20191229173554296](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/image-20191229173554296.49wvqne4l6e0.webp)
 
 ## 软件设计原则
 
@@ -188,7 +188,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 分析：`搜狗输入法` 的皮肤是输入法背景图片、窗口颜色和声音等元素的组合。用户可以根据自己的喜爱更换自己的输入法的皮肤，也可以从网上下载新的皮肤。这些皮肤有共同的特点，可以为其定义一个抽象类（`AbstractSkin`），而每个具体的皮肤（`DefaultSpecificSkin` 和`HeimaSpecificSkin`）是其子类。用户窗体可以根据需要选择或者增加新的主题，而不需要修改原代码，所以它是满足开闭原则的。
 
-![open-close](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20230218/open-close.4v17y1nvbo60.webp)
+![open-close](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20230218/open-close.4v17y1nvbo60.webp)
 
 ### 里氏代换原则
 
@@ -202,7 +202,7 @@ UML 从目标系统的不同角度出发，定义了用例图、类图、对象�
 
 【例】正方形不是长方形。
 
-![正方形不是长方形](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/正方形不是长方形.3x1lwobrr5o0.webp)
+![正方形不是长方形](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/正方形不是长方形.3x1lwobrr5o0.webp)
 
 在数学领域里，正方形毫无疑问是长方形，它是一个长宽相等的长方形。所以，我们开发的一个与几何图形相关的软件系统，就可以顺理成章的让正方形继承自长方形。
 
@@ -296,7 +296,7 @@ public class RectangleDemo {
 
 如何改进呢？此时我们需要重新设计他们之间的关系。抽象出来一个四边形接口(Quadrilateral)，让Rectangle类和Square类实现Quadrilateral接口
 
-![正方形不是长方形改进](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/正方形不是长方形改进.2exauh7vwizo.webp)
+![正方形不是长方形改进](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/正方形不是长方形改进.2exauh7vwizo.webp)
 
 ::: details Click to view the code written by the author
 
@@ -412,7 +412,7 @@ public class RectangleDemo {
 
 **类图如下：**
 
-![依赖倒转原则](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/依赖倒转原则.6t9z1dgbpy40.webp)
+![依赖倒转原则](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/依赖倒转原则.6t9z1dgbpy40.webp)
 
 代码如下：
 
@@ -550,7 +550,7 @@ Process finished with exit code 0
 
 **类图如下：**
 
-![依赖倒转原则改进](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/依赖倒转原则改进.9kn2gsuc6qg.webp)
+![依赖倒转原则改进](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/依赖倒转原则改进.9kn2gsuc6qg.webp)
 
 **硬盘接口：**
 
@@ -696,11 +696,11 @@ Process finished with exit code 0
 
 我们需要创建一个<mark>某马</mark>品牌的安全门，该安全门具有防火、防水、防盗的功能。可以将防火，防水，防盗功能提取成一个接口，形成一套规范。类图如下：
 
-![接口隔离原则](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/接口隔离原则.74nz6pdn1a80.webp)
+![接口隔离原则](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/接口隔离原则.74nz6pdn1a80.webp)
 
 上面的设计我们发现了它存在的问题，某马品牌的安全门具有防盗，防水，防火的功能。现在如果我们还需要再创建一个传智品牌的安全门，而该安全门只具有防盗、防水功能呢？很显然如果实现 `SafetyDoor` 接口就违背了接口隔离原则，那么我们如何进行修改呢？看如下类图：
 
-![接口隔离原则1](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/接口隔离原则1.aux2v0025g8.webp)
+![接口隔离原则1](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/接口隔离原则1.aux2v0025g8.webp)
 
 代码如下：
 
@@ -843,7 +843,7 @@ Process finished with exit code 0
 
 类图如下：
 
-![迪米特法则](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/迪米特法则.77kxu9rxvms0.webp)
+![迪米特法则](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/迪米特法则.77kxu9rxvms0.webp)
 
 代码如下：
 
@@ -986,9 +986,9 @@ Process finished with exit code 0
 
 汽车按“动力源”划分可分为汽油汽车、电动汽车等；按“颜色”划分可分为白色汽车、黑色汽车和红色汽车等。如果同时考虑这两种分类，其组合就很多。类图如下： 
 
-![合成复用原则](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/合成复用原则.6n7kvu4quv40.webp)
+![合成复用原则](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/合成复用原则.6n7kvu4quv40.webp)
 
 从上面类图我们可以看到使用继承复用产生了很多子类，如果现在又有新的动力源或者新的颜色的话，就需要再定义新的类。我们试着将继承复用改为聚合复用看一下。
 
-![合成复用原则1](https://cdn.jsdelivr.net/gh/xustudyxu/picx-images-hosting@master/20231230/合成复用原则1.4kdzyh1ssq00.webp)
+![合成复用原则1](https://cdn.jsdmirror.com//gh/xustudyxu/picx-images-hosting@master/20231230/合成复用原则1.4kdzyh1ssq00.webp)
 

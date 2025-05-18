@@ -21,15 +21,15 @@ Redis 客户端可以订阅任意数量的频道。
 
 订阅/发布消息图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220614/image.4sun96fpzk40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220614/image.4sun96fpzk40.webp)
 
 下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220614/image.1t1hng9hujgg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220614/image.1t1hng9hujgg.webp)
 
 当有新消息通过 PUBLISH 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/20220614/image.4v6xis5dem00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/20220614/image.4v6xis5dem00.webp)
 
 ## 指令与描述
 

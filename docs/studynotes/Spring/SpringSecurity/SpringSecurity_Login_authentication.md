@@ -13,7 +13,7 @@ tags:
 
 ## 登录校验过程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.5njlxfjl6qs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/image.5njlxfjl6qs0.webp)
 
 ## 原理初探
 
@@ -23,7 +23,7 @@ tags:
 
 `SpringSecurity`的原理其实就是一个**过滤器链**，内部包含了提供各种功能的过滤器。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.51h05zcdrr00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/image.51h05zcdrr00.webp)
 
 **图中只展示了核心过滤器**，其它的非核心过滤器并没有在图中展示。
 
@@ -33,7 +33,7 @@ tags:
 
 可以通过Debug查看当前系统中SpringSecurity过滤器链中有哪些过滤器及它们的顺序。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.542jmv3f11o0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/image.542jmv3f11o0.webp)
 
 我们可以看到一共有15个过滤器。大概了解几个过滤器：
 
@@ -43,7 +43,7 @@ tags:
 
 ### 认证流程详解
 
-![image-20211214151515385](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221014/image-20211214151515385.32u2mx984b00.webp)
+![image-20211214151515385](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221014/image-20211214151515385.32u2mx984b00.webp)
 
 `UsernamePasswordAuthenticationFilter`这个过滤器来实现认证过程逻辑的。实际上不是它这一个类就实了，它还通过其他类来帮助他实现的，下图就是该过滤器内部实现大致流程。
 
@@ -85,7 +85,7 @@ tags:
 
 **登录**
 
-![image-20211215095331510](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221014/image-20211215095331510.43d5pe7vrii0.webp)
+![image-20211215095331510](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221014/image-20211215095331510.43d5pe7vrii0.webp)
 
 ​	①自定义登录接口  
 
@@ -99,7 +99,7 @@ tags:
 
 **校验**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221014/image.1lobrlvzt50g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221014/image.1lobrlvzt50g.webp)
 
 > 使用redis查询用户信息
 
@@ -933,7 +933,7 @@ public class LoginUser implements UserDetails {
 
 > 注意：如果要测试，需要往用户表中写入用户数据，并且如果你想让用户的密码是明文存储，需要在密码前加{noop}。例如：
 >
-> ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221014/image.5cygdn2z4380.webp)
+> ![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221014/image.5cygdn2z4380.webp)
 >
 > 这样登陆的时候就可以用frx作为用户名，1234作为密码来登陆了。
 
@@ -1080,7 +1080,7 @@ server:
 
 + 测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221015/image.uknakclvumo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221015/image.uknakclvumo.webp)
 
 #### 认证过滤器
 
@@ -1178,7 +1178,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 + 携带Token测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221015/image.16ujbostnqb.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221015/image.16ujbostnqb.webp)
 
 #### 退出登录
 
@@ -1259,5 +1259,5 @@ public class LoginServiceImpl implements LoginService {
 
 + 携带token测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221015/image.zdqvsvjb1ww.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20221015/image.zdqvsvjb1ww.webp)
 

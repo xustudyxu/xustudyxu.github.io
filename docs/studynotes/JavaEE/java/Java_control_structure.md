@@ -19,7 +19,7 @@ tags:
 2. 分支控制
 3. 循环结构
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.5mmiwliepdg0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.5mmiwliepdg0.webp)
 
 ## 分支控制 if-else
 
@@ -63,7 +63,7 @@ public class If01 {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.5u5znknurto0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.5u5znknurto0.webp)
 
 ### 双分支
 
@@ -100,7 +100,7 @@ public class If02 {
 }
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.6yxau3kskxs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.6yxau3kskxs0.webp)
 
 ### 多分支
 
@@ -239,11 +239,11 @@ public class If04 {
 
 ### 基本语法
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.1grz763w476o.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.1grz763w476o.webp)
 
 ### 流程图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.73p0ssz5si40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.73p0ssz5si40.webp)
 
 ### 快速入门
 
@@ -291,7 +291,7 @@ public class Switch01 {
 
 ### switch 注意事项和细节讨论
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.6nzu750ae3g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.6nzu750ae3g0.webp)
 
 ### switch 和 if 的比较
 
@@ -319,7 +319,7 @@ for(循环变量初始化;循环条件;循环变量迭代){
 
 ### for循环执行流程分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.38i6t0f75de0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.38i6t0f75de0.webp)
 
 ### 注意事项和细节说明
 
@@ -371,7 +371,7 @@ while(循环条件){
 
 ### while循环执行流程分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.23eo2xddt8n4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.23eo2xddt8n4.webp)
 
 + 使用while打印十次Hello,World！
 
@@ -409,7 +409,7 @@ do{
 
 ### do...while 循环执行流程分析
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.3jedd1tjqcu0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.3jedd1tjqcu0.webp)
 
 ### 注意事项和细节说明
 
@@ -533,7 +533,7 @@ public class MulForExercise02 {
 
 ### 以 while 使用 break 为例,画出示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.183crhgw4ebg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.183crhgw4ebg.webp)
 
 ### 快速入门
 
@@ -552,7 +552,7 @@ public class Break01 {
 
 ### 注意事项和细节说明
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.1hnvolk98om8.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.1hnvolk98om8.webp)
 
 ## 跳转控制语句-continue
 
@@ -573,7 +573,7 @@ public class Break01 {
 
 ### 以 while 使用 continue 为例,画出示意图
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220721/image.570e6tkznbk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220721/image.570e6tkznbk0.webp)
 
 ## 跳转控制语句-return
 

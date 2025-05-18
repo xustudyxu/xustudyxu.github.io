@@ -23,7 +23,7 @@ tags:
 
 确认机制图例：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.7c8btl8ibwo0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.7c8btl8ibwo0.webp)
 
 ### 实战
 
@@ -33,7 +33,7 @@ tags:
 
 代码架构图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.7ddz8ceuxk40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.7ddz8ceuxk40.webp)
 
 在配置文件当中需要添加：
 
@@ -205,7 +205,7 @@ public class MyCallBack implements RabbitTemplate.ConfirmCallback {
 
 结果分析:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.5cpvzjf8zb40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.5cpvzjf8zb40.webp)
 
 可以看到，发送了两条消息，第一条消息的 RoutingKey 为 "key1"，第二条消息的 RoutingKey 为 "key2"，两条消息都成功被交换机接收，也收到了交换机的确认回调，但消费者只收到了一条消息，因为第二条消息的 RoutingKey 与队列的 BindingKey 不一致，也没有其它队列能接收这个消息，所有第二条消息被直接丢弃了。
 
@@ -328,7 +328,7 @@ public class MyCallBack implements RabbitTemplate.ConfirmCallback,RabbitTemplate
 
 打开浏览器访问地址：[http://localhost:8888/confirm/sendMessage/大家好1](http://localhost:8888/confirm/sendMessage/%E5%A4%A7%E5%AE%B6%E5%A5%BD1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.6ag1qfe3xws0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.6ag1qfe3xws0.webp)
 
 ## 备份交换机
 
@@ -346,7 +346,7 @@ public class MyCallBack implements RabbitTemplate.ConfirmCallback,RabbitTemplate
 
 代码结构图:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.109ugczigfdc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.109ugczigfdc.webp)
 
 ### **修改高级确认发布 配置类**
 
@@ -457,7 +457,7 @@ public class WarningConsumer {
 
 打开浏览器访问地址：[http://localhost:8888/confirm/sendMessage/大家好1](http://localhost:8888/confirm/sendMessage/%E5%A4%A7%E5%AE%B6%E5%A5%BD1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220726/image.42foi4mawzq0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220726/image.42foi4mawzq0.webp)
 
 Mandatory 参数与备份交换机可以一起使用的时候，如果两者同时开启，消息究竟何去何从？谁优先级高，经过上面结果显示答案是**备份交换机优先级高**。
 

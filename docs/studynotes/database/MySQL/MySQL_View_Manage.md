@@ -15,14 +15,14 @@ tags:
 
 ### 看需求
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/63.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/63.png)
 
 ### 基本概念
 
 1. <font color=#DC4040 size=4 face="黑体">视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含列,其数据来自对应的真实表(基表)</font>
 2. 视图和基表关系的示意图
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/64.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/64.png)
 
 ### 视图的基本使用
 
@@ -56,7 +56,7 @@ DROP VIEW emp_view01
 
 ### 视图细节讨论
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/65.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/65.png)
 
 ```sql
 -- 视图的细节
@@ -89,7 +89,7 @@ SELECT * FROM emp_view02
 
 ### 视图最佳实践
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/66.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/66.png)
 
 ### 视图课堂练习
 
@@ -120,9 +120,9 @@ SELECT  * FROM emp_view03
 
 ### Mysql 用户
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/67.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/67.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/68.png)
 
 ### 创建用户
 
@@ -143,11 +143,11 @@ SELECT  * FROM emp_view03
 
 ### mysql中的权限
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/71.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/71.png)
 
 ### 给用户授权
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/70.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/MySQL/images/70.png)
 
 ### 回收用户权限
 

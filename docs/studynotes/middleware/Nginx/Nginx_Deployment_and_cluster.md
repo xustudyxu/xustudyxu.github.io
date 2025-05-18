@@ -15,7 +15,7 @@ tags:
 
 前面已经将 Nginx 的大部分内容进行了讲解，我们都知道了 Nginx 在高并发场景和处理静态资源是非常高性能的，但是在实际项目中除了静态资源还有就是后台业务代码模块，一般后台业务都会被部署在 Tomcat、weblogic 或者是 websphere 等 Web 服务器上。那么如何使用 Nginx 接收用户的请求并把请求转发到后台 Web 服务器？
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.iachagf6u0g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.iachagf6u0g.webp)
 
 步骤分析:
 
@@ -52,11 +52,11 @@ tar -zxf apache-tomcat-9.0.54.tar.gz -C /usr/local/tomcat
 
 - 静态资源：`http://192.168.200.146:8080/demo/index.html`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.pln0ovd1h1c.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.pln0ovd1h1c.webp)
 
 + 动态资源：`http://192.168.200.146:8080/demo/getAddress`
 
-动态资源可以是端口号，此时的端口是 8080![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.31nc8e1cdee0.webp)
+动态资源可以是端口号，此时的端口是 8080![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.31nc8e1cdee0.webp)
 
 自此，服务器 A 的 Tomcat 部署已经实现。
 
@@ -113,7 +113,7 @@ server{
 
 2. 启动访问服务器 B，测试是否代理到服务器 A 的 Tomcat，效果如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.6taygwj4nt80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.6taygwj4nt80.webp)
 
 学习到这，可能大家会有一个困惑，明明直接通过 Tomcat 就能访问，为什么还需要多加一个 Nginx，这样不是反而是系统的复杂度变高了么? 那接下来我们从两个方便给大家分析下这个问题，
 
@@ -144,7 +144,7 @@ server{
 
 如下图，因为 Nginx 处理静态资源性能高，所以我们把静态资源放在 Nginx 服务器上，然后把动态资源放到 Tomcat 服务器上。当访问 Nginx 的静态资源时，Nginx 会去访问 Tocmat 获取动态资源。实现动静分离。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.2v1uen08t3c0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.2v1uen08t3c0.webp)
 
 ### 实现步骤
 
@@ -160,7 +160,7 @@ server{
 
 - 在 Nginx 所在的服务器 B 上创建如下目录，并将对应的静态资源放入指定的位置
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.3e4j68pre4k0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.3e4j68pre4k0.webp)
 
 ```sh
 mkdir /usr/local/nginx/html/web/images
@@ -230,11 +230,11 @@ server {
 
 + 启动测试，访问 `http://192.168.200.133`
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.2yip3al9lva0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.2yip3al9lva0.webp)
 
 假如某个时间点，由于某个原因导致 Tomcat 后的服务器宕机了，我们再次访问 Nginx，会得到如下效果：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.3s0ttch8r4i0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.3s0ttch8r4i0.webp)
 
 用户还是能看到页面，只是缺失 Tomcat 的动态资源，这就是前后端耦合度降低的效果，并且整个请求只和后的服务器交互了一次，js 和 images 都直接从 Nginx 服务器里返回，提供了效率，降低了后端服务器的压力。
 
@@ -242,7 +242,7 @@ server {
 
 在使用 Nginx 和 Tomcat 部署项目的时候，我们使用的是一台 Nginx 服务器和一台 Tomcat 服务器，效果图如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.4ukvicg3of80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.4ukvicg3of80.webp)
 
 那么问题来了，如果 Tomcat 的真的宕机了，整个系统就会不完整，所以如何解决上述问题？
 
@@ -254,7 +254,7 @@ server {
 
 如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.664h3o0m8y00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.664h3o0m8y00.webp)
 
 ### 环境搭建
 
@@ -276,7 +276,7 @@ vim tomcat03/conf/server.xml
 
 修改的内容位置如下：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.76l3jwkc3b40.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.76l3jwkc3b40.webp)
 
 2. 在 Nginx 对应的配置文件中添加如下内容:
 
@@ -301,19 +301,19 @@ server{
 http://192.168.200.146:8080/demo/getAddress
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.2389oc46sdxc.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.2389oc46sdxc.webp)
 
 ```http
 http://192.168.200.146:8180/demo/getAddress
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.1sjv5fphqk8w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.1sjv5fphqk8w.webp)
 
 ```http
 http://192.168.200.146:8280/demo/getAddress
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.6uckjob0ptc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.6uckjob0ptc0.webp)
 
 好了，完成了上述环境的部署，我们已经解决了 Tomcat 的高可用性，一台服务器宕机，还有其他两条对外提供服务，同时也可以实现后台服务器的不间断更新。
 
@@ -323,7 +323,7 @@ http://192.168.200.146:8280/demo/getAddress
 
 针对于上面提到的问题，我们来分析下要想解决上述问题，需要面临哪些问题？
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.664h3o0m8y00.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.664h3o0m8y00.webp)
 
 需要两台以上的 Nginx 服务器对外提供服务，这样的话就可以解决其中一台宕机了，另外一台还能对外提供服务，但是如果是两台 Nginx 服务器的话，会有两个 IP 地址，用户该访问哪台服务器，用户怎么知道哪台是好的，哪台是宕机了的？
 
@@ -337,7 +337,7 @@ VRRP（Virtual Route Redundancy Protocol）协议，翻译过来为虚拟路由�
 
 看图分析：VRRP 把两个 Nginx 分成两个路由（VRRP 路由 1 和 VRRP 路由 2），并生成一个 Virtual 路由，用户访问的是 Virtual 路由，该路由会去访问两个 Nginx 生成的 VRRP 路由。那么到底访问谁呢？VRRP 会给两个路由分配角色，一个是 Master（老大），另一个是 Backup（备份），所以访问的是 Master 角色的路由，当 Master 角色路由宕机了，才会找到 Backup 备份路由。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.zc2md5tuu0w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.zc2md5tuu0w.webp)
 
 从上面的介绍信息获取到的内容就是 VRRP 是一种协议，那这个协议是用来干什么的？
 
@@ -351,7 +351,7 @@ VRRP（Virtual Route Redundancy Protocol）协议，翻译过来为虚拟路由�
 
 用了 Keepalived 后，解决方案如图下:
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.3n6clkv1blk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.3n6clkv1blk0.webp)
 
 看图分析：VIP 是虚拟路由，是专门给用户发送请求。一旦用户发送请求到 VIP，VIP 就会发送给 Master（主）的 Nginx，如果 Master（主）Nginx 宕机了，才会发送给 Backup（备份） Nginx 路由。
 
@@ -399,11 +399,11 @@ make && make install
 
 - `/etc/keepalived/keepalived.conf`：keepalived 的系统配置文件，我们主要操作的就是该文件
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.5hd9zg18lp80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.5hd9zg18lp80.webp)
 
 + `/usr/local/sbin` 目录下的 `keepalived`：这是系统配置脚本，用来启动和关闭 keepalived
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.54vzhzf4avw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.54vzhzf4avw0.webp)
 
 ### Keepalived配置文件介绍
 
@@ -583,7 +583,7 @@ vrrp_instance VI_1 {
 
 1. 启动 keepalived 之前，先使用命令 `ip a`，查看 `192.168.200.133` 和 `192.168.200.122` 这两台服务器的 IP 情况
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.4lh36tkt0kk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.4lh36tkt0kk0.webp)
 
 2. 分别启动两台服务器的 keepalived
 
@@ -595,13 +595,13 @@ cd /usr/local/sbin
 
 再次通过 `ip a` 查看 IP
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.79pu8lyco700.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.79pu8lyco700.webp)
 
 此时发现服务器 A 多出了 `192.168.200.222`，正是配置的虚拟路由 VIP，而服务器 B 并没有，说明服务器 A 是 Master，优先级高于服务器 B。
 
 3. 当把 `192.168.200.133` 服务器 A 上的 keepalived 关闭后，再次查看 IP
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.qwb7iteldn4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.qwb7iteldn4.webp)
 
 说明当 Master 服务器 A 宕机后，服务器 B 由 Backup 晋升为 Master。
 
@@ -617,7 +617,7 @@ cd /usr/local/sbin
 http://192.168.200.222/
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.6xosmovingw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.6xosmovingw0.webp)
 
 如果把 `192.168.200.133` 服务器 A 的 keepalived 进程关闭掉
 
@@ -627,7 +627,7 @@ kill keepalived
 
 再次访问相同的地址，效果如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.60wzzgrveak0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.60wzzgrveak0.webp)
 
 虽然效果成功实现了，但是此时是我们手动把服务器上的 keepalived 关闭，才让 VIP 进行切换。
 
@@ -676,7 +676,7 @@ fi
 
 命令的效果如图：
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220806/image.1ypeqh0nut8g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220806/image.1ypeqh0nut8g.webp)
 
 代表目前的 num = 3。
 

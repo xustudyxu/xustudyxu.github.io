@@ -13,7 +13,7 @@ tags:
 
 +  1996年，计算机科学家证明了这样的事实:任何简单或复杂的算法都可以由顺序结构、选择结构和循环结构这三种基本结构组合而成。
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/01.png)
 
 ### 顺序结构
 
@@ -35,11 +35,11 @@ print('--------程序结束---------')
 
 ### 选择结构
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/02.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/02.png)
 
 + 单分支结构
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/03.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/03.png)
 
 ```python
 """
@@ -57,7 +57,7 @@ if money >=s:
 
 + 双分支结构
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/04.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/04.png)
 
 ```python
 """
@@ -80,7 +80,7 @@ else:
 
 + 多分支结构
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/05.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/05.png)
 
 ```python
 """
@@ -116,7 +116,7 @@ else:
 
 + 嵌套if
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/06.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/Python/images/04/06.png)
 
 ```python
 """

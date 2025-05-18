@@ -162,7 +162,7 @@ public class PaymentController {
 - 验证测试：浏览器 - http://localhost:8004/payment/zk
 - 验证测试2 ：接着用zookeeper客户端操作
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.79ugu9at2540.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.79ugu9at2540.webp)
 
 ```sh
 [zk: localhost:2181(CONNECTED) 1] ls /
@@ -360,4 +360,4 @@ public class OrderZKController {
 
 7. 访问测试地址 - [http://localhost:81/consumer/payment/zk](http://localhost:81/consumer/payment/zk)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220814/image.22vnyckev000.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220814/image.22vnyckev000.webp)

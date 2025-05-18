@@ -21,7 +21,7 @@ tags:
 + dubbo-admin 是一个前后端分离的项目。前端使用vue，后端使用springboot
 + 安装dubbo-admin 其实就是部署该项目
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
 
 ### dubbo-admin 安装
 
@@ -35,7 +35,7 @@ dubbo-admin 是一个前后端分离的项目。前端使用vue，后端使用sp
 
 + [下载地址](https://nodejs.org/en/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.7cb32o1x7ls0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.7cb32o1x7ls0.webp)
 
 **下载 Dubbo-Admin**
 
@@ -43,7 +43,7 @@ dubbo-admin 是一个前后端分离的项目。前端使用vue，后端使用sp
 
 + [下载地址](https://github.com/apache/dubbo-admin)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.739d6xuhk700.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.739d6xuhk700.webp)
 
 + 可以通过下载ZIP包的方式。如果安装的有git,也可以使用git命令
 
@@ -53,17 +53,17 @@ git clone git@github.com:apache/dubbo-admin.git
 
 + 把下载的zip包解压到指定文件夹(解压到那个文件夹随意)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.55ug59dta5s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.55ug59dta5s0.webp)
 
 + 修改配置文件,解压后我们进入…\dubbo-admin-develop\dubbo-admin-server\src\main\resources目录
 
   找到 **application.properties** 配置文件 进行配置修改
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1v2cqfl6nmw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1v2cqfl6nmw0.webp)
 
 + 修改zookeeper地址
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1k4sjv2uud0g.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1k4sjv2uud0g.webp)
 
 ```properties
 # centers in dubbo2.7
@@ -84,7 +84,7 @@ admin.metadata-report.address元数据中心
 mvn  clean package
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.475fknv97zs0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.475fknv97zs0.webp)
 
 + 启动后端
 
@@ -100,7 +100,7 @@ dubbo-Admin-develop\dubbo-admin-distribution\target>
 java -jar .\dubbo-admin-0.1.jar
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.4ik4j9cd4oa0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.4ik4j9cd4oa0.webp)
 
 **前台后端**
 
@@ -110,13 +110,13 @@ dubbo-admin-ui 目录下执行命令
 npm run dev
 ```
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.3x3rvit5z3g0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.3x3rvit5z3g0.webp)
 
 ### 访问测试
 
 + [http://localhost:8081/](http://localhost:8081/)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1qcdwi5j1lb.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1qcdwi5j1lb.webp)
 
 ### dubbo-admin简单使用
 
@@ -126,15 +126,15 @@ npm run dev
 
 #### 点击服务查询
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.5m441o5w2lw0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.5m441o5w2lw0.webp)
 
 #### 查看详情
 
 我们查看com.frx01.service.UserService （服务提供者）的具体详细信息，包含【元数据信息】
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.17ni2egsi9uo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.17ni2egsi9uo.webp)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.7cswnyksevc0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.7cswnyksevc0.webp)
 
 从【详情】界面查看，主要分为3个区域
 
@@ -152,7 +152,7 @@ B区域：主要包含了生产者、消费者一些基本信息
 ```
 #### 服务测试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.242ecsvjjvgg.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.242ecsvjjvgg.webp)
 
 ## dubbo 常用高级配置
 
@@ -160,7 +160,7 @@ B区域：主要包含了生产者、消费者一些基本信息
 
 **两个机器传输数据，如何传输Java对象?**
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1e1ihubntj7k.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1e1ihubntj7k.webp)
 
 + dubbo 内部已经将序列化和反序列化的过程内部封装了
 + 我们只需要在定义pojo类时实现Serializable接口即可
@@ -214,7 +214,7 @@ public class User implements Serializable {
 
 + 访问[http://localhost:8000/user/find.do?id=1](http://localhost:8000/user/find.do?id=1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.788h0chy1k80.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.788h0chy1k80.webp)
 
 ## 地址缓存
 
@@ -223,14 +223,14 @@ public class User implements Serializable {
 + 可以，因为dubbo服务消费者在第一次调用时，会将服务提供方地址缓存到本地，以后在调用则不会访问注册中心。
 + 当服务提供者地址发生变化时，注册中心会通知服务消费者。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220808/image.oo29wlcrhuo.webp)
 
 ## 超时与重试
 
 - 服务消费者在调用服务提供者的时候发生了阻塞、等待的情形，这个时候，服务消费者会一直等待下去。
 - 在某个峰值时刻，大量的请求都在同时请求服务消费者，会造成线程的大量堆积，势必会造成雪崩。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.4om4icxxt7a0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.4om4icxxt7a0.webp)
 
 + dubbo 利用超时机制来解决这个问题，设置一个超时时间，在这个时间段内，无法完成服务访问，则自动断开连接。
 + 使用timeout属性配置超时时间，默认值1000，单位毫秒。
@@ -326,7 +326,7 @@ public class UserController {
 
 ### 重试
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.4bympibnr1s0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.4bympibnr1s0.webp)
 
 - 设置了超时时间，在这个时间段内，无法完成服务访问，则自动断开连接。
 - 如果出现网络抖动，则这一次请求就会失败。
@@ -374,7 +374,7 @@ public class UserServiceImpl implements UserService {
 
 ## 多版本
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.67v72tso2ss0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.67v72tso2ss0.webp)
 
 + 灰度发布：当出现新功能时，会让一部分用户先使用新功能，用户反馈没问题时，再将所有用户迁移到新功能。
 + dubbo 中使用version 属性来设置和调用同一个接口的不同版本
@@ -473,16 +473,16 @@ new...
 
 ## 负载均衡
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.796u40d7npk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.796u40d7npk0.webp)
 
 + Random ：按权重随机，默认值。按权重设置随机概率。
 + RoundRobin ：按权重轮询
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.26sv25gub94w.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.26sv25gub94w.webp)
 
 + LeastActive：最少活跃调用数，相同活跃数的随机。
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1uvybtq4843k.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1uvybtq4843k.webp)
 
 + ConsistentHash：一致性 Hash，相同参数的请求总是发到同一提供者。
 
@@ -553,7 +553,7 @@ public class UserServiceImpl implements UserService {
 
 + 使用dubbo-admin查看服务
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.1bdla5oh43a.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.1bdla5oh43a.webp)
 
 ### 修改UserController
 
@@ -591,7 +591,7 @@ public class UserController {
 
 ## 集群容错
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.2udthynuq3u0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.2udthynuq3u0.webp)
 
 集群容错模式：
 
@@ -714,7 +714,7 @@ public class UserServiceImpl implements UserService {
 
 ### 使用dubbo-admin查看服务
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.2bo4mskxvlz4.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.2bo4mskxvlz4.webp)
 
 ### 设置集群容错策略
 
@@ -752,13 +752,13 @@ public class UserController {
 
 + 启动dubbo-web,并访问[http://localhost:8000/user/find.do?id=1](http://localhost:8000/user/find.do?id=1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.5npf2b9mqdk0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.5npf2b9mqdk0.webp)
 
 + 中间dubbo-web报超时错误，超时只是中间错误，依然能返回正确结果
 
 ## 服务降级
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.5auqhza16po0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.5auqhza16po0.webp)
 
 服务降级方式:
 
@@ -802,7 +802,7 @@ public class UserController {
 
 + 访问测试:[http://localhost:8000/user/find.do?id=1](http://localhost:8000/user/find.do?id=1)
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20220810/image.43siodrhv4w0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/20220810/image.43siodrhv4w0.webp)
 
 返回为null,也不报错，一个空白的页面
 

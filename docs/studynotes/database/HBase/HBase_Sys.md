@@ -16,7 +16,7 @@ HBase的系统架构包括**客户端、Zookeeper服务器、HMaster服务器、
 
  同时regionserver上有多个region，region是HBase中数据的物理分片。HBase的底层是HDFS的数据节点，HBase中的数据最终是存储在HDFS上的。
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/03/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/03/01.png)
 
 ## 客户端
 
@@ -73,7 +73,7 @@ RegionServer主要负责响应用户的请求，向HDFS中读写数据。一般�
 
 ## 逻辑模型
 
-![01](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/01.png)
+![01](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/01.png)
 
 **关系型数据库特点：**
 
@@ -89,15 +89,15 @@ RegionServer主要负责响应用户的请求，向HDFS中读写数据。一般�
 
 ## 物理模型
 
-![02](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/02.png)
+![02](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/02.png)
 
 ## 实际存储方式
 
-![03](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/03.png)
+![03](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/03.png)
 
-![04](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/04.png)
+![04](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/04.png)
 
 表中的数据按照行键的字典序分成多个**region**存在不同的**regionserver**上
 
-![05](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/05.png)
+![05](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting@master/studynotes/HBase/images/04/05.png)
 

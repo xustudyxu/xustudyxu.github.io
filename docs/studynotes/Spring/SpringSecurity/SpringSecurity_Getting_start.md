@@ -15,7 +15,7 @@ tags:
 
 ## 创建SpringBoot工程
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.4u7acbwkrno0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/image.4u7acbwkrno0.webp)
 
 ## 引入依赖
 
@@ -99,7 +99,7 @@ server.port=8888
 
 ## 启动测试
 
-![QQ22918914922917714320221013170221](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/QQ22918914922917714320221013170221.3q0k05qhdu60.gif)
+![QQ22918914922917714320221013170221](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/QQ22918914922917714320221013170221.3q0k05qhdu60.gif)
 
 > 访问我们发现，弹出来了一个登录框
 
@@ -112,4 +112,4 @@ Using generated security password: 81fb0fc1-9d23-48b4-b170-ecdc8670bb11
 
 + 点击登录，访问成功
 
-![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/image.3bpsahan24m0.webp)
+![image](https://cdn.jsdmirror.com//gh/xustudyxu/image-hosting1@master/image.3bpsahan24m0.webp)
