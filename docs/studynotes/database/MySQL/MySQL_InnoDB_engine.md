@@ -285,7 +285,7 @@ show engine innodb status;
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.sgj8ivm9ilc.webp)
 
-而对于这四大特性，实际上分为两个部分。 其中的原子性、一致性、持久化，实际上是由InnoDB中的两份日志来保证的，一份是redo log日志，一份是undo log日志。 而持久性是通过数据库的锁，加上MVCC来保证的。
+而对于这四大特性，实际上分为两个部分。 其中的原子性、一致性、持久化，实际上是由InnoDB中的两份日志来保证的，一份是redo log日志，一份是undo log日志。 而隔离性是通过数据库的锁，加上MVCC来保证的。
 
 ![image](https://cdn.jsdelivr.net/gh/xustudyxu/image-hosting1@master/20221002/image.1oe3nog6lskg.webp)
 
